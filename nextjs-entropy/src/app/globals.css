@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('style.css');
 
 :root {
   --background: #ffffff;
@@ -19,4 +18,18 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width:479px) {
+  html.w-mod-js:not(.w-mod-ix) [data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1393"] {
+    opacity: 0;
+  }
+
+  html.w-mod-js:not(.w-mod-ix) [data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1395"] {
+    opacity: 0;
+  }
+
+  html.w-mod-js:not(.w-mod-ix) [data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1397"] {
+    opacity: 0;
+  }
 }
