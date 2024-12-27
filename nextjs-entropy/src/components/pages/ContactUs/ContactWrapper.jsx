@@ -21,20 +21,20 @@ export default function ContactWrapper() {
                                 data-wf-element-id="db289675-c74d-bc81-254e-a35a802fe12c">
                                 <div className="form-content">
                                     <div className="name-wrapper-contact">
-                                        <label for="Name" className="text-size-medium-vw">Name</label>
-                                        <input className="text-field-contact w-input" maxlength="256" name="Name"
+                                        <label htmlFor="Name" className="text-size-medium-vw">Name</label>
+                                        <input className="text-field-contact w-input" maxLength="256" name="Name"
                                             data-name="Name" placeholder="Enter your name" type="text" id="Name"
                                             required="" />
                                     </div>
                                     <div className="name-wrapper-contact">
-                                        <label for="Enter-Your-Email" className="text-size-medium-vw">E-mail</label>
-                                        <input className="text-field-contact w-input" maxlength="256"
+                                        <label htmlFor="Enter-Your-Email" className="text-size-medium-vw">E-mail</label>
+                                        <input className="text-field-contact w-input" maxLength="256"
                                             name="Enter-Your-Email" data-name="Enter Your Email"
                                             placeholder="Enter your e-mail" type="email" id="Enter-Your-Email"
                                             required="" />
                                     </div>
-                                    <label for="Text-Field" className="text-size-medium-vw">Message</label>
-                                    <textarea id="Text-Field" name="Text-Field" maxlength="5000" data-name="Text Field"
+                                    <label htmlFor="Text-Field" className="text-size-medium-vw">Message</label>
+                                    <textarea id="Text-Field" name="Text-Field" maxLength="5000" data-name="Text Field"
                                         placeholder="Your message..." className="text-field-contact w-input"></textarea>
                                 </div>
                                 <div className="contact-button align-center">

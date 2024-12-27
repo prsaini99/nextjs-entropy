@@ -1,5 +1,24 @@
 import React from 'react'
 
+const features = [
+    {
+        title: 'Adaptive Learning Models',
+        description: 'Continuously evolve with changing data using our self-learning algorithms',
+    },
+    {
+        title: 'Visual Recognition',
+        description: 'Automated image and video analysis for fast, actionable insights.',
+    },
+    {
+        title: 'Persona-Driven Precision',
+        description: 'Personalized interactions based on unique customer behaviors.',
+    },
+    {
+        title: 'SecureAI Shield',
+        description: 'Proactive threat detection and neutralization to keep your business secure.',
+    },
+]
+
 export default function IgnitePotential() {
     return (
         <section>
@@ -17,43 +36,17 @@ export default function IgnitePotential() {
                             </div>
                         </div>
                         <div className="features-grid">
-                            <div id="w-node-f1ebc3db-c32c-0977-63ac-12a3728dfe36-aee64be3" className="features first">
-                                <div className="text-size-large">01</div>
-                                <div className="features-content">
-                                    <div className="text-weight-medium">Adaptive Learning Models</div>
-                                    <div className="opacity-70">
-                                        <div>Continuously evolve with changing data using our self-learning algorithms</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="w-node-f1ebc3db-c32c-0977-63ac-12a3728dfe3f-aee64be3" className="features second">
-                                <div className="text-size-large">02</div>
-                                <div className="features-content">
-                                    <div className="text-weight-medium">Visual Recognition</div>
-                                    <div className="opacity-70">
-                                        <div>Automated image and video analysis for fast, actionable insights.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="w-node-f1ebc3db-c32c-0977-63ac-12a3728dfe48-aee64be3" className="features third">
-                                <div className="text-size-large">03</div>
-                                <div className="features-content">
-                                    <div className="text-weight-medium">Persona-Driven Precision</div>
-                                    <div className="opacity-70">
-                                        <div>Personalized interactions based on unique customer behaviors.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="w-node-f1ebc3db-c32c-0977-63ac-12a3728dfe51-aee64be3" className="features fourth">
-                                <div className="text-size-large">04</div>
-                                <div className="features-content">
-                                    <div className="text-weight-medium">SecureAI Shield</div>
-                                    <div className="opacity-70">
-                                        <div>Proactive threat detection and neutralization to keep your business secure.
+                            {features.map((feature, index) => (
+                                <div key={index} className="features">
+                                    <div className="text-size-large">{index + 1}</div>
+                                    <div className="features-content">
+                                        <div className="text-weight-medium">{feature.title}</div>
+                                        <div className="opacity-70">
+                                            <div>{feature.description}</div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

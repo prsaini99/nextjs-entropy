@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const links = {
@@ -53,7 +54,7 @@ export default function Footer() {
                                     <div className="text-size-large text-weight-medium">{category.charAt(0).toUpperCase() + category.slice(1)}</div>
                                     <div className="footer-links-wrapper">
                                         {items.map(item => (
-                                            <a key={item.href} href={item.href} className={`footer-link ${item.current ? "w--current" : ""}`}>{item.label}</a>
+                                            <Link key={item.href} href={item.href} className={`footer-link ${item.current ? "w--current" : ""}`}>{item.label}</Link>
                                         ))}
                                     </div>
                                 </div>
@@ -61,28 +62,28 @@ export default function Footer() {
                         </div>
                         <div data-w-id="93f4457d-ec22-3c66-b213-0b7ef6a6715f" className="footer-social-wrapper">
                             {socialLinks.map((link, index) => (
-                                <a key={index} href={link.href} className="footer-social w-inline-block">
+                                <Link key={index} href={link.href} className="footer-social w-inline-block">
                                     <img loading="lazy" src={link.iconSrc} alt={link.alt} className="icon-embed" />
-                                </a>
+                                </Link>
                             ))}
                         </div>
                         <div data-w-id="93f4457d-ec22-3c66-b213-0b7ef6a67168" className="footer-links-wrapper">
                             <div className="footer-links">
                                 {footerLinks.map((link, index) => (
                                     <React.Fragment key={index}>
-                                        <a href={link.href} className="footer-link">{link.label}</a>
+                                        <Link href={link.href} className="footer-link">{link.label}</Link>
                                         <div className="vertical-line"></div>
                                     </React.Fragment>
                                 ))}
                             </div>
                             <div className="credits-wrapper">
                                 <p>Copyright ©</p>
-                                <a href="https://webflow.com/templates/designers/lucas-gusso" target="_blank" className="credits w-inline-block">
+                                <Link href="https://webflow.com/templates/designers/lucas-gusso" target="_blank" className="credits w-inline-block">
                                     <p className="paragraph">Design &amp; Developed by <span className="text-color-white">Lucas Gusso</span></p>
-                                </a>
-                                <a href="https://webflow.com/" target="_blank" className="credits w-inline-block">
+                                </Link>
+                                <Link href="https://webflow.com/" target="_blank" className="credits w-inline-block">
                                     <p className="paragraph">Powered by <span className="text-color-white">Webflow</span></p>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

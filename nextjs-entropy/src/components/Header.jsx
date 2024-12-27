@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Header() {
@@ -7,35 +8,35 @@ export default function Header() {
             <div className="padding-global">
                 <div className="container w-container">
                     <div className="navbar-component">
-                        <a href="/" data-w-id="6deb3682-e1f7-9f5f-adeb-87fc1448026f" aria-current="page"
+                        <Link href="/" data-w-id="6deb3682-e1f7-9f5f-adeb-87fc1448026f" aria-current="page"
                             className="brand w-nav-brand w--current"><img
                                 src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cc9_Logo%20Navbar.svg"
-                                loading="lazy" alt="Logo Navbar" /></a>
+                                loading="lazy" alt="Logo Navbar" /></Link>
                         <div className="nav-menu-wrap">
                             <div>
                                 <nav role="navigation" className="nav-menu w-nav-menu">
-                                    <a href="/" aria-current="page" className="nav-link w-inline-block w--current">
+                                    <Link href="/" aria-current="page" className="nav-link w-inline-block w--current">
                                         <div>Home</div>
-                                    </a>
-                                    <a href="/about" className="nav-link w-inline-block">
+                                    </Link>
+                                    <Link href="/about" className="nav-link w-inline-block">
                                         <div>About</div>
-                                    </a>
-                                    <a href="/features" className="nav-link w-inline-block">
+                                    </Link>
+                                    <Link href="/features" className="nav-link w-inline-block">
                                         <div>Features</div>
-                                    </a>
-                                    {/* <a href="/pricing" className="nav-link w-inline-block">
+                                    </Link>
+                                    {/* <Link href="/pricing" className="nav-link w-inline-block">
                                         <div>Pricing</div>
-                                    </a> */}
+                                    </Link> */}
                                     <div className="mobile-navbar-content">
-                                        {/* <a href="/blog" className="link-block-navbar w-inline-block">
+                                        {/* <Link href="/blog" className="link-block-navbar w-inline-block">
                                             <div>What’s New</div>
-                                        </a>
-                                        <a href="/faq" className="link-block-navbar w-inline-block">
+                                        </Link>
+                                        <Link href="/faq" className="link-block-navbar w-inline-block">
                                             <div>Help</div>
-                                        </a> */}
-                                        <a href="/contact-us" className="primary-button w-inline-block">
+                                        </Link> */}
+                                        <Link href="/contact-us" className="primary-button w-inline-block">
                                             <div className="text-size-small text-weight-bold">Contact Us</div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </nav>
                                 <div className="nav-menu-wrap">
@@ -45,18 +46,18 @@ export default function Header() {
                                 </div>
                             </div>
                             <div className="right-navbar-content">
-                                {/* <a href="/blog" className="link-block-navbar w-inline-block">
+                                {/* <Link href="/blog" className="link-block-navbar w-inline-block">
                                     <div>What’s New</div>
-                                </a>
-                                <a href="/faq" className="link-block-navbar w-inline-block">
+                                </Link>
+                                <Link href="/faq" className="link-block-navbar w-inline-block">
                                     <div>Help</div>
-                                </a> */}
-                                <a href="/contact-us" className="primary-button w-inline-block">
+                                </Link> */}
+                                <Link href="/contact-us" className="primary-button w-inline-block">
                                     <div className="relative">
                                         <div className="text-size-small text-weight-bold">Contact Us</div>
                                     </div>
                                     <div className="button-elipse"></div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,6 @@
 import React from 'react'
+import ROUTES from '@/constants/routes'
+import { GetStarted, LearnMoreButton } from '@/components/Buttons'
 
 export default function FeaturesWrapper() {
     return (
@@ -179,30 +181,8 @@ export default function FeaturesWrapper() {
                             </div>
                             <div data-w-id="de8d51a1-a9f1-e8fc-1d9c-a4336e447a0b"
                                 className="double-button-component margin-top-button-hero">
-                                <a href="/contact" className="primary-button w-inline-block">
-                                    <div className="relative">
-                                        <div className="text-size-small text-weight-bold">Get Started</div>
-                                    </div>
-                                    <div className="button-elipse"></div>
-                                </a>
-                                <a href="/about" className="secondary-button w-inline-block">
-                                    <div className="button-wrapper">
-                                        <div className="secondary-button-text">
-                                            <div className="text-weight-bold text-size-small">About Us</div>
-                                        </div>
-                                        <div className="button-icon">
-                                            <div className="icon-wrapper">
-                                                <img loading="lazy"
-                                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ccb_Arrow.svg"
-                                                    alt="Arrow" className="icon" />
-                                                <img loading="lazy"
-                                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ccb_Arrow.svg"
-                                                    alt="Arrow" className="icon" />
-                                            </div>
-                                        </div>
-                                        <div className="button-icon absolute"></div>
-                                    </div>
-                                </a>
+                                <GetStarted />
+                                <LearnMoreButton title='About Us' routeTo={ROUTES.ABOUT} />
                             </div>
                         </div>
                     </div>

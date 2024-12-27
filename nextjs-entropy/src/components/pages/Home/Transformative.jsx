@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { MoreAImodels } from '@/components/Buttons'
 import React from 'react'
 
 export default function Transformative() {
@@ -8,17 +8,7 @@ export default function Transformative() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="testimonial-wrapper">
                         <div className="testimonial-component">
-                            <Link href="/features" className="read-more-tag w-inline-block">
-                                <div className="text-size-small text-weight-bold">More AI models</div>
-                                <div className="vertical-line-tag"></div>
-                                <div className="read-more-button">
-                                    <div className="opacity-50">
-                                        <div className="text-size-small text-weight-bold">Read more</div>
-                                    </div><img loading="lazy"
-                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c3f_Read%20More%20Arrow.svg"
-                                        alt="Arrow" className="arrow" />
-                                </div>
-                            </Link>
+                            <MoreAImodels />
                             <div className="header">
                                 <div className="heading-4 text-weight-medium">Transformative Results with Profound Impact on
                                     Success
@@ -32,165 +22,72 @@ export default function Transformative() {
                             </div>
                         </div>
                         <div className="testimonial-grid">
-                            <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfa63-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa63" className="testimonial-card">
-                                <div className="quote-icon"><img loading="lazy"
-                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
-                                    alt="Quote Icon" /></div>
-                                <div className="testimonial-content">
-                                    <div className="testimonial-quote">
-                                        <div className="text-size-medium">The AI tools from Entropy have revolutionized our
-                                            workflow. Their adaptability and precision have set a new standard for our
-                                            operations.
-                                        </div>
+                            {[
+                                {
+                                    id: "525f333e-16b4-a716-1c03-a45f2fadfa63",
+                                    quote: "The AI tools from Entropy have revolutionized our workflow. Their adaptability and precision have set a new standard for our operations.",
+                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd9_Testimonial%2001.jpg",
+                                    name: "Alex Johnson",
+                                    title: "CTO at TechInnovate"
+                                },
+                                {
+                                    id: "525f333e-16b4-a716-1c03-a45f2fadfa73",
+                                    quote: "We’ve seen a significant boost in efficiency since integrating Entropy's AI solutions. The personalized features truly enhance our customer interactions.",
+                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd6_Testimonial%2003.jpg",
+                                    name: "Emily Davis",
+                                    title: "Marketing Director at RetailPulse"
+                                },
+                                {
+                                    id: "525f333e-16b4-a716-1c03-a45f2fadfa83",
+                                    quote: "The predictive analytics provided by Entropy have been a game-changer for our strategic planning. We’re making more informed decisions than ever before.",
+                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg",
+                                    name: "Michael Lee",
+                                    title: "CTO at TechInnovate"
+                                },
+                                {
+                                    id: "525f333e-16b4-a716-1c03-a45f2fadfa93",
+                                    quote: "The visual recognition technology has streamlined our processes and provided us with valuable insights. Entropy is a key partner in our success.",
+                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd7_Testimonial%2002.jpg",
+                                    name: "Sarah Martinez",
+                                    title: "Operations Manager at Visionary Studios"
+                                },
+                                {
+                                    id: "525f333e-16b4-a716-1c03-a45f2fadfaa3",
+                                    quote: "Thanks to Entropy’s AI-driven personalization, we’ve seen a dramatic increase in customer satisfaction and engagement. It’s truly exceptional.",
+                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg",
+                                    name: "James Wilson",
+                                    title: "Customer Experience Lead at BrightPath"
+                                },
+                                {
+                                    id: "525f333e-16b4-a716-1c03-a45f2fadfab3",
+                                    quote: "The cybersecurity solutions from Entropy offer unparalleled protection for our data. We feel confident and secure knowing our systems are in good hands.",
+                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cda_Testimonial%2005.jpg",
+                                    name: "John Thompson",
+                                    title: "IT Director at SecureNet Solutions"
+                                }
+                            ].map(({ id, quote, imageSrc, name, title }) => (
+                                <div key={id} id={`w-node-_` + id + `-aee64be3`} className="testimonial-card">
+                                    <div className="quote-icon">
+                                        <QuoteSvg />
                                     </div>
-                                    <div className="testimonial-person-info">
-                                        <div className="testimonial-image"><img loading="lazy"
-                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd9_Testimonial%2001.jpg"
-                                            alt="Image" /></div>
-                                        <div className="testimonial-info">
-                                            <div className="text-size-small text-weight-bold">Alex Johnson</div>
-                                            <div className="opacity-60">
-                                                <div className="text-size-small">CTO at TechInnovate</div>
+                                    <div className="testimonial-content">
+                                        <div className="testimonial-quote">
+                                            <div className="text-size-medium">{quote}</div>
+                                        </div>
+                                        <div className="testimonial-person-info">
+                                            <div className="testimonial-image">
+                                                <img loading="lazy" src={imageSrc} alt="Image" />
+                                            </div>
+                                            <div className="testimonial-info">
+                                                <div className="text-size-small text-weight-bold">{name}</div>
+                                                <div className="opacity-60">
+                                                    <div className="text-size-small">{title}</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfa73-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa73" className="testimonial-card">
-                                <div className="quote-icon"><img loading="lazy"
-                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
-                                    alt="Quote Icon" className="icon" /></div>
-                                <div className="testimonial-content">
-                                    <div className="testimonial-quote">
-                                        <div className="text-size-medium">We’ve seen a significant boost in efficiency since
-                                            integrating Entropy&#x27;s AI solutions. The personalized features truly enhance
-                                            our customer interactions</div>
-                                    </div>
-                                    <div className="testimonial-person-info">
-                                        <div className="testimonial-image"><img loading="lazy"
-                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd6_Testimonial%2003.jpg"
-                                            alt="Image" /></div>
-                                        <div className="testimonial-info">
-                                            <div className="text-size-small text-weight-bold">Emily Davis</div>
-                                            <div className="opacity-60">
-                                                <div className="text-size-small">Marketing Director at RetailPulse</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfa83-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa83" className="testimonial-card">
-                                <div className="quote-icon">
-                                    <img loading="lazy"
-                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
-                                        alt="Quote Icon" className="icon" />
-                                </div>
-                                <div className="testimonial-content">
-                                    <div className="testimonial-quote">
-                                        <div className="text-size-medium">The predictive analytics provided by Entropy have been
-                                            a game-changer for our strategic planning. We’re making more informed decisions
-                                            than ever before.</div>
-                                    </div>
-                                    <div className="testimonial-person-info">
-                                        <div className="testimonial-image">
-                                            <img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg"
-                                                alt="Image" />
-                                        </div>
-                                        <div className="testimonial-info">
-                                            <div className="text-size-small text-weight-bold">Michael Lee</div>
-                                            <div className="opacity-60">
-                                                <div className="text-size-small">CTO at TechInnovate</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfa93-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa93"
-                                className="testimonial-card hide-landscape">
-                                <div className="quote-icon"><img loading="lazy"
-                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
-                                    alt="Quote Icon" className="icon" /></div>
-                                <div className="testimonial-content">
-                                    <div className="testimonial-quote">
-                                        <div className="text-size-medium">The visual recognition technology has streamlined our
-                                            processes and provided us with valuable insights. Entropy is a key partner in
-                                            our success.</div>
-                                    </div>
-                                    <div className="testimonial-person-info">
-                                        <div className="testimonial-image">
-                                            <img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd7_Testimonial%2002.jpg"
-                                                alt="Image" />
-                                        </div>
-                                        <div className="testimonial-info">
-                                            <div className="text-size-small text-weight-bold">Sarah Martinez</div>
-                                            <div className="opacity-60">
-                                                <div className="text-size-small">Operations Manager at Visionary Studios</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfaa3-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfaa3"
-                                className="testimonial-card hide-landscape">
-                                <div className="quote-icon">
-                                    <img loading="lazy"
-                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
-                                        alt="Quote Icon" className="icon" />
-                                </div>
-                                <div className="testimonial-content">
-                                    <div className="testimonial-quote">
-                                        <div className="text-size-medium">Thanks to Entropy’s AI-driven personalization, we’ve
-                                            seen a dramatic increase in customer satisfaction and engagement. It’s truly
-                                            exceptional.
-                                        </div>
-                                    </div>
-                                    <div className="testimonial-person-info">
-                                        <div className="testimonial-image">
-                                            <img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg"
-                                                alt="Image" />
-                                        </div>
-                                        <div className="testimonial-info">
-                                            <div className="text-size-small text-weight-bold">James Wilson</div>
-                                            <div className="opacity-60">
-                                                <div className="text-size-small">Customer Experience Lead at BrightPath</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfab3-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfab3"
-                                className="testimonial-card hide-landscape">
-                                <div className="quote-icon"><img loading="lazy"
-                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
-                                    alt="Quote Icon" className="icon" /></div>
-                                <div className="testimonial-content">
-                                    <div className="testimonial-quote">
-                                        <div className="text-size-medium">The cybersecurity solutions from Entropy offer
-                                            unparalleled protection for our data. We feel confident and secure knowing our
-                                            systems are in good hands.</div>
-                                    </div>
-                                    <div className="testimonial-person-info">
-                                        <div className="testimonial-image"><img loading="lazy"
-                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cda_Testimonial%2005.jpg"
-                                            alt="Image" /></div>
-                                        <div className="testimonial-info">
-                                            <div className="text-size-small text-weight-bold">John Thompson</div>
-                                            <div className="opacity-60">
-                                                <div className="text-size-small">IT Director at SecureNet Solutions</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -198,3 +95,8 @@ export default function Transformative() {
         </section>
     )
 }
+
+const QuoteSvg = () =>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 7 7" fill="none">
+        <path d="M6.71924 6.73926H4.01262V4.37333C4.01262 3.42695 4.22082 2.61307 4.67508 1.95061C5.12934 1.30708 5.81073 0.890677 6.71924 0.739258V1.98847C5.90536 2.23453 5.48896 2.85913 5.4511 3.84336H6.71924V6.73926ZM2.70662 6.73926H0V4.37333C0 3.42695 0.208202 2.61307 0.662461 1.95061C1.11672 1.30708 1.79811 0.890677 2.70662 0.739258V1.98847C1.89274 2.23453 1.47634 2.85913 1.43849 3.84336H2.70662V6.73926Z" fill="#ED5145" />
+    </svg>

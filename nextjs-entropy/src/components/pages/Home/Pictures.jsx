@@ -1,17 +1,12 @@
 'use client'
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Pictures() {
 
-
     return (
         <div className="overflow-hidden animate-slideUpFadeIn-1">
             <section>
-                <div
-                    data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1391"
-                    className="about-hero-interaction"
-                >
+                <div data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1391" className="about-hero-interaction">
                     <div className="hero-sticky-component">
                         <div data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1393" className="sticky-images left">
                             <Image
@@ -45,12 +40,8 @@ export default function Pictures() {
                                         objectFit: "cover",
                                     }}
                                 >
-                                    <source
-                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.mp4"
-                                    />
-                                    <source
-                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.webm"
-                                    />
+                                    <source src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.mp4" />
+                                    <source src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.webm" />
                                 </video>
                             </div>
                         </div>

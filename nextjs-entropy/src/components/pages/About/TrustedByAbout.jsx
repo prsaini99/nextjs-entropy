@@ -1,5 +1,18 @@
 import React from 'react'
 
+const logos = [
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c98_Logos%20Grid%2002.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce7_Logos04.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c97_Logos%20Grid%2007.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce5_Logos01.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c8f_Logos%20Grid%2003.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c96_Logos%20Grid%2009.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c95_Logos%20Grid%2006.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce6_Logos03.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c94_Logos%20Grid%2010.svg', },
+    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce4_Logos02.svg', },
+];
+
 export default function TrustedByAbout() {
     return (
         <section>
@@ -9,14 +22,13 @@ export default function TrustedByAbout() {
                         <div data-w-id="ae73a4fa-4647-403b-a6f8-ac6ec692aaf4" className="opacity-60">
                             <div className="text-size-small">Trusted by design teams at</div>
                         </div>
-                        <div className="trusted-by-about-logos">
-                            <div id="w-node-ae73a4fa-4647-403b-a6f8-ac6ec692aaf8-aee64c2d"
-                                data-w-id="ae73a4fa-4647-403b-a6f8-ac6ec692aaf8" className="logos">
-                                <img
-                                    loading="lazy"
-                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c98_Logos%20Grid%2002.svg"
-                                    alt="Logo" /></div>
-                            <div id="w-node-ae73a4fa-4647-403b-a6f8-ac6ec692aafa-aee64c2d"
+                        <div className="trusted-by-about-logos logos">
+                            {logos.map((logo, index) => (
+                                <div key={index} className="flex justify-center items-center">
+                                    <img loading="lazy" src={logo.src} alt="Logo" className='w-11/12 h-5/6' />
+                                </div>
+                            ))}
+                            {/* <div id="w-node-ae73a4fa-4647-403b-a6f8-ac6ec692aafa-aee64c2d"
                                 data-w-id="ae73a4fa-4647-403b-a6f8-ac6ec692aafa" className="logos">
                                 <img
                                     loading="lazy"
@@ -69,7 +81,7 @@ export default function TrustedByAbout() {
                                 <img
                                     loading="lazy"
                                     src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce4_Logos02.svg"
-                                    alt="Logos" /></div>
+                                    alt="Logos" /></div> */}
                         </div>
                     </div>
                 </div>
@@ -77,3 +89,4 @@ export default function TrustedByAbout() {
         </section>
     )
 }
+

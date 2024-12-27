@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Banner() {
@@ -20,7 +21,7 @@ export default function Banner() {
                                     <div className="heading-5 text-weight-bold">Transform Your Business with Cutting-Edge AI
                                         Today</div>
                                 </div>
-                                <a href="/pricing" className="banner-button w-inline-block">
+                                <Link href="/pricing" className="banner-button w-inline-block">
                                     <div className="banner-button-line">
                                         <div className="line-fill"></div>
                                     </div>
@@ -34,7 +35,7 @@ export default function Banner() {
                                                 src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c40_Arrow%20Button.svg"
                                                 alt="Arrow" className="arrow" /></div>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="banner-overlay"></div>

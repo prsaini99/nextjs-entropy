@@ -1,4 +1,5 @@
 import React from 'react'
+import { MoreAImodels } from '@/components/Buttons'
 
 export default function Team() {
     return (
@@ -7,17 +8,7 @@ export default function Team() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="team-wrapper">
                         <div className="team-header">
-                            <a href="/features" className="read-more-tag w-inline-block">
-                                <div className="text-size-small text-weight-bold">More AI models</div>
-                                <div className="vertical-line-tag"></div>
-                                <div className="read-more-button">
-                                    <div className="opacity-50">
-                                        <div className="text-size-small text-weight-bold">Read more</div>
-                                    </div><img loading="lazy"
-                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c3f_Read%20More%20Arrow.svg"
-                                        alt="Arrow" className="arrow" />
-                                </div>
-                            </a>
+                            <MoreAImodels />
                             <div className="header">
                                 <div className="heading-4 text-weight-medium">Meet the Visionaries Behind Our AI Solutions
                                 </div>
