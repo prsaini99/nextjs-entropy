@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Transformative() {
@@ -7,7 +8,7 @@ export default function Transformative() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="testimonial-wrapper">
                         <div className="testimonial-component">
-                            <a href="/features" className="read-more-tag w-inline-block">
+                            <Link href="/features" className="read-more-tag w-inline-block">
                                 <div className="text-size-small text-weight-bold">More AI models</div>
                                 <div className="vertical-line-tag"></div>
                                 <div className="read-more-button">
@@ -17,7 +18,7 @@ export default function Transformative() {
                                         src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c3f_Read%20More%20Arrow.svg"
                                         alt="Arrow" className="arrow" />
                                 </div>
-                            </a>
+                            </Link>
                             <div className="header">
                                 <div className="heading-4 text-weight-medium">Transformative Results with Profound Impact on
                                     Success
@@ -32,7 +33,7 @@ export default function Transformative() {
                         </div>
                         <div className="testimonial-grid">
                             <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfa63-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa63" style="opacity:0" className="testimonial-card">
+                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa63" className="testimonial-card">
                                 <div className="quote-icon"><img loading="lazy"
                                     src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
                                     alt="Quote Icon" /></div>
@@ -57,7 +58,7 @@ export default function Transformative() {
                                 </div>
                             </div>
                             <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfa73-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa73" style="opacity:0" className="testimonial-card">
+                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa73" className="testimonial-card">
                                 <div className="quote-icon"><img loading="lazy"
                                     src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
                                     alt="Quote Icon" className="icon" /></div>
@@ -81,10 +82,12 @@ export default function Transformative() {
                                 </div>
                             </div>
                             <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfa83-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa83" style="opacity:0" className="testimonial-card">
-                                <div className="quote-icon"><img loading="lazy"
-                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
-                                    alt="Quote Icon" className="icon" /></div>
+                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa83" className="testimonial-card">
+                                <div className="quote-icon">
+                                    <img loading="lazy"
+                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
+                                        alt="Quote Icon" className="icon" />
+                                </div>
                                 <div className="testimonial-content">
                                     <div className="testimonial-quote">
                                         <div className="text-size-medium">The predictive analytics provided by Entropy have been
@@ -92,9 +95,11 @@ export default function Transformative() {
                                             than ever before.</div>
                                     </div>
                                     <div className="testimonial-person-info">
-                                        <div className="testimonial-image"><img loading="lazy"
-                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg"
-                                            alt="Image" /></div>
+                                        <div className="testimonial-image">
+                                            <img loading="lazy"
+                                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg"
+                                                alt="Image" />
+                                        </div>
                                         <div className="testimonial-info">
                                             <div className="text-size-small text-weight-bold">Michael Lee</div>
                                             <div className="opacity-60">
@@ -105,7 +110,7 @@ export default function Transformative() {
                                 </div>
                             </div>
                             <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfa93-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa93" style="opacity:0"
+                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfa93"
                                 className="testimonial-card hide-landscape">
                                 <div className="quote-icon"><img loading="lazy"
                                     src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
@@ -117,9 +122,11 @@ export default function Transformative() {
                                             our success.</div>
                                     </div>
                                     <div className="testimonial-person-info">
-                                        <div className="testimonial-image"><img loading="lazy"
-                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd7_Testimonial%2002.jpg"
-                                            alt="Image" /></div>
+                                        <div className="testimonial-image">
+                                            <img loading="lazy"
+                                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd7_Testimonial%2002.jpg"
+                                                alt="Image" />
+                                        </div>
                                         <div className="testimonial-info">
                                             <div className="text-size-small text-weight-bold">Sarah Martinez</div>
                                             <div className="opacity-60">
@@ -130,11 +137,13 @@ export default function Transformative() {
                                 </div>
                             </div>
                             <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfaa3-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfaa3" style="opacity:0"
+                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfaa3"
                                 className="testimonial-card hide-landscape">
-                                <div className="quote-icon"><img loading="lazy"
-                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
-                                    alt="Quote Icon" className="icon" /></div>
+                                <div className="quote-icon">
+                                    <img loading="lazy"
+                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"
+                                        alt="Quote Icon" className="icon" />
+                                </div>
                                 <div className="testimonial-content">
                                     <div className="testimonial-quote">
                                         <div className="text-size-medium">Thanks to Entropy’s AI-driven personalization, we’ve
@@ -143,9 +152,11 @@ export default function Transformative() {
                                         </div>
                                     </div>
                                     <div className="testimonial-person-info">
-                                        <div className="testimonial-image"><img loading="lazy"
-                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg"
-                                            alt="Image" /></div>
+                                        <div className="testimonial-image">
+                                            <img loading="lazy"
+                                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg"
+                                                alt="Image" />
+                                        </div>
                                         <div className="testimonial-info">
                                             <div className="text-size-small text-weight-bold">James Wilson</div>
                                             <div className="opacity-60">
@@ -156,7 +167,7 @@ export default function Transformative() {
                                 </div>
                             </div>
                             <div id="w-node-_525f333e-16b4-a716-1c03-a45f2fadfab3-aee64be3"
-                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfab3" style="opacity:0"
+                                data-w-id="525f333e-16b4-a716-1c03-a45f2fadfab3"
                                 className="testimonial-card hide-landscape">
                                 <div className="quote-icon"><img loading="lazy"
                                     src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c45_Quote%20Icon.svg"

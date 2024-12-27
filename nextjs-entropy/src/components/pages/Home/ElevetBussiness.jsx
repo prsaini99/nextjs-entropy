@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function ElevetBussiness() {
@@ -17,7 +18,7 @@ export default function ElevetBussiness() {
                                 </div>
                             </div>
                         </div>
-                        <div data-w-id="b063efcf-b404-c1ec-7d87-e726ec74cfb1" style="opacity:0"
+                        <div data-w-id="b063efcf-b404-c1ec-7d87-e726ec74cfb1"
                             className="steps-stack-component">
                             <div className="steps-item">
                                 <div className="steps-card">
@@ -40,12 +41,12 @@ export default function ElevetBussiness() {
                                                     into your existing systems.</div>
                                             </div>
                                         </div>
-                                        <a href="/pricing" className="primary-button w-inline-block">
+                                        <Link href="/pricing" className="primary-button w-inline-block">
                                             <div className="relative">
                                                 <div className="text-size-small text-weight-bold">Start Integration</div>
                                             </div>
                                             <div className="button-elipse"></div>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="right-content">
                                         <div className="steps-image"><img
@@ -78,12 +79,12 @@ export default function ElevetBussiness() {
                                                     efficiency and effectiveness.</div>
                                             </div>
                                         </div>
-                                        <a href="/pricing" className="primary-button w-inline-block">
+                                        <Link href="/pricing" className="primary-button w-inline-block">
                                             <div className="relative">
                                                 <div className="text-size-small text-weight-bold">Optimize Now</div>
                                             </div>
                                             <div className="button-elipse"></div>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="right-content">
                                         <div className="steps-image"><img
@@ -116,12 +117,12 @@ export default function ElevetBussiness() {
                                                     and stay ahead in a competitive market.</div>
                                             </div>
                                         </div>
-                                        <a href="/pricing" className="primary-button w-inline-block">
+                                        <Link href="/pricing" className="primary-button w-inline-block">
                                             <div className="relative">
                                                 <div className="text-size-small text-weight-bold">Explore Innovations</div>
                                             </div>
                                             <div className="button-elipse"></div>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="right-content">
                                         <div className="steps-image"><img
