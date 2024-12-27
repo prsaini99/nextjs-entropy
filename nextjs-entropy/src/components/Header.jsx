@@ -17,23 +17,23 @@ export default function Header() {
                                     <a href="/" aria-current="page" className="nav-link w-inline-block w--current">
                                         <div>Home</div>
                                     </a>
-                                    <a href="/about.html" className="nav-link w-inline-block">
+                                    <a href="/about" className="nav-link w-inline-block">
                                         <div>About</div>
                                     </a>
-                                    <a href="/features.html" className="nav-link w-inline-block">
+                                    <a href="/features" className="nav-link w-inline-block">
                                         <div>Features</div>
                                     </a>
-                                    <a href="/pricing.html" className="nav-link w-inline-block">
+                                    {/* <a href="/pricing" className="nav-link w-inline-block">
                                         <div>Pricing</div>
-                                    </a>
+                                    </a> */}
                                     <div className="mobile-navbar-content">
-                                        <a href="/blog.html" className="link-block-navbar w-inline-block">
+                                        {/* <a href="/blog" className="link-block-navbar w-inline-block">
                                             <div>What’s New</div>
                                         </a>
-                                        <a href="/faq.html" className="link-block-navbar w-inline-block">
+                                        <a href="/faq" className="link-block-navbar w-inline-block">
                                             <div>Help</div>
-                                        </a>
-                                        <a href="/contact.html" className="primary-button w-inline-block">
+                                        </a> */}
+                                        <a href="/contact-us" className="primary-button w-inline-block">
                                             <div className="text-size-small text-weight-bold">Contact Us</div>
                                         </a>
                                     </div>
@@ -45,13 +45,13 @@ export default function Header() {
                                 </div>
                             </div>
                             <div className="right-navbar-content">
-                                <a href="/blog.html" className="link-block-navbar w-inline-block">
+                                {/* <a href="/blog" className="link-block-navbar w-inline-block">
                                     <div>What’s New</div>
                                 </a>
-                                <a href="/faq.html" className="link-block-navbar w-inline-block">
+                                <a href="/faq" className="link-block-navbar w-inline-block">
                                     <div>Help</div>
-                                </a>
-                                <a href="/contact.html" className="primary-button w-inline-block">
+                                </a> */}
+                                <a href="/contact-us" className="primary-button w-inline-block">
                                     <div className="relative">
                                         <div className="text-size-small text-weight-bold">Contact Us</div>
                                     </div>
