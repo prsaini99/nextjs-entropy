@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <div className="utility-page-wrap">
             <AnimatedInViewDiv className="utility-page-content">
-                <h2 className="not-found-heading">404</h2>
+                <h2 className="text-9xl">404</h2>
                 <p className="text-7xl mb-10">Page not found</p>
                 <Link href="/" className="primary-button w-inline-block">
                     <div className="relative">
