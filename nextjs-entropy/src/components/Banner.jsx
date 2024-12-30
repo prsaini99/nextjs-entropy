@@ -1,10 +1,12 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
+import AnimatedInViewDiv from './Animate/AppearInView'
 
 export default function Banner() {
     return (
         <section>
-            <div className="padding-global">
+            <AnimatedInViewDiv className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="banner-wrapper">
                         <div className="banner-content">
@@ -49,7 +51,7 @@ export default function Banner() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </AnimatedInViewDiv>
         </section>
     )
 }

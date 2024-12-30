@@ -1,65 +1,136 @@
-import React from 'react'
+'use client';
+import React, { useState } from 'react';
+import AnimatedInViewDiv from '@/components/Animate/AppearInView';
+
+const FORM_STATUS = {
+    IDLE: "idle",
+    SUCCESS: "success",
+    ERROR: "error",
+}
+
+const initData = {
+    name: '',
+    email: '',
+    message: '',
+}
 
 export default function ContactWrapper() {
+    const [formData, setFormData] = useState(initData);
+    const [status, setStatus] = useState(FORM_STATUS.IDLE);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus(FORM_STATUS.IDLE);
+        try {
+            console.log('Submitting:', formData);
+            if (!formData.name || !formData.email || !formData.message)
+                throw new Error('All fields are required.');
+
+            setStatus(FORM_STATUS.SUCCESS);
+        } catch (error) {
+            setFormData(initData)
+            setStatus(FORM_STATUS.ERROR);
+        }
+    };
+
     return (
         <section>
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="contact-wrapper">
-                        <div className="hero-component">
-                            <div data-w-id="8b742f1a-d0e3-4767-e898-d3a96ddf6063" className="max-width-70ch">
+                        <AnimatedInViewDiv className="hero-component">
+                            <div className="max-width-70ch">
                                 <div className="heading-2 text-weight-bold">
                                     Have questions or need support?
                                 </div>
                             </div>
-                        </div>
-                        <div id="w-node-db289675-c74d-bc81-254e-a35a802fe12b-aee64c4f"
-                            data-w-id="db289675-c74d-bc81-254e-a35a802fe12b"
-                            className="form-wrapper w-form">
-                            <form id="email-form" name="email-form" data-name="Email Form" method="get" className="form"
-                                data-wf-page-id="66f30c8d2ac082d2aee64c4f"
-                                data-wf-element-id="db289675-c74d-bc81-254e-a35a802fe12c">
-                                <div className="form-content">
-                                    <div className="name-wrapper-contact">
-                                        <label htmlFor="Name" className="text-size-medium-vw">Name</label>
-                                        <input className="text-field-contact w-input" maxLength="256" name="Name"
-                                            data-name="Name" placeholder="Enter your name" type="text" id="Name"
-                                            required="" />
-                                    </div>
-                                    <div className="name-wrapper-contact">
-                                        <label htmlFor="Enter-Your-Email" className="text-size-medium-vw">E-mail</label>
-                                        <input className="text-field-contact w-input" maxLength="256"
-                                            name="Enter-Your-Email" data-name="Enter Your Email"
-                                            placeholder="Enter your e-mail" type="email" id="Enter-Your-Email"
-                                            required="" />
-                                    </div>
-                                    <label htmlFor="Text-Field" className="text-size-medium-vw">Message</label>
-                                    <textarea id="Text-Field" name="Text-Field" maxLength="5000" data-name="Text Field"
-                                        placeholder="Your message..." className="text-field-contact w-input"></textarea>
-                                </div>
-                                <div className="contact-button align-center">
-                                    <div className="primary-button">
-                                        <input type="submit" data-wait="Please wait..." className="submit-button w-button"
-                                            value="Submit" />
-                                        <div className="relative">
-                                            <div className="text-size-small text-weight-bold">Submit Message</div>
+                        </AnimatedInViewDiv>
+                        <AnimatedInViewDiv className="form-wrapper w-form" delay={0.4}>
+                            {status === FORM_STATUS.IDLE &&
+                                <form delay={0.2} id="email-form" name="email-form" onSubmit={handleSubmit} className="form">
+                                    <div className="form-content">
+                                        <div className="name-wrapper-contact">
+                                            <label htmlFor="name" className="text-size-medium-vw">
+                                                Name
+                                            </label>
+                                            <input
+                                                className="text-field-contact w-input"
+                                                maxLength="256"
+                                                name="name"
+                                                placeholder="Enter your name"
+                                                type="text"
+                                                id="name"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                required
+                                            />
                                         </div>
-                                        <div className="button-elipse"></div>
+                                        <div className="name-wrapper-contact">
+                                            <label htmlFor="email" className="text-size-medium-vw">
+                                                E-mail
+                                            </label>
+                                            <input
+                                                className="text-field-contact w-input"
+                                                maxLength="256"
+                                                name="email"
+                                                placeholder="Enter your e-mail"
+                                                type="email"
+                                                id="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="message" className="text-size-medium-vw">
+                                                Message
+                                            </label>
+                                            <textarea
+                                                id="message"
+                                                name="message"
+                                                maxLength="5000"
+                                                placeholder="Your message..."
+                                                className="text-field-contact w-input"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                required
+                                            ></textarea>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                            <div className="success-message w-form-done">
-                                <div className="text-size-contact">Thank you! Your submission has been received!</div>
-                            </div>
-                            <div className="error-message w-form-fail">
-                                <div className="text-size-medium-contact">Oops! Something went wrong while submitting the
-                                    form.
-                                </div>
-                            </div>
-                        </div>
+                                    <div className="contact-button align-center">
+                                        <button type="submit" className="primary-button">
+                                            <span>Submit Message</span>
+                                        </button>
+                                    </div>
+                                </form>}
+                            {status === FORM_STATUS.SUCCESS && (
+                                <AnimatedInViewDiv className="success-message">
+                                    <div className="text-size-contact">Thank you! Your submission has been received!</div>
+                                </AnimatedInViewDiv>
+                            )}
+                            {status === FORM_STATUS.ERROR && (
+                                <AnimatedInViewDiv className="flex flex-col gap-10 items-center">
+                                    <div className="error-message px-4 py-2">
+                                        <div className="text-size-medium-contact">
+                                            Oops! Something went wrong while submitting the form. Please try again.
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button className="primary-button" onClick={() => setStatus(FORM_STATUS.IDLE)}>
+                                            <span>Try again</span>
+                                        </button>
+                                    </div>
+                                </AnimatedInViewDiv>
+                            )}
+                        </AnimatedInViewDiv>
                     </div>
                 </div>
             </div>
         </section>
-    )
+    );
 }

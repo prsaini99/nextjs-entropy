@@ -1,5 +1,7 @@
-import Link from 'next/link';
+'use client'
 import React from 'react';
+import Link from 'next/link';
+import AnimatedInViewDiv from './Animate/AppearInView';
 
 const links = {
     explore: [
@@ -43,31 +45,31 @@ export default function Footer() {
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="footer-component">
-                        <div data-w-id="93f4457d-ec22-3c66-b213-0b7ef6a67132" className="footer-heading">
+                        <AnimatedInViewDiv className="footer-heading">
                             <img loading="lazy"
                                 src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cca_Entropy%C2%AE.svg"
                                 alt="Entropy Logo" />
-                        </div>
-                        <div data-w-id="93f4457d-ec22-3c66-b213-0b7ef6a67134" className="w-layout-grid footer-grid">
+                        </AnimatedInViewDiv>
+                        <div className="w-layout-grid footer-grid">
                             {Object.entries(links).map(([category, items], index) => (
-                                <div key={index} className="footer-grid-wrap">
+                                <AnimatedInViewDiv key={index} delay={index * .2} className="footer-grid-wrap">
                                     <div className="text-size-large text-weight-medium">{category.charAt(0).toUpperCase() + category.slice(1)}</div>
                                     <div className="footer-links-wrapper">
                                         {items.map(item => (
                                             <Link key={item.href} href={item.href} className={`footer-link ${item.current ? "w--current" : ""}`}>{item.label}</Link>
                                         ))}
                                     </div>
-                                </div>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
-                        <div data-w-id="93f4457d-ec22-3c66-b213-0b7ef6a6715f" className="footer-social-wrapper">
+                        <AnimatedInViewDiv className="footer-social-wrapper">
                             {socialLinks.map((link, index) => (
                                 <Link key={index} href={link.href} className="footer-social w-inline-block">
                                     <img loading="lazy" src={link.iconSrc} alt={link.alt} className="icon-embed" />
                                 </Link>
                             ))}
-                        </div>
-                        <div data-w-id="93f4457d-ec22-3c66-b213-0b7ef6a67168" className="footer-links-wrapper">
+                        </AnimatedInViewDiv>
+                        <div className="footer-links-wrapper animate-slideUpFadeIn-1">
                             <div className="footer-links">
                                 {footerLinks.map((link, index) => (
                                     <React.Fragment key={index}>

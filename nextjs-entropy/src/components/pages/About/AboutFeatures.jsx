@@ -1,5 +1,7 @@
+'use client'
 import React from 'react'
 import { MoreAImodels, LearnMoreButton, GetStarted } from '@/components/Buttons'
+import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 const features = [
     {
@@ -22,10 +24,10 @@ const features = [
 export default function AboutFeatures() {
     return (
         <section>
-            <div className="padding-global">
+            <div className="padding-global py-16">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="about-features-wrapper">
-                        <div className="about-features-header">
+                        <AnimatedInViewDiv className="about-features-header">
                             <MoreAImodels />
                             <div className="header">
                                 <div className="heading-4 text-weight-medium">
@@ -39,10 +41,10 @@ export default function AboutFeatures() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </AnimatedInViewDiv>
                         <div className="w-layout-grid about-features-grid">
-                            {features.map((feature) => (
-                                <div className="about-features-card" key={feature.title}>
+                            {features.map((feature, index) => (
+                                <AnimatedInViewDiv delay={index * .2} className="about-features-card" key={feature.title}>
                                     <div className="about-features-image">
                                         <img
                                             sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 28vw"
@@ -60,14 +62,13 @@ export default function AboutFeatures() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
-                        <div data-w-id="a4a9a67c-c774-e652-722a-738ad99a6e0a"
-                            className="double-button-component margin-top-button-features">
+                        <AnimatedInViewDiv className="double-button-component margin-top-button-features">
                             <GetStarted />
                             <LearnMoreButton />
-                        </div>
+                        </AnimatedInViewDiv>
                     </div>
                 </div>
             </div>

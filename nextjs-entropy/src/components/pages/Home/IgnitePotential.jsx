@@ -1,4 +1,6 @@
+'use client'
 import React from 'react'
+import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 const features = [
     {
@@ -25,7 +27,7 @@ export default function IgnitePotential() {
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="home-features-wrapper">
-                        <div className="header">
+                        <AnimatedInViewDiv className="header">
                             <div className="heading-4 text-weight-bold">Ignite Your Potential with AI-Driven Innovations</div>
                             <div className="opacity-60">
                                 <div className="max-width-48ch">
@@ -34,10 +36,10 @@ export default function IgnitePotential() {
                                         vision of your ambitions.</div>
                                 </div>
                             </div>
-                        </div>
+                        </AnimatedInViewDiv>
                         <div className="features-grid">
                             {features.map((feature, index) => (
-                                <div key={index} className="features">
+                                <AnimatedInViewDiv key={index} className="features" delay={index * .2}>
                                     <div className="text-size-large">{index + 1}</div>
                                     <div className="features-content">
                                         <div className="text-weight-medium">{feature.title}</div>
@@ -45,7 +47,7 @@ export default function IgnitePotential() {
                                             <div>{feature.description}</div>
                                         </div>
                                     </div>
-                                </div>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>

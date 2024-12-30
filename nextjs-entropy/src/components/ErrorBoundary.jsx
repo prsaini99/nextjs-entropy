@@ -40,7 +40,7 @@ class ErrorBoundary extends React.Component {
                         Error in component: {this.component}
                     </div>
                     <div className="primary-button w-inline-block" onClick={() => this.setState({ hasError: false })}>
-                        <div className="text-size-small text-weight-bold">Contact Us</div>
+                        <div className="text-size-small text-weight-bold">Try again</div>
                     </div>
                 </div>
             );

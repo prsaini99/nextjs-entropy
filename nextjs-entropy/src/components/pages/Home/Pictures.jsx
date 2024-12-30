@@ -1,14 +1,15 @@
 'use client'
 import Image from "next/image";
+import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 
 export default function Pictures() {
 
     return (
-        <div className="overflow-hidden animate-slideUpFadeIn-1">
+        <div className="overflow-hidden">
             <section>
-                <div data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1391" className="about-hero-interaction">
+                <AnimatedInViewDiv className="about-hero-interaction">
                     <div className="hero-sticky-component">
-                        <div data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1393" className="sticky-images left">
+                        <div className="sticky-images left">
                             <Image
                                 sizes="(max-width: 479px) 100vw, 30vw"
                                 src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce8_Hero%20Image.jpg"
@@ -19,7 +20,7 @@ export default function Pictures() {
                                 height={500}
                             />
                         </div>
-                        <div data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1395" className="sticky-images middle">
+                        <div className="sticky-images middle">
                             <div
                                 data-poster-url="https://cdn.prod.website-files.com/66d89db32b418832a387e57c%2F66d8c23fec6488becdc7f741_About%20Hero%20Video-poster-00001.jpg"
                                 data-video-urls="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.mp4,https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.webm"
@@ -45,7 +46,7 @@ export default function Pictures() {
                                 </video>
                             </div>
                         </div>
-                        <div data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1397" className="sticky-images right">
+                        <div className="sticky-images right">
                             <Image
                                 sizes="(max-width: 479px) 100vw, 30vw"
                                 src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c7a_Hero%20Image.jpg"
@@ -57,7 +58,7 @@ export default function Pictures() {
                             />
                         </div>
                     </div>
-                </div>
+                </AnimatedInViewDiv>
             </section>
         </div>
     );

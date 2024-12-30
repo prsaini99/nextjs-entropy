@@ -1,5 +1,7 @@
+'use client'
 import React from 'react'
 import { MoreAImodels } from '@/components/Buttons'
+import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 export default function PhaseCards() {
     return (
@@ -7,7 +9,7 @@ export default function PhaseCards() {
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="phase-cards-wrapper">
-                        <div className="phase-cards-header">
+                        <AnimatedInViewDiv className="phase-cards-header">
                             <MoreAImodels />
                             <div className="header">
                                 <div className="heading-4 text-weight-medium">Elevate Your Business with Our Three-Phase AI Approach</div>
@@ -17,7 +19,7 @@ export default function PhaseCards() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </AnimatedInViewDiv>
                         <div className="phase-cards-grid">
                             {[
                                 {
@@ -33,7 +35,7 @@ export default function PhaseCards() {
                                     description: "Drive innovation and explore new opportunities to scale a competitive edge."
                                 }
                             ].map((item, index) => (
-                                <div className="phase-cards" key={index}>
+                                <AnimatedInViewDiv delay={index * .2} className="phase-cards" key={index}>
                                     <div className="phase-cards-content">
                                         <div className="text-size-large text-weight-medium">{item.title}</div>
                                         <div>{item.description}</div>
@@ -43,7 +45,7 @@ export default function PhaseCards() {
                                             {(index + 1).toString().padStart(2, '0')}
                                         </div>
                                     </div>
-                                </div>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>

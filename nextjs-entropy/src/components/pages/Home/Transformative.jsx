@@ -1,5 +1,8 @@
-import { MoreAImodels } from '@/components/Buttons'
+'use client'
+
 import React from 'react'
+import AnimatedInViewDiv from '@/components/Animate/AppearInView'
+import { MoreAImodels } from '@/components/Buttons'
 
 export default function Transformative() {
     return (
@@ -7,7 +10,7 @@ export default function Transformative() {
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="testimonial-wrapper">
-                        <div className="testimonial-component">
+                        <AnimatedInViewDiv className="testimonial-component">
                             <MoreAImodels />
                             <div className="header">
                                 <div className="heading-4 text-weight-medium">Transformative Results with Profound Impact on
@@ -20,7 +23,7 @@ export default function Transformative() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </AnimatedInViewDiv>
                         <div className="testimonial-grid">
                             {[
                                 {
@@ -65,8 +68,8 @@ export default function Transformative() {
                                     name: "John Thompson",
                                     title: "IT Director at SecureNet Solutions"
                                 }
-                            ].map(({ id, quote, imageSrc, name, title }) => (
-                                <div key={id} id={`w-node-_` + id + `-aee64be3`} className="testimonial-card">
+                            ].map(({ id, quote, imageSrc, name, title }, index) => (
+                                <AnimatedInViewDiv key={id} className="testimonial-card" delay={index * 0.2}>
                                     <div className="quote-icon">
                                         <QuoteSvg />
                                     </div>
@@ -86,7 +89,7 @@ export default function Transformative() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>

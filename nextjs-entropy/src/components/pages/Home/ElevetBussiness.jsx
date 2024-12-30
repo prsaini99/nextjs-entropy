@@ -1,5 +1,7 @@
-import Link from 'next/link'
+'use client'
 import React from 'react'
+import Link from 'next/link'
+import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 const steps = [
     {
@@ -34,7 +36,7 @@ export default function ElevetBussiness() {
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="steps-wrapper">
-                        <div className="header">
+                        <AnimatedInViewDiv className="header">
                             <div className="heading-4 text-weight-medium">Elevate Your Business with Our Three-Phase AI Approach
                             </div>
                             <div className="opacity-60">
@@ -44,10 +46,10 @@ export default function ElevetBussiness() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div data-w-id="b063efcf-b404-c1ec-7d87-e726ec74cfb1" className="steps-stack-component">
+                        </AnimatedInViewDiv>
+                        <div className="steps-stack-component">
                             {steps.map((step, index) => (
-                                <div key={index} className="steps-item">
+                                <AnimatedInViewDiv key={index} className="steps-item">
                                     <div className="steps-card">
                                         <div className="left-content">
                                             <div className="steps-content">
@@ -83,7 +85,7 @@ export default function ElevetBussiness() {
                                                 loading="lazy" className="image" /></div>
                                         </div>
                                     </div>
-                                </div>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>
