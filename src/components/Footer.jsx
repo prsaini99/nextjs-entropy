@@ -2,15 +2,16 @@
 import React from 'react';
 import Link from 'next/link';
 import AnimatedInViewDiv from './Animate/AppearInView';
+import ROUTES from '@/constants/routes';
 
 const links = {
     explore: [
-        { href: "/", label: "Home", current: true },
-        { href: "/about", label: "About" },
-        { href: "/features", label: "Features" }
+        { href: ROUTES.HOME, label: "Home", current: true },
+        { href: ROUTES.ABOUT, label: "About" },
+        { href: ROUTES.FEATURES, label: "Features" }
     ],
     support: [
-        { href: "/contact", label: "Contact" },
+        { href: ROUTES.CONTACT, label: "Contact" },
         { href: "/pricing", label: "Pricing" },
         { href: "/faq", label: "FAQ" }
     ],
