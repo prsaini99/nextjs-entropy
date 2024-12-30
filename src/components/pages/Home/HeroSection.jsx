@@ -21,7 +21,7 @@ export default function HeroSection() {
                     <div className="hero-wrapper">
                         <AnimatedInViewDiv className="hero-component">
                             <MoreAImodels />
-                            <div className="max-width-70ch animate-slideUpFadeIn-0.6">
+                            <div className="max-width-70ch">
                                 <div className="heading-2 text-weight-bold">Unlock the Future AI with Entropy</div>
                             </div>
                         </AnimatedInViewDiv>
