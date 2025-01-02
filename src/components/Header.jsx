@@ -115,7 +115,7 @@ const DropDown = () => {
     };
 
     return (
-        <div className="dropdown-container flex items-center justify-center">
+        <div className="dropdown-container flex items-center justify-center xlg:hidden">
             <motion.div animate={open ? "open" : "closed"} className="relative">
                 <Toggle {...{ open, setOpen }} />
 
