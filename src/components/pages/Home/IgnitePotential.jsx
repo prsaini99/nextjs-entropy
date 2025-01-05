@@ -1,23 +1,25 @@
 'use client'
 import React from 'react'
 import AnimatedInViewDiv from '@/components/Animate/AppearInView'
+import { GetStarted, LearnMoreButton } from '@/components/Buttons'
+import ROUTES from '@/constants/routes'
 
 const features = [
     {
         title: 'Adaptive Learning Models',
-        description: 'Continuously evolve with changing data using our self-learning algorithms',
+        description: 'Our algorithms learn faster than you can say machine learning.',
     },
     {
         title: 'Visual Recognition',
-        description: 'Automated image and video analysis for fast, actionable insights.',
+        description: 'Automated analysis so precise, it could spot a needle in a digital haystack.',
     },
     {
         title: 'Persona-Driven Precision',
-        description: 'Personalized interactions based on unique customer behaviors.',
+        description: 'Personalized interactions that make your customers feel like VIPs (Very Important Pixels).',
     },
     {
         title: 'SecureAI Shield',
-        description: 'Proactive threat detection and neutralization to keep your business secure.',
+        description: 'Cybersecurity so robust, even hackers need a permission slip.',
     },
 ]
 
@@ -28,7 +30,7 @@ export default function IgnitePotential() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="home-features-wrapper">
                         <AnimatedInViewDiv className="header">
-                            <div className="heading-4 text-weight-bold">Ignite Your Potential with AI-Driven Innovations</div>
+                            <div className="heading-4 text-weight-bold">Unlock the Future with Our Advanced Features</div>
                             <div className="opacity-60">
                                 <div className="max-width-48ch">
                                     <div className="text-size-regular">Fuel your business growth with AI solutions that are not
@@ -50,6 +52,9 @@ export default function IgnitePotential() {
                                 </AnimatedInViewDiv>
                             ))}
                         </div>
+                        <AnimatedInViewDiv>
+                                <LearnMoreButton title='Explore More Features' routeTo={ROUTES.FEATURES} />
+                        </AnimatedInViewDiv>
                     </div>
                 </div>
             </div>

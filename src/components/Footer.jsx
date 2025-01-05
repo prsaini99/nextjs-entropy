@@ -16,15 +16,10 @@ const links = {
         { href: "/faq", label: "FAQ" }
     ],
     others: [
-        { href: "/other/style-guide", label: "Style Guide" },
-        { href: "/other/changelog", label: "Changelog" },
-        { href: "/blog", label: "Blog" }
+        { href: "/blog", label: "Blog" },
+        { href: "/careers", label: "Careers" },
+        { href: "/privacy-policy", label: "Privacy Policy" },
     ],
-    utility: [
-        { href: "https://entropy-template.webflow.io/401", label: "Password" },
-        { href: "/other/instruction", label: "Instruction" },
-        { href: "/other/license", label: "License" }
-    ]
 };
 
 const socialLinks = [
@@ -71,22 +66,15 @@ export default function Footer() {
                             ))}
                         </AnimatedInViewDiv>
                         <div className="footer-links-wrapper animate-slideUpFadeIn-1">
-                            <div className="footer-links">
-                                {footerLinks.map((link, index) => (
-                                    <React.Fragment key={index}>
-                                        <Link href={link.href} className="footer-link">{link.label}</Link>
-                                        <div className="vertical-line"></div>
-                                    </React.Fragment>
-                                ))}
-                            </div>
+                            <p className="paragraph">Stay updated with the latest in IT solutions.  <Link href="https://webflow.com/" target="_blank" className="credits w-inline-block"><span className='font-bold'>Subscribe to our newsletter.</span></Link> </p>                         
                             <div className="credits-wrapper">
-                                <p>Copyright ©</p>
-                                <Link href="https://webflow.com/templates/designers/lucas-gusso" target="_blank" className="credits w-inline-block">
-                                    <p className="paragraph">Design &amp; Developed by <span className="text-color-white">Lucas Gusso</span></p>
-                                </Link>
+                                <p className="paragraph">2025</p>
                                 <Link href="https://webflow.com/" target="_blank" className="credits w-inline-block">
-                                    <p className="paragraph">Powered by <span className="text-color-white">Webflow</span></p>
+                                    <p className="paragraph">
+                                        entropy
+                                    </p>
                                 </Link>
+                                <p className="paragraph"> All rights reserved. Crafted with care and a dash of humor.</p>
                             </div>
                         </div>
                     </div>

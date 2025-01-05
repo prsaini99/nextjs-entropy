@@ -21,8 +21,18 @@ export default function HeroSection() {
                     <div className="hero-wrapper">
                         <AnimatedInViewDiv className="hero-component">
                             <MoreAImodels />
-                            <div className="max-width-70ch">
-                                <div className="heading-2 text-weight-bold">Unlock the Future AI with Entropy</div>
+
+                            <div className="max-width-75ch text-center">
+                                <div className="heading-4 text-weight-bold line-height-1-2">
+                                    Empowering Your Business with Cutting-Edge IT Solutions
+                                </div>
+                            </div>
+                            <div className="opacity-60">
+                                <div className="max-width-46ch">
+                                    <div className="text-size-regular">
+                                    Transforming Tech Challenges into Triumphs — One Byte at a Time.
+                                    </div>
+                                </div>
                             </div>
                         </AnimatedInViewDiv>
                         <AnimatedInViewDiv className="double-button-component margin-top-button-hero" delay={.2}>
@@ -31,7 +41,7 @@ export default function HeroSection() {
                         </AnimatedInViewDiv>
                         <AnimatedInViewDiv className="trusted-by-component" delay={.4}>
                             <div className="opacity-60">
-                                <div className="text-size-small">Trusted by design teams at</div>
+                                <div className="text-size-small">Join the ranks of our satisfied clients who have elevated their businesses with our expertise.</div>
                             </div>
                             <div className="trusted-by-hero-logos">
                                 {logos.map((logo, index) => (
