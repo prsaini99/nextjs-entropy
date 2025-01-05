@@ -2,7 +2,8 @@
 
 import React from 'react'
 import AnimatedInViewDiv from '@/components/Animate/AppearInView'
-import { MoreAImodels } from '@/components/Buttons'
+import { GetStarted, LearnMoreButton, MoreAImodels } from '@/components/Buttons'
+import ROUTES from '@/constants/routes'
 
 export default function Transformative() {
     return (
@@ -13,8 +14,7 @@ export default function Transformative() {
                         <AnimatedInViewDiv className="testimonial-component">
                             <MoreAImodels />
                             <div className="header">
-                                <div className="heading-4 text-weight-medium">Transformative Results with Profound Impact on
-                                    Success
+                                <div className="heading-4 text-weight-medium">Success Stories from Our Happy Clients
                                 </div>
                                 <div className="opacity-60">
                                     <div className="max-width-40ch">
@@ -28,46 +28,46 @@ export default function Transformative() {
                             {[
                                 {
                                     id: "525f333e-16b4-a716-1c03-a45f2fadfa63",
-                                    quote: "The AI tools from Entropy have revolutionized our workflow. Their adaptability and precision have set a new standard for our operations.",
+                                    quote: "Their IT solutions transformed our workflow. It’s like having a tech wizard on speed dial.",
                                     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd9_Testimonial%2001.jpg",
                                     name: "Alex Johnson",
                                     title: "CTO at TechInnovate"
                                 },
                                 {
                                     id: "525f333e-16b4-a716-1c03-a45f2fadfa73",
-                                    quote: "We’ve seen a significant boost in efficiency since integrating Entropy's AI solutions. The personalized features truly enhance our customer interactions.",
+                                    quote: "We’ve boosted efficiency and customer engagement. Our only regret? Not partnering sooner.",
                                     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd6_Testimonial%2003.jpg",
                                     name: "Emily Davis",
                                     title: "Marketing Director at RetailPulse"
                                 },
                                 {
                                     id: "525f333e-16b4-a716-1c03-a45f2fadfa83",
-                                    quote: "The predictive analytics provided by Entropy have been a game-changer for our strategic planning. We’re making more informed decisions than ever before.",
+                                    quote: "Predictive analytics that actually predict. Who knew?",
                                     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg",
                                     name: "Michael Lee",
-                                    title: "CTO at TechInnovate"
+                                    title: "Strategic Planner at FutureVision"
                                 },
-                                {
-                                    id: "525f333e-16b4-a716-1c03-a45f2fadfa93",
-                                    quote: "The visual recognition technology has streamlined our processes and provided us with valuable insights. Entropy is a key partner in our success.",
-                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd7_Testimonial%2002.jpg",
-                                    name: "Sarah Martinez",
-                                    title: "Operations Manager at Visionary Studios"
-                                },
-                                {
-                                    id: "525f333e-16b4-a716-1c03-a45f2fadfaa3",
-                                    quote: "Thanks to Entropy’s AI-driven personalization, we’ve seen a dramatic increase in customer satisfaction and engagement. It’s truly exceptional.",
-                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg",
-                                    name: "James Wilson",
-                                    title: "Customer Experience Lead at BrightPath"
-                                },
-                                {
-                                    id: "525f333e-16b4-a716-1c03-a45f2fadfab3",
-                                    quote: "The cybersecurity solutions from Entropy offer unparalleled protection for our data. We feel confident and secure knowing our systems are in good hands.",
-                                    imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cda_Testimonial%2005.jpg",
-                                    name: "John Thompson",
-                                    title: "IT Director at SecureNet Solutions"
-                                }
+                                // {
+                                //     id: "525f333e-16b4-a716-1c03-a45f2fadfa93",
+                                //     quote: "The visual recognition technology has streamlined our processes and provided us with valuable insights. Entropy is a key partner in our success.",
+                                //     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd7_Testimonial%2002.jpg",
+                                //     name: "Sarah Martinez",
+                                //     title: "Operations Manager at Visionary Studios"
+                                // },
+                                // {
+                                //     id: "525f333e-16b4-a716-1c03-a45f2fadfaa3",
+                                //     quote: "Thanks to Entropy’s AI-driven personalization, we’ve seen a dramatic increase in customer satisfaction and engagement. It’s truly exceptional.",
+                                //     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg",
+                                //     name: "James Wilson",
+                                //     title: "Customer Experience Lead at BrightPath"
+                                // },
+                                // {
+                                //     id: "525f333e-16b4-a716-1c03-a45f2fadfab3",
+                                //     quote: "The cybersecurity solutions from Entropy offer unparalleled protection for our data. We feel confident and secure knowing our systems are in good hands.",
+                                //     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cda_Testimonial%2005.jpg",
+                                //     name: "John Thompson",
+                                //     title: "IT Director at SecureNet Solutions"
+                                // }
                             ].map(({ id, quote, imageSrc, name, title }, index) => (
                                 <AnimatedInViewDiv key={id} className="testimonial-card" delay={index * 0.2}>
                                     <div className="quote-icon">
@@ -92,6 +92,9 @@ export default function Transformative() {
                                 </AnimatedInViewDiv>
                             ))}
                         </div>
+                        <AnimatedInViewDiv>
+                                <LearnMoreButton title='Read More Testimonials' routeTo={ROUTES.FEATURES} />
+                        </AnimatedInViewDiv>                        
                     </div>
                 </div>
             </div>

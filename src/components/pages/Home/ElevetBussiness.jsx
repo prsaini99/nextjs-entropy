@@ -2,12 +2,14 @@
 import React from 'react'
 import Link from 'next/link'
 import AnimatedInViewDiv from '@/components/Animate/AppearInView'
+import { LearnMoreButton } from '@/components/Buttons'
+import ROUTES from '@/constants/routes'
 
 const steps = [
     {
         phase: '01',
         title: 'Discovery and Integration',
-        description: 'Identify your unique needs and seamlessly integrate our AI solutions into your existing systems.',
+        description: 'We dive into your needs and seamlessly integrate solutions—scuba gear optional.',
         image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c46_Stack%20Images%2004.jpg',
         buttonText: 'Start Integration',
         buttonLink: '/pricing',
@@ -15,7 +17,7 @@ const steps = [
     {
         phase: '02',
         title: 'Optimization and Enhancement',
-        description: 'Second phase is focuses on fine-tuning our AI tools to maximize efficiency and effectiveness.',
+        description: 'Fine-tuning your systems until they’re as efficient as a caffeinated coder',
         image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c57_Stack%20Images%2003.jpg',
         buttonText: 'Optimize Now',
         buttonLink: '/pricing',
@@ -23,7 +25,7 @@ const steps = [
     {
         phase: '03',
         title: 'Innovation and Expansion',
-        description: 'This phase helps you scale your solutions, uncover new growth areas, and stay ahead in a competitive market.',
+        description: 'Scaling new heights and exploring growth areas—because the sky’s not the limit; it’s just the beginning.',
         image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c47_Stack%20Images%2002.jpg',
         buttonText: 'Explore Innovations',
         buttonLink: '/pricing',
@@ -37,7 +39,7 @@ export default function ElevetBussiness() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="steps-wrapper">
                         <AnimatedInViewDiv className="header">
-                            <div className="heading-4 text-weight-medium">Elevate Your Business with Our Three-Phase AI Approach
+                            <div className="heading-4 text-weight-medium">Elevate Your Business with Our Three-Step Approach
                             </div>
                             <div className="opacity-60">
                                 <div className="max-width-42ch">
@@ -87,7 +89,7 @@ export default function ElevetBussiness() {
                                     </div>
                                 </AnimatedInViewDiv>
                             ))}
-                        </div>
+                        </div>                       
                     </div>
                 </div>
             </div>
