@@ -3,44 +3,11 @@ import React from 'react';
 import ROUTES from '@/constants/routes';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import { GetStarted, LearnMoreButton } from '@/components/Buttons';
-
-const features = [
-    {
-        icon: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg',
-        title: 'Vantage Analytics',
-        description: 'Gain a comprehensive view of your data with advanced analytics that provide actionable insights and strategic recommendations.',
-        checks: [
-            'Real-Time Data Monitoring',
-            'Customizable Dashboards',
-            'Predictive Insights',
-        ],
-        imageSrc: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c67_Features%20Images%2003.jpg',
-    },
-    {
-        icon: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c63_Icon.svg',
-        title: 'Smart Automation',
-        description: 'Streamline your operations with intelligent automation that reduces manual tasks and enhances efficiency across your workflows.',
-        checks: [
-            'Task Scheduling',
-            'Workflow Integration',
-            'Error Reduction',
-        ],
-        imageSrc: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c6f_Features%20Images%2002.jpg',
-    },
-    {
-        icon: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c63_Icon.svg',
-        title: 'Personalized Engagement',
-        description: 'Enhance customer interactions with AI-driven personalization that tailors experiences based on individual preferences and behaviors.',
-        checks: [
-            'Behavioral Targeting',
-            'Dynamic Recommendations',
-            'Custom Communication',
-        ],
-        imageSrc: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg',
-    },
-];
+import { features } from './data';
 
 export default function FeaturesWrapper() {
+    const title = "Solutions Designed for Impact"
+    const description = "we don’t just solve problems—we redefine possibilities. Our suite of IT solutions is designed to address every challenge your business faces, from scaling operations to staying ahead in a rapidly evolving digital landscape. Let’s explore how we can transform your business, one solution at a time."
     return (
         <section>
             <div className="padding-global">
@@ -48,12 +15,12 @@ export default function FeaturesWrapper() {
                     <div className="features-wrapper">
                         <AnimatedInViewDiv className="header">
                             <div className="heading-4 text-weight-bold">
-                                Ignite Your Potential with AI-Driven Innovations
+                                {title}
                             </div>
                             <div className="opacity-60">
                                 <div className="max-width-48ch">
                                     <div>
-                                        Fuel your business growth with AI solutions that are not only dynamic and adaptive but also innovative and tailored to match the scale and vision of your ambitions.
+                                        {description}
                                     </div>
                                 </div>
                             </div>
@@ -76,16 +43,25 @@ export default function FeaturesWrapper() {
                                     )}
                                     <div className="features-vantages-content">
                                         <div className="features-heading-wrapper">
-                                            <div className="features-icon-wrapper">
-                                                <img src={feature.icon} alt="Icon" />
+                                            <div className='flex items-center gap-4'>
+                                                {feature.icon &&
+                                                    <div className="features-icon-wrapper">
+                                                        <img src={feature.icon} alt="Icon" />
+                                                    </div>}
+                                                {feature.quote &&
+                                                    <p className='text-gray-500 text-lg mb-0'>
+                                                        “{feature.quote}”
+                                                    </p>}
                                             </div>
                                             <div className="features-heading align-left">
-                                                <div className="heading-6 text-weight-medium">{feature.title}</div>
-                                                <div className="text-size-medium">{feature.description}</div>
+                                                {feature.title &&
+                                                    <div className="heading-6 text-weight-medium">{feature.title}</div>}
+                                                {feature.description &&
+                                                    <div className="text-size-medium">{feature.description}</div>}
                                             </div>
                                         </div>
                                         <div className="check-list">
-                                            {feature.checks.map((check, checkIndex) => (
+                                            {(feature.checks || [])?.map((check, checkIndex) => (
                                                 <div key={checkIndex} className="check-item">
                                                     <div className="check-icon-wrap">
                                                         <img
@@ -106,7 +82,7 @@ export default function FeaturesWrapper() {
                                             <div className="features-image-wrapper">
                                                 <img
                                                     sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
-                                                    src={feature.imageSrc}
+                                                    src={feature.imageSrc || ""}
                                                     alt="Features Image"
                                                     className="image"
                                                 />

@@ -13,7 +13,11 @@ export default function About() {
       <AboutFeatures />
       <PhaseCards />
       <Team />
-      <Banner />
+      <Banner
+        title="Your next chapter starts with us. Ready to turn the page? Join Us in Shaping the Future"
+        description="We’re not just here to solve problems—we’re here to create possibilities. Let’s work together to build a future where technology works for you, not the other way around."
+        subDescription="“Our process is a lot like a great recipe—precise, consistent, and guaranteed to impress (without burning anything).”"
+      />
     </>
   );
 }
