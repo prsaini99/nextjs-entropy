@@ -12,19 +12,19 @@ const links = {
     ],
     support: [
         { href: ROUTES.CONTACT, label: "Contact" },
-        { href: "/pricing", label: "Pricing" },
-        { href: "/faq", label: "FAQ" }
+        // { href: "/pricing", label: "Pricing" },
+        // { href: "/faq", label: "FAQ" }
     ],
-    others: [
-        { href: "/other/style-guide", label: "Style Guide" },
-        { href: "/other/changelog", label: "Changelog" },
-        { href: "/blog", label: "Blog" }
-    ],
-    utility: [
-        { href: "https://entropy-template.webflow.io/401", label: "Password" },
-        { href: "/other/instruction", label: "Instruction" },
-        { href: "/other/license", label: "License" }
-    ]
+    // others: [
+    //     { href: "/other/style-guide", label: "Style Guide" },
+    //     { href: "/other/changelog", label: "Changelog" },
+    //     { href: "/blog", label: "Blog" }
+    // ],
+    // utility: [
+    //     { href: "https://entropy-template.webflow.io/401", label: "Password" },
+    //     { href: "/other/instruction", label: "Instruction" },
+    //     { href: "/other/license", label: "License" }
+    // ]
 };
 
 const socialLinks = [
