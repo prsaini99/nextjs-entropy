@@ -2528,9 +2528,7 @@ blockquote {
 }
 
 .text-size-medium {
-	font-size: var(
-		--text-size--medium-2\<deleted\|variable-227de73e-b343-2d71-c2df-405ddac14c51\>
-	);
+    font-size: var(--text-size--medium-2);
 }
 
 .heading-1 {
