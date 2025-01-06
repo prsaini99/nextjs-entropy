@@ -18,16 +18,16 @@ const logos = [
 export default function TrustedByAbout() {
     return (
         <section>
-            <div className="padding-global">
+            <div className="padding-global py-16">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="trusted-by-about-component">
                         <AnimatedInViewDiv className="opacity-60">
-                            <div className="text-size-small">Trusted by design teams at</div>
+                            <div className="text-size-small">Join the ranks of our satisfied clients who have elevated their businesses with our expertise.</div>
                         </AnimatedInViewDiv>
                         <div className="trusted-by-about-logos logos">
                             {logos.map((logo, index) => (
                                 <AnimatedInViewDiv delay={index * .1} key={index} className="flex justify-center items-center">
-                                    <img loading="lazy" src={logo.src} alt="Logo" className='w-11/12 h-5/6' />
+                                    <img loading="lazy" src={logo.src} alt="Logo" className='w-sm-[200px] w-11/12 h-5/6' />
                                 </AnimatedInViewDiv>
                             ))}
                         </div>
