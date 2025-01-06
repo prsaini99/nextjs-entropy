@@ -10,29 +10,23 @@ export default function PhaseCards() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="phase-cards-wrapper">
                         <AnimatedInViewDiv className="phase-cards-header">
-                            <MoreAImodels />
                             <div className="header">
-                                <div className="heading-4 text-weight-medium">Elevate Your Business with Our Three-Phase AI Approach</div>
-                                <div className="opacity-60">
-                                    <div className="max-width-40ch">
-                                        <div>Explore our three-phase approach to see how we drive growth and efficiency at every step.</div>
-                                    </div>
-                                </div>
+                                <div className="heading-4 text-weight-medium">The Secret Sauce: How We Work</div>                              
                             </div>
                         </AnimatedInViewDiv>
                         <div className="phase-cards-grid">
                             {[
                                 {
-                                    title: "Comprehensive Discovery and Flawless Seamless Integration",
-                                    description: "Integrate AI solutions smoothly, setting a solid foundation for growth."
+                                    title: "Discover Your Needs",
+                                    description: "We take the time to learn your business inside out, identifying the gaps and opportunities."
                                 },
                                 {
-                                    title: "Advanced Optimization and Continuous Performance Enhancement",
-                                    description: "Optimize and enhance performance with advanced analytics and adaptive algorithms."
+                                    title: "Develop Tailored Solutions",
+                                    description: " Our team designs and deploys innovative tech that aligns with your goals."
                                 },
                                 {
-                                    title: "Strategic Innovation and Scalable Market Expansion",
-                                    description: "Drive innovation and explore new opportunities to scale a competitive edge."
+                                    title: "Drive Growth and Innovation",
+                                    description: "With systems in place, we focus on scaling your success and preparing for what’s next."
                                 }
                             ].map((item, index) => (
                                 <AnimatedInViewDiv delay={index * .2} className="phase-cards" key={index}>

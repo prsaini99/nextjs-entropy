@@ -14,16 +14,23 @@ export default function HeroSection() {
                             {/* Link to Features */}
                             <MoreAImodels />
                             {/* Hero Heading */}
-                            <div className="max-width-50ch">
-                                <div className="heading-2 text-weight-bold">Unlock the Future with AI</div>
+                            <div className="max-width-60ch">
+                                <div className="heading-3 text-weight-bold"> Redefining Tomorrow: Our Story</div>
+                            </div>
+                            <div className="opacity-60">
+                                <div className="max-width-75ch">
+                                    <div className="text-size-medium">
+                                        At Stackbinary, we believe technology isn’t just a tool. it’s the future waiting to be unlocked. From day one,
+                                        we’ve been dedicated to helping businesses overcome tech challenges and uncover new opportunities.
+                                        With a passion for innovation and a knack for problem-solving, we’ve transformed companies across industries,
+                                        making their goals our mission.</div>
+                                    <div className="text-size-medium">
+                                        “We don’t just adapt to change; we orchestrate it - while occasionally fueling up on coffee and brainstorming brilliance.”
+                                    </div>
+                                </div>
                             </div>
                         </AnimatedInViewDiv>
 
-                        {/* Double Button Section */}
-                        <AnimatedInViewDiv className="double-button-component margin-top-button-hero" delay={0.2}>
-                            <GetStarted />
-                            <LearnMoreButton />
-                        </AnimatedInViewDiv>
 
                         {/* Video Section */}
                         <AnimatedInViewDiv className="about-hero-image" delay={0.4}>
