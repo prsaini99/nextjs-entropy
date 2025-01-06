@@ -3,7 +3,11 @@ import Link from 'next/link'
 import React from 'react'
 import AnimatedInViewDiv from './Animate/AppearInView'
 
-export default function Banner() {
+export default function Banner({
+    title = "",
+    description = "",
+    subDescription = ""
+}) {
     return (
         <section>
             <AnimatedInViewDiv className="padding-global">
@@ -13,15 +17,20 @@ export default function Banner() {
                             <div className="top-content">
                                 <div className="max-width-38ch">
                                     <div className="text-align-right">
-                                        <div>Our AI solutions are designed to deliver measurable results and drive growth.
-                                            Start your journey now and experience the future of technology.</div>
+                                        <div>
+                                            {description}
+                                        </div>
+                                        <div>
+                                            {subDescription}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="bottom-content">
                                 <div className="max-width-50ch">
-                                    <div className="heading-5 text-weight-bold">Transform Your Business with Cutting-Edge AI
-                                        Today</div>
+                                    <div className="heading-5 text-weight-bold">
+                                        {title}
+                                    </div>
                                 </div>
                                 <Link href="/pricing" className="banner-button w-inline-block">
                                     <div className="banner-button-line">
