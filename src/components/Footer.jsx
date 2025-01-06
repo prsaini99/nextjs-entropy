@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import AnimatedInViewDiv from './Animate/AppearInView';
 import ROUTES from '@/constants/routes';
+import NewsLetter from './NewsLetter';
 
 const links = {
     explore: [
@@ -65,16 +66,18 @@ export default function Footer() {
                                 </Link>
                             ))}
                         </AnimatedInViewDiv>
+                        <AnimatedInViewDiv className="my-8">
+                            <NewsLetter />
+                        </AnimatedInViewDiv>
                         <div className="footer-links-wrapper animate-slideUpFadeIn-1">
-                            <p className="paragraph">Stay updated with the latest in IT solutions.  <Link href="https://webflow.com/" target="_blank" className="credits w-inline-block"><span className='font-bold'>Subscribe to our newsletter.</span></Link> </p>
                             <div className="credits-wrapper">
-                                <p className="paragraph">2025</p>
-                                <Link href="https://webflow.com/" target="_blank" className="credits w-inline-block">
-                                    <p className="paragraph">
-                                        entropy
-                                    </p>
-                                </Link>
-                                <p className="paragraph"> All rights reserved. Crafted with care and a dash of humor.</p>
+                                <p className="paragraph space-x-2">
+                                    <span className=''>© {new Date().getFullYear()}</span>
+                                    <Link href="https://webflow.com/" target="_blank" className=" hover:text-white">
+                                        Entropy.
+                                    </Link>
+                                    <span>All rights reserved. Crafted with care and a dash of humor.</span>
+                                </p>
                             </div>
                         </div>
                     </div>
