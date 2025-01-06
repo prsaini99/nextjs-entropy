@@ -12,7 +12,7 @@ export default function TransformBussiness() {
                     <div className="features-cards-wrapper">
                         <AnimatedInViewDiv className="header">
                             <div className="heading-4 text-weight-bold">
-                                Transform Your Business with Advanced AI Features
+                                Revolutionize Your Operations with Our Services
                             </div>
                             <div className="opacity-60">
                                 <div className="max-width-46ch">
@@ -36,12 +36,11 @@ export default function TransformBussiness() {
                                             loading="lazy" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">Fast Email Campaigns</div>
+                                        <div className="text-size-large">Rapid Deployment</div>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    Send lightning-quick email campaigns with
-                                                    Mercury Mail, ensuring your messages reach your audience in record time.
+                                                    Launch your projects at lightning speed - faster than your coffee cools down.
                                                 </div>
                                             </div>
                                         </div>
@@ -57,12 +56,11 @@ export default function TransformBussiness() {
                                             loading="lazy" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">Customer Relationships</div>
+                                        <div className="text-size-large">Customer Relationship Management</div>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    Featuring a beautiful and intuitive interface
-                                                    that simplifies interactions.
+                                                    Building relationships as strong as our coffee (and trust us, that’s strong).
                                                 </div>
                                             </div>
                                         </div>
@@ -77,12 +75,11 @@ export default function TransformBussiness() {
                                             alt="Image Features" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">Insights</div>
+                                        <div className="text-size-large">Data-Driven Insights</div>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    Gain powerful, data-driven insights, helping
-                                                    you make informed decisions.
+                                                    Turning data into decisions, so you don’t have to consult your magic 8-ball.
                                                 </div>
                                             </div>
                                         </div>
@@ -97,12 +94,11 @@ export default function TransformBussiness() {
                                             loading="lazy" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">Connectivity</div>
+                                        <div className="text-size-large">Enhanced Connectivity</div>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    Boost your social media presence, creating
-                                                    rings of connections and expanding your brand’s reach.
+                                                    Connecting you to the world, minus the tangled cables.
                                                 </div>
                                             </div>
                                         </div>
@@ -111,10 +107,7 @@ export default function TransformBussiness() {
                             </div>
                         </div>
                         <AnimatedInViewDiv>
-                            <div className="double-button-component">
-                                <GetStarted />
-                                <LearnMoreButton />
-                            </div>
+                                <LearnMoreButton title='Discover All Services' />
                         </AnimatedInViewDiv>
                     </div>
                 </div>
