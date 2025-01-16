@@ -6,18 +6,18 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 const features = [
     {
         image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5f_card-01.jpg',
-        title: 'Adaptive Learning Models',
-        description: 'Continuously evolve with changing data using our self-learning algorithms, ensuring your AI solutions stay ahead of the curve.',
+        title: 'Innovation as a Foundation',
+        description: 'We harness cutting-edge technologies to drive success',
     },
     {
         image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5e_card-02.jpg',
-        title: 'Visual Recognition',
-        description: 'Automate the analysis of images and videos with cutting-edge visual recognition technology, gaining valuable insights effortlessly.',
+        title: 'Customer-First Mindset',
+        description: 'Your success is our ultimate measure of achievement.',
     },
     {
         image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5d_card-03.jpg',
-        title: 'AI-Driven Personalization',
-        description: 'Create unique customer experiences with AI tools that personalize interactions based on individual behaviors and preferences.',
+        title: 'Transparency and Trust',
+        description: 'We build relationships that are as strong as our solutions.',
     },
 ]
 
@@ -31,17 +31,23 @@ export default function AboutFeatures() {
                             <MoreAImodels />
                             <div className="header">
                                 <div className="heading-4 text-weight-medium">
-                                    Ignite Your Potential with AI-Driven Innovations
+                                    Our Purpose: Turning Complexity into Simplicity
                                 </div>
                                 <div className="opacity-60">
-                                    <div className="max-width-40ch">
+                                    <div className="max-w-4xl">
                                         <div>
-                                            Fuel your business growth with AI solutions tailored to match the scale and vision of your ambitions.
+                                            Our mission is to make technology accessible and impactful. Whether you’re navigating a digital transformation or scaling your operations, we craft tailored solutions that empower you to focus on your core business. With us, you don’t just get a vendor—you gain a dedicated partner committed to your success.
                                         </div>
+                                        <p>
+                                            “We do the heavy lifting so you can keep doing what you do best—and maybe even sneak in an extra coffee break.”
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </AnimatedInViewDiv>
+                        <div className="heading-6 text-weight-medium">
+                            The Core of What We Stand For
+                        </div>
                         <div className="w-layout-grid about-features-grid">
                             {features.map((feature, index) => (
                                 <AnimatedInViewDiv delay={index * .2} className="about-features-card" key={feature.title}>
