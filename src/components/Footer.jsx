@@ -9,16 +9,16 @@ const links = {
     explore: [
         { href: ROUTES.HOME, label: "Home", current: true },
         { href: ROUTES.ABOUT, label: "About" },
-        { href: ROUTES.FEATURES, label: "Features" }
+        { href: ROUTES.SERVICES, label: "Services" }
     ],
     support: [
         { href: ROUTES.CONTACT, label: "Contact" },
-        { href: "/pricing", label: "Pricing" },
-        { href: "/faq", label: "FAQ" }
+        // { href: "/pricing", label: "Pricing" },
+        // { href: "/faq", label: "FAQ" }
     ],
     others: [
-        { href: "/blog", label: "Blog" },
-        { href: "/careers", label: "Careers" },
+        // { href: "/blog", label: "Blog" },
+        // { href: "/careers", label: "Careers" },
         { href: "/privacy-policy", label: "Privacy Policy" },
     ],
 };
@@ -45,7 +45,7 @@ export default function Footer() {
                         <AnimatedInViewDiv className="footer-heading">
                             <img loading="lazy"
                                 src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cca_Entropy%C2%AE.svg"
-                                alt="Entropy Logo" />
+                                alt="Stackbinary Logo" />
                         </AnimatedInViewDiv>
                         <div className="w-layout-grid footer-grid">
                             {Object.entries(links).map(([category, items], index) => (
@@ -74,7 +74,7 @@ export default function Footer() {
                                 <p className="paragraph space-x-2">
                                     <span className=''>© {new Date().getFullYear()}</span>
                                     <Link href="https://webflow.com/" target="_blank" className=" hover:text-white">
-                                        Entropy.
+                                        Stackbinary.
                                     </Link>
                                     <span>All rights reserved. Crafted with care and a dash of humor.</span>
                                 </p>

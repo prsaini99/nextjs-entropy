@@ -30,12 +30,17 @@ export default function Team() {
                         <AnimatedInViewDiv className="team-header">
                             <MoreAImodels />
                             <div className="header">
-                                <div className="heading-4 text-weight-medium">Meet the Visionaries Behind Our AI Solutions
+                                <div className="heading-4 text-weight-medium">
+                                    Meet the Game-Changers: Our Team
                                 </div>
                                 <div className="opacity-60">
-                                    <div className="max-width-40ch">
-                                        <div>Get to know the talented individuals who are committed to pushing the
-                                            boundaries and delivering exceptional results.</div>
+                                    <div className="max-width-4xl">
+                                        <div>
+                                            Behind every great solution is an even greater team.
+                                        </div>
+                                        <div>
+                                            “Partner with us for groundbreaking solutions that are as dynamic as your vision, delivered with a touch of personality.”
+                                        </div>
                                     </div>
                                 </div>
                             </div>

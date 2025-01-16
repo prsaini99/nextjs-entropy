@@ -3,6 +3,12 @@ import React from 'react'
 import { GetStarted, LearnMoreButton } from '@/components/Buttons'
 import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
+const services = [
+    { title: "Accelerated Deployment", description: "Empowering you to launch projects swiftly and efficiently, reducing time-to-market." },
+    { title: "Strategic Customer Relationship Management", description: "Enhancing customer engagement with tailored solutions that foster trust and long-term loyalty." },
+    { title: "Advanced Data Insights", description: "Transforming raw data into actionable intelligence to inform strategic decisions and drive success." },
+    { title: "Tailored Digital Integration", description: "Providing end-to-end technology solutions designed to streamline operations and boost performance." },
+]
 
 export default function TransformBussiness() {
     return (
@@ -14,15 +20,13 @@ export default function TransformBussiness() {
                             <div className="heading-4 text-weight-bold">
                                 Revolutionize Your Operations with Our Services
                             </div>
-                            <div className="opacity-60">
+                            {/* <div className="opacity-60">
                                 <div className="max-width-46ch">
                                     <div className="text-size-regular">
-                                        Our AI solutions are crafted to meet the unique
-                                        challenges of your industry, ensuring you stay ahead in a rapidly evolving digital
-                                        landscape.
+                                        {services[0].description}
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </AnimatedInViewDiv>
                         <div className="home-integrations-wrapper">
                             <div className="integrations-content-component">
@@ -36,11 +40,13 @@ export default function TransformBussiness() {
                                             loading="lazy" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">Rapid Deployment</div>
+                                        <div className="text-size-large">
+                                            {services[0].title}
+                                        </div>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    Launch your projects at lightning speed - faster than your coffee cools down.
+                                                    {services[0].description}
                                                 </div>
                                             </div>
                                         </div>
@@ -56,11 +62,13 @@ export default function TransformBussiness() {
                                             loading="lazy" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">Customer Relationship Management</div>
+                                        <div className="text-size-large">
+                                            {services[1].title}
+                                        </div>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    Building relationships as strong as our coffee (and trust us, that’s strong).
+                                                    {services[1].description}
                                                 </div>
                                             </div>
                                         </div>
@@ -75,11 +83,13 @@ export default function TransformBussiness() {
                                             alt="Image Features" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">Data-Driven Insights</div>
+                                        <div className="text-size-large">
+                                            {services[2].title}
+                                        </div>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    Turning data into decisions, so you don’t have to consult your magic 8-ball.
+                                                    {services[2].description}
                                                 </div>
                                             </div>
                                         </div>
@@ -94,11 +104,13 @@ export default function TransformBussiness() {
                                             loading="lazy" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">Enhanced Connectivity</div>
+                                        <div className="text-size-large">
+                                            {services[3].title}
+                                        </div>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    Connecting you to the world, minus the tangled cables.
+                                                    {services[3].description}
                                                 </div>
                                             </div>
                                         </div>
@@ -107,7 +119,7 @@ export default function TransformBussiness() {
                             </div>
                         </div>
                         <AnimatedInViewDiv>
-                                <LearnMoreButton title='Discover All Services' />
+                            <LearnMoreButton title='Discover All Services' />
                         </AnimatedInViewDiv>
                     </div>
                 </div>
