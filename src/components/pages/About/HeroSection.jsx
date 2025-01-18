@@ -51,17 +51,13 @@ export default function HeroSection() {
                                     muted
                                     playsInline
                                     style={{
-                                        backgroundImage: `url("https://cdn.prod.website-files.com/66d89db32b418832a387e57c%2F66d8c23fec6488becdc7f741_About%20Hero%20Video-poster-00001.jpg")`,
+                                        backgroundImage: `url("https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/about-poster")`,
                                         objectFit: "cover",
                                     }}
                                 >
                                     <source
-                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.mp4"
+                                        src="https://res.cloudinary.com/ddnydyvlf/video/upload/f_auto:video,q_auto/v1/stack-binary-live/about-video"
                                         type="video/mp4"
-                                    />
-                                    <source
-                                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.webm"
-                                        type="video/webm"
                                     />
                                 </video>
                             </div>
