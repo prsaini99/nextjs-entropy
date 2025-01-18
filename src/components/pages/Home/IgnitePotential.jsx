@@ -7,19 +7,19 @@ import ROUTES from '@/constants/routes'
 const features = [
     {
         title: 'Adaptive Learning Models',
-        description: 'Our algorithms learn faster than you can say machine learning.',
+        description: 'Revolutionizing industries with algorithms that continuously evolve, delivering unparalleled efficiency and accuracy.',
     },
     {
-        title: 'Visual Recognition',
-        description: 'Automated analysis so precise, it could spot a needle in a digital haystack.',
+        title: 'Visual Recognition Technology',
+        description: 'Providing automated, precise analysis to transform data into actionable insights across diverse sectors.',
     },
     {
-        title: 'Persona-Driven Precision',
-        description: 'Personalized interactions that make your customers feel like VIPs (Very Important Pixels).',
+        title: 'Persona-Driven Engagement',
+        description: 'Crafting personalized experiences that foster loyalty and enhance customer satisfaction in any industry.',
     },
     {
         title: 'SecureAI Shield',
-        description: 'Cybersecurity so robust, even hackers need a permission slip.',
+        description: 'Delivering cutting-edge cybersecurity solutions to protect your operations with uncompromising reliability.',
     },
 ]
 
@@ -31,13 +31,13 @@ export default function IgnitePotential() {
                     <div className="home-features-wrapper">
                         <AnimatedInViewDiv className="header">
                             <div className="heading-4 text-weight-bold">Unlock the Future with Our Advanced Features</div>
-                            <div className="opacity-60">
+                            {/* <div className="opacity-60">
                                 <div className="max-width-48ch">
                                     <div className="text-size-regular">Fuel your business growth with AI solutions that are not
                                         only dynamic and adaptive but also innovative and tailored to match the scale and
                                         vision of your ambitions.</div>
                                 </div>
-                            </div>
+                            </div> */}
                         </AnimatedInViewDiv>
                         <div className="features-grid">
                             {features.map((feature, index) => (
@@ -53,7 +53,7 @@ export default function IgnitePotential() {
                             ))}
                         </div>
                         <AnimatedInViewDiv>
-                                <LearnMoreButton title='Explore More Features' routeTo={ROUTES.FEATURES} />
+                            <LearnMoreButton title='Explore More Features' routeTo={ROUTES.SERVICES} />
                         </AnimatedInViewDiv>
                     </div>
                 </div>
