@@ -29,22 +29,17 @@ export default function Team() {
                     <div className="team-wrapper">
                         <AnimatedInViewDiv className="team-header">
                             <div className="header">
-                                <h2 className="heading-4 text-weight-medium">Meet the Game-Changers: Our Team</h2>
-                                <div className="opacity-60">
-                                    <div className="max-width-75ch">
-                                        <p className="text-size-regular">Behind every great solution is an even greater team. Our experts come from diverse backgrounds in AI, cybersecurity, data science, and beyond. Together, we combine decades of experience with a love for innovation to tackle even the toughest challenges your business faces.</p>
-                                        <p className="text-size-regular">“We’re basically the Avengers of IT, minus the capes but with plenty of tech gadgets - and an uncanny ability to solve problems.”</p>
-                                    </div>
+                                <div className="heading-4 text-weight-medium">
+                                    Meet the Game-Changers: Our Team
                                 </div>
                                 <div className="opacity-60">
-                                    <div className="max-width-75ch">
-                                        <p className="text-size-medium"><strong>Why Businesses Trust Us</strong></p>
-                                        <ul className="text-size-regular">
-                                            <li><strong>Customized Strategies:</strong> Your business isn’t generic, so why should your tech solutions be? We tailor every approach to your unique needs.</li>
-                                            <li><strong>Future-Ready Tech:</strong> From cloud computing to machine learning, we use the latest tools to keep you ahead of the curve.</li>
-                                            <li><strong>Long-Term Commitment:</strong> We’re not just here for the launch; we’re here for the journey.</li>
-                                        </ul>
-                                        <p className="text-size-regular mt-10">“Work with us, and you’ll not only get groundbreaking solutions but also the occasional bad pun—because tech shouldn’t be boring.”</p>
+                                    <div className="max-width-4xl">
+                                        <div>
+                                            Behind every great solution is an even greater team.
+                                        </div>
+                                        <div>
+                                            “Partner with us for groundbreaking solutions that are as dynamic as your vision, delivered with a touch of personality.”
+                                        </div>
                                     </div>
                                 </div>
                             </div>

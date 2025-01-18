@@ -2,49 +2,48 @@
 import React from 'react'
 import Link from 'next/link'
 import AnimatedInViewDiv from '@/components/Animate/AppearInView'
-import { LearnMoreButton } from '@/components/Buttons'
-import ROUTES from '@/constants/routes'
 
 const steps = [
     {
         phase: '01',
-        title: 'Discovery and Integration',
-        description: 'We dive into your needs and seamlessly integrate solutions—scuba gear optional.',
-        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sec3-1',
+        title: 'Customized Strategies',
+        description: 'Your business isn’t generic, so why should your tech solutions be? We tailor every approach to your unique needs.',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/dszfxqvlfvu2iaumamyh',
         buttonText: 'Start Integration',
         buttonLink: '/pricing',
     },
     {
         phase: '02',
-        title: 'Optimization and Enhancement',
-        description: 'Fine-tuning your systems until they’re as efficient as a caffeinated coder',
-        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/kxcu463dsepnw8vozsbu',
+        title: 'Future-Ready Tech',
+        description: 'From cloud computing to machine learning, we use the latest tools to keep you ahead of the curve.',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/s4v4fyrswl6h1ihzuwce',
         buttonText: 'Optimize Now',
         buttonLink: '/pricing',
     },
     {
         phase: '03',
-        title: 'Innovation and Expansion',
-        description: 'Scaling new heights and exploring growth areas—because the sky’s not the limit; it’s just the beginning.',
-        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sec3-3',
+        title: 'Long-Term Commitment',
+        description: 'We’re not just here for the launch; we’re here for the journey.',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/dmvwp2wnf8jkod7xykts',
         buttonText: 'Explore Innovations',
         buttonLink: '/pricing',
     },
 ]
 
-export default function ElevetBussiness() {
+export default function WhyBussinessesTrustUs() {
     return (
-        <section>
+        <section className='mb-10'>
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="steps-wrapper">
                         <AnimatedInViewDiv className="header">
-                            <div className="heading-4 text-weight-medium">Elevate Your Business with Our Three-Step Approach
+                            <div className="heading-4 text-weight-medium">
+                                Why Businesses Trust Us
                             </div>
                             <div className="opacity-60">
-                                <div className="max-width-42ch">
+                                <div className="max-width-4xl">
                                     <div>
-                                        Explore our three-phase approach to see how we drive growth and efficiency at every step.
+                                        “Work with us, and you’ll not only get groundbreaking solutions but also the occasional bad pun—because tech shouldn’t be boring.”
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +88,7 @@ export default function ElevetBussiness() {
                                     </div>
                                 </AnimatedInViewDiv>
                             ))}
-                        </div>                       
+                        </div>
                     </div>
                 </div>
             </div>

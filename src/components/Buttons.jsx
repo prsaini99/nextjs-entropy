@@ -6,8 +6,8 @@ import ArrowRight from '@/assets/svg/ArrowRight'
 
 export function MoreAImodels() {
     return (
-        <Link href={ROUTES.FEATURES} className="read-more-tag w-inline-block animate-slideUpFadeIn-0.5">
-            <div className="text-size-small text-weight-bold">More AI models</div>
+        <Link href={ROUTES.ABOUT} className="read-more-tag w-inline-block animate-slideUpFadeIn-0.5">
+            <div className="text-size-small text-weight-bold">About us</div>
             <div className="vertical-line-tag"></div>
             <div className="read-more-button opacity-50 hover:opacity-100">
                 <div className="text-size-small text-weight-bold">Read more</div>
@@ -19,7 +19,7 @@ export function MoreAImodels() {
 
 export function LearnMoreButton({
     title = "Learn More",
-    routeTo = ROUTES.FEATURES
+    routeTo = ROUTES.SERVICES
 }) {
     const [hover, setHover] = useState(false);
 

@@ -27,8 +27,8 @@ export default function Header() {
                                     <Link href={ROUTES.ABOUT} className="nav-link w-inline-block">
                                         <div>About</div>
                                     </Link>
-                                    <Link href={ROUTES.FEATURES} className="nav-link w-inline-block">
-                                        <div>Features</div>
+                                    <Link href={ROUTES.SERVICES} className="nav-link w-inline-block">
+                                        <div>Services</div>
                                     </Link>
                                     <div className="mobile-navbar-content">
                                         <Link href={ROUTES.CONTACT} className="primary-button w-inline-block">
@@ -128,7 +128,7 @@ const DropDown = () => {
                     {[
                         { title: "Home", to: ROUTES.HOME },
                         { title: "About", to: ROUTES.ABOUT },
-                        { title: "Features", to: ROUTES.FEATURES },
+                        { title: "Features", to: ROUTES.SERVICES },
                         { title: "Contact us", to: ROUTES.CONTACT },
                     ].map((item, index) => (
                         <Option key={index} setOpen={() => handleOptionClick(item.to)} text={item.title} />
