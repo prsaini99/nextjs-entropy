@@ -33,7 +33,7 @@ export const features = [
 			"Cloud Security Solutions (e.g., AWS, Azure, GCP)",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/iuxz2lzbywwiqm6sea3i",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c63_Icon.svg",
@@ -51,7 +51,7 @@ export const features = [
 			"Security Awareness Training for Employees",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c6f_Features%20Images%2002.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/octj65pof2ro13kutv04",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -69,7 +69,7 @@ export const features = [
 			"ETL (Extract, Transform, Load) Services",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c67_Features%20Images%2003.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/f4l6zoxoyoojy7xleu4f",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c63_Icon.svg",
@@ -87,7 +87,7 @@ export const features = [
 			"AI-powered Recommendation Systems",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/s5zgkmrtcsfoqv8vvt2g",
 	},
 	// {
 	//     icon: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg',
@@ -118,7 +118,7 @@ export const features = [
 			"DevOps Consulting",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c6f_Features%20Images%2002.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/ebps490jnt3s4hbepgmv",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -135,7 +135,7 @@ export const features = [
 			"Chatbot Integration for Automation",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c67_Features%20Images%2003.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/m0jnwskzswj4lt8v41zk",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c63_Icon.svg",
@@ -152,7 +152,7 @@ export const features = [
 			"Content Marketing Strategies",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/enxftbs01zjrzgjfu4xs",
 	},
 	// {
 	// 	icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c63_Icon.svg",
@@ -185,7 +185,7 @@ export const features = [
 			"Tokenization Services",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/ycl9jz46cowkd8e6twbb",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -201,7 +201,7 @@ export const features = [
 			"IoT Security Solutions",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/sgpswhobblfdgxbuyvfo",
 	},
 	// {
 	// 	icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -231,7 +231,7 @@ export const features = [
 			"Multiplayer Game Servers",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/gz4tsftlrgscaqpfgmef",
 	},
 	// {
 	// 	icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -263,7 +263,7 @@ export const features = [
 			"Payment Gateway Integration",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/kvkp5gjvll1glrwbqe1e",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -279,7 +279,7 @@ export const features = [
 			"Immersive Marketing Experiences",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/vnyrrcwlyxhjcrbdhecn",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -295,7 +295,7 @@ export const features = [
 			"IT Procurement and Vendor Management",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/af0rh08lliw6kmt2ete5",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -312,7 +312,7 @@ export const features = [
 			"Network Monitoring and Troubleshooting",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/vkqtqa8ico5th60lzqkr",
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
@@ -328,6 +328,6 @@ export const features = [
 			"Website Maintenance and Support",
 		],
 		imageSrc:
-			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c66_Features%20Images%2001.jpg",
+			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/q0gomcusnhaz1nrrxoot",
 	},
 ];

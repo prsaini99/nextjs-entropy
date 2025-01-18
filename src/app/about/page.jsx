@@ -16,8 +16,13 @@ export default function About() {
       <Team />
       <WhyBussinessesTrustUs />
       <Banner
+        bannerStyle={{
+          backgroundImage: "linear-gradient(180deg, #000000, #00000000)"
+          // background: 
+        }}
         title="Your next chapter starts with us. Ready to turn the page? Join Us in Shaping the Future"
         description="We’re not just here to solve problems—we’re here to create possibilities. Let’s work together to build a future where technology works for you, not the other way around."
+        image="https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/about-sec5"
       // subDescription="“Our process is a lot like a great recipe—precise, consistent, and guaranteed to impress (without burning anything).”"
       />
     </>

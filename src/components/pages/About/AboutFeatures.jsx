@@ -5,17 +5,17 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 const features = [
     {
-        image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5f_card-01.jpg',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/g2cs03rgp0qd9icsldvr',
         title: 'Innovation as a Foundation',
         description: 'We harness cutting-edge technologies to drive success',
     },
     {
-        image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5e_card-02.jpg',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/kumogbn1j46cjhackabb',
         title: 'Customer-First Mindset',
         description: 'Your success is our ultimate measure of achievement.',
     },
     {
-        image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5d_card-03.jpg',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/y4barww5t70afjz7ugxj',
         title: 'Transparency and Trust',
         description: 'We build relationships that are as strong as our solutions.',
     },

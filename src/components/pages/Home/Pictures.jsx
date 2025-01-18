@@ -2,6 +2,11 @@
 import Image from "next/image";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 
+const leftImage = "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/bd9ietj9vz9ezmtrsajf";
+const middleVideo = "https://res.cloudinary.com/ddnydyvlf/video/upload/f_auto:video,q_auto/v1/stack-binary-live/home-video";
+const middlePoster = "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/poster-image";
+const rightImage = "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/home-right-image";
+
 export default function Pictures() {
 
     return (
@@ -12,8 +17,8 @@ export default function Pictures() {
                         <div className="sticky-images left">
                             <Image
                                 sizes="(max-width: 479px) 100vw, 30vw"
-                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce8_Hero%20Image.jpg"
-                                srcSet="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce8_Hero%2520Image-p-500.jpg 500w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce8_Hero%2520Image-p-800.jpg 800w"
+                                src={leftImage}
+                                srcSet={leftImage}
                                 alt="Slider Image"
                                 className="image"
                                 width={848}
@@ -22,8 +27,8 @@ export default function Pictures() {
                         </div>
                         <div className="sticky-images middle">
                             <div
-                                data-poster-url="https://cdn.prod.website-files.com/66d89db32b418832a387e57c%2F66d8c23fec6488becdc7f741_About%20Hero%20Video-poster-00001.jpg"
-                                data-video-urls="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.mp4,https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.webm"
+                                data-poster-url={middlePoster}
+                                data-video-urls={middleVideo}
                                 data-autoplay="true"
                                 data-loop="true"
                                 data-wf-ignore="true"
@@ -41,16 +46,15 @@ export default function Pictures() {
                                         objectFit: "cover",
                                     }}
                                 >
-                                    <source src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.mp4" />
-                                    <source src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.webm" />
+                                    <source type="video/mp4" src={middleVideo} />
                                 </video>
                             </div>
                         </div>
                         <div className="sticky-images right">
                             <Image
                                 sizes="(max-width: 479px) 100vw, 30vw"
-                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c7a_Hero%20Image.jpg"
-                                srcSet="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c7a_Hero%2520Image-p-500.jpg 500w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c7a_Hero%2520Image-p-800.jpg 800w"
+                                src={rightImage}
+                                srcSet={rightImage}
                                 alt="Hero Image"
                                 className="image"
                                 width={848}
