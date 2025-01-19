@@ -34,9 +34,9 @@ export default function AboutFeatures() {
                                 </div>
                                 <div className="opacity-60">
                                     <div className="max-w-4xl">
-                                        <div>
+                                        {/* <div>
                                             Our mission is to make technology accessible and impactful. Whether you’re navigating a digital transformation or scaling your operations, we craft tailored solutions that empower you to focus on your core business. With us, you don’t just get a vendor—you gain a dedicated partner committed to your success.
-                                        </div>
+                                        </div> */}
                                         <p>
                                             “We do the heavy lifting so you can keep doing what you do best—and maybe even sneak in an extra coffee break.”
                                         </p>
