@@ -12,13 +12,13 @@ const links = {
         { href: ROUTES.SERVICES, label: "Services" }
     ],
     support: [
-        { href: ROUTES.CONTACT, label: "Contact" },
         // { href: "/pricing", label: "Pricing" },
         // { href: "/faq", label: "FAQ" }
     ],
     others: [
         // { href: "/blog", label: "Blog" },
         // { href: "/careers", label: "Careers" },
+        { href: ROUTES.CONTACT, label: "Contact" },
         { href: "/privacy-policy", label: "Privacy Policy" },
     ],
 };
