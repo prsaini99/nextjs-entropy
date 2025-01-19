@@ -19,9 +19,9 @@ export default function HeroSection() {
                                     Redefining Tomorrow: Our Story
                                 </div>
                                 <div className="max-w-4xl">
-                                    <p className="opacity-60">
+                                    {/* <p className="opacity-60">
                                         At Stackbinary, we believe technology isn’t just a tool—it’s the future waiting to be unlocked. From day one, we’ve been dedicated to helping businesses overcome tech challenges and uncover new opportunities. With a passion for innovation and a knack for problem-solving, we’ve transformed companies across industries, making their goals our mission.
-                                    </p>
+                                    </p> */}
                                     <p className="opacity-60">
                                         "We don’t just adapt to change; we orchestrate it—while occasionally fueling up on coffee and brainstorming brilliance."
                                     </p>
