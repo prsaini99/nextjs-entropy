@@ -11,10 +11,10 @@ const links = {
         { href: ROUTES.ABOUT, label: "About" },
         { href: ROUTES.SERVICES, label: "Services" }
     ],
-    support: [
-        // { href: "/pricing", label: "Pricing" },
-        // { href: "/faq", label: "FAQ" }
-    ],
+    // support: [
+    //     // { href: "/pricing", label: "Pricing" },
+    //     // { href: "/faq", label: "FAQ" }
+    // ],
     others: [
         // { href: "/blog", label: "Blog" },
         // { href: "/careers", label: "Careers" },
