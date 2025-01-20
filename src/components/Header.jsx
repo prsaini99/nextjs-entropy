@@ -128,7 +128,7 @@ const DropDown = () => {
                     {[
                         { title: "Home", to: ROUTES.HOME },
                         { title: "About", to: ROUTES.ABOUT },
-                        { title: "Features", to: ROUTES.SERVICES },
+                        { title: "Services", to: ROUTES.SERVICES },
                         { title: "Contact us", to: ROUTES.CONTACT },
                     ].map((item, index) => (
                         <Option key={index} setOpen={() => handleOptionClick(item.to)} text={item.title} />
