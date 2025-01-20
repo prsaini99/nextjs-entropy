@@ -5,17 +5,17 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 const features = [
     {
-        image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5f_card-01.jpg',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/g2cs03rgp0qd9icsldvr',
         title: 'Innovation as a Foundation',
-        description: 'We harness cutting-edge technologies to drive success.',
+        description: 'We harness cutting-edge technologies to drive success',
     },
     {
-        image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5e_card-02.jpg',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/kumogbn1j46cjhackabb',
         title: 'Customer-First Mindset',
         description: 'Your success is our ultimate measure of achievement.',
     },
     {
-        image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5d_card-03.jpg',
+        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/y4barww5t70afjz7ugxj',
         title: 'Transparency and Trust',
         description: 'We build relationships that are as strong as our solutions.',
     },
@@ -33,18 +33,20 @@ export default function AboutFeatures() {
                                     Our Purpose: Turning Complexity into Simplicity
                                 </div>
                                 <div className="opacity-60">
-                                        <div>
-                                            Our mission is to make technology accessible and impactful. Whether you’re navigating a digital transformation or scaling your operations, we craft tailored solutions that empower you to focus on your core business. With us, you don’t just get a vendor - you gain a dedicated partner committed to your success.
-                                        </div>
-                                        <div>
-                                            “We do the heavy lifting so you can keep doing what you do best - and maybe even sneak in an extra coffee break.”
-                                        </div>
+                                    <div className="max-w-4xl">
+                                        {/* <div>
+                                            Our mission is to make technology accessible and impactful. Whether you’re navigating a digital transformation or scaling your operations, we craft tailored solutions that empower you to focus on your core business. With us, you don’t just get a vendor—you gain a dedicated partner committed to your success.
+                                        </div> */}
+                                        <p>
+                                            “We do the heavy lifting so you can keep doing what you do best—and maybe even sneak in an extra coffee break.”
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </AnimatedInViewDiv>
-                        <AnimatedInViewDiv className="about-features-content">
-                            <div className="text-size-large text-weight-medium">The Core of What We Stand For</div>
-                        </AnimatedInViewDiv>
+                        <div className="heading-6 text-weight-medium">
+                            The Core of What We Stand For
+                        </div>
                         <div className="w-layout-grid about-features-grid">
                             {features.map((feature, index) => (
                                 <AnimatedInViewDiv delay={index * .2} className="about-features-card" key={feature.title}>

@@ -10,8 +10,16 @@ export default function PhaseCards() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="phase-cards-wrapper">
                         <AnimatedInViewDiv className="phase-cards-header">
+                            {/* <MoreAImodels /> */}
                             <div className="header">
-                                <div className="heading-4 text-weight-medium">The Secret Sauce: How We Work</div>                              
+                                <div className="heading-4 text-weight-medium">
+                                    The Secret Sauce: How We Work
+                                </div>
+                                {/* <div className="opacity-60">
+                                    <div className="max-width-40ch">
+                                        <div>Explore our three-phase approach to see how we drive growth and efficiency at every step.</div>
+                                    </div>
+                                </div> */}
                             </div>
                         </AnimatedInViewDiv>
                         <div className="phase-cards-grid">
@@ -22,7 +30,7 @@ export default function PhaseCards() {
                                 },
                                 {
                                     title: "Develop Tailored Solutions",
-                                    description: " Our team designs and deploys innovative tech that aligns with your goals."
+                                    description: "Our team designs and deploys innovative tech that aligns with your goals."
                                 },
                                 {
                                     title: "Drive Growth and Innovation",
