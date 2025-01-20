@@ -93,8 +93,8 @@ export default function Transformative() {
                             ))}
                         </div>
                         <AnimatedInViewDiv>
-                                <LearnMoreButton title='Read More Testimonials' routeTo={ROUTES.FEATURES} />
-                        </AnimatedInViewDiv>                        
+                            <LearnMoreButton title='Read More Testimonials' routeTo={ROUTES.SERVICES} />
+                        </AnimatedInViewDiv>
                     </div>
                 </div>
             </div>
