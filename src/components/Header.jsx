@@ -1,9 +1,11 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import ROUTES from '@/constants/routes'
 import { motion, MotionConfig } from "framer-motion";
 import { useRouter } from 'next/navigation';
+import ROUTES from '@/constants/routes'
+import logoSvg from '@/assets/svg/logo.svg'
+import Image from 'next/image';
 
 export default function Header() {
     return (
@@ -12,11 +14,8 @@ export default function Header() {
             <div className="padding-global">
                 <div className="container w-container">
                     <div className="navbar-component">
-                        <Link href="/" data-w-id="6deb3682-e1f7-9f5f-adeb-87fc1448026f" aria-current="page"
-                            className="brand w-nav-brand w--current">
-                            <img
-                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cc9_Logo%20Navbar.svg"
-                                loading="lazy" alt="Logo Navbar" />
+                        <Link href="/" aria-current="page" className="brand w-nav-brand w--current">
+                            <Image src={logoSvg} loading="lazy" alt="Logo Navbar" />
                         </Link>
                         <div className="nav-menu-wrap">
                             <div>
