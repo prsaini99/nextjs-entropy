@@ -3,33 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (max-width:479px) {
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1393"] {
-    opacity: 0;
-  }
+@media (max-width: 479px) {
+	html.w-mod-js:not(.w-mod-ix)
+		[data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1393"] {
+		opacity: 0;
+	}
 
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1395"] {
-    opacity: 0;
-  }
+	html.w-mod-js:not(.w-mod-ix)
+		[data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1395"] {
+		opacity: 0;
+	}
 
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1397"] {
-    opacity: 0;
-  }
+	html.w-mod-js:not(.w-mod-ix)
+		[data-w-id="16b69460-66f0-c83d-2c5f-5e56a35c1397"] {
+		opacity: 0;
+	}
+}
+
+.text-primary,
+.text-link {
+	color: #ed5145;
+}
+.text-link:hover {
+	text-decoration: underline;
 }
