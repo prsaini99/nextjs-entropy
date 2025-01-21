@@ -7,7 +7,7 @@ import Head from "next/head";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
 export const metadata = {
-  title: "App Title",
+  title: "Stackbinary.io",
   description: "App Description",
 };
 
