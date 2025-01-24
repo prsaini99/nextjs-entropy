@@ -17,6 +17,7 @@ const initData = {
 export default function ContactWrapper() {
     const [formData, setFormData] = useState(initData);
     const [status, setStatus] = useState(FORM_STATUS.IDLE);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -30,11 +31,26 @@ export default function ContactWrapper() {
             console.log('Submitting:', formData);
             if (!formData.name || !formData.email || !formData.message)
                 throw new Error('All fields are required.');
+            setLoading(true)
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
 
-            setStatus(FORM_STATUS.SUCCESS);
+            if (response.ok) {
+                setStatus('Message sent successfully!');
+                setFormData(initData);
+                setStatus(FORM_STATUS.SUCCESS);
+            } else {
+                setStatus('Failed to send message.');
+                setStatus(FORM_STATUS.ERROR);
+            }
         } catch (error) {
             setFormData(initData)
             setStatus(FORM_STATUS.ERROR);
+        } finally {
+            setLoading(false)
         }
     };
 
@@ -103,8 +119,10 @@ export default function ContactWrapper() {
                                         </div>
                                     </div>
                                     <div className="contact-button align-center">
-                                        <button type="submit" className="primary-button">
-                                            <span>Submit Message</span>
+                                        <button type="submit" className="primary-button" disabled={loading}>
+                                            <span>
+                                                {loading ? "Sending message..." : "Submit Message"}
+                                            </span>
                                         </button>
                                     </div>
                                 </form>}
