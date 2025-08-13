@@ -49,7 +49,7 @@ export function GetStarted() {
     return (
         <Link href={ROUTES.CONTACT} className="primary-button w-inline-block">
             <div className="relative">
-                <div className="text-size-small text-weight-bold">Get Started</div>
+                <div className="text-size-small text-weight-bold">Book a Discovery Call</div>
             </div>
             <div className="button-elipse"></div>
         </Link>

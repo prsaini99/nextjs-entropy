@@ -1,27 +1,38 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
 import { GetStarted, LearnMoreButton } from '@/components/Buttons'
 import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 const services = [
     {
-        title: "Accelerated Deployment",
-        description: "Empowering you to launch projects swiftly and efficiently, reducing time-to-market.",
+        title: "AI & Machine Learning",
+        description: "Production-grade chatbots, AI custom solutions, integrations and recommendations.",
         image: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c44_Images%20Cards%2001.jpg"
     },
     {
-        title: "Strategic Customer Relationship Management",
-        description: "Enhancing customer engagement with tailored solutions that foster trust and long-term loyalty.",
+        title: "Cloud Services (AWS, Azure, GCP)",
+        description: "Migration, modernization and managed reliability with security baked in.",
         image: "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/handshake"
     },
     {
-        title: "Advanced Data Insights",
-        description: "Transforming raw data into actionable intelligence to inform strategic decisions and drive success.",
+        title: "Custom Software Development",
+        description: "Web, mobile and SaaS products tailored to your workflows and goals.",
         image: "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/zwsr959ygnleqr82zcop"
     },
     {
-        title: "Tailored Digital Integration",
-        description: "Providing end-to-end technology solutions designed to streamline operations and boost performance.",
+        title: "DevOps & SRE",
+        description: "CI/CD, IaC, Kubernetes and observability to ship fast with confidence.",
+        image: "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/kec7qkyxrxnfrwxf5bl6"
+    },
+    {
+        title: "Data Analytics & BI",
+        description: "Warehousing, ETL/ELT and dashboards that turn data into decisions.",
+        image: "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/zwsr959ygnleqr82zcop"
+    },
+    {
+        title: "Automation & Integrations",
+        description: "RPA and third-party integrations that eliminate busywork.",
         image: "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/kec7qkyxrxnfrwxf5bl6"
     },
 ]
@@ -33,9 +44,9 @@ export default function TransformBussiness() {
                 <div className="w-layout-blockcontainer container medium w-container">
                     <div className="features-cards-wrapper">
                         <AnimatedInViewDiv className="header">
-                            <div className="heading-4 text-weight-bold">
-                                Revolutionize Your Operations with Our Services
-                            </div>
+                            <h2 className="heading-4 text-weight-bold">
+                                What We Do
+                            </h2>
                             {/* <div className="opacity-60">
                                 <div className="max-width-46ch">
                                     <div className="text-size-regular">
@@ -44,98 +55,33 @@ export default function TransformBussiness() {
                                 </div>
                             </div> */}
                         </AnimatedInViewDiv>
-                        <div className="home-integrations-wrapper">
-                            <div className="integrations-content-component">
-                                <AnimatedInViewDiv className="integrations-block first">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {services.map((service, index) => (
+                                <AnimatedInViewDiv key={index} className="integrations-block" delay={index * 0.1}>
                                     <div className="integrations-image">
                                         <img
-                                            sizes="(max-width: 479px) 73vw, (max-width: 767px) 75vw, (max-width: 991px) 384.75px, 37vw"
-                                            // srcSet="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c44_Images%2520Cards%252001-p-500.jpg 500w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c44_Images%2520Cards%252001-p-800.jpg 800w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c44_Images%20Cards%2001.jpg 808w"
-                                            alt="Image Features"
-                                            src={services[0].image}
+                                            sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 30vw"
+                                            alt={`${service.title} - StackBinary services`}
+                                            src={service.image}
                                             loading="lazy" />
                                     </div>
                                     <div className="integrations-content">
-                                        <div className="text-size-large">
-                                            {services[0].title}
-                                        </div>
+                                        <Link href="/services" className="text-size-large text-link hover:text-primary transition-colors">
+                                            {service.title}
+                                        </Link>
                                         <div className="opacity-70">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
-                                                    {services[0].description}
+                                                    {service.description}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </AnimatedInViewDiv>
-                                <AnimatedInViewDiv className="integrations-block second" delay={0.2}>
-                                    <div className="integrations-image">
-                                        <img
-                                            sizes="(max-width: 479px) 73vw, (max-width: 991px) 304.921875px, 24vw"
-                                            // srcSet="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c42_Images%2520Cards%252002-p-500.jpg 500w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c42_Images%20Cards%2002.jpg 526w"
-                                            alt="Image Features"
-                                            src={services[1].image}
-                                            loading="lazy" />
-                                    </div>
-                                    <div className="integrations-content">
-                                        <div className="text-size-large">
-                                            {services[1].title}
-                                        </div>
-                                        <div className="opacity-70">
-                                            <div className="max-width-50ch">
-                                                <div className="text-size-regular">
-                                                    {services[1].description}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </AnimatedInViewDiv>
-                            </div>
-                            <div className="integrations-content-component">
-                                <AnimatedInViewDiv className="integrations-block second">
-                                    <div className="integrations-image">
-                                        <img loading="lazy"
-                                            src={services[2].image}
-                                            alt="Image Features" />
-                                    </div>
-                                    <div className="integrations-content">
-                                        <div className="text-size-large">
-                                            {services[2].title}
-                                        </div>
-                                        <div className="opacity-70">
-                                            <div className="max-width-50ch">
-                                                <div className="text-size-regular">
-                                                    {services[2].description}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </AnimatedInViewDiv>
-                                <AnimatedInViewDiv className="integrations-block first" delay={0.2}>
-                                    <div className="integrations-image">
-                                        <img sizes="(max-width: 479px) 73vw, 339.640625px"
-                                            // srcSet="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c43_Images%2520Cards%252004-p-500.jpg 500w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c43_Images%20Cards%2004.jpg 726w"
-                                            alt="Image Features"
-                                            src={services[3].image}
-                                            loading="lazy" />
-                                    </div>
-                                    <div className="integrations-content">
-                                        <div className="text-size-large">
-                                            {services[3].title}
-                                        </div>
-                                        <div className="opacity-70">
-                                            <div className="max-width-50ch">
-                                                <div className="text-size-regular">
-                                                    {services[3].description}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </AnimatedInViewDiv>
-                            </div>
+                            ))}
                         </div>
                         <AnimatedInViewDiv>
-                            <LearnMoreButton title='Discover All Services' />
+                            <LearnMoreButton title='See All Services' />
                         </AnimatedInViewDiv>
                     </div>
                 </div>

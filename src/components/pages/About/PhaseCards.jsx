@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
 import { MoreAImodels } from '@/components/Buttons'
 import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
@@ -12,9 +13,9 @@ export default function PhaseCards() {
                         <AnimatedInViewDiv className="phase-cards-header">
                             {/* <MoreAImodels /> */}
                             <div className="header">
-                                <div className="heading-4 text-weight-medium">
-                                    The Secret Sauce: How We Work
-                                </div>
+                                <h2 className="heading-4 text-weight-medium">
+                                    How We Work
+                                </h2>
                                 {/* <div className="opacity-60">
                                     <div className="max-width-40ch">
                                         <div>Explore our three-phase approach to see how we drive growth and efficiency at every step.</div>
@@ -25,16 +26,20 @@ export default function PhaseCards() {
                         <div className="phase-cards-grid">
                             {[
                                 {
-                                    title: "Discover Your Needs",
-                                    description: "We take the time to learn your business inside out, identifying the gaps and opportunities."
+                                    title: "Discover",
+                                    description: "Workshops to map goals, scope, risks and success metrics."
                                 },
                                 {
-                                    title: "Develop Tailored Solutions",
-                                    description: "Our team designs and deploys innovative tech that aligns with your goals."
+                                    title: "Build",
+                                    description: "Iterative sprints with design, engineering and QA in lockstep."
                                 },
                                 {
-                                    title: "Drive Growth and Innovation",
-                                    description: "With systems in place, we focus on scaling your success and preparing for what’s next."
+                                    title: "Scale",
+                                    description: (
+                                        <>
+                                            Reliability, cost optimization and continuous improvement. Learn more about our <Link href="/services" className="text-link">DevOps and infrastructure services</Link>.
+                                        </>
+                                    )
                                 }
                             ].map((item, index) => (
                                 <AnimatedInViewDiv delay={index * .2} className="phase-cards" key={index}>

@@ -4,10 +4,12 @@ import ROUTES from '@/constants/routes';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import { GetStarted, LearnMoreButton } from '@/components/Buttons';
 import { features } from './data';
+import { services } from '@/data/services';
+import Link from 'next/link';
 
 export default function FeaturesWrapper() {
-    const title = "Solutions Designed for Impact"
-    const description = "we don’t just solve problems—we redefine possibilities. Our suite of IT solutions is designed to address every challenge your business faces, from scaling operations to staying ahead in a rapidly evolving digital landscape. Let’s explore how we can transform your business, one solution at a time."
+    const title = "Services Built for Impact"
+    const description = "We help you launch faster and operate reliably with AI, cloud, custom software, data analytics, DevOps and more."
     return (
         <section>
             <div className="padding-global">
@@ -72,9 +74,17 @@ export default function FeaturesWrapper() {
                                                             className="check-icon"
                                                         />
                                                     </div>
-                                                    <div className="text-size-medium">{check}</div>
+                                                    <div className="text-size-medium" dangerouslySetInnerHTML={{ __html: check }}></div>
                                                 </div>
                                             ))}
+                                        </div>
+                                        <div className="margin-top-button-hero">
+                                            <Link href={`/services/${feature.slug}`} className="primary-button w-inline-block">
+                                                <div className="relative">
+                                                    <div className="text-size-small text-weight-bold">See details →</div>
+                                                </div>
+                                                <div className="button-elipse"></div>
+                                            </Link>
                                         </div>
                                     </div>
                                     {index % 2 === 0 && (

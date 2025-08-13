@@ -6,20 +6,20 @@ import ROUTES from '@/constants/routes'
 
 const features = [
     {
-        title: 'Adaptive Learning Models',
-        description: 'Revolutionizing industries with algorithms that continuously evolve, delivering unparalleled efficiency and accuracy.',
+        title: 'Outcome-Driven',
+        description: 'Roadmaps tied to business goals—not vanity metrics.',
     },
     {
-        title: 'Visual Recognition Technology',
-        description: 'Providing automated, precise analysis to transform data into actionable insights across diverse sectors.',
+        title: 'Secure by Default',
+        description: 'Auth, secrets, encryption and privacy built into the SDLC.',
     },
     {
-        title: 'Persona-Driven Engagement',
-        description: 'Crafting personalized experiences that foster loyalty and enhance customer satisfaction in any industry.',
+        title: 'Scale-Ready',
+        description: 'Cloud-native patterns that grow with your audience.',
     },
     {
-        title: 'SecureAI Shield',
-        description: 'Delivering cutting-edge cybersecurity solutions to protect your operations with uncompromising reliability.',
+        title: 'Transparent Delivery',
+        description: 'Weekly demos, clear docs and shared dashboards.',
     },
 ]
 
@@ -30,7 +30,7 @@ export default function IgnitePotential() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="home-features-wrapper">
                         <AnimatedInViewDiv className="header">
-                            <div className="heading-4 text-weight-bold">Unlock the Future with Our Advanced Features</div>
+                            <h2 className="heading-4 text-weight-bold">Why StackBinary</h2>
                             {/* <div className="opacity-60">
                                 <div className="max-width-48ch">
                                     <div className="text-size-regular">Fuel your business growth with AI solutions that are not

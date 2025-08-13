@@ -41,12 +41,12 @@ export default function NewsLetter() {
             <div className="mb-4 space-y-4">
                 <div className="flex flex-col items-start">
                     <h1 className="text-center framer-text framer-styles-preset-1nktfmp">
-                        Subscribe to our Newsletter
+                        Get Practical AI, Cloud & DevOps Tips Monthly
                     </h1>
                 </div>
                 <div className="flex flex-col items-start">
                     <p>
-                        Stay updated with the latest in IT solutions, features, and case studies delivered directly to your inbox by subscribing to our newsletter.
+                        One email a month with playbooks, case studies and tooling tips—no spam.
                     </p>
                 </div>
             </div>
