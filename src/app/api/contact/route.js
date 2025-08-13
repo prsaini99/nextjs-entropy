@@ -2,6 +2,15 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
 	try {
+		// Check if email is configured
+		if (!process.env.EMAIL || !process.env.EMAIL_PASSWORD) {
+			console.log('Email not configured');
+			return new Response(
+				JSON.stringify({ message: "Email service not configured." }),
+				{ status: 500 }
+			);
+		}
+
 		let body;
 		let attachmentFile = null;
 		

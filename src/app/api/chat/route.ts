@@ -19,14 +19,20 @@ const FALLBACK =
   "I don't have that info yet. Let's cover it on a quick call: https://stackbinary.io/contact-us";
 
 // --- clients
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY! });
-const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! });
+const groq = process.env.GROQ_API_KEY ? new Groq({ apiKey: process.env.GROQ_API_KEY }) : null;
+const pc = process.env.PINECONE_API_KEY ? new Pinecone({ apiKey: process.env.PINECONE_API_KEY }) : null;
 
 // Initialize index properly for serverless
-const index = pc.index(process.env.PINECONE_INDEX!);
+const index = pc && process.env.PINECONE_INDEX ? pc.index(process.env.PINECONE_INDEX) : null;
 
 export async function POST(req: NextRequest) {
   try {
+    // Check if required services are configured
+    if (!groq || !pc || !index) {
+      console.log('Chat services not configured, returning fallback');
+      return Response.json({ answer: FALLBACK });
+    }
+
     const { user } = (await req.json()) as { user: string };
     if (!user || !user.trim()) {
       return new Response(JSON.stringify({ error: "Message is required" }), { 
@@ -49,12 +55,12 @@ export async function POST(req: NextRequest) {
     
     // Handle different response structures
     let vector;
-    if (embedRes && embedRes.length > 0 && embedRes[0].values) {
+    if (embedRes && Array.isArray(embedRes) && embedRes.length > 0 && embedRes[0].values) {
       vector = embedRes[0].values; // 1024-dim
-    } else if (embedRes && embedRes.data && embedRes.data.length > 0) {
-      vector = embedRes.data[0].values || embedRes.data[0].embedding;
-    } else if (embedRes && embedRes.values) {
-      vector = embedRes.values;
+    } else if (embedRes && (embedRes as any).data && Array.isArray((embedRes as any).data) && (embedRes as any).data.length > 0) {
+      vector = (embedRes as any).data[0].values || (embedRes as any).data[0].embedding;
+    } else if (embedRes && (embedRes as any).values) {
+      vector = (embedRes as any).values;
     } else {
       throw new Error('Invalid embedding response structure');
     }
