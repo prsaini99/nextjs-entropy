@@ -27,6 +27,17 @@ const index = pc && process.env.PINECONE_INDEX ? pc.index(process.env.PINECONE_I
 
 export async function POST(req: NextRequest) {
   try {
+    // Debug logging for environment variables
+    console.log('=== CHAT API DEBUG ===');
+    console.log('GROQ_API_KEY exists:', !!process.env.GROQ_API_KEY);
+    console.log('GROQ_MODEL:', process.env.GROQ_MODEL);
+    console.log('PINECONE_API_KEY exists:', !!process.env.PINECONE_API_KEY);
+    console.log('PINECONE_INDEX:', process.env.PINECONE_INDEX);
+    console.log('PINECONE_NAMESPACE:', process.env.PINECONE_NAMESPACE);
+    console.log('groq client initialized:', !!groq);
+    console.log('pc client initialized:', !!pc);
+    console.log('index initialized:', !!index);
+    
     // Check if required services are configured
     if (!groq || !pc || !index) {
       console.log('Chat services not configured, returning fallback');

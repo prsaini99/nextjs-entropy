@@ -2,9 +2,15 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
 	try {
+		// Debug logging for environment variables
+		console.log('=== CONTACT API DEBUG ===');
+		console.log('EMAIL exists:', !!process.env.EMAIL);
+		console.log('EMAIL value:', process.env.EMAIL);
+		console.log('EMAIL_PASSWORD exists:', !!process.env.EMAIL_PASSWORD);
+		
 		// Check if email is configured
 		if (!process.env.EMAIL || !process.env.EMAIL_PASSWORD) {
-			console.log('Email not configured');
+			console.log('Email not configured - missing EMAIL or EMAIL_PASSWORD');
 			return new Response(
 				JSON.stringify({ message: "Email service not configured." }),
 				{ status: 500 }
