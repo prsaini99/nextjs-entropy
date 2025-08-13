@@ -6111,3 +6111,21 @@ select.text-field-contact,
 	margin: 2rem 0;
 	padding: 1.5rem 0;
 }
+
+/* Contact Info & Office Locations */
+.contact-info-section {
+	margin: 3rem 0;
+	padding: 2rem 0;
+}
+
+.office-location {
+	transition: all 0.3s ease;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px);
+}
+
+.office-location:hover {
+	transform: translateY(-2px);
+	border-color: #ed5145 !important;
+	box-shadow: 0 8px 25px rgba(237, 81, 69, 0.2);
+}
