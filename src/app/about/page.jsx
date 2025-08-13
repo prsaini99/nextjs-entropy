@@ -6,24 +6,60 @@ import Banner from "@/components/Banner";
 import PhaseCards from "@/components/pages/About/PhaseCards";
 import WhyBussinessesTrustUs from "@/components/pages/About/WhyBussinessTrustUs";
 
+export const metadata = {
+  title: "About StackBinary | Engineering-Led AI, Cloud & Software Team",
+  description: "Meet the engineering-led team behind StackBinary. We build AI, cloud and custom software that ships fast, scales reliably and stays secure.",
+  alternates: { canonical: 'https://stackbinary.io/about' },
+  openGraph: {
+    title: 'About StackBinary | Engineering-Led AI, Cloud & Software Team',
+    description: 'Meet the engineering-led team behind StackBinary. We build AI, cloud and custom software that ships fast, scales reliably and stays secure.',
+    url: 'https://stackbinary.io/about',
+    siteName: 'StackBinary',
+    type: 'website'
+  },
+  twitter: { card: 'summary_large_image' }
+};
+
 export default function About() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "name": "About StackBinary",
+        "url": "https://stackbinary.io/about",
+        "description": "Engineering-led team delivering AI, cloud, DevOps, data analytics and custom software."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stackbinary.io/"},
+          {"@type": "ListItem", "position": 2, "name": "About", "item": "https://stackbinary.io/about"}
+        ]
+      }
+    ]
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <HeroSection />
       <TrustedByAbout />
       <AboutFeatures />
       <PhaseCards />
-      <Team />
+      {/* <Team /> */}
       <WhyBussinessesTrustUs />
       <Banner
         bannerStyle={{
           backgroundImage: "linear-gradient(180deg, #000000, #00000000)"
           // background: 
         }}
-        title="Your next chapter starts with us. Ready to turn the page? Join Us in Shaping the Future"
-        description="We’re not just here to solve problems—we’re here to create possibilities. Let’s work together to build a future where technology works for you, not the other way around."
+        title="Ready to get started?"
+        description="Let's build software that ships fast, scales reliably and proves its value in production."
         image="https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/about-sec5"
-      // subDescription="“Our process is a lot like a great recipe—precise, consistent, and guaranteed to impress (without burning anything).”"
+      // subDescription=""Our process is a lot like a great recipe—precise, consistent, and guaranteed to impress (without burning anything).""
       />
     </>
   );

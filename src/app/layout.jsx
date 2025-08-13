@@ -2,13 +2,32 @@ import "./globals.css";
 import "./style.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingChat from "@/components/FloatingChat";
 import Script from "next/script";
 import Head from "next/head";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
 export const metadata = {
-  title: "Stackbinary.io",
-  description: "App Description",
+  title: "Stackbinary.io - Custom Software Development & IT Solutions",
+  description: "Leading IT consulting firm specializing in custom software development, cloud solutions, AI/ML, cybersecurity, and digital transformation services. Transform your business with cutting-edge technology.",
+  keywords: "custom software development, IT consulting, cloud solutions, AI development, cybersecurity, digital transformation, web development, mobile app development",
+  authors: [{ name: "Stackbinary.io" }],
+  openGraph: {
+    title: "Stackbinary.io - Custom Software Development & IT Solutions",
+    description: "Leading IT consulting firm specializing in custom software development, cloud solutions, AI/ML, cybersecurity, and digital transformation services.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Stackbinary.io",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stackbinary.io - Custom Software Development & IT Solutions",
+    description: "Leading IT consulting firm specializing in custom software development, cloud solutions, AI/ML, cybersecurity, and digital transformation services.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -30,6 +49,7 @@ export default function RootLayout({ children }) {
           {children}
         </ErrorBoundary>
         <Footer />
+        <FloatingChat />
       </body>
     </html>
   );

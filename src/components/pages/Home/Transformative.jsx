@@ -8,7 +8,8 @@ import ROUTES from '@/constants/routes'
 export default function Transformative() {
     return (
         <section>
-            <div className="padding-global">
+            {/* Commented out success stories section until real testimonials are available */}
+            {/* <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="testimonial-wrapper">
                         <AnimatedInViewDiv className="testimonial-component">
@@ -28,14 +29,14 @@ export default function Transformative() {
                             {[
                                 {
                                     id: "525f333e-16b4-a716-1c03-a45f2fadfa63",
-                                    quote: "Their IT solutions transformed our workflow. It’s like having a tech wizard on speed dial.",
+                                    quote: "Their IT solutions transformed our workflow. It's like having a tech wizard on speed dial.",
                                     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd9_Testimonial%2001.jpg",
                                     name: "Alex Johnson",
                                     title: "CTO at TechInnovate"
                                 },
                                 {
                                     id: "525f333e-16b4-a716-1c03-a45f2fadfa73",
-                                    quote: "We’ve boosted efficiency and customer engagement. Our only regret? Not partnering sooner.",
+                                    quote: "We've boosted efficiency and customer engagement. Our only regret? Not partnering sooner.",
                                     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd6_Testimonial%2003.jpg",
                                     name: "Emily Davis",
                                     title: "Marketing Director at RetailPulse"
@@ -56,7 +57,7 @@ export default function Transformative() {
                                 // },
                                 // {
                                 //     id: "525f333e-16b4-a716-1c03-a45f2fadfaa3",
-                                //     quote: "Thanks to Entropy’s AI-driven personalization, we’ve seen a dramatic increase in customer satisfaction and engagement. It’s truly exceptional.",
+                                //     quote: "Thanks to Entropy's AI-driven personalization, we've seen a dramatic increase in customer satisfaction and engagement. It's truly exceptional.",
                                 //     imageSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd8_Testimonial%2004.jpg",
                                 //     name: "James Wilson",
                                 //     title: "Customer Experience Lead at BrightPath"
@@ -97,7 +98,7 @@ export default function Transformative() {
                         </AnimatedInViewDiv>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     )
 }

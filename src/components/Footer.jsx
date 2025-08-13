@@ -25,12 +25,6 @@ const links = {
     ],
 };
 
-const socialLinks = [
-    { href: "https://webflow.com/templates/designers/lucas-gusso", iconSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c59_Social%20Icons%2004.svg", alt: "Twitter Icon" },
-    { href: "https://www.instagram.com/lucas.webflow/", iconSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5b_Social%20Icons%2003.svg", alt: "Facebook Icon" },
-    { href: "https://webflow.com/templates/designers/lucas-gusso", iconSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c5a_Social%20Icons%2002.svg", alt: "Instagram Icon" },
-    { href: "https://www.instagram.com/lucas.webflow/", iconSrc: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c58_Social%20Icons%2001.svg", alt: "Github Icon" }
-];
 
 const footerLinks = [
     { href: "#", label: "License" },
@@ -59,24 +53,13 @@ export default function Footer() {
                                 </AnimatedInViewDiv>
                             ))}
                         </div>
-                        <AnimatedInViewDiv className="footer-social-wrapper">
-                            {socialLinks.map((link, index) => (
-                                <Link key={index} href={link.href} className="footer-social w-inline-block">
-                                    <img loading="lazy" src={link.iconSrc} alt={link.alt} className="icon-embed" />
-                                </Link>
-                            ))}
-                        </AnimatedInViewDiv>
                         <AnimatedInViewDiv className="my-8">
                             <NewsLetter />
                         </AnimatedInViewDiv>
                         <div className="footer-links-wrapper animate-slideUpFadeIn-1">
                             <div className="credits-wrapper">
                                 <p className="paragraph space-x-2">
-                                    <span className=''>© {new Date().getFullYear()}</span>
-                                    <Link href="https://webflow.com/" target="_blank" className=" hover:text-white">
-                                        Stackbinary.
-                                    </Link>
-                                    <span>All rights reserved. Crafted with care and a dash of humor.</span>
+                                    <span className=''>© {new Date().getFullYear()} Stackbinary.io. All rights reserved.</span>
                                 </p>
                             </div>
                         </div>

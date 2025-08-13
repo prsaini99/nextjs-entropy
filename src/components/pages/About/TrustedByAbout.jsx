@@ -18,11 +18,11 @@ const logos = [
 export default function TrustedByAbout() {
     return (
         <section>
-            <div className="padding-global py-16">
+            {/* <div className="padding-global py-16">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="trusted-by-about-component">
                         <AnimatedInViewDiv className="opacity-60">
-                            <div className="text-size-small">Join the ranks of our satisfied clients who have elevated their businesses with our expertise.</div>
+                            <div className="text-size-small">From prototypes to production systems, we partner with teams to turn roadmaps into measurable outcomes.</div>
                         </AnimatedInViewDiv>
                         <div className="trusted-by-about-logos logos">
                             {logos.map((logo, index) => (
@@ -33,7 +33,7 @@ export default function TrustedByAbout() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     )
 }

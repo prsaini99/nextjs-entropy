@@ -1,7 +1,8 @@
+'use client';
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const AnimatedInViewDiv = ({ children, delay, ...props }) => {
+const AnimatedInViewDiv = ({ children, delay = 0, ...props }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "0px 0px -50px 0px" });
 

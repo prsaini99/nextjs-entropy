@@ -15,25 +15,22 @@ export default function HeroSection() {
                             <MoreAImodels />
                             {/* Hero Heading */}
                             <div className="flex flex-col items-center gap-10">
-                                <div className="heading-2 text-weight-bold">
-                                    Redefining Tomorrow: Our Story
-                                </div>
+                                <h1 className="heading-2 text-weight-bold">
+                                    About StackBinary
+                                </h1>
                                 <div className="max-w-4xl">
-                                    {/* <p className="opacity-60">
-                                        At Stackbinary, we believe technology isn’t just a tool—it’s the future waiting to be unlocked. From day one, we’ve been dedicated to helping businesses overcome tech challenges and uncover new opportunities. With a passion for innovation and a knack for problem-solving, we’ve transformed companies across industries, making their goals our mission.
-                                    </p> */}
                                     <p className="opacity-60">
-                                        "We don’t just adapt to change; we orchestrate it—while occasionally fueling up on coffee and brainstorming brilliance."
+                                        We're an engineering-led team building AI, cloud and custom software that ships fast, scales reliably and stays secure.
                                     </p>
                                 </div>
                             </div>
                         </AnimatedInViewDiv>
 
                         {/* Double Button Section */}
-                        {/* <AnimatedInViewDiv className="double-button-component margin-top-button-hero" delay={0.2}>
+                        <AnimatedInViewDiv className="double-button-component margin-top-button-hero" delay={0.2}>
                             <GetStarted />
-                            <LearnMoreButton />
-                        </AnimatedInViewDiv> */}
+                            <LearnMoreButton title="Explore Our Services" />
+                        </AnimatedInViewDiv>
 
                         {/* Video Section */}
                         <AnimatedInViewDiv className="about-hero-image" delay={0.4}>

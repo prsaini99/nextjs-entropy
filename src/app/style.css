@@ -4448,12 +4448,84 @@ blockquote {
 }
 
 .text-field-contact:active {
-	color: #212121;
+	color: #ffffff !important;
 }
 
 .text-field-contact:focus {
-	color: #fbfbfb;
-	border-color: #212121;
+	color: #ffffff !important;
+	border-color: #333 !important;
+}
+
+/* Contact form select dropdown fixes */
+.text-field-contact select {
+	color: #ffffff !important;
+	background-color: #1a1a1a !important;
+	border: 1px solid #333 !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.text-field-contact select:focus,
+.text-field-contact select:active {
+	color: #ffffff !important;
+	background-color: #1a1a1a !important;
+}
+
+/* Fix for selected dropdown value */
+.text-field-contact select:not(:focus):not(:active) {
+	color: #ffffff !important;
+	background-color: #1a1a1a !important;
+}
+
+.text-field-contact select:hover {
+	color: #ffffff !important;
+	background-color: #1a1a1a !important;
+}
+
+.text-field-contact select option {
+	color: #ffffff !important;
+	background-color: #1a1a1a !important;
+}
+
+/* Input and textarea overrides */
+.text-field-contact input,
+.text-field-contact textarea {
+	color: #ffffff !important;
+	background-color: #1a1a1a !important;
+	border: 1px solid #333 !important;
+}
+
+/* Comprehensive select styling - covers all states */
+select.text-field-contact,
+.text-field-contact.w-input[type="select-one"] {
+	color: #ffffff !important;
+	background-color: #1a1a1a !important;
+	border: 1px solid #333 !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+/* WebKit specific fixes for dropdown text */
+.text-field-contact select {
+	-webkit-text-fill-color: #ffffff !important;
+	-webkit-background-clip: text !important;
+}
+
+/* Force select element text color in all states */
+.text-field-contact select,
+.text-field-contact select:visited,
+.text-field-contact select:link {
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+.text-field-contact input:focus,
+.text-field-contact input:active,
+.text-field-contact textarea:focus,
+.text-field-contact textarea:active {
+	color: #ffffff !important;
+	background-color: #1a1a1a !important;
+	border-color: #555 !important;
 }
 
 .relative {
@@ -4466,9 +4538,10 @@ blockquote {
 }
 
 .success-message {
-	color: #000;
+	color: #ffffff;
 	text-align: center;
-	background-color: #f4f4f4;
+	background-color: #000000;
+	border: 1px solid #ffffff;
 	border-radius: 0.6rem;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
@@ -6014,4 +6087,27 @@ blockquote {
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
+}
+
+/* Social CTA Buttons */
+.social-cta-button {
+	transition: all 0.3s ease;
+	border: 1px solid #ffffff !important;
+	background-color: #000000 !important;
+	color: #ffffff !important;
+}
+
+.social-cta-button:hover {
+	transform: translateY(-2px);
+	border-color: #ed5145 !important;
+	box-shadow: 0 8px 25px rgba(237, 81, 69, 0.3);
+}
+
+.social-cta-button:hover svg {
+	color: #ffffff !important;
+}
+
+.social-cta-section {
+	margin: 2rem 0;
+	padding: 1.5rem 0;
 }

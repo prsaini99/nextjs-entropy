@@ -8,27 +8,27 @@ import ROUTES from '@/constants/routes'
 const steps = [
     {
         phase: '01',
-        title: 'Discovery and Integration',
-        description: 'We dive into your needs and seamlessly integrate solutions—scuba gear optional.',
+        title: 'Discover',
+        description: 'Workshops to align scope, risks and success metrics.',
         image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sec3-1',
-        buttonText: 'Start Integration',
-        buttonLink: '/pricing',
+        buttonText: 'Talk to an Expert',
+        buttonLink: '/contact-us',
     },
     {
         phase: '02',
-        title: 'Optimization and Enhancement',
-        description: 'Fine-tuning your systems until they’re as efficient as a caffeinated coder',
+        title: 'Build',
+        description: 'Iterative delivery with design, engineering and QA in lockstep.',
         image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/kxcu463dsepnw8vozsbu',
-        buttonText: 'Optimize Now',
-        buttonLink: '/pricing',
+        buttonText: 'Talk to an Expert',
+        buttonLink: '/contact-us',
     },
     {
         phase: '03',
-        title: 'Innovation and Expansion',
-        description: 'Scaling new heights and exploring growth areas—because the sky’s not the limit; it’s just the beginning.',
+        title: 'Scale',
+        description: 'Reliability, cost optimization and continuous improvement.',
         image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sec3-3',
-        buttonText: 'Explore Innovations',
-        buttonLink: '/pricing',
+        buttonText: 'Talk to an Expert',
+        buttonLink: '/contact-us',
     },
 ]
 
@@ -39,8 +39,8 @@ export default function ElevetBussiness() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="steps-wrapper">
                         <AnimatedInViewDiv className="header">
-                            <div className="heading-4 text-weight-medium">Elevate Your Business with Our Three-Step Approach
-                            </div>
+                            <h2 className="heading-4 text-weight-medium">How We Work
+                            </h2>
                             <div className="opacity-60">
                                 <div className="max-width-42ch">
                                     <div>
