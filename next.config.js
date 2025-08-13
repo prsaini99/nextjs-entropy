@@ -30,6 +30,21 @@ const nextConfig = {
   // Image optimization
   images: {
     unoptimized: false,
+    domains: ['res.cloudinary.com', 'cdn.prod.website-files.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https', 
+        hostname: 'cdn.prod.website-files.com',
+        port: '',
+        pathname: '/**',
+      }
+    ]
   },
 };
 
