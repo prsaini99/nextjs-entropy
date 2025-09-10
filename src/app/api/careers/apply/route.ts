@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabase';
 
 export async function POST(request: NextRequest) {
   try {
@@ -95,26 +96,78 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // In a real application, you would:
-    // 1. Save the application data to a database
-    // 2. Upload the resume file to cloud storage
-    // 3. Send notification emails to the hiring team
-    // 4. Send confirmation email to the applicant
-    // 5. Add to ATS (Applicant Tracking System)
+    // Prepare application data for database storage
+    const dbApplicationData = {
+      job_title: applicationData.jobTitle as string,
+      first_name: applicationData.firstName as string,
+      last_name: applicationData.lastName as string,
+      email: applicationData.email as string,
+      phone: applicationData.phone as string || null,
+      location: applicationData.location as string || null,
+      work_eligibility: applicationData.workEligibility as string || null,
+      visa_status: applicationData.visaStatus as string || null,
+      portfolio_url: applicationData.portfolioUrl as string || null,
+      linkedin_url: applicationData.linkedinUrl as string || null,
+      github_url: applicationData.githubUrl as string || null,
+      years_of_experience: applicationData.yearsOfExperience as string || null,
+      current_position: applicationData.currentRole as string || null,
+      current_company: applicationData.currentCompany as string || null,
+      education: applicationData.education as string || null,
+      university: applicationData.university as string || null,
+      graduation_year: applicationData.graduationYear as string || null,
+      technical_skills: applicationData.technicalSkills as string || null,
+      relevant_projects: applicationData.relevantProjects as string || null,
+      role_answers: applicationData.roleAnswers as string || null,
+      availability_date: applicationData.availabilityDate as string || null,
+      salary_expectations: applicationData.salaryExpectations as string || null,
+      referral_source: applicationData.referralSource as string || null,
+      additional_info: applicationData.additionalInfo as string || null,
+      privacy_consent: applicationData.privacyConsent === 'true',
+      communication_consent: applicationData.communicationConsent === 'true',
+      utm_source: applicationData.utm_source as string || null,
+      utm_medium: applicationData.utm_medium as string || null,
+      utm_campaign: applicationData.utm_campaign as string || null,
+      utm_term: applicationData.utm_term as string || null,
+      utm_content: applicationData.utm_content as string || null,
+      landing_page: applicationData.landing_page as string || null,
+      referrer: applicationData.referrer as string || null,
+      attribution_data: applicationData.attribution_data ? 
+        JSON.parse(applicationData.attribution_data as string) : null,
+    };
 
-    // For now, we'll log the application (in production, use proper logging)
+    // Save application to Supabase database
+    let applicationId = null;
+    try {
+      const { data: savedApplication, error: supabaseError } = await supabase
+        .from('career_applications')
+        .insert([dbApplicationData])
+        .select('id')
+        .single();
+
+      if (supabaseError) {
+        console.error('Supabase error saving career application:', supabaseError);
+      } else {
+        applicationId = savedApplication?.id;
+        console.log('Career application saved to database with ID:', applicationId);
+      }
+    } catch (dbError) {
+      console.error('Database storage error for career application:', dbError);
+    }
+
+    // Log the application (keeping existing logging)
     console.log('New job application received:', {
       jobTitle: applicationData.jobTitle,
       applicantName: `${applicationData.firstName} ${applicationData.lastName}`,
       email: applicationData.email,
-      submittedAt: applicationData.submittedAt
+      submittedAt: applicationData.submittedAt,
+      databaseId: applicationId
     });
 
-    // Return success response
+    // Return success response with database ID if available
     return NextResponse.json(
       { 
         message: 'Application submitted successfully',
-        applicationId: `APP-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        applicationId: applicationId || `APP-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
         status: 'received'
       },
       { status: 200 }

@@ -1,9 +1,10 @@
-# StackBinary.io - Next.js Website with AI Chat
+# StackBinary.io - Complete Business Platform
 
-A modern, animated Next.js website for StackBinary featuring AI-powered chat assistance, comprehensive services showcase, and conversion-optimized contact forms with file attachments.
+A comprehensive Next.js platform for StackBinary featuring AI-powered chat, UTM tracking, lead management dashboard, and conversion-optimized workflows.
 
 ## Features
 
+### 🌐 Frontend Website
 - 🎨 **Modern Design**: Animated, responsive design with dark theme
 - 🤖 **AI Chat Assistant**: Floating chat widget with RAG (Retrieval-Augmented Generation)
 - 📱 **Responsive**: Works perfectly on all devices
@@ -13,14 +14,36 @@ A modern, animated Next.js website for StackBinary featuring AI-powered chat ass
 - 💼 **Careers Section**: Job listings with detailed application process
 - 🔗 **Social CTAs**: WhatsApp, Telegram, LinkedIn, and Email integration
 
+### 📊 UTM Tracking & Analytics
+- 🎯 **UTM Parameter Capture**: Automatic first-touch, last-touch, and multi-touch attribution
+- 📈 **Campaign Performance**: Track ROI and effectiveness of marketing campaigns
+- 🔍 **Google Analytics Integration**: GA4, GTM, Facebook Pixel, LinkedIn Insight Tag
+- 📧 **Attribution in Emails**: UTM data included in all lead notifications
+- 🛠️ **UTM Builder Tool**: Create trackable campaign URLs at `/utm-builder`
+- 📊 **Event Tracking**: Form interactions, social clicks, page views, conversions
+
+### 🏢 Lead Management Dashboard  
+- 🔐 **Admin Authentication**: Secure login system via Supabase Auth
+- 📋 **Lead Management**: Complete CRM interface at `/admin/leads`
+- 🎯 **Lead Scoring**: Automatic scoring based on source, service, budget (0-100 points)
+- 📈 **Analytics Dashboard**: Charts, conversion rates, campaign performance at `/admin/analytics`
+- 📝 **Notes System**: Add follow-up notes and track lead interactions
+- 🔄 **Status Pipeline**: New → Contacted → Qualified → Proposal Sent → Won/Lost
+- 💰 **Pipeline Value**: Track estimated deal values and revenue forecasting
+- 🎨 **Beautiful UI**: Professional dashboard with charts and data visualization
+
 ## Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: JavaScript/TypeScript
 - **Styling**: CSS Modules + Tailwind CSS
 - **Animation**: Framer Motion
+- **Database**: Supabase (PostgreSQL) with Row Level Security
+- **Authentication**: Supabase Auth
+- **Charts**: Recharts for analytics visualization
 - **AI/ML**: Groq API + Pinecone Vector DB
 - **Email**: Nodemailer with Gmail SMTP
+- **Analytics**: Google Analytics 4, GTM, Facebook Pixel, LinkedIn Insight
 - **Deployment**: AWS Amplify
 
 ## AI Chat Features
@@ -65,17 +88,28 @@ A modern, animated Next.js website for StackBinary featuring AI-powered chat ass
 3. **Environment Setup**
    Create `.env.local` file with:
    ```env
-   # Groq
+   # Supabase (for lead dashboard)
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   
+   # Analytics & Tracking
+   NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+   NEXT_PUBLIC_GTM_ID=GTM-T7LVKHS7
+   NEXT_PUBLIC_FACEBOOK_PIXEL_ID=XXXXXXXXXXXXXXX
+   NEXT_PUBLIC_LINKEDIN_PARTNER_ID=XXXXXXX
+   NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXXX
+
+   # Groq (for AI chat)
    GROQ_API_KEY=your_groq_api_key
    GROQ_MODEL=meta-llama/llama-4-scout-17b-16e-instruct
 
-   # Pinecone (serverless)
+   # Pinecone (for AI chat)
    PINECONE_API_KEY=your_pinecone_api_key
    PINECONE_HOST=https://your-index.svc.region.pinecone.io
    PINECONE_INDEX=your-index-name
    PINECONE_NAMESPACE=__default__
 
-   # Email Configuration (for contact form)
+   # Email Configuration
    EMAIL=your-gmail@gmail.com
    EMAIL_PASSWORD=your-gmail-app-password
    ```
@@ -89,6 +123,83 @@ A modern, animated Next.js website for StackBinary featuring AI-powered chat ass
    ```bash
    npm run build
    ```
+
+## 🚀 Lead Dashboard Setup
+
+### Step 1: Create Supabase Project
+1. Go to [supabase.com](https://supabase.com) and create a new project
+2. Wait for project initialization (2-3 minutes)  
+3. Go to **Settings → API** to get your credentials:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+### Step 2: Setup Database Schema
+1. In Supabase dashboard, go to **SQL Editor**
+2. Copy and paste the contents of `supabase-schema.sql`
+3. Click **Run** to create tables, indexes, and functions
+
+### Step 3: Create Admin User
+1. In Supabase → **Authentication → Users**
+2. Click **Add user**
+3. Enter your admin email and password
+4. Toggle **Email confirmed** to true
+
+### Step 4: Access Dashboard  
+1. Run your application: `npm run dev`
+2. Go to `http://localhost:3000/admin/dashboard`
+3. Login with your admin credentials
+4. Start managing leads! 🎉
+
+## 📊 UTM Tracking Setup
+
+### Google Analytics 4 Setup
+1. Go to [Google Analytics](https://analytics.google.com)
+2. Create property for stackbinary.io
+3. Navigate to: **Admin → Data Streams → Web**
+4. Create web stream for your domain
+5. Copy Measurement ID (starts with G-) to `.env.local`
+
+### Google Tag Manager (Optional)
+1. Go to [Google Tag Manager](https://tagmanager.google.com)
+2. Create container for stackbinary.io
+3. Copy GTM ID (GTM-XXXXXXX) to `.env.local`
+
+### UTM Campaign Creation
+- Use the built-in UTM Builder at `/utm-builder`
+- Or create manual links with parameters:
+  - `utm_source`: Traffic source (google, facebook, linkedin, email)
+  - `utm_medium`: Marketing medium (cpc, social, email, referral)
+  - `utm_campaign`: Campaign name (summer_sale, webinar_2024)
+  - `utm_term`: Keywords (optional)
+  - `utm_content`: Link variation (optional)
+
+### Example UTM Link
+```
+https://stackbinary.io/contact-us?utm_source=linkedin&utm_medium=social&utm_campaign=ai_services_promotion&utm_content=sponsored_post
+```
+
+## 🎯 How It All Works Together
+
+### Lead Generation Flow
+1. **Visitor arrives** with UTM parameters (or direct)
+2. **UTM data captured** and stored in browser (first-touch, last-touch)
+3. **User browses** website, UTM data persists across pages
+4. **Contact form submitted** with UTM attribution included
+5. **Lead stored** in Supabase with calculated score
+6. **Email sent** to you with UTM attribution data
+7. **Dashboard updated** with new lead and analytics
+
+### Attribution Models
+- **First-Touch**: Credits the first marketing touchpoint
+- **Last-Touch**: Credits the most recent touchpoint before conversion  
+- **Multi-Touch**: Tracks complete customer journey (if multiple visits)
+
+### Lead Scoring Algorithm (0-100 points)
+- **UTM Source**: Google (10pts), LinkedIn (8pts), Direct (8pts), etc.
+- **UTM Medium**: Referral (10pts), CPC (9pts), Email (8pts), etc.
+- **Service Type**: Custom Software (10pts), AI/ML (9pts), etc.
+- **Budget Range**: $50k+ (10pts), $25k (7pts), etc.
+- **Bonus Points**: Phone number (+2pts), Company website (+3pts)
 
 ## AWS Amplify Deployment
 
@@ -144,12 +255,26 @@ frontend:
 **Critical**: In the Amplify Console, go to "App settings" → "Environment variables" and add ALL required variables:
 
 ```
+# Supabase (for lead dashboard)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+
+# Analytics & Tracking
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GTM_ID=GTM-T7LVKHS7
+NEXT_PUBLIC_FACEBOOK_PIXEL_ID=XXXXXXXXXXXXXXX
+NEXT_PUBLIC_LINKEDIN_PARTNER_ID=XXXXXXX
+NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXXX
+
+# AI Chat (Groq + Pinecone)
 GROQ_API_KEY=gsk_your_groq_api_key_here
 GROQ_MODEL=meta-llama/llama-4-scout-17b-16e-instruct
 PINECONE_API_KEY=pcsk_your_pinecone_api_key_here
 PINECONE_HOST=https://your-index.svc.region.pinecone.io
 PINECONE_INDEX=your-index-name
 PINECONE_NAMESPACE=__default__
+
+# Email Configuration
 EMAIL=your-gmail@gmail.com
 EMAIL_PASSWORD=your-gmail-app-password
 ```
@@ -249,6 +374,9 @@ Amplify automatically redeploys when you push to your connected branch:
 - [ ] Contact form submits successfully
 - [ ] File attachments work (PDF, DOC, etc.)
 - [ ] Email delivery works
+- [ ] UTM parameters capture correctly
+- [ ] Lead dashboard authentication works
+- [ ] Database connection established
 - [ ] All environment variables set
 
 ### Post-Deployment Testing
@@ -288,24 +416,76 @@ Amplify automatically redeploys when you push to your connected branch:
 - [ ] LinkedIn link (configure URL)
 - [ ] Email link to contact@stackbinary.io
 
+#### Lead Dashboard Testing
+- [ ] **Admin Authentication**
+  - Login at `/admin/dashboard`
+  - Verify logout functionality
+  
+- [ ] **Lead Management**
+  - View leads at `/admin/leads`
+  - Filter and sort leads
+  - Update lead status
+  - View individual lead details
+  - Add notes to leads
+  
+- [ ] **Analytics Dashboard**
+  - View charts at `/admin/analytics`
+  - Verify UTM performance data
+  - Check conversion metrics
+
+#### UTM Tracking Testing  
+- [ ] **Parameter Capture**
+  - Visit site with UTM: `?utm_source=test&utm_medium=email&utm_campaign=readme_test`
+  - Submit contact form
+  - Verify UTM data in admin dashboard
+  - Check email notification includes UTM data
+  
+- [ ] **Attribution Models**
+  - Test first-touch attribution
+  - Test last-touch attribution (visit with different UTMs)
+  - Verify data persistence across browser sessions
+
 ## Project Structure
 
 ```
 src/
 ├── app/
 │   ├── api/
+│   │   ├── admin/                  # Admin dashboard APIs
+│   │   │   ├── analytics/route.js  # Analytics data
+│   │   │   ├── dashboard/route.js  # Dashboard metrics
+│   │   │   └── leads/              # Lead management APIs
+│   │   │       ├── route.js        # List/update leads
+│   │   │       └── [id]/route.js   # Individual lead details
+│   │   ├── careers/apply/route.ts  # Career applications (with UTM)
 │   │   ├── chat/route.ts           # AI chat endpoint
-│   │   └── contact/route.js        # Contact form handler
+│   │   └── contact/route.js        # Contact form (with UTM & DB storage)
+│   ├── admin/                      # Protected admin dashboard
+│   │   ├── dashboard/page.jsx      # Main dashboard with metrics
+│   │   ├── leads/                  # Lead management interface
+│   │   │   ├── page.jsx            # Leads table with filters
+│   │   │   └── [id]/page.jsx       # Individual lead details
+│   │   ├── analytics/page.jsx      # Analytics with charts
+│   │   └── layout.jsx              # Admin layout with auth
 │   ├── services/                   # Service detail pages
 │   ├── careers/                    # Careers section
 │   ├── contact-us/                 # Contact page
-│   └── layout.jsx                  # Root layout with FloatingChat
+│   ├── utm-builder/                # UTM link builder tool
+│   └── layout.jsx                  # Root layout with FloatingChat & Analytics
 ├── components/
+│   ├── Analytics.jsx               # GA4, GTM, FB Pixel integration
 │   ├── FloatingChat.jsx            # AI chat widget
 │   ├── Footer.jsx                  # Footer (social icons removed)
 │   └── pages/ContactUs/
-│       └── ContactWrapper.jsx      # Contact form component
-└── data/                          # Static content
+│       └── ContactWrapper.jsx      # Contact form (with UTM tracking)
+├── hooks/
+│   └── useUTMTracking.js           # UTM parameter capture & attribution
+├── lib/
+│   ├── analytics.js                # Event tracking functions
+│   ├── auth.js                     # Authentication helpers
+│   └── supabase.js                 # Database client & lead scoring
+├── data/                           # Static content
+└── supabase-schema.sql             # Database schema for leads & applications
 ```
 
 ## Performance Optimizations
@@ -333,10 +513,12 @@ src/
 ## Support & Maintenance
 
 ### Regular Tasks
-- Monitor AWS costs and usage
-- Update dependencies monthly
-- Check chat accuracy and tune threshold
-- Review email delivery rates
+- **Lead Management**: Review new leads daily in admin dashboard
+- **Campaign Optimization**: Monitor UTM performance and adjust marketing
+- **Database Maintenance**: Clean up test/spam leads as needed
+- **Analytics Review**: Check conversion rates and lead quality trends
+- **System Monitoring**: Monitor AWS costs, email delivery, chat accuracy
+- **Updates**: Update dependencies monthly, tune thresholds as needed
 
 ### For Issues
 1. Check AWS Amplify build logs
@@ -360,7 +542,38 @@ This project is proprietary and confidential to StackBinary.
 
 ---
 
+## 🎉 What You Get
+
+This complete platform provides:
+
+### 🌟 Professional Website
+- Modern, responsive design optimized for conversions
+- AI-powered chat assistant to engage visitors
+- Comprehensive service showcase with dynamic content
+- Career section for talent acquisition
+
+### 📊 Marketing Intelligence  
+- **UTM Campaign Tracking**: Know exactly which marketing efforts drive results
+- **Attribution Models**: First-touch, last-touch, and multi-touch attribution
+- **Google Analytics Integration**: GA4, GTM, Facebook Pixel, LinkedIn tracking
+- **Campaign Builder**: Create trackable URLs with the built-in UTM tool
+
+### 🏢 Lead Management CRM
+- **Automated Lead Capture**: Every form submission stored with UTM attribution
+- **Lead Scoring**: Automatic 0-100 scoring based on source, service, budget
+- **Status Pipeline**: Track leads from New → Contacted → Qualified → Won/Lost  
+- **Analytics Dashboard**: Beautiful charts showing campaign ROI and performance
+- **Notes System**: Add follow-ups and track interactions
+
+### 🚀 Business Growth Tools
+- **Revenue Pipeline**: Track estimated deal values and forecasting
+- **Campaign ROI**: See which marketing channels bring the highest-quality leads
+- **Conversion Optimization**: Identify bottlenecks and improve performance
+- **Professional Dashboard**: Impress clients and stakeholders with data
+
+---
+
 **Last Updated**: January 2025  
-**Version**: 2.0  
-**Deployment**: AWS Amplify  
+**Version**: 3.0 (with Lead Management Dashboard)  
+**Deployment**: AWS Amplify + Supabase  
 **Contact**: prateek@stackbinary.io
