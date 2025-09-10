@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { supabase, calculateLeadScore } from "@/lib/supabase";
 
 export async function POST(request) {
 	try {
@@ -47,6 +48,51 @@ export async function POST(request) {
 				JSON.stringify({ message: "Required fields are missing." }),
 				{ status: 400 }
 			);
+		}
+
+		// Prepare lead data for database storage
+		const leadData = {
+			full_name: fullName,
+			work_email: workEmail,
+			service: service,
+			budget: budget || null,
+			timeline: timeline,
+			project_summary: projectSummary || null,
+			company_website: companyWebsite || null,
+			phone: phone || null,
+			privacy_consent: privacyConsent === 'true' || privacyConsent === true,
+			utm_source: utm_source || null,
+			utm_medium: utm_medium || null,
+			utm_campaign: utm_campaign || null,
+			utm_term: utm_term || null,
+			utm_content: utm_content || null,
+			landing_page: landing_page || null,
+			referrer: referrer || null,
+			attribution_data: attribution_data ? (typeof attribution_data === 'string' ? JSON.parse(attribution_data) : attribution_data) : null,
+		};
+
+		// Calculate lead score
+		leadData.lead_score = calculateLeadScore(leadData);
+
+		// Store lead in Supabase database
+		let leadId = null;
+		try {
+			const { data: savedLead, error: supabaseError } = await supabase
+				.from('leads')
+				.insert([leadData])
+				.select('id')
+				.single();
+
+			if (supabaseError) {
+				console.error('Supabase error:', supabaseError);
+				// Continue with email sending even if database storage fails
+			} else {
+				leadId = savedLead?.id;
+				console.log('Lead saved to database with ID:', leadId);
+			}
+		} catch (dbError) {
+			console.error('Database storage error:', dbError);
+			// Continue with email sending even if database storage fails
 		}
 
 		// Configure Nodemailer transporter
@@ -124,6 +170,11 @@ export async function POST(request) {
 		
 		if (attachmentFile) {
 			emailContent += `Attachment: ${attachmentFile.name} (${(attachmentFile.size / 1024).toFixed(1)} KB)\n`;
+		}
+		
+		if (leadId) {
+			emailContent += `Lead ID: ${leadId}\n`;
+			emailContent += `Lead Score: ${leadData.lead_score}/100\n`;
 		}
 		
 		emailContent += `Submitted at: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST\n`;
