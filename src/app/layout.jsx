@@ -3,6 +3,7 @@ import "./style.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingChat from "@/components/FloatingChat";
+import Analytics from "@/components/Analytics";
 import Script from "next/script";
 import Head from "next/head";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -43,6 +44,18 @@ export default function RootLayout({ children }) {
         <Script type="text/javascript" src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/js/webflow.e856b9eae.js" />
       </Head>
       <body className="antialiased">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-T7LVKHS7"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+        
+        <Analytics />
         {/* Example of adding local scripts */}
         <Header />
         <ErrorBoundary>

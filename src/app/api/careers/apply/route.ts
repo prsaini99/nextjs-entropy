@@ -32,6 +32,15 @@ export async function POST(request: NextRequest) {
       additionalInfo: formData.get('additionalInfo'),
       privacyConsent: formData.get('privacyConsent'),
       communicationConsent: formData.get('communicationConsent'),
+      // UTM tracking data
+      utm_source: formData.get('utm_source'),
+      utm_medium: formData.get('utm_medium'),
+      utm_campaign: formData.get('utm_campaign'),
+      utm_term: formData.get('utm_term'),
+      utm_content: formData.get('utm_content'),
+      attribution_data: formData.get('attribution_data'),
+      landing_page: formData.get('landing_page'),
+      referrer: formData.get('referrer'),
       submittedAt: new Date().toISOString()
     };
 

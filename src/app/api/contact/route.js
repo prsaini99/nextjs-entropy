@@ -35,7 +35,12 @@ export async function POST(request) {
 			body = await request.json();
 		}
 
-		const { fullName, workEmail, service, budget, timeline, projectSummary, companyWebsite, phone, privacyConsent } = body;
+		const { 
+			fullName, workEmail, service, budget, timeline, 
+			projectSummary, companyWebsite, phone, privacyConsent,
+			utm_source, utm_medium, utm_campaign, utm_term, utm_content,
+			attribution_data, landing_page, referrer
+		} = body;
 
 		if (!fullName || !workEmail || !service || !timeline) {
 			return new Response(
@@ -55,8 +60,21 @@ export async function POST(request) {
 
 		// Create email content
 		let emailContent = `New Project Inquiry\n\n`;
+		emailContent += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+		emailContent += `CONTACT INFORMATION\n`;
+		emailContent += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
 		emailContent += `Name: ${fullName}\n`;
 		emailContent += `Email: ${workEmail}\n`;
+		if (phone) {
+			emailContent += `Phone: ${phone}\n`;
+		}
+		if (companyWebsite) {
+			emailContent += `Company & Website: ${companyWebsite}\n`;
+		}
+		
+		emailContent += `\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+		emailContent += `PROJECT DETAILS\n`;
+		emailContent += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
 		emailContent += `Service Needed: ${service}\n`;
 		emailContent += `Budget Range: ${budget || 'Not specified'}\n`;
 		emailContent += `Timeline: ${timeline}\n`;
@@ -65,21 +83,50 @@ export async function POST(request) {
 			emailContent += `\nProject Summary:\n${projectSummary}\n`;
 		}
 		
-		if (companyWebsite) {
-			emailContent += `\nCompany & Website: ${companyWebsite}\n`;
+		// Add UTM tracking information
+		emailContent += `\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+		emailContent += `MARKETING ATTRIBUTION (UTM)\n`;
+		emailContent += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+		
+		if (utm_source || utm_medium || utm_campaign) {
+			emailContent += `Source: ${utm_source || 'Direct/Unknown'}\n`;
+			emailContent += `Medium: ${utm_medium || 'None'}\n`;
+			emailContent += `Campaign: ${utm_campaign || 'None'}\n`;
+			if (utm_term) emailContent += `Term: ${utm_term}\n`;
+			if (utm_content) emailContent += `Content: ${utm_content}\n`;
+		} else {
+			emailContent += `No UTM parameters captured (Direct traffic or bookmark)\n`;
 		}
 		
-		if (phone) {
-			emailContent += `Phone: ${phone}\n`;
+		if (landing_page) {
+			emailContent += `Landing Page: ${landing_page}\n`;
 		}
 		
-		emailContent += `\nPrivacy Consent: ${privacyConsent ? 'Yes' : 'No'}\n`;
+		if (referrer && referrer !== 'direct') {
+			emailContent += `Referrer: ${referrer}\n`;
+		}
+		
+		// Add attribution model data if available
+		if (attribution_data) {
+			emailContent += `\nAttribution Journey:\n`;
+			if (attribution_data.first_touch) {
+				emailContent += `First Touch: ${attribution_data.first_touch.utm_source || 'Direct'} / ${attribution_data.first_touch.utm_medium || 'None'}\n`;
+			}
+			if (attribution_data.last_touch) {
+				emailContent += `Last Touch: ${attribution_data.last_touch.utm_source || 'Direct'} / ${attribution_data.last_touch.utm_medium || 'None'}\n`;
+			}
+		}
+		
+		emailContent += `\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+		emailContent += `ADDITIONAL INFO\n`;
+		emailContent += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+		emailContent += `Privacy Consent: ${privacyConsent ? 'Yes' : 'No'}\n`;
 		
 		if (attachmentFile) {
-			emailContent += `\nAttachment: ${attachmentFile.name} (${attachmentFile.size} bytes)\n`;
+			emailContent += `Attachment: ${attachmentFile.name} (${(attachmentFile.size / 1024).toFixed(1)} KB)\n`;
 		}
 		
-		emailContent += `\nSubmitted at: ${new Date().toLocaleString()}\n`;
+		emailContent += `Submitted at: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST\n`;
 
 		// Prepare email options
 		const mailOptions = {

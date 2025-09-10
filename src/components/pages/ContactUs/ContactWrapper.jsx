@@ -1,7 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import Link from 'next/link';
+import { useUTMTracking, getUTMData } from '@/hooks/useUTMTracking';
+import { trackEvent, trackFormInteraction, trackSocialClick, trackConversion, ANALYTICS_EVENTS } from '@/lib/analytics';
 
 const FORM_STATUS = {
     IDLE: "idle",
@@ -34,10 +36,25 @@ export default function ContactWrapper() {
     const [step2Data, setStep2Data] = useState(initStep2Data);
     const [status, setStatus] = useState(FORM_STATUS.IDLE);
     const [loading, setLoading] = useState(false);
+    const { utmData, getAttributionData } = useUTMTracking();
+    
+    // Track form view on mount
+    useEffect(() => {
+        trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_VIEW, {
+            form_location: 'contact_page'
+        });
+    }, []);
 
     const handleStep1Change = (e) => {
         const { name, value } = e.target;
         setStep1Data({ ...step1Data, [name]: value });
+        
+        // Track form start on first interaction
+        if (!step1Data.fullName && !step1Data.workEmail) {
+            trackFormInteraction('contact_form', 'start', {
+                step: 1
+            });
+        }
     };
 
     const handleStep2Change = (e) => {
@@ -55,8 +72,21 @@ export default function ContactWrapper() {
         e.preventDefault();
         if (!step1Data.fullName || !step1Data.workEmail || !step1Data.service || !step1Data.timeline) {
             alert('Please fill in all required fields');
+            trackFormInteraction('contact_form', 'error', {
+                step: 1,
+                error_type: 'validation'
+            });
             return;
         }
+        
+        // Track step 1 completion
+        trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_STEP_COMPLETE, {
+            step_number: 1,
+            service_interest: step1Data.service,
+            budget_range: step1Data.budget,
+            timeline: step1Data.timeline
+        });
+        
         setStatus(FORM_STATUS.STEP_TWO);
     };
 
@@ -65,12 +95,26 @@ export default function ContactWrapper() {
         setLoading(true);
         
         try {
+            // Get UTM and attribution data
+            const attributionData = getAttributionData();
+            const currentUTM = utmData.current || utmData.last_touch || utmData.first_touch || {};
+            
             const finalData = {
                 ...step1Data,
                 ...step2Data,
+                // Add UTM parameters
+                utm_source: currentUTM.utm_source,
+                utm_medium: currentUTM.utm_medium,
+                utm_campaign: currentUTM.utm_campaign,
+                utm_term: currentUTM.utm_term,
+                utm_content: currentUTM.utm_content,
+                // Add attribution data
+                attribution_data: attributionData,
+                landing_page: currentUTM.landing_page,
+                referrer: currentUTM.referrer
             };
             
-            console.log('Submitting final data:', finalData);
+            console.log('Submitting final data with UTM:', finalData);
             
             let response;
             
@@ -103,14 +147,37 @@ export default function ContactWrapper() {
             }
 
             if (response.ok) {
+                // Track successful submission
+                trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_SUBMIT, {
+                    service_interest: step1Data.service,
+                    budget_range: step1Data.budget,
+                    timeline: step1Data.timeline,
+                    has_attachment: !!step2Data.attachmentFile,
+                    form_type: 'detailed'
+                });
+                
+                // Track as conversion
+                trackConversion('contact_form_submit', null, 'INR', {
+                    lead_source: currentUTM.utm_source || 'direct',
+                    lead_medium: currentUTM.utm_medium || 'none'
+                });
+                
                 setStatus(FORM_STATUS.SUCCESS);
                 setStep1Data(initStep1Data);
                 setStep2Data(initStep2Data);
             } else {
+                trackFormInteraction('contact_form', 'error', {
+                    step: 2,
+                    error_type: 'submission_failed'
+                });
                 setStatus(FORM_STATUS.ERROR);
             }
         } catch (error) {
             console.error('Error submitting form:', error);
+            trackFormInteraction('contact_form', 'error', {
+                step: 2,
+                error_type: 'network_error'
+            });
             setStatus(FORM_STATUS.ERROR);
         } finally {
             setLoading(false);
@@ -120,21 +187,61 @@ export default function ContactWrapper() {
     const skipStep2 = async () => {
         setLoading(true);
         try {
+            // Get UTM and attribution data
+            const attributionData = getAttributionData();
+            const currentUTM = utmData.current || utmData.last_touch || utmData.first_touch || {};
+            
+            const dataWithUTM = {
+                ...step1Data,
+                // Add UTM parameters
+                utm_source: currentUTM.utm_source,
+                utm_medium: currentUTM.utm_medium,
+                utm_campaign: currentUTM.utm_campaign,
+                utm_term: currentUTM.utm_term,
+                utm_content: currentUTM.utm_content,
+                // Add attribution data
+                attribution_data: attributionData,
+                landing_page: currentUTM.landing_page,
+                referrer: currentUTM.referrer
+            };
+            
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(step1Data),
+                body: JSON.stringify(dataWithUTM),
             });
 
             if (response.ok) {
+                // Track successful submission (quick form)
+                trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_SUBMIT, {
+                    service_interest: step1Data.service,
+                    budget_range: step1Data.budget,
+                    timeline: step1Data.timeline,
+                    form_type: 'quick'
+                });
+                
+                // Track as conversion
+                trackConversion('contact_form_submit_quick', null, 'INR', {
+                    lead_source: currentUTM.utm_source || 'direct',
+                    lead_medium: currentUTM.utm_medium || 'none'
+                });
+                
                 setStatus(FORM_STATUS.SUCCESS);
                 setStep1Data(initStep1Data);
                 setStep2Data(initStep2Data);
             } else {
+                trackFormInteraction('contact_form', 'error', {
+                    step: 1,
+                    error_type: 'quick_submission_failed'
+                });
                 setStatus(FORM_STATUS.ERROR);
             }
         } catch (error) {
             console.error('Error submitting form:', error);
+            trackFormInteraction('contact_form', 'error', {
+                step: 1,
+                error_type: 'network_error'
+            });
             setStatus(FORM_STATUS.ERROR);
         } finally {
             setLoading(false);
@@ -173,6 +280,7 @@ export default function ContactWrapper() {
                                         href="https://wa.me/?text=Hello%20StackBinary%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project."
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={() => trackSocialClick('whatsapp', 'contact_page')}
                                         className="social-cta-button secondary-button"
                                         style={{
                                             display: 'flex',
@@ -194,6 +302,7 @@ export default function ContactWrapper() {
                                         href="https://t.me/?text=Hello%20StackBinary%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project."
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={() => trackSocialClick('telegram', 'contact_page')}
                                         className="social-cta-button secondary-button"
                                         style={{
                                             display: 'flex',
@@ -215,6 +324,7 @@ export default function ContactWrapper() {
                                         href=""
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={() => trackSocialClick('linkedin', 'contact_page')}
                                         className="social-cta-button secondary-button"
                                         style={{
                                             display: 'flex',
@@ -234,6 +344,7 @@ export default function ContactWrapper() {
                                     {/* Email CTA */}
                                     <a 
                                         href="mailto:contact@stackbinary.io?subject=Project%20Inquiry&body=Hello%20StackBinary%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project.%0A%0ABest%20regards"
+                                        onClick={() => trackSocialClick('email', 'contact_page')}
                                         className="social-cta-button secondary-button"
                                         style={{
                                             display: 'flex',

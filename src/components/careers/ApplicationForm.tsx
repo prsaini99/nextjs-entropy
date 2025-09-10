@@ -1,6 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Job } from '@/lib/careers';
+import { useUTMTracking } from '@/hooks/useUTMTracking';
+import { trackEvent, trackFormInteraction, trackConversion, ANALYTICS_EVENTS } from '@/lib/analytics';
 
 interface Props {
   job: Job;
@@ -56,6 +58,17 @@ interface FormData {
 export default function ApplicationForm({ job, onClose }: Props) {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { utmData, getAttributionData } = useUTMTracking();
+  
+  // Track form view on mount
+  useEffect(() => {
+    trackEvent(ANALYTICS_EVENTS.CAREER_APPLY_START, {
+      job_title: job.title,
+      job_team: job.team,
+      job_location: job.location,
+      job_type: job.type
+    });
+  }, [job]);
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -107,18 +120,95 @@ export default function ApplicationForm({ job, onClose }: Props) {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Here you would submit the form data to your API
-    // For now, we'll just simulate a submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    alert('Application submitted successfully! We\'ll get back to you within 48 hours.');
-    setIsSubmitting(false);
-    onClose();
+    try {
+      // Get UTM and attribution data
+      const attributionData = getAttributionData();
+      const currentUTM = utmData.current || utmData.last_touch || utmData.first_touch || {};
+      
+      // Create FormData with all application data
+      const submitData = new FormData();
+      
+      // Add all form fields
+      submitData.append('jobTitle', job.title);
+      submitData.append('firstName', formData.firstName);
+      submitData.append('lastName', formData.lastName);
+      submitData.append('email', formData.email);
+      submitData.append('phone', formData.phone);
+      submitData.append('workEligibility', formData.workEligibility);
+      submitData.append('currentLocation', formData.currentLocation);
+      submitData.append('portfolioUrl', formData.portfolioUrl || '');
+      submitData.append('linkedinUrl', formData.linkedinUrl || '');
+      submitData.append('githubUrl', formData.githubUrl || '');
+      if (formData.resumeFile) {
+        submitData.append('resume', formData.resumeFile);
+      }
+      submitData.append('totalExperience', formData.totalExperience);
+      submitData.append('relevantExperience', formData.relevantExperience || '');
+      submitData.append('keyStrengths', formData.keyStrengths);
+      submitData.append('whyInterested', formData.whyInterested);
+      submitData.append('whyStackBinary', formData.whyStackBinary);
+      submitData.append('roleAnswers', JSON.stringify(formData.roleAnswers));
+      submitData.append('startDate', formData.startDate);
+      submitData.append('salaryExpectation', formData.salaryExpectation || '');
+      submitData.append('anythingElse', formData.anythingElse || '');
+      
+      // Add UTM tracking data
+      submitData.append('utm_source', currentUTM.utm_source || '');
+      submitData.append('utm_medium', currentUTM.utm_medium || '');
+      submitData.append('utm_campaign', currentUTM.utm_campaign || '');
+      submitData.append('utm_term', currentUTM.utm_term || '');
+      submitData.append('utm_content', currentUTM.utm_content || '');
+      submitData.append('attribution_data', JSON.stringify(attributionData));
+      submitData.append('landing_page', currentUTM.landing_page || '');
+      submitData.append('referrer', currentUTM.referrer || '');
+      
+      const response = await fetch('/api/careers/apply', {
+        method: 'POST',
+        body: submitData
+      });
+      
+      if (response.ok) {
+        // Track successful submission
+        trackEvent(ANALYTICS_EVENTS.CAREER_APPLY_SUBMIT, {
+          job_title: job.title,
+          job_team: job.team,
+          experience_level: formData.totalExperience
+        });
+        
+        // Track as conversion
+        trackConversion('career_application_submit', null, 'INR', {
+          job_title: job.title,
+          lead_source: currentUTM.utm_source || 'direct',
+          lead_medium: currentUTM.utm_medium || 'none'
+        });
+        
+        alert('Application submitted successfully! We\'ll get back to you within 48 hours.');
+        onClose();
+      } else {
+        throw new Error('Failed to submit application');
+      }
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      trackFormInteraction('career_application', 'error', {
+        job_title: job.title,
+        error_type: 'submission_failed'
+      });
+      alert('There was an error submitting your application. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const canProceed = () => {
     switch (currentStep) {
       case 1:
+        // Track form start on first step interaction
+        if (formData.firstName || formData.lastName) {
+          trackFormInteraction('career_application', 'progress', {
+            job_title: job.title,
+            step: 1
+          });
+        }
         return formData.firstName && formData.lastName && formData.email && formData.phone;
       case 2:
         return formData.workEligibility && formData.currentLocation;
