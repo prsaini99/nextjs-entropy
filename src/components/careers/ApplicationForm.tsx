@@ -123,7 +123,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
     try {
       // Get UTM and attribution data
       const attributionData = getAttributionData();
-      const currentUTM = utmData.current || utmData.last_touch || utmData.first_touch || {};
+      const currentUTM = (utmData as any)?.current || (utmData as any)?.last_touch || (utmData as any)?.first_touch || {};
       
       // Create FormData with all application data
       const submitData = new FormData();
