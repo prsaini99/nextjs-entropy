@@ -6,7 +6,7 @@ const UTM_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm
 const STORAGE_KEY = 'utm_tracking_data';
 const SESSION_KEY = 'utm_session_data';
 
-export function useUTMTracking() {
+function UTMTrackingInner() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const [utmData, setUtmData] = useState({});
@@ -103,9 +103,50 @@ export function useUTMTracking() {
   };
 }
 
+export function useUTMTracking() {
+  // Fallback hook that doesn't use useSearchParams
+  const [utmData, setUtmData] = useState({
+    first_touch: {},
+    last_touch: {},
+    current: {}
+  });
+  useEffect(() => {
+    // Only use stored data during SSR/SSG
+    const storedData = getStoredUTMData();
+    const sessionData = getSessionUTMData();
+    setUtmData({
+      first_touch: storedData.first_touch || {},
+      last_touch: sessionData || {},
+      current: {}
+    });
+  }, []);
+
+  return {
+    utmData,
+    hasUTMParams: false, // Always false in fallback mode
+    getAttributionData: () => ({
+      first_touch: utmData.first_touch || {},
+      last_touch: utmData.last_touch || {},
+      multi_touch: getAllTouchPoints()
+    }),
+    clearUTMData: () => {
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem(STORAGE_KEY);
+        sessionStorage.removeItem(SESSION_KEY);
+        setUtmData({
+          first_touch: {},
+          last_touch: {},
+          current: {}
+        });
+      }
+    }
+  };
+}
+
 // Helper functions
 function getStoredUTMData() {
   try {
+    if (typeof window === 'undefined') return {};
     const stored = localStorage.getItem(STORAGE_KEY);
     return stored ? JSON.parse(stored) : {};
   } catch {
@@ -115,6 +156,7 @@ function getStoredUTMData() {
 
 function getSessionUTMData() {
   try {
+    if (typeof window === 'undefined') return null;
     const stored = sessionStorage.getItem(SESSION_KEY);
     return stored ? JSON.parse(stored) : null;
   } catch {
