@@ -62,7 +62,7 @@ function AdminDashboardLayout({ children }) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex">
       {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
         <div className="fixed inset-0 flex z-40 lg:hidden">
@@ -94,7 +94,7 @@ function AdminDashboardLayout({ children }) {
       </div>
 
       {/* Main content area */}
-      <div className="lg:pl-72 flex flex-col flex-1">
+      <div className="flex flex-col flex-1">
         {/* Enhanced Top Navigation */}
         <div className="relative z-10 flex-shrink-0 flex h-20 bg-white/80 backdrop-blur-xl shadow-lg border-b border-white/20">
           <button
@@ -118,6 +118,18 @@ function AdminDashboardLayout({ children }) {
 
             {/* Quick Actions & User Menu */}
             <div className="flex items-center space-x-4">
+              {/* Home/Website Button */}
+              <a
+                href="/"
+                className="flex items-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 py-2 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+                title="Go to main website"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span className="font-semibold">Website</span>
+              </a>
+
               {/* Quick Actions */}
               <div className="hidden md:flex items-center space-x-2">
                 {quickActions.map((action, index) => (
@@ -143,22 +155,31 @@ function AdminDashboardLayout({ children }) {
                 </div>
               </div>
 
-              {/* User Menu */}
-              <div className="relative">
-                <button
-                  className="flex items-center space-x-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg"
-                  onClick={signOut}
-                  title="Sign out"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                    <span className="text-sm font-bold">
+              {/* User Menu with Logout */}
+              <div className="flex items-center space-x-3">
+                {/* User Profile */}
+                <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                    <span className="text-sm font-bold text-white">
                       {user?.email?.charAt(0).toUpperCase() || 'U'}
                     </span>
                   </div>
-                  <div className="hidden sm:block text-left">
-                    <div className="text-sm font-semibold">Admin User</div>
-                    <div className="text-xs opacity-75">Click to sign out</div>
+                  <div className="hidden sm:block">
+                    <div className="text-xs font-semibold text-gray-900">Admin</div>
+                    <div className="text-xs text-gray-500">{user?.email || 'admin@stackbinary.com'}</div>
                   </div>
+                </div>
+                
+                {/* Logout Button */}
+                <button
+                  className="flex items-center space-x-2 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white px-4 py-2 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+                  onClick={signOut}
+                  title="Sign out"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                  </svg>
+                  <span className="font-semibold">Logout</span>
                 </button>
               </div>
             </div>
@@ -284,35 +305,6 @@ function EnhancedSidebarContent({ navigation, pathname }) {
         })}
       </nav>
 
-      {/* Enhanced Footer */}
-      <div className="flex-shrink-0 p-4 border-t border-gray-200">
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-4">
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-xl flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <div className="ml-3">
-              <p className="text-sm font-semibold text-gray-900">Admin Dashboard</p>
-              <p className="text-xs text-gray-500">v2.0 • Lead Management</p>
-            </div>
-          </div>
-          
-          {/* System Status */}
-          <div className="mt-3 pt-3 border-t border-gray-200">
-            <div className="flex items-center justify-between text-xs">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-gray-600">System Online</span>
-              </div>
-              <span className="text-gray-500">
-                {new Date().toLocaleDateString()}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

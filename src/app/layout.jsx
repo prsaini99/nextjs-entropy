@@ -1,8 +1,6 @@
 import "./globals.css";
 import "./style.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import FloatingChat from "@/components/FloatingChat";
+import ConditionalLayout from "@/components/ConditionalLayout";
 import Analytics from "@/components/Analytics";
 import Script from "next/script";
 import Head from "next/head";
@@ -56,13 +54,11 @@ export default function RootLayout({ children }) {
         {/* End Google Tag Manager (noscript) */}
         
         <Analytics />
-        {/* Example of adding local scripts */}
-        <Header />
-        <ErrorBoundary>
-          {children}
-        </ErrorBoundary>
-        <Footer />
-        <FloatingChat />
+        <ConditionalLayout>
+          <ErrorBoundary>
+            {children}
+          </ErrorBoundary>
+        </ConditionalLayout>
       </body>
     </html>
   );
