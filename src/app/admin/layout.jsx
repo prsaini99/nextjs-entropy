@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AuthGuard, useAuth } from '@/lib/auth';
@@ -15,58 +15,65 @@ export default function AdminLayout({ children }) {
 
 function AdminDashboardLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
   const pathname = usePathname();
   const { user, signOut } = useAuth();
+
+  useEffect(() => {
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const navigation = [
     {
       name: 'Dashboard',
       href: '/admin/dashboard',
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
-        </svg>
-      ),
+      icon: '🏠',
+      description: 'Overview & KPIs',
+      badge: null,
     },
     {
       name: 'Leads',
       href: '/admin/leads',
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
-    },
-    {
-      name: 'Careers',
-      href: '/admin/careers',
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6z" />
-        </svg>
-      ),
+      icon: '👥',
+      description: 'Manage prospects',
+      badge: null,
     },
     {
       name: 'Analytics',
       href: '/admin/analytics',
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
+      icon: '📊',
+      description: 'Performance insights',
+      badge: 'NEW',
+    },
+    {
+      name: 'Careers',
+      href: '/admin/careers',
+      icon: '💼',
+      description: 'Job applications',
+      badge: null,
     },
   ];
 
+  const quickActions = [
+    { name: 'New Lead', icon: '➕', action: () => window.open('/admin/leads', '_blank') },
+    { name: 'Export Data', icon: '📥', action: () => window.open('/api/admin/export?type=leads&format=xlsx', '_blank') },
+    { name: 'Analytics', icon: '📈', action: () => window.open('/admin/analytics', '_blank') },
+  ];
+
   return (
-    <div className="h-screen flex overflow-hidden bg-gray-100">
-      {/* Mobile sidebar */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
-        <div className="fixed inset-0 flex z-40 md:hidden">
-          <div className="fixed inset-0 bg-gray-600 bg-opacity-75" onClick={() => setSidebarOpen(false)} />
-          <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white">
+        <div className="fixed inset-0 flex z-40 lg:hidden">
+          <div 
+            className="fixed inset-0 bg-gray-900/80 backdrop-blur-sm" 
+            onClick={() => setSidebarOpen(false)} 
+          />
+          <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white/95 backdrop-blur-xl">
             <div className="absolute top-0 right-0 -mr-12 pt-2">
               <button
-                className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white/50"
                 onClick={() => setSidebarOpen(false)}
               >
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,24 +81,24 @@ function AdminDashboardLayout({ children }) {
                 </svg>
               </button>
             </div>
-            <SidebarContent navigation={navigation} pathname={pathname} />
+            <EnhancedSidebarContent navigation={navigation} pathname={pathname} />
           </div>
         </div>
       )}
 
       {/* Desktop sidebar */}
-      <div className="hidden md:flex md:flex-shrink-0">
-        <div className="flex flex-col w-64">
-          <SidebarContent navigation={navigation} pathname={pathname} />
+      <div className="hidden lg:flex lg:flex-shrink-0">
+        <div className="flex flex-col w-72">
+          <EnhancedSidebarContent navigation={navigation} pathname={pathname} />
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="flex flex-col w-0 flex-1 overflow-hidden">
-        {/* Top bar */}
-        <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+      {/* Main content area */}
+      <div className="lg:pl-72 flex flex-col flex-1">
+        {/* Enhanced Top Navigation */}
+        <div className="relative z-10 flex-shrink-0 flex h-20 bg-white/80 backdrop-blur-xl shadow-lg border-b border-white/20">
           <button
-            className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
+            className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden"
             onClick={() => setSidebarOpen(true)}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -99,28 +106,58 @@ function AdminDashboardLayout({ children }) {
             </svg>
           </button>
           
-          <div className="flex-1 px-4 flex justify-between">
-            <div className="flex-1 flex">
-              <div className="w-full flex md:ml-0">
-                <div className="relative w-full text-gray-400 focus-within:text-gray-600">
-                  <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                    <h1 className="text-xl font-semibold text-gray-900 ml-2">StackBinary Admin</h1>
-                  </div>
-                </div>
+          <div className="flex-1 px-4 flex justify-between items-center">
+            <div className="flex items-center space-x-4">
+              <div className="hidden lg:block">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  StackBinary Admin
+                </h1>
+                <p className="text-sm text-gray-500">Lead Management Dashboard</p>
               </div>
             </div>
-            
-            <div className="ml-4 flex items-center md:ml-6">
-              <div className="ml-3 relative">
+
+            {/* Quick Actions & User Menu */}
+            <div className="flex items-center space-x-4">
+              {/* Quick Actions */}
+              <div className="hidden md:flex items-center space-x-2">
+                {quickActions.map((action, index) => (
+                  <button
+                    key={index}
+                    onClick={action.action}
+                    className="flex items-center space-x-2 px-3 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors text-sm font-medium text-gray-700"
+                    title={action.name}
+                  >
+                    <span className="text-lg">{action.icon}</span>
+                    <span className="hidden xl:inline">{action.name}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Time Display */}
+              <div className="hidden md:block text-right">
+                <div className="text-sm font-semibold text-gray-900">
+                  {currentTime.toLocaleTimeString()}
+                </div>
+                <div className="text-xs text-gray-500">
+                  {currentTime.toLocaleDateString()}
+                </div>
+              </div>
+
+              {/* User Menu */}
+              <div className="relative">
                 <button
-                  className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="flex items-center space-x-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg"
                   onClick={signOut}
+                  title="Sign out"
                 >
-                  <span className="sr-only">Sign out</span>
-                  <div className="h-8 w-8 rounded-full bg-gray-300 flex items-center justify-center">
-                    <span className="text-sm font-medium text-gray-700">
+                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                    <span className="text-sm font-bold">
                       {user?.email?.charAt(0).toUpperCase() || 'U'}
                     </span>
+                  </div>
+                  <div className="hidden sm:block text-left">
+                    <div className="text-sm font-semibold">Admin User</div>
+                    <div className="text-xs opacity-75">Click to sign out</div>
                   </div>
                 </button>
               </div>
@@ -128,10 +165,10 @@ function AdminDashboardLayout({ children }) {
           </div>
         </div>
 
-        {/* Page content */}
-        <main className="flex-1 relative overflow-y-auto focus:outline-none">
-          <div className="py-6">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        {/* Enhanced Page content */}
+        <main className="flex-1 relative">
+          <div className="py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {children}
             </div>
           </div>
@@ -141,46 +178,138 @@ function AdminDashboardLayout({ children }) {
   );
 }
 
-function SidebarContent({ navigation, pathname }) {
+function EnhancedSidebarContent({ navigation, pathname }) {
+  const [stats, setStats] = useState({});
+
+  useEffect(() => {
+    // Fetch some basic stats for the sidebar
+    const fetchStats = async () => {
+      try {
+        const response = await fetch('/api/admin/dashboard');
+        const data = await response.json();
+        setStats({
+          totalLeads: data.summary?.leads?.total || 0,
+          newLeads: data.summary?.leads?.new || 0,
+          conversionRate: data.summary?.conversion_rates?.overall_conversion || 0,
+        });
+      } catch (error) {
+        console.error('Failed to fetch sidebar stats:', error);
+      }
+    };
+
+    fetchStats();
+  }, []);
+
   return (
-    <div className="flex flex-col h-0 flex-1 border-r border-gray-200 bg-white">
-      <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-        <div className="flex items-center flex-shrink-0 px-4">
-          <div className="h-8 w-auto">
-            <span className="text-xl font-bold text-gray-900">StackBinary</span>
+    <div className="flex flex-col h-full bg-gradient-to-b from-white via-gray-50 to-gray-100 shadow-2xl border-r border-gray-200/50">
+      {/* Enhanced Logo Section */}
+      <div className="flex-shrink-0 px-6 py-8">
+        <div className="flex items-center">
+          <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <span className="text-2xl">🚀</span>
+          </div>
+          <div className="ml-4">
+            <h2 className="text-xl font-bold text-gray-900">StackBinary</h2>
+            <p className="text-sm text-gray-500">Admin Portal</p>
           </div>
         </div>
-        
-        <nav className="mt-5 flex-1 px-2 bg-white space-y-1">
-          {navigation.map((item) => {
-            const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`${
-                  isActive
-                    ? 'bg-gray-100 text-gray-900'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                } group flex items-center px-2 py-2 text-sm font-medium rounded-md`}
-              >
-                <div className={`${
-                  isActive ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500'
-                } mr-3 flex-shrink-0`}>
-                  {item.icon}
-                </div>
-                {item.name}
-              </Link>
-            );
-          })}
-        </nav>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="px-6 mb-6">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-100">
+          <h3 className="text-sm font-semibold text-gray-700 mb-3">Quick Stats</h3>
+          <div className="space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">Total Leads</span>
+              <span className="text-sm font-bold text-blue-600">{stats.totalLeads}</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">New Today</span>
+              <span className="text-sm font-bold text-green-600">{stats.newLeads}</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">Conv. Rate</span>
+              <span className="text-sm font-bold text-purple-600">{stats.conversionRate}%</span>
+            </div>
+          </div>
+        </div>
       </div>
       
-      <div className="flex-shrink-0 flex border-t border-gray-200 p-4">
-        <div className="flex items-center">
-          <div className="ml-3">
-            <p className="text-xs font-medium text-gray-500">Admin Dashboard v1.0</p>
-            <p className="text-xs text-gray-400">Lead Management System</p>
+      {/* Enhanced Navigation */}
+      <nav className="flex-1 px-4 space-y-2">
+        <p className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+          Navigation
+        </p>
+        {navigation.map((item) => {
+          const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`group relative flex items-center px-4 py-3 text-sm font-semibold rounded-2xl transition-all duration-200 ${
+                isActive
+                  ? 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg transform scale-105'
+                  : 'text-gray-700 hover:bg-white hover:shadow-md hover:scale-102'
+              }`}
+            >
+              <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${
+                isActive 
+                  ? 'bg-white/20 backdrop-blur-sm' 
+                  : 'bg-gray-100 group-hover:bg-gray-200'
+              }`}>
+                <span className="text-xl">{item.icon}</span>
+              </div>
+              <div className="ml-4 flex-1">
+                <div className="flex items-center justify-between">
+                  <span>{item.name}</span>
+                  {item.badge && (
+                    <span className={`px-2 py-1 text-xs font-bold rounded-full ${
+                      isActive 
+                        ? 'bg-white/20 text-white' 
+                        : 'bg-indigo-100 text-indigo-600'
+                    }`}>
+                      {item.badge}
+                    </span>
+                  )}
+                </div>
+                <p className={`text-xs mt-1 ${
+                  isActive ? 'text-white/75' : 'text-gray-500'
+                }`}>
+                  {item.description}
+                </p>
+              </div>
+            </Link>
+          );
+        })}
+      </nav>
+
+      {/* Enhanced Footer */}
+      <div className="flex-shrink-0 p-4 border-t border-gray-200">
+        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-4">
+          <div className="flex items-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-xl flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-semibold text-gray-900">Admin Dashboard</p>
+              <p className="text-xs text-gray-500">v2.0 • Lead Management</p>
+            </div>
+          </div>
+          
+          {/* System Status */}
+          <div className="mt-3 pt-3 border-t border-gray-200">
+            <div className="flex items-center justify-between text-xs">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-gray-600">System Online</span>
+              </div>
+              <span className="text-gray-500">
+                {new Date().toLocaleDateString()}
+              </span>
+            </div>
           </div>
         </div>
       </div>

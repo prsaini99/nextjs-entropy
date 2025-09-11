@@ -1,8 +1,11 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
-export async function GET() {
+export async function GET(request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const enhanced = searchParams.get('enhanced') === 'true'; // Include advanced analytics
+    
     // Get current date ranges
     const now = new Date();
     const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
@@ -143,6 +146,12 @@ export async function GET() {
       alerts: generateAlerts(leadMetrics, applicationMetrics, recentLeads),
     };
 
+    // Add enhanced analytics if requested
+    if (enhanced) {
+      const enhancedData = await getEnhancedAnalytics();
+      dashboardData.enhanced_analytics = enhancedData;
+    }
+
     return NextResponse.json(dashboardData);
 
   } catch (error) {
@@ -202,4 +211,63 @@ function generateAlerts(leadMetrics, applicationMetrics, recentLeads) {
   }
 
   return alerts;
+}
+
+async function getEnhancedAnalytics() {
+  try {
+    // Get real-time metrics
+    const { data: realTimeMetrics } = await supabase
+      .rpc('real_time_metrics');
+
+    // Get lead velocity
+    const { data: velocityData } = await supabase
+      .rpc('calculate_lead_velocity');
+
+    // Get activity patterns for today
+    const today = new Date().toISOString().split('T')[0];
+    const { data: todayPatterns } = await supabase
+      .from('activity_patterns')
+      .select('*')
+      .eq('date', today);
+
+    // Get service performance
+    const { data: servicePerformance } = await supabase
+      .from('service_performance')
+      .select('*')
+      .order('total_requests', { ascending: false })
+      .limit(5);
+
+    // Get top campaigns
+    const { data: topCampaigns } = await supabase
+      .from('campaign_performance')
+      .select('*')
+      .order('conversion_rate', { ascending: false })
+      .limit(5);
+
+    // Get revenue forecast
+    const { data: revenueForecast } = await supabase
+      .rpc('revenue_forecast', { forecast_months: 3 });
+
+    // Get lead scoring analysis
+    const { data: scoringAnalysis } = await supabase
+      .rpc('analyze_lead_scoring');
+
+    return {
+      real_time_metrics: realTimeMetrics || [],
+      lead_velocity: velocityData || [],
+      today_activity: todayPatterns || [],
+      top_services: servicePerformance || [],
+      top_campaigns: topCampaigns || [],
+      revenue_forecast: revenueForecast || [],
+      scoring_analysis: scoringAnalysis || [],
+      generated_at: new Date().toISOString(),
+    };
+
+  } catch (error) {
+    console.error('Error getting enhanced analytics:', error);
+    return {
+      error: 'Failed to load enhanced analytics',
+      generated_at: new Date().toISOString(),
+    };
+  }
 }
