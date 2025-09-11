@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { supabase, calculateLeadScore } from "@/lib/supabase";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 export async function POST(request) {
 	try {
@@ -74,10 +75,10 @@ export async function POST(request) {
 		// Calculate lead score
 		leadData.lead_score = calculateLeadScore(leadData);
 
-		// Store lead in Supabase database
+		// Store lead in Supabase database using admin client (bypasses RLS)
 		let leadId = null;
 		try {
-			const { data: savedLead, error: supabaseError } = await supabase
+			const { data: savedLead, error: supabaseError } = await supabaseAdmin
 				.from('leads')
 				.insert([leadData])
 				.select('id')
