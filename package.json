@@ -9,15 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.7",
+    "@heroicons/react": "^2.2.0",
     "@pinecone-database/pinecone": "^6.1.2",
     "@supabase/supabase-js": "^2.57.4",
-    "framer-motion": "^11.15.0",
+    "d3": "^7.9.0",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^11.18.2",
     "groq-sdk": "^0.30.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.2",
     "next": "15.1.2",
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "recharts": "^3.2.0"
+    "react-hot-toast": "^2.6.0",
+    "recharts": "^3.2.0",
+    "use-debounce": "^10.0.6",
+    "victory": "^37.3.6",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
