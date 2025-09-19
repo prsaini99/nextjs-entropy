@@ -8,6 +8,7 @@ export default function FloatingChat() {
         return () => console.log('FloatingChat component unmounted');
     }, []);
     const [isOpen, setIsOpen] = useState(false);
+    const [sessionId, setSessionId] = useState(null);
     
     // Debug: Log state changes
     useEffect(() => {
@@ -16,13 +17,14 @@ export default function FloatingChat() {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hi! I'm StackBinary's assistant. How can I help you today?",
+            text: "Hi! I'm StackBinary's multi-agent assistant. I can help with your project needs, schedule discovery calls, and connect you with our team. How can I assist you today?",
             isBot: true,
             timestamp: new Date()
         }
     ]);
     const [inputMessage, setInputMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [leadCollected, setLeadCollected] = useState(false);
     const messagesEndRef = useRef(null);
 
     const scrollToBottom = () => {
@@ -54,17 +56,32 @@ export default function FloatingChat() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ user: inputMessage }),
+                body: JSON.stringify({ 
+                    user: inputMessage,
+                    session_id: sessionId 
+                }),
             });
 
             const data = await response.json();
             
             if (response.ok) {
+                // Update session ID if not set
+                if (!sessionId && data.session_id) {
+                    setSessionId(data.session_id);
+                }
+
+                // Check if lead was collected
+                if (data.lead_collected && !leadCollected) {
+                    setLeadCollected(true);
+                    console.log('Lead collected:', data.lead_data);
+                }
+
                 const botMessage = {
                     id: Date.now() + 1,
                     text: data.answer,
                     isBot: true,
-                    timestamp: new Date()
+                    timestamp: new Date(),
+                    leadCollected: data.lead_collected || false
                 };
                 setMessages(prev => [...prev, botMessage]);
             } else {
@@ -185,7 +202,7 @@ export default function FloatingChat() {
                                 StackBinary Assistant
                             </div>
                             <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '12px' }}>
-                                Online
+                                {leadCollected ? '✓ Lead Captured' : 'Multi-Agent AI • Online'}
                             </div>
                         </div>
                     </div>
@@ -240,8 +257,11 @@ export default function FloatingChat() {
                                     maxWidth: '280px',
                                     padding: '8px 16px',
                                     borderRadius: '16px',
-                                    backgroundColor: message.isBot ? '#333' : '#ed5145',
-                                    color: '#ffffff'
+                                    backgroundColor: message.isBot 
+                                        ? (message.leadCollected ? '#2d5a2d' : '#333')
+                                        : '#ed5145',
+                                    color: '#ffffff',
+                                    border: message.leadCollected ? '1px solid #4ade80' : 'none'
                                 }}
                             >
                                 <div 

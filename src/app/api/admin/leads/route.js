@@ -1,8 +1,19 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { supabaseAdmin } from '@/lib/supabase-admin';
+import { verifyAuth } from '@/lib/auth-check';
 
 export async function GET(request) {
   try {
+    // Verify authentication
+    const auth = await verifyAuth(request);
+    if (!auth.authenticated) {
+      return NextResponse.json(
+        { error: 'Unauthorized', message: auth.error },
+        { status: 401 }
+      );
+    }
+
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page')) || 1;
     const limit = parseInt(searchParams.get('limit')) || 20;
@@ -17,8 +28,8 @@ export async function GET(request) {
     const from = (page - 1) * limit;
     const to = from + limit - 1;
 
-    // Build query
-    let query = supabase
+    // Build query using admin client to bypass RLS
+    let query = supabaseAdmin
       .from('leads')
       .select('*', { count: 'exact' })
       .range(from, to)
@@ -78,6 +89,15 @@ export async function GET(request) {
 
 export async function PUT(request) {
   try {
+    // Verify authentication
+    const auth = await verifyAuth(request);
+    if (!auth.authenticated) {
+      return NextResponse.json(
+        { error: 'Unauthorized', message: auth.error },
+        { status: 401 }
+      );
+    }
+
     const body = await request.json();
     const { id, status, assigned_to, estimated_value, notes } = body;
 
@@ -97,7 +117,7 @@ export async function PUT(request) {
     if (assigned_to !== undefined) updateData.assigned_to = assigned_to;
     if (estimated_value !== undefined) updateData.estimated_value = estimated_value;
 
-    const { data: updatedLead, error } = await supabase
+    const { data: updatedLead, error } = await supabaseAdmin
       .from('leads')
       .update(updateData)
       .eq('id', id)
@@ -114,7 +134,7 @@ export async function PUT(request) {
 
     // Add note if provided
     if (notes) {
-      await supabase
+      await supabaseAdmin
         .from('lead_notes')
         .insert([{
           lead_id: id,
