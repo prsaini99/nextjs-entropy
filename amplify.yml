@@ -7,6 +7,11 @@ frontend:
         - echo "GROQ_API_KEY exists:" $GROQ_API_KEY
         - echo "PINECONE_API_KEY exists:" $PINECONE_API_KEY
         - echo "EMAIL exists:" $EMAIL
+        - echo "EMAIL_PASSWORD exists:" $EMAIL_PASSWORD
+        - echo "NEXT_PUBLIC_SUPABASE_URL exists:" $NEXT_PUBLIC_SUPABASE_URL
+        - echo "NEXT_PUBLIC_SUPABASE_ANON_KEY exists:" $NEXT_PUBLIC_SUPABASE_ANON_KEY
+        - echo "SUPABASE_SERVICE_ROLE_KEY exists:" $SUPABASE_SERVICE_ROLE_KEY
+        - echo "SUPABASE_SERVICE_ROLE_KEY length:" ${#SUPABASE_SERVICE_ROLE_KEY}
         - npm ci
     build:
       commands:
@@ -22,6 +27,9 @@ frontend:
           PINECONE_NAMESPACE=$PINECONE_NAMESPACE
           EMAIL=$EMAIL
           EMAIL_PASSWORD=$EMAIL_PASSWORD
+          NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL
+          NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY
+          SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY
           EOF
         - echo "Environment file created"
         - npm run build
