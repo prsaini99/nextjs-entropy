@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { adminFetch, adminPut } from '@/lib/admin-fetch';
 
 export default function LeadsPage() {
   const [leads, setLeads] = useState([]);
@@ -10,6 +11,7 @@ export default function LeadsPage() {
   const [filters, setFilters] = useState({
     status: '',
     utm_source: '',
+    lead_source: '',
     search: '',
     page: 1,
     sort_by: 'created_at',
@@ -29,7 +31,7 @@ export default function LeadsPage() {
         if (value) params.append(key, value);
       });
 
-      const response = await fetch(`/api/admin/leads?${params}`);
+      const response = await adminFetch(`/api/admin/leads?${params}`);
       if (!response.ok) {
         throw new Error('Failed to fetch leads');
       }
@@ -46,15 +48,9 @@ export default function LeadsPage() {
 
   const updateLeadStatus = async (leadId, newStatus) => {
     try {
-      const response = await fetch('/api/admin/leads', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id: leadId,
-          status: newStatus,
-        }),
+      const response = await adminPut('/api/admin/leads', {
+        id: leadId,
+        status: newStatus,
       });
 
       if (!response.ok) {
@@ -96,7 +92,7 @@ export default function LeadsPage() {
       </div>
 
       {/* Filters */}
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-4">
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-5">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Status
@@ -133,6 +129,21 @@ export default function LeadsPage() {
             <option value="email">Email</option>
             <option value="referral">Referral</option>
             <option value="direct">Direct</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Lead Source
+          </label>
+          <select
+            value={filters.lead_source}
+            onChange={(e) => handleFilterChange('lead_source', e.target.value)}
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          >
+            <option value="">All Types</option>
+            <option value="form">Contact Form</option>
+            <option value="chat">AI Chat</option>
           </select>
         </div>
 
@@ -198,6 +209,9 @@ export default function LeadsPage() {
                         Source
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Type
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Score
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -223,7 +237,7 @@ export default function LeadsPage() {
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">{lead.service}</div>
+                          <div className="text-sm text-gray-900">{lead.project_details || lead.service}</div>
                           {lead.budget && (
                             <div className="text-sm text-gray-500">{lead.budget}</div>
                           )}
@@ -235,6 +249,9 @@ export default function LeadsPage() {
                           <div className="text-sm text-gray-500">
                             {lead.utm_medium || 'N/A'}
                           </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <LeadSourceBadge leadSource={lead.lead_source} threadId={lead.thread_id} callArranged={lead.call_arranged} />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <LeadScore score={lead.lead_score} />
@@ -278,6 +295,34 @@ export default function LeadsPage() {
   );
 }
 
+function LeadSourceBadge({ leadSource, threadId, callArranged }) {
+  if (leadSource === 'chat') {
+    return (
+      <div className="flex flex-col space-y-1">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+          💬 AI Chat
+        </span>
+        {threadId && (
+          <span className="text-xs text-gray-500 truncate" title={threadId}>
+            Session: {threadId.substring(0, 8)}...
+          </span>
+        )}
+        {callArranged && (
+          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+            📅 Call Scheduled
+          </span>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+      📝 Contact Form
+    </span>
+  );
+}
+
 function LeadScore({ score }) {
   const getScoreColor = (score) => {
     if (score >= 80) return 'bg-green-100 text-green-800';
@@ -286,8 +331,8 @@ function LeadScore({ score }) {
   };
 
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getScoreColor(score)}`}>
-      {score}/100
+    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getScoreColor(score || 50)}`}>
+      {score || 50}/100
     </span>
   );
 }

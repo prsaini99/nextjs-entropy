@@ -1,39 +1,18 @@
-// app/api/chat/route.ts
+// app/api/chat/route.ts - LangGraph Multi-Agent Proxy
 import { NextRequest } from "next/server";
-import { Groq } from "groq-sdk";
-import { Pinecone } from "@pinecone-database/pinecone";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
-const SYSTEM_PROMPT = `
-You are StackBinary's assistant.
-
-RULES:
-• Answer ONLY using the provided CONTEXT.
-• If the CONTEXT does not contain the answer, output exactly: NO_ANSWER
-• If you do answer, keep it to 1–2 short sentences, professional and natural, and end with:
-  "Book a discovery call here: https://stackbinary.io/contact-us"
-• Do NOT ask for personal details. Do NOT mention using a knowledge base.
-• Do NOT invent or generalize beyond the CONTEXT.
-`.trim();
-
-const FALLBACK =
-  "I don't have that info yet. Let's cover it on a quick call: https://stackbinary.io/contact-us";
-
-// --- clients
-const groq = process.env.GROQ_API_KEY ? new Groq({ apiKey: process.env.GROQ_API_KEY }) : null;
-const pc = process.env.PINECONE_API_KEY ? new Pinecone({ apiKey: process.env.PINECONE_API_KEY }) : null;
-
-// Initialize index properly for serverless
-const index = pc && process.env.PINECONE_INDEX ? pc.index(process.env.PINECONE_INDEX) : null;
+const LANGGRAPH_API_URL = "https://stackbinary-chatbot-langgraph.onrender.com";
 
 export async function POST(req: NextRequest) {
+  let sessionId = "default";
+  
   try {
-    // Check if required services are configured
-    if (!groq || !pc || !index) {
-      console.log('Chat services not configured, returning fallback');
-      return Response.json({ answer: FALLBACK });
-    }
+    const { user, session_id } = (await req.json()) as { 
+      user: string;
+      session_id?: string;
+    };
 
-    const { user } = (await req.json()) as { user: string };
     if (!user || !user.trim()) {
       return new Response(JSON.stringify({ error: "Message is required" }), { 
         status: 400,
@@ -41,88 +20,91 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 1) Embed the query using the SAME model you indexed with
-    const embedRes = await pc.inference.embed(
-      "llama-text-embed-v2",
-      [user],
-      {
-        inputType: "query",
-        truncate: "END"
-      }
-    );
-    
-    console.log('Embed response:', JSON.stringify(embedRes, null, 2));
-    
-    // Handle different response structures
-    let vector;
-    if (embedRes && Array.isArray(embedRes) && embedRes.length > 0 && embedRes[0].values) {
-      vector = embedRes[0].values; // 1024-dim
-    } else if (embedRes && (embedRes as any).data && Array.isArray((embedRes as any).data) && (embedRes as any).data.length > 0) {
-      vector = (embedRes as any).data[0].values || (embedRes as any).data[0].embedding;
-    } else if (embedRes && (embedRes as any).values) {
-      vector = (embedRes as any).values;
-    } else {
-      throw new Error('Invalid embedding response structure');
-    }
+    // Generate session ID if not provided
+    sessionId = session_id || `session_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
 
-    // 2) Similarity search with threshold gate
-    const queryOptions: any = {
-      vector,
-      topK: 4,
-      includeMetadata: true
-    };
-    
-    // Use the namespace method if provided
-    const indexToQuery = process.env.PINECONE_NAMESPACE 
-      ? index.namespace(process.env.PINECONE_NAMESPACE)
-      : index;
-    
-    const res = await indexToQuery.query(queryOptions);
+    console.log('Proxying to LangGraph API:', LANGGRAPH_API_URL);
 
-    console.log('Query results:', JSON.stringify(res, null, 2));
-    
-    const THRESHOLD = 0.40; // Lowered to 0.40 for testing knowledge base content
-    const matches = (res.matches ?? []).filter(m => (m.score ?? 0) >= THRESHOLD);
-    
-    console.log('Filtered matches:', matches.length, 'with threshold:', THRESHOLD);
-
-    if (!matches.length) {
-      return Response.json({ answer: FALLBACK });
-    }
-
-    // 3) Build concise CONTEXT from metadata fields you stored
-    const context = matches
-      .map(m => {
-        const meta = m.metadata || {};
-        const text =
-          (meta.text || meta.pageContent || meta.content || "").toString();
-        const title = (meta.title || meta.slug || "").toString();
-        return title ? `${title}: ${text}` : text;
-      })
-      .filter(Boolean)
-      .join("\n---\n");
-
-    // 4) Ask Groq (non-streaming so we can enforce NO_ANSWER)
-    const completion = await groq.chat.completions.create({
-      model: process.env.GROQ_MODEL!,
-      temperature: 0.2,
-      max_tokens: 160,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: `CONTEXT:\n${context}\n\nQUESTION:\n${user}` }
-      ],
+    // Proxy request to LangGraph API
+    const response = await fetch(`${LANGGRAPH_API_URL}/api/chat`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: user,
+        session_id: sessionId
+      }),
     });
 
-    const answer = completion.choices?.[0]?.message?.content?.trim() || "";
-    if (!answer || answer === "NO_ANSWER") {
-      return Response.json({ answer: FALLBACK });
+    if (!response.ok) {
+      throw new Error(`LangGraph API error: ${response.status} ${response.statusText}`);
     }
 
-    return Response.json({ answer });
-  } catch (error) {
-    console.error('Chat API error:', error);
+    const data = await response.json();
+    console.log('LangGraph response:', data);
+
+    // Save lead to Supabase if one was collected
+    if (data.lead_collected && data.lead_data) {
+      try {
+        const leadData = {
+          full_name: data.lead_data.name,
+          work_email: data.lead_data.email,
+          service: data.lead_data.project_details || 'AI/ML Consultation',
+          timeline: 'TBD - to be discussed on call',
+          phone: data.lead_data.phone_number,
+          alternate_contact: data.lead_data.alternate_contact,
+          contact_preference: data.lead_data.contact_preference,
+          call_arranged: data.lead_data.call_arranged || false,
+          calendar_link: data.lead_data.calendar_link,
+          status: 'contacted', // Chat leads are automatically contacted
+          thread_id: data.session_id,
+          language_detected: data.lead_data.language_detected || 'en',
+          lead_source: 'chat',
+          privacy_consent: true,
+          lead_score: 75,
+          created_at: new Date().toISOString(),
+          utm_source: null,
+          utm_medium: null,
+          utm_campaign: null,
+          utm_term: null,
+          utm_content: null
+        };
+
+        console.log('Saving lead to Supabase:', leadData);
+
+        const { data: savedLead, error: supabaseError } = await supabaseAdmin
+          .from('leads')
+          .insert([leadData])
+          .select('id')
+          .single();
+
+        if (supabaseError) {
+          console.error('Supabase error:', supabaseError);
+        } else {
+          console.log('Lead saved successfully:', savedLead);
+        }
+      } catch (leadError) {
+        console.error('Error saving lead:', leadError);
+      }
+    }
+
+    // Return the response in the expected format for FloatingChat
     return Response.json({ 
-      answer: "I'm experiencing technical difficulties. Please try again or contact us directly: https://stackbinary.io/contact-us" 
+      answer: data.response,
+      session_id: data.session_id,
+      lead_collected: data.lead_collected,
+      lead_data: data.lead_data
+    });
+
+  } catch (error) {
+    console.error('Chat API proxy error:', error);
+    
+    // Fallback response
+    return Response.json({ 
+      answer: "I'm experiencing technical difficulties. Please try again or contact us directly: https://stackbinary.io/contact-us",
+      session_id: sessionId,
+      lead_collected: false
     }, { status: 500 });
   }
 }
