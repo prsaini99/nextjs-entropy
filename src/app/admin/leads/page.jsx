@@ -81,7 +81,7 @@ export default function LeadsPage() {
   }
 
   return (
-    <div>
+    <div className="w-full min-h-screen bg-gray-50">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
           <h1 className="text-xl font-semibold text-gray-900">Leads</h1>
@@ -184,10 +184,10 @@ export default function LeadsPage() {
       </div>
 
       {/* Leads Table */}
-      <div className="mt-8 flex flex-col">
-        <div className="-my-2 overflow-x-auto">
-          <div className="inline-block min-w-full py-2 align-middle">
-            <div className="overflow-x-auto shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+      <div className="mt-8 w-full">
+        <div className="w-full overflow-x-auto bg-white rounded-lg shadow">
+          <div className="w-full">
+            <div className="w-full">
               {loading ? (
                 <div className="bg-white px-6 py-12">
                   <div className="flex items-center justify-center">
@@ -286,10 +286,12 @@ export default function LeadsPage() {
 
       {/* Pagination */}
       {pagination && (
-        <Pagination
-          pagination={pagination}
-          onPageChange={handlePageChange}
-        />
+        <div className="w-full mt-6">
+          <Pagination
+            pagination={pagination}
+            onPageChange={handlePageChange}
+          />
+        </div>
       )}
     </div>
   );
@@ -368,7 +370,7 @@ function Pagination({ pagination, onPageChange }) {
   const { page, total_pages, has_prev, has_next } = pagination;
 
   return (
-    <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6 mt-6">
+    <div className="w-full bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6 rounded-b-lg">
       <div className="flex-1 flex justify-between sm:hidden">
         <button
           onClick={() => onPageChange(page - 1)}

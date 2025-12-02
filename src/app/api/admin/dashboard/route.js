@@ -1,8 +1,18 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabaseAdmin } from '@/lib/supabase-admin';
+import { verifyAuth } from '@/lib/auth-check';
 
 export async function GET(request) {
   try {
+    // Verify authentication for admin dashboard
+    const auth = await verifyAuth(request);
+    if (!auth.authenticated) {
+      return NextResponse.json(
+        { error: 'Unauthorized', message: auth.error },
+        { status: 401 }
+      );
+    }
+
     const { searchParams } = new URL(request.url);
     const enhanced = searchParams.get('enhanced') === 'true'; // Include advanced analytics
     
@@ -12,19 +22,19 @@ export async function GET(request) {
     const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
     const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
 
-    // Get leads summary
-    const { data: allLeads, error: leadsError } = await supabase
+    // Get leads summary using admin client to bypass RLS
+    const { data: allLeads, error: leadsError } = await supabaseAdmin
       .from('leads')
-      .select('status, lead_score, created_at, estimated_value');
+      .select('id, full_name, service, status, lead_score, created_at, estimated_value');
 
     if (leadsError) {
       console.error('Error fetching leads summary:', leadsError);
     }
 
-    // Get career applications summary
-    const { data: allApplications, error: applicationsError } = await supabase
+    // Get career applications summary using admin client
+    const { data: allApplications, error: applicationsError } = await supabaseAdmin
       .from('career_applications')
-      .select('status, created_at');
+      .select('id, first_name, last_name, job_title, status, created_at');
 
     if (applicationsError) {
       console.error('Error fetching applications summary:', applicationsError);
@@ -215,51 +225,37 @@ function generateAlerts(leadMetrics, applicationMetrics, recentLeads) {
 
 async function getEnhancedAnalytics() {
   try {
-    // Get real-time metrics
-    const { data: realTimeMetrics } = await supabase
-      .rpc('real_time_metrics');
+    // For now, return mock data since the advanced analytics tables/functions may not exist yet
+    // This prevents the dashboard from failing when enhanced=true
+    
+    // Get basic service performance from leads data
+    const { data: leads } = await supabaseAdmin
+      .from('leads')
+      .select('service, status');
 
-    // Get lead velocity
-    const { data: velocityData } = await supabase
-      .rpc('calculate_lead_velocity');
+    const serviceStats = {};
+    leads?.forEach(lead => {
+      const service = lead.service || 'Other';
+      if (!serviceStats[service]) {
+        serviceStats[service] = { total_requests: 0, won: 0 };
+      }
+      serviceStats[service].total_requests++;
+      if (lead.status === 'won') {
+        serviceStats[service].won++;
+      }
+    });
 
-    // Get activity patterns for today
-    const today = new Date().toISOString().split('T')[0];
-    const { data: todayPatterns } = await supabase
-      .from('activity_patterns')
-      .select('*')
-      .eq('date', today);
-
-    // Get service performance
-    const { data: servicePerformance } = await supabase
-      .from('service_performance')
-      .select('*')
-      .order('total_requests', { ascending: false })
-      .limit(5);
-
-    // Get top campaigns
-    const { data: topCampaigns } = await supabase
-      .from('campaign_performance')
-      .select('*')
-      .order('conversion_rate', { ascending: false })
-      .limit(5);
-
-    // Get revenue forecast
-    const { data: revenueForecast } = await supabase
-      .rpc('revenue_forecast', { forecast_months: 3 });
-
-    // Get lead scoring analysis
-    const { data: scoringAnalysis } = await supabase
-      .rpc('analyze_lead_scoring');
+    const servicePerformance = Object.entries(serviceStats)
+      .map(([service, stats]) => ({
+        service,
+        total_requests: stats.total_requests,
+        win_rate: stats.total_requests > 0 ? ((stats.won / stats.total_requests) * 100).toFixed(1) : 0
+      }))
+      .sort((a, b) => b.total_requests - a.total_requests)
+      .slice(0, 5);
 
     return {
-      real_time_metrics: realTimeMetrics || [],
-      lead_velocity: velocityData || [],
-      today_activity: todayPatterns || [],
-      top_services: servicePerformance || [],
-      top_campaigns: topCampaigns || [],
-      revenue_forecast: revenueForecast || [],
-      scoring_analysis: scoringAnalysis || [],
+      top_services: servicePerformance,
       generated_at: new Date().toISOString(),
     };
 

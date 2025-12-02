@@ -189,7 +189,7 @@ function AdminDashboardLayout({ children }) {
         {/* Enhanced Page content */}
         <main className="flex-1 relative">
           <div className="py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className={pathname === '/admin/leads' ? 'w-full px-4 sm:px-6 lg:px-8' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'}>
               {children}
             </div>
           </div>

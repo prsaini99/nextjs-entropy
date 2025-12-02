@@ -15,7 +15,7 @@ export default function Header() {
                 <div className="container w-container">
                     <div className="navbar-component">
                         <Link href="/" aria-current="page" className="brand w-nav-brand w--current">
-                            <Image src="/stackbinary-logo.png" width={150} height={40} loading="lazy" alt="StackBinary™ Logo" />
+                            <Image src="/stack-logo.png" width={150} height={40} loading="lazy" alt="StackBinary™ Logo" />
                         </Link>
                         <div className="nav-menu-wrap">
                             <div>
