@@ -44,3 +44,19 @@ body {
 .text-link:hover {
 	text-decoration: underline;
 }
+
+/* Admin dashboard fixes */
+.py-8.ai-style-change-1,
+.py-8 {
+	background-color: white;
+}
+
+/* Admin layout background fix */
+main.flex-1.relative {
+	background-color: #f9fafb; /* gray-50 */
+}
+
+/* Admin main content area */
+main.flex-1.relative > div.py-8 {
+	background-color: white;
+}

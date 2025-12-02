@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AuthGuard, useAuth } from '@/lib/auth';
+import { adminFetch } from '@/lib/admin-fetch';
 
 export default function AdminLayout({ children }) {
   return (
@@ -206,15 +207,19 @@ function EnhancedSidebarContent({ navigation, pathname }) {
     // Fetch some basic stats for the sidebar
     const fetchStats = async () => {
       try {
-        const response = await fetch('/api/admin/dashboard');
-        const data = await response.json();
-        setStats({
-          totalLeads: data.summary?.leads?.total || 0,
-          newLeads: data.summary?.leads?.new || 0,
-          conversionRate: data.summary?.conversion_rates?.overall_conversion || 0,
-        });
+        const response = await adminFetch('/api/admin/dashboard');
+        if (response.ok) {
+          const data = await response.json();
+          setStats({
+            totalLeads: data.summary?.leads?.total || 0,
+            newLeads: data.summary?.leads?.new || 0,
+            conversionRate: data.summary?.conversion_rates?.overall_conversion || 0,
+          });
+        }
       } catch (error) {
         console.error('Failed to fetch sidebar stats:', error);
+        // Set default values on error
+        setStats({ totalLeads: 0, newLeads: 0, conversionRate: 0 });
       }
     };
 
