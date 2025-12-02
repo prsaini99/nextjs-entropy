@@ -412,7 +412,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
               />
             </div>
             <div>
-              <label className={labelClassName}>Why do you want to join StackBinary? *</label>
+              <label className={labelClassName}>Why do you want to join StackBinary™? *</label>
               <textarea
                 value={formData.whyStackBinary}
                 onChange={(e) => handleInputChange('whyStackBinary', e.target.value)}
@@ -507,7 +507,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
                   required
                 />
                 <label htmlFor="data-processing" className="text-size-small opacity-70 text-white">
-                  I agree to StackBinary storing my application data for up to 12 months for potential future opportunities. *
+                  I agree to StackBinary™ storing my application data for up to 12 months for potential future opportunities. *
                 </label>
               </div>
             </div>

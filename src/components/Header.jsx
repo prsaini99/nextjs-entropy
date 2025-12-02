@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion, MotionConfig } from "framer-motion";
 import { useRouter } from 'next/navigation';
 import ROUTES from '@/constants/routes'
-import logoSvg from '@/assets/svg/logo.svg'
+// import logoSvg from '@/assets/svg/logo.svg'
 import Image from 'next/image';
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
                 <div className="container w-container">
                     <div className="navbar-component">
                         <Link href="/" aria-current="page" className="brand w-nav-brand w--current">
-                            <Image src={logoSvg} loading="lazy" alt="Logo Navbar" />
+                            <Image src="/stackbinary-logo.png" width={150} height={40} loading="lazy" alt="StackBinary™ Logo" />
                         </Link>
                         <div className="nav-menu-wrap">
                             <div>

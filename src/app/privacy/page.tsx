@@ -33,7 +33,7 @@ export default function PrivacyPage() {
                 <AnimatedInViewDiv delay={0.1}>
                   <h2 className="text-size-xlarge text-weight-bold mb-4">Introduction</h2>
                   <div className="text-size-regular opacity-80 leading-relaxed">
-                    StackBinary ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, apply for jobs, or use our services.
+                    StackBinary™ ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, apply for jobs, or use our services.
                   </div>
                 </AnimatedInViewDiv>
 

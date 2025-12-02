@@ -12,7 +12,7 @@ export default function CareersHeroSection() {
             <AnimatedInViewDiv className="hero-component">
               <div className="max-width-75ch text-center">
                 <h1 className="heading-2 text-weight-bold line-height-1-2">
-                  Careers at StackBinary
+                  Careers at StackBinary™
                 </h1>
               </div>
               <div className="opacity-60">

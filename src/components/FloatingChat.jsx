@@ -17,7 +17,7 @@ export default function FloatingChat() {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hi! I'm StackBinary's multi-agent assistant. I can help with your project needs, schedule discovery calls, and connect you with our team. How can I assist you today?",
+            text: "Hi! I'm StackBinary™'s multi-agent assistant. I can help with your project needs, schedule discovery calls, and connect you with our team. How can I assist you today?",
             isBot: true,
             timestamp: new Date()
         }
@@ -199,7 +199,7 @@ export default function FloatingChat() {
                         </div>
                         <div>
                             <div style={{ color: 'white', fontWeight: '500' }}>
-                                StackBinary Assistant
+                                StackBinary™ Assistant
                             </div>
                             <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '12px' }}>
                                 {leadCollected ? '✓ Lead Captured' : 'Multi-Agent AI • Online'}

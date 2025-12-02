@@ -4,7 +4,7 @@ import Link from 'next/link';
 import AnimatedInViewDiv from './Animate/AppearInView';
 import ROUTES from '@/constants/routes';
 import NewsLetter from './NewsLetter';
-import companylogoSvg from '@/assets/svg/stackbinary-logo.svg'
+// import companylogoSvg from '@/assets/svg/stackbinary-logo.svg'
 import Image from 'next/image';
 
 const links = {
@@ -39,7 +39,7 @@ export default function Footer() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="footer-component">
                         <AnimatedInViewDiv className="footer-heading">
-                            <Image src={companylogoSvg} loading="lazy" alt="Logo Navbar" />
+                            <Image src="/stackbinary-logo.png" width={150} height={40} loading="lazy" alt="StackBinary™ Logo" />
                         </AnimatedInViewDiv>
                         <div className="w-layout-grid footer-grid">
                             {Object.entries(links).map(([category, items], index) => (
