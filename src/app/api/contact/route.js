@@ -207,8 +207,8 @@ export async function POST(request) {
 		await transporter.sendMail({
 			from: "contact@stackbinary.io", // Sender's email
 			to: workEmail, // User's email
-			subject: `Thanks for contacting StackBinary, ${fullName}!`,
-			text: `Hi ${fullName},\n\nThank you for your project inquiry! We've received your request and will get back to you within one business day.\n\nBest regards,\nStackBinary Team\n\nhttps://stackbinary.io`,
+			subject: `Thanks for contacting StackBinary™, ${fullName}!`,
+			text: `Hi ${fullName},\n\nThank you for your project inquiry! We've received your request and will get back to you within one business day.\n\nBest regards,\nStackBinary™ Team\n\nhttps://stackbinary.io`,
 		});
 
 		// Return success response

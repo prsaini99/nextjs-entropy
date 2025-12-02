@@ -16,7 +16,7 @@ export default function HeroSection() {
                             {/* Hero Heading */}
                             <div className="flex flex-col items-center gap-10">
                                 <h1 className="heading-2 text-weight-bold">
-                                    About StackBinary
+                                    About StackBinary™
                                 </h1>
                                 <div className="max-w-4xl">
                                     <p className="opacity-60">

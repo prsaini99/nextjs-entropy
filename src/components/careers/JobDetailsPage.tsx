@@ -197,7 +197,7 @@ export default function JobDetailsPage({ job }: Props) {
                   <div className="features-vantages-content">
                     <div className="features-heading-wrapper">
                       <div className="features-heading align-left">
-                        <div className="heading-6 text-weight-medium">Why Join StackBinary?</div>
+                        <div className="heading-6 text-weight-medium">Why Join StackBinary™?</div>
                       </div>
                     </div>
                     <div className="check-list">

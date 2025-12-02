@@ -256,7 +256,7 @@ export default function ContactWrapper() {
                         <AnimatedInViewDiv className="hero-component">
                             <div className="max-width-70ch">
                                 <div className="heading-2 text-weight-bold">
-                                    Talk to StackBinary
+                                    Talk to StackBinary™
                                 </div>
                             </div>
                             <div className="opacity-60 mt-4">
@@ -319,27 +319,6 @@ export default function ContactWrapper() {
                                         Telegram
                                     </a>
 
-                                    {/* LinkedIn CTA */}
-                                    <a 
-                                        href=""
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={() => trackSocialClick('linkedin', 'contact_page')}
-                                        className="social-cta-button secondary-button"
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '8px',
-                                            padding: '12px 20px',
-                                            minWidth: '160px',
-                                            justifyContent: 'center'
-                                        }}
-                                    >
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                        </svg>
-                                        LinkedIn
-                                    </a>
 
                                     {/* Email CTA */}
                                     <a 
@@ -368,14 +347,23 @@ export default function ContactWrapper() {
                         </AnimatedInViewDiv>
 
 
-                        {/* CTA Button */}
+                        {/* Calendly CTA Button */}
                         <AnimatedInViewDiv className="flex flex-col sm:flex-row gap-4 items-center justify-center my-8" delay={0.2}>
-                            <button className="primary-button w-inline-block">
+                            <a 
+                                href="https://calendly.com/prateek-stackbinary/30min"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => trackEvent(ANALYTICS_EVENTS.CALENDLY_CLICK, { location: 'contact_page' })}
+                                className="primary-button w-inline-block"
+                            >
                                 <div className="relative">
-                                    <div className="text-size-small text-weight-bold">Book a Discovery Call</div>
+                                    <div className="text-size-small text-weight-bold">📅 Book a Discovery Call</div>
                                 </div>
                                 <div className="button-elipse"></div>
-                            </button>
+                            </a>
+                            <div className="text-size-small opacity-70 mt-2">
+                                Schedule a 30-minute call based on your availability
+                            </div>
                         </AnimatedInViewDiv>
 
                         <AnimatedInViewDiv className="form-wrapper w-form" delay={0.4}>
