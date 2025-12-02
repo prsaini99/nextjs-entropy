@@ -39,7 +39,7 @@ export default function Footer() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="footer-component">
                         <AnimatedInViewDiv className="footer-heading">
-                            <Image src="/stackbinary-logo.png" width={150} height={40} loading="lazy" alt="StackBinary™ Logo" />
+                            <Image src="/stack-logo.png" width={150} height={40} loading="lazy" alt="StackBinary™ Logo" />
                         </AnimatedInViewDiv>
                         <div className="w-layout-grid footer-grid">
                             {Object.entries(links).map(([category, items], index) => (
