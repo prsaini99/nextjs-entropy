@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { adminFetch } from '@/lib/admin-fetch';
 
 export default function DashboardPage() {
   const [dashboardData, setDashboardData] = useState(null);
@@ -18,7 +19,7 @@ export default function DashboardPage() {
   const fetchDashboardData = async () => {
     try {
       setRefreshing(true);
-      const response = await fetch('/api/admin/dashboard?enhanced=true');
+      const response = await adminFetch('/api/admin/dashboard?enhanced=true');
       if (!response.ok) {
         throw new Error('Failed to fetch dashboard data');
       }
