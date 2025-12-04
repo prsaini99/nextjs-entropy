@@ -53,12 +53,7 @@ export function trackEvent(eventName, parameters = {}) {
     page_title: document.title
   };
   
-  // Send to Google Analytics
-  if (window.gtag) {
-    window.gtag('event', eventName, eventData);
-  }
-  
-  // Send to Google Tag Manager dataLayer
+  // Send to Google Tag Manager dataLayer only
   if (window.dataLayer) {
     window.dataLayer.push({
       event: eventName,
@@ -96,13 +91,7 @@ export function trackConversion(conversionType, value = null, currency = 'INR', 
   
   trackEvent(ANALYTICS_EVENTS.CONVERSION, eventData);
   
-  // Also send as a Google Ads conversion if configured
-  if (window.gtag && process.env.NEXT_PUBLIC_GOOGLE_ADS_ID) {
-    window.gtag('event', 'conversion', {
-      send_to: `${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}/${conversionType}`,
-      ...eventData
-    });
-  }
+  // Google Ads conversions will be handled through GTM
 }
 
 // Track social media clicks
@@ -160,22 +149,14 @@ function getUTMDataFromStorage() {
   }
 }
 
-// Initialize analytics on page load
+// Initialize analytics on page load (GTM only now)
 export function initializeAnalytics(measurementId) {
   if (typeof window === 'undefined') return;
   
-  // Google Analytics 4
-  if (measurementId && !window.gtag) {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
-      window.dataLayer.push(arguments);
-    };
-    window.gtag('js', new Date());
-    window.gtag('config', measurementId, {
-      send_page_view: false, // We'll handle page views manually with UTM data
-      cookie_flags: 'SameSite=None;Secure'
-    });
-  }
+  // Initialize dataLayer for GTM
+  window.dataLayer = window.dataLayer || [];
+  
+  // GA4 will be configured through GTM instead of directly
 }
 
 // Enhanced ecommerce tracking for lead value
