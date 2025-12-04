@@ -73,12 +73,13 @@ function UTMTrackingInner() {
     setIsInitialized(true);
   }, [searchParams, pathname]);
 
-  // Track page view with UTM data
+  // Track page view with UTM data via GTM dataLayer
   useEffect(() => {
-    if (isInitialized && window.gtag) {
+    if (isInitialized && window.dataLayer) {
       const trackingData = utmData.current || utmData.last_touch || utmData.first_touch || {};
       
-      window.gtag('event', 'page_view', {
+      window.dataLayer.push({
+        event: 'page_view_with_utm',
         page_path: pathname,
         page_location: window.location.href,
         page_referrer: document.referrer,
