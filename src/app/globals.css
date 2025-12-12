@@ -60,3 +60,35 @@ main.flex-1.relative {
 main.flex-1.relative > div.py-8 {
 	background-color: white;
 }
+
+/* Footer logo spacing fixes */
+.footer-heading {
+	margin-bottom: 1.5rem !important;
+}
+
+.footer-heading img {
+	max-width: 120px !important;
+	height: auto !important;
+}
+
+/* Ensure footer grid has proper top spacing */
+.footer-grid {
+	margin-top: 1rem;
+}
+
+/* Responsive footer logo */
+@media (max-width: 768px) {
+	.footer-heading img {
+		max-width: 100px !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer-heading {
+		margin-bottom: 1rem !important;
+	}
+	
+	.footer-heading img {
+		max-width: 90px !important;
+	}
+}
