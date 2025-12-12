@@ -38,8 +38,8 @@ export default function Footer() {
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="footer-component">
-                        <AnimatedInViewDiv className="footer-heading">
-                            <Image src="/stack-logo.png" width={150} height={40} loading="lazy" alt="StackBinary™ Logo" />
+                        <AnimatedInViewDiv className="footer-heading mb-6">
+                            <Image src="/stack-logo.png" width={120} height={32} loading="lazy" alt="StackBinary™ Logo" className="max-w-[120px] h-auto" />
                         </AnimatedInViewDiv>
                         <div className="w-layout-grid footer-grid">
                             {Object.entries(links).map(([category, items], index) => (
