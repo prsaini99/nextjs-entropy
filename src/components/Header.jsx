@@ -29,6 +29,9 @@ export default function Header() {
                                     <Link href={ROUTES.SERVICES} className="nav-link w-inline-block">
                                         <div>Services</div>
                                     </Link>
+                                    <Link href={ROUTES.HIRE_DEVELOPERS} className="nav-link w-inline-block">
+                                        <div>Hire Developers</div>
+                                    </Link>
                                     <Link href={ROUTES.CAREERS} className="nav-link w-inline-block">
                                         <div>Careers</div>
                                     </Link>
