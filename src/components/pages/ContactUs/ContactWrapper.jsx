@@ -37,7 +37,7 @@ export default function ContactWrapper() {
     const [status, setStatus] = useState(FORM_STATUS.IDLE);
     const [loading, setLoading] = useState(false);
     const { utmData, getAttributionData } = useUTMTracking();
-    
+
     // Track form view on mount
     useEffect(() => {
         trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_VIEW, {
@@ -48,7 +48,7 @@ export default function ContactWrapper() {
     const handleStep1Change = (e) => {
         const { name, value } = e.target;
         setStep1Data({ ...step1Data, [name]: value });
-        
+
         // Track form start on first interaction
         if (!step1Data.fullName && !step1Data.workEmail) {
             trackFormInteraction('contact_form', 'start', {
@@ -78,7 +78,7 @@ export default function ContactWrapper() {
             });
             return;
         }
-        
+
         // Track step 1 completion
         trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_STEP_COMPLETE, {
             step_number: 1,
@@ -86,19 +86,19 @@ export default function ContactWrapper() {
             budget_range: step1Data.budget,
             timeline: step1Data.timeline
         });
-        
+
         setStatus(FORM_STATUS.STEP_TWO);
     };
 
     const handleFinalSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        
+
         try {
             // Get UTM and attribution data
             const attributionData = getAttributionData();
             const currentUTM = utmData.current || utmData.last_touch || utmData.first_touch || {};
-            
+
             const finalData = {
                 ...step1Data,
                 ...step2Data,
@@ -113,16 +113,16 @@ export default function ContactWrapper() {
                 landing_page: currentUTM.landing_page,
                 referrer: currentUTM.referrer
             };
-            
+
             console.log('Submitting final data with UTM:', finalData);
-            
+
             let response;
-            
+
             // Check if there's a file attachment
             if (step2Data.attachmentFile) {
                 // Use FormData for file uploads
                 const formData = new FormData();
-                
+
                 // Add all form fields to FormData
                 Object.keys(finalData).forEach(key => {
                     if (key === 'attachmentFile') {
@@ -131,7 +131,7 @@ export default function ContactWrapper() {
                         formData.append(key, finalData[key] || '');
                     }
                 });
-                
+
                 response = await fetch('/api/contact', {
                     method: 'POST',
                     body: formData, // Don't set Content-Type header, let browser set it
@@ -155,13 +155,13 @@ export default function ContactWrapper() {
                     has_attachment: !!step2Data.attachmentFile,
                     form_type: 'detailed'
                 });
-                
+
                 // Track as conversion
                 trackConversion('contact_form_submit', null, 'INR', {
                     lead_source: currentUTM.utm_source || 'direct',
                     lead_medium: currentUTM.utm_medium || 'none'
                 });
-                
+
                 setStatus(FORM_STATUS.SUCCESS);
                 setStep1Data(initStep1Data);
                 setStep2Data(initStep2Data);
@@ -190,7 +190,7 @@ export default function ContactWrapper() {
             // Get UTM and attribution data
             const attributionData = getAttributionData();
             const currentUTM = utmData.current || utmData.last_touch || utmData.first_touch || {};
-            
+
             const dataWithUTM = {
                 ...step1Data,
                 // Add UTM parameters
@@ -204,7 +204,7 @@ export default function ContactWrapper() {
                 landing_page: currentUTM.landing_page,
                 referrer: currentUTM.referrer
             };
-            
+
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -219,13 +219,13 @@ export default function ContactWrapper() {
                     timeline: step1Data.timeline,
                     form_type: 'quick'
                 });
-                
+
                 // Track as conversion
                 trackConversion('contact_form_submit_quick', null, 'INR', {
                     lead_source: currentUTM.utm_source || 'direct',
                     lead_medium: currentUTM.utm_medium || 'none'
                 });
-                
+
                 setStatus(FORM_STATUS.SUCCESS);
                 setStep1Data(initStep1Data);
                 setStep2Data(initStep2Data);
@@ -276,7 +276,7 @@ export default function ContactWrapper() {
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                                     {/* WhatsApp CTA */}
-                                    <a 
+                                    <a
                                         href="https://wa.me/?text=Hello%20StackBinary%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project."
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -292,13 +292,13 @@ export default function ContactWrapper() {
                                         }}
                                     >
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.348"/>
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.348" />
                                         </svg>
                                         WhatsApp
                                     </a>
 
                                     {/* Telegram CTA */}
-                                    <a 
+                                    <a
                                         href="https://t.me/?text=Hello%20StackBinary%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project."
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -314,14 +314,14 @@ export default function ContactWrapper() {
                                         }}
                                     >
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                                         </svg>
                                         Telegram
                                     </a>
 
 
                                     {/* Email CTA */}
-                                    <a 
+                                    <a
                                         href="mailto:contact@stackbinary.io?subject=Project%20Inquiry&body=Hello%20StackBinary%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project.%0A%0ABest%20regards"
                                         onClick={() => trackSocialClick('email', 'contact_page')}
                                         className="social-cta-button secondary-button"
@@ -335,7 +335,7 @@ export default function ContactWrapper() {
                                         }}
                                     >
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                                         </svg>
                                         Email
                                     </a>
@@ -349,8 +349,8 @@ export default function ContactWrapper() {
 
                         {/* Calendly CTA Button */}
                         <AnimatedInViewDiv className="flex flex-col sm:flex-row gap-4 items-center justify-center my-8" delay={0.2}>
-                            <a 
-                                href="https://calendly.com/prateek-stackbinary/30min"
+                            <a
+                                href="https://calendly.com/stackbinary/30min"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={() => trackEvent(ANALYTICS_EVENTS.CALENDLY_CLICK, { location: 'contact_page' })}
@@ -387,7 +387,7 @@ export default function ContactWrapper() {
                                                 required
                                             />
                                         </div>
-                                        
+
                                         <div className="name-wrapper-contact">
                                             <label htmlFor="workEmail" className="text-size-medium-vw">
                                                 Work email *
@@ -455,7 +455,7 @@ export default function ContactWrapper() {
                                             />
                                         </div>
                                     </div>
-                                    
+
                                     <div className="contact-button align-center">
                                         <button type="submit" className="primary-button">
                                             <span>Send inquiry</span>
@@ -467,10 +467,10 @@ export default function ContactWrapper() {
                             {/* Step 2 Form */}
                             {status === FORM_STATUS.STEP_TWO && (
                                 <div>
-                                    <div className="mb-6 p-4" style={{ 
-                                        backgroundColor: '#1a1a1a', 
-                                        border: '1px solid #333', 
-                                        borderRadius: '8px' 
+                                    <div className="mb-6 p-4" style={{
+                                        backgroundColor: '#1a1a1a',
+                                        border: '1px solid #333',
+                                        borderRadius: '8px'
                                     }}>
                                         <div className="text-size-medium text-weight-medium mb-2" style={{ color: '#ffffff' }}>
                                             Step 1 Complete ✓
@@ -479,7 +479,7 @@ export default function ContactWrapper() {
                                             Thank you! Now add more details to help us better understand your project (optional):
                                         </div>
                                     </div>
-                                    
+
                                     <form onSubmit={handleFinalSubmit} className="form">
                                         <div className="form-content">
                                             <div>
@@ -492,7 +492,7 @@ export default function ContactWrapper() {
                                                     maxLength="5000"
                                                     placeholder="Tell us more about your project, requirements, goals..."
                                                     className="text-field-contact w-input"
-                                                    style={{ 
+                                                    style={{
                                                         color: '#ffffff',
                                                         backgroundColor: '#1a1a1a',
                                                         border: '1px solid #333'
@@ -509,7 +509,7 @@ export default function ContactWrapper() {
                                                 </label>
                                                 <input
                                                     className="text-field-contact w-input"
-                                                    style={{ 
+                                                    style={{
                                                         color: '#ffffff',
                                                         backgroundColor: '#1a1a1a',
                                                         border: '1px solid #333'
@@ -529,7 +529,7 @@ export default function ContactWrapper() {
                                                 </label>
                                                 <input
                                                     className="text-field-contact w-input"
-                                                    style={{ 
+                                                    style={{
                                                         color: '#ffffff',
                                                         backgroundColor: '#1a1a1a',
                                                         border: '1px solid #333'
@@ -549,7 +549,7 @@ export default function ContactWrapper() {
                                                 </label>
                                                 <input
                                                     className="text-field-contact w-input"
-                                                    style={{ 
+                                                    style={{
                                                         color: '#ffffff',
                                                         backgroundColor: '#1a1a1a',
                                                         border: '1px solid #333'
@@ -583,7 +583,7 @@ export default function ContactWrapper() {
                                         </div>
 
                                         <div className="contact-button align-center flex flex-col sm:flex-row gap-4">
-                                            <button 
+                                            <button
                                                 type="button"
                                                 onClick={() => setStatus(FORM_STATUS.IDLE)}
                                                 className="secondary-button"
@@ -591,9 +591,9 @@ export default function ContactWrapper() {
                                             >
                                                 <span>← Back to Step 1</span>
                                             </button>
-                                            
-                                            <button 
-                                                type="submit" 
+
+                                            <button
+                                                type="submit"
                                                 className="primary-button"
                                                 disabled={loading || !step2Data.privacyConsent}
                                             >
@@ -601,8 +601,8 @@ export default function ContactWrapper() {
                                                     {loading ? "Sending..." : "Send detailed inquiry"}
                                                 </span>
                                             </button>
-                                            
-                                            <button 
+
+                                            <button
                                                 type="button"
                                                 onClick={skipStep2}
                                                 className="secondary-button"
@@ -638,8 +638,8 @@ export default function ContactWrapper() {
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
-                                        <button 
-                                            className="primary-button" 
+                                        <button
+                                            className="primary-button"
                                             onClick={() => setStatus(FORM_STATUS.IDLE)}
                                         >
                                             <span>Try again</span>
@@ -658,15 +658,15 @@ export default function ContactWrapper() {
                                 <div className="text-size-medium text-weight-medium mb-6" style={{ color: '#ffffff' }}>
                                     Our Office Locations
                                 </div>
-                                
+
                                 {/* Phone Number */}
                                 <div className="mb-6">
                                     <div className="flex items-center justify-center gap-3 mb-4">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#ed5145' }}>
-                                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                                         </svg>
-                                        <a 
-                                            href="tel:+918928028738" 
+                                        <a
+                                            href="tel:+918928028738"
                                             className="text-size-large text-weight-medium hover:text-[#ed5145] transition-colors"
                                             style={{ color: '#ffffff', textDecoration: 'none' }}
                                         >
@@ -682,7 +682,7 @@ export default function ContactWrapper() {
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#ed5145' }}>
-                                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                                                 </svg>
                                             </div>
                                             <div className="text-left">
@@ -694,7 +694,7 @@ export default function ContactWrapper() {
                                                     Lewes, Delaware 19958,<br />
                                                     County of Sussex
                                                 </div>
-                                                <a 
+                                                <a
                                                     href="https://maps.google.com/?q=16192+Costal+Highway,+Lewes,+Delaware+19958"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -702,7 +702,7 @@ export default function ContactWrapper() {
                                                     style={{ color: '#ffffff', textDecoration: 'none' }}
                                                 >
                                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                                     </svg>
                                                     View on Map
                                                 </a>
@@ -715,7 +715,7 @@ export default function ContactWrapper() {
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#ed5145' }}>
-                                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                                                 </svg>
                                             </div>
                                             <div className="text-left">
@@ -727,7 +727,7 @@ export default function ContactWrapper() {
                                                     Spring grove Towers,<br />
                                                     Kandivali East, 400101, India
                                                 </div>
-                                                <a 
+                                                <a
                                                     href="https://maps.google.com/?q=Tower+3+-+604,+Spring+grove+Towers,+Kandivali+East,+400101,+India"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -735,7 +735,7 @@ export default function ContactWrapper() {
                                                     style={{ color: '#ffffff', textDecoration: 'none' }}
                                                 >
                                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                                     </svg>
                                                     View on Map
                                                 </a>

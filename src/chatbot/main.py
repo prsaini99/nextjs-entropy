@@ -278,7 +278,7 @@ def generate_calendar_link(
         return f"❌ Invalid email: '{email_address}'. Either the format is incorrect or the domain doesn't have a valid mail server. Please provide a valid business email address."
     
     # Get the base Calendly URL from environment
-    calendly_url = os.getenv("CALENDLY_URL", "https://calendly.com/prateek-stackbinary")
+    calendly_url = os.getenv("CALENDLY_URL", "https://calendly.com/stackbinary")
     
     # Create personalized Calendly link with pre-filled email and name
     import urllib.parse
