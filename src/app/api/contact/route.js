@@ -4,14 +4,9 @@ import { supabaseAdmin } from "@/lib/supabase-admin";
 
 export async function POST(request) {
 	try {
-		// Check if email is configured
-		if (!process.env.EMAIL || !process.env.EMAIL_PASSWORD) {
-			console.log('Email not configured - missing EMAIL or EMAIL_PASSWORD');
-			return new Response(
-				JSON.stringify({ message: "Email service not configured." }),
-				{ status: 500 }
-			);
-		}
+		// Email is best-effort: the lead is always stored in the database first,
+		// and notification emails are only attempted when credentials exist.
+		const emailConfigured = !!(process.env.EMAIL && process.env.EMAIL_PASSWORD);
 
 		let body;
 		let attachmentFile = null;
@@ -95,6 +90,22 @@ export async function POST(request) {
 		} catch (dbError) {
 			console.error('Database storage error:', dbError);
 			// Continue with email sending even if database storage fails
+		}
+
+		// If the lead could not be stored AND email is unavailable, fail loudly
+		if (!leadId && !emailConfigured) {
+			return new Response(
+				JSON.stringify({ message: "Failed to record inquiry." }),
+				{ status: 500 }
+			);
+		}
+
+		if (!emailConfigured) {
+			console.log('Email not configured - lead stored without notification email');
+			return new Response(
+				JSON.stringify({ message: "Inquiry recorded successfully." }),
+				{ status: 200 }
+			);
 		}
 
 		// Configure Nodemailer transporter
@@ -201,16 +212,27 @@ export async function POST(request) {
 			];
 		}
 
-		// Send email to prateek@stackbinary.io
-		await transporter.sendMail(mailOptions);
+		// Send emails best-effort: a mail failure must not lose a stored lead
+		try {
+			// Send email to prateek@stackbinary.io
+			await transporter.sendMail(mailOptions);
 
-		// Send confirmation email to user
-		await transporter.sendMail({
-			from: "contact@stackbinary.io", // Sender's email
-			to: workEmail, // User's email
-			subject: `Thanks for contacting StackBinary™, ${fullName}!`,
-			text: `Hi ${fullName},\n\nThank you for your project inquiry! We've received your request and will get back to you within one business day.\n\nBest regards,\nStackBinary™ Team\n\nhttps://stackbinary.io`,
-		});
+			// Send confirmation email to user
+			await transporter.sendMail({
+				from: "contact@stackbinary.io", // Sender's email
+				to: workEmail, // User's email
+				subject: `Thanks for contacting StackBinary™, ${fullName}!`,
+				text: `Hi ${fullName},\n\nThank you for your project inquiry! We've received your request and will get back to you within one business day.\n\nBest regards,\nStackBinary™ Team\n\nhttps://stackbinary.io`,
+			});
+		} catch (mailError) {
+			console.error('Email send failed:', mailError);
+			if (!leadId) {
+				return new Response(
+					JSON.stringify({ message: "Failed to record inquiry." }),
+					{ status: 500 }
+				);
+			}
+		}
 
 		// Return success response
 		return new Response(
