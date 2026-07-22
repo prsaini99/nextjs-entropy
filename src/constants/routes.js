@@ -3,6 +3,7 @@ const ROUTES = {
 	ABOUT: "/about",
 	SERVICES: "/services",
 	HIRE_DEVELOPERS: "/hire-developers",
+	MARTECH: "/martech",
 	CAREERS: "/careers",
 	CONTACT: "/contact-us",
 };

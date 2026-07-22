@@ -144,6 +144,7 @@ export default function LeadsPage() {
             <option value="">All Types</option>
             <option value="form">Contact Form</option>
             <option value="chat">AI Chat</option>
+            <option value="martech">🎯 MarTech Page</option>
           </select>
         </div>
 
@@ -315,6 +316,14 @@ function LeadSourceBadge({ leadSource, threadId, callArranged }) {
           </span>
         )}
       </div>
+    );
+  }
+
+  if (leadSource === 'martech') {
+    return (
+      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+        🎯 MarTech Page
+      </span>
     );
   }
 

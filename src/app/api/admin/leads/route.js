@@ -21,6 +21,7 @@ export async function GET(request) {
     const utm_source = searchParams.get('utm_source');
     const utm_medium = searchParams.get('utm_medium');
     const utm_campaign = searchParams.get('utm_campaign');
+    const lead_source = searchParams.get('lead_source');
     const search = searchParams.get('search');
     const sort_by = searchParams.get('sort_by') || 'created_at';
     const sort_order = searchParams.get('sort_order') || 'desc';
@@ -51,7 +52,17 @@ export async function GET(request) {
     if (utm_campaign) {
       query = query.eq('utm_campaign', utm_campaign);
     }
-    
+
+    if (lead_source) {
+      if (lead_source === 'martech') {
+        // MarTech leads: tagged by the dedicated form, or any form submitted
+        // from a /martech page, or a MarTech-prefixed service
+        query = query.or('lead_source.eq.martech,landing_page.ilike.%/martech%,service.ilike.MarTech%');
+      } else {
+        query = query.eq('lead_source', lead_source);
+      }
+    }
+
     if (search) {
       query = query.or(`full_name.ilike.%${search}%,work_email.ilike.%${search}%,service.ilike.%${search}%`);
     }
