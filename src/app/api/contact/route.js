@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import { supabase, calculateLeadScore } from "@/lib/supabase";
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { confirmationEmailHtml, confirmationEmailText } from "@/lib/email-templates";
 
 export async function POST(request) {
 	try {
@@ -217,12 +218,13 @@ export async function POST(request) {
 			// Send email to prateek@stackbinary.io
 			await transporter.sendMail(mailOptions);
 
-			// Send confirmation email to user
+			// Send branded confirmation email to user
 			await transporter.sendMail({
-				from: "contact@stackbinary.io", // Sender's email
-				to: workEmail, // User's email
-				subject: `Thanks for contacting StackBinary™, ${fullName}!`,
-				text: `Hi ${fullName},\n\nThank you for your project inquiry! We've received your request and will get back to you within one business day.\n\nBest regards,\nStackBinary™ Team\n\nhttps://stackbinary.io`,
+				from: `"StackBinary™" <contact@stackbinary.io>`,
+				to: workEmail,
+				subject: `You're in the pipeline, ${fullName.split(' ')[0]} — StackBinary™`,
+				text: confirmationEmailText({ fullName }),
+				html: confirmationEmailHtml({ fullName, service, budget, timeline }),
 			});
 		} catch (mailError) {
 			console.error('Email send failed:', mailError);
