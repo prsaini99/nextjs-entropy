@@ -8,7 +8,9 @@ export default function Banner({
     description = "",
     subDescription = "",
     image = "",
-    bannerStyle = {}
+    bannerStyle = {},
+    ctaHref = "/contact-us",
+    ctaLabel = "Book a Discovery Call"
 }) {
     return (
         <section>
@@ -34,12 +36,12 @@ export default function Banner({
                                         {title}
                                     </div>
                                 </div>
-                                <Link href="/contact-us" className="banner-button w-inline-block">
+                                <Link href={ctaHref} className="banner-button w-inline-block">
                                     <div className="banner-button-line">
                                         <div className="line-fill"></div>
                                     </div>
                                     <div className="button-content">
-                                        <div className="text-weight-medium">Book a Discovery Call</div>
+                                        <div className="text-weight-medium">{ctaLabel}</div>
                                         <div className="icon-wrapper">
                                             <img loading="lazy"
                                                 src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c40_Arrow%20Button.svg"

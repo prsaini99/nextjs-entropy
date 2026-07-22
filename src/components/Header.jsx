@@ -2,12 +2,17 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { motion, MotionConfig } from "framer-motion";
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import ROUTES from '@/constants/routes'
 // import logoSvg from '@/assets/svg/logo.svg'
 import Image from 'next/image';
 
 export default function Header() {
+    const pathname = usePathname();
+    // On martech pages the Contact CTA routes to the dedicated martech lead form
+    const contactHref = pathname?.startsWith('/martech')
+        ? '/martech#martech-lead-form'
+        : ROUTES.CONTACT;
     return (
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
             role="banner" className="navbar w-nav">
@@ -32,11 +37,14 @@ export default function Header() {
                                     <Link href={ROUTES.HIRE_DEVELOPERS} className="nav-link w-inline-block">
                                         <div>Hire Developers</div>
                                     </Link>
+                                    <Link href={ROUTES.MARTECH} className="nav-link w-inline-block">
+                                        <div>MarTech</div>
+                                    </Link>
                                     <Link href={ROUTES.CAREERS} className="nav-link w-inline-block">
                                         <div>Careers</div>
                                     </Link>
                                     <div className="mobile-navbar-content">
-                                        <Link href={ROUTES.CONTACT} className="primary-button w-inline-block">
+                                        <Link href={contactHref} className="primary-button w-inline-block">
                                             <div className="text-size-small text-weight-bold">Contact Us</div>
                                         </Link>
                                     </div>
@@ -44,7 +52,7 @@ export default function Header() {
                                 <DropDown />
                             </div>
                             <div className="right-navbar-content">
-                                <Link href={ROUTES.CONTACT} className="primary-button w-inline-block">
+                                <Link href={contactHref} className="primary-button w-inline-block">
                                     <div className="relative">
                                         <div className="text-size-small text-weight-bold">Contact Us</div>
                                     </div>
@@ -134,6 +142,7 @@ const DropDown = () => {
                         { title: "Home", to: ROUTES.HOME },
                         { title: "About", to: ROUTES.ABOUT },
                         { title: "Services", to: ROUTES.SERVICES },
+                        { title: "MarTech", to: ROUTES.MARTECH },
                         { title: "Careers", to: ROUTES.CAREERS },
                         { title: "Contact us", to: ROUTES.CONTACT },
                     ].map((item, index) => (

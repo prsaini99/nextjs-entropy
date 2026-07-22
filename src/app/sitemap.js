@@ -1,4 +1,5 @@
 import { getAllServiceSlugs } from '@/data/services'
+import { getAllMartechSlugs } from '@/data/martechPages'
 import { jobs } from '@/lib/careers'
 
 export default function sitemap() {
@@ -20,6 +21,12 @@ export default function sitemap() {
     },
     {
       url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/martech`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -59,6 +66,14 @@ export default function sitemap() {
     priority: 0.8,
   }))
 
+  // Martech product pages
+  const martechPages = [...getAllMartechSlugs(), 'shopify-websites', 'case-studies'].map((slug) => ({
+    url: `${baseUrl}/martech/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
   // Career pages
   const careerPages = jobs.map((job) => ({
     url: `${baseUrl}/careers/${job.slug}`,
@@ -67,5 +82,5 @@ export default function sitemap() {
     priority: 0.7,
   }))
   
-  return [...staticPages, ...servicePages, ...careerPages]
+  return [...staticPages, ...servicePages, ...martechPages, ...careerPages]
 }

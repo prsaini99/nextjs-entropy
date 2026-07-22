@@ -37,11 +37,11 @@ export async function POST(request) {
 			body = await request.json();
 		}
 
-		const { 
-			fullName, workEmail, service, budget, timeline, 
+		const {
+			fullName, workEmail, service, budget, timeline,
 			projectSummary, companyWebsite, phone, privacyConsent,
 			utm_source, utm_medium, utm_campaign, utm_term, utm_content,
-			attribution_data, landing_page, referrer
+			attribution_data, landing_page, referrer, lead_source
 		} = body;
 
 		if (!fullName || !workEmail || !service || !timeline) {
@@ -69,6 +69,7 @@ export async function POST(request) {
 			utm_content: utm_content || null,
 			landing_page: landing_page || null,
 			referrer: referrer || null,
+			lead_source: lead_source || 'form',
 			attribution_data: attribution_data ? (typeof attribution_data === 'string' ? JSON.parse(attribution_data) : attribution_data) : null,
 		};
 
