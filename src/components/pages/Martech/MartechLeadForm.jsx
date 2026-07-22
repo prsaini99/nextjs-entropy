@@ -17,7 +17,14 @@ const SERVICES = [
     "Not sure yet — advise me",
 ];
 
-const BUDGETS = ["< $5k", "$5k – $15k", "$15k – $50k", "$50k+", "Prefer not to say"];
+const BUDGETS = [
+    "Under ₹5 Lakh",
+    "₹5 – ₹15 Lakh",
+    "₹15 – ₹40 Lakh",
+    "₹40 Lakh+",
+    "Custom amount…",
+    "Prefer not to say",
+];
 const TIMELINES = ["ASAP", "Within a month", "1–3 months", "Exploring options"];
 
 export default function MartechLeadForm({ compact = false }) {
@@ -30,6 +37,7 @@ export default function MartechLeadForm({ compact = false }) {
         timeline: "",
         projectSummary: "",
     });
+    const [customBudget, setCustomBudget] = useState(false);
     const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
     const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
@@ -144,16 +152,51 @@ export default function MartechLeadForm({ compact = false }) {
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-                <select value={form.budget} onChange={set("budget")} className="martech-input">
-                    <option value="" disabled>
-                        Budget range
-                    </option>
-                    {BUDGETS.map((b) => (
-                        <option key={b} value={b}>
-                            {b}
+                {customBudget ? (
+                    <div className="relative">
+                        <input
+                            autoFocus
+                            type="text"
+                            placeholder="Your budget, e.g. ₹8 Lakh"
+                            value={form.budget}
+                            onChange={set("budget")}
+                            className="martech-input pr-9"
+                        />
+                        <button
+                            type="button"
+                            aria-label="Back to budget ranges"
+                            onClick={() => {
+                                setCustomBudget(false);
+                                setForm((f) => ({ ...f, budget: "" }));
+                            }}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 text-white"
+                        >
+                            ×
+                        </button>
+                    </div>
+                ) : (
+                    <select
+                        value={form.budget}
+                        onChange={(e) => {
+                            if (e.target.value === "Custom amount…") {
+                                setCustomBudget(true);
+                                setForm((f) => ({ ...f, budget: "" }));
+                            } else {
+                                setForm((f) => ({ ...f, budget: e.target.value }));
+                            }
+                        }}
+                        className="martech-input"
+                    >
+                        <option value="" disabled>
+                            Budget range (INR)
                         </option>
-                    ))}
-                </select>
+                        {BUDGETS.map((b) => (
+                            <option key={b} value={b}>
+                                {b}
+                            </option>
+                        ))}
+                    </select>
+                )}
                 <select
                     required
                     value={form.timeline}
