@@ -37,6 +37,10 @@ Contact: contact@stackbinary.io · https://stackbinary.io/contact-us · MarTech 
 - [Hire developers](https://stackbinary.io/hire-developers): Project-based, monthly retainer, or extended partnership engagement models.
 - [About StackBinary](https://stackbinary.io/about): AI-native delivery — AI at the front, senior engineers in control; production-grade, security-reviewed releases.
 
+## Insights
+
+- [Custom CRM Development with AI Lead Scoring and WhatsApp](https://stackbinary.io/insights/custom-crm-ai-lead-scoring-whatsapp-integration): Discover how custom CRM development with AI lead scoring and WhatsApp integration can boost sales team efficiency in India.
+
 ## Optional
 
 - [Careers](https://stackbinary.io/careers)
