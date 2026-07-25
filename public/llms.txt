@@ -3,6 +3,7 @@
 > StackBinary is an AI-native software studio (stackbinary.io) that designs, builds and runs custom software: marketing technology (martech), AI systems, cloud platforms, web and mobile apps. 55+ products shipped across healthcare, retail, fintech, agriculture, mobility, education, media and marketing, for brands including Abbott, Sanofi, Philips, KFC, Hyundai, Reliance Entertainment, Mumbai Indians and Quick Heal.
 
 Contact: contact@stackbinary.io · https://stackbinary.io/contact-us · MarTech inquiries: https://stackbinary.io/martech
+Mumbai office: Spring Grove Towers, Kandivali East, Mumbai 400101 — https://stackbinary.io/software-development-company-mumbai
 
 ## MarTech Engineering (custom marketing technology)
 
@@ -34,6 +35,7 @@ Contact: contact@stackbinary.io · https://stackbinary.io/contact-us · MarTech 
 ## Software Development Services
 
 - [Services overview](https://stackbinary.io/services): AI/ML systems, cloud (AWS/Azure/GCP), custom software, web and mobile development, DevOps, data analytics.
+- [Software development company in Mumbai](https://stackbinary.io/software-development-company-mumbai): Mumbai-based studio in Kandivali East — shipped for Mumbai Indians, Reliance Entertainment, Sony Pictures, Piramal and Future Group. In-person discovery workshops available.
 - [Hire developers](https://stackbinary.io/hire-developers): Project-based, monthly retainer, or extended partnership engagement models.
 - [About StackBinary](https://stackbinary.io/about): AI-native delivery — AI at the front, senior engineers in control; production-grade, security-reviewed releases.
 

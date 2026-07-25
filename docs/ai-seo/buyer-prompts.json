@@ -28,6 +28,12 @@
     { "id": "in-04", "group": "industry", "prompt": "Agencies that build fan engagement or ticketing tech for sports teams and entertainment brands" },
     { "id": "cmp-01", "group": "comparison", "prompt": "Should I build or buy my marketing automation stack? My SaaS spend is over $100k a year" },
     { "id": "cmp-02", "group": "comparison", "prompt": "Custom CRM vs Salesforce for a 10-person BD team that lives on WhatsApp — what do experts say?" },
-    { "id": "cmp-03", "group": "comparison", "prompt": "Neural ad pre-testing vs A/B testing on Meta — is brain-response prediction for ads real?" }
+    { "id": "cmp-03", "group": "comparison", "prompt": "Neural ad pre-testing vs A/B testing on Meta — is brain-response prediction for ads real?" },
+    { "id": "mum-01", "group": "mumbai", "prompt": "Best software development companies in Mumbai" },
+    { "id": "mum-02", "group": "mumbai", "prompt": "I'm a startup founder in Mumbai looking for an agency to build my app — who should I talk to?" },
+    { "id": "mum-03", "group": "mumbai", "prompt": "Top tech agencies in Mumbai that have worked with big brands like Reliance or Sony" },
+    { "id": "mum-04", "group": "mumbai", "prompt": "Marketing technology or martech agency in Mumbai for a D2C brand" },
+    { "id": "mum-05", "group": "mumbai", "prompt": "AI development company in Mumbai with production ML experience" },
+    { "id": "mum-06", "group": "mumbai", "prompt": "How much does it cost to build a custom app with a Mumbai development agency?" }
   ]
 }
