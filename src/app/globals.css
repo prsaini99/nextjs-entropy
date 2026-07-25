@@ -92,3 +92,19 @@ main.flex-1.relative > div.py-8 {
 		max-width: 90px !important;
 	}
 }
+
+/* ---- Insights article prose (markdown-rendered) ---- */
+.insight-article { color: rgba(255,255,255,0.82); line-height: 1.75; font-size: 1rem; }
+.insight-article h2 { font-size: 1.5rem; font-weight: 600; color: #fff; margin: 2.2rem 0 0.8rem; }
+.insight-article h3 { font-size: 1.15rem; font-weight: 600; color: #fff; margin: 1.6rem 0 0.6rem; }
+.insight-article p { margin: 0 0 1.1rem; }
+.insight-article a { color: #ed5145; text-decoration: none; }
+.insight-article a:hover { text-decoration: underline; }
+.insight-article ul, .insight-article ol { margin: 0 0 1.1rem 1.4rem; }
+.insight-article li { margin-bottom: 0.4rem; }
+.insight-article blockquote { border-left: 2px solid #ed5145; padding-left: 1rem; opacity: 0.85; margin: 1.4rem 0; }
+.insight-article table { width: 100%; border-collapse: collapse; margin: 1.4rem 0; font-size: 0.9rem; display: block; overflow-x: auto; }
+.insight-article th, .insight-article td { border: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 0.9rem; text-align: left; }
+.insight-article th { background: rgba(255,255,255,0.06); color: #fff; }
+.insight-article strong { color: #fff; }
+.insight-article hr { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 2rem 0; }

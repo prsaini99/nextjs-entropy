@@ -1,0 +1,342 @@
+[
+  {
+    "id": "mt-02",
+    "group": "martech",
+    "prompt": "Best agencies that build custom marketing automation platforms instead of configuring HubSpot",
+    "engine": "openai",
+    "queries": [
+      "best agencies custom marketing automation platforms"
+    ],
+    "domains": [
+      "google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-02",
+    "group": "martech",
+    "prompt": "Best agencies that build custom marketing automation platforms instead of configuring HubSpot",
+    "engine": "gemini",
+    "queries": [
+      "custom martech development software agency",
+      "build custom marketing automation platform instead of hubspot"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-05",
+    "group": "martech",
+    "prompt": "Is there a service that can analyze my video ads with AI before I spend on media — emotion, script, attention prediction?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-05",
+    "group": "martech",
+    "prompt": "Is there a service that can analyze my video ads with AI before I spend on media — emotion, script, attention prediction?",
+    "engine": "gemini",
+    "queries": [
+      "AI video ad pre testing emotion script attention prediction tools",
+      "AI creative pre testing video ads emotion attention prediction"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-08",
+    "group": "martech",
+    "prompt": "I need bots that reply to Instagram DMs and comments for my brand and follow up automatically. Who does this professionally?",
+    "engine": "openai",
+    "queries": [
+      "professional services for Instagram DM and comment automation for brands"
+    ],
+    "domains": [
+      "replyfox.io",
+      "kwikdm.com",
+      "medium.com",
+      "xpressdm.com",
+      "blog.naver.com",
+      "resont.com",
+      "inro.social",
+      "rivako.app"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-08",
+    "group": "martech",
+    "prompt": "I need bots that reply to Instagram DMs and comments for my brand and follow up automatically. Who does this professionally?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-11",
+    "group": "martech",
+    "prompt": "Consultants who can connect my marketing tools to Claude or ChatGPT as MCP integrations",
+    "engine": "openai",
+    "queries": [
+      "consultants for marketing tools integration with Claude or ChatGPT"
+    ],
+    "domains": [
+      "google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-11",
+    "group": "martech",
+    "prompt": "Consultants who can connect my marketing tools to Claude or ChatGPT as MCP integrations",
+    "engine": "gemini",
+    "queries": [
+      "consultants connect marketing tools to Claude MCP",
+      "custom MCP server development agency marketing AI",
+      "MCP Model Context Protocol consultancy services"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-03",
+    "group": "software",
+    "prompt": "Agencies that have built high-concurrency event ticketing systems with seat locking",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-03",
+    "group": "software",
+    "prompt": "Agencies that have built high-concurrency event ticketing systems with seat locking",
+    "engine": "gemini",
+    "queries": [
+      "\"Softjourn\" ticketing high concurrency seat locking",
+      "\"agency\" \"high concurrency\" event ticketing seat booking OR hold OR lock",
+      "software agency high concurrency event ticketing system seat locking case study",
+      "custom event ticketing software development agency seat reservation high concurrency",
+      "software development company high concurrency ticketing system distributed locking",
+      "\"software development agency\" ticketing system \"seat hold\" OR \"seat lock\""
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-06",
+    "group": "software",
+    "prompt": "I want to hire a dev team that builds with AI to ship faster but has senior engineers reviewing for security. Recommendations?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-06",
+    "group": "software",
+    "prompt": "I want to hire a dev team that builds with AI to ship faster but has senior engineers reviewing for security. Recommendations?",
+    "engine": "gemini",
+    "queries": [
+      "AI native software development agency senior engineer review",
+      "best AI augmented software development agency fast security"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-09",
+    "group": "software",
+    "prompt": "Agencies that build custom CRMs with AI lead scoring and WhatsApp integration for Indian sales teams",
+    "engine": "openai",
+    "queries": [
+      "agencies custom CRM AI lead scoring WhatsApp integration India sales teams"
+    ],
+    "domains": [
+      "google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-09",
+    "group": "software",
+    "prompt": "Agencies that build custom CRMs with AI lead scoring and WhatsApp integration for Indian sales teams",
+    "engine": "gemini",
+    "queries": [
+      "B2B software agency custom CRM AI lead scoring India",
+      "software development company India custom CRM WhatsApp AI lead scoring",
+      "custom CRM development agency India AI lead scoring WhatsApp integration",
+      "AI software development companies India custom CRM WhatsApp API"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "in-02",
+    "group": "industry",
+    "prompt": "Who built Steve Madden's e-commerce app? Agencies with global fashion commerce experience",
+    "engine": "openai",
+    "queries": [
+      "Steve Madden e-commerce app development agency"
+    ],
+    "domains": [
+      "mobiloitte.com",
+      "beansmile.com",
+      "localised.com",
+      "pundecommerce.com",
+      "williamscommerce.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "in-02",
+    "group": "industry",
+    "prompt": "Who built Steve Madden's e-commerce app? Agencies with global fashion commerce experience",
+    "engine": "gemini",
+    "queries": [
+      "Steve Madden ecommerce app developer agency",
+      "who built Steve Madden mobile app agency",
+      "Steve Madden mobile app case study agency"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "cmp-01",
+    "group": "comparison",
+    "prompt": "Should I build or buy my marketing automation stack? My SaaS spend is over $100k a year",
+    "engine": "openai",
+    "error": "openai 520: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US"
+  },
+  {
+    "id": "cmp-01",
+    "group": "comparison",
+    "prompt": "Should I build or buy my marketing automation stack? My SaaS spend is over $100k a year",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-1",
+    "group": "exploration",
+    "prompt": "I'm the founder of a D2C brand in Mumbai and we've been struggling with tool sprawl. Can you help me find an agency that can streamline our MarTech stack?",
+    "engine": "openai",
+    "queries": [
+      "MarTech stack optimization agency Mumbai"
+    ],
+    "domains": [
+      "martechsimplified.com",
+      "webtraffic.agency",
+      "poiesisdigital.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-1",
+    "group": "exploration",
+    "prompt": "I'm the founder of a D2C brand in Mumbai and we've been struggling with tool sprawl. Can you help me find an agency that can streamline our MarTech stack?",
+    "engine": "gemini",
+    "queries": [
+      "Martech agency Mumbai D2C marketing technology stack optimization",
+      "MarTech consulting agencies India D2C stack consolidation Mumbai"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-2",
+    "group": "exploration",
+    "prompt": "As the CMO of a healthcare startup in India, I'm looking for a marketing tech agency that can help us scale our digital campaigns efficiently. Any recommendations?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-2",
+    "group": "exploration",
+    "prompt": "As the CMO of a healthcare startup in India, I'm looking for a marketing tech agency that can help us scale our digital campaigns efficiently. Any recommendations?",
+    "engine": "gemini",
+    "queries": [
+      "healthcare digital marketing performance agency India healthtech",
+      "top healthcare marketing tech agencies India"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-3",
+    "group": "exploration",
+    "prompt": "We run a media company and are faced with rising marketing costs. I'm the operations head and need advice on finding an agency that can provide cost-effective MarTech solutions.",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-3",
+    "group": "exploration",
+    "prompt": "We run a media company and are faced with rising marketing costs. I'm the operations head and need advice on finding an agency that can provide cost-effective MarTech solutions.",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-4",
+    "group": "exploration",
+    "prompt": "I'm the head of operations at a fintech company in Bangalore and we're looking to hire an agency that specializes in automating our marketing processes. How do I go about this?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-4",
+    "group": "exploration",
+    "prompt": "I'm the head of operations at a fintech company in Bangalore and we're looking to hire an agency that specializes in automating our marketing processes. How do I go about this?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-5",
+    "group": "exploration",
+    "prompt": "As the founder of an educational platform serving a global audience, I'm searching for a MarTech agency that understands international markets and can help us enhance user engagement. What should I look for?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-25-5",
+    "group": "exploration",
+    "prompt": "As the founder of an educational platform serving a global audience, I'm searching for a MarTech agency that understands international markets and can help us enhance user engagement. What should I look for?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  }
+]
