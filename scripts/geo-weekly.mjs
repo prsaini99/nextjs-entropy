@@ -79,6 +79,15 @@ md += `\n## Needs your input (couldn't ground in our data)\n\n`;
 for (const c of needsHuman) md += `- "${c.head}" — add proof/facts to the data files, or reject\n`;
 if (!needsHuman.length) md += `- none\n`;
 
+// Medium queue
+const mediumDir = path.join("docs", "ai-seo", "medium-queue");
+const mediumQueue = fs.existsSync(mediumDir)
+  ? fs.readdirSync(mediumDir).filter((f) => f.endsWith(".medium.md"))
+  : [];
+md += `\n## Medium queue (drafts awaiting publish)\n\n`;
+for (const f of mediumQueue) md += `- docs/ai-seo/medium-queue/${f} — publish via medium.com/p/import\n`;
+if (!mediumQueue.length) md += `- empty — run \`node scripts/geo-medium.mjs <insight-slug>\` on a published article\n`;
+
 md += `\n## Top cited domains (competitor watch)\n\n`;
 for (const [d, n] of Object.entries(domains).sort((a, b) => b[1] - a[1]).slice(0, 15))
   md += `- (${n}×) ${d}${d === OUR_DOMAIN ? " ← us" : ""}\n`;
