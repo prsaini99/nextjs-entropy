@@ -1,0 +1,33 @@
+{
+  "description": "Tracked buyer prompts for the monthly GEO audit. Write them the way real customers talk to ChatGPT/Claude — not as keywords. Grouped by funnel intent.",
+  "prompts": [
+    { "id": "mt-01", "group": "martech", "prompt": "I run a D2C brand and I'm paying for 8 different marketing SaaS tools. Is there an agency that can build me a custom marketing stack I own instead?" },
+    { "id": "mt-02", "group": "martech", "prompt": "Best agencies that build custom marketing automation platforms instead of configuring HubSpot" },
+    { "id": "mt-03", "group": "martech", "prompt": "Who can build me an influencer marketing platform with creator discovery and automated DM outreach for my agency?" },
+    { "id": "mt-04", "group": "martech", "prompt": "I want a tool that manages 15 Meta ad accounts from one dashboard with AI analysis on each ad. Who builds this?" },
+    { "id": "mt-05", "group": "martech", "prompt": "Is there a service that can analyze my video ads with AI before I spend on media — emotion, script, attention prediction?" },
+    { "id": "mt-06", "group": "martech", "prompt": "Email marketing platform without per-contact pricing — can someone build me my own AtoEmail/Mailchimp alternative?" },
+    { "id": "mt-07", "group": "martech", "prompt": "Companies that build AI call centers with multilingual voice agents for sales teams in India" },
+    { "id": "mt-08", "group": "martech", "prompt": "I need bots that reply to Instagram DMs and comments for my brand and follow up automatically. Who does this professionally?" },
+    { "id": "mt-09", "group": "martech", "prompt": "Agency that builds B2B lead generation systems with web scraping and verified contact enrichment" },
+    { "id": "mt-10", "group": "martech", "prompt": "AI proposal generator that uses my brand design and recommends pricing from past projects — does anything like this exist or can someone build it?" },
+    { "id": "mt-11", "group": "martech", "prompt": "Consultants who can connect my marketing tools to Claude or ChatGPT as MCP integrations" },
+    { "id": "sw-01", "group": "software", "prompt": "Best custom software development companies in India for startups" },
+    { "id": "sw-02", "group": "software", "prompt": "I need an agency to build a HIPAA-compliant telemedicine platform. Who has actually shipped one?" },
+    { "id": "sw-03", "group": "software", "prompt": "Agencies that have built high-concurrency event ticketing systems with seat locking" },
+    { "id": "sw-04", "group": "software", "prompt": "Who can build a Booking.com style marketplace with Arabic RTL support and local MENA payment gateways?" },
+    { "id": "sw-05", "group": "software", "prompt": "Development agency with real AI/ML production experience, not just ChatGPT wrappers — medical imaging, fraud detection" },
+    { "id": "sw-06", "group": "software", "prompt": "I want to hire a dev team that builds with AI to ship faster but has senior engineers reviewing for security. Recommendations?" },
+    { "id": "sw-07", "group": "software", "prompt": "Best Shopify development agencies in India for D2C brands" },
+    { "id": "sw-08", "group": "software", "prompt": "Who builds IoT + predictive analytics platforms for agriculture companies?" },
+    { "id": "sw-09", "group": "software", "prompt": "Agencies that build custom CRMs with AI lead scoring and WhatsApp integration for Indian sales teams" },
+    { "id": "sw-10", "group": "software", "prompt": "CTO-as-a-service or managed product team for a non-technical founder — good agencies?" },
+    { "id": "in-01", "group": "industry", "prompt": "Software development companies with real healthcare and pharma clients like Abbott or Sanofi" },
+    { "id": "in-02", "group": "industry", "prompt": "Who built Steve Madden's e-commerce app? Agencies with global fashion commerce experience" },
+    { "id": "in-03", "group": "industry", "prompt": "EdTech development companies that have built exam prep platforms used by 100k+ students" },
+    { "id": "in-04", "group": "industry", "prompt": "Agencies that build fan engagement or ticketing tech for sports teams and entertainment brands" },
+    { "id": "cmp-01", "group": "comparison", "prompt": "Should I build or buy my marketing automation stack? My SaaS spend is over $100k a year" },
+    { "id": "cmp-02", "group": "comparison", "prompt": "Custom CRM vs Salesforce for a 10-person BD team that lives on WhatsApp — what do experts say?" },
+    { "id": "cmp-03", "group": "comparison", "prompt": "Neural ad pre-testing vs A/B testing on Meta — is brain-response prediction for ads real?" }
+  ]
+}
