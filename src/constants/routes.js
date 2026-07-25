@@ -4,6 +4,8 @@ const ROUTES = {
 	SERVICES: "/services",
 	HIRE_DEVELOPERS: "/hire-developers",
 	MARTECH: "/martech",
+	INDUSTRIES: "/industries",
+	CASE_STUDIES: "/case-studies",
 	CAREERS: "/careers",
 	CONTACT: "/contact-us",
 };

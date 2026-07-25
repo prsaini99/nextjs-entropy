@@ -108,7 +108,7 @@ function CaseStudyCard({ cs }) {
     );
 }
 
-export default function CaseStudiesShowcase() {
+export default function CaseStudiesShowcase({ general = false }) {
     const [active, setActive] = useState("All");
     const filtered =
         active === "All"
@@ -146,7 +146,10 @@ export default function CaseStudiesShowcase() {
                             delay={0.2}
                         >
                             <MartechCTA title="Start Your Project" />
-                            <LearnMoreButton title="All MarTech Services" routeTo="/martech" />
+                            <LearnMoreButton
+                                title={general ? "Industries We Serve" : "All MarTech Services"}
+                                routeTo={general ? "/industries" : "/martech"}
+                            />
                         </AnimatedInViewDiv>
                     </div>
                 </div>

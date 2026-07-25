@@ -16,8 +16,20 @@ Contact: contact@stackbinary.io · https://stackbinary.io/contact-us · MarTech 
 - [AI call center](https://stackbinary.io/martech/ai-call-center): Real-time multilingual voice sales agent (11 languages), inbound + outbound, CRM-logged transcripts.
 - [AI proposal generator](https://stackbinary.io/martech/proposal-maker): Branded proposals drafted by AI from past mandates, with quote recommendations, upsell ideas and reading analytics.
 - [MCP & AI ecosystem integration](https://stackbinary.io/martech/ai-integration): Consulting that connects ad accounts, CRM, email, analytics and socials to a company's AI ecosystem as MCP tools.
-- [Case studies](https://stackbinary.io/martech/case-studies): 37 shipped products and campaigns with real metrics — e.g. Steve Madden ($100M+ online sales), Utsav Fashion ($20M+ annual revenue), fraud detection ($25M+ prevented, 99.5% accuracy).
+- [Case studies](https://stackbinary.io/case-studies): 37 shipped products and campaigns with real metrics — e.g. Steve Madden ($100M+ online sales), Utsav Fashion ($20M+ annual revenue), fraud detection ($25M+ prevented, 99.5% accuracy).
 - [Shopify & e-commerce portfolio](https://stackbinary.io/martech/shopify-websites): 29+ live Shopify/D2C storefronts including Kisna, BigMuscles Nutrition, MyMuse, Bajaao and Jaipur Kurti.
+
+## Industries (custom software by sector)
+
+- [Industries overview](https://stackbinary.io/industries): 55+ products across 8 industries on 3 continents.
+- [Healthcare & pharma software](https://stackbinary.io/industries/healthcare-pharma): AI EHR (FHIR), telemedicine, ML medical imaging, NLP triage — for Abbott, Sanofi and others. 300,000+ teleconsultations delivered.
+- [Retail & e-commerce development](https://stackbinary.io/industries/retail-ecommerce): Omnichannel commerce and AI personalization — Steve Madden ($100M+ online sales), Philips, KFC, WROGN.
+- [Agriculture & agritech software](https://stackbinary.io/industries/agriculture-agritech): IoT livestock monitoring and rural distribution platforms — Bayer, Syngenta, UPL.
+- [Mobility & energy software](https://stackbinary.io/industries/automotive-mobility-energy): Ride-hailing, fleet and solar-proposal tooling — Hyundai, IndianOil, eBikeGo.
+- [Education & edtech software](https://stackbinary.io/industries/education-edtech): Exam prep (200,000+ students), cross-border tutoring, student transport safety.
+- [Media & entertainment software](https://stackbinary.io/industries/media-entertainment): High-concurrency ticketing, creator platforms — Reliance Entertainment, Sony Pictures, Mumbai Indians.
+- [Travel & hospitality software](https://stackbinary.io/industries/travel-hospitality): Booking marketplaces (Arabic RTL, local payments) and 360° direct-booking experiences.
+- [SaaS & marketing technology](https://stackbinary.io/industries/saas-marketing): Our own products — AtoEmail, AI Call Center, ComplyAny, Zyflus — plus client SaaS builds.
 
 ## Software Development Services
 
