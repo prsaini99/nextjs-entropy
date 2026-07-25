@@ -74,7 +74,7 @@ async function generateExplorationPrompts(n) {
       messages: [
         {
           role: "user",
-          content: `Generate ${n} realistic prompts that potential BUYERS of a software/martech agency would type into ChatGPT or Gemini. Vary buyer persona (founder, CMO, ops head), industry (healthcare, D2C, media, fintech, education, agri), geography (India, Mumbai, global) and situation (tool sprawl, scaling, cost, hiring). They must sound like real people asking for help choosing/finding an agency or tool — NOT keyword strings. Return JSON: {"prompts": ["...", ...]}`,
+          content: `Generate ${n} realistic prompts that potential BUYERS of a software/martech agency would type into ChatGPT or Gemini. Vary buyer persona (founder, CMO, ops head), industry (healthcare, D2C, media, fintech, education, agri), geography (India, Mumbai, global) and situation (tool sprawl, scaling, cost, hiring). RULES: prompts must express NEEDS and situations ("we need X", "how do we solve Y", "what does Z cost") — NEVER mention any specific brand, client or company name, and never ask who built a particular company's product. They must sound like real people asking for help — NOT keyword strings. Return JSON: {"prompts": ["...", ...]}`,
         },
       ],
     }),
