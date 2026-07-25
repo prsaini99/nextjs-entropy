@@ -79,6 +79,7 @@ export default function sitemap() {
   const industryPages = [
     { url: `${baseUrl}/industries`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/case-studies`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/software-development-company-mumbai`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     ...getAllIndustrySlugs().map((slug) => ({
       url: `${baseUrl}/industries/${slug}`,
       lastModified: new Date(),
