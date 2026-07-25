@@ -35,7 +35,16 @@ jobs:
           git add docs/ai-seo/reports
           git diff --cached --quiet || git commit -m "geo: weekly report $(date -u +%F)"
           git push
-      - name: Open report issue (your notification)
+      - name: Email report to prateek@stackbinary.io
+        if: steps.rep.outputs.file != ''
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          GEO_REPORT_TO: prateek@stackbinary.io
+        run: |
+          npm install --no-save nodemailer marked
+          node scripts/geo-mail.mjs
+      - name: Open report issue (archive + notification)
         if: steps.rep.outputs.file != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
