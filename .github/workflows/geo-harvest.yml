@@ -1,0 +1,38 @@
+name: GEO daily harvest
+
+on:
+  schedule:
+    - cron: "30 3 * * *" # 09:00 IST daily
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "daily (rotating third) or full panel"
+        default: "daily"
+
+concurrency:
+  group: geo-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run harvest
+        env:
+          CHATGPT_API_KEY: ${{ secrets.CHATGPT_API_KEY }}
+          GEMINI_SEO_KEY: ${{ secrets.GEMINI_SEO_KEY }}
+        run: node scripts/geo-audit.mjs --mode "${{ github.event.inputs.mode || 'daily' }}" --explore 10
+      - name: Commit harvest data
+        run: |
+          git config user.name "geo-bot"
+          git config user.email "geo-bot@stackbinary.io"
+          git add docs/ai-seo/reports docs/ai-seo/data
+          git diff --cached --quiet || git commit -m "geo: daily harvest $(date -u +%F)"
+          git push

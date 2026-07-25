@@ -1,0 +1,49 @@
+name: GEO weekly report
+
+on:
+  schedule:
+    - cron: "30 4 * * 0" # Sunday 10:00 IST
+  workflow_dispatch: {}
+
+concurrency:
+  group: geo-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build weekly report
+        id: rep
+        env:
+          CHATGPT_API_KEY: ${{ secrets.CHATGPT_API_KEY }}
+        run: |
+          node scripts/geo-weekly.mjs | tee weekly.log
+          echo "file=$(grep -oP '(?<=^REPORT_FILE=).*' weekly.log || true)" >> "$GITHUB_OUTPUT"
+      - name: Commit report
+        run: |
+          git config user.name "geo-bot"
+          git config user.email "geo-bot@stackbinary.io"
+          git add docs/ai-seo/reports
+          git diff --cached --quiet || git commit -m "geo: weekly report $(date -u +%F)"
+          git push
+      - name: Open report issue (your notification)
+        if: steps.rep.outputs.file != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "GEO weekly report — $(date -u +%F)" \
+            --body-file "${{ steps.rep.outputs.file }}" \
+            --label geo-report || \
+          gh issue create \
+            --title "GEO weekly report — $(date -u +%F)" \
+            --body-file "${{ steps.rep.outputs.file }}"

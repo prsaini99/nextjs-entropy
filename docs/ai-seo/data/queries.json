@@ -1,0 +1,730 @@
+{
+  "clusters": [
+    {
+      "id": "c1",
+      "head": "best agencies custom marketing automation platforms",
+      "tokens": [
+        "agencies",
+        "custom",
+        "marketing",
+        "automation",
+        "platforms"
+      ],
+      "variants": [
+        "best agencies custom marketing automation platforms"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "openai"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c2",
+      "head": "custom martech development software agency",
+      "tokens": [
+        "custom",
+        "martech",
+        "development",
+        "software",
+        "agency"
+      ],
+      "variants": [
+        "custom martech development software agency"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c3",
+      "head": "build custom marketing automation platform instead of hubspot",
+      "tokens": [
+        "build",
+        "custom",
+        "marketing",
+        "automation",
+        "platform",
+        "instead",
+        "hubspot"
+      ],
+      "variants": [
+        "build custom marketing automation platform instead of hubspot"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c4",
+      "head": "AI video ad pre testing emotion script attention prediction tools",
+      "tokens": [
+        "ai",
+        "video",
+        "ad",
+        "pre",
+        "testing",
+        "emotion",
+        "script",
+        "attention",
+        "prediction",
+        "tools"
+      ],
+      "variants": [
+        "AI video ad pre testing emotion script attention prediction tools",
+        "AI creative pre testing video ads emotion attention prediction"
+      ],
+      "count": 2,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c5",
+      "head": "professional services for Instagram DM and comment automation for brands",
+      "tokens": [
+        "professional",
+        "services",
+        "instagram",
+        "dm",
+        "comment",
+        "automation",
+        "brands"
+      ],
+      "variants": [
+        "professional services for Instagram DM and comment automation for brands"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "openai"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c6",
+      "head": "consultants for marketing tools integration with Claude or ChatGPT",
+      "tokens": [
+        "consultants",
+        "marketing",
+        "tools",
+        "integration",
+        "claude",
+        "chatgpt"
+      ],
+      "variants": [
+        "consultants for marketing tools integration with Claude or ChatGPT"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "openai"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c7",
+      "head": "consultants connect marketing tools to Claude MCP",
+      "tokens": [
+        "consultants",
+        "connect",
+        "marketing",
+        "tools",
+        "claude",
+        "mcp"
+      ],
+      "variants": [
+        "consultants connect marketing tools to Claude MCP"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c8",
+      "head": "custom MCP server development agency marketing AI",
+      "tokens": [
+        "custom",
+        "mcp",
+        "server",
+        "development",
+        "agency",
+        "marketing",
+        "ai"
+      ],
+      "variants": [
+        "custom MCP server development agency marketing AI"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c9",
+      "head": "MCP Model Context Protocol consultancy services",
+      "tokens": [
+        "mcp",
+        "model",
+        "context",
+        "protocol",
+        "consultancy",
+        "services"
+      ],
+      "variants": [
+        "MCP Model Context Protocol consultancy services"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c10",
+      "head": "\"Softjourn\" ticketing high concurrency seat locking",
+      "tokens": [
+        "softjourn",
+        "ticketing",
+        "high",
+        "concurrency",
+        "seat",
+        "locking"
+      ],
+      "variants": [
+        "\"Softjourn\" ticketing high concurrency seat locking"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c11",
+      "head": "\"agency\" \"high concurrency\" event ticketing seat booking OR hold OR lock",
+      "tokens": [
+        "agency",
+        "high",
+        "concurrency",
+        "event",
+        "ticketing",
+        "seat",
+        "booking",
+        "hold",
+        "lock"
+      ],
+      "variants": [
+        "\"agency\" \"high concurrency\" event ticketing seat booking OR hold OR lock"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c12",
+      "head": "software agency high concurrency event ticketing system seat locking case study",
+      "tokens": [
+        "software",
+        "agency",
+        "high",
+        "concurrency",
+        "event",
+        "ticketing",
+        "system",
+        "seat",
+        "locking",
+        "case",
+        "study"
+      ],
+      "variants": [
+        "software agency high concurrency event ticketing system seat locking case study"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c13",
+      "head": "custom event ticketing software development agency seat reservation high concurrency",
+      "tokens": [
+        "custom",
+        "event",
+        "ticketing",
+        "software",
+        "development",
+        "agency",
+        "seat",
+        "reservation",
+        "high",
+        "concurrency"
+      ],
+      "variants": [
+        "custom event ticketing software development agency seat reservation high concurrency"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c14",
+      "head": "software development company high concurrency ticketing system distributed locking",
+      "tokens": [
+        "software",
+        "development",
+        "company",
+        "high",
+        "concurrency",
+        "ticketing",
+        "system",
+        "distributed",
+        "locking"
+      ],
+      "variants": [
+        "software development company high concurrency ticketing system distributed locking"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c15",
+      "head": "\"software development agency\" ticketing system \"seat hold\" OR \"seat lock\"",
+      "tokens": [
+        "software",
+        "development",
+        "agency",
+        "ticketing",
+        "system",
+        "seat",
+        "hold",
+        "seat",
+        "lock"
+      ],
+      "variants": [
+        "\"software development agency\" ticketing system \"seat hold\" OR \"seat lock\""
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c16",
+      "head": "AI native software development agency senior engineer review",
+      "tokens": [
+        "ai",
+        "native",
+        "software",
+        "development",
+        "agency",
+        "senior",
+        "engineer",
+        "review"
+      ],
+      "variants": [
+        "AI native software development agency senior engineer review"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c17",
+      "head": "best AI augmented software development agency fast security",
+      "tokens": [
+        "ai",
+        "augmented",
+        "software",
+        "development",
+        "agency",
+        "fast",
+        "security"
+      ],
+      "variants": [
+        "best AI augmented software development agency fast security"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c18",
+      "head": "agencies custom CRM AI lead scoring WhatsApp integration India sales teams",
+      "tokens": [
+        "agencies",
+        "custom",
+        "crm",
+        "ai",
+        "lead",
+        "scoring",
+        "whatsapp",
+        "integration",
+        "india",
+        "sales",
+        "teams"
+      ],
+      "variants": [
+        "agencies custom CRM AI lead scoring WhatsApp integration India sales teams",
+        "custom CRM development agency India AI lead scoring WhatsApp integration"
+      ],
+      "count": 2,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "openai",
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "article-open",
+      "articleSlug": "custom-crm-ai-lead-scoring-whatsapp-integration"
+    },
+    {
+      "id": "c19",
+      "head": "B2B software agency custom CRM AI lead scoring India",
+      "tokens": [
+        "b2b",
+        "software",
+        "agency",
+        "custom",
+        "crm",
+        "ai",
+        "lead",
+        "scoring",
+        "india"
+      ],
+      "variants": [
+        "B2B software agency custom CRM AI lead scoring India",
+        "software development company India custom CRM WhatsApp AI lead scoring"
+      ],
+      "count": 2,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c20",
+      "head": "AI software development companies India custom CRM WhatsApp API",
+      "tokens": [
+        "ai",
+        "software",
+        "development",
+        "companies",
+        "india",
+        "custom",
+        "crm",
+        "whatsapp",
+        "api"
+      ],
+      "variants": [
+        "AI software development companies India custom CRM WhatsApp API"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c21",
+      "head": "Steve Madden e-commerce app development agency",
+      "tokens": [
+        "steve",
+        "madden",
+        "ecommerce",
+        "app",
+        "development",
+        "agency"
+      ],
+      "variants": [
+        "Steve Madden e-commerce app development agency",
+        "Steve Madden ecommerce app developer agency"
+      ],
+      "count": 2,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "openai",
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c22",
+      "head": "who built Steve Madden mobile app agency",
+      "tokens": [
+        "who",
+        "built",
+        "steve",
+        "madden",
+        "mobile",
+        "app",
+        "agency"
+      ],
+      "variants": [
+        "who built Steve Madden mobile app agency",
+        "Steve Madden mobile app case study agency"
+      ],
+      "count": 2,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c23",
+      "head": "MarTech stack optimization agency Mumbai",
+      "tokens": [
+        "martech",
+        "stack",
+        "optimization",
+        "agency",
+        "mumbai"
+      ],
+      "variants": [
+        "MarTech stack optimization agency Mumbai",
+        "Martech agency Mumbai D2C marketing technology stack optimization"
+      ],
+      "count": 2,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "openai",
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c24",
+      "head": "MarTech consulting agencies India D2C stack consolidation Mumbai",
+      "tokens": [
+        "martech",
+        "consulting",
+        "agencies",
+        "india",
+        "d2c",
+        "stack",
+        "consolidation",
+        "mumbai"
+      ],
+      "variants": [
+        "MarTech consulting agencies India D2C stack consolidation Mumbai"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c25",
+      "head": "healthcare digital marketing performance agency India healthtech",
+      "tokens": [
+        "healthcare",
+        "digital",
+        "marketing",
+        "performance",
+        "agency",
+        "india",
+        "healthtech"
+      ],
+      "variants": [
+        "healthcare digital marketing performance agency India healthtech"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    },
+    {
+      "id": "c26",
+      "head": "top healthcare marketing tech agencies India",
+      "tokens": [
+        "healthcare",
+        "marketing",
+        "tech",
+        "agencies",
+        "india"
+      ],
+      "variants": [
+        "top healthcare marketing tech agencies India"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-25"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-25",
+      "lastSeen": "2026-07-25",
+      "status": "new"
+    }
+  ],
+  "updated": "2026-07-25"
+}

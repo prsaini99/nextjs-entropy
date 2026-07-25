@@ -1,6 +1,7 @@
 import { getAllServiceSlugs } from '@/data/services'
 import { getAllMartechSlugs } from '@/data/martechPages'
 import { getAllIndustrySlugs } from '@/data/industries'
+import { getAllInsightSlugs } from '@/lib/insights'
 import { jobs } from '@/lib/careers'
 
 export default function sitemap() {
@@ -87,6 +88,17 @@ export default function sitemap() {
     })),
   ]
 
+  // Insights articles
+  const insightPages = [
+    { url: `${baseUrl}/insights`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
+    ...getAllInsightSlugs().map((slug) => ({
+      url: `${baseUrl}/insights/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    })),
+  ]
+
   // Career pages
   const careerPages = jobs.map((job) => ({
     url: `${baseUrl}/careers/${job.slug}`,
@@ -95,5 +107,5 @@ export default function sitemap() {
     priority: 0.7,
   }))
   
-  return [...staticPages, ...servicePages, ...martechPages, ...industryPages, ...careerPages]
+  return [...staticPages, ...servicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages]
 }

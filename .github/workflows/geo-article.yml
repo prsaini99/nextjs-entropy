@@ -1,0 +1,54 @@
+name: GEO article generation
+
+on:
+  schedule:
+    - cron: "30 5 * * 1,3,5" # Mon/Wed/Fri 11:00 IST
+  workflow_dispatch:
+    inputs:
+      cluster:
+        description: "Force a specific cluster id (optional)"
+        required: false
+
+concurrency:
+  group: geo-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate article
+        id: gen
+        env:
+          CHATGPT_API_KEY: ${{ secrets.CHATGPT_API_KEY }}
+        run: |
+          CLUSTER_FLAG=""
+          if [ -n "${{ github.event.inputs.cluster }}" ]; then CLUSTER_FLAG="--cluster ${{ github.event.inputs.cluster }}"; fi
+          node scripts/geo-generate.mjs $CLUSTER_FLAG | tee gen.log
+          echo "slug=$(grep -oP '(?<=^ARTICLE_SLUG=).*' gen.log || true)" >> "$GITHUB_OUTPUT"
+          echo "title=$(grep -oP '(?<=^ARTICLE_TITLE=).*' gen.log || true)" >> "$GITHUB_OUTPUT"
+      - name: Open PR
+        if: steps.gen.outputs.slug != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SLUG="${{ steps.gen.outputs.slug }}"
+          BRANCH="content/$SLUG"
+          git config user.name "geo-bot"
+          git config user.email "geo-bot@stackbinary.io"
+          git checkout -b "$BRANCH"
+          git add src/content/insights public/llms.txt docs/ai-seo/data
+          git commit -m "content: add insight article '$SLUG' (generated, PR-gated)"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --title "Insight article: ${{ steps.gen.outputs.title }}" \
+            --body "$(printf 'Auto-generated from a validated fan-out query gap.\n\n- Preview: check the Vercel bot comment below for the rendered page at /insights/%s\n- Grounding: every fact traces to src/data files; grounded-facts count is in the frontmatter\n- Review = 2 questions: would you say this to a client, and is every number real?\n\nMerge to publish · Close to reject (the cluster will be marked rejected)' "$SLUG")" \
+            --base main --head "$BRANCH"
