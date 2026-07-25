@@ -500,8 +500,7 @@
       "citedUs": false,
       "firstSeen": "2026-07-25",
       "lastSeen": "2026-07-25",
-      "status": "article-open",
-      "articleSlug": "custom-crm-ai-lead-scoring-whatsapp-integration"
+      "status": "gap"
     },
     {
       "id": "c19",
@@ -588,7 +587,8 @@
       "citedUs": false,
       "firstSeen": "2026-07-25",
       "lastSeen": "2026-07-25",
-      "status": "new"
+      "status": "rejected",
+      "rejectReason": "brand-specific query"
     },
     {
       "id": "c22",
@@ -616,7 +616,8 @@
       "citedUs": false,
       "firstSeen": "2026-07-25",
       "lastSeen": "2026-07-25",
-      "status": "new"
+      "status": "rejected",
+      "rejectReason": "brand-specific query"
     },
     {
       "id": "c23",

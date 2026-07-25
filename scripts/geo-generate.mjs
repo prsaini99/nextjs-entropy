@@ -59,6 +59,24 @@ function sitePagesIndex() {
   return pages.map(tokens);
 }
 
+// Client/partner brand names: never write articles about brand-specific
+// queries, and never let these names appear in generated articles (work
+// involving them was delivered in partnership, not solely by StackBinary).
+const BRAND_BLOCKLIST = [
+  "steve madden", "utsav", "dudalina", "koovs", "starstruck", "sunny leone",
+  "bioderma", "sugar cosmetics", "shiseido", "the ordinary", "abbott",
+  "sanofi", "philips", "kfc", "hyundai", "reliance", "sony", "mumbai indians",
+  "quick heal", "bayer", "syngenta", "upl", "piramal", "future group",
+  "wrogn", "healthspace", "afiya", "easecare", "ipatientcare", "medichat",
+  "gurukul", "busokay", "canchello", "krooz", "ponttual", "stargaze",
+  "zoniq", "aloki", "indu", "banksathi", "classpass", "kisna", "bigmuscles",
+  "mymuse", "bajaao", "jaipur kurti", "prime engage", "yuvaah",
+];
+const mentionsBlockedBrand = (text) => {
+  const t = text.toLowerCase();
+  return BRAND_BLOCKLIST.filter((b) => t.includes(b));
+};
+
 // ---------- pick the gap ----------
 const pagesIdx = sitePagesIndex();
 const candidates = store.clusters
@@ -68,6 +86,14 @@ const candidates = store.clusters
       : ["new", "gap"].includes(c.status) && c.days.length >= 3 && !c.citedUs
   )
   .filter((c) => !pagesIdx.some((p) => overlap(c.tokens, p) >= 0.6))
+  .filter((c) => {
+    const blocked = mentionsBlockedBrand(c.head + " " + c.variants.join(" "));
+    if (blocked.length && c.status !== "rejected") {
+      c.status = "rejected";
+      c.rejectReason = `brand-specific query (${blocked[0]})`;
+    }
+    return !blocked.length;
+  })
   .sort((a, b) => b.days.length - a.days.length || b.count - a.count);
 
 if (!candidates.length) {
@@ -78,9 +104,21 @@ const gap = candidates[0];
 console.log(`Selected gap ${gap.id}: "${gap.head}" (${gap.days.length} days, ${gap.count} hits)`);
 
 // ---------- grounding corpus ----------
-const caseStudies = fs.readFileSync(path.join("src", "data", "caseStudies.js"), "utf8");
+// Own products, capabilities, pricing and process ONLY. Client case studies
+// and industry client rosters are deliberately EXCLUDED (partnership work).
 const martechData = fs.readFileSync(path.join("src", "data", "martechPages.js"), "utf8");
-const industriesData = fs.readFileSync(path.join("src", "data", "industries.js"), "utf8");
+
+const OWN_PRODUCTS = `StackBinary's OWN products and platforms (safe to cite as ours):
+- Zyflus (zyflus.com): influencer marketing platform — creator discovery, AI vetting 0-100 match scores, DM outreach automation, negotiation pipeline.
+- AtoEmail (atoemail.com): marketing automation/email platform — visual journey builder, campaigns, unified inbox, AMP email, developer API, no per-contact pricing.
+- StackBinary B2B Lead CRM (lead.stackbinary.io, in daily production use by our own BD team): WhatsApp + call + email capture, multilingual transcription, AI lead scoring (score/temperature/next action), "Ask your CRM" assistant, AI-drafted proposals, Google Sheets sync.
+- AI Call Center: real-time multilingual voice sales agent (11 languages), inbound + outbound, human handoff, CRM-logged transcripts, configured per company from one profile.
+- Meta Marketing Tool: multi-account Meta ad-ops (10-20 accounts), AI analysis per ad, AI ad copy/creative generation, publishing via Meta Graph API, audit logs.
+- Creative Intelligence Lab (TRIBE v2): five-lens AI video ad analysis — on-screen emotion, voice & tone, visuals & pacing, script intelligence, neural attention prediction with per-second curves.
+- TradeToIndia DB: B2B enrichment engine — CSV in, live enrichment, verified emails/phones, credit-metered.
+- Social bots & scrapers: Instagram/Facebook/Quora reply + follow-up bots, web scraping pipelines.
+- 29+ live Shopify/D2C storefronts delivered.
+Process: AI-accelerated delivery with senior-engineer review; free discovery/stack-audit call; weekly increments.`;
 
 const PRICING = `Indicative StackBinary pricing (INR): focused first release ₹5–15 Lakh in 6–12 weeks; larger platforms ₹15–40 Lakh+; managed retainer available. Free discovery/stack-audit call.`;
 
@@ -99,8 +137,9 @@ async function chat(messages, model = "gpt-4o") {
 }
 
 const system = `You write articles for StackBinary (stackbinary.io), an AI-native software & martech agency in Mumbai. HARD RULES:
-1. Every factual claim (client, metric, price, timeline, capability) MUST come from the provided source data. NEVER invent clients, numbers or capabilities.
-2. Include at least 3 specific proprietary facts from the data (named projects with their metrics, real pricing bands, real timelines).
+1. Every factual claim (metric, price, timeline, capability) MUST come from the provided source data. NEVER invent numbers or capabilities.
+2. NEVER mention any client brand, client project or campaign result. Do not name any company other than StackBinary and its own products (Zyflus, AtoEmail, TradeToIndia, the StackBinary CRM, AI Call Center, Meta Marketing Tool, TRIBE v2 lab) — competitor SaaS tools (HubSpot, Salesforce, Mailchimp) may be named neutrally in comparisons.
+2b. Include at least 3 specific proprietary facts from the data (own-product capabilities, real pricing bands, real timelines, real product mechanics).
 3. Structure: open with a 40-80 word direct answer to the head query (no heading above it). Then H2 sections answering the sub-queries. End with an FAQ section (### questions) covering long-tail variants, then a short CTA paragraph linking to /contact-us.
 4. Include exactly one markdown table that helps the reader decide something (costs, comparison, checklist).
 5. Voice: experienced practitioner, first-person plural ("we've shipped", "when we built"). Concrete over generic. No fluff, no "in today's digital landscape".
@@ -111,14 +150,12 @@ const user = `Head query (the article must directly answer this): "${gap.head}"
 Query variants observed from real AI-engine searches (use as H2/FAQ material): ${gap.variants.join(" | ")}
 
 SOURCE DATA (the only permitted facts):
+--- OWN PRODUCTS ---
+${OWN_PRODUCTS}
 --- PRICING ---
 ${PRICING}
---- CASE STUDIES (JS) ---
-${caseStudies.slice(0, 24000)}
---- MARTECH PRODUCTS (JS) ---
+--- MARTECH PRODUCTS (JS — ignore any client/campaign references inside) ---
 ${martechData.slice(0, 16000)}
---- INDUSTRIES (JS) ---
-${industriesData.slice(0, 10000)}
 --- LINKS ---
 ${SITE_LINKS}
 
@@ -145,17 +182,25 @@ if (!titleM || !descM || !slugM || body.length < 2000) {
   process.exit(0);
 }
 
-// ---------- grounding gate: >=3 proprietary facts present ----------
+// ---------- grounding gate: >=3 proprietary (own-product) facts present ----------
 const factMarkers = [
-  "Steve Madden", "Utsav", "StarStruck", "Bioderma", "Zyflus", "AtoEmail",
-  "TradeToIndia", "SolarProposal", "Gurukul", "BusOkay", "Canchello", "KROOZ",
-  "Ponttual", "ComplyAny", "Cowfit", "HealthSpace", "EaseCare", "iPatientCare",
-  "₹5", "₹15", "₹40", "3.8x", "292%", "$100M", "$25M", "300,000", "200,000",
-  "11 languages", "29+", "55+", "6–12 weeks", "6-12 weeks",
+  "Zyflus", "AtoEmail", "TradeToIndia", "StackBinary CRM", "B2B Lead CRM",
+  "AI Call Center", "Meta Marketing Tool", "TRIBE v2", "Creative Intelligence",
+  "₹5", "₹15", "₹40", "11 languages", "0–100", "0-100", "29+", "per-contact",
+  "6–12 weeks", "6-12 weeks", "stack audit", "lead.stackbinary.io",
 ];
 const factsFound = [...new Set(factMarkers.filter((f) => body.includes(f)))];
 if (factsFound.length < 3) {
   console.error(`Only ${factsFound.length} proprietary facts found; marking needs-human.`);
+  gap.status = "needs-human";
+  fs.writeFileSync(storeFile, JSON.stringify(store, null, 2));
+  process.exit(0);
+}
+
+// ---------- brand gate: client/partner names must never appear ----------
+const brandHits = mentionsBlockedBrand(body);
+if (brandHits.length) {
+  console.error(`Article mentions blocked brand(s): ${brandHits.join(", ")}; marking needs-human.`);
   gap.status = "needs-human";
   fs.writeFileSync(storeFile, JSON.stringify(store, null, 2));
   process.exit(0);
