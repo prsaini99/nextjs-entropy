@@ -123,6 +123,7 @@ export default function LeadsPage() {
           >
             <option value="">All Sources</option>
             <option value="google">Google</option>
+            <option value="medium">Medium</option>
             <option value="linkedin">LinkedIn</option>
             <option value="facebook">Facebook</option>
             <option value="twitter">Twitter</option>
