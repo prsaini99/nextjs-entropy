@@ -4,6 +4,7 @@ import Link from "next/link";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import { LearnMoreButton } from "@/components/Buttons";
 import MartechCTA from "./MartechCTA";
+import { linkAnchors } from "@/data/martechPages";
 
 export default function MartechProductPage({ page, afterHero = null }) {
     return (
@@ -179,6 +180,40 @@ export default function MartechProductPage({ page, afterHero = null }) {
                                                 {step.description}
                                             </p>
                                         </AnimatedInViewDiv>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {page.related?.length > 0 && (
+                <section>
+                    <div className="padding-global py-16">
+                        <div className="w-layout-blockcontainer container w-container">
+                            <div className="about-features-wrapper">
+                                <AnimatedInViewDiv className="about-features-header">
+                                    <div className="header">
+                                        <h2 className="heading-6 text-weight-medium">
+                                            Works Even Better Together
+                                        </h2>
+                                    </div>
+                                </AnimatedInViewDiv>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+                                    {page.related.map((slug) => (
+                                        <Link
+                                            key={slug}
+                                            href={`/martech/${slug}`}
+                                            className="border border-white/10 rounded-lg p-6 bg-white/[0.02] hover:border-[#ed5145]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
+                                        >
+                                            <span className="text-size-small text-weight-medium capitalize-first">
+                                                {linkAnchors[slug] || slug}
+                                            </span>
+                                            <span className="text-[#ed5145] opacity-40 group-hover:opacity-100 transition-opacity">
+                                                →
+                                            </span>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
