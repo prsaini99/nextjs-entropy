@@ -12,12 +12,15 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const page = getMartechPage(slug);
   if (!page) return {};
+  const title = page.seoTitle
+    ? `${page.seoTitle} | StackBinary™`
+    : `${page.badge.split("·")[0].trim()} | StackBinary™ MarTech`;
   return {
-    title: `${page.badge.split("·")[0].trim()} | StackBinary™ MarTech`,
+    title,
     description: page.tagline,
     alternates: { canonical: `https://stackbinary.io/martech/${slug}` },
     openGraph: {
-      title: `${page.badge.split("·")[0].trim()} | StackBinary™ MarTech`,
+      title,
       description: page.tagline,
       url: `https://stackbinary.io/martech/${slug}`,
       siteName: "StackBinary",

@@ -1,0 +1,31 @@
+# StackBinary
+
+> StackBinary is an AI-native software studio (stackbinary.io) that designs, builds and runs custom software: marketing technology (martech), AI systems, cloud platforms, web and mobile apps. 55+ products shipped across healthcare, retail, fintech, agriculture, mobility, education, media and marketing, for brands including Abbott, Sanofi, Philips, KFC, Hyundai, Reliance Entertainment, Mumbai Indians and Quick Heal.
+
+Contact: contact@stackbinary.io · https://stackbinary.io/contact-us · MarTech inquiries: https://stackbinary.io/martech
+
+## MarTech Engineering (custom marketing technology)
+
+- [MarTech services overview](https://stackbinary.io/martech): Custom martech engineering — own your marketing stack instead of renting SaaS. Free stack audit.
+- [Influencer marketing platform (Zyflus)](https://stackbinary.io/martech/influencer-marketing): Creator discovery, AI vetting with 0-100 match scores, automated DM outreach, negotiation pipeline. Ran campaigns with 292% follower growth and 3.8x ROAS (StarStruck by Sunny Leone).
+- [Marketing automation (AtoEmail)](https://stackbinary.io/martech/marketing-automation): Visual customer journeys, high-volume campaigns, unified inbox, AI steps — no per-contact pricing.
+- [AI Meta ads management](https://stackbinary.io/martech/ad-intelligence): Manage 10-20 Meta ad accounts from one dashboard; AI analysis per ad, AI ad copy/creative generation, publishing via the Meta Graph API.
+- [AI video ad analysis](https://stackbinary.io/martech/creative-analysis): Five AI lenses per creative — on-screen emotion, voice & tone, visuals & pacing, script intelligence, and neural attention prediction — before media spend.
+- [B2B lead generation & AI CRM](https://stackbinary.io/martech/lead-intelligence): Web/LinkedIn enrichment with verified contacts, plus an AI-assisted CRM capturing WhatsApp, calls and email with lead scoring and next actions.
+- [Social bots & scrapers](https://stackbinary.io/martech/social-automation): Reply and follow-up bots for Instagram, Facebook and Quora; web scraping pipelines for competitor, prospect and pricing intelligence.
+- [AI call center](https://stackbinary.io/martech/ai-call-center): Real-time multilingual voice sales agent (11 languages), inbound + outbound, CRM-logged transcripts.
+- [AI proposal generator](https://stackbinary.io/martech/proposal-maker): Branded proposals drafted by AI from past mandates, with quote recommendations, upsell ideas and reading analytics.
+- [MCP & AI ecosystem integration](https://stackbinary.io/martech/ai-integration): Consulting that connects ad accounts, CRM, email, analytics and socials to a company's AI ecosystem as MCP tools.
+- [Case studies](https://stackbinary.io/martech/case-studies): 37 shipped products and campaigns with real metrics — e.g. Steve Madden ($100M+ online sales), Utsav Fashion ($20M+ annual revenue), fraud detection ($25M+ prevented, 99.5% accuracy).
+- [Shopify & e-commerce portfolio](https://stackbinary.io/martech/shopify-websites): 29+ live Shopify/D2C storefronts including Kisna, BigMuscles Nutrition, MyMuse, Bajaao and Jaipur Kurti.
+
+## Software Development Services
+
+- [Services overview](https://stackbinary.io/services): AI/ML systems, cloud (AWS/Azure/GCP), custom software, web and mobile development, DevOps, data analytics.
+- [Hire developers](https://stackbinary.io/hire-developers): Project-based, monthly retainer, or extended partnership engagement models.
+- [About StackBinary](https://stackbinary.io/about): AI-native delivery — AI at the front, senior engineers in control; production-grade, security-reviewed releases.
+
+## Optional
+
+- [Careers](https://stackbinary.io/careers)
+- [Contact](https://stackbinary.io/contact-us)

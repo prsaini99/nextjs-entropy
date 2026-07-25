@@ -5,6 +5,8 @@
 const martechPages = {
   "influencer-marketing": {
     badge: "Zyflus · Influencer Marketing Platform",
+    seoTitle: "Influencer Marketing Platform for Agencies & Brands (Zyflus)",
+    related: ["creative-analysis","social-automation","ad-intelligence"],
     title: "Influencer Marketing, Run Like an Operation — Not a Spreadsheet",
     tagline:
       "Zyflus is our end-to-end creator marketing platform: discover creators, vet them with AI, automate outreach and negotiate — all in one pipeline.",
@@ -68,6 +70,8 @@ const martechPages = {
 
   "marketing-automation": {
     badge: "AtoEmail · Marketing Automation Platform",
+    seoTitle: "Marketing Automation Platform Without Per-Contact Pricing (AtoEmail)",
+    related: ["lead-intelligence","social-automation","ai-call-center"],
     title: "Marketing Automation That You Own — Journeys, Campaigns and Inbox in One Engine",
     tagline:
       "AtoEmail is our marketing automation platform: visual customer journeys, high-volume campaigns, a unified inbox and a developer API — without per-contact pricing that punishes list growth.",
@@ -131,6 +135,8 @@ const martechPages = {
 
   "ad-intelligence": {
     badge: "Meta Marketing Tool · AI Ad Intelligence",
+    seoTitle: "AI Meta Ads Management Tool — Ad Analysis & Creative Generation",
+    related: ["creative-analysis","marketing-automation","influencer-marketing"],
     title: "Every Ad Analyzed. New Creatives Generated. Pushed Live — Without Leaving One Dashboard",
     tagline:
       "Our ad-ops platform manages 10–20 Meta ad accounts from one place, layers AI analysis on every ad, generates new ad copy and creative with AI, and pushes campaigns straight through the Meta API.",
@@ -189,6 +195,8 @@ const martechPages = {
 
   "creative-analysis": {
     badge: "Creative Intelligence Lab · Emotion, Voice, Visuals, Script & Brain",
+    seoTitle: "AI Video Ad Analysis — Emotion, Script, Voice & Neural Attention",
+    related: ["ad-intelligence","influencer-marketing","marketing-automation"],
     title: "Your Video Ads Through Five AI Lenses — Before You Spend a Rupee on Media",
     tagline:
       "Our in-house creative intelligence pipeline runs every ad through five analyses — on-screen emotion, voice & tone, visual pacing, script structure, and predicted brain response — so you know exactly why an ad works, not just whether it did.",
@@ -247,6 +255,8 @@ const martechPages = {
 
   "lead-intelligence": {
     badge: "B2B Lead CRM + Scrapers · Sales Intelligence",
+    seoTitle: "B2B Lead Generation, Sales Intelligence & AI-Assisted CRM",
+    related: ["ai-call-center","proposal-maker","social-automation"],
     title: "A B2B Growth Engine: Scrape the Market, Score Every Lead, Never Drop a Follow-Up",
     tagline:
       "Our AI-assisted B2B CRM centralises leads, WhatsApp, calls, email, meetings and proposals — and our scraper stack keeps it fed with fresh, enriched prospect data on anything you sell to.",
@@ -305,6 +315,8 @@ const martechPages = {
 
   "social-automation": {
     badge: "Bots & Scrapers · Always-On Growth Automation",
+    seoTitle: "Instagram, Facebook & Quora Reply Bots + Web Scraping Services",
+    related: ["influencer-marketing","lead-intelligence","marketing-automation"],
     title: "Reply, Follow Up and Research — On Every Channel, While You Sleep",
     tagline:
       "Bot tooling that answers and follows up across Instagram, Facebook, Quora and more, plus scrapers that gather intelligence on anything — competitors, prospects, trends — feeding your marketing with data and your audience with timely responses.",
@@ -363,6 +375,8 @@ const martechPages = {
 
   "proposal-maker": {
     badge: "AI Branded Proposal Maker · Close Faster",
+    seoTitle: "AI Proposal Generator with Brand Design & Quote Recommendations",
+    related: ["lead-intelligence","ai-call-center","marketing-automation"],
     title: "Proposals That Look Like Your Brand and Think Like Your Best Closer",
     tagline:
       "An AI proposal engine that drafts the pitch from your previous mandates, applies your brand's design system automatically, recommends the right quote, suggests ideas the client didn't ask for — and then tells you exactly which sections they read.",
@@ -436,6 +450,8 @@ const martechPages = {
 
   "ai-integration": {
     badge: "MCP & AI Ecosystem Integration · AI Enablement",
+    seoTitle: "MCP Integration Consulting — Connect Your Marketing Stack to AI",
+    related: ["lead-intelligence","ad-intelligence","marketing-automation"],
     title: "Your Entire Marketing Stack, Wired Into Your AI",
     tagline:
       "We consult agencies and marketing teams on connecting their platforms — ad accounts, CRM, email, analytics, socials — into their AI ecosystem as MCP tools. We learn your business first, then build the connections and guardrails, so your team does everything in marketing by asking their AI.",
@@ -494,6 +510,8 @@ const martechPages = {
 
   "ai-call-center": {
     badge: "AI Call Center · Voice AI",
+    seoTitle: "AI Call Center for Sales — Real-Time Multilingual Voice Agent",
+    related: ["lead-intelligence","proposal-maker","ai-integration"],
     title: "A Sales Agent That Speaks 11 Languages and Never Misses a Call",
     tagline:
       "Our AI call center puts a real-time, multilingual voice agent on your phone lines — qualifying, answering and following up in the language your customer actually speaks. Any company's voice agent, configured from one profile, no redeploy.",
@@ -554,6 +572,21 @@ const martechPages = {
       note: "This is the real Sales Agent Console, embedded live. Explore it here — or open it full-screen.",
     },
   },
+};
+
+
+// Keyword-rich internal-link anchors per page, used wherever another page
+// links to these solutions.
+export const linkAnchors = {
+  "influencer-marketing": "influencer marketing platform for agencies",
+  "marketing-automation": "marketing automation without per-contact pricing",
+  "ad-intelligence": "AI Meta ads management & creative generation",
+  "creative-analysis": "AI video ad analysis — emotion, script & neural attention",
+  "lead-intelligence": "B2B lead generation & AI sales CRM",
+  "social-automation": "Instagram & Facebook reply bots + web scrapers",
+  "proposal-maker": "AI branded proposal generator",
+  "ai-integration": "MCP & AI ecosystem integration consulting",
+  "ai-call-center": "multilingual AI call center for sales",
 };
 
 export const getAllMartechSlugs = () => Object.keys(martechPages);

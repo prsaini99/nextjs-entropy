@@ -1,12 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import { LearnMoreButton } from "@/components/Buttons";
 import MartechCTA from "./MartechCTA";
 import caseStudies from "@/data/caseStudies";
 
 const categories = ["All", ...new Set(caseStudies.map((c) => c.category))];
+
+// Internal links from each case-study category to the service that delivers it
+const categoryService = {
+    Beauty: { href: "/martech/influencer-marketing", label: "influencer marketing platform for agencies" },
+    "Luxury Beauty": { href: "/martech/influencer-marketing", label: "influencer marketing platform for agencies" },
+    Skincare: { href: "/martech/influencer-marketing", label: "influencer marketing platform for agencies" },
+    "E-Commerce": { href: "/martech/shopify-websites", label: "Shopify & e-commerce development" },
+    "AI/Technology": { href: "/martech/ai-integration", label: "AI ecosystem & MCP integration" },
+    Healthcare: { href: "/services", label: "custom software development services" },
+    FinTech: { href: "/services", label: "custom software development services" },
+    Education: { href: "/services", label: "custom software development services" },
+    Social: { href: "/services", label: "custom software development services" },
+};
 
 function CaseStudyCard({ cs }) {
     const [open, setOpen] = useState(false);
@@ -36,6 +50,19 @@ function CaseStudyCard({ cs }) {
                 {cs.impact && (
                     <p className="text-size-small opacity-80 border-l-2 border-[#ed5145]/60 pl-3 mt-2">
                         {cs.impact}
+                    </p>
+                )}
+
+                {categoryService[cs.category] && (
+                    <p className="text-size-small opacity-50 mt-1">
+                        Delivered with our{" "}
+                        <Link
+                            href={categoryService[cs.category].href}
+                            className="text-link"
+                        >
+                            {categoryService[cs.category].label}
+                        </Link>
+                        .
                     </p>
                 )}
 
