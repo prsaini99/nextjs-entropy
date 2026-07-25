@@ -40,6 +40,12 @@ export default function Header() {
                                     <Link href={ROUTES.MARTECH} className="nav-link w-inline-block">
                                         <div>MarTech</div>
                                     </Link>
+                                    <Link href={ROUTES.INDUSTRIES} className="nav-link w-inline-block">
+                                        <div>Industries</div>
+                                    </Link>
+                                    <Link href={ROUTES.CASE_STUDIES} className="nav-link w-inline-block">
+                                        <div>Case Studies</div>
+                                    </Link>
                                     <Link href={ROUTES.CAREERS} className="nav-link w-inline-block">
                                         <div>Careers</div>
                                     </Link>
@@ -143,6 +149,8 @@ const DropDown = () => {
                         { title: "About", to: ROUTES.ABOUT },
                         { title: "Services", to: ROUTES.SERVICES },
                         { title: "MarTech", to: ROUTES.MARTECH },
+                        { title: "Industries", to: ROUTES.INDUSTRIES },
+                        { title: "Case Studies", to: ROUTES.CASE_STUDIES },
                         { title: "Careers", to: ROUTES.CAREERS },
                         { title: "Contact us", to: ROUTES.CONTACT },
                     ].map((item, index) => (

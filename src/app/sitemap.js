@@ -1,5 +1,6 @@
 import { getAllServiceSlugs } from '@/data/services'
 import { getAllMartechSlugs } from '@/data/martechPages'
+import { getAllIndustrySlugs } from '@/data/industries'
 import { jobs } from '@/lib/careers'
 
 export default function sitemap() {
@@ -67,12 +68,24 @@ export default function sitemap() {
   }))
 
   // Martech product pages
-  const martechPages = [...getAllMartechSlugs(), 'shopify-websites', 'case-studies'].map((slug) => ({
+  const martechPages = [...getAllMartechSlugs(), 'shopify-websites'].map((slug) => ({
     url: `${baseUrl}/martech/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8,
   }))
+
+  // Industry pages + top-level case studies
+  const industryPages = [
+    { url: `${baseUrl}/industries`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/case-studies`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    ...getAllIndustrySlugs().map((slug) => ({
+      url: `${baseUrl}/industries/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    })),
+  ]
 
   // Career pages
   const careerPages = jobs.map((job) => ({
@@ -82,5 +95,5 @@ export default function sitemap() {
     priority: 0.7,
   }))
   
-  return [...staticPages, ...servicePages, ...martechPages, ...careerPages]
+  return [...staticPages, ...servicePages, ...martechPages, ...industryPages, ...careerPages]
 }

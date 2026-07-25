@@ -139,7 +139,7 @@ export default function MartechCaseStudies() {
                                 <MartechCTA />
                                 <LearnMoreButton
                                     title="Explore All 37 Case Studies"
-                                    routeTo="/martech/case-studies"
+                                    routeTo="/case-studies"
                                 />
                             </div>
                         </AnimatedInViewDiv>
