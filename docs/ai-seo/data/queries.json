@@ -725,7 +725,333 @@
       "firstSeen": "2026-07-25",
       "lastSeen": "2026-07-25",
       "status": "new"
+    },
+    {
+      "id": "c27",
+      "head": "Clay agency B2B lead generation scraping contact enrichment",
+      "tokens": [
+        "clay",
+        "agency",
+        "b2b",
+        "lead",
+        "generation",
+        "scraping",
+        "contact",
+        "enrichment"
+      ],
+      "variants": [
+        "Clay agency B2B lead generation scraping contact enrichment",
+        "agency builds B2B lead generation systems web scraping contact enrichment"
+      ],
+      "count": 2,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c28",
+      "head": "top custom software development companies in India for startups Clutch",
+      "tokens": [
+        "custom",
+        "software",
+        "development",
+        "companies",
+        "india",
+        "startups",
+        "clutch"
+      ],
+      "variants": [
+        "top custom software development companies in India for startups Clutch"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c29",
+      "head": "best software development agencies India startups",
+      "tokens": [
+        "software",
+        "development",
+        "agencies",
+        "india",
+        "startups"
+      ],
+      "variants": [
+        "best software development agencies India startups"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c30",
+      "head": "best Shopify development agencies in India for D2C brands",
+      "tokens": [
+        "shopify",
+        "development",
+        "agencies",
+        "india",
+        "d2c",
+        "brands"
+      ],
+      "variants": [
+        "best Shopify development agencies in India for D2C brands",
+        "top shopify plus agencies india D2C",
+        "top shopify development agencies in India for D2C brands",
+        "\"Marmeto\" shopify d2c brands india"
+      ],
+      "count": 4,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "openai",
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c31",
+      "head": "\"Krish TechnoLabs\" shopify d2c brands india",
+      "tokens": [
+        "krish",
+        "technolabs",
+        "shopify",
+        "d2c",
+        "brands",
+        "india"
+      ],
+      "variants": [
+        "\"Krish TechnoLabs\" shopify d2c brands india"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c32",
+      "head": "\"Dynamic Dreamz\" shopify d2c brands india",
+      "tokens": [
+        "dynamic",
+        "dreamz",
+        "shopify",
+        "d2c",
+        "brands",
+        "india"
+      ],
+      "variants": [
+        "\"Dynamic Dreamz\" shopify d2c brands india"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c33",
+      "head": "best product studios managed engineering teams startups",
+      "tokens": [
+        "product",
+        "studios",
+        "managed",
+        "engineering",
+        "teams",
+        "startups"
+      ],
+      "variants": [
+        "best product studios managed engineering teams startups"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c34",
+      "head": "fractional CTO as a service agency software product team non technical founder",
+      "tokens": [
+        "fractional",
+        "cto",
+        "as",
+        "service",
+        "agency",
+        "software",
+        "product",
+        "team",
+        "non",
+        "technical",
+        "founder"
+      ],
+      "variants": [
+        "fractional CTO as a service agency software product team non technical founder"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c35",
+      "head": "best CRM for 10 person team WhatsApp sales",
+      "tokens": [
+        "crm",
+        "10",
+        "person",
+        "team",
+        "whatsapp",
+        "sales"
+      ],
+      "variants": [
+        "best CRM for 10 person team WhatsApp sales"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c36",
+      "head": "Salesforce vs Custom CRM WhatsApp integration small team",
+      "tokens": [
+        "salesforce",
+        "vs",
+        "custom",
+        "crm",
+        "whatsapp",
+        "integration",
+        "small",
+        "team"
+      ],
+      "variants": [
+        "Salesforce vs Custom CRM WhatsApp integration small team"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c37",
+      "head": "agritech CRM features non negotiable field sales offline",
+      "tokens": [
+        "agritech",
+        "crm",
+        "features",
+        "non",
+        "negotiable",
+        "field",
+        "sales",
+        "offline"
+      ],
+      "variants": [
+        "agritech CRM features non negotiable field sales offline"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
+    },
+    {
+      "id": "c38",
+      "head": "agritech startup crm requirements",
+      "tokens": [
+        "agritech",
+        "startup",
+        "crm",
+        "requirements"
+      ],
+      "variants": [
+        "agritech startup crm requirements"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-26"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-26",
+      "lastSeen": "2026-07-26",
+      "status": "new"
     }
   ],
-  "updated": "2026-07-25"
+  "updated": "2026-07-26"
 }
