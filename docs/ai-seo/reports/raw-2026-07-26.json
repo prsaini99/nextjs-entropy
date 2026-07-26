@@ -1,0 +1,381 @@
+[
+  {
+    "id": "mt-03",
+    "group": "martech",
+    "prompt": "Who can build me an influencer marketing platform with creator discovery and automated DM outreach for my agency?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-03",
+    "group": "martech",
+    "prompt": "Who can build me an influencer marketing platform with creator discovery and automated DM outreach for my agency?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-06",
+    "group": "martech",
+    "prompt": "Email marketing platform without per-contact pricing — can someone build me my own AtoEmail/Mailchimp alternative?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-06",
+    "group": "martech",
+    "prompt": "Email marketing platform without per-contact pricing — can someone build me my own AtoEmail/Mailchimp alternative?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-09",
+    "group": "martech",
+    "prompt": "Agency that builds B2B lead generation systems with web scraping and verified contact enrichment",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-09",
+    "group": "martech",
+    "prompt": "Agency that builds B2B lead generation systems with web scraping and verified contact enrichment",
+    "engine": "gemini",
+    "queries": [
+      "Clay agency B2B lead generation scraping contact enrichment",
+      "agency builds B2B lead generation systems web scraping contact enrichment"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-01",
+    "group": "software",
+    "prompt": "Best custom software development companies in India for startups",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-01",
+    "group": "software",
+    "prompt": "Best custom software development companies in India for startups",
+    "engine": "gemini",
+    "queries": [
+      "top custom software development companies in India for startups Clutch",
+      "best software development agencies India startups"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-04",
+    "group": "software",
+    "prompt": "Who can build a Booking.com style marketplace with Arabic RTL support and local MENA payment gateways?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-04",
+    "group": "software",
+    "prompt": "Who can build a Booking.com style marketplace with Arabic RTL support and local MENA payment gateways?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-07",
+    "group": "software",
+    "prompt": "Best Shopify development agencies in India for D2C brands",
+    "engine": "openai",
+    "queries": [
+      "best Shopify development agencies in India for D2C brands"
+    ],
+    "domains": [
+      "google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-07",
+    "group": "software",
+    "prompt": "Best Shopify development agencies in India for D2C brands",
+    "engine": "gemini",
+    "queries": [
+      "\"Krish TechnoLabs\" shopify d2c brands india",
+      "top shopify plus agencies india D2C",
+      "top shopify development agencies in India for D2C brands",
+      "\"Marmeto\" shopify d2c brands india",
+      "\"Dynamic Dreamz\" shopify d2c brands india"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-10",
+    "group": "software",
+    "prompt": "CTO-as-a-service or managed product team for a non-technical founder — good agencies?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-10",
+    "group": "software",
+    "prompt": "CTO-as-a-service or managed product team for a non-technical founder — good agencies?",
+    "engine": "gemini",
+    "queries": [
+      "best product studios managed engineering teams startups",
+      "fractional CTO as a service agency software product team non technical founder"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "in-03",
+    "group": "industry",
+    "prompt": "We run a coaching institute and want an exam prep app with adaptive tests and analytics — how do we get this built?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "in-03",
+    "group": "industry",
+    "prompt": "We run a coaching institute and want an exam prep app with adaptive tests and analytics — how do we get this built?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "cmp-02",
+    "group": "comparison",
+    "prompt": "Custom CRM vs Salesforce for a 10-person BD team that lives on WhatsApp — what do experts say?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "cmp-02",
+    "group": "comparison",
+    "prompt": "Custom CRM vs Salesforce for a 10-person BD team that lives on WhatsApp — what do experts say?",
+    "engine": "gemini",
+    "queries": [
+      "best CRM for 10 person team WhatsApp sales",
+      "Salesforce vs Custom CRM WhatsApp integration small team"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-1",
+    "group": "exploration",
+    "prompt": "As a founder of a D2C brand in Mumbai, we need a marketing automation solution that integrates with our existing tools to reduce tool sprawl and streamline operations. What should we consider?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-1",
+    "group": "exploration",
+    "prompt": "As a founder of a D2C brand in Mumbai, we need a marketing automation solution that integrates with our existing tools to reduce tool sprawl and streamline operations. What should we consider?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-2",
+    "group": "exploration",
+    "prompt": "I'm the CMO of a healthcare startup in India, and we're looking for ways to scale our digital marketing efforts without significantly increasing costs. What strategies or software solutions could help us achieve this?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-2",
+    "group": "exploration",
+    "prompt": "I'm the CMO of a healthcare startup in India, and we're looking for ways to scale our digital marketing efforts without significantly increasing costs. What strategies or software solutions could help us achieve this?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-3",
+    "group": "exploration",
+    "prompt": "Our media agency is struggling with high operational costs while managing multiple clients. How can we optimize our workflow with technology to improve efficiency?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-3",
+    "group": "exploration",
+    "prompt": "Our media agency is struggling with high operational costs while managing multiple clients. How can we optimize our workflow with technology to improve efficiency?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-4",
+    "group": "exploration",
+    "prompt": "In the fintech industry, I'm heading operations in a growing company and we often face issues with data integration from various marketing platforms. How do we effectively solve this problem?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-4",
+    "group": "exploration",
+    "prompt": "In the fintech industry, I'm heading operations in a growing company and we often face issues with data integration from various marketing platforms. How do we effectively solve this problem?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-5",
+    "group": "exploration",
+    "prompt": "As the head of marketing for an educational institution, we're facing challenges in tracking our student acquisition channels. What tools or systems can we implement to gain better insights?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-5",
+    "group": "exploration",
+    "prompt": "As the head of marketing for an educational institution, we're facing challenges in tracking our student acquisition channels. What tools or systems can we implement to gain better insights?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-6",
+    "group": "exploration",
+    "prompt": "We need help selecting the right CRM for our agri-tech startup, as our current system is not scaling with our needs. What features should we prioritize?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-6",
+    "group": "exploration",
+    "prompt": "We need help selecting the right CRM for our agri-tech startup, as our current system is not scaling with our needs. What features should we prioritize?",
+    "engine": "gemini",
+    "queries": [
+      "agritech CRM features non negotiable field sales offline",
+      "agritech startup crm requirements"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-7",
+    "group": "exploration",
+    "prompt": "I'm a founder for an online marketplace based in Mumbai, and hiring experienced digital marketers is proving to be costly. How can we leverage these new martech tools to bridge the gap in our skills?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-7",
+    "group": "exploration",
+    "prompt": "I'm a founder for an online marketplace based in Mumbai, and hiring experienced digital marketers is proving to be costly. How can we leverage these new martech tools to bridge the gap in our skills?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-8",
+    "group": "exploration",
+    "prompt": "As the CMO of a global brand, I'm concerned about our marketing tool sprawl affecting collaboration and productivity. What strategies or solutions can help us streamline?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-8",
+    "group": "exploration",
+    "prompt": "As the CMO of a global brand, I'm concerned about our marketing tool sprawl affecting collaboration and productivity. What strategies or solutions can help us streamline?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-9",
+    "group": "exploration",
+    "prompt": "In the healthcare sector, we need a solution that can help us manage patient feedback effectively while also complying with data privacy regulations. Any recommendations?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-9",
+    "group": "exploration",
+    "prompt": "In the healthcare sector, we need a solution that can help us manage patient feedback effectively while also complying with data privacy regulations. Any recommendations?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-10",
+    "group": "exploration",
+    "prompt": "As the operations head in a software startup, we're looking to implement new marketing automation tools. What should we evaluate to choose the best fit for our growing organization?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-26-10",
+    "group": "exploration",
+    "prompt": "As the operations head in a software startup, we're looking to implement new marketing automation tools. What should we evaluate to choose the best fit for our growing organization?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  }
+]
