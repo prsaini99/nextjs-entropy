@@ -252,18 +252,20 @@
         "locking"
       ],
       "variants": [
-        "\"Softjourn\" ticketing high concurrency seat locking"
+        "\"Softjourn\" ticketing high concurrency seat locking",
+        "high concurrency ticketing system seat locking headless API"
       ],
-      "count": 1,
+      "count": 2,
       "days": [
-        "2026-07-25"
+        "2026-07-25",
+        "2026-07-27"
       ],
       "engines": [
         "gemini"
       ],
       "citedUs": false,
       "firstSeen": "2026-07-25",
-      "lastSeen": "2026-07-25",
+      "lastSeen": "2026-07-27",
       "status": "new"
     },
     {
@@ -1051,7 +1053,637 @@
       "firstSeen": "2026-07-26",
       "lastSeen": "2026-07-26",
       "status": "new"
+    },
+    {
+      "id": "c39",
+      "head": "martech agency custom marketing stack build owned ecommerce",
+      "tokens": [
+        "martech",
+        "agency",
+        "custom",
+        "marketing",
+        "stack",
+        "build",
+        "owned",
+        "ecommerce"
+      ],
+      "variants": [
+        "martech agency custom marketing stack build owned ecommerce"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c40",
+      "head": "custom marketing stack agency D2C SaaS stack replacement",
+      "tokens": [
+        "custom",
+        "marketing",
+        "stack",
+        "agency",
+        "d2c",
+        "saas",
+        "stack",
+        "replacement"
+      ],
+      "variants": [
+        "custom marketing stack agency D2C SaaS stack replacement"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c41",
+      "head": "agency builds custom marketing stack you own D2C",
+      "tokens": [
+        "agency",
+        "builds",
+        "custom",
+        "marketing",
+        "stack",
+        "you",
+        "own",
+        "d2c"
+      ],
+      "variants": [
+        "agency builds custom marketing stack you own D2C"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c42",
+      "head": "manage multiple meta ad accounts one dashboard AI analysis",
+      "tokens": [
+        "manage",
+        "multiple",
+        "meta",
+        "ad",
+        "accounts",
+        "one",
+        "dashboard",
+        "ai",
+        "analysis"
+      ],
+      "variants": [
+        "manage multiple meta ad accounts one dashboard AI analysis"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c43",
+      "head": "best AI tools for managing multiple Facebook ad accounts",
+      "tokens": [
+        "ai",
+        "tools",
+        "managing",
+        "multiple",
+        "facebook",
+        "ad",
+        "accounts"
+      ],
+      "variants": [
+        "best AI tools for managing multiple Facebook ad accounts"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c44",
+      "head": "AI call centers multilingual voice agents sales teams India",
+      "tokens": [
+        "ai",
+        "call",
+        "centers",
+        "multilingual",
+        "voice",
+        "agents",
+        "sales",
+        "teams",
+        "india"
+      ],
+      "variants": [
+        "AI call centers multilingual voice agents sales teams India"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "openai"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c45",
+      "head": "\"Gnani.ai\" sales voice AI Indic languages",
+      "tokens": [
+        "gnaniai",
+        "sales",
+        "voice",
+        "ai",
+        "indic",
+        "languages"
+      ],
+      "variants": [
+        "\"Gnani.ai\" sales voice AI Indic languages"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c46",
+      "head": "AI voice agent companies India call center sales multilingual",
+      "tokens": [
+        "ai",
+        "voice",
+        "agent",
+        "companies",
+        "india",
+        "call",
+        "center",
+        "sales",
+        "multilingual"
+      ],
+      "variants": [
+        "AI voice agent companies India call center sales multilingual"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c47",
+      "head": "\"Yellow.ai\" voice bot sales India Indic languages",
+      "tokens": [
+        "yellowai",
+        "voice",
+        "bot",
+        "sales",
+        "india",
+        "indic",
+        "languages"
+      ],
+      "variants": [
+        "\"Yellow.ai\" voice bot sales India Indic languages",
+        "top AI voice bot companies India sales telecalling Indic languages"
+      ],
+      "count": 2,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c48",
+      "head": "\"Skit.ai\" sales voice bot India",
+      "tokens": [
+        "skitai",
+        "sales",
+        "voice",
+        "bot",
+        "india"
+      ],
+      "variants": [
+        "\"Skit.ai\" sales voice bot India"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c49",
+      "head": "AI proposal generator brand design pricing from past projects",
+      "tokens": [
+        "ai",
+        "proposal",
+        "generator",
+        "brand",
+        "design",
+        "pricing",
+        "from",
+        "past",
+        "projects"
+      ],
+      "variants": [
+        "AI proposal generator brand design pricing from past projects"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c50",
+      "head": "AI proposal software pricing recommendations historical data",
+      "tokens": [
+        "ai",
+        "proposal",
+        "software",
+        "pricing",
+        "recommendations",
+        "historical",
+        "data"
+      ],
+      "variants": [
+        "AI proposal software pricing recommendations historical data"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c51",
+      "head": "agencies that have built HIPAA-compliant telemedicine platforms",
+      "tokens": [
+        "agencies",
+        "that",
+        "have",
+        "built",
+        "hipaacompliant",
+        "telemedicine",
+        "platforms"
+      ],
+      "variants": [
+        "agencies that have built HIPAA-compliant telemedicine platforms"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "openai"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c52",
+      "head": "\"DataArt\" telehealth HIPAA case study",
+      "tokens": [
+        "dataart",
+        "telehealth",
+        "hipaa",
+        "case",
+        "study"
+      ],
+      "variants": [
+        "\"DataArt\" telehealth HIPAA case study"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c53",
+      "head": "\"Topflight Apps\" healthcare telehealth case study",
+      "tokens": [
+        "topflight",
+        "apps",
+        "healthcare",
+        "telehealth",
+        "case",
+        "study"
+      ],
+      "variants": [
+        "\"Topflight Apps\" healthcare telehealth case study"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c54",
+      "head": "agencies that built telemedicine platform case study HIPAA",
+      "tokens": [
+        "agencies",
+        "that",
+        "built",
+        "telemedicine",
+        "platform",
+        "case",
+        "study",
+        "hipaa"
+      ],
+      "variants": [
+        "agencies that built telemedicine platform case study HIPAA"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c55",
+      "head": "\"ScienceSoft\" telemedicine platform case study HIPAA BAA",
+      "tokens": [
+        "sciencesoft",
+        "telemedicine",
+        "platform",
+        "case",
+        "study",
+        "hipaa",
+        "baa"
+      ],
+      "variants": [
+        "\"ScienceSoft\" telemedicine platform case study HIPAA BAA"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c56",
+      "head": "\"KMS Healthcare\" telemedicine software development",
+      "tokens": [
+        "kms",
+        "healthcare",
+        "telemedicine",
+        "software",
+        "development"
+      ],
+      "variants": [
+        "\"KMS Healthcare\" telemedicine software development"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c57",
+      "head": "top software agencies HIPAA compliant telemedicine app case study",
+      "tokens": [
+        "software",
+        "agencies",
+        "hipaa",
+        "compliant",
+        "telemedicine",
+        "app",
+        "case",
+        "study"
+      ],
+      "variants": [
+        "top software agencies HIPAA compliant telemedicine app case study"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c58",
+      "head": "IoT predictive analytics platform agriculture companies",
+      "tokens": [
+        "iot",
+        "predictive",
+        "analytics",
+        "platform",
+        "agriculture",
+        "companies"
+      ],
+      "variants": [
+        "IoT predictive analytics platform agriculture companies"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c59",
+      "head": "Microsoft Azure Data Manager for Agriculture CropX Semios Arable",
+      "tokens": [
+        "microsoft",
+        "azure",
+        "data",
+        "manager",
+        "agriculture",
+        "cropx",
+        "semios",
+        "arable"
+      ],
+      "variants": [
+        "Microsoft Azure Data Manager for Agriculture CropX Semios Arable"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c60",
+      "head": "neural ad pre testing vs AB testing meta",
+      "tokens": [
+        "neural",
+        "ad",
+        "pre",
+        "testing",
+        "vs",
+        "ab",
+        "testing",
+        "meta"
+      ],
+      "variants": [
+        "neural ad pre testing vs AB testing meta"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
+    },
+    {
+      "id": "c61",
+      "head": "AI predictive eye tracking neural ad pre testing accuracy",
+      "tokens": [
+        "ai",
+        "predictive",
+        "eye",
+        "tracking",
+        "neural",
+        "ad",
+        "pre",
+        "testing",
+        "accuracy"
+      ],
+      "variants": [
+        "AI predictive eye tracking neural ad pre testing accuracy"
+      ],
+      "count": 1,
+      "days": [
+        "2026-07-27"
+      ],
+      "engines": [
+        "gemini"
+      ],
+      "citedUs": false,
+      "firstSeen": "2026-07-27",
+      "lastSeen": "2026-07-27",
+      "status": "new"
     }
   ],
-  "updated": "2026-07-26"
+  "updated": "2026-07-27"
 }
