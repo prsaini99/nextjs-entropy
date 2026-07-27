@@ -1,0 +1,426 @@
+[
+  {
+    "id": "mt-01",
+    "group": "martech",
+    "prompt": "I run a D2C brand and I'm paying for 8 different marketing SaaS tools. Is there an agency that can build me a custom marketing stack I own instead?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-01",
+    "group": "martech",
+    "prompt": "I run a D2C brand and I'm paying for 8 different marketing SaaS tools. Is there an agency that can build me a custom marketing stack I own instead?",
+    "engine": "gemini",
+    "queries": [
+      "martech agency custom marketing stack build owned ecommerce",
+      "custom marketing stack agency D2C SaaS stack replacement",
+      "agency builds custom marketing stack you own D2C"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-04",
+    "group": "martech",
+    "prompt": "I want a tool that manages 15 Meta ad accounts from one dashboard with AI analysis on each ad. Who builds this?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-04",
+    "group": "martech",
+    "prompt": "I want a tool that manages 15 Meta ad accounts from one dashboard with AI analysis on each ad. Who builds this?",
+    "engine": "gemini",
+    "queries": [
+      "manage multiple meta ad accounts one dashboard AI analysis",
+      "best AI tools for managing multiple Facebook ad accounts"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-07",
+    "group": "martech",
+    "prompt": "Companies that build AI call centers with multilingual voice agents for sales teams in India",
+    "engine": "openai",
+    "queries": [
+      "AI call centers multilingual voice agents sales teams India"
+    ],
+    "domains": [
+      "google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-07",
+    "group": "martech",
+    "prompt": "Companies that build AI call centers with multilingual voice agents for sales teams in India",
+    "engine": "gemini",
+    "queries": [
+      "\"Gnani.ai\" sales voice AI Indic languages",
+      "AI voice agent companies India call center sales multilingual",
+      "\"Yellow.ai\" voice bot sales India Indic languages",
+      "top AI voice bot companies India sales telecalling Indic languages",
+      "\"Skit.ai\" sales voice bot India"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "mt-10",
+    "group": "martech",
+    "prompt": "AI proposal generator that uses my brand design and recommends pricing from past projects — does anything like this exist or can someone build it?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "mt-10",
+    "group": "martech",
+    "prompt": "AI proposal generator that uses my brand design and recommends pricing from past projects — does anything like this exist or can someone build it?",
+    "engine": "gemini",
+    "queries": [
+      "AI proposal generator brand design pricing from past projects",
+      "AI proposal software pricing recommendations historical data"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-02",
+    "group": "software",
+    "prompt": "I need an agency to build a HIPAA-compliant telemedicine platform. Who has actually shipped one?",
+    "engine": "openai",
+    "queries": [
+      "agencies that have built HIPAA-compliant telemedicine platforms"
+    ],
+    "domains": [
+      "prnewswire.com",
+      "myorbithealth.com",
+      "enterprisetube.com",
+      "vsee.com",
+      "mwm.ai",
+      "arkenea.com",
+      "drugtopics.com",
+      "emorphis.com",
+      "getapp.com",
+      "letstalkinteractive.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-02",
+    "group": "software",
+    "prompt": "I need an agency to build a HIPAA-compliant telemedicine platform. Who has actually shipped one?",
+    "engine": "gemini",
+    "queries": [
+      "\"DataArt\" telehealth HIPAA case study",
+      "\"Topflight Apps\" healthcare telehealth case study",
+      "agencies that built telemedicine platform case study HIPAA",
+      "\"ScienceSoft\" telemedicine platform case study HIPAA BAA",
+      "\"KMS Healthcare\" telemedicine software development",
+      "top software agencies HIPAA compliant telemedicine app case study"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "sw-05",
+    "group": "software",
+    "prompt": "Development agency with real AI/ML production experience, not just ChatGPT wrappers — medical imaging, fraud detection",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-05",
+    "group": "software",
+    "prompt": "Development agency with real AI/ML production experience, not just ChatGPT wrappers — medical imaging, fraud detection",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-08",
+    "group": "software",
+    "prompt": "Who builds IoT + predictive analytics platforms for agriculture companies?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "sw-08",
+    "group": "software",
+    "prompt": "Who builds IoT + predictive analytics platforms for agriculture companies?",
+    "engine": "gemini",
+    "queries": [
+      "IoT predictive analytics platform agriculture companies",
+      "Microsoft Azure Data Manager for Agriculture CropX Semios Arable"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "in-01",
+    "group": "industry",
+    "prompt": "I need a HIPAA-aware development partner for a patient-facing health app with video consults — what should I look for?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "in-01",
+    "group": "industry",
+    "prompt": "I need a HIPAA-aware development partner for a patient-facing health app with video consults — what should I look for?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "in-04",
+    "group": "industry",
+    "prompt": "We sell event tickets and our site crashes at peak sales — who builds high-concurrency ticketing with seat locking?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "in-04",
+    "group": "industry",
+    "prompt": "We sell event tickets and our site crashes at peak sales — who builds high-concurrency ticketing with seat locking?",
+    "engine": "gemini",
+    "queries": [
+      "high concurrency ticketing system seat locking headless API"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "cmp-03",
+    "group": "comparison",
+    "prompt": "Neural ad pre-testing vs A/B testing on Meta — is brain-response prediction for ads real?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "cmp-03",
+    "group": "comparison",
+    "prompt": "Neural ad pre-testing vs A/B testing on Meta — is brain-response prediction for ads real?",
+    "engine": "gemini",
+    "queries": [
+      "neural ad pre testing vs AB testing meta",
+      "AI predictive eye tracking neural ad pre testing accuracy"
+    ],
+    "domains": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-1",
+    "group": "exploration",
+    "prompt": "As a CMO in a D2C company in Mumbai, we're facing tool sprawl with our marketing stack. What strategies could we implement to streamline our tools for better efficiency?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-1",
+    "group": "exploration",
+    "prompt": "As a CMO in a D2C company in Mumbai, we're facing tool sprawl with our marketing stack. What strategies could we implement to streamline our tools for better efficiency?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-2",
+    "group": "exploration",
+    "prompt": "We're a growing fintech startup in India, and we're struggling with scaling our marketing operations. What solutions are available to help us manage customer acquisition costs more effectively?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-2",
+    "group": "exploration",
+    "prompt": "We're a growing fintech startup in India, and we're struggling with scaling our marketing operations. What solutions are available to help us manage customer acquisition costs more effectively?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-3",
+    "group": "exploration",
+    "prompt": "As the head of operations in a global healthcare company, we need to integrate our CRM with our telehealth platform. What steps should we take to ensure smooth integration and data consistency?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-3",
+    "group": "exploration",
+    "prompt": "As the head of operations in a global healthcare company, we need to integrate our CRM with our telehealth platform. What steps should we take to ensure smooth integration and data consistency?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-4",
+    "group": "exploration",
+    "prompt": "In the education sector, our school is trying to improve communication with parents and students. What types of marketing automation solutions can enhance our outreach without breaking the bank?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-4",
+    "group": "exploration",
+    "prompt": "In the education sector, our school is trying to improve communication with parents and students. What types of marketing automation solutions can enhance our outreach without breaking the bank?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-5",
+    "group": "exploration",
+    "prompt": "We're a media agency looking to optimize our content distribution across multiple channels. How can we leverage technology to improve our workflow and increase engagement?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-5",
+    "group": "exploration",
+    "prompt": "We're a media agency looking to optimize our content distribution across multiple channels. How can we leverage technology to improve our workflow and increase engagement?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-6",
+    "group": "exploration",
+    "prompt": "As a founder in the agri-tech space, I need help understanding the costs associated with deploying marketing automation tools. What factors should I consider to make an informed decision?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-6",
+    "group": "exploration",
+    "prompt": "As a founder in the agri-tech space, I need help understanding the costs associated with deploying marketing automation tools. What factors should I consider to make an informed decision?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-7",
+    "group": "exploration",
+    "prompt": "Our healthcare startup based in Mumbai is rapidly expanding, and hiring qualified marketing professionals is becoming a challenge. What are some effective strategies to attract top talent in this field?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-7",
+    "group": "exploration",
+    "prompt": "Our healthcare startup based in Mumbai is rapidly expanding, and hiring qualified marketing professionals is becoming a challenge. What are some effective strategies to attract top talent in this field?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-8",
+    "group": "exploration",
+    "prompt": "As a CMO for a D2C e-commerce brand, we need insights on how to utilize data analytics effectively to improve our customer segmentation. What tools or approaches should we consider?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-8",
+    "group": "exploration",
+    "prompt": "As a CMO for a D2C e-commerce brand, we need insights on how to utilize data analytics effectively to improve our customer segmentation. What tools or approaches should we consider?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-9",
+    "group": "exploration",
+    "prompt": "We're an education technology company facing issues with customer retention rates. What strategies can we implement using marketing tech to address this problem?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-9",
+    "group": "exploration",
+    "prompt": "We're an education technology company facing issues with customer retention rates. What strategies can we implement using marketing tech to address this problem?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-10",
+    "group": "exploration",
+    "prompt": "In the fintech industry, we're looking to reduce operational costs related to our marketing processes. What types of automation tools should we explore to improve our efficiency?",
+    "engine": "openai",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  },
+  {
+    "id": "exp-2026-07-27-10",
+    "group": "exploration",
+    "prompt": "In the fintech industry, we're looking to reduce operational costs related to our marketing processes. What types of automation tools should we explore to improve our efficiency?",
+    "engine": "gemini",
+    "queries": [],
+    "domains": [],
+    "citedUs": false
+  }
+]
