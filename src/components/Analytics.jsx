@@ -83,9 +83,20 @@ export default function Analytics() {
         `}
       </Script>
 
-      {/* GTM intentionally not used — analytics tools are integrated directly.
-          If a marketing team needs self-serve tag management later, create a
-          GTM container under the company account and load it here. */}
+      {/* Google Tag Manager — the marketing team's self-serve tag workspace
+          (ad pixels, conversion tags). Owner rule: GA4 and Clarity live in
+          code above and must never be duplicated inside GTM. */}
+      {process.env.NEXT_PUBLIC_GTM_ID && (
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');
+          `}
+        </Script>
+      )}
     </>
   );
 }
