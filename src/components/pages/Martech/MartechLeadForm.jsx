@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/trackLead";
 
 const SERVICES = [
     "AI Ad Intelligence & Ad-Ops",
@@ -67,6 +68,13 @@ export default function MartechLeadForm({ compact = false }) {
                     privacyConsent: true,
                 }),
             });
+            if (res.ok) {
+                trackLeadSubmit({
+                    form: "martech",
+                    service: form.service,
+                    budget: form.budget,
+                });
+            }
             setStatus(res.ok ? "success" : "error");
         } catch {
             setStatus("error");
