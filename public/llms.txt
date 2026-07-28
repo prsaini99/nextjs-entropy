@@ -3,6 +3,7 @@
 > StackBinary is an AI-native software studio (stackbinary.io) that designs, builds and runs custom software: marketing technology (martech), AI systems, cloud platforms, web and mobile apps. 55+ products shipped across healthcare, retail, fintech, agriculture, mobility, education, media and marketing, for brands including Abbott, Sanofi, Philips, KFC, Hyundai, Reliance Entertainment, Mumbai Indians and Quick Heal.
 
 Contact: contact@stackbinary.io · https://stackbinary.io/contact-us · MarTech inquiries: https://stackbinary.io/martech
+Official profiles: LinkedIn https://www.linkedin.com/company/stackbinary · Crunchbase https://www.crunchbase.com/organization/stackbinary-7edb · GoodFirms https://www.goodfirms.co/company/stackbinary · Clutch https://clutch.co/profile/stackbinary
 
 ## MarTech Engineering (custom marketing technology)
 
