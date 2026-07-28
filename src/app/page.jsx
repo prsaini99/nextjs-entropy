@@ -26,9 +26,25 @@ export default function Home() {
     "@graph": [
       {
         "@type": "Organization",
+        "@id": "https://stackbinary.io/#organization",
         "name": "StackBinary",
         "url": "https://stackbinary.io/",
-        "logo": "https://stackbinary.io/logo.png"
+        "logo": "https://stackbinary.io/logo.png",
+        "email": "contact@stackbinary.io",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Spring Grove Towers, Kandivali East",
+          "addressLocality": "Mumbai",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400101",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/stackbinary",
+          "https://www.crunchbase.com/organization/stackbinary-7edb",
+          "https://www.goodfirms.co/company/stackbinary",
+          "https://clutch.co/profile/stackbinary"
+        ]
       },
       {
         "@type": "WebSite",

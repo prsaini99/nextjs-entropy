@@ -42,9 +42,10 @@ export default function ServicesPage() {
     "logo": "https://stackbinary.io/logo.png",
     "description": "We help you launch faster and operate reliably with AI, cloud, custom software, data analytics, DevOps and more.",
     "sameAs": [
-      "https://linkedin.com/company/stackbinary",
-      "https://twitter.com/stackbinary",
-      "https://github.com/stackbinary"
+      "https://www.linkedin.com/company/stackbinary",
+      "https://www.crunchbase.com/organization/stackbinary-7edb",
+      "https://www.goodfirms.co/company/stackbinary",
+      "https://clutch.co/profile/stackbinary"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
