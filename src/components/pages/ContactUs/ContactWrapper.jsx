@@ -4,6 +4,7 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import Link from 'next/link';
 import { useUTMTracking, getUTMData } from '@/hooks/useUTMTracking';
 import { trackEvent, trackFormInteraction, trackSocialClick, trackConversion, ANALYTICS_EVENTS } from '@/lib/analytics';
+import { trackLeadSubmit } from '@/lib/trackLead';
 
 const FORM_STATUS = {
     IDLE: "idle",
@@ -162,6 +163,12 @@ export default function ContactWrapper() {
                     lead_medium: currentUTM.utm_medium || 'none'
                 });
 
+                trackLeadSubmit({
+                    form: 'contact-detailed',
+                    service: step1Data.service,
+                    budget: step1Data.budget,
+                });
+
                 setStatus(FORM_STATUS.SUCCESS);
                 setStep1Data(initStep1Data);
                 setStep2Data(initStep2Data);
@@ -224,6 +231,12 @@ export default function ContactWrapper() {
                 trackConversion('contact_form_submit_quick', null, 'INR', {
                     lead_source: currentUTM.utm_source || 'direct',
                     lead_medium: currentUTM.utm_medium || 'none'
+                });
+
+                trackLeadSubmit({
+                    form: 'contact-quick',
+                    service: step1Data.service,
+                    budget: step1Data.budget,
                 });
 
                 setStatus(FORM_STATUS.SUCCESS);
