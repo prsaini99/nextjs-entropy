@@ -4,9 +4,10 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useUTMTracking } from '@/hooks/useUTMTracking';
 
-// GA4 measurement ID; direct gtag installation because the legacy GTM
-// container on this site is owned by an inaccessible account.
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-WTDN6LFJQ8';
+// GA4 measurement ID (stackbinary.io property). Pinned in code: the legacy
+// GTM container and the stale NEXT_PUBLIC_GA_MEASUREMENT_ID env value both
+// point at properties this account can't access.
+const GA_ID = 'G-WTDN6LFJQ8';
 
 export default function Analytics() {
   const pathname = usePathname();
