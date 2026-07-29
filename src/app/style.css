@@ -4456,76 +4456,73 @@ blockquote {
 	border-color: #333 !important;
 }
 
-/* Contact form select dropdown fixes */
-.text-field-contact select {
-	color: #ffffff !important;
-	background-color: #1a1a1a !important;
-	border: 1px solid #333 !important;
+/* Contact form select + textarea.
+
+   These target the elements directly. The block that used to live here was
+   written as `.text-field-contact select` — a descendant selector — but the
+   class sits ON the field, not on a wrapper, so none of those rules ever
+   matched and the dropdowns fell back to the browser's default widget. */
+select.text-field-contact,
+textarea.text-field-contact {
+	color: #fbfbfb;
+	background-color: #0000;
+	border: 1px solid #0000;
+	border-bottom-color: #c9d4d833;
+	border-radius: 0;
+	width: 100%;
+	/* Required. Webflow's `.w-input` sets height:38px, and with border-box the
+	   1.6rem vertical padding (51.2px) leaves ~2px of content box — the text
+	   renders correctly coloured and then gets clipped to nothing. Webflow
+	   resets this for textareas (`textarea.w-input`) but not for selects. */
+	height: auto;
+	font-family: inherit;
+	font-size: 1rem;
+	/* Render native widget internals dark rather than light-on-light. */
+	color-scheme: dark;
+	transition: all 0.4s;
+}
+
+select.text-field-contact:hover,
+textarea.text-field-contact:hover {
+	border-color: #c9d4d81a;
+	border-bottom-color: #c9d4d833;
+}
+
+select.text-field-contact:focus,
+textarea.text-field-contact:focus {
+	color: #ffffff;
+	border-color: #333;
+	outline: none;
+}
+
+select.text-field-contact {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	cursor: pointer;
+	/* appearance:none removes the native arrow, so draw one. */
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23c9d4d8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 1rem center;
+	padding-right: 2.5rem;
 }
 
-.text-field-contact select:focus,
-.text-field-contact select:active {
-	color: #ffffff !important;
-	background-color: #1a1a1a !important;
+/* The opened list is drawn by the OS and ignores most of the above. */
+select.text-field-contact option {
+	color: #fbfbfb;
+	background-color: #1a1a1a;
 }
 
-/* Fix for selected dropdown value */
-.text-field-contact select:not(:focus):not(:active) {
-	color: #ffffff !important;
-	background-color: #1a1a1a !important;
+select.text-field-contact optgroup {
+	color: #c9d4d8;
+	background-color: #1a1a1a;
+	font-style: normal;
 }
 
-.text-field-contact select:hover {
-	color: #ffffff !important;
-	background-color: #1a1a1a !important;
-}
-
-.text-field-contact select option {
-	color: #ffffff !important;
-	background-color: #1a1a1a !important;
-}
-
-/* Input and textarea overrides */
-.text-field-contact input,
-.text-field-contact textarea {
-	color: #ffffff !important;
-	background-color: #1a1a1a !important;
-	border: 1px solid #333 !important;
-}
-
-/* Comprehensive select styling - covers all states */
-select.text-field-contact,
-.text-field-contact.w-input[type="select-one"] {
-	color: #ffffff !important;
-	background-color: #1a1a1a !important;
-	border: 1px solid #333 !important;
-	-webkit-text-fill-color: #ffffff !important;
-}
-
-/* WebKit specific fixes for dropdown text */
-.text-field-contact select {
-	-webkit-text-fill-color: #ffffff !important;
-	-webkit-background-clip: text !important;
-}
-
-/* Force select element text color in all states */
-.text-field-contact select,
-.text-field-contact select:visited,
-.text-field-contact select:link {
-	color: #ffffff !important;
-	-webkit-text-fill-color: #ffffff !important;
-}
-
-.text-field-contact input:focus,
-.text-field-contact input:active,
-.text-field-contact textarea:focus,
-.text-field-contact textarea:active {
-	color: #ffffff !important;
-	background-color: #1a1a1a !important;
-	border-color: #555 !important;
+textarea.text-field-contact {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	resize: vertical;
 }
 
 .relative {
