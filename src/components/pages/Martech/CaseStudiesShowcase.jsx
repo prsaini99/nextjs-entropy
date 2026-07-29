@@ -6,6 +6,7 @@ import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import { LearnMoreButton } from "@/components/Buttons";
 import MartechCTA from "./MartechCTA";
 import caseStudies from "@/data/caseStudies";
+import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 const categories = ["All", ...new Set(caseStudies.map((c) => c.category))];
 
@@ -55,7 +56,7 @@ function CaseStudyCard({ cs }) {
 
                 {categoryService[cs.category] && (
                     <p className="text-size-small opacity-50 mt-1">
-                        Delivered with our{" "}
+                        Partnership work involving our{" "}
                         <Link
                             href={categoryService[cs.category].href}
                             className="text-link"
@@ -96,7 +97,15 @@ function CaseStudyCard({ cs }) {
                 )}
             </div>
             <button
-                onClick={() => setOpen(!open)}
+                onClick={() => {
+                    if (!open) {
+                        trackEvent(ANALYTICS_EVENTS.CASE_STUDY_OPEN, {
+                            case_study: cs.title,
+                            case_study_category: cs.category,
+                        });
+                    }
+                    setOpen(!open);
+                }}
                 className="border-t border-white/10 px-8 py-4 text-size-small text-weight-bold flex items-center justify-between hover:bg-[#ed5145]/10 transition-colors text-left"
             >
                 <span>{open ? "Show less" : "Challenge & solution"}</span>
@@ -133,9 +142,11 @@ export default function CaseStudiesShowcase({ general = false }) {
                                 <div className="max-w-4xl">
                                     <p className="opacity-60">
                                         From celebrity beauty campaigns to $100M+ commerce
-                                        platforms, healthcare AI to fintech fraud detection —
-                                        every case study below shipped, and every number is from
-                                        the work.
+                                        platforms, healthcare AI to fintech fraud detection.
+                                        Every case study below shipped. Client work was
+                                        delivered in partnership with brand and product teams,
+                                        and the figures shown are the results those platforms
+                                        and campaigns went on to produce.
                                     </p>
                                 </div>
                             </div>
@@ -145,7 +156,7 @@ export default function CaseStudiesShowcase({ general = false }) {
                             className="double-button-component margin-top-button-hero"
                             delay={0.2}
                         >
-                            <MartechCTA title="Start Your Project" />
+                            <MartechCTA title="Start Your Project" location="case-studies-showcase" />
                             <LearnMoreButton
                                 title={general ? "Industries We Serve" : "All MarTech Services"}
                                 routeTo={general ? "/industries" : "/martech"}

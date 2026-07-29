@@ -143,7 +143,7 @@ export default function IndustryDetail({ industry }) {
                                         </p>
                                     </div>
                                     <LearnMoreButton
-                                        title="Explore MarTech Engineering"
+                                        title="Explore AI Marketing & MarTech"
                                         routeTo="/martech"
                                     />
                                 </AnimatedInViewDiv>

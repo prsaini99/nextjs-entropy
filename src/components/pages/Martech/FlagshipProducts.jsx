@@ -4,26 +4,27 @@ import { useState } from "react";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import { LearnMoreButton } from "@/components/Buttons";
 import MartechCTA from "./MartechCTA";
+import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 const products = [
     {
         key: "ad-analysis",
         tab: "AI Ad Analysis",
-        title: "Know Which Ad Wins — Before You Spend on Media",
+        title: "Know Which Ad Wins, Before You Spend on Media",
         description:
-            "Every video ad runs through five AI analysis pipelines — on-screen emotion, voice & tone, visuals & pacing, script structure and predicted brain response. A full technical read on why a creative works, ranked across your batch before the first ad dollar is committed.",
+            "Every video ad runs through five AI analysis pipelines: on-screen emotion, voice & tone, visuals & pacing, script structure and predicted brain response. A full technical read on why a creative works, ranked across your batch before the first ad dollar is committed.",
         features: [
-            "On-screen emotion — frame-by-frame read of what your talent projects",
-            "Voice & tone — energy, pace, pitch and music-to-voice balance",
-            "Visuals & pacing — cut rhythm, brand windows, aesthetic scoring",
-            "Script intelligence — hook structure, emotional arc, CTA strength",
-            "Neural attention — predicted brain response, second by second",
+            "On-screen emotion, frame-by-frame read of what your talent projects",
+            "Voice & tone, energy, pace, pitch and music-to-voice balance",
+            "Visuals & pacing, cut rhythm, brand windows, aesthetic scoring",
+            "Script intelligence, hook structure, emotional arc, CTA strength",
+            "Neural attention, predicted brain response, second by second",
             "Calibration against your real CTR, ROAS and watch-time",
         ],
         stats: [
             { value: "5", label: "AI lenses per creative" },
             { value: "0–3s", label: "hook window scored" },
-            { value: "+43%", label: "hook lift found in a real A/B pair" },
+            { value: "A/B", label: "hook strength compared across a real creative pair" },
         ],
         href: "/martech/creative-analysis",
         linkLabel: "See a Real Ad Scored Live",
@@ -34,7 +35,7 @@ const products = [
         tab: "Zyflus",
         title: "Influencer Marketing, Run Like an Operation",
         description:
-            "Our end-to-end creator marketing platform: discover creators, vet them with AI against your ideal influencer profile, automate DM outreach and manage every negotiation in one pipeline — with campaign analytics closing the loop.",
+            "Our end-to-end creator marketing platform: discover creators, vet them with AI against your ideal influencer profile, automate DM outreach and manage every negotiation in one pipeline, with campaign analytics closing the loop.",
         features: [
             "Creator discovery & enrichment from Instagram",
             "AI vetting with 0–100 match scores",
@@ -56,19 +57,19 @@ const products = [
         tab: "AtoEmail",
         title: "Marketing Automation You Own",
         description:
-            "Visual customer journeys, high-volume campaigns, a unified inbox and AI steps — one automation engine without per-contact pricing that punishes list growth. Your data, your sending infrastructure, your rules.",
+            "Visual customer journeys, high-volume campaigns, a unified inbox and AI steps, one automation engine without per-contact pricing that punishes list growth. Your data, your sending infrastructure, your rules.",
         features: [
             "Drag-and-drop journey builder",
             "Triggers: events, replies, schedules, webhooks",
             "Campaigns with merge tags & load balancing",
-            "Unified inbox — replies advance journeys",
+            "Unified inbox where replies advance journeys",
             "AI steps: classify, draft, score inside workflows",
             "Interactive AMP email & developer API",
         ],
         stats: [
-            { value: "∞", label: "contacts — no per-subscriber tiers" },
+            { value: "∞", label: "contacts, no per-subscriber tiers" },
             { value: "4", label: "trigger types for automations" },
-            { value: "100%", label: "owned — data, infra and rules" },
+            { value: "100%", label: "owned: your data, infra and rules" },
         ],
         href: "/martech/marketing-automation",
         linkLabel: "Explore AtoEmail Live",
@@ -78,18 +79,18 @@ const products = [
         tab: "AI Call Center",
         title: "A Sales Agent That Never Misses a Call",
         description:
-            "A real-time voice AI that answers, qualifies and follows up in 11 languages — books the meeting, hands off to a human with full context when needed, and logs every transcript and outcome into your CRM.",
+            "A real-time voice AI that answers, qualifies and follows up in 11 languages, books the meeting, hands off to a human with full context when needed, and logs every transcript and outcome into your CRM.",
         features: [
             "Real-time voice conversations in 11 languages",
             "Sales qualification & meeting booking on the call",
             "Inbound answering + outbound follow-up calls",
             "Human handoff with full context",
-            "Configured per company from one profile — no redeploy",
+            "Configured per company from one profile, no redeploy",
             "Transcripts & outcomes pushed to your CRM",
         ],
         stats: [
             { value: "11", label: "languages, in real time" },
-            { value: "24/7", label: "coverage — every call answered" },
+            { value: "24/7", label: "coverage, every call answered" },
             { value: "1", label: "profile to launch a company's agent" },
         ],
         href: "/martech/ai-call-center",
@@ -146,6 +147,16 @@ function AttentionCurve() {
 
 export default function FlagshipProducts() {
     const [active, setActive] = useState(products[0].key);
+
+    // Tab switches reveal which product a visitor came for, on a page where
+    // most of them never click a CTA.
+    const selectProduct = (p) => {
+        setActive(p.key);
+        trackEvent(ANALYTICS_EVENTS.PRODUCT_TAB_VIEW, {
+            product_name: p.tab,
+            product_destination: p.href,
+        });
+    };
     const product = products.find((p) => p.key === active);
 
     return (
@@ -159,12 +170,12 @@ export default function FlagshipProducts() {
                                     Flagship Products
                                 </div>
                                 <h2 className="heading-4 text-weight-medium">
-                                    Four Products. All Live. All Yours to Run.
+                                    Four AI Products We Built. Check Them Yourself.
                                 </h2>
                                 <div className="opacity-60">
                                     <div className="max-w-4xl">
                                         <p>
-                                            The core of our martech offering — each one in
+                                            The core of our martech offering. Each one in
                                             production today, each one explorable live on its
                                             dedicated page.
                                         </p>
@@ -179,7 +190,7 @@ export default function FlagshipProducts() {
                                 {products.map((p) => (
                                     <button
                                         key={p.key}
-                                        onClick={() => setActive(p.key)}
+                                        onClick={() => selectProduct(p)}
                                         aria-pressed={active === p.key}
                                         className={`rounded-full px-6 py-3 border text-size-small text-weight-bold transition-all duration-200 ${
                                             active === p.key
@@ -218,10 +229,18 @@ export default function FlagshipProducts() {
                                             ))}
                                         </div>
                                         <div className="double-button-component pt-2">
-                                            <MartechCTA />
+                                            <MartechCTA location="flagship-products" />
                                             <LearnMoreButton
                                                 title={product.linkLabel}
                                                 routeTo={product.href}
+                                                onClick={() =>
+                                                    trackEvent(ANALYTICS_EVENTS.DEMO_OPEN, {
+                                                        demo_name: product.tab,
+                                                        demo_label: product.linkLabel,
+                                                        demo_location: "flagship-products",
+                                                        demo_destination: product.href,
+                                                    })
+                                                }
                                             />
                                         </div>
                                     </div>

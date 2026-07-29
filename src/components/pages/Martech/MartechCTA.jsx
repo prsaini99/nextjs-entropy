@@ -1,14 +1,25 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { trackCTAClick } from "@/lib/analytics";
 
 // CTA used at every conversion point on the martech pages. Scrolls to the
 // lead form when it's on the current page, otherwise navigates to it.
-export default function MartechCTA({ title = "Get My Free Stack Audit" }) {
+//
+// `location` identifies which section the click came from — it becomes
+// cta_location in GA4, which is how we tell whether the pricing argument, the
+// process section or the FAQ is actually driving intent.
+export default function MartechCTA({
+    title = "Get My Free Stack Audit",
+    location = "martech",
+}) {
     const router = useRouter();
 
     const handleClick = () => {
         const form = document.getElementById("martech-lead-form");
+
+        trackCTAClick(title, location, form ? "scroll-to-form" : "navigate-to-hub");
+
         if (form) {
             form.scrollIntoView({ behavior: "smooth", block: "center" });
             const first = form.querySelector("input");

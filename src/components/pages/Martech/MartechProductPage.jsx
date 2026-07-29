@@ -1,12 +1,52 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import { LearnMoreButton } from "@/components/Buttons";
 import MartechCTA from "./MartechCTA";
-import { linkAnchors } from "@/data/martechPages";
+import MartechFAQ from "./MartechFAQ";
+import MartechProofStrip from "./MartechProofStrip";
+import MartechLeadForm from "./MartechLeadForm";
+import { linkAnchors, formServiceForSlug } from "@/data/martechPages";
+import { trackEvent, trackScrollDepth, ANALYTICS_EVENTS } from "@/lib/analytics";
 
-export default function MartechProductPage({ page, afterHero = null }) {
+export default function MartechProductPage({ page, slug = "", afterHero = null }) {
+    // Scroll depth. Reaching 75% of a product page is a genuine read-through
+    // and one of the few engagement signals available on a page where the
+    // visitor never clicks anything.
+    const firedDepths = useRef(new Set());
+
+    useEffect(() => {
+        firedDepths.current = new Set();
+
+        const onScroll = () => {
+            const doc = document.documentElement;
+            const scrollable = doc.scrollHeight - window.innerHeight;
+            if (scrollable <= 0) return;
+
+            const percent = Math.round((window.scrollY / scrollable) * 100);
+
+            [50, 75, 90].forEach((mark) => {
+                if (percent >= mark && !firedDepths.current.has(mark)) {
+                    firedDepths.current.add(mark);
+                    trackScrollDepth(mark);
+                }
+            });
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [slug]);
+
+    const trackDemoOpen = () =>
+        trackEvent(ANALYTICS_EVENTS.DEMO_OPEN, {
+            demo_label: page.demo?.label,
+            demo_destination: page.demo?.href,
+            demo_location: "product-page",
+            page_slug: slug,
+        });
+
     return (
         <>
             <section>
@@ -33,7 +73,10 @@ export default function MartechProductPage({ page, afterHero = null }) {
                                 className="double-button-component margin-top-button-hero"
                                 delay={0.2}
                             >
-                                <MartechCTA />
+                                <MartechCTA
+                                    title="Get My Build Quote"
+                                    location={`product:${page.badge.split("·")[0].trim()}`}
+                                />
                                 <LearnMoreButton title="All MarTech Services" routeTo="/martech" />
                             </AnimatedInViewDiv>
 
@@ -60,6 +103,8 @@ export default function MartechProductPage({ page, afterHero = null }) {
                     </div>
                 </div>
             </section>
+
+            <MartechProofStrip />
 
             {afterHero}
 
@@ -100,6 +145,13 @@ export default function MartechProductPage({ page, afterHero = null }) {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-size-small text-weight-bold text-[#ed5145] hover:opacity-80 transition-opacity whitespace-nowrap"
+                                                onClick={() =>
+                                                    trackEvent(ANALYTICS_EVENTS.DEMO_INTERACT, {
+                                                        demo_name: page.embed.title,
+                                                        demo_action: "open_fullscreen",
+                                                        page_slug: slug,
+                                                    })
+                                                }
                                             >
                                                 Open full-screen ↗
                                             </a>
@@ -246,6 +298,7 @@ export default function MartechProductPage({ page, afterHero = null }) {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-link text-weight-bold"
+                                                onClick={trackDemoOpen}
                                             >
                                                 {page.demo.label} →
                                             </a>
@@ -253,6 +306,7 @@ export default function MartechProductPage({ page, afterHero = null }) {
                                             <Link
                                                 href={page.demo.href}
                                                 className="text-link text-weight-bold"
+                                                onClick={trackDemoOpen}
                                             >
                                                 {page.demo.label} →
                                             </Link>
@@ -264,6 +318,32 @@ export default function MartechProductPage({ page, afterHero = null }) {
                     </div>
                 </section>
             )}
+
+            {page.faqs?.length > 0 && (
+                <MartechFAQ
+                    faqs={page.faqs}
+                    heading={`${page.badge.split("·")[0].trim()}, Common Questions`}
+                />
+            )}
+
+            {/* The form lives on the page rather than back on /martech. Every CTA
+                above now scrolls to it instead of navigating away, MartechCTA
+                already prefers an on-page form when one exists. */}
+            <section>
+                <div className="padding-global py-16">
+                    <div className="w-layout-blockcontainer container w-container">
+                        <div className="max-w-3xl mx-auto">
+                            <MartechLeadForm
+                                defaultService={formServiceForSlug[slug] || ""}
+                                source={slug ? `martech/${slug}` : "martech"}
+                                heading={`Get a Quote for ${page.badge.split("·")[0].trim()}`}
+                                subheading="Tell us what you need and we'll come back with scope, timeline and cost. Most single projects go live in 2–3 weeks."
+                                submitLabel="Get My Build Quote →"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
         </>
     );
 }
