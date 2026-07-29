@@ -45,16 +45,18 @@ body {
 	text-decoration: underline;
 }
 
-/* Admin dashboard fixes */
-.py-8.ai-style-change-1,
-.py-8 {
-	background-color: white;
-}
-
 /* Admin layout background fix */
 main.flex-1.relative {
 	background-color: #f9fafb; /* gray-50 */
 }
+
+/* NOTE: an unscoped `.py-8 { background-color: white }` rule used to sit here.
+   It was written for the admin dashboard but matched Tailwind's py-8 utility
+   everywhere, silently painting a white block behind any element on the public
+   site that used it. Its real target — main.flex-1.relative > div.py-8 in
+   admin/layout.jsx — is covered by the scoped rule below, and the unscoped
+   version was additionally overriding the admin sidebar's gradient. Removed
+   2026-07-28. Keep admin styles scoped to an admin ancestor. */
 
 /* Admin main content area */
 main.flex-1.relative > div.py-8 {
