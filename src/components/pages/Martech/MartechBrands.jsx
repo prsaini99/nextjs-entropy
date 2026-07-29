@@ -31,7 +31,7 @@ export default function MartechBrands() {
                         </div>
                         <p className="text-size-small opacity-40 text-center max-w-2xl">
                             55+ products designed and delivered across 8+ industries on 3
-                            continents — healthcare, retail, agriculture, mobility, media,
+                            continents, healthcare, retail, agriculture, mobility, media,
                             education and marketing.
                         </p>
                     </AnimatedInViewDiv>
