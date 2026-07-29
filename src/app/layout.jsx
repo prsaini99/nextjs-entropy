@@ -42,19 +42,6 @@ export default function RootLayout({ children }) {
         <Script type="text/javascript" src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/js/webflow.e856b9eae.js" />
       </Head>
       <body className="antialiased">
-        {/* Google Tag Manager (noscript) */}
-        {process.env.NEXT_PUBLIC_GTM_ID && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
-          </noscript>
-        )}
-        {/* End Google Tag Manager (noscript) */}
-        
         <Analytics />
         <ConditionalLayout>
           <ErrorBoundary>

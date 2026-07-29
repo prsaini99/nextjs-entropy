@@ -49,14 +49,28 @@ export const LEAD_SCORING = {
     'email': 8,
     'referral': 10,
   },
+  // Keys are the exact service titles from components/pages/Features/data.js,
+  // which are also the contact form's dropdown values. An unrecognised service
+  // silently falls back to 5 — so if a service line is renamed there, rename it
+  // here too. Weights are deal-size heuristics; tune them freely.
   SERVICE_WEIGHTS: {
     'Custom Software Development': 10,
-    'AI/ML Development': 9,
-    'Cloud Solutions': 8,
-    'DevOps & Infrastructure': 7,
-    'Mobile App Development': 8,
-    'Web Development': 6,
-    'Consultation': 5,
+    'AI & Machine Learning (Chatbots, NLP, Vision)': 9,
+    'Cloud Migration & Managed Services (AWS, Azure, GCP)': 9,
+    'Data Analytics & Business Intelligence': 8,
+    'Cybersecurity & AppSec': 8,
+    'SaaS & Marketplace Integrations': 8,
+    'DevOps & SRE': 7,
+    'Automation & RPA': 7,
+    'Website & Web App Development': 6,
+    'Digital Marketing': 6,
+    'Blockchain Development': 6,
+    'IoT Solutions': 6,
+    'Game Development': 5,
+    'AR/VR Development': 5,
+    'IT Consulting': 5,
+    'IT Support & Maintenance': 4,
+    'Not sure yet — advise me': 3,
   },
 }
 
@@ -79,13 +93,18 @@ export function calculateLeadScore(leadData) {
     score += LEAD_SCORING.SERVICE_WEIGHTS[leadData.service] || 5;
   }
   
-  // Budget consideration
+  // Budget consideration. Matches the Lakh-denominated values used by both the
+  // contact and MarTech dropdowns; the $ / ₹00,000 forms are legacy free-text
+  // entries kept so historical re-scoring stays consistent.
+  // Order matters: check the highest tier first, since '₹15 – ₹40 Lakh'
+  // contains '40 lakh' but not '40 lakh+'.
   if (leadData.budget) {
-    if (leadData.budget.includes('$50,000+') || leadData.budget.includes('₹40,00,000+')) {
+    const budget = leadData.budget.toLowerCase();
+    if (budget.includes('40 lakh+') || budget.includes('$50,000+') || budget.includes('₹40,00,000+')) {
       score += 10;
-    } else if (leadData.budget.includes('$25,000') || leadData.budget.includes('₹20,00,000')) {
+    } else if (budget.includes('15 – ₹40') || budget.includes('$25,000') || budget.includes('₹20,00,000')) {
       score += 7;
-    } else if (leadData.budget.includes('$10,000') || leadData.budget.includes('₹8,00,000')) {
+    } else if (budget.includes('5 – ₹15') || budget.includes('$10,000') || budget.includes('₹8,00,000')) {
       score += 5;
     }
   }
