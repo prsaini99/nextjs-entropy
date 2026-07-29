@@ -25,6 +25,7 @@ export function trackLeadSubmit({ form = 'unknown', service = '', budget = '' } 
     window.gtag('event', 'generate_lead', {
       lead_form: form,
       lead_service: service,
+      lead_budget: budget,
     });
     if (AW_CONVERSION) {
       window.gtag('event', 'conversion', { send_to: AW_CONVERSION });

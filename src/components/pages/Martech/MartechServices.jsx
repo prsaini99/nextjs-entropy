@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import MartechCTA from "./MartechCTA";
+import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 const services = [
     {
@@ -24,7 +25,7 @@ const services = [
         pillar: "Content & Experience",
         title: "Marketing Automation (AtoEmail)",
         description:
-            "Our marketing automation platform: visual customer journeys, high-volume campaigns, unified inbox and AI steps — without per-contact pricing that punishes list growth.",
+            "Our marketing automation platform: visual customer journeys, high-volume campaigns, unified inbox and AI steps, without per-contact pricing that punishes list growth.",
         capabilities: [
             "Visual journey builder with 4 trigger types",
             "Campaigns with merge tags & load balancing",
@@ -36,7 +37,7 @@ const services = [
     },
     {
         pillar: "Influencer & Social",
-        title: "Influencer Marketing (Zyflus)",
+        title: "Influencer Marketing Platform (Zyflus)",
         description:
             "End-to-end creator marketing: discovery via Instagram Graph API, AI match-scoring against your ideal influencer profile, automated DM outreach and a full negotiation pipeline.",
         capabilities: [
@@ -50,9 +51,9 @@ const services = [
     },
     {
         pillar: "Influencer & Social",
-        title: "Social Bots & Scrapers",
+        title: "Instagram DM Automation & Scrapers",
         description:
-            "Reply and follow-up bots for Instagram, Facebook, Quora and more — plus scrapers that gather intelligence on anything: competitors, prospects, pricing, trends.",
+            "Reply and follow-up bots for Instagram, Facebook, Quora and more, plus scrapers that gather intelligence on anything: competitors, prospects, pricing, trends.",
         capabilities: [
             "Instant DM & comment replies in your brand voice",
             "Scheduled follow-up sequences that stop on reply",
@@ -64,7 +65,7 @@ const services = [
     },
     {
         pillar: "Commerce & Sales",
-        title: "Lead Gen & Sales Intelligence",
+        title: "B2B Lead Generation & Sales Intelligence",
         description:
             "B2B data engines that turn raw lists into revenue: web and LinkedIn enrichment, verified email and phone discovery, live pipelines that keep your CRM fed with fresh prospects.",
         capabilities: [
@@ -78,9 +79,9 @@ const services = [
     },
     {
         pillar: "Commerce & Sales",
-        title: "AI Call Center",
+        title: "AI Calling Agent & Call Center",
         description:
-            "A real-time voice sales agent that speaks 11 languages, qualifies leads, books meetings and runs outbound follow-up calls — configured per company from one profile.",
+            "A real-time voice sales agent that speaks 11 languages, qualifies leads, books meetings and runs outbound follow-up calls, configured per company from one profile.",
         capabilities: [
             "Real-time voice AI in 11 languages",
             "Inbound answering & outbound follow-ups",
@@ -94,7 +95,7 @@ const services = [
         pillar: "Commerce & Sales",
         title: "StackBinary B2B Lead CRM",
         description:
-            "The AI-assisted CRM our own BD team closes with: every lead, WhatsApp thread, call and email in one timeline — with AI scoring that tells reps exactly who to call next and what to say.",
+            "The AI-assisted CRM our own BD team closes with: every lead, WhatsApp thread, call and email in one timeline, with AI scoring that tells reps exactly who to call next and what to say.",
         capabilities: [
             "WhatsApp, call & email capture with multilingual transcription",
             "AI lead brain: score, temperature, stage & next action",
@@ -102,15 +103,15 @@ const services = [
             "AI-drafted proposals & emails grounded in each lead's dossier",
         ],
         href: "/martech/lead-intelligence",
-        demo: "lead.stackbinary.io — in daily production use",
+        demo: "lead.stackbinary.io, in daily production use",
     },
     {
         pillar: "Commerce & Sales",
-        title: "AI Branded Proposal Maker",
+        title: "AI Proposal Generator (Branded)",
         description:
-            "Proposals that look like your brand and think like your best closer: AI drafts the pitch from your previous mandates, recommends the quote, suggests upsell ideas — then tells you exactly what the client read.",
+            "Proposals that look like your brand and think like your best closer: AI drafts the pitch from your previous mandates, recommends the quote, suggests upsell ideas, then tells you exactly what the client read.",
         capabilities: [
-            "On-brand by default — your logo, type & colors on every proposal",
+            "On-brand by default. Your logo, type & colors on every proposal",
             "AI drafts scope & pitch from past mandates and won proposals",
             "Quote recommendations from your pricing history",
             "Reading analytics & behavior-triggered follow-ups",
@@ -120,59 +121,59 @@ const services = [
     },
     {
         pillar: "AI Enablement",
-        title: "MCP & AI Ecosystem Integration",
+        title: "MCP Integration & AI Enablement",
         description:
-            "We plug your marketing platforms — ad accounts, CRM, email, analytics, socials — into your AI ecosystem as MCP tools. We learn your business first, then wire the connections, so your team runs marketing by asking their AI instead of juggling ten dashboards.",
+            "We plug your marketing platforms, ad accounts, CRM, email, analytics, socials, into your AI ecosystem as MCP tools. We learn your business first, then wire the connections, so your team runs marketing by asking their AI instead of juggling ten dashboards.",
         capabilities: [
-            "Stack audit — we map your platforms, workflows and business rules",
+            "Stack audit. We map your platforms, workflows and business rules",
             "Custom MCP connectors for ads, CRM, email, analytics & socials",
             "AI agents that know your brand voice, pricing and approval flows",
             "Team enablement, governance & human-approval guardrails",
         ],
         href: "/martech/ai-integration",
-        demo: "How we run our own stack — CRM assistant, ad-ops AI, TribeV2 lab",
+        demo: "How we run our own stack, CRM assistant, ad-ops AI, TribeV2 lab",
     },
     {
         pillar: "Creative Analytics",
         title: "AI Video Ad Analysis Suite",
         description:
-            "Every video ad through five AI lenses before you spend on media — emotion, voice & tone, visuals, script and predicted brain response — via our in-house creative intelligence pipeline.",
+            "Every video ad through five AI lenses before you spend on media, emotion, voice & tone, visuals, script and predicted brain response, via our in-house creative intelligence pipeline.",
         capabilities: [
-            "Neural attention — predicted brain response, second by second",
-            "On-screen emotion — frame-by-frame facial-affect analysis",
-            "Voice & tone — speech-emotion, pacing & prosody analysis",
-            "Visuals — scene, pacing & aesthetic scoring",
-            "Script — transcription + AI script intelligence (hook, arc, CTA)",
+            "Neural attention, predicted brain response, second by second",
+            "On-screen emotion, frame-by-frame facial-affect analysis",
+            "Voice & tone, speech-emotion, pacing & prosody analysis",
+            "Visuals, scene, pacing & aesthetic scoring",
+            "Script, transcription + AI script intelligence (hook, arc, CTA)",
         ],
         href: "/martech/creative-analysis",
-        demo: "TRIBE v2 Lab — see a real ad scored live",
+        demo: "TRIBE v2 Lab, see a real ad scored live",
     },
 ];
 
 const pillars = [
     {
         name: "Advertising & Promotion",
-        blurb: "Run paid media like an operation — every ad analyzed, every account governed.",
+        blurb: "Run paid media like an operation, every ad analyzed, every account governed.",
     },
     {
         name: "Content & Experience",
-        blurb: "Own the channel between you and your audience — journeys, campaigns and inbox.",
+        blurb: "Own the channel between you and your audience, journeys, campaigns and inbox.",
     },
     {
         name: "Influencer & Social",
-        blurb: "Creators, communities and conversations — discovered, engaged and followed up automatically.",
+        blurb: "Creators, communities and conversations, discovered, engaged and followed up automatically.",
     },
     {
         name: "Commerce & Sales",
-        blurb: "From raw prospect data to signed proposal — the full revenue pipeline, AI-assisted at every step.",
+        blurb: "From raw prospect data to signed proposal, the full revenue pipeline, AI-assisted at every step.",
     },
     {
         name: "Creative Analytics",
-        blurb: "Your video ads through five AI lenses — emotion, voice, visuals, script and brain response.",
+        blurb: "Your video ads through five AI lenses, emotion, voice, visuals, script and brain response.",
     },
     {
         name: "AI Enablement",
-        blurb: "Your whole marketing stack, wired into your AI — so the team works by asking, not clicking.",
+        blurb: "Your whole marketing stack, wired into your AI, so the team works by asking, not clicking.",
     },
 ];
 
@@ -246,13 +247,13 @@ export default function MartechServices() {
                         <AnimatedInViewDiv className="about-features-header">
                             <div className="header">
                                 <h2 className="heading-4 text-weight-medium">
-                                    Full-Stack MarTech, Engineered to Order
+                                    AI Marketing Systems We Build, and Run
                                 </h2>
                                 <div className="opacity-60">
                                     <div className="max-w-4xl">
                                         <p>
                                             Pick a category to see what we build there. Every
-                                            service is backed by a live product — click any card
+                                            service is backed by a live product, click any card
                                             for the full breakdown.
                                         </p>
                                     </div>
@@ -261,7 +262,7 @@ export default function MartechServices() {
                         </AnimatedInViewDiv>
 
                         <AnimatedInViewDiv className="grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)] gap-8 w-full items-start">
-                            {/* Category nav — vertical on desktop, scrollable pills on mobile */}
+                            {/* Category nav, vertical on desktop, scrollable pills on mobile */}
                             <nav
                                 aria-label="MarTech categories"
                                 className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible lg:sticky lg:top-28 pb-2 lg:pb-0"
@@ -274,7 +275,12 @@ export default function MartechServices() {
                                     return (
                                         <button
                                             key={pillar.name}
-                                            onClick={() => setActive(pillar.name)}
+                                            onClick={() => {
+                                                setActive(pillar.name);
+                                                trackEvent(ANALYTICS_EVENTS.PILLAR_SELECT, {
+                                                    pillar_name: pillar.name,
+                                                });
+                                            }}
                                             aria-pressed={isActive}
                                             className={`text-left rounded-lg px-5 py-4 border transition-all duration-200 whitespace-nowrap lg:whitespace-normal flex-shrink-0 ${
                                                 isActive
@@ -337,7 +343,7 @@ export default function MartechServices() {
                         </AnimatedInViewDiv>
 
                         <AnimatedInViewDiv className="double-button-component margin-top-button-features">
-                            <MartechCTA />
+                            <MartechCTA location="services" />
                         </AnimatedInViewDiv>
                     </div>
                 </div>

@@ -1,0 +1,4000 @@
+{
+  "generatedAt": "2026-07-29T13:44:40.729Z",
+  "windowDays": 1,
+  "overall": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "41",
+          "sessionsWithMetricPercentage": 21.95,
+          "sessionsWithoutMetricPercentage": 78.05,
+          "pagesViews": "19",
+          "subTotal": "91"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "41",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "41",
+          "sessionsWithMetricPercentage": 2.44,
+          "sessionsWithoutMetricPercentage": 97.56,
+          "pagesViews": "1",
+          "subTotal": "4"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "41",
+          "sessionsWithMetricPercentage": 9.76,
+          "sessionsWithoutMetricPercentage": 90.24,
+          "pagesViews": "8",
+          "subTotal": "8"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "41",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "41",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 36.41
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "41",
+          "totalBotSessionCount": "14",
+          "distinctUserCount": "49",
+          "pagesPerSessionPercentage": 2.456140350877193
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "324",
+          "activeTime": "166"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Chrome",
+          "sessionsCount": "26"
+        },
+        {
+          "name": "ChromeMobile",
+          "sessionsCount": "15"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": "26"
+        },
+        {
+          "name": "Mobile",
+          "sessionsCount": "15"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "MacOSX",
+          "sessionsCount": "20"
+        },
+        {
+          "name": "Android",
+          "sessionsCount": "15"
+        },
+        {
+          "name": "Linux",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "ChromeOS",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Windows",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "India",
+          "sessionsCount": "26"
+        },
+        {
+          "name": "Mexico",
+          "sessionsCount": "7"
+        },
+        {
+          "name": "United Kingdom",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "Canada",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Switzerland",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "StackBinary | AI, Cloud & Custom Software Development Company",
+          "sessionsCount": "22"
+        },
+        {
+          "name": "Stackbinary.io - Custom Software Development & IT Solutions",
+          "sessionsCount": "6"
+        },
+        {
+          "name": "Frontend Engineer (React/Next.js) - Engineering | StackBinary Careers",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "About StackBinary | Engineering-Led AI, Cloud & Software Team",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Careers at StackBinary | Join Our Engineering Team",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Services Built for Impact - Custom Software, Cloud, AI & More | Stackbinary.io",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Technical Writer - Product/Design | StackBinary Careers",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Cloud Architect (AWS) - Cloud/DevOps | StackBinary Careers",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Product Manager (SaaS) - Product/Design | StackBinary Careers",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Data Engineer - AI/Data | StackBinary Careers",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": null,
+          "sessionsCount": "20"
+        },
+        {
+          "name": "https://chatgpt.com/",
+          "sessionsCount": "5"
+        },
+        {
+          "name": "https://contents.lsmagazineimg.com/",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "https://youtube.com/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://googleads.g.doubleclick.net/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://syndicatedsearch.goog/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "android-app://com.google.android.googlequicksearchbox/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "http://localhost:3000/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://79570f01aabe41858770e9814a5207a8.safeframe.googlesyndication.com/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "http://localhost:3002/martech",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://www.stackbinary.io/",
+          "visitsCount": "29"
+        },
+        {
+          "url": "https://www.stackbinary.io/services",
+          "visitsCount": "5"
+        },
+        {
+          "url": "https://www.stackbinary.io/careers/frontend-engineer-react",
+          "visitsCount": "4"
+        },
+        {
+          "url": "https://www.stackbinary.io/about",
+          "visitsCount": "4"
+        },
+        {
+          "url": "https://www.stackbinary.io/contact-us",
+          "visitsCount": "4"
+        },
+        {
+          "url": "https://www.stackbinary.io/careers/senior-backend-engineer-node",
+          "visitsCount": "4"
+        },
+        {
+          "url": "http://localhost:3000/",
+          "visitsCount": "4"
+        },
+        {
+          "url": "https://www.stackbinary.io/careers",
+          "visitsCount": "4"
+        },
+        {
+          "url": "http://localhost:3002/martech/marketing-automation",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://www.stackbinary.io/careers/data-engineer",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ],
+  "byUrl": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "sessionsCount": "4",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "5",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "5",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "2",
+          "subTotal": "3",
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "1",
+          "subTotal": "3",
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "2",
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "4",
+          "subTotal": "40",
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "8",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "6",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./careers"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "12",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "2",
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "sessionsCount": "4",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./careers"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "sessionsCount": "4",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "1",
+          "subTotal": "4",
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./careers"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 33.33,
+          "sessionsWithoutMetricPercentage": 66.67,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "sessionsCount": "4",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "2",
+          "subTotal": "2",
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./careers"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1",
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "sessionsCount": "4",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./careers"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "sessionsCount": "4",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io./careers"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 41.33,
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "averageScrollDepth": 13,
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "averageScrollDepth": 16,
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "averageScrollDepth": 16,
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "averageScrollDepth": 17,
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "averageScrollDepth": 19,
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "averageScrollDepth": 14,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "averageScrollDepth": 9,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "averageScrollDepth": 29,
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "averageScrollDepth": 100,
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "averageScrollDepth": 29,
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "averageScrollDepth": 8,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "averageScrollDepth": 16,
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "averageScrollDepth": 15,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "averageScrollDepth": 19,
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "averageScrollDepth": 16,
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "averageScrollDepth": 17,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "averageScrollDepth": 51.5,
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "averageScrollDepth": 59.33,
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "averageScrollDepth": 17,
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "averageScrollDepth": 40.5,
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "averageScrollDepth": 65.33,
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "averageScrollDepth": 73,
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "averageScrollDepth": 23,
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "averageScrollDepth": 16,
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "averageScrollDepth": 53.5,
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "averageScrollDepth": 45,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "averageScrollDepth": 11,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "averageScrollDepth": 20,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "averageScrollDepth": 17,
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "averageScrollDepth": 56,
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "averageScrollDepth": 9,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "averageScrollDepth": 16,
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "averageScrollDepth": 100,
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "averageScrollDepth": 17,
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "averageScrollDepth": 58,
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "averageScrollDepth": 12,
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "averageScrollDepth": 100,
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "averageScrollDepth": 16,
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "averageScrollDepth": 65,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "averageScrollDepth": 36.84,
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "averageScrollDepth": 5,
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "averageScrollDepth": 63,
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "2",
+          "pagesPerSessionPercentage": 1,
+          "Url": null
+        },
+        {
+          "totalSessionCount": "3",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIhLaj8PX2lQMV3qhjBh3GeiMsEAEYASAAEgLhx_D_BwE"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/senior-frontend-engineer-react"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io./contact-us"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "totalSessionCount": "4",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1.25,
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "3",
+          "distinctUserCount": "5",
+          "pagesPerSessionPercentage": 1.4,
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 2,
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io./about"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gclid=26916471"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 2,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 2,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 2.5,
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "2",
+          "distinctUserCount": "4",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 3,
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 4,
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 3,
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 2,
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "2",
+          "distinctUserCount": "4",
+          "pagesPerSessionPercentage": 2.5,
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gclid=108089088"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI7qPnkOb2lQMVv4OsAh2fqhaBEAEYASAAEgLXBvD_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "totalSessionCount": "3",
+          "totalBotSessionCount": "5",
+          "distinctUserCount": "8",
+          "pagesPerSessionPercentage": 1.25,
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIiePj7e_3lQMVxl4qCR1EQiijEAEYASAAEgJ5zfD_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io./careers"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 3,
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzNOuio_3lQMVAsU4Bh2BzDqWEAEYASAAEgL0o_D_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 25,
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "3",
+          "distinctUserCount": "3",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/careers/backend-engineer-node"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI2PO-7eb3lQMVv92EAB2AjCrAEAEYASAAEgKOKfD_BwE"
+        },
+        {
+          "totalSessionCount": "3",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "2",
+          "pagesPerSessionPercentage": 1,
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "3",
+          "distinctUserCount": "4",
+          "pagesPerSessionPercentage": 1.25,
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "225",
+          "activeTime": "1",
+          "Url": "http://localhost:3000/"
+        },
+        {
+          "totalTime": "9",
+          "activeTime": "9",
+          "Url": "http://localhost:3002/"
+        },
+        {
+          "totalTime": "7",
+          "activeTime": "7",
+          "Url": "https://www.stackbinary.io/careers/product-manager-saas"
+        },
+        {
+          "totalTime": "5",
+          "activeTime": "5",
+          "Url": "https://www.stackbinary.io./contact-us"
+        },
+        {
+          "totalTime": "7",
+          "activeTime": "7",
+          "Url": "https://www.stackbinary.io/careers/technical-support-engineer-l2"
+        },
+        {
+          "totalTime": "8",
+          "activeTime": "8",
+          "Url": "https://www.stackbinary.io/careers/mlops-engineer"
+        },
+        {
+          "totalTime": "552",
+          "activeTime": "76",
+          "Url": "https://www.stackbinary.io/careers/frontend-engineer-react?utm_source=chatgpt.com"
+        },
+        {
+          "totalTime": "98",
+          "activeTime": "58",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMI9Ou2k4j3lQMVhxaDAx3MSh2cEAEYASAAEgKpaPD_BwE"
+        },
+        {
+          "totalTime": "22",
+          "activeTime": "22",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIx57civj3lQMVlJE4CB0IlQdVEAEYASAAEgKhv_D_BwE"
+        },
+        {
+          "totalTime": "28",
+          "activeTime": "28",
+          "Url": "https://www.stackbinary.io/services"
+        },
+        {
+          "totalTime": "724",
+          "activeTime": "133",
+          "Url": "http://localhost:3002/admin"
+        },
+        {
+          "totalTime": "0",
+          "activeTime": "0",
+          "Url": "https://www.stackbinary.io./about"
+        },
+        {
+          "totalTime": "22",
+          "activeTime": "22",
+          "Url": "https://www.stackbinary.io/careers?utm_source=chatgpt.com"
+        },
+        {
+          "totalTime": "4",
+          "activeTime": "4",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI4YOrpO32lQMVqEF4AB02vDC-EAEYASAAEgJ8xPD_BwE"
+        },
+        {
+          "totalTime": "6",
+          "activeTime": "6",
+          "Url": "https://www.stackbinary.io/careers/software-engineer-intern"
+        },
+        {
+          "totalTime": "48",
+          "activeTime": "48",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIwvGH_fX2lQMVpu0WBR0-UBrBEAEYASAAEgKA6fD_BwE"
+        },
+        {
+          "totalTime": "152",
+          "activeTime": "152",
+          "Url": "https://www.stackbinary.io/?gad_source=1&gad_campaignid=24069882372&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujwZ2gqdUoyIwar9F_PQ4SuWawSYh2TlrpDKRJpoqYfZo9bLKuUr3hoCDI8QAvD_BwE"
+        },
+        {
+          "totalTime": "10",
+          "activeTime": "10",
+          "Url": "https://www.stackbinary.io/careers/ux-ui-designer"
+        },
+        {
+          "totalTime": "4",
+          "activeTime": "4",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI1eK82IL3lQMVkBhmBB2oMDBuEAEYASAAEgK1PfD_BwE"
+        },
+        {
+          "totalTime": "63",
+          "activeTime": "63",
+          "Url": "https://www.stackbinary.io/contact-us"
+        },
+        {
+          "totalTime": "808",
+          "activeTime": "504",
+          "Url": "http://localhost:3002/martech#martech-lead-form"
+        },
+        {
+          "totalTime": "9",
+          "activeTime": "9",
+          "Url": "https://www.stackbinary.io/careers/technical-writer"
+        },
+        {
+          "totalTime": "147",
+          "activeTime": "147",
+          "Url": "http://localhost:3002/martech"
+        },
+        {
+          "totalTime": "62",
+          "activeTime": "62",
+          "Url": "http://localhost:3002/martech/ad-intelligence"
+        },
+        {
+          "totalTime": "29",
+          "activeTime": "29",
+          "Url": "http://localhost:3002/martech/social-automation"
+        },
+        {
+          "totalTime": "306",
+          "activeTime": "2",
+          "Url": "http://localhost:3001/contact-us"
+        },
+        {
+          "totalTime": "8",
+          "activeTime": "8",
+          "Url": "https://www.stackbinary.io/careers/machine-learning-engineer-nlp"
+        },
+        {
+          "totalTime": "725",
+          "activeTime": "238",
+          "Url": "https://www.stackbinary.io/about"
+        },
+        {
+          "totalTime": "61",
+          "activeTime": "61",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI3qbck-73lQMVt4FjBh3Q-ilSEAEYASAAEgIDo_D_BwE"
+        },
+        {
+          "totalTime": "20",
+          "activeTime": "20",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMI0-7fiuv2lQMV5X6dCR0-_CjREAEYASAAEgL0x_D_BwE"
+        },
+        {
+          "totalTime": "51",
+          "activeTime": "51",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIzr7Lz-b3lQMVVaVmAh0Nnx1bEAEYASAAEgIAwvD_BwE"
+        },
+        {
+          "totalTime": "10",
+          "activeTime": "10",
+          "Url": "https://www.stackbinary.io/careers/data-engineer"
+        },
+        {
+          "totalTime": "118",
+          "activeTime": "9",
+          "Url": "https://www.stackbinary.io/"
+        },
+        {
+          "totalTime": "0",
+          "activeTime": "0",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792621&gclid=EAIaIQobChMIvNntovb2lQMVNh2DAx1gSh1wEAAYASAAEgKx1vD_BwE"
+        },
+        {
+          "totalTime": "0",
+          "activeTime": "0",
+          "Url": "https://www.stackbinary.io/careers/cloud-architect-aws"
+        },
+        {
+          "totalTime": "11",
+          "activeTime": "11",
+          "Url": "http://localhost:3000/admin"
+        },
+        {
+          "totalTime": "0",
+          "activeTime": "0",
+          "Url": "https://www.stackbinary.io./careers"
+        },
+        {
+          "totalTime": "10",
+          "activeTime": "10",
+          "Url": "https://www.stackbinary.io/careers/solutions-architect"
+        },
+        {
+          "totalTime": "226",
+          "activeTime": "63",
+          "Url": "http://localhost:3000/#error=access_denied&error_code=otp_expired&error_description=Email+link+is+invalid+or+has+expired&sb="
+        },
+        {
+          "totalTime": "126",
+          "activeTime": "11",
+          "Url": "http://localhost:3000/#access_token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImM0MzBlOGU5LWQzNTAtNDU3YS1iOGI3LTFlMWEwMzU2ZDIyNiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3h6d2xvbmp6bWZtbGhrYmlmYm96LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJiN2Q4MDEzYS02NGZmLTQ4MjUtOTdiMC0wZGNhNjg2ZWQ4NmQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg1MjY0OTMyLCJpYXQiOjE3ODUyNjEzMzIsImVtYWlsIjoicHJhdGVla0BzdGFja2JpbmFyeS5pbyIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTc4NTI2MTMzMn1dLCJzZXNzaW9uX2lkIjoiNDk2OTMxZDItNzJmNC00NGY5LWJiMzctYWM0Y2Y1ZTc0ZjljIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.CHKlXtN_MPkjykyWcX7I_S2Mb2opIvEvOopObAIH2cNCEG1mPETm5WEfYDewsIFoRFuncXSXyIxiXEz7z3rxfw&expires_at=1785264932&expires_in=3600&refresh_token=jlugzth53wvt&sb=&token_type=bearer&type=recovery"
+        },
+        {
+          "totalTime": "2615",
+          "activeTime": "2302",
+          "Url": "http://localhost:3000/admin/dashboard"
+        },
+        {
+          "totalTime": "6",
+          "activeTime": "6",
+          "Url": "https://www.stackbinary.io/careers/site-reliability-engineer"
+        },
+        {
+          "totalTime": "101",
+          "activeTime": "101",
+          "Url": "https://www.stackbinary.io/?gad_source=5&gad_campaignid=24074792153&gclid=EAIaIQobChMIxuTgruH2lQMVF4dmAh3EIAeBEAEYASAAEgI9pvD_BwE"
+        },
+        {
+          "totalTime": "1329",
+          "activeTime": "665",
+          "Url": "http://localhost:3002/martech/marketing-automation"
+        },
+        {
+          "totalTime": "249",
+          "activeTime": "249",
+          "Url": "https://www.stackbinary.io/?gad_source=2&gad_campaignid=24069881910&gclid=CjwKCAjwpqHTBhAcEiwAj2AfuiK_1BubZb8Rc0P96uGUdiAT4ClQryAXnu98MNEFHt3rO96aI_vwxRoC1ycQAvD_BwE"
+        },
+        {
+          "totalTime": "439",
+          "activeTime": "341",
+          "Url": "https://www.stackbinary.io/careers/senior-backend-engineer-node"
+        }
+      ]
+    }
+  ],
+  "bySource": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "20",
+          "sessionsWithMetricPercentage": 5,
+          "sessionsWithoutMetricPercentage": 95,
+          "pagesViews": "4",
+          "subTotal": "4",
+          "Source": ""
+        },
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 46.67,
+          "sessionsWithoutMetricPercentage": 53.33,
+          "pagesViews": "12",
+          "subTotal": "80",
+          "Source": "google"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "1",
+          "subTotal": "2",
+          "Source": "localhost"
+        },
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 20,
+          "sessionsWithoutMetricPercentage": 80,
+          "pagesViews": "1",
+          "subTotal": "2",
+          "Source": "chatgpt.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "1",
+          "subTotal": "3",
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "20",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": ""
+        },
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "google"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "localhost"
+        },
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "chatgpt.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "20",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": ""
+        },
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 6.67,
+          "sessionsWithoutMetricPercentage": 93.33,
+          "pagesViews": "1",
+          "subTotal": "4",
+          "Source": "google"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "localhost"
+        },
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "chatgpt.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "20",
+          "sessionsWithMetricPercentage": 10,
+          "sessionsWithoutMetricPercentage": 90,
+          "pagesViews": "3",
+          "subTotal": "3",
+          "Source": ""
+        },
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 13.33,
+          "sessionsWithoutMetricPercentage": 86.67,
+          "pagesViews": "3",
+          "subTotal": "3",
+          "Source": "google"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "2",
+          "subTotal": "2",
+          "Source": "localhost"
+        },
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "chatgpt.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "20",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": ""
+        },
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "google"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "localhost"
+        },
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "chatgpt.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "20",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": ""
+        },
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "google"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "localhost"
+        },
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "chatgpt.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 45.91,
+          "Source": ""
+        },
+        {
+          "averageScrollDepth": 26.68,
+          "Source": "google"
+        },
+        {
+          "averageScrollDepth": 37.81,
+          "Source": "localhost"
+        },
+        {
+          "averageScrollDepth": 26.71,
+          "Source": "chatgpt.com"
+        },
+        {
+          "averageScrollDepth": 53.5,
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "averageScrollDepth": 16,
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "20",
+          "totalBotSessionCount": "7",
+          "distinctUserCount": "27",
+          "pagesPerSessionPercentage": 1.8275862068965518,
+          "Source": ""
+        },
+        {
+          "totalSessionCount": "15",
+          "totalBotSessionCount": "7",
+          "distinctUserCount": "20",
+          "pagesPerSessionPercentage": 1.5909090909090908,
+          "Source": "google"
+        },
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 15.5,
+          "Source": "localhost"
+        },
+        {
+          "totalSessionCount": "5",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "2",
+          "pagesPerSessionPercentage": 1.4,
+          "Source": "chatgpt.com"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 5,
+          "Source": "8b5ae2d9ce19b65968350dccfd0aacaa.safeframe.googlesyndication.com"
+        },
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "2",
+          "distinctUserCount": "4",
+          "pagesPerSessionPercentage": 1,
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 3,
+          "Source": "5960d127813e5f8d453ca187468d3a5c.safeframe.googlesyndication.com"
+        },
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "2",
+          "pagesPerSessionPercentage": 1,
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "287",
+          "activeTime": "166",
+          "Source": ""
+        },
+        {
+          "totalTime": "196",
+          "activeTime": "128",
+          "Source": "google"
+        },
+        {
+          "totalTime": "880",
+          "activeTime": "367",
+          "Source": "localhost"
+        },
+        {
+          "totalTime": "534",
+          "activeTime": "134",
+          "Source": "chatgpt.com"
+        },
+        {
+          "totalTime": "15",
+          "activeTime": "15",
+          "Source": "contents.lsmagazineimg.com"
+        },
+        {
+          "totalTime": "64",
+          "activeTime": "64",
+          "Source": "googleads.g.doubleclick.net"
+        }
+      ]
+    }
+  ],
+  "byDevice": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 46.67,
+          "sessionsWithoutMetricPercentage": 53.33,
+          "pagesViews": "13",
+          "subTotal": "83",
+          "Device": "Mobile"
+        },
+        {
+          "sessionsCount": "26",
+          "sessionsWithMetricPercentage": 7.69,
+          "sessionsWithoutMetricPercentage": 92.31,
+          "pagesViews": "6",
+          "subTotal": "8",
+          "Device": "PC"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Device": "Mobile"
+        },
+        {
+          "sessionsCount": "26",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Device": "PC"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 6.67,
+          "sessionsWithoutMetricPercentage": 93.33,
+          "pagesViews": "1",
+          "subTotal": "4",
+          "Device": "Mobile"
+        },
+        {
+          "sessionsCount": "26",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Device": "PC"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 13.33,
+          "sessionsWithoutMetricPercentage": 86.67,
+          "pagesViews": "3",
+          "subTotal": "3",
+          "Device": "Mobile"
+        },
+        {
+          "sessionsCount": "26",
+          "sessionsWithMetricPercentage": 7.69,
+          "sessionsWithoutMetricPercentage": 92.31,
+          "pagesViews": "5",
+          "subTotal": "5",
+          "Device": "PC"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Device": "Mobile"
+        },
+        {
+          "sessionsCount": "26",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Device": "PC"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "15",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Device": "Mobile"
+        },
+        {
+          "sessionsCount": "26",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0",
+          "Device": "PC"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 27.69,
+          "Device": "Mobile"
+        },
+        {
+          "averageScrollDepth": 40.4,
+          "Device": "PC"
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "15",
+          "totalBotSessionCount": "6",
+          "distinctUserCount": "19",
+          "pagesPerSessionPercentage": 2.2857142857142856,
+          "Device": "Mobile"
+        },
+        {
+          "totalSessionCount": "26",
+          "totalBotSessionCount": "6",
+          "distinctUserCount": "26",
+          "pagesPerSessionPercentage": 2.6875,
+          "Device": "PC"
+        },
+        {
+          "totalSessionCount": "0",
+          "totalBotSessionCount": "3",
+          "distinctUserCount": "5",
+          "pagesPerSessionPercentage": 1.2,
+          "Device": "Other"
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "206",
+          "activeTime": "139",
+          "Device": "Mobile"
+        },
+        {
+          "totalTime": "392",
+          "activeTime": "182",
+          "Device": "PC"
+        }
+      ]
+    }
+  ]
+}

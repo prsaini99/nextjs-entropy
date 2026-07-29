@@ -9,7 +9,7 @@ const caseStudies = [
         brand: "StarStruck by Sunny Leone",
         category: "Celebrity Beauty",
         summary:
-            "End-to-end social media and performance marketing — influencer strategy, UGC campaigns and data-driven ad optimization across Meta and Google.",
+            "End-to-end social media and performance marketing, influencer strategy, UGC campaigns and data-driven ad optimization across Meta and Google.",
         metrics: [
             { value: "292%", label: "Follower growth" },
             { value: "3.8x", label: "ROAS" },
@@ -31,7 +31,7 @@ const caseStudies = [
         brand: "Sugar Cosmetics",
         category: "Beauty D2C",
         summary:
-            "Scalable content production and performance marketing optimization — more creative output, at lower cost, with cheaper reach.",
+            "Scalable content production and performance marketing optimization, more creative output, at lower cost, with cheaper reach.",
         metrics: [
             { value: "3x", label: "Ad creative output" },
             { value: "-40%", label: "Content production cost" },
@@ -64,7 +64,7 @@ const caseStudies = [
         brand: "Steve Madden",
         category: "Fashion E-Commerce",
         summary:
-            "Global omnichannel commerce platform — unified web and app with multi-currency checkout across 50+ international markets.",
+            "Global omnichannel commerce platform, unified web and app with multi-currency checkout across 50+ international markets.",
         metrics: [
             { value: "$100M+", label: "Online sales" },
             { value: "2M+", label: "App downloads" },
@@ -87,9 +87,10 @@ export default function MartechCaseStudies() {
                                 <div className="opacity-60">
                                     <div className="max-w-4xl">
                                         <p>
-                                            We build martech because we run marketing. These are
-                                            real campaigns and platforms — from celebrity beauty
-                                            brands to global fashion retailers.
+                                            We build martech because we run marketing. These are real
+                                            campaigns and platforms we delivered in partnership
+                                            with brand and product teams, from celebrity beauty
+                                            to global fashion retail.
                                         </p>
                                     </div>
                                 </div>
@@ -136,7 +137,7 @@ export default function MartechCaseStudies() {
                                 </p>
                             </div>
                             <div className="double-button-component">
-                                <MartechCTA />
+                                <MartechCTA location="case-studies" />
                                 <LearnMoreButton
                                     title="Explore All 37 Case Studies"
                                     routeTo="/case-studies"

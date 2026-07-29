@@ -30,7 +30,7 @@ export default function ShopifyShowcase() {
                                 <div className="max-w-4xl">
                                     <p className="opacity-60">
                                         From diamond jewellery to sports nutrition to designer
-                                        couture — storefronts designed to convert, and wired into
+                                        couture, storefronts designed to convert, and wired into
                                         the marketing stack that fills them. Click any store to
                                         see it live.
                                     </p>
@@ -42,7 +42,7 @@ export default function ShopifyShowcase() {
                             className="double-button-component margin-top-button-hero"
                             delay={0.2}
                         >
-                            <MartechCTA title="Get a Store Quote" />
+                            <MartechCTA title="Get a Store Quote" location="shopify-showcase-top" />
                             <LearnMoreButton title="All MarTech Services" routeTo="/martech" />
                         </AnimatedInViewDiv>
 
@@ -101,11 +101,11 @@ export default function ShopifyShowcase() {
                             <p className="text-size-small opacity-60 max-w-2xl">
                                 Steve Madden ($100M+ online sales, 2M+ app downloads), Utsav
                                 Fashion ($20M+ annual revenue, 50+ countries), Dudalina ($15M+
-                                online revenue) — custom omnichannel platforms when you outgrow
+                                online revenue), custom omnichannel platforms when you outgrow
                                 a template.
                             </p>
                         </div>
-                        <MartechCTA title="Discuss My Store" />
+                        <MartechCTA title="Discuss My Store" location="shopify-showcase-bottom" />
                     </AnimatedInViewDiv>
                 </div>
             </div>

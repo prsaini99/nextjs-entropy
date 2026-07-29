@@ -1,0 +1,356 @@
+{
+  "generatedAt": "2026-07-29T14:00:23.895Z",
+  "propertyId": "547329333",
+  "windowDays": 7,
+  "overview": {
+    "sessions": 58,
+    "activeUsers": 55,
+    "engagedSessions": 20,
+    "engagementRate": 0.3448275862068966,
+    "averageSessionDuration": 237.7105263275862,
+    "bounceRate": 0.6551724137931034
+  },
+  "events": [
+    {
+      "eventName": "page_view",
+      "eventCount": 186,
+      "totalUsers": 55
+    },
+    {
+      "eventName": "session_start",
+      "eventCount": 60,
+      "totalUsers": 55
+    },
+    {
+      "eventName": "first_visit",
+      "eventCount": 57,
+      "totalUsers": 55
+    },
+    {
+      "eventName": "user_engagement",
+      "eventCount": 34,
+      "totalUsers": 25
+    },
+    {
+      "eventName": "ads_conversion_Contact_Us_1",
+      "eventCount": 10,
+      "totalUsers": 5
+    },
+    {
+      "eventName": "scroll",
+      "eventCount": 8,
+      "totalUsers": 8
+    },
+    {
+      "eventName": "form_start",
+      "eventCount": 5,
+      "totalUsers": 5
+    },
+    {
+      "eventName": "click",
+      "eventCount": 3,
+      "totalUsers": 2
+    }
+  ],
+  "pages": [
+    {
+      "pagePath": "/",
+      "screenPageViews": 80,
+      "userEngagementDuration": 1069
+    },
+    {
+      "pagePath": "/about",
+      "screenPageViews": 18,
+      "userEngagementDuration": 1342
+    },
+    {
+      "pagePath": "/services",
+      "screenPageViews": 18,
+      "userEngagementDuration": 1181
+    },
+    {
+      "pagePath": "/careers/senior-backend-engineer-node",
+      "screenPageViews": 14,
+      "userEngagementDuration": 616
+    },
+    {
+      "pagePath": "/careers",
+      "screenPageViews": 11,
+      "userEngagementDuration": 318
+    },
+    {
+      "pagePath": "/contact-us",
+      "screenPageViews": 10,
+      "userEngagementDuration": 77
+    },
+    {
+      "pagePath": "/martech",
+      "screenPageViews": 4,
+      "userEngagementDuration": 1
+    },
+    {
+      "pagePath": "/ai-automation",
+      "screenPageViews": 2,
+      "userEngagementDuration": 0
+    },
+    {
+      "pagePath": "/careers/backend-engineer-node",
+      "screenPageViews": 2,
+      "userEngagementDuration": 4
+    },
+    {
+      "pagePath": "/careers/cloud-architect-aws",
+      "screenPageViews": 2,
+      "userEngagementDuration": 10
+    },
+    {
+      "pagePath": "/careers/customer-success-manager",
+      "screenPageViews": 2,
+      "userEngagementDuration": 0
+    },
+    {
+      "pagePath": "/careers/data-engineer",
+      "screenPageViews": 2,
+      "userEngagementDuration": 10
+    },
+    {
+      "pagePath": "/careers/frontend-engineer-react",
+      "screenPageViews": 2,
+      "userEngagementDuration": 5
+    },
+    {
+      "pagePath": "/careers/machine-learning-engineer-nlp",
+      "screenPageViews": 2,
+      "userEngagementDuration": 10
+    },
+    {
+      "pagePath": "/careers/mlops-engineer",
+      "screenPageViews": 2,
+      "userEngagementDuration": 9
+    },
+    {
+      "pagePath": "/careers/product-manager-saas",
+      "screenPageViews": 2,
+      "userEngagementDuration": 9
+    },
+    {
+      "pagePath": "/careers/site-reliability-engineer",
+      "screenPageViews": 2,
+      "userEngagementDuration": 9
+    },
+    {
+      "pagePath": "/careers/software-engineer-intern",
+      "screenPageViews": 2,
+      "userEngagementDuration": 8
+    },
+    {
+      "pagePath": "/careers/solutions-architect",
+      "screenPageViews": 2,
+      "userEngagementDuration": 11
+    },
+    {
+      "pagePath": "/careers/technical-support-engineer-l2",
+      "screenPageViews": 2,
+      "userEngagementDuration": 9
+    },
+    {
+      "pagePath": "/careers/technical-writer",
+      "screenPageViews": 2,
+      "userEngagementDuration": 10
+    },
+    {
+      "pagePath": "/careers/ux-ui-designer",
+      "screenPageViews": 2,
+      "userEngagementDuration": 18
+    },
+    {
+      "pagePath": "/industries",
+      "screenPageViews": 1,
+      "userEngagementDuration": 8
+    }
+  ],
+  "sources": [
+    {
+      "sessionSource": "(direct)",
+      "sessionMedium": "(none)",
+      "sessions": 31,
+      "engagementRate": 0.3870967741935484
+    },
+    {
+      "sessionSource": "(not set)",
+      "sessionMedium": "(not set)",
+      "sessions": 31,
+      "engagementRate": 0
+    },
+    {
+      "sessionSource": "(data not available)",
+      "sessionMedium": "(data not available)",
+      "sessions": 13,
+      "engagementRate": 0.23076923076923078
+    },
+    {
+      "sessionSource": "google",
+      "sessionMedium": "cpc",
+      "sessions": 12,
+      "engagementRate": 0.4166666666666667
+    },
+    {
+      "sessionSource": "chatgpt.com",
+      "sessionMedium": "ai-assistant",
+      "sessions": 2,
+      "engagementRate": 0
+    }
+  ],
+  "keywords": [
+    {
+      "sessionManualTerm": "",
+      "sessions": 46,
+      "engagementRate": 0.17391304347826086
+    },
+    {
+      "sessionManualTerm": "(not set)",
+      "sessions": 12,
+      "engagementRate": 1
+    }
+  ],
+  "landingPages": [
+    {
+      "landingPagePlusQueryString": "/",
+      "sessions": 32,
+      "bounceRate": 0.5625,
+      "engagementRate": 0.4375
+    },
+    {
+      "landingPagePlusQueryString": "",
+      "sessions": 15,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/about",
+      "sessions": 4,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers",
+      "sessions": 4,
+      "bounceRate": 0.5,
+      "engagementRate": 0.5
+    },
+    {
+      "landingPagePlusQueryString": "/careers/senior-backend-engineer-node",
+      "sessions": 2,
+      "bounceRate": 0.5,
+      "engagementRate": 0.5
+    },
+    {
+      "landingPagePlusQueryString": "/martech",
+      "sessions": 2,
+      "bounceRate": 0.5,
+      "engagementRate": 0.5
+    },
+    {
+      "landingPagePlusQueryString": "/services",
+      "sessions": 2,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/ai-automation",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/backend-engineer-node",
+      "sessions": 1,
+      "bounceRate": 0,
+      "engagementRate": 1
+    },
+    {
+      "landingPagePlusQueryString": "/careers/cloud-architect-aws",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/customer-success-manager",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/data-engineer",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/frontend-engineer-react",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/machine-learning-engineer-nlp",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/mlops-engineer",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/product-manager-saas",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/site-reliability-engineer",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/software-engineer-intern",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/solutions-architect",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/technical-support-engineer-l2",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/technical-writer",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/careers/ux-ui-designer",
+      "sessions": 1,
+      "bounceRate": 1,
+      "engagementRate": 0
+    },
+    {
+      "landingPagePlusQueryString": "/contact-us",
+      "sessions": 1,
+      "bounceRate": 0,
+      "engagementRate": 1
+    }
+  ]
+}

@@ -7,7 +7,7 @@ const stats = [
     { value: "91", label: "tools in the average enterprise marketing stack" },
     { value: "49%", label: "of licensed martech features actually get used" },
     { value: "1 in 4", label: "new martech capabilities are now built, not bought" },
-    { value: "15,000+", label: "SaaS tools in the martech landscape — and churning" },
+    { value: "4", label: "AI products we built and run. Click any of them below." },
 ];
 
 export default function MartechHero() {
@@ -20,29 +20,32 @@ export default function MartechHero() {
                             <AnimatedInViewDiv className="flex flex-col gap-8 text-left items-start">
                                 <div className="read-more-tag w-inline-block">
                                     <div className="text-size-small text-weight-bold">
-                                        MarTech Engineering
+                                        AI Marketing Agency
                                     </div>
                                     <div className="vertical-line-tag"></div>
                                     <div className="text-size-small opacity-50">
-                                        Build. Own. Compound.
+                                        Built in weeks. Owned forever.
                                     </div>
                                 </div>
                                 <h1 className="heading-2 text-weight-bold">
-                                    Own Your Marketing Stack. Stop Renting It.
+                                    Most Marketing Agencies Use AI Tools. We Build Them.
                                 </h1>
                                 <p className="opacity-60">
-                                    Most agencies configure off-the-shelf SaaS. We are the
-                                    martech engineering firm — we design and build the ad-ops
-                                    automation, marketing automation, influencer platforms,
-                                    lead-gen engines and AI creative analysis you own outright.
-                                    One system built for how you market, instead of ten
-                                    subscriptions built for everyone else.
+                                    Marketing automation, influencer platforms, AI calling
+                                    agents and lead engines, built for how you market. Live in
+                                    2–3 weeks, and yours outright. Often for less than a year of
+                                    the licence they replace. And because we run campaigns on
+                                    them ourselves, they are built by people who have to use
+                                    them on Monday.
                                 </p>
                                 <ul className="flex flex-col gap-2">
                                     {[
+                                        // Speed first (capability), cost second (proof, stated
+                                        // comparatively), ownership third (the payoff).
+                                        "A single project live in 2–3 weeks, not a quarter",
+                                        "Often less than a year of the licence it replaces",
                                         "Every service backed by a live product you can click today",
-                                        "AI-accelerated builds: weeks to first release, not quarters",
-                                        "Your data, your design, your IP — zero license creep",
+                                        "Your data, your design, your IP. Zero licence creep.",
                                     ].map((point) => (
                                         <li key={point} className="flex gap-3 text-size-small opacity-80">
                                             <span className="text-[#ed5145]">✓</span>

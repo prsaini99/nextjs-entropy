@@ -19,13 +19,17 @@ export function MoreAImodels() {
 
 export function LearnMoreButton({
     title = "Learn More",
-    routeTo = ROUTES.SERVICES
+    routeTo = ROUTES.SERVICES,
+    // Optional. Lets callers fire an analytics event on click without wrapping
+    // the button in another element.
+    onClick
 }) {
     const [hover, setHover] = useState(false);
 
     return (
         <Link href={routeTo}
             className="secondary-button w-inline-block relative overflow-hidden group p-[0.25rem]"
+            onClick={onClick}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}>
             <div className="button-wrapper relative z-10 flex items-center">

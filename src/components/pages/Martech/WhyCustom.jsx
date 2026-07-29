@@ -6,13 +6,13 @@ import MartechCTA from "./MartechCTA";
 const rows = [
     {
         dimension: "Cost curve",
-        saas: "Per-seat and per-contact pricing that scales with your headcount and list size — not your results.",
+        saas: "Per-seat and per-contact pricing that scales with your headcount and list size, not your results.",
         custom: "Build once, own forever. Costs scale with infrastructure, which is a fraction of license creep.",
     },
     {
         dimension: "Fit",
         saas: "You adapt your workflow to the tool. Half the features go unused; the one you need is on the roadmap.",
-        custom: "The system is shaped around how your team actually markets — nothing more, nothing less.",
+        custom: "The system is shaped around how your team actually markets. Nothing more, nothing less.",
     },
     {
         dimension: "Data",
@@ -22,11 +22,11 @@ const rows = [
     {
         dimension: "AI",
         saas: "AI features bolted onto decade-old SaaS, priced as add-ons.",
-        custom: "AI-native from day one — agents, creative intelligence and scoring designed into the core.",
+        custom: "AI-native from day one, with agents, creative intelligence and scoring designed into the core.",
     },
     {
         dimension: "Longevity",
-        saas: "1,200+ martech tools vanished from the landscape last year alone. Your workflow dies with the vendor.",
+        saas: "Tools get acquired, repriced or sunset every year. Your workflow dies with the vendor.",
         custom: "Owned software doesn't get sunset, acquired or repriced. It compounds.",
     },
 ];
@@ -46,7 +46,7 @@ export default function WhyCustom() {
                                     <div className="max-w-4xl">
                                         <p>
                                             One in four new martech capabilities are now built
-                                            in-house rather than bought — because AI-accelerated
+                                            in-house rather than bought, because AI-accelerated
                                             engineering changed the build-vs-buy math. Here is the
                                             trade you are actually making.
                                         </p>
@@ -83,7 +83,7 @@ export default function WhyCustom() {
                         </div>
 
                         <AnimatedInViewDiv className="double-button-component margin-top-button-features">
-                            <MartechCTA title="Audit My Stack — Free" />
+                            <MartechCTA title="Audit My Stack, Free" location="why-custom" />
                         </AnimatedInViewDiv>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
+import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 // Engagement arc for the 05-22 creative, reconstructed from the TRIBE v2
 // neural pre-test report: immediate jump, peak at s6, holds high to ~s18,
@@ -20,7 +21,7 @@ const CURVE = [
 const EVENTS = [
     { at: 6, label: "Peak attention" },
     { at: 40, label: "Self-relevance surge (s37–44)" },
-    { at: 52, label: "Trough — CTA lands too late" },
+    { at: 52, label: "Trough, CTA lands too late" },
 ];
 
 const HEAD_TO_HEAD = [
@@ -42,11 +43,11 @@ const W = 560;
 const H = 150;
 
 function phaseFor(t) {
-    if (t <= 3) return "Hook window — thumb-stop decision happens here";
-    if (t <= 18) return "Peak plateau — strong open, attention held high";
-    if (t < 37) return "Gradual decline — mid-roll needs an arousal accent";
-    if (t <= 44) return "Self-relevance surge — the 'is this about me' system re-engages";
-    if (t <= 52) return "Weak tail — attention bottoms out at s52";
+    if (t <= 3) return "Hook window, thumb-stop decision happens here";
+    if (t <= 18) return "Peak plateau, strong open, attention held high";
+    if (t < 37) return "Gradual decline, mid-roll needs an arousal accent";
+    if (t <= 44) return "Self-relevance surge, the 'is this about me' system re-engages";
+    if (t <= 52) return "Weak tail, attention bottoms out at s52";
     return "Final-frame recovery";
 }
 
@@ -75,7 +76,22 @@ export default function TribeLiveDemo() {
     const px = (t / DURATION) * W;
     const py = H - attention * H * 0.92;
 
+    // Fires once per session. Someone who plays the demo or scrubs to a scored
+    // moment is evaluating the product, not skimming the page — that's the
+    // strongest engagement signal on this page, and it was previously invisible.
+    const interacted = useRef(false);
+    const trackInteract = (action) => {
+        if (interacted.current) return;
+        interacted.current = true;
+        trackEvent(ANALYTICS_EVENTS.DEMO_INTERACT, {
+            demo_name: "TRIBE v2 Live Lab",
+            demo_action: action,
+            demo_location: "creative-analysis",
+        });
+    };
+
     const seekTo = (seconds) => {
+        trackInteract("seek");
         const v = videoRef.current;
         if (v) {
             v.currentTime = seconds;
@@ -94,13 +110,13 @@ export default function TribeLiveDemo() {
                                     Live Example · A Real Ad We Scored
                                 </div>
                                 <h2 className="heading-4 text-weight-medium">
-                                    Watch the Ad. Watch Its Brain Response — In Real Time.
+                                    Watch the Ad. Watch Its Brain Response, In Real Time.
                                 </h2>
                                 <div className="opacity-60">
                                     <div className="max-w-4xl">
                                         <p>
                                             This is one of two real creatives from our neural
-                                            pre-test (the &ldquo;05-22&rdquo; ad — the one with the
+                                            pre-test (the &ldquo;05-22&rdquo; ad, the one with the
                                             winning hook). Press play: the marker sweeps the
                                             predicted-attention curve as the video runs, so you can
                                             see exactly where the brain leans in and where it
@@ -122,7 +138,10 @@ export default function TribeLiveDemo() {
                                         preload="metadata"
                                         className="w-auto h-full max-h-[480px] lg:max-h-[560px] object-contain"
                                         onTimeUpdate={onTimeUpdate}
-                                        onPlay={() => setPlaying(true)}
+                                        onPlay={() => {
+                                            trackInteract("play");
+                                            setPlaying(true);
+                                        }}
                                         onPause={() => setPlaying(false)}
                                     />
                                 </div>
@@ -248,7 +267,7 @@ export default function TribeLiveDemo() {
                                 </div>
                                 <p className="text-size-small opacity-50 mt-4">
                                     Verdict from the report: near-tied on total engagement,
-                                    opposite in shape — and for feed/reels, where the first three
+                                    opposite in shape, and for feed/reels, where the first three
                                     seconds decide thumb-stop, the 05-22 hook wins the first
                                     dollars of spend.
                                 </p>
@@ -283,7 +302,7 @@ export default function TribeLiveDemo() {
                                 </div>
                                 <p className="text-size-small opacity-50 mt-4">
                                     The diagnostic both ads shared: the value network (Limbic/OFC)
-                                    fires only at the open and fades — the clearest fix to move
+                                    fires only at the open and fades, the clearest fix to move
                                     from &ldquo;engaging&rdquo; to &ldquo;persuasive.&rdquo; That
                                     is the kind of insight raw CTR can&apos;t give you.
                                 </p>

@@ -2,41 +2,98 @@
 import React, { useState, useEffect } from 'react';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import Link from 'next/link';
-import { useUTMTracking, getUTMData } from '@/hooks/useUTMTracking';
+import { useUTMTracking } from '@/hooks/useUTMTracking';
 import { trackEvent, trackFormInteraction, trackSocialClick, trackConversion, ANALYTICS_EVENTS } from '@/lib/analytics';
 import { trackLeadSubmit } from '@/lib/trackLead';
+import { clickIdPayload } from '@/lib/clickIds';
 
 const FORM_STATUS = {
     IDLE: "idle",
-    STEP_ONE: "step_one",
-    STEP_TWO: "step_two",
     SUCCESS: "success",
     ERROR: "error",
 }
 
-// Removed dropdown options - now using text inputs for better UX
+// Dropdowns, not free text. One tap is less work than composing a sentence,
+// and these strings are the keys calculateLeadScore() looks up — the free-text
+// version scored almost every lead at zero on service and budget.
+//
+// Values are the exact service titles from components/pages/Features/data.js.
+// A near-miss ('Cloud Solutions' vs the real title) silently scores the
+// fallback, so labels may be shortened for the dropdown — values may not.
+// All 16 lines are listed; grouping keeps a complete list scannable.
+const SERVICE_GROUPS = [
+    {
+        label: 'Build',
+        items: [
+            ['Custom Software Development'],
+            ['Website & Web App Development'],
+            ['SaaS & Marketplace Integrations'],
+            ['Blockchain Development'],
+            ['IoT Solutions'],
+            ['Game Development'],
+            ['AR/VR Development'],
+        ],
+    },
+    {
+        label: 'Run',
+        items: [
+            ['Cloud Migration & Managed Services (AWS, Azure, GCP)', 'Cloud Migration & Managed Services'],
+            ['DevOps & SRE'],
+            ['Cybersecurity & AppSec'],
+            ['IT Support & Maintenance'],
+        ],
+    },
+    {
+        label: 'Grow',
+        items: [
+            ['AI & Machine Learning (Chatbots, NLP, Vision)', 'AI & Machine Learning'],
+            ['Data Analytics & Business Intelligence', 'Data Analytics & BI'],
+            ['Automation & RPA'],
+            ['Digital Marketing'],
+            ['IT Consulting'],
+        ],
+    },
+];
 
-const initStep1Data = {
+// Escape hatch, so a required field never traps someone who doesn't know yet.
+const SERVICE_UNSURE = 'Not sure yet — advise me';
+
+// Same vocabulary as the MarTech form, so lead_budget is comparable in GA4.
+const BUDGETS = ['Under ₹5 Lakh', '₹5 – ₹15 Lakh', '₹15 – ₹40 Lakh', '₹40 Lakh+', 'Not sure yet'];
+
+const TIMELINES = ['ASAP', 'Within a month', '1–3 months', 'Exploring options'];
+
+// A free mailbox is not a company website — recording one would award the
+// company_website scoring bonus to every gmail lead.
+const FREE_EMAIL_DOMAINS = new Set([
+    'gmail.com', 'googlemail.com', 'yahoo.com', 'yahoo.co.in', 'outlook.com',
+    'hotmail.com', 'live.com', 'icloud.com', 'me.com', 'proton.me',
+    'protonmail.com', 'aol.com', 'rediffmail.com', 'zoho.com',
+]);
+
+// Infer the company site from the work email instead of asking for it: keeps
+// the company_website signal without costing the visitor a field.
+function companyFromEmail(email) {
+    const domain = (email || '').split('@')[1]?.trim().toLowerCase();
+    if (!domain || FREE_EMAIL_DOMAINS.has(domain)) return null;
+    return domain;
+}
+
+
+const initFormData = {
     fullName: '',
     workEmail: '',
     service: '',
     budget: '',
     timeline: '',
-};
-
-const initStep2Data = {
     projectSummary: '',
-    companyWebsite: '',
-    attachmentFile: null,
-    phone: '',
-    privacyConsent: false,
 };
 
 export default function ContactWrapper() {
-    const [step1Data, setStep1Data] = useState(initStep1Data);
-    const [step2Data, setStep2Data] = useState(initStep2Data);
+    const [formData, setFormData] = useState(initFormData);
     const [status, setStatus] = useState(FORM_STATUS.IDLE);
     const [loading, setLoading] = useState(false);
+    const [hasStarted, setHasStarted] = useState(false);
     const { utmData, getAttributionData } = useUTMTracking();
 
     // Track form view on mount
@@ -46,214 +103,86 @@ export default function ContactWrapper() {
         });
     }, []);
 
-    const handleStep1Change = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
-        setStep1Data({ ...step1Data, [name]: value });
+        setFormData((prev) => ({ ...prev, [name]: value }));
 
-        // Track form start on first interaction
-        if (!step1Data.fullName && !step1Data.workEmail) {
-            trackFormInteraction('contact_form', 'start', {
-                step: 1
-            });
+        // form_start fires once per session, on first interaction.
+        if (!hasStarted) {
+            setHasStarted(true);
+            trackFormInteraction('contact_form', 'start', { first_field: name });
         }
     };
 
-    const handleStep2Change = (e) => {
-        const { name, value, type, checked, files } = e.target;
-        if (type === 'checkbox') {
-            setStep2Data({ ...step2Data, [name]: checked });
-        } else if (type === 'file') {
-            setStep2Data({ ...step2Data, [name]: files[0] });
-        } else {
-            setStep2Data({ ...step2Data, [name]: value });
-        }
-    };
-
-    const handleStep1Submit = async (e) => {
-        e.preventDefault();
-        if (!step1Data.fullName || !step1Data.workEmail || !step1Data.service || !step1Data.timeline) {
-            alert('Please fill in all required fields');
-            trackFormInteraction('contact_form', 'error', {
-                step: 1,
-                error_type: 'validation'
-            });
-            return;
-        }
-
-        // Track step 1 completion
-        trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_STEP_COMPLETE, {
-            step_number: 1,
-            service_interest: step1Data.service,
-            budget_range: step1Data.budget,
-            timeline: step1Data.timeline
-        });
-
-        setStatus(FORM_STATUS.STEP_TWO);
-    };
-
-    const handleFinalSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
 
         try {
-            // Get UTM and attribution data
             const attributionData = getAttributionData();
             const currentUTM = utmData.current || utmData.last_touch || utmData.first_touch || {};
 
-            const finalData = {
-                ...step1Data,
-                ...step2Data,
-                // Add UTM parameters
+            const payload = {
+                ...formData,
+                // timeline is NOT NULL in the leads table but optional in the
+                // form, so a blank one must never block the submit.
+                timeline: formData.timeline || 'Not specified',
+                companyWebsite: companyFromEmail(formData.workEmail),
+                // Consent is given by the notice under the submit button.
+                privacyConsent: true,
+                lead_source: 'contact',
                 utm_source: currentUTM.utm_source,
                 utm_medium: currentUTM.utm_medium,
                 utm_campaign: currentUTM.utm_campaign,
                 utm_term: currentUTM.utm_term,
                 utm_content: currentUTM.utm_content,
-                // Add attribution data
                 attribution_data: attributionData,
                 landing_page: currentUTM.landing_page,
-                referrer: currentUTM.referrer
-            };
-
-            console.log('Submitting final data with UTM:', finalData);
-
-            let response;
-
-            // Check if there's a file attachment
-            if (step2Data.attachmentFile) {
-                // Use FormData for file uploads
-                const formData = new FormData();
-
-                // Add all form fields to FormData
-                Object.keys(finalData).forEach(key => {
-                    if (key === 'attachmentFile') {
-                        formData.append(key, finalData[key]);
-                    } else {
-                        formData.append(key, finalData[key] || '');
-                    }
-                });
-
-                response = await fetch('/api/contact', {
-                    method: 'POST',
-                    body: formData, // Don't set Content-Type header, let browser set it
-                });
-            } else {
-                // Use JSON for submissions without files
-                const { attachmentFile, ...dataWithoutFile } = finalData;
-                response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(dataWithoutFile),
-                });
-            }
-
-            if (response.ok) {
-                // Track successful submission
-                trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_SUBMIT, {
-                    service_interest: step1Data.service,
-                    budget_range: step1Data.budget,
-                    timeline: step1Data.timeline,
-                    has_attachment: !!step2Data.attachmentFile,
-                    form_type: 'detailed'
-                });
-
-                // Track as conversion
-                trackConversion('contact_form_submit', null, 'INR', {
-                    lead_source: currentUTM.utm_source || 'direct',
-                    lead_medium: currentUTM.utm_medium || 'none'
-                });
-
-                trackLeadSubmit({
-                    form: 'contact-detailed',
-                    service: step1Data.service,
-                    budget: step1Data.budget,
-                });
-
-                setStatus(FORM_STATUS.SUCCESS);
-                setStep1Data(initStep1Data);
-                setStep2Data(initStep2Data);
-            } else {
-                trackFormInteraction('contact_form', 'error', {
-                    step: 2,
-                    error_type: 'submission_failed'
-                });
-                setStatus(FORM_STATUS.ERROR);
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            trackFormInteraction('contact_form', 'error', {
-                step: 2,
-                error_type: 'network_error'
-            });
-            setStatus(FORM_STATUS.ERROR);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const skipStep2 = async () => {
-        setLoading(true);
-        try {
-            // Get UTM and attribution data
-            const attributionData = getAttributionData();
-            const currentUTM = utmData.current || utmData.last_touch || utmData.first_touch || {};
-
-            const dataWithUTM = {
-                ...step1Data,
-                // Add UTM parameters
-                utm_source: currentUTM.utm_source,
-                utm_medium: currentUTM.utm_medium,
-                utm_campaign: currentUTM.utm_campaign,
-                utm_term: currentUTM.utm_term,
-                utm_content: currentUTM.utm_content,
-                // Add attribution data
-                attribution_data: attributionData,
-                landing_page: currentUTM.landing_page,
-                referrer: currentUTM.referrer
+                referrer: currentUTM.referrer,
+                // gclid and friends — required for Google Ads offline
+                // conversion import. See lib/clickIds.js.
+                ...clickIdPayload(),
             };
 
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(dataWithUTM),
+                body: JSON.stringify(payload),
             });
 
-            if (response.ok) {
-                // Track successful submission (quick form)
-                trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_SUBMIT, {
-                    service_interest: step1Data.service,
-                    budget_range: step1Data.budget,
-                    timeline: step1Data.timeline,
-                    form_type: 'quick'
-                });
-
-                // Track as conversion
-                trackConversion('contact_form_submit_quick', null, 'INR', {
-                    lead_source: currentUTM.utm_source || 'direct',
-                    lead_medium: currentUTM.utm_medium || 'none'
-                });
-
-                trackLeadSubmit({
-                    form: 'contact-quick',
-                    service: step1Data.service,
-                    budget: step1Data.budget,
-                });
-
-                setStatus(FORM_STATUS.SUCCESS);
-                setStep1Data(initStep1Data);
-                setStep2Data(initStep2Data);
-            } else {
+            if (!response.ok) {
                 trackFormInteraction('contact_form', 'error', {
-                    step: 1,
-                    error_type: 'quick_submission_failed'
+                    error_type: 'submission_failed',
                 });
                 setStatus(FORM_STATUS.ERROR);
+                return;
             }
+
+            trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_SUBMIT, {
+                service_interest: formData.service,
+                budget_range: formData.budget || 'Not specified',
+                // payload.timeline, not formData.timeline — otherwise GA4
+                // reports '' for a lead the database records as 'Not specified'.
+                timeline: payload.timeline,
+            });
+
+            trackConversion('contact_form_submit', null, 'INR', {
+                lead_source: currentUTM.utm_source || 'direct',
+                lead_medium: currentUTM.utm_medium || 'none',
+            });
+
+            trackLeadSubmit({
+                form: 'contact',
+                service: formData.service,
+                budget: formData.budget,
+            });
+
+            setStatus(FORM_STATUS.SUCCESS);
+            setFormData(initFormData);
         } catch (error) {
             console.error('Error submitting form:', error);
             trackFormInteraction('contact_form', 'error', {
-                step: 1,
-                error_type: 'network_error'
+                error_type: 'network_error',
             });
             setStatus(FORM_STATUS.ERROR);
         } finally {
@@ -380,9 +309,15 @@ export default function ContactWrapper() {
                         </AnimatedInViewDiv>
 
                         <AnimatedInViewDiv className="form-wrapper w-form" delay={0.4}>
-                            {/* Step 1 Form */}
-                            {(status === FORM_STATUS.IDLE) && (
-                                <form onSubmit={handleStep1Submit} className="form">
+                            {/* Single step. The old flow only POSTed on step 2,
+                                so anyone who filled step 1 and left was lost
+                                even though they had already typed everything. */}
+                            {status === FORM_STATUS.IDLE && (
+                                <form
+                                    onSubmit={handleSubmit}
+                                    className="form"
+                                    data-clarity-mask="true"
+                                >
                                     <div className="form-content">
                                         <div className="name-wrapper-contact">
                                             <label htmlFor="fullName" className="text-size-medium-vw">
@@ -395,8 +330,9 @@ export default function ContactWrapper() {
                                                 placeholder="Enter your full name"
                                                 type="text"
                                                 id="fullName"
-                                                value={step1Data.fullName}
-                                                onChange={handleStep1Change}
+                                                autoComplete="name"
+                                                value={formData.fullName}
+                                                onChange={handleChange}
                                                 required
                                             />
                                         </div>
@@ -409,11 +345,12 @@ export default function ContactWrapper() {
                                                 className="text-field-contact w-input"
                                                 maxLength="256"
                                                 name="workEmail"
-                                                placeholder="Enter your work email"
+                                                placeholder="you@company.com"
                                                 type="email"
                                                 id="workEmail"
-                                                value={step1Data.workEmail}
-                                                onChange={handleStep1Change}
+                                                autoComplete="email"
+                                                value={formData.workEmail}
+                                                onChange={handleChange}
                                                 required
                                             />
                                         </div>
@@ -422,212 +359,90 @@ export default function ContactWrapper() {
                                             <label htmlFor="service" className="text-size-medium-vw">
                                                 What do you need? *
                                             </label>
-                                            <input
+                                            <select
                                                 className="text-field-contact w-input"
-                                                maxLength="256"
                                                 name="service"
-                                                placeholder="e.g., AI/ML, Cloud, Custom software, DevOps/SRE, Data/BI, Automation, Website"
-                                                type="text"
                                                 id="service"
-                                                value={step1Data.service}
-                                                onChange={handleStep1Change}
+                                                value={formData.service}
+                                                onChange={handleChange}
                                                 required
-                                            />
+                                            >
+                                                <option value="">Select a service…</option>
+                                                {SERVICE_GROUPS.map((group) => (
+                                                    <optgroup key={group.label} label={group.label}>
+                                                        {group.items.map(([value, label]) => (
+                                                            <option key={value} value={value}>{label || value}</option>
+                                                        ))}
+                                                    </optgroup>
+                                                ))}
+                                                <option value={SERVICE_UNSURE}>{SERVICE_UNSURE}</option>
+                                            </select>
                                         </div>
 
                                         <div className="name-wrapper-contact">
                                             <label htmlFor="budget" className="text-size-medium-vw">
                                                 Budget range
                                             </label>
-                                            <input
+                                            <select
                                                 className="text-field-contact w-input"
-                                                maxLength="256"
                                                 name="budget"
-                                                placeholder="e.g., < ₹5L, ₹5–15L, ₹15–40L, ₹40L+ or your preferred range"
-                                                type="text"
                                                 id="budget"
-                                                value={step1Data.budget}
-                                                onChange={handleStep1Change}
-                                            />
+                                                value={formData.budget}
+                                                onChange={handleChange}
+                                            >
+                                                <option value="">Prefer not to say</option>
+                                                {BUDGETS.map((budget) => (
+                                                    <option key={budget} value={budget}>{budget}</option>
+                                                ))}
+                                            </select>
                                         </div>
 
                                         <div className="name-wrapper-contact">
                                             <label htmlFor="timeline" className="text-size-medium-vw">
-                                                Timeline *
+                                                Timeline
                                             </label>
-                                            <input
+                                            <select
                                                 className="text-field-contact w-input"
-                                                maxLength="256"
                                                 name="timeline"
-                                                placeholder="e.g., ASAP, 1–2 months, 3–6 months, or your preferred timeline"
-                                                type="text"
                                                 id="timeline"
-                                                value={step1Data.timeline}
-                                                onChange={handleStep1Change}
-                                                required
-                                            />
+                                                value={formData.timeline}
+                                                onChange={handleChange}
+                                            >
+                                                <option value="">Not sure yet</option>
+                                                {TIMELINES.map((timeline) => (
+                                                    <option key={timeline} value={timeline}>{timeline}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label htmlFor="projectSummary" className="text-size-medium-vw">
+                                                Anything else? (optional)
+                                            </label>
+                                            <textarea
+                                                id="projectSummary"
+                                                name="projectSummary"
+                                                maxLength="5000"
+                                                placeholder="A line or two about the project — or leave it blank and we'll ask on the call."
+                                                className="text-field-contact w-input"
+                                                value={formData.projectSummary}
+                                                onChange={handleChange}
+                                                rows="3"
+                                            ></textarea>
                                         </div>
                                     </div>
 
-                                    <div className="contact-button align-center">
-                                        <button type="submit" className="primary-button">
-                                            <span>Send inquiry</span>
+                                    <div className="contact-button align-center flex flex-col items-center gap-3">
+                                        <button type="submit" className="primary-button" disabled={loading}>
+                                            <span>{loading ? "Sending…" : "Send inquiry"}</span>
                                         </button>
+                                        <div className="text-size-small opacity-70 text-center">
+                                            By submitting, you agree to our{" "}
+                                            <Link href="/privacy-policy" className="underline">privacy policy</Link>.
+                                            We reply within one business day.
+                                        </div>
                                     </div>
                                 </form>
-                            )}
-
-                            {/* Step 2 Form */}
-                            {status === FORM_STATUS.STEP_TWO && (
-                                <div>
-                                    <div className="mb-6 p-4" style={{
-                                        backgroundColor: '#1a1a1a',
-                                        border: '1px solid #333',
-                                        borderRadius: '8px'
-                                    }}>
-                                        <div className="text-size-medium text-weight-medium mb-2" style={{ color: '#ffffff' }}>
-                                            Step 1 Complete ✓
-                                        </div>
-                                        <div className="text-size-small opacity-70" style={{ color: '#ffffff' }}>
-                                            Thank you! Now add more details to help us better understand your project (optional):
-                                        </div>
-                                    </div>
-
-                                    <form onSubmit={handleFinalSubmit} className="form">
-                                        <div className="form-content">
-                                            <div>
-                                                <label htmlFor="projectSummary" className="text-size-medium-vw">
-                                                    Project summary
-                                                </label>
-                                                <textarea
-                                                    id="projectSummary"
-                                                    name="projectSummary"
-                                                    maxLength="5000"
-                                                    placeholder="Tell us more about your project, requirements, goals..."
-                                                    className="text-field-contact w-input"
-                                                    style={{
-                                                        color: '#ffffff',
-                                                        backgroundColor: '#1a1a1a',
-                                                        border: '1px solid #333'
-                                                    }}
-                                                    value={step2Data.projectSummary}
-                                                    onChange={handleStep2Change}
-                                                    rows="4"
-                                                ></textarea>
-                                            </div>
-
-                                            <div className="name-wrapper-contact">
-                                                <label htmlFor="companyWebsite" className="text-size-medium-vw">
-                                                    Company & website
-                                                </label>
-                                                <input
-                                                    className="text-field-contact w-input"
-                                                    style={{
-                                                        color: '#ffffff',
-                                                        backgroundColor: '#1a1a1a',
-                                                        border: '1px solid #333'
-                                                    }}
-                                                    name="companyWebsite"
-                                                    placeholder="Company name & website URL"
-                                                    type="text"
-                                                    id="companyWebsite"
-                                                    value={step2Data.companyWebsite}
-                                                    onChange={handleStep2Change}
-                                                />
-                                            </div>
-
-                                            <div className="name-wrapper-contact">
-                                                <label htmlFor="phone" className="text-size-medium-vw">
-                                                    Phone (optional)
-                                                </label>
-                                                <input
-                                                    className="text-field-contact w-input"
-                                                    style={{
-                                                        color: '#ffffff',
-                                                        backgroundColor: '#1a1a1a',
-                                                        border: '1px solid #333'
-                                                    }}
-                                                    name="phone"
-                                                    placeholder="Your phone number"
-                                                    type="tel"
-                                                    id="phone"
-                                                    value={step2Data.phone}
-                                                    onChange={handleStep2Change}
-                                                />
-                                            </div>
-
-                                            <div className="name-wrapper-contact">
-                                                <label htmlFor="attachmentFile" className="text-size-medium-vw">
-                                                    Attach brief/spec (optional)
-                                                </label>
-                                                <input
-                                                    className="text-field-contact w-input"
-                                                    style={{
-                                                        color: '#ffffff',
-                                                        backgroundColor: '#1a1a1a',
-                                                        border: '1px solid #333'
-                                                    }}
-                                                    name="attachmentFile"
-                                                    type="file"
-                                                    id="attachmentFile"
-                                                    onChange={handleStep2Change}
-                                                    accept=".pdf,.doc,.docx,.txt"
-                                                />
-                                                {step2Data.attachmentFile && (
-                                                    <div className="text-size-small opacity-70 mt-2" style={{ color: '#ffffff' }}>
-                                                        📎 Selected: {step2Data.attachmentFile.name} ({(step2Data.attachmentFile.size / 1024).toFixed(1)} KB)
-                                                    </div>
-                                                )}
-                                            </div>
-
-                                            <div className="flex items-start gap-3">
-                                                <input
-                                                    type="checkbox"
-                                                    id="privacyConsent"
-                                                    name="privacyConsent"
-                                                    checked={step2Data.privacyConsent}
-                                                    onChange={handleStep2Change}
-                                                    className="mt-1"
-                                                />
-                                                <label htmlFor="privacyConsent" className="text-size-small opacity-70">
-                                                    I agree to the <Link href="/privacy-policy" className="underline">privacy policy</Link> and consent to processing my data for this inquiry.
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div className="contact-button align-center flex flex-col sm:flex-row gap-4">
-                                            <button
-                                                type="button"
-                                                onClick={() => setStatus(FORM_STATUS.IDLE)}
-                                                className="secondary-button"
-                                                disabled={loading}
-                                            >
-                                                <span>← Back to Step 1</span>
-                                            </button>
-
-                                            <button
-                                                type="submit"
-                                                className="primary-button"
-                                                disabled={loading || !step2Data.privacyConsent}
-                                            >
-                                                <span>
-                                                    {loading ? "Sending..." : "Send detailed inquiry"}
-                                                </span>
-                                            </button>
-
-                                            <button
-                                                type="button"
-                                                onClick={skipStep2}
-                                                className="secondary-button"
-                                                disabled={loading}
-                                            >
-                                                <span>
-                                                    {loading ? "Sending..." : "Skip for now"}
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
                             )}
 
                             {/* Success Message */}
@@ -637,7 +452,9 @@ export default function ContactWrapper() {
                                         🎉 Thank you! Your inquiry has been received!
                                     </div>
                                     <div className="text-size-medium opacity-70">
-                                        We'll get back to you within one business day.
+                                        We&apos;ll get back to you within one business day. Check your
+                                        inbox for a confirmation — if you have a brief or spec, just
+                                        reply to that email and attach it.
                                     </div>
                                 </AnimatedInViewDiv>
                             )}

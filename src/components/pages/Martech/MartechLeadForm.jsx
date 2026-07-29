@@ -1,21 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { trackEvent, trackFormInteraction, ANALYTICS_EVENTS } from "@/lib/analytics";
 import { trackLeadSubmit } from "@/lib/trackLead";
+import { clickIdPayload } from "@/lib/clickIds";
+import { getUTMData } from "@/hooks/useUTMTracking";
 
+// Kept in sync with the service card titles and with formServiceForSlug in
+// data/martechPages.js — a mismatch means the pre-select silently fails.
 const SERVICES = [
     "AI Ad Intelligence & Ad-Ops",
     "Marketing Automation (AtoEmail)",
-    "Influencer Marketing (Zyflus)",
-    "Lead Gen & Sales Intelligence",
+    "Influencer Marketing Platform (Zyflus)",
+    "B2B Lead Generation & Sales Intelligence",
     "B2B Lead CRM",
-    "Social Bots & Scrapers",
-    "AI Call Center",
+    "Instagram DM Automation & Scrapers",
+    "AI Calling Agent & Call Center",
     "Neural Creative Analysis (TRIBE v2)",
-    "AI Branded Proposal Maker",
-    "MCP & AI Ecosystem Integration",
+    "AI Proposal Generator (Branded)",
+    "MCP Integration & AI Enablement",
     "Shopify / E-Commerce Store",
-    "Not sure yet — advise me",
+    "Not sure yet, advise me",
 ];
 
 const BUDGETS = [
@@ -28,12 +33,32 @@ const BUDGETS = [
 ];
 const TIMELINES = ["ASAP", "Within a month", "1–3 months", "Exploring options"];
 
-export default function MartechLeadForm({ compact = false }) {
+/**
+ * @param defaultService  Pre-selects the service dropdown. Passed by product
+ *   pages so a visitor who read the AI Call Center page isn't asked to restate
+ *   what they came for. Still editable — pre-select, don't lock.
+ * @param source  Recorded as lead_source, e.g. "martech/ai-call-center", so the
+ *   leads table shows which page produced the lead. Previously every martech
+ *   lead recorded as just "martech".
+ */
+export default function MartechLeadForm({
+    compact = false,
+    defaultService = "",
+    source = "martech",
+    // The hub asks about the whole stack; a product page is a quote request for
+    // one thing. Same form, different promise. Reserve "stack audit" wording for
+    // the hub and, later, the self-serve scanner.
+    heading = "Get Your Free MarTech Stack Audit",
+    subheading = "Tell us what you're running. We'll show you what to build, replace and keep. No obligation.",
+    // The button should describe what submitting actually does. This form
+    // collects service, budget and timeline — that's a quote request.
+    submitLabel = "Send My Details →",
+}) {
     const [form, setForm] = useState({
         fullName: "",
         workEmail: "",
         phone: "",
-        service: "",
+        service: defaultService,
         budget: "",
         timeline: "",
         projectSummary: "",
@@ -41,36 +66,80 @@ export default function MartechLeadForm({ compact = false }) {
     const [customBudget, setCustomBudget] = useState(false);
     const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
-    const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+    // Abandonment tracking. A conversion rate tells you people didn't finish;
+    // this tells you which field they stopped at, which is the one to cut.
+    const started = useRef(false);
+    const lastField = useRef(null);
+    const submitted = useRef(false);
+
+    const set = (key) => (e) => {
+        lastField.current = key;
+
+        if (!started.current) {
+            started.current = true;
+            trackFormInteraction("martech_form", "start", {
+                form_source: source,
+                first_field: key,
+            });
+        }
+
+        setForm((f) => ({ ...f, [key]: e.target.value }));
+    };
+
+    useEffect(() => {
+        // pagehide rather than beforeunload: it fires reliably on mobile and on
+        // bfcache navigations, where beforeunload often does not.
+        const onLeave = () => {
+            if (!started.current || submitted.current) return;
+            trackEvent(ANALYTICS_EVENTS.FORM_ABANDON, {
+                form_source: source,
+                abandoned_at: lastField.current,
+                fields_completed: Object.values(form).filter(Boolean).length,
+            });
+        };
+
+        window.addEventListener("pagehide", onLeave);
+        return () => window.removeEventListener("pagehide", onLeave);
+    }, [form, source]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (status === "loading") return;
         setStatus("loading");
 
+        // Prefer the live URL, but fall back to stored attribution — a visitor
+        // who landed on an ad and then browsed to another page would otherwise
+        // submit with no UTMs at all.
         const params = new URLSearchParams(window.location.search);
+        const stored = getUTMData();
+        const attributed = { ...stored.first_touch, ...stored.last_touch };
+        const utm = (key) => params.get(key) || attributed[key] || null;
+
         try {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...form,
-                    service: `MarTech — ${form.service || "General"}`,
+                    service: `MarTech: ${form.service || "General"}`,
                     timeline: form.timeline || "Exploring options",
-                    lead_source: "martech",
+                    lead_source: source,
                     landing_page: window.location.pathname,
                     referrer: document.referrer || "direct",
-                    utm_source: params.get("utm_source"),
-                    utm_medium: params.get("utm_medium"),
-                    utm_campaign: params.get("utm_campaign"),
-                    utm_term: params.get("utm_term"),
-                    utm_content: params.get("utm_content"),
+                    utm_source: utm("utm_source"),
+                    utm_medium: utm("utm_medium"),
+                    utm_campaign: utm("utm_campaign"),
+                    utm_term: utm("utm_term"),
+                    utm_content: utm("utm_content"),
+                    attribution_data: stored,
                     privacyConsent: true,
+                    ...clickIdPayload(),
                 }),
             });
             if (res.ok) {
+                submitted.current = true;
                 trackLeadSubmit({
-                    form: "martech",
+                    form: source,
                     service: form.service,
                     budget: form.budget,
                 });
@@ -91,7 +160,7 @@ export default function MartechLeadForm({ compact = false }) {
                     You&apos;re in the pipeline ✓
                 </div>
                 <p className="opacity-70 text-size-small">
-                    Thanks, {form.fullName.split(" ")[0] || "there"} — we&apos;ll get back to
+                    Thanks, {form.fullName.split(" ")[0] || "there"}. We&apos;ll get back to
                     you within one business day. Meanwhile, feel free to click through the
                     live products above.
                 </p>
@@ -99,20 +168,19 @@ export default function MartechLeadForm({ compact = false }) {
         );
     }
 
+    // data-clarity-mask: Clarity project masking should be Relaxed so marketing
+    // copy is readable in recordings and heatmaps. This form is the exception —
+    // it collects names, emails and phone numbers, so it stays masked.
     return (
         <form
             id="martech-lead-form"
             onSubmit={handleSubmit}
+            data-clarity-mask="true"
             className="border border-white/15 rounded-lg p-6 lg:p-8 bg-white/[0.04] backdrop-blur flex flex-col gap-4 w-full text-left"
         >
             <div>
-                <div className="text-size-large text-weight-bold">
-                    Get Your Free MarTech Stack Audit
-                </div>
-                <p className="text-size-small opacity-50 mt-1">
-                    Tell us what you&apos;re running — we&apos;ll show you what to build,
-                    replace and keep. No obligation.
-                </p>
+                <div className="text-size-large text-weight-bold">{heading}</div>
+                <p className="text-size-small opacity-50 mt-1">{subheading}</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -237,12 +305,12 @@ export default function MartechLeadForm({ compact = false }) {
                 disabled={status === "loading"}
                 className="bg-[#ed5145] hover:bg-[#d8453a] transition-colors rounded-lg py-3.5 text-weight-bold disabled:opacity-60"
             >
-                {status === "loading" ? "Sending…" : "Get My Free Stack Audit →"}
+                {status === "loading" ? "Sending…" : submitLabel}
             </button>
 
             {status === "error" && (
                 <p className="text-size-small text-[#ed5145]">
-                    Something went wrong — please try again or email contact@stackbinary.io.
+                    Something went wrong, please try again or email contact@stackbinary.io.
                 </p>
             )}
 

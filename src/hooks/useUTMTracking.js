@@ -1,92 +1,68 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useSearchParams, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const UTM_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
 const STORAGE_KEY = 'utm_tracking_data';
 const SESSION_KEY = 'utm_session_data';
 
-function UTMTrackingInner() {
-  const searchParams = useSearchParams();
+const EMPTY_STATE = { first_touch: {}, last_touch: {}, current: {} };
+
+/**
+ * Captures UTM parameters off the landing URL and persists them as
+ * first-touch (localStorage, survives sessions) and last-touch
+ * (sessionStorage, resets each session).
+ *
+ * Reads window.location.search rather than useSearchParams() on purpose:
+ * useSearchParams() forces every consuming route out of static rendering and
+ * must sit inside a <Suspense> boundary, and this hook runs in the root
+ * layout via <Analytics />. Same approach as MartechLeadForm.
+ *
+ * Caveat: keyed on pathname, so a navigation that changes only the query
+ * string won't re-capture. Ad clicks always arrive as a fresh document load,
+ * which this does catch.
+ */
+export function useUTMTracking() {
   const pathname = usePathname();
-  const [utmData, setUtmData] = useState({});
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [utmData, setUtmData] = useState(EMPTY_STATE);
 
   useEffect(() => {
-    // Capture UTM parameters from URL
-    const currentUTMData = {};
-    let hasUTM = false;
+    const params = new URLSearchParams(window.location.search);
 
-    UTM_PARAMS.forEach(param => {
-      const value = searchParams.get(param);
-      if (value) {
-        currentUTMData[param] = value;
-        hasUTM = true;
-      }
+    const current = {};
+    UTM_PARAMS.forEach((param) => {
+      const value = params.get(param);
+      if (value) current[param] = value;
     });
 
-    // Add additional tracking data
-    if (hasUTM) {
-      currentUTMData.timestamp = new Date().toISOString();
-      currentUTMData.landing_page = pathname;
-      currentUTMData.referrer = document.referrer || 'direct';
-      
-      // Store as both first-touch (persistent) and last-touch (session)
-      const existingData = getStoredUTMData();
-      
-      // First-touch attribution (only set if not exists)
-      if (!existingData.first_touch) {
-        const firstTouchData = {
-          ...currentUTMData,
-          attribution_type: 'first_touch'
-        };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({
-          ...existingData,
-          first_touch: firstTouchData
-        }));
-      }
-      
-      // Last-touch attribution (always update)
-      const lastTouchData = {
-        ...currentUTMData,
-        attribution_type: 'last_touch'
-      };
-      sessionStorage.setItem(SESSION_KEY, JSON.stringify(lastTouchData));
-      
-      // Update state
-      setUtmData({
-        first_touch: existingData.first_touch || currentUTMData,
-        last_touch: lastTouchData,
-        current: currentUTMData
-      });
-    } else {
-      // No UTM params in URL, load from storage
-      const storedData = getStoredUTMData();
-      const sessionData = getSessionUTMData();
-      setUtmData({
-        first_touch: storedData.first_touch,
-        last_touch: sessionData,
-        current: {}
-      });
-    }
-    
-    setIsInitialized(true);
-  }, [searchParams, pathname]);
+    const stored = getStoredUTMData();
 
-  // Track page view with UTM data via GTM dataLayer
-  useEffect(() => {
-    if (isInitialized && window.dataLayer) {
-      const trackingData = utmData.current || utmData.last_touch || utmData.first_touch || {};
-      
-      window.dataLayer.push({
-        event: 'page_view_with_utm',
-        page_path: pathname,
-        page_location: window.location.href,
-        page_referrer: document.referrer,
-        ...trackingData
+    // No UTMs on this URL — surface whatever earlier touches recorded.
+    if (Object.keys(current).length === 0) {
+      setUtmData({
+        first_touch: stored.first_touch || {},
+        last_touch: getSessionUTMData() || {},
+        current: {},
       });
+      return;
     }
-  }, [pathname, utmData, isInitialized]);
+
+    current.timestamp = new Date().toISOString();
+    current.landing_page = pathname;
+    current.referrer = document.referrer || 'direct';
+
+    // First touch is written once and never overwritten.
+    const firstTouch = stored.first_touch || { ...current, attribution_type: 'first_touch' };
+    if (!stored.first_touch) {
+      safeWrite('local', STORAGE_KEY, { ...stored, first_touch: firstTouch });
+    }
+
+    // Last touch always updates.
+    const lastTouch = { ...current, attribution_type: 'last_touch' };
+    safeWrite('session', SESSION_KEY, lastTouch);
+
+    setUtmData({ first_touch: firstTouch, last_touch: lastTouch, current });
+  }, [pathname]);
 
   return {
     utmData,
@@ -94,57 +70,31 @@ function UTMTrackingInner() {
     getAttributionData: () => ({
       first_touch: utmData.first_touch || {},
       last_touch: utmData.last_touch || utmData.current || {},
-      multi_touch: getAllTouchPoints()
+      multi_touch: getAllTouchPoints(),
     }),
     clearUTMData: () => {
-      localStorage.removeItem(STORAGE_KEY);
-      sessionStorage.removeItem(SESSION_KEY);
-      setUtmData({});
-    }
-  };
-}
-
-export function useUTMTracking() {
-  // Fallback hook that doesn't use useSearchParams
-  const [utmData, setUtmData] = useState({
-    first_touch: {},
-    last_touch: {},
-    current: {}
-  });
-  useEffect(() => {
-    // Only use stored data during SSR/SSG
-    const storedData = getStoredUTMData();
-    const sessionData = getSessionUTMData();
-    setUtmData({
-      first_touch: storedData.first_touch || {},
-      last_touch: sessionData || {},
-      current: {}
-    });
-  }, []);
-
-  return {
-    utmData,
-    hasUTMParams: false, // Always false in fallback mode
-    getAttributionData: () => ({
-      first_touch: utmData.first_touch || {},
-      last_touch: utmData.last_touch || {},
-      multi_touch: getAllTouchPoints()
-    }),
-    clearUTMData: () => {
-      if (typeof window !== 'undefined') {
+      try {
         localStorage.removeItem(STORAGE_KEY);
         sessionStorage.removeItem(SESSION_KEY);
-        setUtmData({
-          first_touch: {},
-          last_touch: {},
-          current: {}
-        });
+      } catch {
+        // storage unavailable (private mode / blocked cookies)
       }
-    }
+      setUtmData(EMPTY_STATE);
+    },
   };
 }
 
 // Helper functions
+function safeWrite(kind, key, value) {
+  try {
+    const store = kind === 'local' ? localStorage : sessionStorage;
+    store.setItem(key, JSON.stringify(value));
+  } catch {
+    // Safari private mode and blocked-storage settings throw on setItem.
+    // Attribution is best-effort; never break a page over it.
+  }
+}
+
 function getStoredUTMData() {
   try {
     if (typeof window === 'undefined') return {};
@@ -169,7 +119,7 @@ function getAllTouchPoints() {
   const touchPoints = [];
   const stored = getStoredUTMData();
   const session = getSessionUTMData();
-  
+
   if (stored.first_touch) {
     touchPoints.push(stored.first_touch);
   }
@@ -179,7 +129,7 @@ function getAllTouchPoints() {
   if (session && session.timestamp !== stored.first_touch?.timestamp) {
     touchPoints.push(session);
   }
-  
+
   return touchPoints;
 }
 
@@ -188,7 +138,7 @@ export function getUTMData() {
   return {
     first_touch: getStoredUTMData().first_touch || {},
     last_touch: getSessionUTMData() || {},
-    multi_touch: getAllTouchPoints()
+    multi_touch: getAllTouchPoints(),
   };
 }
 
@@ -196,19 +146,19 @@ export function getUTMData() {
 export function appendUTMParams(url, utmParams = {}) {
   try {
     const urlObj = new URL(url, window.location.origin);
-    
+
     // Only append to internal links
     if (urlObj.origin !== window.location.origin) {
       return url;
     }
-    
+
     // Append UTM params if they exist
     Object.entries(utmParams).forEach(([key, value]) => {
       if (value && UTM_PARAMS.includes(key)) {
         urlObj.searchParams.set(key, value);
       }
     });
-    
+
     return urlObj.toString();
   } catch {
     return url;

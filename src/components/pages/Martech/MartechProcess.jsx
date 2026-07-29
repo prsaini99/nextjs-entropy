@@ -3,33 +3,36 @@
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import MartechCTA from "./MartechCTA";
 
+// Timings describe ONE project — the common case, and the thing that makes the
+// speed claim concrete. A full stack is several of these run in sequence, which
+// the intro copy says explicitly so nobody expects a whole stack in a fortnight.
 const steps = [
     {
         number: "01",
         title: "Stack Audit & Roadmap",
         description:
-            "We map your current tools, spend and data flows, find the shelfware and integration debt, and identify what to keep, replace and build — sequenced by ROI.",
-        duration: "Week 1–2",
+            "We map your current tools, spend and data flows, find the shelfware and integration debt, and identify what to keep, replace and build, sequenced by ROI.",
+        duration: "Days 1–3",
     },
     {
         number: "02",
         title: "Design the System",
         description:
-            "Architecture, data schema and UX for the platform that replaces the sprawl — designed around your actual campaign workflows, approvals and reporting.",
-        duration: "Week 2–4",
+            "Architecture, data schema and UX for the system that replaces the sprawl, designed around your actual campaign workflows, approvals and reporting.",
+        duration: "Days 3–7",
     },
     {
         number: "03",
         title: "Build & Integrate",
         description:
-            "AI-accelerated delivery in weekly increments: API integrations (Meta, Google, Instagram, email, CRM), automation, dashboards and admin — live in your environment.",
-        duration: "Week 4–12",
+            "AI-accelerated delivery: API integrations (Meta, Google, Instagram, email, CRM), automation, dashboards and admin, live in your environment and reviewed by senior engineers.",
+        duration: "Week 2–3",
     },
     {
         number: "04",
         title: "Run & Compound",
         description:
-            "Managed retainer covering monitoring, API version upgrades and new capabilities — so you never need an in-house platform team to own your stack.",
+            "Managed retainer covering monitoring, API version upgrades and new capabilities, so you never need an in-house platform team to own your stack.",
         duration: "Ongoing",
     },
 ];
@@ -43,15 +46,18 @@ export default function MartechProcess() {
                         <AnimatedInViewDiv className="about-features-header">
                             <div className="header">
                                 <h2 className="heading-4 text-weight-medium">
-                                    From Tool Sprawl to Owned Stack in 90 Days
+                                    From Tool Sprawl to Owned Stack in Weeks, Not Quarters
                                 </h2>
                                 <div className="opacity-60">
                                     <div className="max-w-4xl">
                                         <p>
                                             &ldquo;Building takes too long&rdquo; was true in 2020.
-                                            AI-accelerated engineering compressed the timeline — and
-                                            the managed retainer answers &ldquo;who maintains
-                                            it?&rdquo;
+                                            AI-accelerated engineering collapsed the timeline: a
+                                            single project runs this path in 2–3 weeks. Replacing a
+                                            whole stack is several projects in sequence. Still
+                                            weeks, and you are using the first one while we build
+                                            the next. The managed retainer answers &ldquo;who
+                                            maintains it?&rdquo;
                                         </p>
                                     </div>
                                 </div>
@@ -82,7 +88,7 @@ export default function MartechProcess() {
                         </div>
 
                         <AnimatedInViewDiv className="double-button-component margin-top-button-features">
-                            <MartechCTA title="Start My 90-Day Plan" />
+                            <MartechCTA title="Start My Build" location="process" />
                         </AnimatedInViewDiv>
                     </div>
                 </div>
