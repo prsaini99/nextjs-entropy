@@ -3,36 +3,25 @@
 import { useState } from "react";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import MartechCTA from "./MartechCTA";
+import martechFaqs from "@/data/martechFaqs";
+import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
-const faqs = [
-    {
-        question: "Why build custom martech instead of buying SaaS?",
-        answer: "The average enterprise marketing stack has 91 tools and only 49% feature utilization — you pay for sprawl you don't use, in schemas you don't own. Building makes sense when a workflow is core to how you win: ad-ops at scale, proprietary lead-gen data, creator relationships, creative scoring. One in four new martech capabilities are now built rather than bought. We help you decide which quarter that should be for you — sometimes the honest answer is 'keep the SaaS.'",
-    },
-    {
-        question: "How long does a custom martech platform take?",
-        answer: "A focused first release — one workflow, fully integrated — typically ships in 6–12 weeks. Our stack audit in week one sequences the roadmap by ROI so you see value from the first increment, not after a year-long replatform.",
-    },
-    {
-        question: "Who maintains it after launch? We don't have a platform team.",
-        answer: "We do, on a managed retainer: monitoring, third-party API version upgrades (Meta and Google change theirs constantly), security patches and new capabilities. You own the code and the data either way — the retainer is optional, not lock-in.",
-    },
-    {
-        question: "What is TRIBE v2 creative analysis, exactly?",
-        answer: "A neural pre-testing lab. We run your video ads through a tri-modal brain-encoding model that predicts human cortical attention second by second, then distill it into five indices — Hook Strength, Attention Retention, Value Resonance, CTA Readiness and a Composite Score — each tagged with its confidence level. You rank a batch of creatives before spending on media, then we calibrate the scores against your real CTR and ROAS so they become predictive for your account.",
-    },
-    {
-        question: "Can you integrate with our existing CRM and ad accounts?",
-        answer: "Yes — that's most of the work. We've shipped production integrations with the Meta Graph API, Instagram Graph API, Google APIs, Stripe, Razorpay, HubSpot-style CRMs, Google Sheets, Zoom, and warehouse destinations. Custom martech that doesn't talk to your CRM is just another silo; the CRM stays the gravitational center.",
-    },
-    {
-        question: "What does this cost compared to our current SaaS spend?",
-        answer: "A typical mid-market stack runs $50k–$250k a year in licenses, roughly half of it shelfware. A custom build is a one-time engineering investment plus modest infrastructure and an optional retainer — usually crossing break-even against license spend within 12–24 months, with the asset and the data compounding after that. The stack audit gives you the actual numbers for your case before you commit.",
-    },
-];
-
-export default function MartechFAQ() {
+/**
+ * Renders an FAQ accordion. Defaults to the hub set so the existing
+ * <MartechFAQ /> call on /martech keeps working with no props.
+ *
+ * Pass `faqs` to render a page-specific set — see data/martechFaqs.js. The
+ * matching FAQPage JSON-LD is emitted by the route, not here, because this is a
+ * client component.
+ */
+export default function MartechFAQ({
+    faqs = martechFaqs.hub,
+    heading = "Questions Marketing Leaders Ask Us",
+    ctaTitle = "Still Have Questions? Talk to Us",
+}) {
     const [open, setOpen] = useState(0);
+
+    if (!faqs?.length) return null;
 
     return (
         <section id="martech-faq">
@@ -42,7 +31,7 @@ export default function MartechFAQ() {
                         <AnimatedInViewDiv className="about-features-header">
                             <div className="header">
                                 <h2 className="heading-4 text-weight-medium">
-                                    Questions Marketing Leaders Ask Us
+                                    {heading}
                                 </h2>
                             </div>
                         </AnimatedInViewDiv>
@@ -55,7 +44,19 @@ export default function MartechFAQ() {
                                     className="border border-white/10 rounded-lg bg-white/[0.02] overflow-hidden"
                                 >
                                     <button
-                                        onClick={() => setOpen(open === index ? -1 : index)}
+                                        onClick={() => {
+                                            const opening = open !== index;
+                                            setOpen(opening ? index : -1);
+                                            // Only the open, not the close. Which question they
+                                            // expand is the objection they actually have.
+                                            if (opening) {
+                                                trackEvent(ANALYTICS_EVENTS.FAQ_OPEN, {
+                                                    faq_question: faq.question,
+                                                    faq_position: index + 1,
+                                                    faq_section: heading,
+                                                });
+                                            }
+                                        }}
                                         className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-white/[0.03] transition-colors"
                                         aria-expanded={open === index}
                                     >
@@ -78,7 +79,7 @@ export default function MartechFAQ() {
                         </div>
 
                         <AnimatedInViewDiv className="double-button-component margin-top-button-features">
-                            <MartechCTA title="Still Have Questions? Talk to Us" />
+                            <MartechCTA title={ctaTitle} location="faq" />
                         </AnimatedInViewDiv>
                     </div>
                 </div>

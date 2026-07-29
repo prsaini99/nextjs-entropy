@@ -1,5 +1,6 @@
 import ShopifyShowcase from "@/components/pages/Martech/ShopifyShowcase";
 import Banner from "@/components/Banner";
+import MartechLeadForm from "@/components/pages/Martech/MartechLeadForm";
 
 export const metadata = {
   title: "Shopify Websites & E-Commerce Stores | StackBinary™ MarTech",
@@ -21,11 +22,27 @@ export default function ShopifyWebsitesPage() {
   return (
     <>
       <ShopifyShowcase />
+      {/* On-page form so the CTAs scroll rather than navigate to /martech. */}
+      <section>
+        <div className="padding-global py-16">
+          <div className="w-layout-blockcontainer container w-container">
+            <div className="max-w-3xl mx-auto">
+              <MartechLeadForm
+                defaultService="Shopify / E-Commerce Store"
+                source="martech/shopify-websites"
+                heading="Get a Quote for Your Store"
+                subheading="Tell us what you need and we'll come back with scope, timeline and cost."
+                submitLabel="Get My Store Quote →"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       <Banner
         bannerStyle={{
           backgroundImage: "linear-gradient(180deg, #000000, #00000000)",
         }}
-        ctaHref="/martech#martech-lead-form"
+        ctaHref="#martech-lead-form"
         ctaLabel="Get a Store & Stack Quote"
         title="Want a Store That Sells?"
         description="Storefront + email automation + ad intelligence + loyalty in one connected system — the store fills the funnel, the stack converts it."

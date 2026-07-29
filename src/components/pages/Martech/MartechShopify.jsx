@@ -25,7 +25,7 @@ export default function MartechShopify() {
                                     <div className="max-w-4xl">
                                         <p>
                                             Storefronts that convert, integrated with the marketing
-                                            stack that fills them — every store is live. Beyond
+                                            stack that fills them, every store is live. Beyond
                                             Shopify, we&apos;ve shipped global commerce platforms
                                             like Steve Madden ($100M+ online sales) and Utsav
                                             Fashion ($20M+ annual revenue in 50+ countries).
@@ -70,7 +70,7 @@ export default function MartechShopify() {
                                 </p>
                             </div>
                             <div className="double-button-component">
-                                <MartechCTA title="Get a Store & Stack Quote" />
+                                <MartechCTA title="Get a Store & Stack Quote" location="shopify" />
                                 <LearnMoreButton
                                     title={`View All ${shopifyStores.length} Stores`}
                                     routeTo="/martech/shopify-websites"
