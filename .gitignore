@@ -41,3 +41,11 @@ yarn-error.log*
 next-env.d.ts
 config.bat
 .env.vercel
+
+# Google service-account keys (GA4 Data API). Never commit these.
+ga-service-account.json
+*-service-account.json
+*.serviceaccount.json
+# GCP downloads keys as <project-id>-<hash>.json
+lexical-cider-*.json
+*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].json

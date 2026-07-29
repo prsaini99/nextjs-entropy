@@ -37,7 +37,8 @@ export async function POST(request) {
 			fullName, workEmail, service, budget, timeline,
 			projectSummary, companyWebsite, phone, privacyConsent,
 			utm_source, utm_medium, utm_campaign, utm_term, utm_content,
-			attribution_data, landing_page, referrer, lead_source
+			attribution_data, landing_page, referrer, lead_source,
+			gclid, gbraid, wbraid, fbclid, msclkid, click_id_captured_at
 		} = body;
 
 		if (!fullName || !workEmail || !service || !timeline) {
@@ -66,6 +67,14 @@ export async function POST(request) {
 			landing_page: landing_page || null,
 			referrer: referrer || null,
 			lead_source: lead_source || 'form',
+			// Ad click IDs. gclid is what makes Google Ads offline conversion
+			// import possible — uploading "this click became revenue" later.
+			gclid: gclid || null,
+			gbraid: gbraid || null,
+			wbraid: wbraid || null,
+			fbclid: fbclid || null,
+			msclkid: msclkid || null,
+			click_id_captured_at: click_id_captured_at || null,
 			attribution_data: attribution_data ? (typeof attribution_data === 'string' ? JSON.parse(attribution_data) : attribution_data) : null,
 		};
 
@@ -164,6 +173,15 @@ export async function POST(request) {
 		
 		if (referrer && referrer !== 'direct') {
 			emailContent += `Referrer: ${referrer}\n`;
+		}
+
+		if (gclid || gbraid || wbraid || fbclid || msclkid) {
+			emailContent += `\nPaid click — this lead came from an ad:\n`;
+			if (gclid) emailContent += `Google gclid: ${gclid}\n`;
+			if (gbraid) emailContent += `Google gbraid: ${gbraid}\n`;
+			if (wbraid) emailContent += `Google wbraid: ${wbraid}\n`;
+			if (fbclid) emailContent += `Meta fbclid: ${fbclid}\n`;
+			if (msclkid) emailContent += `Microsoft msclkid: ${msclkid}\n`;
 		}
 		
 		// Add attribution model data if available
