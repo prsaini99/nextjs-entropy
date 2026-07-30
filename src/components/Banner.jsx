@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 import AnimatedInViewDiv from './Animate/AppearInView'
 
@@ -55,11 +56,15 @@ export default function Banner({
                         </div>
                         <div className="banner-overlay"></div>
                         <div className="banner-background" style={bannerStyle}>
-                            <img
+                            {/* next/image so the 400KB+ source JPEGs are served as
+                                mobile-sized WebP variants — this banner renders on the
+                                paid landing pages, where every request is bought. */}
+                            <Image
                                 sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, 92vw"
-                                srcSet={image || "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%2520Image-p-500.jpg 500w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%2520Image-p-800.jpg 800w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%2520Image-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%2520Image-p-1600.jpg 1600w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%2520Image-p-2000.jpg 2000w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%2520Image-p-2600.jpg 2600w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%20Image.jpg 2688w"}
                                 alt="Banner Image"
                                 src={image || "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%20Image.jpg"}
+                                width={1920}
+                                height={1080}
                                 loading="lazy"
                                 className='z-10'
                             />

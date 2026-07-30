@@ -32,15 +32,19 @@ export default function FeaturesWrapper() {
                                 <AnimatedInViewDiv key={index} className="features-vantages">
                                     {index % 2 === 1 && (
                                         <div className="features-image-container">
-                                            <div className="features-image-wrapper">
-                                                <img
-                                                    sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
-                                                    src={feature.imageSrc}
-                                                    alt="Features Image"
-                                                    className="image"
-                                                />
-                                                <div className="gradient-overlay bigger"></div>
-                                            </div>
+                                            {/* Linked like the card's button: Clarity logged dead
+                                                clicks on these images — taps now go to the service. */}
+                                            <Link href={`/services/${feature.slug}`} aria-label={feature.title}>
+                                                <div className="features-image-wrapper">
+                                                    <img
+                                                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
+                                                        src={feature.imageSrc}
+                                                        alt="Features Image"
+                                                        className="image"
+                                                    />
+                                                    <div className="gradient-overlay bigger"></div>
+                                                </div>
+                                            </Link>
                                         </div>
                                     )}
                                     <div className="features-vantages-content">
@@ -89,15 +93,17 @@ export default function FeaturesWrapper() {
                                     </div>
                                     {index % 2 === 0 && (
                                         <div className="features-image-container">
-                                            <div className="features-image-wrapper">
-                                                <img
-                                                    sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
-                                                    src={feature.imageSrc || ""}
-                                                    alt="Features Image"
-                                                    className="image"
-                                                />
-                                                <div className="gradient-overlay bigger"></div>
-                                            </div>
+                                            <Link href={`/services/${feature.slug}`} aria-label={feature.title}>
+                                                <div className="features-image-wrapper">
+                                                    <img
+                                                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
+                                                        src={feature.imageSrc || ""}
+                                                        alt="Features Image"
+                                                        className="image"
+                                                    />
+                                                    <div className="gradient-overlay bigger"></div>
+                                                </div>
+                                            </Link>
                                         </div>
                                     )}
                                 </AnimatedInViewDiv>
