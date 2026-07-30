@@ -79,12 +79,18 @@ export default function ElevetBussiness() {
                                             </Link>
                                         </div>
                                         <div className="right-content">
-                                            <div className="steps-image"><img
-                                                sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 46vw, 47vw"
-                                                srcSet={`${step.image} 500w, ${step.image} 800w, ${step.image} 1080w`}
-                                                alt="Stack Image"
-                                                src={step.image}
-                                                loading="lazy" className="image" /></div>
+                                            {/* The image is wrapped in the same link as the card's
+                                                button. Clarity logged mobile dead clicks on these —
+                                                a card-shaped image invites the tap, so the tap
+                                                should go where the button goes. */}
+                                            <Link href={step.buttonLink} aria-label={step.title}>
+                                                <div className="steps-image"><img
+                                                    sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 46vw, 47vw"
+                                                    srcSet={`${step.image} 500w, ${step.image} 800w, ${step.image} 1080w`}
+                                                    alt="Stack Image"
+                                                    src={step.image}
+                                                    loading="lazy" className="image" /></div>
+                                            </Link>
                                         </div>
                                     </div>
                                 </AnimatedInViewDiv>

@@ -2,8 +2,6 @@ import "./globals.css";
 import "./style.css";
 import ConditionalLayout from "@/components/ConditionalLayout";
 import Analytics from "@/components/Analytics";
-import Script from "next/script";
-import Head from "next/head";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
 export const metadata = {
@@ -30,17 +28,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // Note: this layout deliberately loads no jQuery and no Webflow runtime.
+  // A previous version listed both inside a next/head <Head>, which is a no-op
+  // in the App Router — verified against production HTML: neither script was
+  // ever emitted. The site's interactions are all React; the Webflow export
+  // contributes CSS only.
   return (
     <html lang="en">
-      <Head>
-        <Script
-          src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66f30c8d2ac082d2aee64be2"
-          strategy="beforeInteractive" // Loads the script before the page renders
-          integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-          crossOrigin="anonymous"
-        />
-        <Script type="text/javascript" src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/js/webflow.e856b9eae.js" />
-      </Head>
       <body className="antialiased">
         <Analytics />
         <ConditionalLayout>
