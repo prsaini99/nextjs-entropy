@@ -49,3 +49,18 @@ ga-service-account.json
 # GCP downloads keys as <project-id>-<hash>.json
 lexical-cider-*.json
 *-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].json
+
+# Marketing loop snapshots. Contains lead PII (names, emails, phone numbers)
+# pulled from Supabase, plus daily GA4/Clarity captures. Local only by decision —
+# see marketing/DESIGN.md §8. Generated documents from the same folder too.
+marketing/data/
+marketing/joined/
+docs/ads/StackBinary-*.doc
+docs/ads/StackBinary-*.rtf
+
+# OAuth client secrets (Google Ads API). GCP names the download
+# client_secret_<id>.apps.googleusercontent.com.json — which matched none of
+# the patterns above, so it landed in the repo untracked and visible to git.
+client_secret_*.json
+*.apps.googleusercontent.com.json
+google-ads.yaml

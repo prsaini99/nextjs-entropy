@@ -1,4 +1,5 @@
 import { supabase } from './supabase';
+import { isAdminEmail } from './admins';
 
 export async function verifyAuth(request) {
   try {
@@ -35,16 +36,10 @@ export async function verifyAuth(request) {
       };
     }
 
-    // Optional: Check if user is admin (you can add custom logic here)
-    // For example, check if user email is in allowed admin list
-    const ADMIN_EMAILS = [
-      'prateek@stackbinary.io',
-      // Add other admin emails here
-    ];
-
-    const isAdmin = ADMIN_EMAILS.includes(user.email);
-    
-    if (!isAdmin) {
+    // Allowlist lives in lib/admins.js so middleware.js and this check can never
+    // drift apart. isAdminEmail also normalises case — the previous inline
+    // Array.includes was case-sensitive, so Prateek@… would have been rejected.
+    if (!isAdminEmail(user.email)) {
       return {
         authenticated: false,
         error: 'User is not an admin',

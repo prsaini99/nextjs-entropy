@@ -46,6 +46,7 @@ export const ANALYTICS_EVENTS = {
   FORM_ABANDON: 'form_abandon',
   NEWSLETTER_SIGNUP: 'newsletter_signup',
   CHAT_OPEN: 'chat_open',
+  CHAT_MESSAGE: 'chat_message',
   
   // Conversion Events
   LEAD_GENERATED: 'generate_lead',
@@ -128,6 +129,10 @@ const CLARITY_UPGRADE = new Set([
   'generate_lead',
   'demo_interact',
   'calendly_click',
+  // Someone who types into the chat is asking a question out loud. Those
+  // recordings are the cheapest source of real objections we have, and they are
+  // rare enough to be sampled away without an upgrade.
+  'chat_message',
 ]);
 
 // Events worth being able to filter recordings by. Deliberately not everything —
@@ -143,6 +148,8 @@ const CLARITY_TAGGED = new Set([
   'faq_open',
   'case_study_open',
   'form_abandon',
+  'chat_open',
+  'chat_message',
 ]);
 
 // Track custom events with UTM data
