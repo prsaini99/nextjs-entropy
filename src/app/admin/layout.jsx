@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AuthGuard, useAuth } from '@/lib/auth';
-import { adminFetch } from '@/lib/admin-fetch';
+import { adminFetch, adminDownload } from '@/lib/admin-fetch';
 
 export default function AdminLayout({ children }) {
   return (
@@ -58,7 +58,20 @@ function AdminDashboardLayout({ children }) {
 
   const quickActions = [
     { name: 'New Lead', icon: '➕', action: () => window.open('/admin/leads', '_blank') },
-    { name: 'Export Data', icon: '📥', action: () => window.open('/api/admin/export?type=leads&format=xlsx', '_blank') },
+    // Not window.open: a navigation cannot carry an Authorization header, which
+    // is why this endpoint had to be left open. adminDownload fetches it with the
+    // session token and saves the blob instead.
+    {
+      name: 'Export Data',
+      icon: '📥',
+      action: async () => {
+        try {
+          await adminDownload('/api/admin/export?type=leads&format=xlsx', 'leads.xlsx');
+        } catch (err) {
+          alert(`Export failed: ${err.message}`);
+        }
+      },
+    },
     { name: 'Analytics', icon: '📈', action: () => window.open('/admin/analytics', '_blank') },
   ];
 

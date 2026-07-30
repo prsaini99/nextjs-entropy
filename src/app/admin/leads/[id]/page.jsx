@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getLeadPriority } from '@/lib/supabase';
+import { adminFetch, adminPut } from '@/lib/admin-fetch';
 
 export default function LeadDetailPage() {
   const params = useParams();
@@ -23,7 +24,7 @@ export default function LeadDetailPage() {
 
   const fetchLeadDetails = async () => {
     try {
-      const response = await fetch(`/api/admin/leads/${params.id}`);
+      const response = await adminFetch(`/api/admin/leads/${params.id}`);
       if (!response.ok) {
         throw new Error('Failed to fetch lead details');
       }
@@ -40,13 +41,7 @@ export default function LeadDetailPage() {
 
   const updateLead = async (updates) => {
     try {
-      const response = await fetch(`/api/admin/leads/${params.id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updates),
-      });
+      const response = await adminPut(`/api/admin/leads/${params.id}`, updates);
 
       if (!response.ok) {
         throw new Error('Failed to update lead');
@@ -64,15 +59,9 @@ export default function LeadDetailPage() {
 
     setSavingNote(true);
     try {
-      const response = await fetch('/api/admin/leads', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id: params.id,
-          notes: newNote,
-        }),
+      const response = await adminPut('/api/admin/leads', {
+        id: params.id,
+        notes: newNote,
       });
 
       if (!response.ok) {
