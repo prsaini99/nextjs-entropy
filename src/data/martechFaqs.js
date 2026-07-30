@@ -161,11 +161,55 @@ const martechFaqs = {
         },
     ],
 
+    // CRM page. Questions lead with the searched vocabulary for this page:
+    // "lead management software" and "custom crm development". The two
+    // data-product FAQs that used to live here (scraping legality, subscription
+    // databases) moved to "sales-intelligence" when the pages split.
     "lead-intelligence": [
+        {
+            question: "What is lead management software?",
+            answer:
+                "A system that captures every lead from every source, tracks each conversation, and makes sure follow-ups happen. Ours goes further: WhatsApp threads, call recordings and email all land in one timeline per lead, with AI scoring that tells reps who to call next and what to say.",
+        },
+        {
+            question: "Can it really capture WhatsApp, calls and email in one place?",
+            answer:
+                "Yes, that's the core of it. A WhatsApp inbox with live chats and imported history, call recordings transcribed with multilingual AI, Hindi/English code-switching included, and connected mailboxes, all attached to the lead they belong to. Nothing lives in a rep's personal phone.",
+        },
+        {
+            question: "What is AI lead scoring?",
+            answer:
+                "A model that reads every interaction, calls, WhatsApp threads, emails, and assigns each lead a score, a temperature and a next action. Reps open the CRM already knowing who to call.",
+        },
         {
             question: "How do you build a B2B lead generation system?",
             answer:
                 "Three parts: a data engine that finds and enriches prospects, a CRM that captures every WhatsApp, call and email in one timeline, and AI scoring that tells reps who to call next and what to say. Most teams have the first two and are missing the third.",
+        },
+        {
+            question: "Can you build a CRM around how we actually sell?",
+            answer:
+                "Yes, and it's one of the least expensive things we do, focused CRM builds have started around $500, usually less than a year of seats on an off-the-shelf tool that still doesn't fit. We run our own business development on the CRM we built ourselves.",
+        },
+    ],
+
+    // TradeToIndia DB page. Split from lead-intelligence 2026-07-30; the first
+    // two questions migrated with it because they're about the data product.
+    "sales-intelligence": [
+        {
+            question: "What is a sales intelligence platform?",
+            answer:
+                "A system that turns raw market data into accounts your team can actually sell to: which companies exist in a segment, who works there, how to reach them, and, in our case, what you could plausibly pitch each one. Ours runs as TradeToIndia DB, the same pipelines that feed our own CRM.",
+        },
+        {
+            question: "How does B2B data enrichment work?",
+            answer:
+                "Upload a CSV or point the scrapers at a segment. Companies gain firmographics and employee data from the web and LinkedIn; people gain verified emails and phone numbers. You watch it enrich live with progress streaming, then export or keep it flowing as a live lead source.",
+        },
+        {
+            question: "What are AI talking points?",
+            answer:
+                "For each company, AI reads the scraped data and recommends what you could sell them and the angle to open with. It's the difference between a cold template and a first message that names a reason to talk, most contact databases stop at the phone number.",
         },
         {
             question: "Is web scraping for lead generation legal in India?",
@@ -178,14 +222,9 @@ const martechFaqs = {
                 "Those are subscriptions to someone else's data, priced per seat and per credit. This is your own pipeline and your own schema, in your own warehouse, enriched continuously, and it doesn't get more expensive as your team grows.",
         },
         {
-            question: "What is AI lead scoring?",
+            question: "Can my customers use it too?",
             answer:
-                "A model that reads every interaction, calls, WhatsApp threads, emails, and assigns each lead a score, a temperature and a next action. Reps open the CRM already knowing who to call.",
-        },
-        {
-            question: "Can you build a CRM around how we actually sell?",
-            answer:
-                "Yes, and it's one of the least expensive things we do, focused CRM builds have started around $500, usually less than a year of seats on an off-the-shelf tool that still doesn't fit. We run our own business development on the CRM we built ourselves.",
+                "Yes. Access is metered by a credit wallet, so you can run it for your own team or resell enrichment to your customers, usage-based, with no seat licences.",
         },
     ],
 

@@ -1,19 +1,57 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
+import { trackEvent, ANALYTICS_EVENTS } from '@/lib/analytics';
+import { trackLeadSubmit } from '@/lib/trackLead';
+
+/**
+ * Floating chat launcher + panel.
+ *
+ * Three bugs fixed here, all of which cost real traffic:
+ *
+ * 1. Positioning. The previous version wrote `position: 'fixed !important'` in a
+ *    React inline style object. React assigns styles via the CSSOM IDL setter
+ *    (node.style.position = value), which parses the value against the property
+ *    grammar — and `!important` is not part of that grammar, so the assignment is
+ *    silently rejected. Every !important declaration was dropped, `position` fell
+ *    back to `static`, and the launcher rendered in normal document flow below the
+ *    footer instead of floating. Layout now lives in CSS, where !important would
+ *    be legal and, being unnecessary, is absent.
+ *
+ * 2. Mobile. The panel was a hardcoded 380px anchored 24px from the right — 404px
+ *    of demand on a 360px Android viewport. Inline styles cannot express media
+ *    queries, so there was no mobile path at all. Clarity recorded a visitor from
+ *    Google Search rage-clicking the greeting for ~5 minutes before leaving. Under
+ *    640px the panel is now a full-screen sheet.
+ *
+ * 3. Untracked conversions. The API can return lead_collected, meaning the chat
+ *    captured a lead — and that only ever reached console.log. Chat leads never
+ *    appeared in GA4 and could never be imported as an Ads conversion. It now
+ *    fires generate_lead through the same path as the forms.
+ */
+
+// Escape first, then linkify. The previous version passed the model's reply
+// straight to dangerouslySetInnerHTML after a narrow regex replace, so any other
+// markup in the response rendered as HTML. Escaping first makes injected markup
+// inert; the only tags in the output are the anchors we add ourselves.
+function escapeHtml(s) {
+    return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function linkify(text) {
+    return escapeHtml(text).replace(
+        /(https?:\/\/[^\s<]+)/g,
+        '<a href="$1" target="_blank" rel="noopener noreferrer" class="chat-link">$1</a>'
+    );
+}
 
 export default function FloatingChat() {
-    // Debug: Log when component mounts
-    useEffect(() => {
-        console.log('FloatingChat component mounted');
-        return () => console.log('FloatingChat component unmounted');
-    }, []);
     const [isOpen, setIsOpen] = useState(false);
     const [sessionId, setSessionId] = useState(null);
-    
-    // Debug: Log state changes
-    useEffect(() => {
-        console.log('Chat widget isOpen:', isOpen);
-    }, [isOpen]);
     const [messages, setMessages] = useState([
         {
             id: 1,
@@ -26,14 +64,31 @@ export default function FloatingChat() {
     const [isLoading, setIsLoading] = useState(false);
     const [leadCollected, setLeadCollected] = useState(false);
     const messagesEndRef = useRef(null);
-
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    };
+    const inputRef = useRef(null);
+    const messageCount = useRef(0);
 
     useEffect(() => {
-        scrollToBottom();
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages]);
+
+    const openChat = () => {
+        setIsOpen(true);
+        trackEvent(ANALYTICS_EVENTS.CHAT_OPEN, { entry_path: window.location.pathname });
+        // Focus the input on open. The rage clicks in Clarity were on the greeting
+        // bubble, which is the natural place to tap when the real target isn't
+        // obvious — putting the caret in the input makes the affordance explicit.
+        setTimeout(() => inputRef.current?.focus(), 100);
+    };
+
+    const closeChat = () => setIsOpen(false);
+
+    // Escape closes the panel — expected of any modal-ish surface.
+    useEffect(() => {
+        if (!isOpen) return;
+        const onKey = (e) => { if (e.key === 'Escape') closeChat(); };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [isOpen]);
 
     const sendMessage = async (e) => {
         e.preventDefault();
@@ -50,344 +105,299 @@ export default function FloatingChat() {
         setInputMessage('');
         setIsLoading(true);
 
+        messageCount.current += 1;
+        trackEvent(ANALYTICS_EVENTS.CHAT_MESSAGE, { message_index: messageCount.current });
+
         try {
             const response = await fetch('/api/chat', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    user: inputMessage,
-                    session_id: sessionId 
-                }),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ user: inputMessage, session_id: sessionId }),
             });
 
             const data = await response.json();
-            
-            if (response.ok) {
-                // Update session ID if not set
-                if (!sessionId && data.session_id) {
-                    setSessionId(data.session_id);
-                }
 
-                // Check if lead was collected
+            if (response.ok) {
+                if (!sessionId && data.session_id) setSessionId(data.session_id);
+
+                // A lead captured in chat is a lead. Route it through the same
+                // helper the forms use so GA4, GTM and any Ads conversion import
+                // see one consistent generate_lead regardless of capture surface.
                 if (data.lead_collected && !leadCollected) {
                     setLeadCollected(true);
-                    console.log('Lead collected:', data.lead_data);
+                    trackLeadSubmit({ form: 'chat', service: data.lead_data?.service || '' });
                 }
 
-                const botMessage = {
+                setMessages(prev => [...prev, {
                     id: Date.now() + 1,
                     text: data.answer,
                     isBot: true,
                     timestamp: new Date(),
                     leadCollected: data.lead_collected || false
-                };
-                setMessages(prev => [...prev, botMessage]);
+                }]);
             } else {
                 throw new Error(data.error || 'Something went wrong');
             }
         } catch (error) {
             console.error('Chat error:', error);
-            const errorMessage = {
+            setMessages(prev => [...prev, {
                 id: Date.now() + 1,
                 text: "I'm experiencing technical difficulties. Please try again or contact us directly: https://stackbinary.io/contact-us",
                 isBot: true,
                 timestamp: new Date()
-            };
-            setMessages(prev => [...prev, errorMessage]);
+            }]);
         } finally {
             setIsLoading(false);
         }
     };
 
-    // Always render the button for debugging
-    if (!isOpen) {
-        console.log('Rendering closed chat button');
-        return (
-            <div style={{
-                position: 'fixed !important',
-                bottom: '24px !important',
-                right: '24px !important',
-                zIndex: '9999 !important',
-                width: '200px',
-                height: '50px'
-            }}>
+    return (
+        <>
+            {!isOpen && (
                 <button
-                    onClick={() => {
-                        console.log('Chat button clicked');
-                        setIsOpen(true);
-                    }}
-                    style={{
-                        display: 'flex !important',
-                        alignItems: 'center',
-                        gap: '8px',
-                        padding: '12px 20px',
-                        borderRadius: '50px',
-                        background: '#ed5145',
-                        boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
-                        cursor: 'pointer',
-                        border: 'none',
-                        color: '#ffffff',
-                        fontSize: '14px',
-                        fontWeight: 'bold',
-                        width: '100%',
-                        height: '100%'
-                    }}
+                    type="button"
+                    className="chat-launcher"
+                    onClick={openChat}
+                    aria-label="Open chat with StackBinary assistant"
                 >
                     💬 Chat with us
                 </button>
-            </div>
-        );
-    }
+            )}
 
-    return (
-        <div style={{
-            position: 'fixed',
-            bottom: '24px',
-            right: '24px',
-            zIndex: 9999
-        }}>
-            <div 
-                style={{
-                    width: '380px',
-                    height: '500px',
-                    background: '#1a1a1a',
-                    border: '1px solid #333',
-                    borderRadius: '12px',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    flexDirection: 'column'
-                }}
-            >
-                {/* Header */}
-                <div 
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '16px',
-                        borderBottom: '1px solid #333',
-                        background: '#ed5145'
-                    }}
+            {isOpen && (
+                <div
+                    className="chat-panel"
+                    role="dialog"
+                    aria-modal="false"
+                    aria-label="StackBinary assistant"
                 >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                        <div 
-                            style={{ 
-                                width: '40px',
-                                height: '40px',
-                                borderRadius: '50%',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backgroundColor: 'rgba(255,255,255,0.2)' 
-                            }}
-                        >
-                            <svg 
-                                width="20" 
-                                height="20" 
-                                viewBox="0 0 24 24" 
-                                fill="none" 
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path 
-                                    d="M12 2C6.48 2 2 6.48 2 12C2 13.54 2.36 14.98 3.01 16.26L2 22L7.74 20.99C9.02 21.64 10.46 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" 
-                                    fill="white"
-                                />
-                            </svg>
-                        </div>
-                        <div>
-                            <div style={{ color: 'white', fontWeight: '500' }}>
-                                StackBinary™ Assistant
+                    <div className="chat-header">
+                        <div className="chat-identity">
+                            <div className="chat-avatar" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 13.54 2.36 14.98 3.01 16.26L2 22L7.74 20.99C9.02 21.64 10.46 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="white" />
+                                </svg>
                             </div>
-                            <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '12px' }}>
-                                {leadCollected ? '✓ Lead Captured' : 'Multi-Agent AI • Online'}
-                            </div>
-                        </div>
-                    </div>
-                    <button
-                        onClick={() => setIsOpen(false)}
-                        style={{
-                            background: 'transparent',
-                            border: 'none',
-                            color: 'white',
-                            cursor: 'pointer',
-                            padding: '4px'
-                        }}
-                    >
-                        <svg 
-                            width="20" 
-                            height="20" 
-                            viewBox="0 0 24 24" 
-                            fill="none" 
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path 
-                                d="M18 6L6 18M6 6L18 18" 
-                                stroke="currentColor" 
-                                strokeWidth="2" 
-                                strokeLinecap="round" 
-                                strokeLinejoin="round"
-                            />
-                        </svg>
-                    </button>
-                </div>
-
-                {/* Messages */}
-                <div 
-                    style={{
-                        flex: 1,
-                        padding: '16px',
-                        overflowY: 'auto',
-                        backgroundColor: '#1a1a1a'
-                    }}
-                >
-                    {messages.map((message) => (
-                        <div
-                            key={message.id}
-                            style={{
-                                display: 'flex',
-                                justifyContent: message.isBot ? 'flex-start' : 'flex-end',
-                                marginBottom: '16px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    maxWidth: '280px',
-                                    padding: '8px 16px',
-                                    borderRadius: '16px',
-                                    backgroundColor: message.isBot 
-                                        ? (message.leadCollected ? '#2d5a2d' : '#333')
-                                        : '#ed5145',
-                                    color: '#ffffff',
-                                    border: message.leadCollected ? '1px solid #4ade80' : 'none'
-                                }}
-                            >
-                                <div 
-                                    style={{ fontSize: '14px' }}
-                                    dangerouslySetInnerHTML={{ 
-                                        __html: message.text.replace(
-                                            /(https:\/\/stackbinary\.io\/contact-us)/g, 
-                                            '<a href="$1" target="_blank" style="color: #a0c4ff; text-decoration: underline;">$1</a>'
-                                        )
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    ))}
-                    {isLoading && (
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'flex-start',
-                            marginBottom: '16px'
-                        }}>
-                            <div 
-                                style={{
-                                    maxWidth: '280px',
-                                    padding: '8px 16px',
-                                    borderRadius: '16px',
-                                    backgroundColor: '#333',
-                                    color: '#ffffff'
-                                }}
-                            >
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    <div style={{ display: 'flex', gap: '4px' }}>
-                                        <div style={{
-                                            width: '8px',
-                                            height: '8px',
-                                            backgroundColor: '#ffffff',
-                                            borderRadius: '50%',
-                                            animation: 'bounce 1.4s infinite ease-in-out both'
-                                        }}></div>
-                                        <div style={{
-                                            width: '8px',
-                                            height: '8px',
-                                            backgroundColor: '#ffffff',
-                                            borderRadius: '50%',
-                                            animation: 'bounce 1.4s infinite ease-in-out both',
-                                            animationDelay: '0.16s'
-                                        }}></div>
-                                        <div style={{
-                                            width: '8px',
-                                            height: '8px',
-                                            backgroundColor: '#ffffff',
-                                            borderRadius: '50%',
-                                            animation: 'bounce 1.4s infinite ease-in-out both',
-                                            animationDelay: '0.32s'
-                                        }}></div>
-                                    </div>
-                                    <span style={{ fontSize: '12px', opacity: 0.7 }}>Typing...</span>
+                            <div>
+                                <div className="chat-title">StackBinary™ Assistant</div>
+                                <div className="chat-subtitle">
+                                    {leadCollected ? '✓ Lead Captured' : 'Multi-Agent AI • Online'}
                                 </div>
                             </div>
                         </div>
-                    )}
-                    <div ref={messagesEndRef} />
-                </div>
+                        <button
+                            type="button"
+                            className="chat-close"
+                            onClick={closeChat}
+                            aria-label="Close chat"
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
 
-                {/* Input */}
-                <div 
-                    style={{
-                        padding: '16px',
-                        borderTop: '1px solid #333',
-                        backgroundColor: '#1a1a1a'
-                    }}
-                >
-                    <form onSubmit={sendMessage} style={{ display: 'flex', gap: '8px' }}>
+                    <div className="chat-messages">
+                        {messages.map((message) => (
+                            <div
+                                key={message.id}
+                                className={`chat-row ${message.isBot ? 'is-bot' : 'is-user'}`}
+                            >
+                                <div
+                                    className={`chat-bubble ${message.isBot ? 'bot' : 'user'} ${message.leadCollected ? 'lead' : ''}`}
+                                    dangerouslySetInnerHTML={{ __html: linkify(message.text) }}
+                                />
+                            </div>
+                        ))}
+                        {isLoading && (
+                            <div className="chat-row is-bot">
+                                <div className="chat-bubble bot chat-typing">
+                                    <span className="dot" /><span className="dot" /><span className="dot" />
+                                    <span className="typing-label">Typing…</span>
+                                </div>
+                            </div>
+                        )}
+                        <div ref={messagesEndRef} />
+                    </div>
+
+                    <form className="chat-input-row" onSubmit={sendMessage}>
                         <input
+                            ref={inputRef}
                             type="text"
                             value={inputMessage}
                             onChange={(e) => setInputMessage(e.target.value)}
-                            placeholder="Type your message..."
-                            style={{
-                                flex: 1,
-                                padding: '8px 16px',
-                                borderRadius: '20px',
-                                backgroundColor: '#333',
-                                border: '1px solid #555',
-                                color: '#ffffff',
-                                fontSize: '14px',
-                                outline: 'none'
-                            }}
+                            placeholder="Type your message…"
+                            aria-label="Message"
+                            className="chat-input"
                             disabled={isLoading}
                         />
                         <button
                             type="submit"
+                            className="chat-send"
                             disabled={isLoading || !inputMessage.trim()}
-                            style={{
-                                padding: '8px 12px',
-                                borderRadius: '20px',
-                                color: '#ffffff',
-                                fontSize: '14px',
-                                background: inputMessage.trim() && !isLoading 
-                                    ? '#ed5145' 
-                                    : '#666',
-                                cursor: inputMessage.trim() && !isLoading ? 'pointer' : 'not-allowed',
-                                border: 'none',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}
+                            aria-label="Send message"
                         >
-                            <svg 
-                                width="16" 
-                                height="16" 
-                                viewBox="0 0 24 24" 
-                                fill="none" 
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path 
-                                    d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" 
-                                    stroke="currentColor" 
-                                    strokeWidth="2" 
-                                    strokeLinecap="round" 
-                                    strokeLinejoin="round"
-                                />
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
                     </form>
                 </div>
-            </div>
-        </div>
+            )}
+
+            <style jsx global>{`
+                .chat-launcher {
+                    position: fixed;
+                    bottom: 24px;
+                    right: 24px;
+                    z-index: 9999;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 12px 20px;
+                    border: none;
+                    border-radius: 50px;
+                    background: #ed5145;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                }
+                .chat-launcher:hover { background: #d8453a; }
+
+                .chat-panel {
+                    position: fixed;
+                    bottom: 24px;
+                    right: 24px;
+                    z-index: 9999;
+                    width: 380px;
+                    height: 500px;
+                    max-height: calc(100vh - 48px);
+                    background: #1a1a1a;
+                    border: 1px solid #333;
+                    border-radius: 12px;
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                /* Below 640px the old panel demanded 404px of a 360px viewport and
+                   overflowed off-screen. A full-bleed sheet is the only layout that
+                   reliably keeps the input reachable on a phone. 100dvh rather than
+                   100vh so the mobile browser chrome doesn't push the input under
+                   the fold. */
+                @media (max-width: 639px) {
+                    .chat-panel {
+                        top: 0; right: 0; bottom: 0; left: 0;
+                        width: 100%;
+                        height: 100dvh;
+                        max-height: none;
+                        border: none;
+                        border-radius: 0;
+                    }
+                    .chat-launcher { bottom: 16px; right: 16px; }
+                }
+
+                .chat-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 16px;
+                    background: #ed5145;
+                    border-bottom: 1px solid #333;
+                    flex-shrink: 0;
+                }
+                .chat-identity { display: flex; align-items: center; gap: 12px; }
+                .chat-avatar {
+                    width: 40px; height: 40px;
+                    border-radius: 50%;
+                    display: flex; align-items: center; justify-content: center;
+                    background: rgba(255, 255, 255, 0.2);
+                    flex-shrink: 0;
+                }
+                .chat-title { color: #fff; font-weight: 500; }
+                .chat-subtitle { color: rgba(255, 255, 255, 0.8); font-size: 12px; }
+                .chat-close {
+                    background: transparent; border: none; color: #fff;
+                    cursor: pointer; padding: 8px; display: flex;
+                }
+
+                .chat-messages {
+                    flex: 1;
+                    padding: 16px;
+                    overflow-y: auto;
+                    background: #1a1a1a;
+                    -webkit-overflow-scrolling: touch;
+                }
+                .chat-row { display: flex; margin-bottom: 16px; }
+                .chat-row.is-bot { justify-content: flex-start; }
+                .chat-row.is-user { justify-content: flex-end; }
+
+                .chat-bubble {
+                    max-width: 80%;
+                    padding: 8px 16px;
+                    border-radius: 16px;
+                    font-size: 14px;
+                    color: #fff;
+                    line-height: 1.5;
+                    word-break: break-word;
+                }
+                .chat-bubble.bot { background: #333; }
+                .chat-bubble.user { background: #ed5145; }
+                .chat-bubble.lead { background: #2d5a2d; border: 1px solid #4ade80; }
+                .chat-link { color: #a0c4ff; text-decoration: underline; }
+
+                .chat-typing { display: flex; align-items: center; gap: 8px; }
+                .chat-typing .dot {
+                    width: 8px; height: 8px; border-radius: 50%;
+                    background: #fff;
+                    animation: chat-bounce 1.4s infinite ease-in-out both;
+                }
+                .chat-typing .dot:nth-child(2) { animation-delay: 0.16s; }
+                .chat-typing .dot:nth-child(3) { animation-delay: 0.32s; }
+                .typing-label { font-size: 12px; opacity: 0.7; }
+                @keyframes chat-bounce {
+                    0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+                    40% { transform: scale(1); opacity: 1; }
+                }
+
+                .chat-input-row {
+                    display: flex;
+                    gap: 8px;
+                    padding: 16px;
+                    border-top: 1px solid #333;
+                    background: #1a1a1a;
+                    flex-shrink: 0;
+                    padding-bottom: max(16px, env(safe-area-inset-bottom));
+                }
+                .chat-input {
+                    flex: 1;
+                    padding: 10px 16px;
+                    border-radius: 20px;
+                    background: #333;
+                    border: 1px solid #555;
+                    color: #fff;
+                    /* 16px on mobile: anything smaller makes iOS Safari zoom the
+                       viewport on focus, which strands the user mid-conversation. */
+                    font-size: 16px;
+                    outline: none;
+                    min-width: 0;
+                }
+                @media (min-width: 640px) { .chat-input { font-size: 14px; } }
+                .chat-input:focus { border-color: #ed5145; }
+
+                .chat-send {
+                    display: flex; align-items: center; justify-content: center;
+                    padding: 8px 14px;
+                    border: none; border-radius: 20px;
+                    background: #ed5145; color: #fff;
+                    cursor: pointer;
+                    flex-shrink: 0;
+                }
+                .chat-send:disabled { background: #666; cursor: not-allowed; }
+            `}</style>
+        </>
     );
 }

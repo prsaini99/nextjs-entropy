@@ -65,3 +65,37 @@ export async function adminPut(url, data) {
 export async function adminDelete(url) {
   return adminFetch(url, { method: 'DELETE' });
 }
+
+/**
+ * Authenticated file download.
+ *
+ * The export button used to call window.open('/api/admin/export?…'), which is a
+ * plain navigation — it cannot attach an Authorization header, so the route had
+ * to be left unauthenticated for the button to work. That is how the leads table
+ * ended up downloadable by anyone who knew the URL.
+ *
+ * Fetching with credentials and turning the response into a blob keeps a single
+ * header-based auth scheme across every admin call, with no token in the URL.
+ */
+export async function adminDownload(url, fallbackName = 'export') {
+  const response = await adminFetch(url, { method: 'GET' });
+  if (!response.ok) {
+    throw new Error(`Download failed (${response.status})`);
+  }
+
+  const blob = await response.blob();
+
+  // Prefer the server's filename; it already sets Content-Disposition.
+  const disposition = response.headers.get('Content-Disposition') || '';
+  const match = disposition.match(/filename="?([^";]+)"?/);
+  const filename = match ? match[1] : fallbackName;
+
+  const href = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = href;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(href);
+}
