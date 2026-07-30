@@ -74,7 +74,7 @@ const services = [
             "Company firmographics & employee data",
             "Credit-metered access for your team or your customers",
         ],
-        href: "/martech/lead-intelligence",
+        href: "/martech/sales-intelligence",
         demo: "TradeToIndia DB",
     },
     {
