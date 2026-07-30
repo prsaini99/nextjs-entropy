@@ -1,0 +1,290 @@
+<h1>Google Ads API — Tool Design Document</h1>
+
+<p><b>Applicant:</b> StackBinary<br>
+<b>Company website:</b> https://stackbinary.io<br>
+<b>Google Ads manager account (MCC):</b> 988-893-0545<br>
+<b>Google Ads account accessed:</b> 659-437-9515<br>
+<b>Google Cloud project number:</b> 668883874314<br>
+<b>Access level requested:</b> Basic Access<br>
+<b>Permissible use requested:</b> Reporting; Ad creation / management; Researching keywords and recommendations<br>
+<b>Company type:</b> Advertiser<br>
+<b>Document date:</b> 29 July 2026</p>
+
+<hr>
+
+<h2>1. Executive summary</h2>
+
+<p>StackBinary is a software and AI engineering company based in India. We advertise our own
+services on Google Ads through a single account that we own and operate ourselves. We do not
+manage Google Ads campaigns on behalf of any other company.</p>
+
+<p>We are building an internal tool that lets our marketing team analyse and manage our own
+Google Ads account. It performs three functions:</p>
+
+<ul>
+<li><b>Reporting</b> — retrieving search term, campaign, ad group, keyword, asset and audience
+statistics via GAQL, and joining them with the Google Analytics 4 measurement we already
+collect from our website.</li>
+<li><b>Keyword research</b> — generating keyword ideas and budget forecasts to plan which
+queries to bid on.</li>
+<li><b>Campaign creation and management</b> — creating and adjusting our own campaigns, ad
+groups, ads, keywords and negative keywords.</li>
+</ul>
+
+<p>The defining characteristic of this tool is that <b>no change reaches Google Ads without
+explicit human authorisation</b>. Every write operation produces a preview and returns it for
+review; a separate, deliberate confirmation call is required to apply it. Dry-run mode is the
+default, and the tool cannot make a live change until an operator explicitly disables it for
+that specific action. Section 6 describes these controls in detail.</p>
+
+<p>Access is limited to StackBinary employees. The tool is not offered to third parties, not
+resold, has no external users, and exposes no public interface.</p>
+
+<h2>2. Business model and motivation</h2>
+
+<p>StackBinary earns revenue from professional services: custom software development, cloud
+engineering, and AI implementation for our clients. We do not sell advertising technology, do
+not resell Google Ads data, and do not operate an advertising product.</p>
+
+<p>We advertise our own services to generate inbound enquiries. Our website captures leads
+through a contact form which records Google Analytics 4 events and the <tt>gclid</tt> click
+identifier at the point of submission.</p>
+
+<p>Two specific gaps motivate this work.</p>
+
+<p><b>Attribution.</b> Google Analytics 4 tells us which sessions converted; it does not tell us
+which search query the user typed. That lives only in the Google Ads search terms report. Today
+a team member exports it to CSV by hand and reconciles it against GA4 manually — slow, error
+prone, and done rarely enough that budget decisions rest on stale data.</p>
+
+<p><b>Iteration speed.</b> Acting on what we learn currently means retyping negative keywords
+and bid adjustments through the web interface one at a time. Being able to compose a change,
+review it as a single reviewable plan, and apply it once approved makes the loop from
+observation to action materially shorter and less error prone than manual entry.</p>
+
+<h2>3. Users and access</h2>
+
+<table border="1" cellpadding="6" cellspacing="0">
+<tr><th align="left">Question</th><th align="left">Answer</th></tr>
+<tr><td>Who uses the tool?</td><td>StackBinary employees only</td></tr>
+<tr><td>Number of users</td><td>Fewer than five</td></tr>
+<tr><td>External or client access?</td><td>None</td></tr>
+<tr><td>Publicly available?</td><td>No</td></tr>
+<tr><td>Resold or licensed?</td><td>No</td></tr>
+<tr><td>Accounts accessed</td><td>659-437-9515 only (our own)</td></tr>
+<tr><td>Who authorises changes?</td><td>A named StackBinary employee, per change</td></tr>
+</table>
+
+<p>The tool runs locally on employee workstations. There is no hosted deployment, no public
+endpoint, no multi-tenant architecture and no customer-facing surface.</p>
+
+<h2>4. System architecture</h2>
+
+<p>The integration is built on <b>AdLoop</b> (<tt>github.com/kLOsk/adloop</tt>, MIT licence), an
+open-source Google Ads MCP server, pinned to a specific reviewed commit and self-hosted. It runs
+as a local process on an employee workstation. The Google Ads API version is pinned to
+<b>v24</b> so that API changes cannot silently alter behaviour.</p>
+
+<p>Our marketing and engineering team interacts with it through an AI assistant licensed to
+StackBinary and used under our own company account. The assistant composes reporting questions
+and proposed changes; it cannot apply a change on its own, because applying requires the
+separate confirmation step described in section 6. Retrieved data is used solely for our own
+internal analysis and is not sold, published or shared with third parties.</p>
+
+<p><b>Data and authorisation flow:</b></p>
+
+<pre>
+  Employee workstation
+  ┌────────────────────────────────────────────────────────┐
+  │  Internal operator (StackBinary employee)              │
+  │        │                     ^                         │
+  │        │ asks                │ reviews plan,           │
+  │        v                     │ authorises or rejects   │
+  │  AdLoop MCP server (local process)                     │
+  │    - OAuth 2.0 credentials (local file)                │
+  │    - Developer token (local env var)                   │
+  │    - require_dry_run = true (default)                  │
+  │    - max_daily_budget cap                              │
+  │    - audit log                                         │
+  └────────┬───────────────────────────────────────────────┘
+           │
+           ├── READ  ──> GoogleAdsService.SearchStream ──> statistics
+           │
+           ├── PLAN  ──> builds ChangePlan locally. NO API mutation.
+           │
+           └── APPLY ──> only via confirm_and_apply, only after the
+                         operator supplies explicit confirmation
+                         ──> *Service.Mutate
+</pre>
+
+<h2>5. Google Ads API usage</h2>
+
+<h3>5.1 Read operations</h3>
+
+<p>Sixteen read tools, all issuing GAQL through <tt>GoogleAdsService.SearchStream</tt> or
+<tt>Search</tt>:</p>
+
+<p><tt>list_accounts</tt>, <tt>get_campaign_performance</tt>, <tt>get_ad_performance</tt>,
+<tt>get_keyword_performance</tt>, <tt>get_search_terms</tt>, <tt>get_negative_keywords</tt>,
+<tt>get_negative_keyword_lists</tt>, <tt>get_negative_keyword_list_keywords</tt>,
+<tt>get_negative_keyword_list_campaigns</tt>, <tt>get_recommendations</tt>,
+<tt>get_pmax_performance</tt>, <tt>get_asset_performance</tt>,
+<tt>get_detailed_asset_performance</tt>, <tt>get_audience_performance</tt>,
+<tt>get_demographic_targeting</tt>, <tt>run_gaql</tt></p>
+
+<p>Representative query — search terms, the primary reporting need:</p>
+
+<pre>
+SELECT
+  search_term_view.search_term,
+  campaign.name,
+  ad_group.name,
+  metrics.impressions,
+  metrics.clicks,
+  metrics.cost_micros,
+  metrics.conversions
+FROM search_term_view
+WHERE segments.date DURING LAST_30_DAYS
+ORDER BY metrics.cost_micros DESC
+</pre>
+
+<h3>5.2 Keyword research operations</h3>
+
+<table border="1" cellpadding="6" cellspacing="0">
+<tr><th align="left">Tool</th><th align="left">Service / method</th><th align="left">Purpose</th></tr>
+<tr><td>discover_keywords</td><td>KeywordPlanIdeaService — GenerateKeywordIdeas</td><td>Find candidate search queries and volumes</td></tr>
+<tr><td>estimate_budget</td><td>KeywordPlanService — GenerateKeywordForecastMetrics</td><td>Forecast cost and clicks before committing budget</td></tr>
+<tr><td>get_recommendations</td><td>RecommendationService (read)</td><td>Retrieve Google's own optimisation suggestions</td></tr>
+</table>
+
+<p>These inform decisions only. Neither generates nor applies a campaign change by itself.</p>
+
+<h3>5.3 Write operations</h3>
+
+<p>Twenty tools compose changes to our own account. <b>Nineteen of them do not call the Google
+Ads API at all</b> — they build a change plan locally and return it for review. Only
+<tt>confirm_and_apply</tt> can issue a mutation.</p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+<tr><th align="left">Tool</th><th align="left">Effect when called</th></tr>
+<tr><td>draft_campaign, update_campaign</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td>draft_ad_group, update_ad_group</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td>draft_responsive_search_ad</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td>draft_callouts, draft_structured_snippets, draft_image_assets</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td>draft_keywords</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td>add_negative_keywords, add_negative_locations</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td>propose_negative_keyword_list</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td>draft_key_event, draft_demographic_targeting</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td>pause_entity, enable_entity, remove_entity</td><td>Builds plan. No API mutation.</td></tr>
+<tr><td><b>confirm_and_apply</b></td><td><b>The only tool that can mutate.</b> Requires an explicit plan identifier and an explicit instruction to leave dry-run mode.</td></tr>
+</table>
+
+<p>Mutate services reached through <tt>confirm_and_apply</tt> include CampaignService,
+CampaignBudgetService, AdGroupService, AdGroupAdService, AdGroupCriterionService, AssetService
+and SharedSetService, all scoped to account 659-437-9515.</p>
+
+<h3>5.4 Expected call volume</h3>
+
+<p>One Google Ads account, used by fewer than five internal operators, plus an optional daily
+reporting summary. We estimate <b>fewer than 200 operations per day</b>, the large majority of
+them reads. The tool performs no bulk enumeration, no account discovery sweeps and no polling
+loops.</p>
+
+<h2>6. Safety controls and change authorisation</h2>
+
+<p>This section is the core of our design. Because the tool can modify a live advertising
+account, we treat every path to a mutation as something that must be deliberately opened rather
+than accidentally taken.</p>
+
+<h3>6.1 Two-step write model</h3>
+
+<p>A write tool never writes. Calling <tt>draft_campaign</tt> or <tt>add_negative_keywords</tt>
+produces a <i>change plan</i> — a structured, human-readable description of what would change —
+and returns it. Nothing has been sent to Google Ads at this point. Applying that plan requires a
+separate <tt>confirm_and_apply</tt> call carrying the plan's identifier.</p>
+
+<p>The practical consequence: an operator always sees the full, concrete effect of a change
+before anything is committed, and the act of approving is distinct from the act of composing.</p>
+
+<h3>6.2 Dry-run by default</h3>
+
+<p>The configuration key <tt>require_dry_run</tt> defaults to <b>true</b>. Additionally,
+<tt>confirm_and_apply</tt> itself defaults to <tt>dry_run=true</tt> — so even the confirmation
+step simulates by default, and applying a real change requires explicitly passing
+<tt>dry_run=false</tt>. A freshly installed instance cannot alter our Google Ads account at all
+until a human changes configuration and then explicitly opts out of dry-run for a specific
+action.</p>
+
+<h3>6.3 Spend and configuration guardrails</h3>
+
+<ul>
+<li><b>Daily budget cap</b> — <tt>max_daily_budget</tt> (default 50.00) bounds any budget the
+tool may set, independent of what is requested.</li>
+<li><b>Bid increase caps</b> — limit how far a bid may be raised in one operation.</li>
+<li><b>Unsafe combinations blocked</b> — Broad Match paired with Manual CPC is rejected
+outright, as it is a common cause of runaway spend.</li>
+<li><b>New entities launch paused</b> — newly created campaigns and ads are created in a paused
+state, so nothing begins spending without a further deliberate action.</li>
+<li><b>Audit log</b> — every plan and every applied change is recorded locally.</li>
+</ul>
+
+<h3>6.4 Scope limits</h3>
+
+<p>The OAuth user is a StackBinary employee whose Google Ads access covers only account
+659-437-9515. No other account is reachable, and no account belonging to any client or third
+party is in scope.</p>
+
+<h2>7. Representative workflows</h2>
+
+<p><b>Workflow A — reporting.</b> An operator asks which search terms consumed budget without
+converting. The tool runs the <tt>search_term_view</tt> query in 5.1 and returns rows. No write
+path is involved.</p>
+
+<p><b>Workflow B — acting on that report.</b> The operator decides several terms are irrelevant
+and asks for them to be excluded. <tt>add_negative_keywords</tt> builds a plan listing exactly
+which negatives would be added to which campaign, and returns it. The operator reads the plan.
+If correct, they call <tt>confirm_and_apply</tt> with the plan identifier and explicitly leave
+dry-run mode. Only then does a <tt>SharedSetService</tt> / <tt>AdGroupCriterionService</tt>
+mutation occur.</p>
+
+<p><b>Workflow C — planning new coverage.</b> <tt>discover_keywords</tt> returns keyword ideas
+and volumes; <tt>estimate_budget</tt> forecasts cost. Both are read-only research. If the
+operator then wants a campaign, <tt>draft_campaign</tt> produces a plan — created paused, and
+bounded by the configured budget cap — which again requires explicit confirmation to apply.</p>
+
+<h2>8. Data handling and security</h2>
+
+<ul>
+<li><b>Developer token</b> — stored in a local environment file on the workstation, excluded
+from version control. Never transmitted to any third party.</li>
+<li><b>OAuth credentials</b> — desktop-type OAuth 2.0 client issued from our own Google Cloud
+project (668883874314), consent screen configured as Internal to our Workspace domain. The
+client secret file is stored locally and excluded from version control.</li>
+<li><b>Retrieved data</b> — held in memory for the duration of a query and rendered for internal
+review. No warehouse and no long-term store of Google Ads data.</li>
+<li><b>Onward transfer</b> — none. Report data is not sold, published, syndicated, or used to
+deliver any service to any other company.</li>
+<li><b>Third-party code</b> — AdLoop is open source, self-hosted, MIT licensed, and pinned to a
+reviewed commit. No vendor operates it, no vendor holds our token, and no data passes through
+any vendor's infrastructure. We do not use the hosted commercial variant.</li>
+<li><b>API version</b> — pinned to v24 so that upstream changes cannot silently alter behaviour.</li>
+</ul>
+
+<h2>9. Compliance statement</h2>
+
+<ul>
+<li>We are an advertiser using the API for our own Google Ads account only.</li>
+<li>We do not manage Google Ads campaigns for other companies.</li>
+<li>The tool is internal, with no external or client users, and is neither resold nor licensed.</li>
+<li>Every mutation requires explicit, per-change human authorisation. No automated or unattended
+process applies changes to our account.</li>
+<li>Dry-run is the default state; live application requires a deliberate opt-out.</li>
+<li>We request Basic Access with the Reporting, Ad creation / management, and Researching
+keywords and recommendations permissible uses.</li>
+<li>We agree to the Google Ads API Terms and Conditions and will keep our API contact email
+monitored and current.</li>
+</ul>
+
+<p>If our intended use changes — in particular if we ever wish to report on or manage Google Ads
+accounts belonging to our clients rather than our own — we will submit an application to update
+our permissible use before doing so.</p>
