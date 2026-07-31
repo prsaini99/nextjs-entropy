@@ -1,38 +1,63 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+// The service-role client, not the anon one: career_applications has RLS with
+// no anon-insert policy, so the anon client's inserts die with 42501. This is
+// a server route; the service key never reaches the browser.
+import { supabaseAdmin } from '@/lib/supabase-admin';
 
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     
-    // Extract form data
+    // Extract form data. Each field falls back through the names the form has
+    // actually used over time — this route was written against a different
+    // field vocabulary than ApplicationForm.tsx sends (totalExperience vs
+    // yearsOfExperience, startDate vs availabilityDate, …), which left half
+    // the columns permanently null. The form's real names come first.
+    const pick = (...names: string[]) => {
+      for (const n of names) {
+        const v = formData.get(n);
+        if (v !== null && v !== '') return v;
+      }
+      return null;
+    };
+
     const applicationData = {
-      jobTitle: formData.get('jobTitle'),
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      location: formData.get('location'),
-      workEligibility: formData.get('workEligibility'),
-      visaStatus: formData.get('visaStatus'),
-      portfolioUrl: formData.get('portfolioUrl'),
-      linkedinUrl: formData.get('linkedinUrl'),
-      githubUrl: formData.get('githubUrl'),
-      yearsOfExperience: formData.get('yearsOfExperience'),
-      currentRole: formData.get('currentRole'),
-      currentCompany: formData.get('currentCompany'),
-      education: formData.get('education'),
-      university: formData.get('university'),
-      graduationYear: formData.get('graduationYear'),
-      technicalSkills: formData.get('technicalSkills'),
-      relevantProjects: formData.get('relevantProjects'),
-      roleAnswers: formData.get('roleAnswers'),
-      availabilityDate: formData.get('availabilityDate'),
-      salaryExpectations: formData.get('salaryExpectations'),
-      referralSource: formData.get('referralSource'),
-      additionalInfo: formData.get('additionalInfo'),
-      privacyConsent: formData.get('privacyConsent'),
-      communicationConsent: formData.get('communicationConsent'),
+      jobTitle: pick('jobTitle'),
+      firstName: pick('firstName'),
+      lastName: pick('lastName'),
+      email: pick('email'),
+      phone: pick('phone'),
+      location: pick('currentLocation', 'location'),
+      workEligibility: pick('workEligibility'),
+      visaStatus: pick('visaStatus'),
+      portfolioUrl: pick('portfolioUrl'),
+      linkedinUrl: pick('linkedinUrl'),
+      githubUrl: pick('githubUrl'),
+      yearsOfExperience: pick('totalExperience', 'yearsOfExperience'),
+      currentRole: pick('currentRole'),
+      currentCompany: pick('currentCompany'),
+      education: pick('education'),
+      university: pick('university'),
+      graduationYear: pick('graduationYear'),
+      technicalSkills: pick('keyStrengths', 'technicalSkills'),
+      relevantProjects: pick('relevantExperience', 'relevantProjects'),
+      roleAnswers: pick('roleAnswers'),
+      availabilityDate: pick('startDate', 'availabilityDate'),
+      salaryExpectations: pick('salaryExpectation', 'salaryExpectations'),
+      referralSource: pick('referralSource'),
+      // The motivation questions have no dedicated columns; keep them,
+      // labelled, in additional_info rather than dropping them.
+      additionalInfo:
+        pick('additionalInfo') ??
+        ([
+          formData.get('whyInterested') ? `Why interested: ${formData.get('whyInterested')}` : null,
+          formData.get('whyStackBinary') ? `Why StackBinary: ${formData.get('whyStackBinary')}` : null,
+          formData.get('anythingElse') ? `Anything else: ${formData.get('anythingElse')}` : null,
+        ]
+          .filter(Boolean)
+          .join('\n\n') || null),
+      privacyConsent: pick('privacyConsent'),
+      communicationConsent: pick('communicationConsent', 'dataProcessingConsent'),
       // UTM tracking data
       utm_source: formData.get('utm_source'),
       utm_medium: formData.get('utm_medium'),
@@ -135,24 +160,26 @@ export async function POST(request: NextRequest) {
         JSON.parse(applicationData.attribution_data as string) : null,
     };
 
-    // Save application to Supabase database
+    // Save application to Supabase. Unlike the contact route, there is no
+    // email fallback here — the database row IS the application. A failed
+    // insert must therefore fail the request; the old code logged the error
+    // and returned 200 with a fabricated ID, losing the application while
+    // telling the applicant it was received.
     let applicationId = null;
-    try {
-      const { data: savedApplication, error: supabaseError } = await supabase
-        .from('career_applications')
-        .insert([dbApplicationData])
-        .select('id')
-        .single();
+    const { data: savedApplication, error: supabaseError } = await supabaseAdmin
+      .from('career_applications')
+      .insert([dbApplicationData])
+      .select('id')
+      .single();
 
-      if (supabaseError) {
-        console.error('Supabase error saving career application:', supabaseError);
-      } else {
-        applicationId = savedApplication?.id;
-        console.log('Career application saved to database with ID:', applicationId);
-      }
-    } catch (dbError) {
-      console.error('Database storage error for career application:', dbError);
+    if (supabaseError) {
+      console.error('Supabase error saving career application:', supabaseError);
+      return NextResponse.json(
+        { error: 'Could not record your application, please try again or email us directly.' },
+        { status: 500 }
+      );
     }
+    applicationId = savedApplication?.id;
 
     // Log the application (keeping existing logging)
     console.log('New job application received:', {
