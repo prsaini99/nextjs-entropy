@@ -128,6 +128,34 @@ const martechFaqs = {
         },
     ],
 
+    "marketing-automation": [
+        {
+            question: "What is a marketing automation platform?",
+            answer:
+                "Software that runs your customer journeys automatically: welcome sequences, follow-ups, campaigns, and the inbox that catches the replies. AtoEmail is ours, visual journeys, high-volume campaigns, a unified inbox and a developer API in one engine that you own.",
+        },
+        {
+            question: "What's different about owning it instead of renting?",
+            answer:
+                "Subscription tools price per contact, so growing your list raises your bill every month. AtoEmail has no per-subscriber tiers, runs on your own sending infrastructure, and your data stays yours, growth stops being a cost event.",
+        },
+        {
+            question: "What can trigger a journey?",
+            answer:
+                "Four things: app or website events, inbox replies, schedules, and webhooks. A reply to a campaign can advance a journey or alert sales the moment it lands, instead of sitting unread in a shared mailbox.",
+        },
+        {
+            question: "Can AI make decisions inside a journey?",
+            answer:
+                "Yes. Journey nodes can branch into emails, HTTP calls, database updates and AI steps, so the flow can handle the cases a fixed rule can't express, without a human watching the queue.",
+        },
+        {
+            question: "Does it get more expensive as my list grows?",
+            answer:
+                "No. There is no per-subscriber pricing, unlimited contacts is the design, not a plan tier. Deliverability at volume is handled with multi-key load balancing across your sending identities.",
+        },
+    ],
+
     "social-automation": [
         {
             question: "What is Instagram DM automation?",
@@ -225,6 +253,34 @@ const martechFaqs = {
             question: "Can my customers use it too?",
             answer:
                 "Yes. Access is metered by a credit wallet, so you can run it for your own team or resell enrichment to your customers, usage-based, with no seat licences.",
+        },
+    ],
+
+    "creative-analysis": [
+        {
+            question: "What is AI video ad analysis?",
+            answer:
+                "Running a video ad through AI models to understand why it works before you pay to run it. TRIBE analyzes every creative through five lenses and reports what is strong, what is weak, and which of two ads is likely to win.",
+        },
+        {
+            question: "What do the five lenses measure?",
+            answer:
+                "On-screen emotion, voice and tone, visual pacing, script structure, and predicted brain response. The first three seconds get special attention, that hook window is the thumb-stop signal that decides whether the rest of the ad is ever seen.",
+        },
+        {
+            question: "Do I have to spend media budget to test an ad?",
+            answer:
+                "No, that's the point. Creatives are pre-tested before a rupee of media is spent, so the weak ones die in the lab instead of in your ad account.",
+        },
+        {
+            question: "How reliable are the scores?",
+            answer:
+                "We report relative rankings with per-index confidence, and we never assert absolute thresholds before calibration. In a real two-ad comparison, the model's high-confidence indices correctly identified the stronger creative.",
+        },
+        {
+            question: "How is this different from A/B testing?",
+            answer:
+                "A/B testing tells you which ad won after you paid to run both. Pre-testing tells you why, before you spend, and the two work together: pre-rank your candidates, then A/B the top pair in the market.",
         },
     ],
 
