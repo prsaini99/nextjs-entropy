@@ -188,7 +188,9 @@ export default function ApplicationForm({ job, onClose }: Props) {
           lead_medium: currentUTM.utm_medium || 'none'
         });
         
-        alert('Application submitted successfully! We\'ll get back to you within 48 hours.');
+        // No timeline promised here, deliberately, and none in the
+        // confirmation email either. The two must stay in agreement.
+        alert('Application submitted. We\'ll get back to you — check your email for a confirmation.');
         onClose();
       } else {
         // Surface the server's actual reason — a generic message is how the

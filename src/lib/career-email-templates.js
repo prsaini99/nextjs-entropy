@@ -96,7 +96,7 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
                       Your application for <strong style="color:${BRAND.text};">${esc(jobTitle || "the role")}</strong> is with our engineering team. A person reads every application here, not a keyword filter.
                     </p>
                     <p style="margin:0;font-size:14px;line-height:1.7;color:${BRAND.text};font-weight:bold;">
-                      You will hear from us within 48 hours, either way.
+                      We will get back to you.
                     </p>
                   </td>
                 </tr>
@@ -115,15 +115,15 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                       <tr>
                         <td valign="top" style="width:28px;font-size:14px;color:${BRAND.accent};font-weight:bold;padding-bottom:12px;">01</td>
-                        <td style="font-size:13px;line-height:1.6;color:${BRAND.text};padding-bottom:12px;">We read your application and your CV properly, against what the role actually needs.</td>
+                        <td style="font-size:13px;line-height:1.6;color:${BRAND.text};padding-bottom:12px;">Your application goes to the team hiring for this role.</td>
                       </tr>
                       <tr>
                         <td valign="top" style="width:28px;font-size:14px;color:${BRAND.accent};font-weight:bold;padding-bottom:12px;">02</td>
-                        <td style="font-size:13px;line-height:1.6;color:${BRAND.text};padding-bottom:12px;">If there is a fit, we set up an intro call to talk through your work and answer your questions.</td>
+                        <td style="font-size:13px;line-height:1.6;color:${BRAND.text};padding-bottom:12px;">We read it properly, your CV and your answers, against what the role actually needs.</td>
                       </tr>
                       <tr>
                         <td valign="top" style="width:28px;font-size:14px;color:${BRAND.accent};font-weight:bold;">03</td>
-                        <td style="font-size:13px;line-height:1.6;color:${BRAND.text};">If there is not, we tell you, rather than leaving you waiting.</td>
+                        <td style="font-size:13px;line-height:1.6;color:${BRAND.text};">If there is a fit, we get in touch to set up an intro call.</td>
                       </tr>
                     </table>
                   </td>
@@ -170,12 +170,12 @@ export function applicationConfirmationText({ firstName, jobTitle }) {
 
 We have your application for ${jobTitle || "the role"}. A person reads every application here, not a keyword filter.
 
-You will hear from us within 48 hours, either way.
+We will get back to you.
 
 What happens next:
-1. We read your application and your CV properly, against what the role actually needs.
-2. If there is a fit, we set up an intro call to talk through your work and answer your questions.
-3. If there is not, we tell you, rather than leaving you waiting.
+1. Your application goes to the team hiring for this role.
+2. We read it properly, your CV and your answers, against what the role actually needs.
+3. If there is a fit, we get in touch to set up an intro call.
 
 Other open roles: https://stackbinary.io/careers
 Questions? Just reply to this email.
