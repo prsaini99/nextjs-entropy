@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getJobBySlug, jobs } from '@/lib/careers';
+import { getJobBySlug, jobs, jobDatePosted, jobValidThrough } from '@/lib/careers';
 import JobDetailsPage from '@/components/careers/JobDetailsPage';
 
 interface Props {
@@ -54,6 +54,13 @@ export default async function JobPage({ params }: Props) {
     "@type": "JobPosting",
     "title": job.title,
     "description": job.description,
+    // datePosted is REQUIRED by Google; without it the listing is ineligible
+    // for the Jobs experience in Search. validThrough is strongly recommended,
+    // since undated listings get treated as stale.
+    "datePosted": jobDatePosted(job),
+    "validThrough": jobValidThrough(job),
+    // Applications are taken on our own site, not a third-party board.
+    "directApply": true,
     "hiringOrganization": {
       "@type": "Organization",
       "name": "StackBinary",
