@@ -151,6 +151,12 @@ export default function ApplicationForm({ job, onClose }: Props) {
       submitData.append('startDate', formData.startDate);
       submitData.append('salaryExpectation', formData.salaryExpectation || '');
       submitData.append('anythingElse', formData.anythingElse || '');
+
+      // The consents. These were collected in the UI but never sent, and the
+      // API rejects any submission without privacyConsent='true' — which made
+      // every application ever submitted fail with a 400. Do not remove.
+      submitData.append('privacyConsent', String(formData.privacyConsent));
+      submitData.append('dataProcessingConsent', String(formData.dataProcessingConsent));
       
       // Add UTM tracking data
       submitData.append('utm_source', currentUTM.utm_source || '');
@@ -185,13 +191,16 @@ export default function ApplicationForm({ job, onClose }: Props) {
         alert('Application submitted successfully! We\'ll get back to you within 48 hours.');
         onClose();
       } else {
-        throw new Error('Failed to submit application');
+        // Surface the server's actual reason — a generic message is how the
+        // consent bug went undiagnosed: 43 error events, zero information.
+        const body = await response.json().catch(() => ({}));
+        throw new Error(body.error || `Submission failed (${response.status})`);
       }
     } catch (error) {
       console.error('Error submitting application:', error);
       trackFormInteraction('career_application', 'error', {
         job_title: job.title,
-        error_type: 'submission_failed'
+        error_type: String((error as Error).message || 'submission_failed').slice(0, 100)
       });
       alert('There was an error submitting your application. Please try again.');
     } finally {
@@ -199,16 +208,13 @@ export default function ApplicationForm({ job, onClose }: Props) {
     }
   };
 
+  // canProceed is called on every render, so it must never fire analytics —
+  // the old version tracked 'progress' in here and produced 67 events from a
+  // single applicant typing their name. Progress now fires once per step
+  // advance, in the Next button handler.
   const canProceed = () => {
     switch (currentStep) {
       case 1:
-        // Track form start on first step interaction
-        if (formData.firstName || formData.lastName) {
-          trackFormInteraction('career_application', 'progress', {
-            job_title: job.title,
-            step: 1
-          });
-        }
         return formData.firstName && formData.lastName && formData.email && formData.phone;
       case 2:
         return formData.workEligibility && formData.currentLocation;
@@ -578,7 +584,15 @@ export default function ApplicationForm({ job, onClose }: Props) {
             ) : (
               <button
                 type="button"
-                onClick={() => setCurrentStep(prev => Math.min(totalSteps, prev + 1))}
+                onClick={() => {
+                  // One progress event per step actually completed — the
+                  // signal the funnel analysis needs, nothing more.
+                  trackFormInteraction('career_application', 'progress', {
+                    job_title: job.title,
+                    step: currentStep,
+                  });
+                  setCurrentStep(prev => Math.min(totalSteps, prev + 1));
+                }}
                 disabled={!canProceed()}
                 className="primary-button w-inline-block"
               >
