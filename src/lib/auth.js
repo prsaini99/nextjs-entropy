@@ -174,7 +174,7 @@ function LoginForm() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-sm shadow-sm"
-                  placeholder="admin@stackbinary.com"
+                  placeholder="you@stackbinary.io"
                 />
               </div>
               

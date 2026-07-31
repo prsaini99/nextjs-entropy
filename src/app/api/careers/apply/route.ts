@@ -160,6 +160,40 @@ export async function POST(request: NextRequest) {
         JSON.parse(applicationData.attribution_data as string) : null,
     };
 
+    // Upload the CV to the private `resumes` bucket before inserting, so the
+    // row is written with its pointer already resolved. The file was validated
+    // above; here we only care about storing it under a key that can't collide
+    // and can't be guessed.
+    let resumeMeta: {
+      resume_path: string | null;
+      resume_filename: string | null;
+      resume_size: number | null;
+      resume_mime: string | null;
+    } = { resume_path: null, resume_filename: null, resume_size: null, resume_mime: null };
+
+    if (resumeFile && resumeFile.size > 0) {
+      const safeName = (resumeFile.name || 'resume').replace(/[^a-zA-Z0-9._-]/g, '_').slice(-80);
+      const key = `${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}-${safeName}`;
+
+      const { error: uploadError } = await supabaseAdmin.storage
+        .from('resumes')
+        .upload(key, resumeFile, { contentType: resumeFile.type, upsert: false });
+
+      if (uploadError) {
+        // A lost CV is recoverable (we can ask for it); a lost application is
+        // not. Record the application anyway and log loudly.
+        console.error('Resume upload failed, continuing without it:', uploadError);
+      } else {
+        resumeMeta = {
+          resume_path: key,
+          resume_filename: resumeFile.name || null,
+          resume_size: resumeFile.size,
+          resume_mime: resumeFile.type || null,
+        };
+      }
+    }
+    Object.assign(dbApplicationData, resumeMeta);
+
     // Save application to Supabase. Unlike the contact route, there is no
     // email fallback here — the database row IS the application. A failed
     // insert must therefore fail the request; the old code logged the error
