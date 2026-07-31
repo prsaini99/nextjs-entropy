@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { jobs } from '@/lib/careers';
 import CareersHeroSection from '@/components/careers/CareersHeroSection';
 import WhyJoinUs from '@/components/careers/WhyJoinUs';
 import OpenRoles from '@/components/careers/OpenRoles';
@@ -20,24 +21,26 @@ export const metadata: Metadata = {
 };
 
 export default function CareersPage() {
+  // This page is a LIST of roles, not a single role — but it used to declare
+  // @type: JobPosting with no title, description or datePosted, which is
+  // exactly the three "missing field" errors Search Console reported. A
+  // listing page cannot satisfy JobPosting: those fields belong to individual
+  // jobs, which each have their own page and their own valid markup.
+  //
+  // The correct shape is an ItemList pointing at the real postings. Google
+  // reads the per-job pages for the Jobs experience; this just describes the
+  // collection. It also fixed a second error nobody reported: the old markup
+  // hardcoded Bengaluru, while every actual role is Mumbai or remote.
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "StackBinary",
-      "sameAs": "https://stackbinary.io"
-    },
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressCountry": "IN"
-      }
-    },
-    "employmentType": "FULL_TIME",
-    "jobBenefits": "Flexible hours, Remote-friendly, Learning budget, High-ownership projects, Pragmatic engineering culture"
+    "@type": "ItemList",
+    "name": "Open roles at StackBinary",
+    "itemListElement": jobs.map((job, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://stackbinary.io/careers/${job.slug}`,
+      "name": job.title
+    }))
   };
 
   return (
