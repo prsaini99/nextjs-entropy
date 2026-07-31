@@ -7,6 +7,12 @@ export type Job = {
   blurb: string;
   experienceLevel: 'Entry' | 'Mid' | 'Senior' | 'Lead' | 'Intern';
   description: string;
+  /**
+   * ISO date the role was posted. Required by Google's JobPosting schema —
+   * without it a listing is ineligible for the Jobs experience in Search.
+   * Defaults to POSTED_DEFAULT below when a role predates this field.
+   */
+  datePosted?: string;
   whatYoullDo: string[];
   whatYoullBring: string[];
   niceToHave?: string[];
@@ -1120,6 +1126,32 @@ export const JOBS: Job[] = [
     ]
   }
 ];
+
+/**
+ * Fallback posting date for roles that predate the `datePosted` field.
+ *
+ * Google requires datePosted on every JobPosting and treats listings older
+ * than ~30 days as stale, dropping them from the Jobs experience. When a role
+ * is genuinely re-opened or refreshed, bump its own datePosted rather than
+ * moving this constant — this exists only so no listing is ever invalid.
+ */
+export const POSTED_DEFAULT = '2026-07-01';
+
+/** ISO date for schema.org JobPosting.datePosted. */
+export function jobDatePosted(job: Job): string {
+  return job.datePosted || POSTED_DEFAULT;
+}
+
+/**
+ * schema.org validThrough. Google expects an expiry; absent one, listings are
+ * assumed stale after a while anyway. 90 days from posting is a reasonable
+ * default for roles we keep genuinely open.
+ */
+export function jobValidThrough(job: Job): string {
+  const posted = new Date(jobDatePosted(job));
+  posted.setDate(posted.getDate() + 90);
+  return posted.toISOString().slice(0, 10);
+}
 
 export function getJobBySlug(slug: string): Job | undefined {
   return JOBS.find(job => job.slug === slug);
