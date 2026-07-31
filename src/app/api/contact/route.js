@@ -2,6 +2,7 @@ import nodemailer from "nodemailer";
 import { supabase, calculateLeadScore } from "@/lib/supabase";
 import { supabaseAdmin } from "@/lib/supabase-admin";
 import { confirmationEmailHtml, confirmationEmailText } from "@/lib/email-templates";
+import { NOTIFY_EMAIL, MAIL_FROM } from "@/constants/contact";
 
 export async function POST(request) {
 	try {
@@ -211,10 +212,13 @@ export async function POST(request) {
 		
 		emailContent += `Submitted at: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST\n`;
 
-		// Prepare email options
+		// Prepare email options. `from` is the branded contact address, not the
+		// raw EMAIL credential — the authenticating mailbox and the visible
+		// sender are allowed to differ, and only one of them belongs in an
+		// inbox the recipient sees.
 		const mailOptions = {
-			from: process.env.EMAIL, // Sender's email
-			to: "prateek@stackbinary.io", // Send to Prateek
+			from: MAIL_FROM,
+			to: NOTIFY_EMAIL,
 			subject: `New Project Inquiry from ${fullName}`,
 			text: emailContent,
 		};
@@ -233,12 +237,12 @@ export async function POST(request) {
 
 		// Send emails best-effort: a mail failure must not lose a stored lead
 		try {
-			// Send email to prateek@stackbinary.io
+			// Notify the team
 			await transporter.sendMail(mailOptions);
 
 			// Send branded confirmation email to user
 			await transporter.sendMail({
-				from: `"StackBinary™" <contact@stackbinary.io>`,
+				from: MAIL_FROM,
 				to: workEmail,
 				subject: `You're in the pipeline, ${fullName.split(' ')[0]} — StackBinary™`,
 				text: confirmationEmailText({ fullName }),
