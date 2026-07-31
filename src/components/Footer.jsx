@@ -4,7 +4,6 @@ import Link from 'next/link';
 import AnimatedInViewDiv from './Animate/AppearInView';
 import ROUTES from '@/constants/routes';
 import NewsLetter from './NewsLetter';
-// import companylogoSvg from '@/assets/svg/stackbinary-logo.svg'
 import Image from 'next/image';
 
 const links = {

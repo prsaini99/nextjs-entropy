@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { motion, MotionConfig } from "framer-motion";
 import { useRouter, usePathname } from 'next/navigation';
 import ROUTES from '@/constants/routes'
-// import logoSvg from '@/assets/svg/logo.svg'
 import Image from 'next/image';
 
 export default function Header() {
