@@ -64,3 +64,4 @@ docs/ads/StackBinary-*.rtf
 client_secret_*.json
 *.apps.googleusercontent.com.json
 google-ads.yaml
+marketing/state.json
