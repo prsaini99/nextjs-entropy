@@ -21,6 +21,20 @@ const nextConfig = {
   // Optimize for serverless deployment
   output: 'standalone',
 
+  // /privacy was a duplicate policy page, deleted July 2026 in favour of
+  // /privacy-policy (the URL the footer and consent line always linked). It had
+  // been in the sitemap since Dec 2025, so search engines may hold the URL —
+  // redirect rather than 404 it.
+  async redirects() {
+    return [
+      {
+        source: '/privacy',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+    ];
+  },
+
   // Image optimization. `domains` is deprecated in favour of remotePatterns,
   // which already covers both hosts.
   images: {
