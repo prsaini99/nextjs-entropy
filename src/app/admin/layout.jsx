@@ -180,7 +180,7 @@ function AdminDashboardLayout({ children }) {
                   </div>
                   <div className="hidden sm:block">
                     <div className="text-xs font-semibold text-gray-900">Admin</div>
-                    <div className="text-xs text-gray-500">{user?.email || 'admin@stackbinary.com'}</div>
+                    <div className="text-xs text-gray-500">{user?.email || 'Signed in'}</div>
                   </div>
                 </div>
                 

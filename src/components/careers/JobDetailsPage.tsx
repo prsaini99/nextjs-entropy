@@ -261,11 +261,11 @@ export default function JobDetailsPage({ job }: Props) {
                         Questions about this role?
                       </div>
                       <Link 
-                        href="mailto:careers@stackbinary.io" 
+                        href="mailto:contact@stackbinary.io" 
                         className="text-size-small text-weight-medium text-white opacity-80 hover:opacity-100"
                         style={{ textAlign: 'center' as const }}
                       >
-                        careers@stackbinary.io
+                        contact@stackbinary.io
                       </Link>
                     </div>
                   </div>

@@ -227,7 +227,7 @@ export default function PrivacyPolicyPage() {
                       contact us:
                     </p>
                     <div className="bg-gray-50 p-6 rounded-lg">
-                      <p><strong>Email:</strong> privacy@stackbinary.io</p>
+                      <p><strong>Email:</strong> contact@stackbinary.io</p>
                       <p><strong>Subject line:</strong> Privacy Policy Inquiry</p>
                       <p><strong>Response time:</strong> we will respond within 30 days</p>
                     </div>

@@ -474,7 +474,7 @@ export default function ContactWrapper() {
                                         >
                                             <span>Try again</span>
                                         </button>
-                                        <Link href="mailto:hello@stackbinary.io" className="secondary-button">
+                                        <Link href="mailto:contact@stackbinary.io" className="secondary-button">
                                             <span>Email us directly</span>
                                         </Link>
                                     </div>
