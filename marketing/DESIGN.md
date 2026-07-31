@@ -79,26 +79,64 @@ Scripts, not MCP tools. This distinction matters and is explained in §5.
   device and source. Extends `scripts/clarity-report.mjs`.
 - `collect/leads.mjs` — new `leads` rows since the last run, with attribution columns.
 - `collect/run-all.mjs` — orchestrator; writes a run record to `state.json`.
+- **Ads costs — manual, weekly, until AdLoop.** Google Ads is unreachable by API
+  until the developer token is approved, so the loop would otherwise be blind to
+  money: it could crown a keyword with great engagement that costs 4× per click.
+  Stopgap: every Monday, alongside the Search Terms export, download the keyword
+  report (cost, clicks, impressions) from the Ads UI as CSV into
+  `data/ads/YYYY-'W'ww.csv`. The join reads it at weekly granularity — the
+  `ads_*` columns are weekly numbers spread across that week's rows, marked as
+  such. When AdLoop lands, this becomes a daily automated collector and the
+  manual step retires.
 
 Output: `data/{ga4,clarity,leads}/YYYY-MM-DD.json`
 
-> **Why daily collection is mandatory even though decisions are weekly.**
-> The Clarity Data Export API serves only a rolling recent window — there is no
-> historical endpoint. A day not captured is a day lost permanently. These snapshots
-> *are* the history; nothing can reconstruct them later.
+**The canonical day is IST (Asia/Kolkata).** GA4 reports in IST, Clarity exports
+in UTC, Supabase timestamps in UTC, and Google Ads buckets by IST — four
+different 24-hour windows wearing the same date. Every collector converts to IST
+at collect time; a snapshot's filename date means the IST day, always.
+
+**Collection window: trailing 3 days, with finalization.** GA4 data is not final
+for 24–48 hours after the day ends; snapshotting only "yesterday" would freeze
+partially processed numbers forever. Each run therefore re-collects the last 3
+IST days, overwriting any day younger than 48 hours. Once a day is 48h old it is
+marked `final` in `state.json` and never rewritten. Append-only applies *after*
+finalization, not before. (Clarity is unaffected — its API only serves the
+recent window anyway, which is precisely why daily runs are mandatory: a day not
+captured before it scrolls out of that window is lost permanently. These
+snapshots *are* the history.)
 
 ### Stage 2 — JOIN (daily, automated)
 
-Produce one row per `(date, source/medium, keyword, landing_page)`:
+Produce one row per `(date, source/medium, keyword, landing_page)`. Every metric
+is **prefixed by the source that measured it, and each source carries its own
+session count**:
 
 ```
 date, source, medium, keyword, landing_page,
-sessions, engaged_sessions, engagement_rate,
-dead_click_sessions, rage_click_sessions, avg_scroll_depth,
-form_starts, form_abandons, abandon_field,
-leads, lead_ids,
-cost, clicks, impressions        <- null until AdLoop lands
+
+ga4_sessions, ga4_engaged_sessions, ga4_engagement_rate,
+ga4_form_starts, ga4_demo_opens, ga4_leads,
+
+clarity_sessions, clarity_dead_click_sessions, clarity_rage_click_sessions,
+clarity_avg_scroll_depth,
+
+db_leads, db_lead_ids,
+
+ads_cost, ads_clicks, ads_impressions      <- null until AdLoop lands
 ```
+
+**Why the prefixes are load-bearing:** GA4 and Clarity do not count the same
+sessions. Their session definitions differ, their bot filtering differs, and
+their ad-blocker exposure differs — gtag.js is on every blocklist, Clarity far
+less so, so GA4 systematically undercounts relative to Clarity. A ratio built
+from one tool's numerator and the other's denominator (Clarity dead-clicks ÷
+GA4 sessions) is confident-looking nonsense.
+
+**The rule: a ratio never crosses a source boundary.** Dead-click *rate* is
+`clarity_dead_click_sessions / clarity_sessions`, engagement rate is GA4-only,
+and so on. Cross-source comparison is permitted for *direction* (both trending
+up, both down) — never for levels.
 
 Output: `joined/YYYY-MM-DD.json`
 
@@ -218,10 +256,12 @@ marketing/
   decisions/YYYY-MM-DD-slug.md
 ```
 
-`data/` is append-only and **gitignored** — it holds lead PII and is the only copy of
-Clarity history that will ever exist. Append-only is not a style preference: editing a
-past snapshot silently rewrites the evidence a previous decision was based on, which
-makes Stage 6 meaningless.
+`data/` is **gitignored** — it holds lead data and is the only copy of Clarity
+history that will ever exist. Days younger than 48h may be rewritten by the
+trailing-window collection (§Stage 1); once marked `final` in `state.json` a
+snapshot is never edited again. That finality rule is not a style preference:
+editing a finalized snapshot silently rewrites the evidence a past decision was
+based on, which makes Stage 6 meaningless.
 
 ## 7. Guardrails
 
@@ -233,6 +273,10 @@ makes Stage 6 meaningless.
    make Stage 6 unattributable.
 6. **Decisions are immutable once written.** Outcomes are appended, not edited — a
    decision log that can be revised after the fact records no learning.
+7. **No ratio crosses a source boundary.** Each source keeps its own denominator;
+   GA4 and Clarity numbers may agree on direction but never share a fraction.
+8. **All dates are IST.** Any timestamp entering the pipeline is converted at the
+   door; a date that hasn't been converted isn't data yet.
 
 ## 8. Decisions taken
 
