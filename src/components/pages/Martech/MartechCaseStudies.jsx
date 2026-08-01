@@ -102,7 +102,7 @@ export default function MartechCaseStudies() {
                                 <AnimatedInViewDiv
                                     key={cs.brand}
                                     delay={index * 0.08}
-                                    className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-4"
+                                    className="border border-black/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-4"
                                 >
                                     <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider">
                                         {cs.category}
@@ -111,7 +111,7 @@ export default function MartechCaseStudies() {
                                         {cs.brand}
                                     </h3>
                                     <p className="text-size-small opacity-60">{cs.summary}</p>
-                                    <div className="grid grid-cols-3 gap-3 mt-auto pt-4 border-t border-white/10">
+                                    <div className="grid grid-cols-3 gap-3 mt-auto pt-4 border-t border-black/10">
                                         {cs.metrics.map((metric) => (
                                             <div key={metric.label}>
                                                 <div className="text-size-large text-weight-bold text-[#ed5145]">
@@ -127,7 +127,7 @@ export default function MartechCaseStudies() {
                             ))}
                         </div>
 
-                        <AnimatedInViewDiv className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 border border-white/10 rounded-lg p-8 bg-white/[0.02]">
+                        <AnimatedInViewDiv className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 border border-black/10 rounded-lg p-8 bg-black/[0.02]">
                             <div className="flex flex-col gap-1">
                                 <div className="text-weight-medium">
                                     31 more case studies across healthcare, fintech, e-commerce and AI

@@ -69,7 +69,7 @@ export default function MartechProcess() {
                                 <AnimatedInViewDiv
                                     key={step.number}
                                     delay={index * 0.1}
-                                    className="border border-white/10 rounded-lg p-8 bg-white/[0.03] flex flex-col gap-3"
+                                    className="border border-black/10 rounded-lg p-8 bg-white/[0.03] flex flex-col gap-3"
                                 >
                                     <div className="flex items-center justify-between">
                                         <div className="heading-5 text-weight-bold text-[#ed5145]">
