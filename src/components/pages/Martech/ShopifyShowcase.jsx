@@ -47,11 +47,11 @@ export default function ShopifyShowcase() {
                         </AnimatedInViewDiv>
 
                         <AnimatedInViewDiv delay={0.3} className="w-full">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-12 rounded-lg overflow-hidden border border-black/10 bg-black/5">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-12 rounded-lg overflow-hidden border border-white/10 bg-white/10">
                                 {stats.map((stat) => (
                                     <div
                                         key={stat.label}
-                                        className="bg-white/90 p-6 lg:p-8 flex flex-col gap-2"
+                                        className="bg-black/90 p-6 lg:p-8 flex flex-col gap-2"
                                     >
                                         <div className="heading-4 text-weight-bold text-[#ed5145]">
                                             {stat.value}
@@ -74,7 +74,7 @@ export default function ShopifyShowcase() {
                                     href={store.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="border border-black/10 rounded-lg p-6 bg-black/[0.02] hover:border-[#ed5145]/60 hover:bg-[#ed5145]/[0.05] transition-all duration-300 flex flex-col gap-2 group h-full"
+                                    className="border border-white/10 rounded-lg p-6 bg-white/[0.02] hover:border-[#ed5145]/60 hover:bg-[#ed5145]/[0.05] transition-all duration-300 flex flex-col gap-2 group h-full"
                                 >
                                     <div className="flex items-center justify-between gap-2">
                                         <span className="text-weight-medium">{store.name}</span>
@@ -93,7 +93,7 @@ export default function ShopifyShowcase() {
                         ))}
                     </div>
 
-                    <AnimatedInViewDiv className="w-full border border-black/10 rounded-lg p-8 bg-black/[0.02] flex flex-col lg:flex-row lg:items-center gap-6 justify-between mt-10">
+                    <AnimatedInViewDiv className="w-full border border-white/10 rounded-lg p-8 bg-white/[0.02] flex flex-col lg:flex-row lg:items-center gap-6 justify-between mt-10">
                         <div className="flex flex-col gap-2">
                             <div className="text-size-large text-weight-medium">
                                 Beyond Shopify: enterprise commerce

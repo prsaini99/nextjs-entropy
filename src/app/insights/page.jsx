@@ -53,7 +53,7 @@ export default function InsightsPage() {
                   <Link
                     key={insight.slug}
                     href={`/insights/${insight.slug}`}
-                    className="border border-black/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3 group"
+                    className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3 group"
                   >
                     <div className="text-size-small opacity-40">
                       {new Date(insight.date).toLocaleDateString("en-IN", {
