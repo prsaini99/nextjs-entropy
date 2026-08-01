@@ -41,7 +41,7 @@ export default function MartechFAQ({
                                 <AnimatedInViewDiv
                                     key={faq.question}
                                     delay={index * 0.05}
-                                    className="border border-white/10 rounded-lg bg-white/[0.02] overflow-hidden"
+                                    className="border border-black/10 rounded-lg bg-black/[0.02] overflow-hidden"
                                 >
                                     <button
                                         onClick={() => {

@@ -274,8 +274,8 @@ export default function FloatingChat() {
                     width: 380px;
                     height: 500px;
                     max-height: calc(100vh - 48px);
-                    background: #1a1a1a;
-                    border: 1px solid #333;
+                    background: #ffffff;
+                    border: 1px solid #e2e2e2;
                     border-radius: 12px;
                     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
                     overflow: hidden;
@@ -306,7 +306,7 @@ export default function FloatingChat() {
                     justify-content: space-between;
                     padding: 16px;
                     background: #ed5145;
-                    border-bottom: 1px solid #333;
+                    border-bottom: 1px solid #e2e2e2;
                     flex-shrink: 0;
                 }
                 .chat-identity { display: flex; align-items: center; gap: 12px; }
@@ -328,7 +328,7 @@ export default function FloatingChat() {
                     flex: 1;
                     padding: 16px;
                     overflow-y: auto;
-                    background: #1a1a1a;
+                    background: #ffffff;
                     -webkit-overflow-scrolling: touch;
                 }
                 .chat-row { display: flex; margin-bottom: 16px; }
@@ -340,11 +340,11 @@ export default function FloatingChat() {
                     padding: 8px 16px;
                     border-radius: 16px;
                     font-size: 14px;
-                    color: #fff;
+                    color: #171717;
                     line-height: 1.5;
                     word-break: break-word;
                 }
-                .chat-bubble.bot { background: #333; }
+                .chat-bubble.bot { background: #f0f0f1; color: #171717; }
                 .chat-bubble.user { background: #ed5145; }
                 .chat-bubble.lead { background: #2d5a2d; border: 1px solid #4ade80; }
                 .chat-link { color: #a0c4ff; text-decoration: underline; }
@@ -352,7 +352,7 @@ export default function FloatingChat() {
                 .chat-typing { display: flex; align-items: center; gap: 8px; }
                 .chat-typing .dot {
                     width: 8px; height: 8px; border-radius: 50%;
-                    background: #fff;
+                    background: #999;
                     animation: chat-bounce 1.4s infinite ease-in-out both;
                 }
                 .chat-typing .dot:nth-child(2) { animation-delay: 0.16s; }
@@ -367,8 +367,8 @@ export default function FloatingChat() {
                     display: flex;
                     gap: 8px;
                     padding: 16px;
-                    border-top: 1px solid #333;
-                    background: #1a1a1a;
+                    border-top: 1px solid #e2e2e2;
+                    background: #ffffff;
                     flex-shrink: 0;
                     padding-bottom: max(16px, env(safe-area-inset-bottom));
                 }
@@ -376,9 +376,9 @@ export default function FloatingChat() {
                     flex: 1;
                     padding: 10px 16px;
                     border-radius: 20px;
-                    background: #333;
-                    border: 1px solid #555;
-                    color: #fff;
+                    background: #f5f5f7;
+                    border: 1px solid #d5d5d7;
+                    color: #171717;
                     /* 16px on mobile: anything smaller makes iOS Safari zoom the
                        viewport on focus, which strands the user mid-conversation. */
                     font-size: 16px;
