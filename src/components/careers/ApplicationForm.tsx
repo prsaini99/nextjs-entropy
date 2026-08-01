@@ -236,11 +236,11 @@ export default function ApplicationForm({ job, onClose }: Props) {
     }
   };
 
-  const inputClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-neutral-900 placeholder-gray-400";
-  const selectClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-neutral-900 [&>option]:bg-gray-800 [&>option]:text-neutral-900";
-  const textareaClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-neutral-900 placeholder-gray-400 resize-vertical";
-  const labelClassName = "block text-size-small text-weight-medium mb-2 text-neutral-900";
-  const headingClassName = "text-size-large text-weight-medium text-neutral-900 mb-6";
+  const inputClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-white placeholder-gray-400";
+  const selectClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-white [&>option]:bg-gray-800 [&>option]:text-white";
+  const textareaClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-white placeholder-gray-400 resize-vertical";
+  const labelClassName = "block text-size-small text-weight-medium mb-2 text-white";
+  const headingClassName = "text-size-large text-weight-medium text-white mb-6";
 
   const renderStep = () => {
     switch (currentStep) {
@@ -338,7 +338,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
                 className={inputClassName}
                 required
               />
-              <div className="text-size-small opacity-70 mt-1 text-neutral-900">PDF, DOC, or DOCX format, max 5MB</div>
+              <div className="text-size-small opacity-70 mt-1 text-white">PDF, DOC, or DOCX format, max 5MB</div>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -498,10 +498,10 @@ export default function ApplicationForm({ job, onClose }: Props) {
                   id="privacy-consent"
                   checked={formData.privacyConsent}
                   onChange={(e) => handleInputChange('privacyConsent', e.target.checked)}
-                  className="mt-1 w-4 h-4 text-neutral-900 focus:ring-white border-gray-600 rounded bg-gray-800"
+                  className="mt-1 w-4 h-4 text-white focus:ring-white border-gray-600 rounded bg-gray-800"
                   required
                 />
-                <label htmlFor="privacy-consent" className="text-size-small opacity-70 text-neutral-900">
+                <label htmlFor="privacy-consent" className="text-size-small opacity-70 text-white">
                   I consent to the collection and processing of my personal data for recruitment purposes. *
                 </label>
               </div>
@@ -511,10 +511,10 @@ export default function ApplicationForm({ job, onClose }: Props) {
                   id="data-processing"
                   checked={formData.dataProcessingConsent}
                   onChange={(e) => handleInputChange('dataProcessingConsent', e.target.checked)}
-                  className="mt-1 w-4 h-4 text-neutral-900 focus:ring-white border-gray-600 rounded bg-gray-800"
+                  className="mt-1 w-4 h-4 text-white focus:ring-white border-gray-600 rounded bg-gray-800"
                   required
                 />
-                <label htmlFor="data-processing" className="text-size-small opacity-70 text-neutral-900">
+                <label htmlFor="data-processing" className="text-size-small opacity-70 text-white">
                   I agree to StackBinary™ storing my application data for up to 12 months for potential future opportunities. *
                 </label>
               </div>
@@ -528,17 +528,17 @@ export default function ApplicationForm({ job, onClose }: Props) {
   };
 
   return (
-    <div className="fixed inset-0 bg-white bg-opacity-80 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white border-opacity-20">
+    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+      <div className="bg-black rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white border-opacity-20">
         <div className="p-6 border-b border-white border-opacity-20">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-size-xlarge text-weight-medium text-neutral-900">Apply for {job.title}</h2>
-              <div className="text-size-small opacity-70 mt-1 text-neutral-900">{job.team} • {job.location}</div>
+              <h2 className="text-size-xlarge text-weight-medium text-white">Apply for {job.title}</h2>
+              <div className="text-size-small opacity-70 mt-1 text-white">{job.team} • {job.location}</div>
             </div>
             <button
               onClick={onClose}
-              className="text-neutral-900 hover:text-gray-300 text-2xl"
+              className="text-white hover:text-gray-300 text-2xl"
             >
               ×
             </button>
@@ -546,7 +546,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
           
           {/* Progress indicator */}
           <div className="mt-6">
-            <div className="flex items-center justify-between text-size-small opacity-70 mb-2 text-neutral-900">
+            <div className="flex items-center justify-between text-size-small opacity-70 mb-2 text-white">
               <span>Step {currentStep} of {totalSteps}</span>
               <span>{Math.round((currentStep / totalSteps) * 100)}% complete</span>
             </div>
@@ -559,7 +559,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 text-neutral-900">
+        <form onSubmit={handleSubmit} className="p-6 text-white">
           {renderStep()}
 
           <div className="flex justify-between mt-8 pt-6 border-t border-white border-opacity-20">
@@ -567,7 +567,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
               type="button"
               onClick={() => setCurrentStep(prev => Math.max(1, prev - 1))}
               disabled={currentStep === 1}
-              className="px-6 py-2 text-size-small border border-white border-opacity-30 rounded-lg hover:border-white hover:border-opacity-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-neutral-900"
+              className="px-6 py-2 text-size-small border border-white border-opacity-30 rounded-lg hover:border-white hover:border-opacity-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white"
             >
               Previous
             </button>

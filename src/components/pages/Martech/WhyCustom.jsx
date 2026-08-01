@@ -55,8 +55,8 @@ export default function WhyCustom() {
                             </div>
                         </AnimatedInViewDiv>
 
-                        <div className="w-full overflow-hidden rounded-lg border border-black/10">
-                            <div className="grid grid-cols-3 bg-black/[0.04] text-weight-bold">
+                        <div className="w-full overflow-hidden rounded-lg border border-white/10">
+                            <div className="grid grid-cols-3 bg-white/[0.06] text-weight-bold">
                                 <div className="p-5 text-size-small uppercase tracking-wider opacity-60"></div>
                                 <div className="p-5 text-size-small uppercase tracking-wider opacity-60">
                                     Off-the-shelf stack
@@ -69,7 +69,7 @@ export default function WhyCustom() {
                                 <AnimatedInViewDiv
                                     key={row.dimension}
                                     delay={i * 0.06}
-                                    className="grid grid-cols-3 border-t border-black/10"
+                                    className="grid grid-cols-3 border-t border-white/10"
                                 >
                                     <div className="p-5 text-weight-medium text-size-small">
                                         {row.dimension}

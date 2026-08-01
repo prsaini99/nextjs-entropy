@@ -104,7 +104,7 @@ export default function UTMBuilder() {
             </div>
 
             {/* URL Input */}
-            <div className="mb-8 p-6 border border-black/20 rounded-lg bg-white/60">
+            <div className="mb-8 p-6 border border-white/20 rounded-lg bg-black/50">
               <label className="block text-size-medium text-weight-medium mb-3">
                 Website URL *
               </label>
@@ -113,7 +113,7 @@ export default function UTMBuilder() {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="https://stackbinary.io"
-                className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-neutral-900 placeholder-gray-400"
+                className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-white placeholder-gray-400"
                 required
               />
               <p className="text-size-small opacity-60 mt-2">
@@ -122,7 +122,7 @@ export default function UTMBuilder() {
             </div>
 
             {/* UTM Parameters */}
-            <div className="mb-8 p-6 border border-black/20 rounded-lg bg-white/60">
+            <div className="mb-8 p-6 border border-white/20 rounded-lg bg-black/50">
               <h2 className="text-size-large text-weight-medium mb-6">Campaign Parameters</h2>
               
               {/* Source */}
@@ -135,7 +135,7 @@ export default function UTMBuilder() {
                   value={utmParams.utm_source}
                   onChange={(e) => handleParamChange('utm_source', e.target.value)}
                   placeholder="e.g., google, facebook, newsletter"
-                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-neutral-900 placeholder-gray-400 mb-2"
+                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-white placeholder-gray-400 mb-2"
                   required
                 />
                 <div className="flex flex-wrap gap-2">
@@ -143,7 +143,7 @@ export default function UTMBuilder() {
                     <button
                       key={source}
                       onClick={() => handleParamChange('utm_source', source)}
-                      className="px-3 py-1 text-size-small border border-black/30 rounded hover:bg-black/5"
+                      className="px-3 py-1 text-size-small border border-white/30 rounded hover:bg-white/10"
                     >
                       {source}
                     </button>
@@ -161,7 +161,7 @@ export default function UTMBuilder() {
                   value={utmParams.utm_medium}
                   onChange={(e) => handleParamChange('utm_medium', e.target.value)}
                   placeholder="e.g., cpc, email, social"
-                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-neutral-900 placeholder-gray-400 mb-2"
+                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-white placeholder-gray-400 mb-2"
                   required
                 />
                 <div className="flex flex-wrap gap-2">
@@ -169,7 +169,7 @@ export default function UTMBuilder() {
                     <button
                       key={medium}
                       onClick={() => handleParamChange('utm_medium', medium)}
-                      className="px-3 py-1 text-size-small border border-black/30 rounded hover:bg-black/5"
+                      className="px-3 py-1 text-size-small border border-white/30 rounded hover:bg-white/10"
                     >
                       {medium}
                     </button>
@@ -187,7 +187,7 @@ export default function UTMBuilder() {
                   value={utmParams.utm_campaign}
                   onChange={(e) => handleParamChange('utm_campaign', e.target.value)}
                   placeholder="e.g., summer_sale, product_launch"
-                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-neutral-900 placeholder-gray-400 mb-2"
+                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-white placeholder-gray-400 mb-2"
                   required
                 />
                 <div className="flex flex-wrap gap-2">
@@ -195,7 +195,7 @@ export default function UTMBuilder() {
                     <button
                       key={campaign}
                       onClick={() => handleParamChange('utm_campaign', campaign)}
-                      className="px-3 py-1 text-size-small border border-black/30 rounded hover:bg-black/5"
+                      className="px-3 py-1 text-size-small border border-white/30 rounded hover:bg-white/10"
                     >
                       {campaign}
                     </button>
@@ -213,7 +213,7 @@ export default function UTMBuilder() {
                   value={utmParams.utm_term}
                   onChange={(e) => handleParamChange('utm_term', e.target.value)}
                   placeholder="e.g., keyword for paid search"
-                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-neutral-900 placeholder-gray-400"
+                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-white placeholder-gray-400"
                 />
                 <p className="text-size-small opacity-60 mt-1">
                   Used for paid search keywords
@@ -230,7 +230,7 @@ export default function UTMBuilder() {
                   value={utmParams.utm_content}
                   onChange={(e) => handleParamChange('utm_content', e.target.value)}
                   placeholder="e.g., banner_ad, text_link"
-                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-neutral-900 placeholder-gray-400"
+                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-white placeholder-gray-400"
                 />
                 <p className="text-size-small opacity-60 mt-1">
                   Used to differentiate similar content or links
@@ -265,19 +265,19 @@ export default function UTMBuilder() {
                 <h3 className="text-size-medium text-weight-medium mb-3">
                   Generated Campaign URL
                 </h3>
-                <div className="p-3 bg-white/60 rounded mb-4 break-all font-mono text-size-small">
+                <div className="p-3 bg-black/50 rounded mb-4 break-all font-mono text-size-small">
                   {generatedUrl}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={copyToClipboard}
-                    className="px-4 py-2 border border-black/30 rounded hover:bg-black/5"
+                    className="px-4 py-2 border border-white/30 rounded hover:bg-white/10"
                   >
                     {copied ? '✓ Copied!' : 'Copy to Clipboard'}
                   </button>
                   <button
                     onClick={createShortenedUrl}
-                    className="px-4 py-2 border border-black/30 rounded hover:bg-black/5"
+                    className="px-4 py-2 border border-white/30 rounded hover:bg-white/10"
                   >
                     Create Short URL
                   </button>
@@ -285,7 +285,7 @@ export default function UTMBuilder() {
                     href={generatedUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 border border-black/30 rounded hover:bg-black/5 text-center"
+                    className="px-4 py-2 border border-white/30 rounded hover:bg-white/10 text-center"
                   >
                     Test URL →
                   </a>
@@ -294,7 +294,7 @@ export default function UTMBuilder() {
             )}
 
             {/* Best Practices */}
-            <div className="mt-12 p-6 border border-black/20 rounded-lg bg-white/60">
+            <div className="mt-12 p-6 border border-white/20 rounded-lg bg-black/50">
               <h3 className="text-size-large text-weight-medium mb-4">
                 UTM Best Practices
               </h3>
@@ -309,14 +309,14 @@ export default function UTMBuilder() {
             </div>
 
             {/* Common Use Cases */}
-            <div className="mt-8 p-6 border border-black/20 rounded-lg bg-white/60">
+            <div className="mt-8 p-6 border border-white/20 rounded-lg bg-black/50">
               <h3 className="text-size-large text-weight-medium mb-4">
                 Common Use Cases
               </h3>
               <div className="grid md:grid-cols-2 gap-4 text-size-small">
                 <div>
                   <h4 className="text-weight-medium mb-2">Email Campaign</h4>
-                  <code className="block p-2 bg-white/60 rounded text-xs">
+                  <code className="block p-2 bg-black/50 rounded text-xs">
                     utm_source=newsletter<br/>
                     utm_medium=email<br/>
                     utm_campaign=monthly_update
@@ -324,7 +324,7 @@ export default function UTMBuilder() {
                 </div>
                 <div>
                   <h4 className="text-weight-medium mb-2">Social Media Ad</h4>
-                  <code className="block p-2 bg-white/60 rounded text-xs">
+                  <code className="block p-2 bg-black/50 rounded text-xs">
                     utm_source=facebook<br/>
                     utm_medium=cpc<br/>
                     utm_campaign=summer_sale
@@ -332,7 +332,7 @@ export default function UTMBuilder() {
                 </div>
                 <div>
                   <h4 className="text-weight-medium mb-2">Partner Referral</h4>
-                  <code className="block p-2 bg-white/60 rounded text-xs">
+                  <code className="block p-2 bg-black/50 rounded text-xs">
                     utm_source=partner_name<br/>
                     utm_medium=referral<br/>
                     utm_campaign=partnership_2024
@@ -340,7 +340,7 @@ export default function UTMBuilder() {
                 </div>
                 <div>
                   <h4 className="text-weight-medium mb-2">QR Code</h4>
-                  <code className="block p-2 bg-white/60 rounded text-xs">
+                  <code className="block p-2 bg-black/50 rounded text-xs">
                     utm_source=qr_code<br/>
                     utm_medium=offline<br/>
                     utm_campaign=event_name

@@ -7,16 +7,11 @@
 	--foreground: #171717;
 }
 
-/* The site is deliberately light-theme-only (decision 2026-07-31: readability
-   over the previous dark design). No prefers-color-scheme override: OS-level
-   dark mode must not flip the site back to a theme that no longer exists —
-   the old media query here did exactly that for dark-mode visitors. */
-
-/* The logo asset is white-on-transparent, drawn for the dark theme. Inverting
-   it in CSS beats shipping a second asset: one source of truth, and the email
-   templates (which still render on dark cards) keep using the original file. */
-img[src*="stack-logo"] {
-	filter: brightness(0);
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 body {

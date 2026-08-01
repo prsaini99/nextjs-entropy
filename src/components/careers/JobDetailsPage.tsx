@@ -262,7 +262,7 @@ export default function JobDetailsPage({ job }: Props) {
                       </div>
                       <Link 
                         href="mailto:contact@stackbinary.io" 
-                        className="text-size-small text-weight-medium text-neutral-900 opacity-80 hover:opacity-100"
+                        className="text-size-small text-weight-medium text-white opacity-80 hover:opacity-100"
                         style={{ textAlign: 'center' as const }}
                       >
                         contact@stackbinary.io
