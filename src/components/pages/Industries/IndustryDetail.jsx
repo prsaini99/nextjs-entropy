@@ -113,7 +113,7 @@ export default function IndustryDetail({ industry }) {
                                     <AnimatedInViewDiv
                                         key={product.name}
                                         delay={i * 0.08}
-                                        className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3"
+                                        className="border border-black/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3"
                                     >
                                         <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider">
                                             {product.tag}
@@ -132,7 +132,7 @@ export default function IndustryDetail({ industry }) {
                             </div>
 
                             {industry.martechLink && (
-                                <AnimatedInViewDiv className="w-full border border-white/10 rounded-lg p-8 bg-white/[0.02] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                                <AnimatedInViewDiv className="w-full border border-black/10 rounded-lg p-8 bg-black/[0.02] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                                     <div className="flex flex-col gap-1">
                                         <div className="text-weight-medium">
                                             Marketing technology is a dedicated practice

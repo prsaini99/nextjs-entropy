@@ -508,7 +508,7 @@ export default function ContactWrapper() {
                                 {/* Office Locations */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                                     {/* USA Office */}
-                                    <div className="office-location p-6 border border-white/20 rounded-lg">
+                                    <div className="office-location p-6 border border-black/20 rounded-lg">
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#ed5145' }}>
@@ -541,7 +541,7 @@ export default function ContactWrapper() {
                                     </div>
 
                                     {/* India Office */}
-                                    <div className="office-location p-6 border border-white/20 rounded-lg">
+                                    <div className="office-location p-6 border border-black/20 rounded-lg">
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#ed5145' }}>
