@@ -42,7 +42,7 @@ export default function MartechShopify() {
                                         href={store.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="border border-black/10 rounded-lg p-4 bg-black/[0.02] hover:border-[#ed5145]/60 hover:bg-[#ed5145]/[0.05] transition-all duration-300 flex flex-col gap-1 group h-full"
+                                        className="border border-white/10 rounded-lg p-4 bg-white/[0.02] hover:border-[#ed5145]/60 hover:bg-[#ed5145]/[0.05] transition-all duration-300 flex flex-col gap-1 group h-full"
                                     >
                                         <div className="flex items-center justify-between gap-2">
                                             <span className="text-weight-medium text-size-small">
@@ -60,7 +60,7 @@ export default function MartechShopify() {
                             ))}
                         </div>
 
-                        <AnimatedInViewDiv className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 border border-black/10 rounded-lg p-8 bg-black/[0.02]">
+                        <AnimatedInViewDiv className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 border border-white/10 rounded-lg p-8 bg-white/[0.02]">
                             <div className="flex flex-col gap-1">
                                 <div className="text-weight-medium">
                                     + {shopifyStores.length - featured.length} more live stores

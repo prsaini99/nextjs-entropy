@@ -2298,7 +2298,7 @@ blockquote {
 }
 
 .hero-style-guide-wrapper {
-	background-color: #f5f5f7;
+	background-color: #121212;
 	border-radius: 1rem;
 	width: 100%;
 	margin-top: 1rem;
@@ -2594,7 +2594,7 @@ blockquote {
 }
 
 .color-palette {
-	border: 1px solid #0000001a;
+	border: 1px solid #ffffff1a;
 	border-radius: 1rem;
 	width: 100%;
 	height: 10rem;
@@ -2793,7 +2793,7 @@ blockquote {
 .integrations-block {
 	grid-column-gap: 3rem;
 	grid-row-gap: 3rem;
-	background-color: #eeeef0;
+	background-color: #1f1f1f;
 	border-radius: 1rem;
 	flex-flow: column;
 	align-items: center;
@@ -2964,7 +2964,7 @@ blockquote {
 .testimonial-card {
 	grid-column-gap: 1.5rem;
 	grid-row-gap: 1.5rem;
-	background-color: #f5f5f7;
+	background-color: #151515;
 	border-radius: 0.5rem;
 	flex-flow: column;
 	justify-content: space-between;
@@ -2977,7 +2977,7 @@ blockquote {
 }
 
 .testimonial-card:hover {
-	background-color: #eeeef0;
+	background-color: #1f1f1f;
 }
 
 .testimonial-person-info {
@@ -2990,7 +2990,7 @@ blockquote {
 .steps-card {
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	background-color: #f5f5f7;
+	background-color: #141313;
 	border: 1px solid #393939;
 	border-radius: 1rem;
 	grid-template-rows: auto;
@@ -3138,7 +3138,7 @@ blockquote {
 }
 
 .paragraph {
-	color: #171717cc;
+	color: #ffffff80;
 }
 
 .icon-embed {
@@ -3207,7 +3207,7 @@ blockquote {
 
 .text-color-white {
 	opacity: 1;
-	color: #171717;
+	color: #ebebeb;
 }
 
 .footer-component {
@@ -3339,7 +3339,7 @@ blockquote {
 .phase-cards {
 	grid-column-gap: 3.5rem;
 	grid-row-gap: 3.5rem;
-	background-color: #f5f5f7;
+	background-color: #151515;
 	flex-flow: column;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -3850,7 +3850,7 @@ blockquote {
 
 .enterprise-banner {
 	color: #fbfbfb;
-	background-color: #f5f5f7;
+	background-color: #151515;
 	border: 1px solid #393939;
 	border-radius: 0.5rem;
 	justify-content: space-between;
@@ -3883,12 +3883,12 @@ blockquote {
 }
 
 .price-icon.black {
-	background-color: #f5f5f7;
+	background-color: #101011;
 }
 
 .price-card {
 	grid-row-gap: 4rem;
-	background-color: #f5f5f7;
+	background-color: #151515;
 	border-radius: 0.5rem;
 	flex-direction: column;
 	justify-content: space-between;
@@ -3899,7 +3899,7 @@ blockquote {
 }
 
 .price-card:nth-child(2n) {
-	background-color: #eeeef0;
+	background-color: #1f1f1f;
 }
 
 .price-card.dark-grey {
@@ -4327,14 +4327,14 @@ blockquote {
 }
 
 .style-guide-hero {
-	background-color: #ffffff;
+	background-color: #000;
 	border-bottom: 1px solid #333;
 }
 
 .hero-changelog-wrapper {
 	grid-column-gap: 2rem;
 	grid-row-gap: 2rem;
-	background-color: #ffffff;
+	background-color: #000;
 	border-radius: 1rem;
 	flex-flow: column;
 	width: 100%;
@@ -4448,11 +4448,11 @@ blockquote {
 }
 
 .text-field-contact:active {
-	color: #171717 !important;
+	color: #ffffff !important;
 }
 
 .text-field-contact:focus {
-	color: #171717 !important;
+	color: #ffffff !important;
 	border-color: #333 !important;
 }
 
@@ -4490,7 +4490,7 @@ textarea.text-field-contact:hover {
 
 select.text-field-contact:focus,
 textarea.text-field-contact:focus {
-	color: #171717;
+	color: #ffffff;
 	border-color: #333;
 	outline: none;
 }
@@ -4510,12 +4510,12 @@ select.text-field-contact {
 /* The opened list is drawn by the OS and ignores most of the above. */
 select.text-field-contact option {
 	color: #fbfbfb;
-	background-color: #f5f5f7;
+	background-color: #1a1a1a;
 }
 
 select.text-field-contact optgroup {
 	color: #c9d4d8;
-	background-color: #f5f5f7;
+	background-color: #1a1a1a;
 	font-style: normal;
 }
 
@@ -4535,9 +4535,9 @@ textarea.text-field-contact {
 }
 
 .success-message {
-	color: #171717;
+	color: #ffffff;
 	text-align: center;
-	background-color: #ffffff;
+	background-color: #000000;
 	border: 1px solid #ffffff;
 	border-radius: 0.6rem;
 	padding-top: 2rem;
@@ -4562,7 +4562,7 @@ textarea.text-field-contact {
 }
 
 .contact-button {
-	background-color: #f5f5f7;
+	background-color: #1d1d1f;
 	border-radius: 0.3rem;
 	transition: all 0.25s;
 }
@@ -4706,7 +4706,7 @@ textarea.text-field-contact {
 	color: var(--color--white);
 	text-align: center;
 	cursor: pointer;
-	background-color: #f5f5f7;
+	background-color: #101011;
 	border-radius: 0.5rem;
 	width: 100%;
 	padding: 0.8rem 1rem;
@@ -4715,7 +4715,7 @@ textarea.text-field-contact {
 }
 
 .modal-button:hover {
-	background-color: #ffffffcc;
+	background-color: #101011cc;
 	transform: scale(0.98);
 }
 
@@ -5151,7 +5151,7 @@ textarea.text-field-contact {
 		grid-column-gap: 0.5rem;
 		grid-row-gap: 0.5rem;
 		color: #fff;
-		background-color: #f5f5f7;
+		background-color: #1a1a1a;
 		justify-content: center;
 		align-items: center;
 		padding-bottom: 2rem;

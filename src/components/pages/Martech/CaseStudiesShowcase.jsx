@@ -27,7 +27,7 @@ function CaseStudyCard({ cs }) {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="border border-black/10 rounded-lg bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col">
+        <div className="border border-white/10 rounded-lg bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col">
             <div className="p-8 flex flex-col gap-3 flex-1">
                 <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider">
                     {cs.category}
@@ -68,7 +68,7 @@ function CaseStudyCard({ cs }) {
                 )}
 
                 {open && (
-                    <div className="flex flex-col gap-3 mt-2 pt-3 border-t border-black/10">
+                    <div className="flex flex-col gap-3 mt-2 pt-3 border-t border-white/10">
                         <div>
                             <div className="text-size-small text-weight-bold opacity-70 mb-1">
                                 Challenge
@@ -86,7 +86,7 @@ function CaseStudyCard({ cs }) {
                                 {cs.services.map((service) => (
                                     <span
                                         key={service}
-                                        className="text-size-small border border-black/15 rounded-full px-3 py-1 opacity-60"
+                                        className="text-size-small border border-white/15 rounded-full px-3 py-1 opacity-60"
                                     >
                                         {service}
                                     </span>
@@ -106,7 +106,7 @@ function CaseStudyCard({ cs }) {
                     }
                     setOpen(!open);
                 }}
-                className="border-t border-black/10 px-8 py-4 text-size-small text-weight-bold flex items-center justify-between hover:bg-[#ed5145]/10 transition-colors text-left"
+                className="border-t border-white/10 px-8 py-4 text-size-small text-weight-bold flex items-center justify-between hover:bg-[#ed5145]/10 transition-colors text-left"
             >
                 <span>{open ? "Show less" : "Challenge & solution"}</span>
                 <span className={`text-[#ed5145] transition-transform duration-300 ${open ? "rotate-90" : ""}`}>
@@ -182,7 +182,7 @@ export default function CaseStudiesShowcase({ general = false }) {
                                     className={`rounded-full px-5 py-2.5 border text-size-small text-weight-bold transition-all duration-200 ${
                                         active === category
                                             ? "border-[#ed5145] bg-[#ed5145]/[0.1] text-[#ed5145]"
-                                            : "border-black/15 bg-black/[0.02] hover:border-black/40"
+                                            : "border-white/15 bg-white/[0.02] hover:border-white/40"
                                     }`}
                                 >
                                     {category}{" "}
