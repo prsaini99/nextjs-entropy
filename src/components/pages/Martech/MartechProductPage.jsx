@@ -82,11 +82,11 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
 
                             {page.heroStats && (
                                 <AnimatedInViewDiv delay={0.4} className="w-full">
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 rounded-lg overflow-hidden border border-white/10 bg-white/10">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 rounded-lg overflow-hidden border border-black/10 bg-black/5">
                                         {page.heroStats.map((stat) => (
                                             <div
                                                 key={stat.label}
-                                                className="bg-black/90 p-6 lg:p-8 flex flex-col gap-2"
+                                                className="bg-white/90 p-6 lg:p-8 flex flex-col gap-2"
                                             >
                                                 <div className="heading-4 text-weight-bold text-[#ed5145]">
                                                     {stat.value}
@@ -130,8 +130,8 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                 </AnimatedInViewDiv>
 
                                 <AnimatedInViewDiv className="w-full">
-                                    <div className="border border-white/15 rounded-lg overflow-hidden bg-black">
-                                        <div className="flex items-center justify-between gap-3 px-5 py-3 border-b border-white/10 bg-white/[0.03]">
+                                    <div className="border border-black/15 rounded-lg overflow-hidden bg-white">
+                                        <div className="flex items-center justify-between gap-3 px-5 py-3 border-b border-black/10 bg-white/[0.03]">
                                             <div className="flex items-center gap-2">
                                                 <span className="w-3 h-3 rounded-full bg-[#ed5145]/70"></span>
                                                 <span className="w-3 h-3 rounded-full bg-white/20"></span>
@@ -188,7 +188,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <AnimatedInViewDiv
                                             key={feature.title}
                                             delay={index * 0.08}
-                                            className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3"
+                                            className="border border-black/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3"
                                         >
                                             <h3 className="text-size-large text-weight-medium">
                                                 {feature.title}
@@ -222,7 +222,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <AnimatedInViewDiv
                                             key={step.title}
                                             delay={index * 0.1}
-                                            className="border border-white/10 rounded-lg p-8 bg-white/[0.03] flex flex-col gap-3"
+                                            className="border border-black/10 rounded-lg p-8 bg-white/[0.03] flex flex-col gap-3"
                                         >
                                             <div className="heading-5 text-weight-bold text-[#ed5145]">
                                                 {String(index + 1).padStart(2, "0")}
@@ -257,7 +257,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <Link
                                             key={slug}
                                             href={`/martech/${slug}`}
-                                            className="border border-white/10 rounded-lg p-6 bg-white/[0.02] hover:border-[#ed5145]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
+                                            className="border border-black/10 rounded-lg p-6 bg-black/[0.02] hover:border-[#ed5145]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
                                         >
                                             <span className="text-size-small text-weight-medium capitalize-first">
                                                 {linkAnchors[slug] || slug}
