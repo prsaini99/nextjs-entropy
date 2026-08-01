@@ -176,7 +176,7 @@ export default function MartechLeadForm({
             id="martech-lead-form"
             onSubmit={handleSubmit}
             data-clarity-mask="true"
-            className="border border-black/15 rounded-lg p-6 lg:p-8 bg-black/[0.03] backdrop-blur flex flex-col gap-4 w-full text-left"
+            className="border border-white/15 rounded-lg p-6 lg:p-8 bg-white/[0.04] backdrop-blur flex flex-col gap-4 w-full text-left"
         >
             <div>
                 <div className="text-size-large text-weight-bold">{heading}</div>
@@ -245,7 +245,7 @@ export default function MartechLeadForm({
                                 setCustomBudget(false);
                                 setForm((f) => ({ ...f, budget: "" }));
                             }}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 text-neutral-900"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 text-white"
                         >
                             ×
                         </button>
@@ -320,12 +320,12 @@ export default function MartechLeadForm({
 
             <style jsx>{`
                 .martech-input {
-                    background: #ffffff;
-                    border: 1px solid rgba(0, 0, 0, 0.18);
+                    background: rgba(0, 0, 0, 0.5);
+                    border: 1px solid rgba(255, 255, 255, 0.15);
                     border-radius: 0.5rem;
                     padding: 0.75rem 1rem;
                     font-size: 0.875rem;
-                    color: #171717;
+                    color: #fff;
                     width: 100%;
                     outline: none;
                     transition: border-color 0.2s;
@@ -334,15 +334,15 @@ export default function MartechLeadForm({
                     border-color: #ed5145;
                 }
                 .martech-input::placeholder {
-                    color: rgba(0, 0, 0, 0.45);
+                    color: rgba(255, 255, 255, 0.4);
                 }
                 select.martech-input:invalid,
                 select.martech-input option[value=""] {
-                    color: rgba(0, 0, 0, 0.45);
+                    color: rgba(255, 255, 255, 0.4);
                 }
                 select.martech-input option {
                     background: #111;
-                    color: #171717;
+                    color: #fff;
                 }
             `}</style>
         </form>
