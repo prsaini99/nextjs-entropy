@@ -623,7 +623,16 @@ const martechPages = {
       { value: "24/7", label: "coverage, every call answered" },
       { value: "1", label: "profile to configure, no engineering redeploy per client" },
     ],
+    // "ai receptionist" converted a real lead (2026-08-01) at Quality Score 5 —
+    // the term appeared only in body copy. Putting it in the section H2 and a
+    // named feature raises ad relevance on a query already proven to buy.
+    featuresHeading: "Inside Your AI Call Center & AI Receptionist",
     features: [
+      {
+        title: "Your AI Receptionist, 24/7",
+        description:
+          "Every inbound call answered instantly: greeting, routing, message capture and appointment booking, in the caller's own language, with a summary in your CRM before a human would have picked up.",
+      },
       {
         title: "Real-Time Voice Conversations",
         description:
