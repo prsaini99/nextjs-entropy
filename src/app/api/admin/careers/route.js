@@ -1,38 +1,55 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+// Service-role client, not the anon one: career_applications has RLS with no
+// anon policies (the same trap that broke the apply route's inserts), so the
+// anon client's reads return empty sets. Access control lives in middleware.js,
+// which already denies every /api/admin/* request without an allowlisted admin
+// session — the service key here never widens who can reach this data.
+import { supabaseAdmin } from '@/lib/supabase-admin';
 
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page')) || 1;
-    const limit = parseInt(searchParams.get('limit')) || 20;
+    const limit = Math.min(parseInt(searchParams.get('limit')) || 25, 100);
     const status = searchParams.get('status');
     const job_title = searchParams.get('job_title');
     const search = searchParams.get('search');
+    const date_from = searchParams.get('date_from');
+    const date_to = searchParams.get('date_to');
+    const has_resume = searchParams.get('has_resume');
     const sort_by = searchParams.get('sort_by') || 'created_at';
     const sort_order = searchParams.get('sort_order') || 'desc';
 
     const from = (page - 1) * limit;
     const to = from + limit - 1;
 
-    // Build query
-    let query = supabase
+    // The list view never needs the essay fields; keeping them out of the
+    // select keeps 25-row pages small even though rows carry long free text.
+    let query = supabaseAdmin
       .from('career_applications')
-      .select('*', { count: 'exact' })
+      .select(
+        'id, job_title, first_name, last_name, email, phone, location, university, years_of_experience, current_position, current_company, salary_expectations, availability_date, referral_source, utm_source, status, resume_path, resume_filename, created_at',
+        { count: 'exact' }
+      )
       .range(from, to)
       .order(sort_by, { ascending: sort_order === 'asc' });
 
-    // Apply filters
-    if (status) {
-      query = query.eq('status', status);
-    }
-    
-    if (job_title) {
-      query = query.eq('job_title', job_title);
-    }
-    
+    if (status) query = query.eq('status', status);
+    if (job_title) query = query.eq('job_title', job_title);
+    if (date_from) query = query.gte('created_at', `${date_from}T00:00:00.000Z`);
+    if (date_to) query = query.lt('created_at', `${date_to}T23:59:59.999Z`);
+    if (has_resume === 'yes') query = query.not('resume_path', 'is', null);
+    if (has_resume === 'no') query = query.is('resume_path', null);
+
     if (search) {
-      query = query.or(`first_name.ilike.%${search}%,last_name.ilike.%${search}%,email.ilike.%${search}%,job_title.ilike.%${search}%`);
+      // Commas and parens are PostgREST or() syntax; strip them so a pasted
+      // "Lastname, Firstname" can't break the filter expression.
+      const s = search.replace(/[,()]/g, ' ').trim();
+      if (s) {
+        query = query.or(
+          `first_name.ilike.%${s}%,last_name.ilike.%${s}%,email.ilike.%${s}%,phone.ilike.%${s}%,university.ilike.%${s}%,location.ilike.%${s}%,current_company.ilike.%${s}%,technical_skills.ilike.%${s}%`
+        );
+      }
     }
 
     const { data: applications, error, count } = await query;
@@ -85,9 +102,9 @@ export async function PUT(request) {
       );
     }
 
-    const { data: updatedApplication, error } = await supabase
+    const { data: updatedApplication, error } = await supabaseAdmin
       .from('career_applications')
-      .update({ 
+      .update({
         status,
         updated_at: new Date().toISOString(),
       })
