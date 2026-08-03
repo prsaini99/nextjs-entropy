@@ -12,8 +12,9 @@ export default function ServicePageTemplate({ service }) {
         return <div>Service not found</div>;
     }
 
-    // Get detailed content for this service
-    const detailedContent = serviceContent[service.slug];
+    // Detailed content is keyed by the short hand-written slug (contentKey),
+    // not the computed route slug — see the comment in data/services.js.
+    const detailedContent = serviceContent[service.contentKey] || serviceContent[service.slug];
     
     // Get related services (next 3 services in the array)
     const currentIndex = services.findIndex(s => s.slug === service.slug);
