@@ -58,6 +58,7 @@ interface FormData {
 export default function ApplicationForm({ job, onClose }: Props) {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const { utmData, getAttributionData } = useUTMTracking();
   
   // Track form view on mount
@@ -188,10 +189,12 @@ export default function ApplicationForm({ job, onClose }: Props) {
           lead_medium: currentUTM.utm_medium || 'none'
         });
         
-        // No timeline promised here, deliberately, and none in the
-        // confirmation email either. The two must stay in agreement.
-        alert('Application submitted. We\'ll get back to you — check your email for a confirmation.');
-        onClose();
+        // Swap the form for the success panel instead of closing. Two reasons:
+        // the old alert promised a confirmation email that the CAREERS_EMAILS
+        // kill switch may be suppressing, and the moment right after applying
+        // is the one time a candidate will happily follow the company page —
+        // the LinkedIn CTA lives there. No timeline promised, deliberately.
+        setSubmitted(true);
       } else {
         // Surface the server's actual reason — a generic message is how the
         // consent bug went undiagnosed: 43 error events, zero information.
@@ -526,6 +529,51 @@ export default function ApplicationForm({ job, onClose }: Props) {
         return null;
     }
   };
+
+  if (submitted) {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+        <div className="bg-black rounded-lg max-w-2xl w-full border border-white border-opacity-20 p-8 text-white text-center">
+          <div className="text-4xl mb-4">✓</div>
+          <h2 className="text-size-xlarge text-weight-medium mb-3">Application received</h2>
+          <p className="text-size-regular opacity-70 mb-8 max-w-md mx-auto">
+            Thanks for applying for {job.title}. Our team reviews every application
+            and we&apos;ll get back to you.
+          </p>
+          <div className="border border-white border-opacity-20 rounded-lg p-6 mb-8">
+            <p className="text-size-regular opacity-80 mb-4">
+              We announce new roles and ship-updates on LinkedIn first — follow
+              StackBinary to hear about them before they&apos;re posted anywhere else.
+            </p>
+            <a
+              href="https://www.linkedin.com/company/stackbinary"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent(ANALYTICS_EVENTS.CTA_CLICK, {
+                  cta_location: 'careers_apply_success',
+                  cta_label: 'linkedin_follow',
+                  job_title: job.title,
+                })
+              }
+              className="primary-button w-inline-block"
+            >
+              <div className="relative">
+                <div className="text-size-small text-weight-bold">Follow StackBinary on LinkedIn</div>
+              </div>
+              <div className="button-elipse"></div>
+            </a>
+          </div>
+          <button
+            onClick={onClose}
+            className="px-6 py-2 text-size-small border border-white border-opacity-30 rounded-lg hover:border-opacity-50 transition-colors text-white"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">

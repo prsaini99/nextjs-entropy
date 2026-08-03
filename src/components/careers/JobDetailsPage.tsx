@@ -4,6 +4,8 @@ import Link from 'next/link';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import ApplicationForm from '@/components/careers/ApplicationForm';
 import { Job } from '@/lib/careers';
+import { getProductLinksForJob } from '@/lib/careersProductLinks';
+import { trackEvent, ANALYTICS_EVENTS } from '@/lib/analytics';
 
 interface Props {
   job: Job;
@@ -191,6 +193,59 @@ export default function JobDetailsPage({ job }: Props) {
                     </div>
                   </AnimatedInViewDiv>
                 )}
+
+                {/* What You'd Build — links each role to the products it would
+                    actually work on. Careers pages are the site's most-visited
+                    pages; without this they were dead ends for both candidates
+                    and crawlers. */}
+                <AnimatedInViewDiv delay={0.35} className="features-vantages">
+                  <div className="features-vantages-content">
+                    <div className="features-heading-wrapper">
+                      <div className="features-heading align-left">
+                        <div className="heading-6 text-weight-medium">What You&apos;d Build</div>
+                      </div>
+                    </div>
+                    <div className="text-size-medium opacity-70 mb-6">
+                      These aren&apos;t hypothetical projects — they&apos;re live products you can
+                      try before your first interview.
+                    </div>
+                    <div className="check-list">
+                      {getProductLinksForJob(job.slug).map((product) => (
+                        <div key={product.href} className="check-item">
+                          <div className="check-icon-wrap">
+                            <img
+                              width="14"
+                              height="12"
+                              alt="Check Icon"
+                              src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                              className="check-icon"
+                            />
+                          </div>
+                          <div className="text-size-medium">
+                            <Link
+                              href={product.href}
+                              className="text-weight-medium underline hover:opacity-80"
+                              onClick={() =>
+                                // No UTMs on internal links — they would reset
+                                // the session's acquisition source. This event
+                                // (with the registered cta_location dimension)
+                                // is how careers→product traffic is attributed.
+                                trackEvent(ANALYTICS_EVENTS.CTA_CLICK, {
+                                  cta_location: 'careers_product_link',
+                                  cta_label: product.href,
+                                  job_title: job.title,
+                                })
+                              }
+                            >
+                              {product.title}
+                            </Link>
+                            <span className="opacity-70"> — {product.note}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </AnimatedInViewDiv>
 
                 {/* Why Join StackBinary Card */}
                 <AnimatedInViewDiv delay={0.4} className="features-vantages">
