@@ -228,7 +228,15 @@ export async function POST(request: NextRequest) {
     // a successful submission into an error the candidate sees. Until now this
     // route sent nothing at all — applications landed in the database and
     // nobody was told, which is why a broken form went unnoticed for weeks.
-    if (process.env.EMAIL && process.env.EMAIL_PASSWORD) {
+    // KILL SWITCH — 2026-08-03. A genuine applicant flood (~700 applications in
+    // ~90 minutes after the roles hit LinkedIn) meant every submission fired two
+    // Gmail sends: on track to exhaust the Workspace 2,000/day cap and take the
+    // ad campaign's LEAD notifications down with it, while burying the inbox.
+    // Applications are fully stored in career_applications either way — email
+    // here is a courtesy, not the record. Re-enable by setting CAREERS_EMAILS=on
+    // in Vercel once the flood subsides (and consider batching a daily digest
+    // instead of per-application sends before doing so).
+    if (process.env.CAREERS_EMAILS === 'on' && process.env.EMAIL && process.env.EMAIL_PASSWORD) {
       try {
         const transporter = nodemailer.createTransport({
           service: 'gmail',
