@@ -21,6 +21,7 @@ const BRAND = {
   logo: "https://stackbinary.io/stack-logo.png",
   site: "https://stackbinary.io",
   careers: "https://stackbinary.io/careers",
+  linkedin: "https://www.linkedin.com/company/stackbinary",
   email: CONTACT_EMAIL,
 };
 
@@ -133,6 +134,24 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
           </tr>
 
           <tr>
+            <td style="padding-top:16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:${BRAND.card};border:1px solid ${BRAND.border};border-radius:12px;">
+                <tr>
+                  <td align="center" style="padding:24px 32px;font-family:Arial,Helvetica,sans-serif;">
+                    <p style="margin:0 0 14px;font-size:13px;line-height:1.65;color:${BRAND.text};">
+                      We announce new roles and ship-updates on <strong>LinkedIn</strong> first —
+                      follow StackBinary to hear about them before they are posted anywhere else.
+                    </p>
+                    <a href="${BRAND.linkedin}" style="display:inline-block;border:1px solid ${BRAND.accent};color:${BRAND.accent};font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;text-decoration:none;padding:11px 26px;border-radius:999px;">
+                      Follow StackBinary on LinkedIn
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
             <td align="center" style="padding:28px 0 8px;">
               <a href="${BRAND.careers}" style="display:inline-block;background-color:${BRAND.accent};color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;text-decoration:none;padding:14px 32px;border-radius:999px;">
                 See our other open roles
@@ -176,6 +195,10 @@ What happens next:
 1. Your application goes to the team hiring for this role.
 2. We read it properly, your CV and your answers, against what the role actually needs.
 3. If there is a fit, we get in touch to set up an intro call.
+
+We announce new roles and ship-updates on LinkedIn first — follow StackBinary
+to hear about them before they are posted anywhere else:
+https://www.linkedin.com/company/stackbinary
 
 Other open roles: https://stackbinary.io/careers
 Questions? Just reply to this email.
