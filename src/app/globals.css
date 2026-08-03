@@ -110,3 +110,19 @@ main.flex-1.relative > div.py-8 {
 .insight-article th { background: rgba(255,255,255,0.06); color: #fff; }
 .insight-article strong { color: #fff; }
 .insight-article hr { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 2rem 0; }
+
+/* Metric-matched fallback for Satoshi (CLS fix, 2026-08-03).
+   While Satoshi is still downloading, text renders in this Arial-based face
+   whose overridden metrics approximate Satoshi's box heights — so when the
+   real font swaps in, lines occupy nearly the same space and the layout
+   barely moves. Values are approximations tuned by eye, not measured with
+   font tooling; if CLS persists next Monday, measure properly (fontaine or
+   capsize) and replace these numbers. */
+@font-face {
+  font-family: "Satoshi Fallback";
+  src: local("Arial");
+  size-adjust: 99%;
+  ascent-override: 102%;
+  descent-override: 24%;
+  line-gap-override: 9%;
+}
