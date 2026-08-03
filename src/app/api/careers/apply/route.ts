@@ -236,14 +236,28 @@ export async function POST(request: NextRequest) {
     // 2026-08-03 — /admin/careers is the inbox, and at flood volume (1,665
     // applications on Aug 3 alone) even one send per application eats most of
     // the Gmail 2,000/day cap this account shares with lead notifications.
-    // Leave off until the flood subsides or sends move to a transactional
-    // provider.
-    if (process.env.CAREERS_EMAILS === 'on' && process.env.EMAIL && process.env.EMAIL_PASSWORD) {
+    // Careers mail goes through Amazon SES when SES_SMTP_USER/PASS are set
+    // (host defaults to Mumbai), falling back to the Gmail account otherwise.
+    // The split matters: SES gives careers its own sending budget, so a
+    // confirmation flood can never again eat the Gmail 2,000/day cap that the
+    // ad campaign's lead notifications depend on. SES must be OUT OF SANDBOX
+    // before CAREERS_EMAILS=on, or every send to an unverified candidate
+    // address errors.
+    const useSes = process.env.SES_SMTP_USER && process.env.SES_SMTP_PASS;
+    const smtpConfigured = useSes || (process.env.EMAIL && process.env.EMAIL_PASSWORD);
+    if (process.env.CAREERS_EMAILS === 'on' && smtpConfigured) {
       try {
-        const transporter = nodemailer.createTransport({
-          service: 'gmail',
-          auth: { user: process.env.EMAIL, pass: process.env.EMAIL_PASSWORD },
-        });
+        const transporter = useSes
+          ? nodemailer.createTransport({
+              host: process.env.SES_SMTP_HOST || 'email-smtp.ap-south-1.amazonaws.com',
+              port: 587,
+              secure: false, // STARTTLS on 587; SES rejects implicit TLS here
+              auth: { user: process.env.SES_SMTP_USER, pass: process.env.SES_SMTP_PASS },
+            })
+          : nodemailer.createTransport({
+              service: 'gmail',
+              auth: { user: process.env.EMAIL, pass: process.env.EMAIL_PASSWORD },
+            });
 
         await transporter.sendMail({
           from: MAIL_FROM,
