@@ -8,7 +8,7 @@
 // so its `date` dimension needs no conversion — that alignment is why the
 // property timezone must never be changed casually.
 
-import { loadEnv, ga4Token, trailingDays, readState, writeState, isFrozen, markFinalIfDue, writeSnapshot } from './lib.mjs';
+import { loadEnv, fetchRetry, ga4Token, trailingDays, readState, writeState, isFrozen, markFinalIfDue, writeSnapshot } from './lib.mjs';
 
 const env = loadEnv();
 const propertyId = env.GA4_PROPERTY_ID;
@@ -24,7 +24,7 @@ const EXCLUDE_LOCAL = {
 };
 
 async function runReport(token, body) {
-  const res = await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`, {
+  const res = await fetchRetry(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: JSON.stringify(body),

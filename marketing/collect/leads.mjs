@@ -10,7 +10,7 @@
 // keep retro-scoring possible once revenue outcomes are known. If that
 // decision changes, trim the FIELDS list; nothing else needs to move.
 
-import { loadEnv, trailingDays, istDate, istDayStartUtc, readState, writeState, isFrozen, markFinalIfDue, writeSnapshot } from './lib.mjs';
+import { loadEnv, fetchRetry, trailingDays, istDate, istDayStartUtc, readState, writeState, isFrozen, markFinalIfDue, writeSnapshot } from './lib.mjs';
 
 const env = loadEnv();
 const url = env.NEXT_PUBLIC_SUPABASE_URL;
@@ -28,7 +28,7 @@ export async function collectLeads() {
   // One query covering the whole window, then bucket per IST day.
   const oldest = days[days.length - 1];
   const from = istDayStartUtc(oldest).toISOString();
-  const res = await fetch(
+  const res = await fetchRetry(
     `${url}/rest/v1/leads?select=*&created_at=gte.${from}&order=created_at.asc`,
     { headers: { apikey: key, Authorization: `Bearer ${key}` } }
   );
