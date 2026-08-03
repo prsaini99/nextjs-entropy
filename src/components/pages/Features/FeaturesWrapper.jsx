@@ -4,6 +4,7 @@ import ROUTES from '@/constants/routes';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import { GetStarted, LearnMoreButton } from '@/components/Buttons';
 import { features } from './data';
+import { getServiceSlug } from '@/utils/slugify';
 import { services } from '@/data/services';
 import Link from 'next/link';
 
@@ -34,7 +35,7 @@ export default function FeaturesWrapper() {
                                         <div className="features-image-container">
                                             {/* Linked like the card's button: Clarity logged dead
                                                 clicks on these images — taps now go to the service. */}
-                                            <Link href={`/services/${feature.slug}`} aria-label={feature.title}>
+                                            <Link href={`/services/${getServiceSlug(feature.title)}`} aria-label={feature.title}>
                                                 <div className="features-image-wrapper">
                                                     <img
                                                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
@@ -83,7 +84,7 @@ export default function FeaturesWrapper() {
                                             ))}
                                         </div>
                                         <div className="margin-top-button-hero">
-                                            <Link href={`/services/${feature.slug}`} className="primary-button w-inline-block">
+                                            <Link href={`/services/${getServiceSlug(feature.title)}`} className="primary-button w-inline-block">
                                                 <div className="relative">
                                                     <div className="text-size-small text-weight-bold">See details →</div>
                                                 </div>
@@ -93,7 +94,7 @@ export default function FeaturesWrapper() {
                                     </div>
                                     {index % 2 === 0 && (
                                         <div className="features-image-container">
-                                            <Link href={`/services/${feature.slug}`} aria-label={feature.title}>
+                                            <Link href={`/services/${getServiceSlug(feature.title)}`} aria-label={feature.title}>
                                                 <div className="features-image-wrapper">
                                                     <img
                                                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
