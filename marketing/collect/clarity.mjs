@@ -14,7 +14,7 @@
 // shares a ratio with another source, so the skew shifts levels slightly but
 // never corrupts a cross-source comparison. Accepted, documented, not hidden.
 
-import { loadEnv, trailingDays, readState, writeState, isFrozen, markFinalIfDue, writeSnapshot } from './lib.mjs';
+import { loadEnv, fetchRetry, trailingDays, readState, writeState, isFrozen, markFinalIfDue, writeSnapshot } from './lib.mjs';
 
 const env = loadEnv();
 const token = env.CLARITY_API_TOKEN;
@@ -28,7 +28,7 @@ const API = 'https://www.clarity.ms/export-data/api/v1/project-live-insights';
 async function fetchInsights(dimensions) {
   const params = new URLSearchParams({ numOfDays: '1' });
   dimensions.forEach((d, i) => params.set(`dimension${i + 1}`, d));
-  const res = await fetch(`${API}?${params}`, {
+  const res = await fetchRetry(`${API}?${params}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   if (!res.ok) throw new Error(`Clarity export failed (${res.status}): ${await res.text()}`);

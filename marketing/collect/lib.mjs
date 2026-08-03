@@ -93,6 +93,24 @@ export function snapshotExists(source, dateStr) {
   return existsSync(resolve(MARKETING, 'data', source, `${dateStr}.json`));
 }
 
+// ── fetch with retry ─────────────────────────────────────────────────────────
+// clarity.ms drops connections intermittently (UND_ERR_CONNECT_TIMEOUT), and
+// the launchd job can fire on laptop-wake before Wi-Fi is up. Both cost us
+// permanent Clarity days on Aug 1-2. Backoff of 15s/30s/45s spans a typical
+// wake-to-network window and rides out transient host flakiness.
+export async function fetchRetry(url, opts = {}, tries = 4) {
+  let lastErr;
+  for (let i = 1; i <= tries; i++) {
+    try {
+      return await fetch(url, opts);
+    } catch (err) {
+      lastErr = err;
+      if (i < tries) await new Promise((r) => setTimeout(r, i * 15000));
+    }
+  }
+  throw lastErr;
+}
+
 // ── GA4 service-account token (same flow as scripts/ga-report.mjs) ───────────
 const b64url = (buf) =>
   Buffer.from(buf).toString('base64').replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
@@ -107,7 +125,7 @@ export async function ga4Token(env, scope = 'https://www.googleapis.com/auth/ana
   const signer = createSign('RSA-SHA256');
   signer.update(`${header}.${claim}`);
   const assertion = `${header}.${claim}.${b64url(signer.sign(sa.private_key))}`;
-  const res = await fetch('https://oauth2.googleapis.com/token', {
+  const res = await fetchRetry('https://oauth2.googleapis.com/token', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({ grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion }),

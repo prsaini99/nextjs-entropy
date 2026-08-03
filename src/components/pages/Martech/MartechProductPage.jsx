@@ -54,11 +54,17 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                     <div className="w-layout-blockcontainer container w-container">
                         <div className="hero-wrapper">
                             <AnimatedInViewDiv className="hero-component">
-                                <div className="read-more-tag w-inline-block">
+                                {/* Was a plain div; 2 of 10 recorded paid visitors
+                                    clicked it expecting something. Now it honestly
+                                    goes where clickers want to end up. */}
+                                <a
+                                    href="#martech-lead-form"
+                                    className="read-more-tag w-inline-block cursor-pointer"
+                                >
                                     <div className="text-size-small text-weight-bold text-[#ed5145]">
                                         {page.badge}
                                     </div>
-                                </div>
+                                </a>
                                 <div className="flex flex-col items-center gap-10">
                                     <h1 className="heading-3 text-weight-bold max-w-5xl">
                                         {page.title}
@@ -77,7 +83,31 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                     title="Get My Build Quote"
                                     location={`product:${page.badge.split("·")[0].trim()}`}
                                 />
-                                <LearnMoreButton title="All MarTech Services" routeTo="/martech" />
+                                {/* The second hero slot used to be "All MarTech
+                                    Services" — a catalog link inviting paid visitors
+                                    off the page they were bought onto. The live demo
+                                    is the differentiator; it earns the slot. The
+                                    catalog stays reachable via nav + related links. */}
+                                {page.demo?.external ? (
+                                    <a
+                                        href={page.demo.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={() =>
+                                            trackEvent(ANALYTICS_EVENTS.DEMO_OPEN, {
+                                                demo_label: page.demo.label,
+                                                demo_destination: page.demo.href,
+                                                demo_location: "hero",
+                                                page_slug: slug,
+                                            })
+                                        }
+                                        className="secondary-button w-inline-block"
+                                    >
+                                        <span>▶ {page.demo.label}</span>
+                                    </a>
+                                ) : (
+                                    <LearnMoreButton title="All MarTech Services" routeTo="/martech" />
+                                )}
                             </AnimatedInViewDiv>
 
                             {page.heroStats && (
@@ -179,7 +209,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                 <AnimatedInViewDiv className="about-features-header">
                                     <div className="header">
                                         <h2 className="heading-4 text-weight-medium">
-                                            What&apos;s Inside
+                                            {page.featuresHeading || "What's Inside"}
                                         </h2>
                                     </div>
                                 </AnimatedInViewDiv>
@@ -199,6 +229,43 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         </AnimatedInViewDiv>
                                     ))}
                                 </div>
+
+                                {/* Mid-page CTA. Clarity: average paid scroll depth
+                                    is 41%, which lands about here — and recordings
+                                    showed 4-5 minute readers stalling with no action
+                                    in reach. demo_location/cta location let Monday's
+                                    review compare hero vs midpage placement. */}
+                                {page.demo && (
+                                    <AnimatedInViewDiv className="w-full mt-10 border border-[#ed5145]/30 rounded-lg bg-[#ed5145]/[0.05] p-6 lg:p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                        <p className="text-size-medium text-weight-medium m-0">
+                                            Prefer to see it than read about it?
+                                        </p>
+                                        <div className="flex flex-col sm:flex-row gap-3">
+                                            {page.demo.external && (
+                                                <a
+                                                    href={page.demo.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={() =>
+                                                        trackEvent(ANALYTICS_EVENTS.DEMO_OPEN, {
+                                                            demo_label: page.demo.label,
+                                                            demo_destination: page.demo.href,
+                                                            demo_location: "midpage",
+                                                            page_slug: slug,
+                                                        })
+                                                    }
+                                                    className="secondary-button w-inline-block text-center"
+                                                >
+                                                    <span>▶ Try the live demo</span>
+                                                </a>
+                                            )}
+                                            <MartechCTA
+                                                title="Get My Build Quote"
+                                                location="midpage"
+                                            />
+                                        </div>
+                                    </AnimatedInViewDiv>
+                                )}
                             </div>
                         </div>
                     </div>
