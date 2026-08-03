@@ -5,6 +5,7 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import ApplicationForm from '@/components/careers/ApplicationForm';
 import { Job } from '@/lib/careers';
 import { getProductLinksForJob } from '@/lib/careersProductLinks';
+import { trackEvent, ANALYTICS_EVENTS } from '@/lib/analytics';
 
 interface Props {
   job: Job;
@@ -224,6 +225,17 @@ export default function JobDetailsPage({ job }: Props) {
                             <Link
                               href={product.href}
                               className="text-weight-medium underline hover:opacity-80"
+                              onClick={() =>
+                                // No UTMs on internal links — they would reset
+                                // the session's acquisition source. This event
+                                // (with the registered cta_location dimension)
+                                // is how careers→product traffic is attributed.
+                                trackEvent(ANALYTICS_EVENTS.CTA_CLICK, {
+                                  cta_location: 'careers_product_link',
+                                  cta_label: product.href,
+                                  job_title: job.title,
+                                })
+                              }
                             >
                               {product.title}
                             </Link>
