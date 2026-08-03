@@ -4,12 +4,10 @@ import nodemailer from 'nodemailer';
 // no anon-insert policy, so the anon client's inserts die with 42501. This is
 // a server route; the service key never reaches the browser.
 import { supabaseAdmin } from '@/lib/supabase-admin';
-import { NOTIFY_EMAIL, MAIL_FROM } from '@/constants/contact';
+import { MAIL_FROM } from '@/constants/contact';
 import {
   applicationConfirmationHtml,
   applicationConfirmationText,
-  applicationNotificationHtml,
-  applicationNotificationText,
 } from '@/lib/career-email-templates';
 
 export async function POST(request: NextRequest) {
@@ -233,9 +231,13 @@ export async function POST(request: NextRequest) {
     // Gmail sends: on track to exhaust the Workspace 2,000/day cap and take the
     // ad campaign's LEAD notifications down with it, while burying the inbox.
     // Applications are fully stored in career_applications either way — email
-    // here is a courtesy, not the record. Re-enable by setting CAREERS_EMAILS=on
-    // in Vercel once the flood subsides (and consider batching a daily digest
-    // instead of per-application sends before doing so).
+    // here is a courtesy, not the record. CAREERS_EMAILS=on now sends ONLY the
+    // applicant confirmation: the internal notification to contact@ was removed
+    // 2026-08-03 — /admin/careers is the inbox, and at flood volume (1,665
+    // applications on Aug 3 alone) even one send per application eats most of
+    // the Gmail 2,000/day cap this account shares with lead notifications.
+    // Leave off until the flood subsides or sends move to a transactional
+    // provider.
     if (process.env.CAREERS_EMAILS === 'on' && process.env.EMAIL && process.env.EMAIL_PASSWORD) {
       try {
         const transporter = nodemailer.createTransport({
@@ -243,61 +245,22 @@ export async function POST(request: NextRequest) {
           auth: { user: process.env.EMAIL, pass: process.env.EMAIL_PASSWORD },
         });
 
-        const view = {
-          applicationId,
-          jobTitle: applicationData.jobTitle as string,
-          firstName: applicationData.firstName as string,
-          lastName: applicationData.lastName as string,
-          email: applicationData.email as string,
-          phone: applicationData.phone as string,
-          location: applicationData.location as string,
-          workEligibility: applicationData.workEligibility as string,
-          yearsOfExperience: applicationData.yearsOfExperience as string,
-          availabilityDate: applicationData.availabilityDate as string,
-          salaryExpectations: applicationData.salaryExpectations as string,
-          portfolioUrl: applicationData.portfolioUrl as string,
-          linkedinUrl: applicationData.linkedinUrl as string,
-          githubUrl: applicationData.githubUrl as string,
-          technicalSkills: applicationData.technicalSkills as string,
-          relevantProjects: applicationData.relevantProjects as string,
-          additionalInfo: applicationData.additionalInfo as string,
-          roleAnswers: applicationData.roleAnswers as string,
-          resumeFilename: resumeMeta.resume_filename,
-        };
-
-        // Internal notification. The CV rides along as an attachment so the
-        // team can read it without opening the storage console.
-        const notification: Record<string, unknown> = {
-          from: MAIL_FROM,
-          to: NOTIFY_EMAIL,
-          replyTo: applicationData.email as string,
-          subject: `New application: ${view.jobTitle || 'role'} — ${view.firstName} ${view.lastName}`,
-          text: applicationNotificationText(view),
-          html: applicationNotificationHtml(view),
-        };
-        if (resumeFile && resumeFile.size > 0) {
-          notification.attachments = [
-            {
-              filename: resumeFile.name || 'resume.pdf',
-              content: Buffer.from(await resumeFile.arrayBuffer()),
-              contentType: resumeFile.type,
-            },
-          ];
-        }
-        await transporter.sendMail(notification);
-
         await transporter.sendMail({
           from: MAIL_FROM,
           to: applicationData.email as string,
-          subject: `We have your application — ${view.jobTitle || 'StackBinary'}`,
-          text: applicationConfirmationText({ firstName: view.firstName, jobTitle: view.jobTitle }),
-          html: applicationConfirmationHtml({ firstName: view.firstName, jobTitle: view.jobTitle }),
+          subject: `We have your application — ${applicationData.jobTitle || 'StackBinary'}`,
+          text: applicationConfirmationText({
+            firstName: applicationData.firstName as string,
+            jobTitle: applicationData.jobTitle as string,
+          }),
+          html: applicationConfirmationHtml({
+            firstName: applicationData.firstName as string,
+            jobTitle: applicationData.jobTitle as string,
+          }),
         });
       } catch (mailError) {
-        console.error('Career application email failed (application was still saved):', mailError);
+        console.error('Career confirmation email failed (application was still saved):', mailError);
       }
-    } else {
-      console.warn('EMAIL/EMAIL_PASSWORD not configured — application saved without notification');
     }
 
     // Log the application (keeping existing logging)
