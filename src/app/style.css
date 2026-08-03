@@ -2223,7 +2223,7 @@ textarea.w-select {
 body {
 	background-color: var(--color--black);
 	color: var(--color--white);
-	font-family: Satoshi, sans-serif;
+	font-family: Satoshi, 'Satoshi Fallback', sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
