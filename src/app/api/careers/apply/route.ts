@@ -105,7 +105,9 @@ export async function POST(request: NextRequest) {
 
     // Validate file if present
     if (resumeFile) {
-      const maxSize = 5 * 1024 * 1024; // 5MB
+      // 4MB to match the client. The old 5MB limit was unreachable: Vercel
+      // 413s request bodies over ~4.5MB before this route runs.
+      const maxSize = 4 * 1024 * 1024;
       const allowedTypes = [
         'application/pdf',
         'application/msword',
@@ -114,7 +116,7 @@ export async function POST(request: NextRequest) {
 
       if (resumeFile.size > maxSize) {
         return NextResponse.json(
-          { error: 'File size must be less than 5MB' },
+          { error: 'File size must be less than 4MB' },
           { status: 400 }
         );
       }
