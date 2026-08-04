@@ -2174,22 +2174,22 @@ textarea.w-select {
 
 :root {
 	--color--black: #ffffff; /* light theme 2026-08-04: Webflow variable names kept, values inverted */
-	--color--white: #17171A;
-	--text-size--regular: 1rem;
+	--color--white: #000000; /* ink: true black per owner readability call */
+	--text-size--regular: 1.125rem; /* readability bump 2026-08-04 */
 	--heading--h2: 5rem;
 	--heading--h6: 2rem;
 	--text-size--large: 1.5rem;
-	--text-size--tiny: 0.75rem;
+	--text-size--tiny: 0.8125rem;
 	--text-size--medium-2\<deleted\|variable-227de73e-b343-2d71-c2df-405ddac14c51\>: 1.125rem;
 	--heading--h1: 10.5rem;
 	--heading--h4: 3rem;
 	--heading--h5: 2.5rem;
-	--text-size--small: 0.875rem;
+	--text-size--small: 0.9375rem;
 	--color--orange: #E0362C;
 	--color--dark-grey: #1f1f1f;
 	--color--grey: #353535;
 	--heading--h3: 4rem;
-	--text-size--medium: 1.125rem;
+	--text-size--medium: 1.25rem;
 }
 
 .w-layout-blockcontainer {
@@ -3138,7 +3138,7 @@ blockquote {
 }
 
 .paragraph {
-	color: #171717cc;
+	color: #000000d9;
 }
 
 .icon-embed {
@@ -3207,7 +3207,7 @@ blockquote {
 
 .text-color-white {
 	opacity: 1;
-	color: #171717;
+	color: #000000;
 }
 
 .footer-component {
