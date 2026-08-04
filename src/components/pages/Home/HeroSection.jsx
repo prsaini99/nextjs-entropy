@@ -29,7 +29,7 @@ export default function HeroSection() {
                                     AI, Cloud & Custom Software—Built to Ship and Scale.
                                 </h1>
                             </div>
-                            <div className="opacity-60">
+                            <div className="opacity-80">
                                 <div className="max-width-46ch">
                                     <div className="text-size-regular">
                                     We design, build and run secure digital products that cut time-to-market and improve reliability across web, mobile and data platforms. <Link href="/about" className="text-link">Learn about our team</Link> or <Link href="/contact-us" className="text-link">start a conversation</Link>.
@@ -42,7 +42,7 @@ export default function HeroSection() {
                             <LearnMoreButton title="Explore Our Services" />
                         </AnimatedInViewDiv>
                         {/* <AnimatedInViewDiv className="trusted-by-component" delay={.4}>
-                            <div className="opacity-60">
+                            <div className="opacity-80">
                                 <div className="text-size-small">Join the ranks of our satisfied clients who have elevated their businesses with our expertise.</div>
                             </div>
                             <div className="trusted-by-hero-logos">

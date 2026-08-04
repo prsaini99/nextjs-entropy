@@ -186,9 +186,9 @@ function ServiceCard({ service, wide = false }) {
             >
                 <div className="flex flex-col gap-4">
                     <h3 className="heading-6 text-weight-medium">{service.title}</h3>
-                    <p className="opacity-60 text-size-small">{service.description}</p>
+                    <p className="opacity-80 text-size-small">{service.description}</p>
                     <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small gap-3">
-                        <span className="opacity-50">{service.demo}</span>
+                        <span className="opacity-70">{service.demo}</span>
                         <span className="text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                             Explore →
                         </span>
@@ -215,7 +215,7 @@ function ServiceCard({ service, wide = false }) {
             className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-4 h-full group"
         >
             <h3 className="text-size-large text-weight-medium">{service.title}</h3>
-            <p className="opacity-60 text-size-small">{service.description}</p>
+            <p className="opacity-80 text-size-small">{service.description}</p>
             <ul className="flex flex-col gap-2 mt-2">
                 {service.capabilities.map((cap) => (
                     <li key={cap} className="text-size-small opacity-80 flex gap-2">
@@ -225,7 +225,7 @@ function ServiceCard({ service, wide = false }) {
                 ))}
             </ul>
             <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small gap-3">
-                <span className="opacity-50">{service.demo}</span>
+                <span className="opacity-70">{service.demo}</span>
                 <span className="text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                     Explore →
                 </span>
@@ -249,7 +249,7 @@ export default function MartechServices() {
                                 <h2 className="heading-4 text-weight-medium">
                                     AI Marketing Systems We Build, and Run
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             Pick a category to see what we build there. Every
@@ -306,7 +306,7 @@ export default function MartechServices() {
                                                     {count}
                                                 </span>
                                             </div>
-                                            <p className="text-size-small opacity-50 mt-1 hidden lg:block">
+                                            <p className="text-size-small opacity-70 mt-1 hidden lg:block">
                                                 {pillar.blurb}
                                             </p>
                                         </button>
@@ -320,7 +320,7 @@ export default function MartechServices() {
                                     <h3 className="heading-6 text-weight-bold">
                                         {activePillar.name}
                                     </h3>
-                                    <p className="text-size-small opacity-50">
+                                    <p className="text-size-small opacity-70">
                                         {activePillar.blurb}
                                     </p>
                                 </div>

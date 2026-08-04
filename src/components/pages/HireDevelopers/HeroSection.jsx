@@ -16,7 +16,7 @@ export default function HeroSection() {
                                     Scale Your Team with Expert Developers
                                 </h1>
                                 <div className="max-w-4xl">
-                                    <p className="opacity-60">
+                                    <p className="opacity-80">
                                         Get access to skilled developers for your projects. From short-term sprints to long-term partnerships, we provide flexible engagement models tailored to your business needs.
                                     </p>
                                 </div>

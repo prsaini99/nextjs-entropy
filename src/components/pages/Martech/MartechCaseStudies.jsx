@@ -84,7 +84,7 @@ export default function MartechCaseStudies() {
                                 <h2 className="heading-4 text-weight-medium">
                                     Marketing Results We&apos;ve Actually Delivered
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             We build martech because we run marketing. These are real
@@ -110,14 +110,14 @@ export default function MartechCaseStudies() {
                                     <h3 className="text-size-large text-weight-medium">
                                         {cs.brand}
                                     </h3>
-                                    <p className="text-size-small opacity-60">{cs.summary}</p>
+                                    <p className="text-size-small opacity-80">{cs.summary}</p>
                                     <div className="grid grid-cols-3 gap-3 mt-auto pt-4 border-t border-gray-200">
                                         {cs.metrics.map((metric) => (
                                             <div key={metric.label}>
                                                 <div className="text-size-large text-weight-bold text-[#E0362C]">
                                                     {metric.value}
                                                 </div>
-                                                <div className="text-size-small opacity-50">
+                                                <div className="text-size-small opacity-70">
                                                     {metric.label}
                                                 </div>
                                             </div>
@@ -132,7 +132,7 @@ export default function MartechCaseStudies() {
                                 <div className="text-weight-medium">
                                     31 more case studies across healthcare, fintech, e-commerce and AI
                                 </div>
-                                <p className="text-size-small opacity-60">
+                                <p className="text-size-small opacity-80">
                                     Every one shipped, every number from the work.
                                 </p>
                             </div>

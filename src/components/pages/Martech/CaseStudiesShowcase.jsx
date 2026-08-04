@@ -33,7 +33,7 @@ function CaseStudyCard({ cs }) {
                     {cs.category}
                 </div>
                 <h3 className="text-size-large text-weight-medium">{cs.title}</h3>
-                <p className="text-size-small opacity-60">{cs.description}</p>
+                <p className="text-size-small opacity-80">{cs.description}</p>
 
                 {cs.metrics?.length > 0 && (
                     <div className="grid grid-cols-3 gap-3 pt-3">
@@ -42,7 +42,7 @@ function CaseStudyCard({ cs }) {
                                 <div className="text-size-large text-weight-bold text-[#E0362C]">
                                     {metric.value}
                                 </div>
-                                <div className="text-size-small opacity-50">{metric.label}</div>
+                                <div className="text-size-small opacity-70">{metric.label}</div>
                             </div>
                         ))}
                     </div>
@@ -55,7 +55,7 @@ function CaseStudyCard({ cs }) {
                 )}
 
                 {categoryService[cs.category] && (
-                    <p className="text-size-small opacity-50 mt-1">
+                    <p className="text-size-small opacity-70 mt-1">
                         Partnership work involving our{" "}
                         <Link
                             href={categoryService[cs.category].href}
@@ -70,23 +70,23 @@ function CaseStudyCard({ cs }) {
                 {open && (
                     <div className="flex flex-col gap-3 mt-2 pt-3 border-t border-gray-200">
                         <div>
-                            <div className="text-size-small text-weight-bold opacity-70 mb-1">
+                            <div className="text-size-small text-weight-bold opacity-85 mb-1">
                                 Challenge
                             </div>
-                            <p className="text-size-small opacity-60">{cs.challenge}</p>
+                            <p className="text-size-small opacity-80">{cs.challenge}</p>
                         </div>
                         <div>
-                            <div className="text-size-small text-weight-bold opacity-70 mb-1">
+                            <div className="text-size-small text-weight-bold opacity-85 mb-1">
                                 What we did
                             </div>
-                            <p className="text-size-small opacity-60">{cs.solution}</p>
+                            <p className="text-size-small opacity-80">{cs.solution}</p>
                         </div>
                         {cs.services?.length > 0 && (
                             <div className="flex flex-wrap gap-2">
                                 {cs.services.map((service) => (
                                     <span
                                         key={service}
-                                        className="text-size-small border border-gray-200 rounded-full px-3 py-1 opacity-60"
+                                        className="text-size-small border border-gray-200 rounded-full px-3 py-1 opacity-80"
                                     >
                                         {service}
                                     </span>
@@ -140,7 +140,7 @@ export default function CaseStudiesShowcase({ general = false }) {
                                     Real Products. Real Campaigns. Real Numbers.
                                 </h1>
                                 <div className="max-w-4xl">
-                                    <p className="opacity-60">
+                                    <p className="opacity-80">
                                         From celebrity beauty campaigns to $100M+ commerce
                                         platforms, healthcare AI to fintech fraud detection.
                                         Every case study below shipped. Client work was
@@ -186,7 +186,7 @@ export default function CaseStudiesShowcase({ general = false }) {
                                     }`}
                                 >
                                     {category}{" "}
-                                    <span className="opacity-50">({count})</span>
+                                    <span className="opacity-70">({count})</span>
                                 </button>
                             );
                         })}

@@ -70,7 +70,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         {page.title}
                                     </h1>
                                     <div className="max-w-4xl">
-                                        <p className="opacity-60">{page.tagline}</p>
+                                        <p className="opacity-80">{page.tagline}</p>
                                     </div>
                                 </div>
                             </AnimatedInViewDiv>
@@ -121,7 +121,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                                 <div className="heading-4 text-weight-bold text-[#E0362C]">
                                                     {stat.value}
                                                 </div>
-                                                <p className="text-size-small opacity-60">
+                                                <p className="text-size-small opacity-80">
                                                     {stat.label}
                                                 </p>
                                             </div>
@@ -151,7 +151,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <h2 className="heading-4 text-weight-medium">
                                             Try It Right Here
                                         </h2>
-                                        <div className="opacity-60">
+                                        <div className="opacity-80">
                                             <div className="max-w-4xl">
                                                 <p>{page.embed.note}</p>
                                             </div>
@@ -166,7 +166,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                                 <span className="w-3 h-3 rounded-full bg-[#E0362C]/70"></span>
                                                 <span className="w-3 h-3 rounded-full bg-gray-300"></span>
                                                 <span className="w-3 h-3 rounded-full bg-gray-300"></span>
-                                                <span className="text-size-small opacity-50 ml-3">
+                                                <span className="text-size-small opacity-70 ml-3">
                                                     {page.embed.title}
                                                 </span>
                                             </div>
@@ -223,7 +223,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                             <h3 className="text-size-large text-weight-medium">
                                                 {feature.title}
                                             </h3>
-                                            <p className="text-size-small opacity-60">
+                                            <p className="text-size-small opacity-80">
                                                 {feature.description}
                                             </p>
                                         </AnimatedInViewDiv>
@@ -295,7 +295,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                                 {String(index + 1).padStart(2, "0")}
                                             </div>
                                             <h3 className="text-weight-medium">{step.title}</h3>
-                                            <p className="text-size-small opacity-60">
+                                            <p className="text-size-small opacity-80">
                                                 {step.description}
                                             </p>
                                         </AnimatedInViewDiv>

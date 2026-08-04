@@ -32,7 +32,7 @@ export default function Team() {
                                 <div className="heading-4 text-weight-medium">
                                     Meet the Game-Changers: Our Team
                                 </div>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-width-4xl">
                                         <div>
                                             Behind every great solution is an even greater team.

@@ -2750,11 +2750,11 @@ blockquote {
 }
 
 .opacity-50 {
-	opacity: 0.5;
+	opacity: 0.7; /* muted tier raised for light theme readability */
 }
 
 .opacity-60 {
-	opacity: 0.6;
+	opacity: 0.8;
 }
 
 .secondary-button {

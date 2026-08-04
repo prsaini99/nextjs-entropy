@@ -16,7 +16,7 @@ export default function PhaseCards() {
                                 <h2 className="heading-4 text-weight-medium">
                                     How We Work
                                 </h2>
-                                {/* <div className="opacity-60">
+                                {/* <div className="opacity-80">
                                     <div className="max-width-40ch">
                                         <div>Explore our three-phase approach to see how we drive growth and efficiency at every step.</div>
                                     </div>

@@ -21,7 +21,7 @@ export default function TrustedByAbout() {
             {/* <div className="padding-global py-16">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="trusted-by-about-component">
-                        <AnimatedInViewDiv className="opacity-60">
+                        <AnimatedInViewDiv className="opacity-80">
                             <div className="text-size-small">From prototypes to production systems, we partner with teams to turn roadmaps into measurable outcomes.</div>
                         </AnimatedInViewDiv>
                         <div className="trusted-by-about-logos logos">

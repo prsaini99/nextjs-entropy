@@ -33,7 +33,7 @@ export default function EngagementModels() {
                                 <h2 className="heading-4 text-weight-medium">
                                     Flexible Engagement Models
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             Choose the engagement model that best fits your project requirements and timeline. Explore our <Link href="/services" className="text-link">comprehensive services</Link> or <Link href="/contact-us" className="text-link">discuss your needs</Link> with our team.

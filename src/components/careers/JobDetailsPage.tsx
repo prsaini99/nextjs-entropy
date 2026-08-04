@@ -25,7 +25,7 @@ export default function JobDetailsPage({ job }: Props) {
                 <div className="mb-6">
                   <Link 
                     href="/careers" 
-                    className="text-size-small text-weight-medium opacity-70 hover:opacity-100 transition-opacity"
+                    className="text-size-small text-weight-medium opacity-85 hover:opacity-100 transition-opacity"
                   >
                     ← Back to Careers
                   </Link>
@@ -35,7 +35,7 @@ export default function JobDetailsPage({ job }: Props) {
                     {job.title}
                   </h1>
                   <div className="job-meta mt-6 mb-8">
-                    <div className="text-size-medium opacity-70 mb-2">
+                    <div className="text-size-medium opacity-85 mb-2">
                       {job.location} • {job.type} • {job.experienceLevel} • {job.team}
                     </div>
                   </div>
@@ -68,7 +68,7 @@ export default function JobDetailsPage({ job }: Props) {
             <div className="features-wrapper">
               <AnimatedInViewDiv className="header text-center">
                 <h2 className="heading-4 text-weight-medium mb-6">About the Role</h2>
-                <div className="opacity-60 mb-12">
+                <div className="opacity-80 mb-12">
                   <div className="max-width-48ch">
                     <div className="text-size-regular">
                       {job.description}
@@ -186,7 +186,7 @@ export default function JobDetailsPage({ job }: Props) {
                                 className="check-icon"
                               />
                             </div>
-                            <div className="text-size-medium opacity-70">{item}</div>
+                            <div className="text-size-medium opacity-85">{item}</div>
                           </div>
                         ))}
                       </div>
@@ -205,7 +205,7 @@ export default function JobDetailsPage({ job }: Props) {
                         <div className="heading-6 text-weight-medium">What You&apos;d Build</div>
                       </div>
                     </div>
-                    <div className="text-size-medium opacity-70 mb-6">
+                    <div className="text-size-medium opacity-85 mb-6">
                       These aren&apos;t hypothetical projects — they&apos;re live products you can
                       try before your first interview.
                     </div>
@@ -239,7 +239,7 @@ export default function JobDetailsPage({ job }: Props) {
                             >
                               {product.title}
                             </Link>
-                            <span className="opacity-70"> — {product.note}</span>
+                            <span className="opacity-85"> — {product.note}</span>
                           </div>
                         </div>
                       ))}
@@ -296,7 +296,7 @@ export default function JobDetailsPage({ job }: Props) {
                 <AnimatedInViewDiv delay={0.5} className="margin-top-button-hero">
                   <div style={{ textAlign: 'center' as const, display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
                     <h3 className="heading-4 text-weight-medium mb-4" style={{ textAlign: 'center' as const }}>Ready to Apply?</h3>
-                    <div className="text-size-regular opacity-70 mb-6" style={{ textAlign: 'center' as const, maxWidth: '42ch', margin: '0 auto' }}>
+                    <div className="text-size-regular opacity-85 mb-6" style={{ textAlign: 'center' as const, maxWidth: '42ch', margin: '0 auto' }}>
                       Join our team of builders who love shipping quality software.
                     </div>
                     <div className="mb-6" style={{ textAlign: 'center' as const, display: 'flex', justifyContent: 'center' }}>
@@ -312,7 +312,7 @@ export default function JobDetailsPage({ job }: Props) {
                       </button>
                     </div>
                     <div style={{ textAlign: 'center' as const }}>
-                      <div className="text-size-small opacity-70 mb-2" style={{ textAlign: 'center' as const }}>
+                      <div className="text-size-small opacity-85 mb-2" style={{ textAlign: 'center' as const }}>
                         Questions about this role?
                       </div>
                       <Link 

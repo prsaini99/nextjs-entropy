@@ -572,7 +572,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
         <div className="bg-white rounded-lg max-w-2xl w-full border border-gray-200 p-8 text-gray-900 text-center">
           <div className="text-4xl mb-4">✓</div>
           <h2 className="text-size-xlarge text-weight-medium mb-3">Application received</h2>
-          <p className="text-size-regular opacity-70 mb-8 max-w-md mx-auto">
+          <p className="text-size-regular opacity-85 mb-8 max-w-md mx-auto">
             Thanks for applying for {job.title}. Our team reviews every application
             and we&apos;ll get back to you.
           </p>
@@ -630,7 +630,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
           
           {/* Progress indicator */}
           <div className="mt-6">
-            <div className="flex items-center justify-between text-size-small opacity-70 mb-2 text-gray-900">
+            <div className="flex items-center justify-between text-size-small opacity-85 mb-2 text-gray-900">
               <span>Step {currentStep} of {totalSteps}</span>
               <span>{Math.round((currentStep / totalSteps) * 100)}% complete</span>
             </div>
@@ -651,7 +651,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
               type="button"
               onClick={() => setCurrentStep(prev => Math.max(1, prev - 1))}
               disabled={currentStep === 1}
-              className="px-6 py-2 text-size-small border border-gray-300 rounded-lg hover:border-gray-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-gray-900"
+              className="px-6 py-2 text-size-small border border-gray-300 rounded-lg hover:border-gray-500 transition-colors disabled:opacity-70 disabled:cursor-not-allowed text-gray-900"
             >
               Previous
             </button>

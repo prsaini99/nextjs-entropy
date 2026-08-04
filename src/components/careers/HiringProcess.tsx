@@ -45,7 +45,7 @@ export default function HiringProcess() {
               <h2 className="heading-4 text-weight-medium">
                 Our Hiring Process
               </h2>
-              <div className="opacity-60">
+              <div className="opacity-80">
                 <div className="max-width-42ch">
                   <div>
                     We believe hiring should be transparent and respectful of your time. Here's exactly what to expect.
@@ -68,7 +68,7 @@ export default function HiringProcess() {
                           <div className="text-size-small text-weight-bold">Step</div>
                           <div className="vertical-line-tag"></div>
                           <div className="read-more-button">
-                            <div className="opacity-70">
+                            <div className="opacity-85">
                               <div className="text-size-small text-weight-medium">{step.step}</div>
                             </div>
                           </div>

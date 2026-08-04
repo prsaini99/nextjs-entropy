@@ -15,7 +15,7 @@ export default function CareersHeroSection() {
                   Careers at StackBinary™
                 </h1>
               </div>
-              <div className="opacity-60">
+              <div className="opacity-80">
                 <div className="max-width-60ch text-center">
                   <div className="text-size-large">
                     We hire builders—people who love shipping, care about reliability and sweat the details. If you enjoy solving real problems with AI, cloud and modern software, let's talk.

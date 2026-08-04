@@ -35,7 +35,7 @@ export default function ServicePageTemplate({ service }) {
                                         {detailedContent?.title || service.title}
                                     </div>
                                 </div>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-width-60ch text-center">
                                         <div className="text-size-large">
                                             {detailedContent?.lead || service.description}
@@ -117,7 +117,7 @@ export default function ServicePageTemplate({ service }) {
                                     <div className="heading-4 text-weight-medium">
                                         {detailedContent.howWeWork.title}
                                     </div>
-                                    <div className="opacity-60">
+                                    <div className="opacity-80">
                                         <div className="max-width-42ch">
                                             <div>
                                                 Our proven methodology ensures successful project delivery and optimal outcomes.
@@ -135,7 +135,7 @@ export default function ServicePageTemplate({ service }) {
                                                             <div className="text-size-small text-weight-bold">Step</div>
                                                             <div className="vertical-line-tag"></div>
                                                             <div className="read-more-button">
-                                                                <div className="opacity-70">
+                                                                <div className="opacity-85">
                                                                     <div className="text-size-small text-weight-medium">{String(index + 1).padStart(2, '0')}</div>
                                                                 </div>
                                                             </div>
@@ -272,7 +272,7 @@ export default function ServicePageTemplate({ service }) {
                             <div className="heading-4 text-weight-bold mb-4">
                                 Ready to Get Started?
                             </div>
-                            <div className="opacity-60 mb-8">
+                            <div className="opacity-80 mb-8">
                                 <div className="max-width-50ch mx-auto">
                                     <div className="text-size-regular">
                                         Let's discuss how our {detailedContent?.title || service.title} can transform your business operations and drive growth.
@@ -297,7 +297,7 @@ export default function ServicePageTemplate({ service }) {
                                     <div className="heading-4 text-weight-medium">
                                         Explore Our Other Services
                                     </div>
-                                    <div className="opacity-60">
+                                    <div className="opacity-80">
                                         <div className="max-width-42ch">
                                             <div>
                                                 Discover more ways we can transform your business with our comprehensive range of technology solutions.
@@ -315,7 +315,7 @@ export default function ServicePageTemplate({ service }) {
                                                             <div className="text-size-small text-weight-bold">Service</div>
                                                             <div className="vertical-line-tag"></div>
                                                             <div className="read-more-button">
-                                                                <div className="opacity-70">
+                                                                <div className="opacity-85">
                                                                     <div className="text-size-small text-weight-medium">{String(index + 1).padStart(2, '0')}</div>
                                                                 </div>
                                                             </div>

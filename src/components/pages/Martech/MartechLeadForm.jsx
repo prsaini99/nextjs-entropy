@@ -159,7 +159,7 @@ export default function MartechLeadForm({
                 <div className="heading-5 text-weight-bold text-[#E0362C]">
                     You&apos;re in the pipeline ✓
                 </div>
-                <p className="opacity-70 text-size-small">
+                <p className="opacity-85 text-size-small">
                     Thanks, {form.fullName.split(" ")[0] || "there"}. We&apos;ll get back to
                     you within one business day. Meanwhile, feel free to click through the
                     live products above.
@@ -180,7 +180,7 @@ export default function MartechLeadForm({
         >
             <div>
                 <div className="text-size-large text-weight-bold">{heading}</div>
-                <p className="text-size-small opacity-50 mt-1">{subheading}</p>
+                <p className="text-size-small opacity-70 mt-1">{subheading}</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -245,7 +245,7 @@ export default function MartechLeadForm({
                                 setCustomBudget(false);
                                 setForm((f) => ({ ...f, budget: "" }));
                             }}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 text-gray-700"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 text-gray-700"
                         >
                             ×
                         </button>
@@ -303,7 +303,7 @@ export default function MartechLeadForm({
             <button
                 type="submit"
                 disabled={status === "loading"}
-                className="bg-[#E0362C] hover:bg-[#B3261A] transition-colors rounded-lg py-3.5 text-weight-bold disabled:opacity-60"
+                className="bg-[#E0362C] hover:bg-[#B3261A] transition-colors rounded-lg py-3.5 text-weight-bold disabled:opacity-80"
             >
                 {status === "loading" ? "Sending…" : submitLabel}
             </button>

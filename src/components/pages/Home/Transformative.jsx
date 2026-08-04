@@ -17,7 +17,7 @@ export default function Transformative() {
                             <div className="header">
                                 <div className="heading-4 text-weight-medium">Success Stories from Our Happy Clients
                                 </div>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-width-40ch">
                                         <div>Hear directly from our clients about their experiences and the impact our
                                             technology has had on their operations</div>
@@ -84,7 +84,7 @@ export default function Transformative() {
                                             </div>
                                             <div className="testimonial-info">
                                                 <div className="text-size-small text-weight-bold">{name}</div>
-                                                <div className="opacity-60">
+                                                <div className="opacity-80">
                                                     <div className="text-size-small">{title}</div>
                                                 </div>
                                             </div>

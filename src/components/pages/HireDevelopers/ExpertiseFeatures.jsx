@@ -41,7 +41,7 @@ export default function ExpertiseFeatures() {
                                 <h2 className="heading-4 text-weight-medium">
                                     Our Expertise
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-width-40ch">
                                         <div>Access to skilled developers across multiple technologies and platforms with deep expertise in modern development practices.</div>
                                     </div>

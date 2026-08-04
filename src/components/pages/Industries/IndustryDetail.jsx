@@ -22,7 +22,7 @@ export default function IndustryDetail({ industry }) {
                                         {industry.name}
                                     </h1>
                                     <div className="max-w-4xl">
-                                        <p className="opacity-60">{industry.blurb}</p>
+                                        <p className="opacity-80">{industry.blurb}</p>
                                     </div>
                                 </div>
                             </AnimatedInViewDiv>
@@ -44,7 +44,7 @@ export default function IndustryDetail({ industry }) {
                                         {industry.brands.map((brand) => (
                                             <span
                                                 key={brand}
-                                                className="text-size-medium text-weight-medium opacity-50 hover:opacity-100 hover:text-[#E0362C] transition-all duration-300 whitespace-nowrap"
+                                                className="text-size-medium text-weight-medium opacity-70 hover:opacity-100 hover:text-[#E0362C] transition-all duration-300 whitespace-nowrap"
                                             >
                                                 {brand}
                                             </span>
@@ -76,7 +76,7 @@ export default function IndustryDetail({ industry }) {
                                         className="border border-[#E0362C]/25 rounded-lg p-6 bg-[#E0362C]/[0.04] flex flex-col gap-2"
                                     >
                                         <div className="text-weight-medium">{pain.title}</div>
-                                        <p className="text-size-small opacity-60">{pain.detail}</p>
+                                        <p className="text-size-small opacity-80">{pain.detail}</p>
                                     </AnimatedInViewDiv>
                                 ))}
                             </div>
@@ -94,7 +94,7 @@ export default function IndustryDetail({ industry }) {
                                     <h2 className="heading-4 text-weight-medium">
                                         What We&apos;ve Built — and How It Helps
                                     </h2>
-                                    <div className="opacity-60">
+                                    <div className="opacity-80">
                                         <div className="max-w-4xl">
                                             <p>
                                                 Shipped products, not concepts. See the numbers in
@@ -121,7 +121,7 @@ export default function IndustryDetail({ industry }) {
                                         <h3 className="text-size-large text-weight-medium">
                                             {product.name}
                                         </h3>
-                                        <p className="text-size-small opacity-60">
+                                        <p className="text-size-small opacity-80">
                                             {product.detail}
                                         </p>
                                         <p className="text-size-small opacity-80 border-l-2 border-[#E0362C]/60 pl-3 mt-auto">
@@ -137,7 +137,7 @@ export default function IndustryDetail({ industry }) {
                                         <div className="text-weight-medium">
                                             Marketing technology is a dedicated practice
                                         </div>
-                                        <p className="text-size-small opacity-60">
+                                        <p className="text-size-small opacity-80">
                                             Ad-ops AI, marketing automation, influencer platforms,
                                             lead-gen engines and creative analysis — with live demos.
                                         </p>

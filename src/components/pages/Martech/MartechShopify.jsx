@@ -21,7 +21,7 @@ export default function MartechShopify() {
                                 <h2 className="heading-4 text-weight-medium">
                                     29+ Stores Built. From Diamond Jewellery to D2C Wellness.
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             Storefronts that convert, integrated with the marketing
@@ -65,7 +65,7 @@ export default function MartechShopify() {
                                 <div className="text-weight-medium">
                                     + {shopifyStores.length - featured.length} more live stores
                                 </div>
-                                <p className="text-size-small opacity-60">
+                                <p className="text-size-small opacity-80">
                                     Browse the full portfolio with links to every storefront.
                                 </p>
                             </div>

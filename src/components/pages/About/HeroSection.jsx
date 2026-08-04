@@ -19,7 +19,7 @@ export default function HeroSection() {
                                     About StackBinary™
                                 </h1>
                                 <div className="max-w-4xl">
-                                    <p className="opacity-60">
+                                    <p className="opacity-80">
                                         We're an engineering-led team building AI, cloud and custom software that ships fast, scales reliably and stays secure.
                                     </p>
                                 </div>

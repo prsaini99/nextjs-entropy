@@ -98,7 +98,7 @@ export default function UTMBuilder() {
             {/* Header */}
             <div className="text-center mb-12">
               <h1 className="heading-2 text-weight-bold mb-4">UTM Link Builder</h1>
-              <p className="text-size-large opacity-70">
+              <p className="text-size-large opacity-85">
                 Create trackable campaign URLs with UTM parameters for better marketing attribution
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function UTMBuilder() {
                 className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500"
                 required
               />
-              <p className="text-size-small opacity-60 mt-2">
+              <p className="text-size-small opacity-80 mt-2">
                 Enter the full URL of the page you want to track
               </p>
             </div>
@@ -215,7 +215,7 @@ export default function UTMBuilder() {
                   placeholder="e.g., keyword for paid search"
                   className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500"
                 />
-                <p className="text-size-small opacity-60 mt-1">
+                <p className="text-size-small opacity-80 mt-1">
                   Used for paid search keywords
                 </p>
               </div>
@@ -232,7 +232,7 @@ export default function UTMBuilder() {
                   placeholder="e.g., banner_ad, text_link"
                   className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500"
                 />
-                <p className="text-size-small opacity-60 mt-1">
+                <p className="text-size-small opacity-80 mt-1">
                   Used to differentiate similar content or links
                 </p>
               </div>

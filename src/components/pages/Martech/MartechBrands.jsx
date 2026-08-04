@@ -23,7 +23,7 @@ export default function MartechBrands() {
                             {brands.map((brand) => (
                                 <span
                                     key={brand}
-                                    className="text-size-medium text-weight-medium opacity-50 hover:opacity-100 hover:text-[#E0362C] transition-all duration-300 whitespace-nowrap"
+                                    className="text-size-medium text-weight-medium opacity-70 hover:opacity-100 hover:text-[#E0362C] transition-all duration-300 whitespace-nowrap"
                                 >
                                     {brand}
                                 </span>

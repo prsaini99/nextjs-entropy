@@ -31,7 +31,7 @@ export default function IgnitePotential() {
                     <div className="home-features-wrapper">
                         <AnimatedInViewDiv className="header">
                             <h2 className="heading-4 text-weight-bold">Why StackBinary™</h2>
-                            {/* <div className="opacity-60">
+                            {/* <div className="opacity-80">
                                 <div className="max-width-48ch">
                                     <div className="text-size-regular">Fuel your business growth with AI solutions that are not
                                         only dynamic and adaptive but also innovative and tailored to match the scale and
@@ -45,7 +45,7 @@ export default function IgnitePotential() {
                                     <div className="text-size-large">{index + 1}</div>
                                     <div className="features-content">
                                         <div className="text-weight-medium">{feature.title}</div>
-                                        <div className="opacity-70">
+                                        <div className="opacity-85">
                                             <div>{feature.description}</div>
                                         </div>
                                     </div>

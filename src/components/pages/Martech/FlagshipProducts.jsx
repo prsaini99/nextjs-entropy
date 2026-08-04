@@ -172,7 +172,7 @@ export default function FlagshipProducts() {
                                 <h2 className="heading-4 text-weight-medium">
                                     Four AI Products We Built. Check Them Yourself.
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             The core of our martech offering. Each one in
@@ -213,7 +213,7 @@ export default function FlagshipProducts() {
                                         <h3 className="heading-5 text-weight-bold">
                                             {product.title}
                                         </h3>
-                                        <p className="opacity-60 text-size-small">
+                                        <p className="opacity-80 text-size-small">
                                             {product.description}
                                         </p>
                                         <div className="grid grid-cols-3 gap-4">
@@ -222,7 +222,7 @@ export default function FlagshipProducts() {
                                                     <div className="text-size-large text-weight-bold text-[#E0362C]">
                                                         {stat.value}
                                                     </div>
-                                                    <div className="text-size-small opacity-50">
+                                                    <div className="text-size-small opacity-70">
                                                         {stat.label}
                                                     </div>
                                                 </div>
@@ -248,7 +248,7 @@ export default function FlagshipProducts() {
                                     <div>
                                         {product.showCurve && (
                                             <div className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] mb-4">
-                                                <div className="text-size-small opacity-50 mb-3">
+                                                <div className="text-size-small opacity-70 mb-3">
                                                     One of the outputs: per-second predicted
                                                     attention
                                                 </div>

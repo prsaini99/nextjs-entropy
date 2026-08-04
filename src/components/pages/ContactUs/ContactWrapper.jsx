@@ -201,7 +201,7 @@ export default function ContactWrapper() {
                                     Talk to StackBinary™
                                 </div>
                             </div>
-                            <div className="opacity-60 mt-4">
+                            <div className="opacity-80 mt-4">
                                 <div className="max-width-60ch">
                                     <div className="text-size-large">
                                         Tell us a bit about your project or ping us on your favorite channel. We'll reply within one business day.
@@ -282,7 +282,7 @@ export default function ContactWrapper() {
                                         Email
                                     </a>
                                 </div>
-                                <div className="text-size-small opacity-70 mt-4">
+                                <div className="text-size-small opacity-85 mt-4">
                                     Or fill out the form below for a detailed project inquiry
                                 </div>
                             </div>
@@ -303,7 +303,7 @@ export default function ContactWrapper() {
                                 </div>
                                 <div className="button-elipse"></div>
                             </a>
-                            <div className="text-size-small opacity-70 mt-2">
+                            <div className="text-size-small opacity-85 mt-2">
                                 Schedule a 30-minute call based on your availability
                             </div>
                         </AnimatedInViewDiv>
@@ -436,7 +436,7 @@ export default function ContactWrapper() {
                                         <button type="submit" className="primary-button" disabled={loading}>
                                             <span>{loading ? "Sending…" : "Send inquiry"}</span>
                                         </button>
-                                        <div className="text-size-small opacity-70 text-center">
+                                        <div className="text-size-small opacity-85 text-center">
                                             By submitting, you agree to our{" "}
                                             <Link href="/privacy-policy" className="underline">privacy policy</Link>.
                                             We reply within one business day.
@@ -451,7 +451,7 @@ export default function ContactWrapper() {
                                     <div className="text-size-contact mb-4">
                                         🎉 Thank you! Your inquiry has been received!
                                     </div>
-                                    <div className="text-size-medium opacity-70">
+                                    <div className="text-size-medium opacity-85">
                                         We&apos;ll get back to you within one business day. Check your
                                         inbox for a confirmation — if you have a brief or spec, just
                                         reply to that email and attach it.
