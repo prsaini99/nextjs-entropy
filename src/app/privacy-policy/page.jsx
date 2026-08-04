@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
             <AnimatedInViewDiv className="max-w-4xl mx-auto">
               <h1 className="heading-2 text-weight-bold mb-8">Privacy Policy</h1>
 
-              <div className="text-size-small opacity-70 mb-8">Last updated: July 2026</div>
+              <div className="text-size-small opacity-85 mb-8">Last updated: July 2026</div>
 
               <div className="prose prose-lg max-w-none space-y-8">
                 <AnimatedInViewDiv delay={0.1}>

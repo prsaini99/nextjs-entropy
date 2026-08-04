@@ -47,7 +47,7 @@ export default function MartechProofStrip() {
                                 <div className="text-weight-bold text-[#E0362C]">
                                     {item.headline}
                                 </div>
-                                <p className="text-size-small opacity-60">{item.detail}</p>
+                                <p className="text-size-small opacity-80">{item.detail}</p>
                             </div>
                         ))}
                     </AnimatedInViewDiv>

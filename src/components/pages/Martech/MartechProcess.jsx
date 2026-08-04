@@ -48,7 +48,7 @@ export default function MartechProcess() {
                                 <h2 className="heading-4 text-weight-medium">
                                     From Tool Sprawl to Owned Stack in Weeks, Not Quarters
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             &ldquo;Building takes too long&rdquo; was true in 2020.
@@ -80,7 +80,7 @@ export default function MartechProcess() {
                                         </div>
                                     </div>
                                     <h3 className="text-weight-medium">{step.title}</h3>
-                                    <p className="text-size-small opacity-60">
+                                    <p className="text-size-small opacity-80">
                                         {step.description}
                                     </p>
                                 </AnimatedInViewDiv>

@@ -70,7 +70,7 @@ export default function MartechFAQ({
                                         </span>
                                     </button>
                                     {open === index && (
-                                        <div className="px-6 pb-6 text-size-small opacity-60">
+                                        <div className="px-6 pb-6 text-size-small opacity-80">
                                             {faq.answer}
                                         </div>
                                     )}

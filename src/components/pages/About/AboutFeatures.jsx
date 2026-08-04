@@ -33,7 +33,7 @@ export default function AboutFeatures() {
                                 <h2 className="heading-4 text-weight-medium">
                                     Our Mission
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             Make technology simple to adopt and valuable to operate—so teams launch faster, run leaner and grow with confidence. Explore our <Link href="/services" className="text-link">comprehensive services</Link> or <Link href="/contact-us" className="text-link">get in touch</Link> to discuss your project.

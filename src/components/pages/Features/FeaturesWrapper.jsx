@@ -20,7 +20,7 @@ export default function FeaturesWrapper() {
                             <div className="heading-4 text-weight-bold">
                                 {title}
                             </div>
-                            <div className="opacity-60">
+                            <div className="opacity-80">
                                 <div className="max-width-48ch">
                                     <div>
                                         {description}

@@ -112,7 +112,7 @@ export default function TribeLiveDemo() {
                                 <h2 className="heading-4 text-weight-medium">
                                     Watch the Ad. Watch Its Brain Response, In Real Time.
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             This is one of two real creatives from our neural
@@ -146,14 +146,14 @@ export default function TribeLiveDemo() {
                                     />
                                 </div>
                                 <div className="p-4 flex items-center justify-between gap-3 text-size-small border-t border-gray-200">
-                                    <span className="opacity-50">
+                                    <span className="opacity-70">
                                         Ad &ldquo;05-22&rdquo; · 56s · full trimodal analysis
                                     </span>
                                     <span
                                         className={`px-3 py-1 rounded-full border text-weight-bold ${
                                             playing
                                                 ? "border-[#E0362C] text-[#E0362C]"
-                                                : "border-gray-300 opacity-50"
+                                                : "border-gray-300 opacity-70"
                                         }`}
                                     >
                                         {playing ? "ANALYZING" : "PAUSED"}
@@ -166,10 +166,10 @@ export default function TribeLiveDemo() {
                                 className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-5"
                             >
                                 <div className="flex items-baseline justify-between gap-4">
-                                    <div className="text-size-small opacity-50">
+                                    <div className="text-size-small opacity-70">
                                         Predicted cortical attention · per second
                                     </div>
-                                    <div className="text-size-small opacity-50">
+                                    <div className="text-size-small opacity-70">
                                         t = {t.toFixed(1)}s
                                     </div>
                                 </div>
@@ -209,16 +209,16 @@ export default function TribeLiveDemo() {
 
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="border border-gray-200 rounded-lg p-4">
-                                        <div className="text-size-small opacity-50">
+                                        <div className="text-size-small opacity-70">
                                             Attention now
                                         </div>
                                         <div className="heading-5 text-weight-bold text-[#E0362C]">
                                             {Math.round(attention * 100)}
-                                            <span className="text-size-small opacity-50">/100</span>
+                                            <span className="text-size-small opacity-70">/100</span>
                                         </div>
                                     </div>
                                     <div className="border border-gray-200 rounded-lg p-4">
-                                        <div className="text-size-small opacity-50">Phase</div>
+                                        <div className="text-size-small opacity-70">Phase</div>
                                         <div className="text-size-small text-weight-medium mt-1">
                                             {phaseFor(t)}
                                         </div>
@@ -230,7 +230,7 @@ export default function TribeLiveDemo() {
                                         <button
                                             key={e.at}
                                             onClick={() => seekTo(e.at)}
-                                            className="text-size-small border border-gray-200 rounded-full px-3 py-1 opacity-60 hover:opacity-100 hover:border-[#E0362C] transition-all"
+                                            className="text-size-small border border-gray-200 rounded-full px-3 py-1 opacity-80 hover:opacity-100 hover:border-[#E0362C] transition-all"
                                         >
                                             s{e.at} · {e.label}
                                         </button>
@@ -256,16 +256,16 @@ export default function TribeLiveDemo() {
                                             key={r.metric}
                                             className="grid grid-cols-4 border-t border-gray-200 text-size-small"
                                         >
-                                            <div className="p-3 opacity-70">{r.metric}</div>
+                                            <div className="p-3 opacity-85">{r.metric}</div>
                                             <div className="p-3 text-weight-medium">{r.a}</div>
-                                            <div className="p-3 opacity-60">{r.b}</div>
-                                            <div className={`p-3 ${r.edge === "05-22" ? "text-[#E0362C] text-weight-bold" : "opacity-50"}`}>
+                                            <div className="p-3 opacity-80">{r.b}</div>
+                                            <div className={`p-3 ${r.edge === "05-22" ? "text-[#E0362C] text-weight-bold" : "opacity-70"}`}>
                                                 {r.edge}
                                             </div>
                                         </div>
                                     ))}
                                 </div>
-                                <p className="text-size-small opacity-50 mt-4">
+                                <p className="text-size-small opacity-70 mt-4">
                                     Verdict from the report: near-tied on total engagement,
                                     opposite in shape, and for feed/reels, where the first three
                                     seconds decide thumb-stop, the 05-22 hook wins the first
@@ -281,13 +281,13 @@ export default function TribeLiveDemo() {
                                     {NETWORKS.map((n) => (
                                         <div key={n.name} className="flex flex-col gap-1">
                                             <div className="flex justify-between text-size-small">
-                                                <span className="opacity-70">
+                                                <span className="opacity-85">
                                                     {n.name}
                                                     {n.note && (
                                                         <span className="text-[#E0362C] opacity-90"> · {n.note}</span>
                                                     )}
                                                 </span>
-                                                <span className="opacity-50">
+                                                <span className="opacity-70">
                                                     {n.a.toFixed(3)} vs {n.b.toFixed(3)}
                                                 </span>
                                             </div>
@@ -300,7 +300,7 @@ export default function TribeLiveDemo() {
                                         </div>
                                     ))}
                                 </div>
-                                <p className="text-size-small opacity-50 mt-4">
+                                <p className="text-size-small opacity-70 mt-4">
                                     The diagnostic both ads shared: the value network (Limbic/OFC)
                                     fires only at the open and fades, the clearest fix to move
                                     from &ldquo;engaging&rdquo; to &ldquo;persuasive.&rdquo; That

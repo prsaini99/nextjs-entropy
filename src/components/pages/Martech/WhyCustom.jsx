@@ -42,7 +42,7 @@ export default function WhyCustom() {
                                 <h2 className="heading-4 text-weight-medium">
                                     Rented SaaS vs. Owned Infrastructure
                                 </h2>
-                                <div className="opacity-60">
+                                <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
                                             One in four new martech capabilities are now built
@@ -57,8 +57,8 @@ export default function WhyCustom() {
 
                         <div className="w-full overflow-hidden rounded-lg border border-gray-200">
                             <div className="grid grid-cols-3 bg-gray-100 text-weight-bold">
-                                <div className="p-5 text-size-small uppercase tracking-wider opacity-60"></div>
-                                <div className="p-5 text-size-small uppercase tracking-wider opacity-60">
+                                <div className="p-5 text-size-small uppercase tracking-wider opacity-80"></div>
+                                <div className="p-5 text-size-small uppercase tracking-wider opacity-80">
                                     Off-the-shelf stack
                                 </div>
                                 <div className="p-5 text-size-small uppercase tracking-wider text-[#E0362C]">
@@ -74,7 +74,7 @@ export default function WhyCustom() {
                                     <div className="p-5 text-weight-medium text-size-small">
                                         {row.dimension}
                                     </div>
-                                    <div className="p-5 text-size-small opacity-50">{row.saas}</div>
+                                    <div className="p-5 text-size-small opacity-70">{row.saas}</div>
                                     <div className="p-5 text-size-small opacity-90 bg-[#E0362C]/[0.05]">
                                         {row.custom}
                                     </div>

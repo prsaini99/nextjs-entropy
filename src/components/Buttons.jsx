@@ -9,7 +9,7 @@ export function MoreAImodels() {
         <Link href={ROUTES.ABOUT} className="read-more-tag w-inline-block animate-slideUpFadeIn-0.5">
             <div className="text-size-small text-weight-bold">About us</div>
             <div className="vertical-line-tag"></div>
-            <div className="read-more-button opacity-50 hover:opacity-100">
+            <div className="read-more-button opacity-70 hover:opacity-100">
                 <div className="text-size-small text-weight-bold">Read more</div>
                 <ArrowRight />
             </div>

@@ -41,7 +41,7 @@ export default function ElevetBussiness() {
                         <AnimatedInViewDiv className="header">
                             <h2 className="heading-4 text-weight-medium">How We Work
                             </h2>
-                            <div className="opacity-60">
+                            <div className="opacity-80">
                                 <div className="max-width-42ch">
                                     <div>
                                         Explore our three-phase approach to see how we drive growth and efficiency at every step.
@@ -59,7 +59,7 @@ export default function ElevetBussiness() {
                                                     <div className="text-size-small text-weight-bold">Phase</div>
                                                     <div className="vertical-line-tag"></div>
                                                     <div className="read-more-button">
-                                                        <div className="opacity-70">
+                                                        <div className="opacity-85">
                                                             <div className="text-size-small text-weight-medium">{step.phase}</div>
                                                         </div>
                                                     </div>

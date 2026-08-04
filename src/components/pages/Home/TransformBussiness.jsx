@@ -47,7 +47,7 @@ export default function TransformBussiness() {
                             <h2 className="heading-4 text-weight-bold">
                                 What We Do
                             </h2>
-                            {/* <div className="opacity-60">
+                            {/* <div className="opacity-80">
                                 <div className="max-width-46ch">
                                     <div className="text-size-regular">
                                         {services[0].description}
@@ -69,7 +69,7 @@ export default function TransformBussiness() {
                                         <Link href="/services" className="text-size-large text-link hover:text-primary transition-colors">
                                             {service.title}
                                         </Link>
-                                        <div className="opacity-70">
+                                        <div className="opacity-85">
                                             <div className="max-width-50ch">
                                                 <div className="text-size-regular">
                                                     {service.description}

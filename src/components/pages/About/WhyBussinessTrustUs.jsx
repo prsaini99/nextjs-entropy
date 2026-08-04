@@ -40,7 +40,7 @@ export default function WhyBussinessesTrustUs() {
                             <div className="heading-4 text-weight-medium">
                                 Why Businesses Trust Us
                             </div>
-                            <div className="opacity-60">
+                            <div className="opacity-80">
                                 <div className="max-width-4xl">
                                     <div>
                                         “Work with us, and you’ll not only get groundbreaking solutions but also the occasional bad pun—because tech shouldn’t be boring.”
@@ -58,7 +58,7 @@ export default function WhyBussinessesTrustUs() {
                                                     <div className="text-size-small text-weight-bold">Phase</div>
                                                     <div className="vertical-line-tag"></div>
                                                     <div className="read-more-button">
-                                                        <div className="opacity-70">
+                                                        <div className="opacity-85">
                                                             <div className="text-size-small text-weight-medium">{step.phase}</div>
                                                         </div>
                                                     </div>

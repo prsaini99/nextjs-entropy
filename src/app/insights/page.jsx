@@ -31,7 +31,7 @@ export default function InsightsPage() {
                     Practical Answers, Backed by Shipped Work
                   </h1>
                   <div className="max-w-4xl">
-                    <p className="opacity-60">
+                    <p className="opacity-80">
                       Build-vs-buy math, real cost ranges and technical deep
                       dives — every article grounded in the 55+ products
                       we&apos;ve actually delivered.
@@ -46,7 +46,7 @@ export default function InsightsPage() {
         <div className="padding-global py-16">
           <div className="w-layout-blockcontainer container w-container">
             {insights.length === 0 ? (
-              <p className="opacity-50 text-center">First articles landing soon.</p>
+              <p className="opacity-70 text-center">First articles landing soon.</p>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {insights.map((insight) => (
@@ -65,7 +65,7 @@ export default function InsightsPage() {
                     <h2 className="text-size-large text-weight-medium">
                       {insight.title}
                     </h2>
-                    <p className="text-size-small opacity-60">
+                    <p className="text-size-small opacity-80">
                       {insight.description}
                     </p>
                     <span className="mt-auto pt-3 text-size-small text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity">

@@ -43,7 +43,7 @@ export default function OpenRoles() {
               <h2 className="heading-4 text-weight-medium">
                 Open Roles
               </h2>
-              <div className="opacity-60">
+              <div className="opacity-80">
                 <div className="max-width-42ch">
                   <div>
                     We're always looking for talented builders to join our team. Find your next opportunity below.
@@ -95,14 +95,14 @@ export default function OpenRoles() {
 
             <div className="mt-12">
               <div className="mb-6">
-                <div className="text-size-small opacity-70">
+                <div className="text-size-small opacity-85">
                   Showing {filteredJobs.length} role{filteredJobs.length !== 1 ? 's' : ''}
                 </div>
               </div>
 
               {Object.keys(jobsByTeam).length === 0 ? (
                 <div className="text-center py-12">
-                  <div className="text-size-regular opacity-70">
+                  <div className="text-size-regular opacity-85">
                     No roles match your current filters. Try adjusting your selection.
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export default function OpenRoles() {
                     <div key={team} className="mb-12">
                       <div className="mb-8">
                         <h3 className="text-size-xlarge text-weight-medium">
-                          {team} <span className="opacity-60">({teamJobs.length})</span>
+                          {team} <span className="opacity-80">({teamJobs.length})</span>
                         </h3>
                       </div>
                       <div className="space-y-6">
@@ -129,7 +129,7 @@ export default function OpenRoles() {
                                     <div className="text-size-small text-weight-bold">{job.team}</div>
                                     <div className="vertical-line-tag"></div>
                                     <div className="read-more-button">
-                                      <div className="opacity-70">
+                                      <div className="opacity-85">
                                         <div className="text-size-small text-weight-medium">{job.experienceLevel}</div>
                                       </div>
                                     </div>
@@ -140,7 +140,7 @@ export default function OpenRoles() {
                                   <div className="steps-description">
                                     <div>{job.blurb}</div>
                                   </div>
-                                  <div className="flex gap-2 text-size-small opacity-70 mt-2">
+                                  <div className="flex gap-2 text-size-small opacity-85 mt-2">
                                     <span>{job.location}</span>
                                     <span>•</span>
                                     <span>{job.type}</span>
@@ -161,7 +161,7 @@ export default function OpenRoles() {
                                     </h4>
                                     <ul className="space-y-3">
                                       {job.whatYoullDo.slice(0, 4).map((item, itemIndex) => (
-                                        <li key={itemIndex} className="flex items-start gap-3 text-size-small opacity-70">
+                                        <li key={itemIndex} className="flex items-start gap-3 text-size-small opacity-85">
                                           <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
                                           <span>{item}</span>
                                         </li>

@@ -71,7 +71,7 @@ export default async function InsightPage({ params }) {
                 })}
               </div>
               <h1 className="heading-4 text-weight-bold mb-4">{insight.title}</h1>
-              <p className="opacity-60 mb-10">{insight.description}</p>
+              <p className="opacity-80 mb-10">{insight.description}</p>
               <article
                 className="insight-article"
                 dangerouslySetInnerHTML={{ __html: html }}

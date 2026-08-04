@@ -23,7 +23,7 @@ export default function IndustriesHub() {
                                     Through Them.
                                 </h1>
                                 <div className="max-w-4xl">
-                                    <p className="opacity-60">
+                                    <p className="opacity-80">
                                         From HIPAA-compliant healthcare AI to high-concurrency
                                         ticketing, IoT cattle monitoring to $100M+ commerce — pick
                                         your industry and see exactly what we&apos;ve built for
@@ -56,13 +56,13 @@ export default function IndustriesHub() {
                                     <h2 className="text-size-large text-weight-medium">
                                         {industry.name}
                                     </h2>
-                                    <p className="text-size-small opacity-60">{industry.blurb}</p>
+                                    <p className="text-size-small opacity-80">{industry.blurb}</p>
                                     <p className="text-size-small opacity-40">
                                         {industry.brands.slice(0, 5).join(" · ")}
                                         {industry.brands.length > 5 ? " · …" : ""}
                                     </p>
                                     <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small">
-                                        <span className="opacity-50">
+                                        <span className="opacity-70">
                                             {industry.built.length} shipped products
                                         </span>
                                         <span className="text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity">

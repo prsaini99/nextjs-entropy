@@ -23,14 +23,14 @@ export default function MartechHero() {
                                         AI Marketing Agency
                                     </div>
                                     <div className="vertical-line-tag"></div>
-                                    <div className="text-size-small opacity-50">
+                                    <div className="text-size-small opacity-70">
                                         Built in weeks. Owned forever.
                                     </div>
                                 </div>
                                 <h1 className="heading-2 text-weight-bold">
                                     Most Marketing Agencies Use AI Tools. We Build Them.
                                 </h1>
-                                <p className="opacity-60">
+                                <p className="opacity-80">
                                     Marketing automation, influencer platforms, AI calling
                                     agents and lead engines, built for how you market. Live in
                                     2–3 weeks, and yours outright. Often for less than a year of
@@ -70,7 +70,7 @@ export default function MartechHero() {
                                         <div className="heading-4 text-weight-bold text-[#E0362C]">
                                             {stat.value}
                                         </div>
-                                        <p className="text-size-small opacity-60">{stat.label}</p>
+                                        <p className="text-size-small opacity-80">{stat.label}</p>
                                     </div>
                                 ))}
                             </div>

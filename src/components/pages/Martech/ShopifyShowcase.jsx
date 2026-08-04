@@ -28,7 +28,7 @@ export default function ShopifyShowcase() {
                                     29+ Stores Built. Every One of Them Live.
                                 </h1>
                                 <div className="max-w-4xl">
-                                    <p className="opacity-60">
+                                    <p className="opacity-80">
                                         From diamond jewellery to sports nutrition to designer
                                         couture, storefronts designed to convert, and wired into
                                         the marketing stack that fills them. Click any store to
@@ -56,7 +56,7 @@ export default function ShopifyShowcase() {
                                         <div className="heading-4 text-weight-bold text-[#E0362C]">
                                             {stat.value}
                                         </div>
-                                        <p className="text-size-small opacity-60">{stat.label}</p>
+                                        <p className="text-size-small opacity-80">{stat.label}</p>
                                     </div>
                                 ))}
                             </div>
@@ -98,7 +98,7 @@ export default function ShopifyShowcase() {
                             <div className="text-size-large text-weight-medium">
                                 Beyond Shopify: enterprise commerce
                             </div>
-                            <p className="text-size-small opacity-60 max-w-2xl">
+                            <p className="text-size-small opacity-80 max-w-2xl">
                                 Steve Madden ($100M+ online sales, 2M+ app downloads), Utsav
                                 Fashion ($20M+ annual revenue, 50+ countries), Dudalina ($15M+
                                 online revenue), custom omnichannel platforms when you outgrow
