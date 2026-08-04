@@ -61,7 +61,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                     href="#martech-lead-form"
                                     className="read-more-tag w-inline-block cursor-pointer"
                                 >
-                                    <div className="text-size-small text-weight-bold text-[#ed5145]">
+                                    <div className="text-size-small text-weight-bold text-[#E0362C]">
                                         {page.badge}
                                     </div>
                                 </a>
@@ -112,13 +112,13 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
 
                             {page.heroStats && (
                                 <AnimatedInViewDiv delay={0.4} className="w-full">
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 rounded-lg overflow-hidden border border-white/10 bg-white/10">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
                                         {page.heroStats.map((stat) => (
                                             <div
                                                 key={stat.label}
-                                                className="bg-black/90 p-6 lg:p-8 flex flex-col gap-2"
+                                                className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
                                             >
-                                                <div className="heading-4 text-weight-bold text-[#ed5145]">
+                                                <div className="heading-4 text-weight-bold text-[#E0362C]">
                                                     {stat.value}
                                                 </div>
                                                 <p className="text-size-small opacity-60">
@@ -145,7 +145,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                             <div className="about-features-wrapper">
                                 <AnimatedInViewDiv className="about-features-header">
                                     <div className="header">
-                                        <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider mb-4">
+                                        <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider mb-4">
                                             Live Product · No Mockups
                                         </div>
                                         <h2 className="heading-4 text-weight-medium">
@@ -160,12 +160,12 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                 </AnimatedInViewDiv>
 
                                 <AnimatedInViewDiv className="w-full">
-                                    <div className="border border-white/15 rounded-lg overflow-hidden bg-black">
-                                        <div className="flex items-center justify-between gap-3 px-5 py-3 border-b border-white/10 bg-white/[0.03]">
+                                    <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
+                                        <div className="flex items-center justify-between gap-3 px-5 py-3 border-b border-gray-200 bg-[#F7F7F5]">
                                             <div className="flex items-center gap-2">
-                                                <span className="w-3 h-3 rounded-full bg-[#ed5145]/70"></span>
-                                                <span className="w-3 h-3 rounded-full bg-white/20"></span>
-                                                <span className="w-3 h-3 rounded-full bg-white/20"></span>
+                                                <span className="w-3 h-3 rounded-full bg-[#E0362C]/70"></span>
+                                                <span className="w-3 h-3 rounded-full bg-gray-300"></span>
+                                                <span className="w-3 h-3 rounded-full bg-gray-300"></span>
                                                 <span className="text-size-small opacity-50 ml-3">
                                                     {page.embed.title}
                                                 </span>
@@ -174,7 +174,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                                 href={page.embed.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-size-small text-weight-bold text-[#ed5145] hover:opacity-80 transition-opacity whitespace-nowrap"
+                                                className="text-size-small text-weight-bold text-[#E0362C] hover:opacity-80 transition-opacity whitespace-nowrap"
                                                 onClick={() =>
                                                     trackEvent(ANALYTICS_EVENTS.DEMO_INTERACT, {
                                                         demo_name: page.embed.title,
@@ -218,7 +218,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <AnimatedInViewDiv
                                             key={feature.title}
                                             delay={index * 0.08}
-                                            className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3"
+                                            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3"
                                         >
                                             <h3 className="text-size-large text-weight-medium">
                                                 {feature.title}
@@ -236,7 +236,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                     in reach. demo_location/cta location let Monday's
                                     review compare hero vs midpage placement. */}
                                 {page.demo && (
-                                    <AnimatedInViewDiv className="w-full mt-10 border border-[#ed5145]/30 rounded-lg bg-[#ed5145]/[0.05] p-6 lg:p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                    <AnimatedInViewDiv className="w-full mt-10 border border-[#E0362C]/30 rounded-lg bg-[#E0362C]/[0.05] p-6 lg:p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                                         <p className="text-size-medium text-weight-medium m-0">
                                             Prefer to see it than read about it?
                                         </p>
@@ -289,9 +289,9 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <AnimatedInViewDiv
                                             key={step.title}
                                             delay={index * 0.1}
-                                            className="border border-white/10 rounded-lg p-8 bg-white/[0.03] flex flex-col gap-3"
+                                            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col gap-3"
                                         >
-                                            <div className="heading-5 text-weight-bold text-[#ed5145]">
+                                            <div className="heading-5 text-weight-bold text-[#E0362C]">
                                                 {String(index + 1).padStart(2, "0")}
                                             </div>
                                             <h3 className="text-weight-medium">{step.title}</h3>
@@ -324,12 +324,12 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <Link
                                             key={slug}
                                             href={`/martech/${slug}`}
-                                            className="border border-white/10 rounded-lg p-6 bg-white/[0.02] hover:border-[#ed5145]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
+                                            className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
                                         >
                                             <span className="text-size-small text-weight-medium capitalize-first">
                                                 {linkAnchors[slug] || slug}
                                             </span>
-                                            <span className="text-[#ed5145] opacity-40 group-hover:opacity-100 transition-opacity">
+                                            <span className="text-[#E0362C] opacity-40 group-hover:opacity-100 transition-opacity">
                                                 →
                                             </span>
                                         </Link>
@@ -345,14 +345,14 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                 <section>
                     <div className="padding-global py-16">
                         <div className="w-layout-blockcontainer container w-container">
-                            <AnimatedInViewDiv className="border border-[#ed5145]/30 rounded-lg p-8 lg:p-12 bg-[#ed5145]/[0.04]">
+                            <AnimatedInViewDiv className="border border-[#E0362C]/30 rounded-lg p-8 lg:p-12 bg-[#E0362C]/[0.04]">
                                 <h2 className="heading-6 text-weight-medium mb-6">
                                     {page.proof.heading}
                                 </h2>
                                 <ul className="flex flex-col gap-3">
                                     {page.proof.items.map((item) => (
                                         <li key={item} className="flex gap-3 opacity-80">
-                                            <span className="text-[#ed5145]">✓</span>
+                                            <span className="text-[#E0362C]">✓</span>
                                             <span className="text-size-small">{item}</span>
                                         </li>
                                     ))}

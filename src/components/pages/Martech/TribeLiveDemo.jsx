@@ -106,7 +106,7 @@ export default function TribeLiveDemo() {
                     <div className="about-features-wrapper">
                         <AnimatedInViewDiv className="about-features-header">
                             <div className="header">
-                                <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider mb-4">
+                                <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider mb-4">
                                     Live Example · A Real Ad We Scored
                                 </div>
                                 <h2 className="heading-4 text-weight-medium">
@@ -128,7 +128,7 @@ export default function TribeLiveDemo() {
                         </AnimatedInViewDiv>
 
                         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 w-full items-stretch">
-                            <AnimatedInViewDiv className="border border-white/10 rounded-lg overflow-hidden bg-black flex flex-col">
+                            <AnimatedInViewDiv className="border border-gray-200 rounded-lg overflow-hidden bg-white flex flex-col">
                                 <div className="flex-1 flex items-center justify-center min-h-0">
                                     <video
                                         ref={videoRef}
@@ -145,15 +145,15 @@ export default function TribeLiveDemo() {
                                         onPause={() => setPlaying(false)}
                                     />
                                 </div>
-                                <div className="p-4 flex items-center justify-between gap-3 text-size-small border-t border-white/10">
+                                <div className="p-4 flex items-center justify-between gap-3 text-size-small border-t border-gray-200">
                                     <span className="opacity-50">
                                         Ad &ldquo;05-22&rdquo; · 56s · full trimodal analysis
                                     </span>
                                     <span
                                         className={`px-3 py-1 rounded-full border text-weight-bold ${
                                             playing
-                                                ? "border-[#ed5145] text-[#ed5145]"
-                                                : "border-white/20 opacity-50"
+                                                ? "border-[#E0362C] text-[#E0362C]"
+                                                : "border-gray-300 opacity-50"
                                         }`}
                                     >
                                         {playing ? "ANALYZING" : "PAUSED"}
@@ -163,7 +163,7 @@ export default function TribeLiveDemo() {
 
                             <AnimatedInViewDiv
                                 delay={0.15}
-                                className="border border-white/10 rounded-lg p-6 lg:p-8 bg-white/[0.03] flex flex-col gap-5"
+                                className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-5"
                             >
                                 <div className="flex items-baseline justify-between gap-4">
                                     <div className="text-size-small opacity-50">
@@ -177,13 +177,13 @@ export default function TribeLiveDemo() {
                                 <svg viewBox={`0 0 ${W} ${H + 26}`} className="w-full h-auto">
                                     <defs>
                                         <linearGradient id="liveFill" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stopColor="#ed5145" stopOpacity="0.4" />
-                                            <stop offset="100%" stopColor="#ed5145" stopOpacity="0" />
+                                            <stop offset="0%" stopColor="#E0362C" stopOpacity="0.4" />
+                                            <stop offset="100%" stopColor="#E0362C" stopOpacity="0" />
                                         </linearGradient>
                                     </defs>
                                     <rect x="0" y="0" width={(3 / DURATION) * W} height={H} fill="#ffffff" opacity="0.07" />
                                     <path d={area} fill="url(#liveFill)" />
-                                    <path d={path} fill="none" stroke="#ed5145" strokeWidth="2.5" strokeLinejoin="round" />
+                                    <path d={path} fill="none" stroke="#E0362C" strokeWidth="2.5" strokeLinejoin="round" />
                                     {EVENTS.map((e) => (
                                         <circle
                                             key={e.at}
@@ -198,7 +198,7 @@ export default function TribeLiveDemo() {
                                     ))}
                                     {/* playhead */}
                                     <line x1={px} y1="0" x2={px} y2={H} stroke="#ffffff" strokeWidth="1.5" opacity="0.7" />
-                                    <circle cx={px} cy={py} r="6" fill="#ed5145" stroke="#ffffff" strokeWidth="2" />
+                                    <circle cx={px} cy={py} r="6" fill="#E0362C" stroke="#ffffff" strokeWidth="2" />
                                     <text x="6" y={H + 18} fill="#ffffff" opacity="0.5" fontSize="11">
                                         hook (0–3s)
                                     </text>
@@ -208,16 +208,16 @@ export default function TribeLiveDemo() {
                                 </svg>
 
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div className="border border-white/10 rounded-lg p-4">
+                                    <div className="border border-gray-200 rounded-lg p-4">
                                         <div className="text-size-small opacity-50">
                                             Attention now
                                         </div>
-                                        <div className="heading-5 text-weight-bold text-[#ed5145]">
+                                        <div className="heading-5 text-weight-bold text-[#E0362C]">
                                             {Math.round(attention * 100)}
                                             <span className="text-size-small opacity-50">/100</span>
                                         </div>
                                     </div>
-                                    <div className="border border-white/10 rounded-lg p-4">
+                                    <div className="border border-gray-200 rounded-lg p-4">
                                         <div className="text-size-small opacity-50">Phase</div>
                                         <div className="text-size-small text-weight-medium mt-1">
                                             {phaseFor(t)}
@@ -230,7 +230,7 @@ export default function TribeLiveDemo() {
                                         <button
                                             key={e.at}
                                             onClick={() => seekTo(e.at)}
-                                            className="text-size-small border border-white/15 rounded-full px-3 py-1 opacity-60 hover:opacity-100 hover:border-[#ed5145] transition-all"
+                                            className="text-size-small border border-gray-200 rounded-full px-3 py-1 opacity-60 hover:opacity-100 hover:border-[#E0362C] transition-all"
                                         >
                                             s{e.at} · {e.label}
                                         </button>
@@ -240,26 +240,26 @@ export default function TribeLiveDemo() {
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-                            <AnimatedInViewDiv className="border border-white/10 rounded-lg p-8 bg-white/[0.02]">
+                            <AnimatedInViewDiv className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5]">
                                 <h3 className="text-weight-medium mb-4">
                                     Head-to-head: 05-22 vs the prior creative
                                 </h3>
-                                <div className="overflow-hidden rounded-lg border border-white/10">
-                                    <div className="grid grid-cols-4 bg-white/[0.06] text-size-small text-weight-bold">
+                                <div className="overflow-hidden rounded-lg border border-gray-200">
+                                    <div className="grid grid-cols-4 bg-gray-100 text-size-small text-weight-bold">
                                         <div className="p-3">Metric</div>
-                                        <div className="p-3 text-[#ed5145]">05-22 (this ad)</div>
+                                        <div className="p-3 text-[#E0362C]">05-22 (this ad)</div>
                                         <div className="p-3">05-02 (prior)</div>
                                         <div className="p-3">Edge</div>
                                     </div>
                                     {HEAD_TO_HEAD.map((r) => (
                                         <div
                                             key={r.metric}
-                                            className="grid grid-cols-4 border-t border-white/10 text-size-small"
+                                            className="grid grid-cols-4 border-t border-gray-200 text-size-small"
                                         >
                                             <div className="p-3 opacity-70">{r.metric}</div>
                                             <div className="p-3 text-weight-medium">{r.a}</div>
                                             <div className="p-3 opacity-60">{r.b}</div>
-                                            <div className={`p-3 ${r.edge === "05-22" ? "text-[#ed5145] text-weight-bold" : "opacity-50"}`}>
+                                            <div className={`p-3 ${r.edge === "05-22" ? "text-[#E0362C] text-weight-bold" : "opacity-50"}`}>
                                                 {r.edge}
                                             </div>
                                         </div>
@@ -273,7 +273,7 @@ export default function TribeLiveDemo() {
                                 </p>
                             </AnimatedInViewDiv>
 
-                            <AnimatedInViewDiv delay={0.1} className="border border-white/10 rounded-lg p-8 bg-white/[0.02]">
+                            <AnimatedInViewDiv delay={0.1} className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5]">
                                 <h3 className="text-weight-medium mb-4">
                                     Network-by-network activation (Yeo-7 atlas)
                                 </h3>
@@ -284,16 +284,16 @@ export default function TribeLiveDemo() {
                                                 <span className="opacity-70">
                                                     {n.name}
                                                     {n.note && (
-                                                        <span className="text-[#ed5145] opacity-90"> · {n.note}</span>
+                                                        <span className="text-[#E0362C] opacity-90"> · {n.note}</span>
                                                     )}
                                                 </span>
                                                 <span className="opacity-50">
                                                     {n.a.toFixed(3)} vs {n.b.toFixed(3)}
                                                 </span>
                                             </div>
-                                            <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                                            <div className="h-2 rounded-full bg-gray-200 overflow-hidden">
                                                 <div
-                                                    className="h-full bg-[#ed5145]"
+                                                    className="h-full bg-[#E0362C]"
                                                     style={{ width: `${(n.a / 0.204) * 100}%` }}
                                                 />
                                             </div>

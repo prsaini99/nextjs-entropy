@@ -85,7 +85,7 @@ const Toggle = ({ open, setOpen }) => {
                 initial={false}
                 animate={open ? "open" : "closed"}
                 onClick={() => setOpen((pv) => !pv)}
-                className={`relative h-12 w-12 rounded-lg bg-white/0 transition-colors ${open ? "bg-white/20" : ""}`}
+                className={`relative h-12 w-12 rounded-lg bg-white/0 transition-colors ${open ? "bg-gray-300" : ""}`}
             >
                 <motion.span
                     variants={VARIANTS.top}
@@ -166,7 +166,7 @@ const Option = ({ text, setOpen }) => {
         <motion.li
             variants={itemVariants}
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2 w-full p-2 font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 text-slate-700 hover:text-[#ed5145] transition-colors cursor-pointer"
+            className="flex items-center gap-2 w-full p-2 font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 text-slate-700 hover:text-[#E0362C] transition-colors cursor-pointer"
         >
             <span>{text}</span>
         </motion.li>

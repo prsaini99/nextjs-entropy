@@ -154,9 +154,9 @@ export default function MartechLeadForm({
         return (
             <div
                 id="martech-lead-form"
-                className="border border-[#ed5145]/40 rounded-lg p-8 bg-[#ed5145]/[0.06] flex flex-col items-center gap-3 text-center"
+                className="border border-[#E0362C]/40 rounded-lg p-8 bg-[#E0362C]/[0.06] flex flex-col items-center gap-3 text-center"
             >
-                <div className="heading-5 text-weight-bold text-[#ed5145]">
+                <div className="heading-5 text-weight-bold text-[#E0362C]">
                     You&apos;re in the pipeline ✓
                 </div>
                 <p className="opacity-70 text-size-small">
@@ -176,7 +176,7 @@ export default function MartechLeadForm({
             id="martech-lead-form"
             onSubmit={handleSubmit}
             data-clarity-mask="true"
-            className="border border-white/15 rounded-lg p-6 lg:p-8 bg-white/[0.04] backdrop-blur flex flex-col gap-4 w-full text-left"
+            className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] backdrop-blur flex flex-col gap-4 w-full text-left"
         >
             <div>
                 <div className="text-size-large text-weight-bold">{heading}</div>
@@ -245,7 +245,7 @@ export default function MartechLeadForm({
                                 setCustomBudget(false);
                                 setForm((f) => ({ ...f, budget: "" }));
                             }}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 text-white"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 text-gray-700"
                         >
                             ×
                         </button>
@@ -303,13 +303,13 @@ export default function MartechLeadForm({
             <button
                 type="submit"
                 disabled={status === "loading"}
-                className="bg-[#ed5145] hover:bg-[#d8453a] transition-colors rounded-lg py-3.5 text-weight-bold disabled:opacity-60"
+                className="bg-[#E0362C] hover:bg-[#B3261A] transition-colors rounded-lg py-3.5 text-weight-bold disabled:opacity-60"
             >
                 {status === "loading" ? "Sending…" : submitLabel}
             </button>
 
             {status === "error" && (
-                <p className="text-size-small text-[#ed5145]">
+                <p className="text-size-small text-[#E0362C]">
                     Something went wrong, please try again or email contact@stackbinary.io.
                 </p>
             )}
@@ -331,7 +331,7 @@ export default function MartechLeadForm({
                     transition: border-color 0.2s;
                 }
                 .martech-input:focus {
-                    border-color: #ed5145;
+                    border-color: #E0362C;
                 }
                 .martech-input::placeholder {
                     color: rgba(255, 255, 255, 0.4);

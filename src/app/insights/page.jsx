@@ -22,7 +22,7 @@ export default function InsightsPage() {
             <div className="hero-wrapper">
               <div className="hero-component">
                 <div className="read-more-tag w-inline-block">
-                  <div className="text-size-small text-weight-bold text-[#ed5145]">
+                  <div className="text-size-small text-weight-bold text-[#E0362C]">
                     Insights · From the Practice, Not the SERP
                   </div>
                 </div>
@@ -53,7 +53,7 @@ export default function InsightsPage() {
                   <Link
                     key={insight.slug}
                     href={`/insights/${insight.slug}`}
-                    className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3 group"
+                    className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 group"
                   >
                     <div className="text-size-small opacity-40">
                       {new Date(insight.date).toLocaleDateString("en-IN", {
@@ -68,7 +68,7 @@ export default function InsightsPage() {
                     <p className="text-size-small opacity-60">
                       {insight.description}
                     </p>
-                    <span className="mt-auto pt-3 text-size-small text-[#ed5145] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="mt-auto pt-3 text-size-small text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity">
                       Read →
                     </span>
                   </Link>

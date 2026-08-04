@@ -182,14 +182,14 @@ function ServiceCard({ service, wide = false }) {
         return (
             <Link
                 href={service.href}
-                className="border border-white/10 rounded-lg p-8 lg:p-10 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 group"
+                className="border border-gray-200 rounded-lg p-8 lg:p-10 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 group"
             >
                 <div className="flex flex-col gap-4">
                     <h3 className="heading-6 text-weight-medium">{service.title}</h3>
                     <p className="opacity-60 text-size-small">{service.description}</p>
-                    <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between text-size-small gap-3">
+                    <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small gap-3">
                         <span className="opacity-50">{service.demo}</span>
-                        <span className="text-[#ed5145] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        <span className="text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                             Explore →
                         </span>
                     </div>
@@ -198,9 +198,9 @@ function ServiceCard({ service, wide = false }) {
                     {service.capabilities.map((cap) => (
                         <li
                             key={cap}
-                            className="text-size-small opacity-80 flex gap-2 border border-white/10 rounded-lg p-4 bg-black/30"
+                            className="text-size-small opacity-80 flex gap-2 border border-gray-200 rounded-lg p-4 bg-[#F7F7F5]"
                         >
-                            <span className="text-[#ed5145]">✓</span>
+                            <span className="text-[#E0362C]">✓</span>
                             <span>{cap}</span>
                         </li>
                     ))}
@@ -212,21 +212,21 @@ function ServiceCard({ service, wide = false }) {
     return (
         <Link
             href={service.href}
-            className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-4 h-full group"
+            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-4 h-full group"
         >
             <h3 className="text-size-large text-weight-medium">{service.title}</h3>
             <p className="opacity-60 text-size-small">{service.description}</p>
             <ul className="flex flex-col gap-2 mt-2">
                 {service.capabilities.map((cap) => (
                     <li key={cap} className="text-size-small opacity-80 flex gap-2">
-                        <span className="text-[#ed5145]">✓</span>
+                        <span className="text-[#E0362C]">✓</span>
                         <span>{cap}</span>
                     </li>
                 ))}
             </ul>
-            <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between text-size-small gap-3">
+            <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small gap-3">
                 <span className="opacity-50">{service.demo}</span>
-                <span className="text-[#ed5145] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                <span className="text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                     Explore →
                 </span>
             </div>
@@ -284,14 +284,14 @@ export default function MartechServices() {
                                             aria-pressed={isActive}
                                             className={`text-left rounded-lg px-5 py-4 border transition-all duration-200 whitespace-nowrap lg:whitespace-normal flex-shrink-0 ${
                                                 isActive
-                                                    ? "border-[#ed5145] bg-[#ed5145]/[0.08]"
-                                                    : "border-white/10 bg-white/[0.02] hover:border-white/30"
+                                                    ? "border-[#E0362C] bg-[#E0362C]/[0.08]"
+                                                    : "border-gray-200 bg-[#F7F7F5] hover:border-gray-400"
                                             }`}
                                         >
                                             <div className="flex items-center justify-between gap-3">
                                                 <span
                                                     className={`text-size-small text-weight-bold ${
-                                                        isActive ? "text-[#ed5145]" : ""
+                                                        isActive ? "text-[#E0362C]" : ""
                                                     }`}
                                                 >
                                                     {pillar.name}
@@ -299,8 +299,8 @@ export default function MartechServices() {
                                                 <span
                                                     className={`text-size-small rounded-full border px-2 ${
                                                         isActive
-                                                            ? "border-[#ed5145]/50 text-[#ed5145]"
-                                                            : "border-white/15 opacity-40"
+                                                            ? "border-[#E0362C]/50 text-[#E0362C]"
+                                                            : "border-gray-200 opacity-40"
                                                     }`}
                                                 >
                                                     {count}
@@ -316,7 +316,7 @@ export default function MartechServices() {
 
                             {/* Active category's solutions */}
                             <div key={active} className="flex flex-col gap-6 animate-slideUpFadeIn-0.5">
-                                <div className="border-l-2 border-[#ed5145] pl-5">
+                                <div className="border-l-2 border-[#E0362C] pl-5">
                                     <h3 className="heading-6 text-weight-bold">
                                         {activePillar.name}
                                     </h3>

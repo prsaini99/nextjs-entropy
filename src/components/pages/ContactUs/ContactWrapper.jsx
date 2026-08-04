@@ -485,20 +485,20 @@ export default function ContactWrapper() {
                         {/* Contact Information & Office Addresses */}
                         <AnimatedInViewDiv className="contact-info-section" delay={0.15}>
                             <div className="text-center mb-8">
-                                <div className="text-size-medium text-weight-medium mb-6" style={{ color: '#ffffff' }}>
+                                <div className="text-size-medium text-weight-medium mb-6" style={{ color: '#17171A' }}>
                                     Our Office Locations
                                 </div>
 
                                 {/* Phone Number */}
                                 <div className="mb-6">
                                     <div className="flex items-center justify-center gap-3 mb-4">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#ed5145' }}>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#E0362C' }}>
                                             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                                         </svg>
                                         <a
                                             href="tel:+918928028738"
-                                            className="text-size-large text-weight-medium hover:text-[#ed5145] transition-colors"
-                                            style={{ color: '#ffffff', textDecoration: 'none' }}
+                                            className="text-size-large text-weight-medium hover:text-[#E0362C] transition-colors"
+                                            style={{ color: '#17171A', textDecoration: 'none' }}
                                         >
                                             +91-8928028738
                                         </a>
@@ -508,18 +508,18 @@ export default function ContactWrapper() {
                                 {/* Office Locations */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                                     {/* USA Office */}
-                                    <div className="office-location p-6 border border-white/20 rounded-lg">
+                                    <div className="office-location p-6 border border-gray-300 rounded-lg">
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#ed5145' }}>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#E0362C' }}>
                                                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                                                 </svg>
                                             </div>
                                             <div className="text-left">
-                                                <div className="text-size-medium text-weight-medium mb-2" style={{ color: '#ffffff' }}>
+                                                <div className="text-size-medium text-weight-medium mb-2" style={{ color: '#17171A' }}>
                                                     Delaware, USA
                                                 </div>
-                                                <div className="text-size-small opacity-80 mb-4" style={{ color: '#ffffff' }}>
+                                                <div className="text-size-small opacity-80 mb-4" style={{ color: '#17171A' }}>
                                                     16192 Costal Highway,<br />
                                                     Lewes, Delaware 19958,<br />
                                                     County of Sussex
@@ -528,8 +528,8 @@ export default function ContactWrapper() {
                                                     href="https://maps.google.com/?q=16192+Costal+Highway,+Lewes,+Delaware+19958"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-2 text-size-small hover:text-[#ed5145] transition-colors"
-                                                    style={{ color: '#ffffff', textDecoration: 'none' }}
+                                                    className="inline-flex items-center gap-2 text-size-small hover:text-[#E0362C] transition-colors"
+                                                    style={{ color: '#17171A', textDecoration: 'none' }}
                                                 >
                                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -541,18 +541,18 @@ export default function ContactWrapper() {
                                     </div>
 
                                     {/* India Office */}
-                                    <div className="office-location p-6 border border-white/20 rounded-lg">
+                                    <div className="office-location p-6 border border-gray-300 rounded-lg">
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#ed5145' }}>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#E0362C' }}>
                                                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                                                 </svg>
                                             </div>
                                             <div className="text-left">
-                                                <div className="text-size-medium text-weight-medium mb-2" style={{ color: '#ffffff' }}>
+                                                <div className="text-size-medium text-weight-medium mb-2" style={{ color: '#17171A' }}>
                                                     Mumbai, India
                                                 </div>
-                                                <div className="text-size-small opacity-80 mb-4" style={{ color: '#ffffff' }}>
+                                                <div className="text-size-small opacity-80 mb-4" style={{ color: '#17171A' }}>
                                                     Tower 3 - 604,<br />
                                                     Spring grove Towers,<br />
                                                     Kandivali East, 400101, India
@@ -561,8 +561,8 @@ export default function ContactWrapper() {
                                                     href="https://maps.google.com/?q=Tower+3+-+604,+Spring+grove+Towers,+Kandivali+East,+400101,+India"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-2 text-size-small hover:text-[#ed5145] transition-colors"
-                                                    style={{ color: '#ffffff', textDecoration: 'none' }}
+                                                    className="inline-flex items-center gap-2 text-size-small hover:text-[#E0362C] transition-colors"
+                                                    style={{ color: '#17171A', textDecoration: 'none' }}
                                                 >
                                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />

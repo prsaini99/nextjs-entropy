@@ -13,7 +13,7 @@ export default function IndustriesHub() {
                     <div className="hero-wrapper">
                         <AnimatedInViewDiv className="hero-component">
                             <div className="read-more-tag w-inline-block">
-                                <div className="text-size-small text-weight-bold text-[#ed5145]">
+                                <div className="text-size-small text-weight-bold text-[#E0362C]">
                                     8 Industries · 55+ Products · 3 Continents
                                 </div>
                             </div>
@@ -51,7 +51,7 @@ export default function IndustriesHub() {
                             <AnimatedInViewDiv key={slug} delay={Math.min(i * 0.08, 0.4)}>
                                 <Link
                                     href={`/industries/${slug}`}
-                                    className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3 h-full group"
+                                    className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 h-full group"
                                 >
                                     <h2 className="text-size-large text-weight-medium">
                                         {industry.name}
@@ -61,11 +61,11 @@ export default function IndustriesHub() {
                                         {industry.brands.slice(0, 5).join(" · ")}
                                         {industry.brands.length > 5 ? " · …" : ""}
                                     </p>
-                                    <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between text-size-small">
+                                    <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small">
                                         <span className="opacity-50">
                                             {industry.built.length} shipped products
                                         </span>
-                                        <span className="text-[#ed5145] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span className="text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity">
                                             Explore →
                                         </span>
                                     </div>

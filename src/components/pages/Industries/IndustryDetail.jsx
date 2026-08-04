@@ -13,7 +13,7 @@ export default function IndustryDetail({ industry }) {
                         <div className="hero-wrapper">
                             <AnimatedInViewDiv className="hero-component">
                                 <div className="read-more-tag w-inline-block">
-                                    <div className="text-size-small text-weight-bold text-[#ed5145]">
+                                    <div className="text-size-small text-weight-bold text-[#E0362C]">
                                         Industry · {industry.name}
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@ export default function IndustryDetail({ industry }) {
                                         {industry.brands.map((brand) => (
                                             <span
                                                 key={brand}
-                                                className="text-size-medium text-weight-medium opacity-50 hover:opacity-100 hover:text-[#ed5145] transition-all duration-300 whitespace-nowrap"
+                                                className="text-size-medium text-weight-medium opacity-50 hover:opacity-100 hover:text-[#E0362C] transition-all duration-300 whitespace-nowrap"
                                             >
                                                 {brand}
                                             </span>
@@ -73,7 +73,7 @@ export default function IndustryDetail({ industry }) {
                                     <AnimatedInViewDiv
                                         key={pain.title}
                                         delay={i * 0.08}
-                                        className="border border-[#ed5145]/25 rounded-lg p-6 bg-[#ed5145]/[0.04] flex flex-col gap-2"
+                                        className="border border-[#E0362C]/25 rounded-lg p-6 bg-[#E0362C]/[0.04] flex flex-col gap-2"
                                     >
                                         <div className="text-weight-medium">{pain.title}</div>
                                         <p className="text-size-small opacity-60">{pain.detail}</p>
@@ -113,9 +113,9 @@ export default function IndustryDetail({ industry }) {
                                     <AnimatedInViewDiv
                                         key={product.name}
                                         delay={i * 0.08}
-                                        className="border border-white/10 rounded-lg p-8 bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col gap-3"
+                                        className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3"
                                     >
-                                        <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider">
+                                        <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider">
                                             {product.tag}
                                         </div>
                                         <h3 className="text-size-large text-weight-medium">
@@ -124,7 +124,7 @@ export default function IndustryDetail({ industry }) {
                                         <p className="text-size-small opacity-60">
                                             {product.detail}
                                         </p>
-                                        <p className="text-size-small opacity-80 border-l-2 border-[#ed5145]/60 pl-3 mt-auto">
+                                        <p className="text-size-small opacity-80 border-l-2 border-[#E0362C]/60 pl-3 mt-auto">
                                             {product.helps}
                                         </p>
                                     </AnimatedInViewDiv>
@@ -132,7 +132,7 @@ export default function IndustryDetail({ industry }) {
                             </div>
 
                             {industry.martechLink && (
-                                <AnimatedInViewDiv className="w-full border border-white/10 rounded-lg p-8 bg-white/[0.02] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                                <AnimatedInViewDiv className="w-full border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                                     <div className="flex flex-col gap-1">
                                         <div className="text-weight-medium">
                                             Marketing technology is a dedicated practice

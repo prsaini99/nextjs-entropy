@@ -55,13 +55,13 @@ export default function WhyCustom() {
                             </div>
                         </AnimatedInViewDiv>
 
-                        <div className="w-full overflow-hidden rounded-lg border border-white/10">
-                            <div className="grid grid-cols-3 bg-white/[0.06] text-weight-bold">
+                        <div className="w-full overflow-hidden rounded-lg border border-gray-200">
+                            <div className="grid grid-cols-3 bg-gray-100 text-weight-bold">
                                 <div className="p-5 text-size-small uppercase tracking-wider opacity-60"></div>
                                 <div className="p-5 text-size-small uppercase tracking-wider opacity-60">
                                     Off-the-shelf stack
                                 </div>
-                                <div className="p-5 text-size-small uppercase tracking-wider text-[#ed5145]">
+                                <div className="p-5 text-size-small uppercase tracking-wider text-[#E0362C]">
                                     Built with StackBinary
                                 </div>
                             </div>
@@ -69,13 +69,13 @@ export default function WhyCustom() {
                                 <AnimatedInViewDiv
                                     key={row.dimension}
                                     delay={i * 0.06}
-                                    className="grid grid-cols-3 border-t border-white/10"
+                                    className="grid grid-cols-3 border-t border-gray-200"
                                 >
                                     <div className="p-5 text-weight-medium text-size-small">
                                         {row.dimension}
                                     </div>
                                     <div className="p-5 text-size-small opacity-50">{row.saas}</div>
-                                    <div className="p-5 text-size-small opacity-90 bg-[#ed5145]/[0.05]">
+                                    <div className="p-5 text-size-small opacity-90 bg-[#E0362C]/[0.05]">
                                         {row.custom}
                                     </div>
                                 </AnimatedInViewDiv>

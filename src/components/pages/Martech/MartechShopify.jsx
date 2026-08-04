@@ -15,7 +15,7 @@ export default function MartechShopify() {
                     <div className="about-features-wrapper">
                         <AnimatedInViewDiv className="about-features-header">
                             <div className="header">
-                                <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider mb-4">
+                                <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider mb-4">
                                     Shopify &amp; E-Commerce
                                 </div>
                                 <h2 className="heading-4 text-weight-medium">
@@ -42,13 +42,13 @@ export default function MartechShopify() {
                                         href={store.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="border border-white/10 rounded-lg p-4 bg-white/[0.02] hover:border-[#ed5145]/60 hover:bg-[#ed5145]/[0.05] transition-all duration-300 flex flex-col gap-1 group h-full"
+                                        className="border border-gray-200 rounded-lg p-4 bg-[#F7F7F5] hover:border-[#E0362C]/60 hover:bg-[#E0362C]/[0.05] transition-all duration-300 flex flex-col gap-1 group h-full"
                                     >
                                         <div className="flex items-center justify-between gap-2">
                                             <span className="text-weight-medium text-size-small">
                                                 {store.name}
                                             </span>
-                                            <span className="text-[#ed5145] opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <span className="text-[#E0362C] opacity-0 group-hover:opacity-100 transition-opacity">
                                                 ↗
                                             </span>
                                         </div>
@@ -60,7 +60,7 @@ export default function MartechShopify() {
                             ))}
                         </div>
 
-                        <AnimatedInViewDiv className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 border border-white/10 rounded-lg p-8 bg-white/[0.02]">
+                        <AnimatedInViewDiv className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 border border-gray-200 rounded-lg p-8 bg-[#F7F7F5]">
                             <div className="flex flex-col gap-1">
                                 <div className="text-weight-medium">
                                     + {shopifyStores.length - featured.length} more live stores

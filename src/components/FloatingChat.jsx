@@ -257,14 +257,14 @@ export default function FloatingChat() {
                     padding: 12px 20px;
                     border: none;
                     border-radius: 50px;
-                    background: #ed5145;
+                    background: #E0362C;
                     color: #fff;
                     font-size: 14px;
                     font-weight: bold;
                     cursor: pointer;
                     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
                 }
-                .chat-launcher:hover { background: #d8453a; }
+                .chat-launcher:hover { background: #B3261A; }
 
                 .chat-panel {
                     position: fixed;
@@ -305,7 +305,7 @@ export default function FloatingChat() {
                     align-items: center;
                     justify-content: space-between;
                     padding: 16px;
-                    background: #ed5145;
+                    background: #E0362C;
                     border-bottom: 1px solid #333;
                     flex-shrink: 0;
                 }
@@ -345,7 +345,7 @@ export default function FloatingChat() {
                     word-break: break-word;
                 }
                 .chat-bubble.bot { background: #333; }
-                .chat-bubble.user { background: #ed5145; }
+                .chat-bubble.user { background: #E0362C; }
                 .chat-bubble.lead { background: #2d5a2d; border: 1px solid #4ade80; }
                 .chat-link { color: #a0c4ff; text-decoration: underline; }
 
@@ -386,13 +386,13 @@ export default function FloatingChat() {
                     min-width: 0;
                 }
                 @media (min-width: 640px) { .chat-input { font-size: 14px; } }
-                .chat-input:focus { border-color: #ed5145; }
+                .chat-input:focus { border-color: #E0362C; }
 
                 .chat-send {
                     display: flex; align-items: center; justify-content: center;
                     padding: 8px 14px;
                     border: none; border-radius: 20px;
-                    background: #ed5145; color: #fff;
+                    background: #E0362C; color: #fff;
                     cursor: pointer;
                     flex-shrink: 0;
                 }
