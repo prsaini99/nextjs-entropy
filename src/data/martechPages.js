@@ -677,17 +677,21 @@ const martechPages = {
       { title: "Review", description: "Transcripts and outcomes land in your CRM for coaching and reporting." },
     ],
     proof: {
-      heading: "Live product",
+      heading: "Live product — two ways to have it",
       items: [
-        "The AI Call Center is one of our own SaaS products, running real multilingual sales conversations today.",
-        "Pairs with our B2B CRM so every AI call becomes structured pipeline data.",
+        "This is Oye Hello, our own voice-agent platform running real multilingual conversations today. Create an agent from one document and hear it answer for your business — free test calls, no card.",
+        "Prefer to own the machinery? We deploy the same platform as yours: your infrastructure, wired into your CRM, your data and IP — a working system in 2–3 weeks. Use the quote form below.",
       ],
     },
-    demo: { href: "https://stackbinary-callcenter-seven.vercel.app/", label: "See the Sales Agent Console live", external: true },
+    // The try/own intent split (same pattern as influencer-marketing):
+    // tool-intent visitors get the polished self-serve product at oyehello.com
+    // (instrumented end to end, GA4 G-3KY69M9B0E); build-intent visitors get
+    // the lead form. Replaced the bare Vercel console link 2026-08-04.
+    demo: { href: "https://oyehello.com/?utm_source=stackbinary&utm_medium=referral&utm_campaign=martech-bridge", label: "Try Oye Hello live → oyehello.com", external: true },
     embed: {
-      url: "https://stackbinary-callcenter-seven.vercel.app/",
-      title: "AI Call Center, Sales Agent Console",
-      note: "This is the real Sales Agent Console, embedded live. Explore it here, or open it full-screen.",
+      url: "https://oyehello.com/",
+      title: "Oye Hello — the live voice agent platform",
+      note: "This is the real product, embedded live. Create an agent with free test calls, or open it full-screen at oyehello.com.",
     },
   },
 };
