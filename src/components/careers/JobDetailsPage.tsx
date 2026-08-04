@@ -311,6 +311,26 @@ export default function JobDetailsPage({ job }: Props) {
                         <div className="button-elipse"></div>
                       </button>
                     </div>
+                    <div className="mb-6" style={{ textAlign: 'center' as const }}>
+                      <div className="text-size-small opacity-85 mb-2" style={{ textAlign: 'center' as const }}>
+                        We connect with shortlisted candidates through LinkedIn or our official email IDs.
+                      </div>
+                      <a
+                        href="https://www.linkedin.com/company/stackbinary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() =>
+                          trackEvent(ANALYTICS_EVENTS.CTA_CLICK, {
+                            cta_location: 'careers_job_page',
+                            cta_label: 'linkedin_follow',
+                            job_title: job.title,
+                          })
+                        }
+                        className="text-size-small text-weight-bold underline hover:opacity-80"
+                      >
+                        Follow StackBinary on LinkedIn →
+                      </a>
+                    </div>
                     <div style={{ textAlign: 'center' as const }}>
                       <div className="text-size-small opacity-85 mb-2" style={{ textAlign: 'center' as const }}>
                         Questions about this role?

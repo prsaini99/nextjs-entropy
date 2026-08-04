@@ -530,6 +530,32 @@ export default function ApplicationForm({ job, onClose }: Props) {
                 className={textareaClassName}
               />
             </div>
+            {/* Pre-submit follow nudge: deliberately placed before the outcome
+                (post-submit asks convert ~14%; the applicant still wants
+                something here). Copy states how we contact people — LinkedIn
+                DM or official email — without promising announcements. */}
+            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+              <p className="text-size-small text-gray-700 mb-3">
+                We connect with shortlisted candidates through LinkedIn or our
+                official email IDs. Follow StackBinary on LinkedIn so our
+                message doesn&apos;t catch you by surprise.
+              </p>
+              <a
+                href="https://www.linkedin.com/company/stackbinary"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent(ANALYTICS_EVENTS.CTA_CLICK, {
+                    cta_location: 'careers_form_final_step',
+                    cta_label: 'linkedin_follow',
+                    job_title: job.title,
+                  })
+                }
+                className="inline-block text-size-small text-weight-bold text-red-600 hover:underline"
+              >
+                Follow StackBinary on LinkedIn →
+              </a>
+            </div>
             <div className="space-y-4 pt-4 border-t border-gray-200">
               <div className="flex items-start gap-3">
                 <input
