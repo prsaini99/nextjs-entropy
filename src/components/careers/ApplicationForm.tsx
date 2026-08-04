@@ -112,13 +112,46 @@ export default function ApplicationForm({ job, onClose }: Props) {
     }));
   };
 
+  // 4MB, not the API route's nominal 5MB: Vercel rejects request bodies over
+  // ~4.5MB with an opaque 413 before our route ever runs. On 2026-08-03 three
+  // applicants with 4.5-5MB CVs retried 31 times against that wall. Capping
+  // here, at selection time, is the only place the user gets a useful message.
+  const MAX_CV_BYTES = 4 * 1024 * 1024;
+  const [fileError, setFileError] = useState<string | null>(null);
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
+    if (file && file.size > MAX_CV_BYTES) {
+      setFileError('This file is larger than 4MB. Please compress it or export a smaller PDF.');
+      trackFormInteraction('career_application', 'error', {
+        job_title: job.title,
+        error_type: 'cv_too_large_client',
+      });
+      e.target.value = '';
+      setFormData(prev => ({ ...prev, resumeFile: null }));
+      return;
+    }
+    setFileError(null);
     setFormData(prev => ({ ...prev, resumeFile: file }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Enter in any text field submits the form even though the submit button
+    // only renders on the last step — on 2026-08-03 that sent dozens of
+    // half-completed applications to the API (consent unchecked, emails
+    // mid-keystroke). Enter now behaves like the Next button instead.
+    if (currentStep !== totalSteps) {
+      if (canProceed()) {
+        trackFormInteraction('career_application', 'progress', {
+          job_title: job.title,
+          step: currentStep,
+        });
+        setCurrentStep(prev => Math.min(totalSteps, prev + 1));
+      }
+      return;
+    }
+    if (!canProceed() || isSubmitting) return;
     setIsSubmitting(true);
     
     try {
@@ -341,7 +374,10 @@ export default function ApplicationForm({ job, onClose }: Props) {
                 className={inputClassName}
                 required
               />
-              <div className="text-size-small opacity-70 mt-1 text-white">PDF, DOC, or DOCX format, max 5MB</div>
+              <div className="text-size-small opacity-70 mt-1 text-white">PDF, DOC, or DOCX format, max 4MB</div>
+              {fileError && (
+                <div className="text-size-small mt-2 text-red-400">{fileError}</div>
+              )}
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
