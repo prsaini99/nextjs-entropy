@@ -6,19 +6,23 @@ const martechPages = {
   "influencer-marketing": {
     badge: "Zyflus · Influencer Marketing Platform & Agency",
     // "influencer marketing agency" is 1K–10K India / 10K–100K global — larger
-    // than "influencer marketing platform". We can claim both: we ship Zyflus
-    // and we have run creator campaigns.
+    // than "influencer marketing platform". We claim both deliberately: we ship
+    // Zyflus AND we run creator campaigns (funnel confirmed 2026-08-04) — so
+    // agency-intent clicks are wanted traffic, not waste. Never negative them.
     seoTitle: "Influencer Marketing Platform & Agency for Brands (Zyflus)",
     related: ["creative-analysis","social-automation","ad-intelligence"],
     title: "Influencer Marketing, Run Like an Operation, Not a Spreadsheet",
-    // The title now claims "& Agency", so the first paragraph has to back it —
-    // otherwise the page promises something it never mentions.
+    // Intent-split tagline (2026-08-04): paid visitors on this page are two
+    // audiences — tool-seekers comparing SaaS, and brands wanting campaigns
+    // run. The tagline names both paths and the ownership hook up front,
+    // because tool-seekers read 4-5 minutes then bounced when the page read
+    // as a build pitch.
     tagline:
-      "Zyflus is our end-to-end creator marketing platform: discover creators, vet them with AI, automate outreach and negotiate, all in one pipeline. Built by a team that runs influencer campaigns, not only builds software for them.",
+      "Zyflus is our live creator marketing platform: discover creators, vet them with AI, automate outreach and negotiate, all in one pipeline. Try it below, then use it your way — run it yourself, have the team that built it run your campaigns, or own a version outright with no per-seat pricing.",
     heroStats: [
       { value: "0–100", label: "AI match score per creator against your ideal influencer profile" },
       { value: "292%", label: "follower growth delivered for StarStruck by Sunny Leone" },
-      { value: "3.8x", label: "ROAS on celebrity beauty campaigns we've run" },
+      { value: "100%", label: "yours if you want it: own the platform, your data, no per-seat pricing" },
     ],
     features: [
       {
@@ -63,9 +67,11 @@ const martechPages = {
       items: [
         "StarStruck by Sunny Leone: 292% follower growth, 3.8x ROAS, 8.5% engagement through influencer strategy + performance marketing.",
         "Bioderma India: dermatologist and expert partnerships driving 8.5M impressions and +45% brand recall.",
+        "Prefer to own the machinery? We build you a private Zyflus — your data, your IP, no per-seat pricing — a working system live in 2–3 weeks.",
       ],
     },
-    demo: { href: "https://www.zyflus.com/", label: "See Zyflus live → zyflus.com", external: true },
+    featuresHeading: "Inside Zyflus: Discover, Score, Outreach, Close",
+    demo: { href: "https://www.zyflus.com/", label: "Try Zyflus live → zyflus.com", external: true },
     embed: {
       url: "https://www.zyflus.com/",
       title: "Zyflus live product",
