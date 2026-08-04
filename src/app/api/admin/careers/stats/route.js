@@ -17,7 +17,7 @@ export async function GET() {
     for (let from = 0; from < MAX_ROWS; from += PAGE) {
       const { data, error } = await supabaseAdmin
         .from('career_applications')
-        .select('job_title, status, created_at, referral_source, utm_source, university, resume_path')
+        .select('job_title, status, created_at, utm_source, university, resume_path')
         .order('created_at', { ascending: false })
         .range(from, from + PAGE - 1);
 
@@ -67,7 +67,6 @@ export async function GET() {
       by_day: last14,
       by_job_title: count('job_title'),
       by_status: count('status'),
-      by_referral_source: count('referral_source'),
       by_utm_source: count('utm_source'),
       by_university: count('university'),
     });
