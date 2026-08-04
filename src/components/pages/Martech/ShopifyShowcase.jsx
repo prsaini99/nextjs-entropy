@@ -19,7 +19,7 @@ export default function ShopifyShowcase() {
                     <div className="hero-wrapper">
                         <AnimatedInViewDiv className="hero-component">
                             <div className="read-more-tag w-inline-block">
-                                <div className="text-size-small text-weight-bold text-[#ed5145]">
+                                <div className="text-size-small text-weight-bold text-[#E0362C]">
                                     Shopify &amp; E-Commerce Portfolio
                                 </div>
                             </div>
@@ -47,13 +47,13 @@ export default function ShopifyShowcase() {
                         </AnimatedInViewDiv>
 
                         <AnimatedInViewDiv delay={0.3} className="w-full">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-12 rounded-lg overflow-hidden border border-white/10 bg-white/10">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-12 rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
                                 {stats.map((stat) => (
                                     <div
                                         key={stat.label}
-                                        className="bg-black/90 p-6 lg:p-8 flex flex-col gap-2"
+                                        className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
                                     >
-                                        <div className="heading-4 text-weight-bold text-[#ed5145]">
+                                        <div className="heading-4 text-weight-bold text-[#E0362C]">
                                             {stat.value}
                                         </div>
                                         <p className="text-size-small opacity-60">{stat.label}</p>
@@ -74,11 +74,11 @@ export default function ShopifyShowcase() {
                                     href={store.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="border border-white/10 rounded-lg p-6 bg-white/[0.02] hover:border-[#ed5145]/60 hover:bg-[#ed5145]/[0.05] transition-all duration-300 flex flex-col gap-2 group h-full"
+                                    className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] hover:border-[#E0362C]/60 hover:bg-[#E0362C]/[0.05] transition-all duration-300 flex flex-col gap-2 group h-full"
                                 >
                                     <div className="flex items-center justify-between gap-2">
                                         <span className="text-weight-medium">{store.name}</span>
-                                        <span className="text-[#ed5145] opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span className="text-[#E0362C] opacity-0 group-hover:opacity-100 transition-opacity">
                                             ↗
                                         </span>
                                     </div>
@@ -93,7 +93,7 @@ export default function ShopifyShowcase() {
                         ))}
                     </div>
 
-                    <AnimatedInViewDiv className="w-full border border-white/10 rounded-lg p-8 bg-white/[0.02] flex flex-col lg:flex-row lg:items-center gap-6 justify-between mt-10">
+                    <AnimatedInViewDiv className="w-full border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col lg:flex-row lg:items-center gap-6 justify-between mt-10">
                         <div className="flex flex-col gap-2">
                             <div className="text-size-large text-weight-medium">
                                 Beyond Shopify: enterprise commerce

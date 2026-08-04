@@ -7,11 +7,16 @@
 	--foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
+/* The site is deliberately light-theme-only (decision 2026-07-31: readability
+   over the previous dark design). No prefers-color-scheme override: OS-level
+   dark mode must not flip the site back to a theme that no longer exists —
+   the old media query here did exactly that for dark-mode visitors. */
+
+/* The logo asset is white-on-transparent, drawn for the dark theme. Inverting
+   it in CSS beats shipping a second asset: one source of truth, and the email
+   templates (which still render on dark cards) keep using the original file. */
+img[src*="stack-logo"] {
+	filter: brightness(0);
 }
 
 body {
@@ -39,7 +44,7 @@ body {
 
 .text-primary,
 .text-link {
-	color: #ed5145;
+	color: #E0362C;
 }
 .text-link:hover {
 	text-decoration: underline;
@@ -96,20 +101,20 @@ main.flex-1.relative > div.py-8 {
 }
 
 /* ---- Insights article prose (markdown-rendered) ---- */
-.insight-article { color: rgba(255,255,255,0.82); line-height: 1.75; font-size: 1rem; }
-.insight-article h2 { font-size: 1.5rem; font-weight: 600; color: #fff; margin: 2.2rem 0 0.8rem; }
-.insight-article h3 { font-size: 1.15rem; font-weight: 600; color: #fff; margin: 1.6rem 0 0.6rem; }
+.insight-article { color: #2b2b31; line-height: 1.75; font-size: 1rem; }
+.insight-article h2 { font-size: 1.5rem; font-weight: 600; color: #17171A; margin: 2.2rem 0 0.8rem; }
+.insight-article h3 { font-size: 1.15rem; font-weight: 600; color: #17171A; margin: 1.6rem 0 0.6rem; }
 .insight-article p { margin: 0 0 1.1rem; }
-.insight-article a { color: #ed5145; text-decoration: none; }
+.insight-article a { color: #E0362C; text-decoration: none; }
 .insight-article a:hover { text-decoration: underline; }
 .insight-article ul, .insight-article ol { margin: 0 0 1.1rem 1.4rem; }
 .insight-article li { margin-bottom: 0.4rem; }
-.insight-article blockquote { border-left: 2px solid #ed5145; padding-left: 1rem; opacity: 0.85; margin: 1.4rem 0; }
+.insight-article blockquote { border-left: 2px solid #E0362C; padding-left: 1rem; opacity: 0.85; margin: 1.4rem 0; }
 .insight-article table { width: 100%; border-collapse: collapse; margin: 1.4rem 0; font-size: 0.9rem; display: block; overflow-x: auto; }
-.insight-article th, .insight-article td { border: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 0.9rem; text-align: left; }
-.insight-article th { background: rgba(255,255,255,0.06); color: #fff; }
-.insight-article strong { color: #fff; }
-.insight-article hr { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 2rem 0; }
+.insight-article th, .insight-article td { border: 1px solid rgba(0,0,0,0.15); padding: 0.6rem 0.9rem; text-align: left; }
+.insight-article th { background: rgba(0,0,0,0.04); color: #17171A; }
+.insight-article strong { color: #17171A; }
+.insight-article hr { border: none; border-top: 1px solid rgba(0,0,0,0.12); margin: 2rem 0; }
 
 /* Metric-matched fallback for Satoshi (CLS fix, 2026-08-03).
    While Satoshi is still downloading, text renders in this Arial-based face

@@ -32,19 +32,19 @@ export default function MartechProofStrip() {
     return (
         // Structure mirrors heroStats deliberately. In this codebase the page
         // background behind a section is not reliably dark — elements paint
-        // their own. A translucent overlay (bg-white/[0.03]) therefore renders
+        // their own. A translucent overlay (bg-[#F7F7F5]) therefore renders
         // white-on-white. Each cell paints bg-black/90, exactly as heroStats
-        // does; the wrapper's bg-white/10 shows through the gap-px as dividers.
+        // does; the wrapper's bg-gray-200 shows through the gap-px as dividers.
         <section aria-label="Why building beats renting">
             <div className="padding-global py-12">
                 <div className="w-layout-blockcontainer container w-container">
-                    <AnimatedInViewDiv className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-lg overflow-hidden border border-white/10 bg-white/10">
+                    <AnimatedInViewDiv className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
                         {PROOF.map((item) => (
                             <div
                                 key={item.headline}
-                                className="bg-black/90 p-6 lg:p-8 flex flex-col gap-2"
+                                className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
                             >
-                                <div className="text-weight-bold text-[#ed5145]">
+                                <div className="text-weight-bold text-[#E0362C]">
                                     {item.headline}
                                 </div>
                                 <p className="text-size-small opacity-60">{item.detail}</p>

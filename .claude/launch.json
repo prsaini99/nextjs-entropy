@@ -4,9 +4,17 @@
     {
       "name": "nextjs-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "attach-dev",
+      "url": "http://localhost:3000",
+      "port": 3000
     }
   ]
 }

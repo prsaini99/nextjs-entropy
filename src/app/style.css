@@ -1326,11 +1326,11 @@ textarea.w-select {
 }
 
 .w-slider-nav-invert > div {
-	background-color: #2226;
+	background-color: #17171a66;
 }
 
 .w-slider-nav-invert > div.w-active {
-	background-color: #222;
+	background-color: #17171A;
 }
 
 .w-slider-dot {
@@ -2173,8 +2173,8 @@ textarea.w-select {
 }
 
 :root {
-	--color--black: #101011;
-	--color--white: #fbfbfb;
+	--color--black: #ffffff; /* light theme 2026-08-04: Webflow variable names kept, values inverted */
+	--color--white: #17171A;
 	--text-size--regular: 1rem;
 	--heading--h2: 5rem;
 	--heading--h6: 2rem;
@@ -2185,7 +2185,7 @@ textarea.w-select {
 	--heading--h4: 3rem;
 	--heading--h5: 2.5rem;
 	--text-size--small: 0.875rem;
-	--color--orange: #ed5145;
+	--color--orange: #E0362C;
 	--color--dark-grey: #1f1f1f;
 	--color--grey: #353535;
 	--heading--h3: 4rem;
@@ -2221,8 +2221,8 @@ textarea.w-select {
 }
 
 body {
-	background-color: var(--color--black);
-	color: var(--color--white);
+	background-color: var(--color--black); /* inverted vars: this is now white */
+	color: var(--color--white); /* now ink */
 	font-family: Satoshi, 'Satoshi Fallback', sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
@@ -2298,7 +2298,7 @@ blockquote {
 }
 
 .hero-style-guide-wrapper {
-	background-color: #121212;
+	background-color: #f5f5f7;
 	border-radius: 1rem;
 	width: 100%;
 	margin-top: 1rem;
@@ -2446,7 +2446,7 @@ blockquote {
 .style-guide-menu-links {
 	grid-row-gap: 1.5rem;
 	opacity: 0.5;
-	color: #fbfbfb;
+	color: #17171A;
 	flex-direction: column;
 	align-items: flex-start;
 	text-decoration: none;
@@ -2460,7 +2460,7 @@ blockquote {
 }
 
 .button-line {
-	background-color: #3f3f3f;
+	background-color: #d9d9dc;
 	width: 100%;
 	height: 1px;
 }
@@ -2492,7 +2492,7 @@ blockquote {
 
 .button {
 	grid-row-gap: 0.25rem;
-	color: #fbfbfb;
+	color: #ffffff;
 	flex-direction: column;
 	text-decoration: none;
 	display: flex;
@@ -2594,7 +2594,7 @@ blockquote {
 }
 
 .color-palette {
-	border: 1px solid #ffffff1a;
+	border: 1px solid #0000001a;
 	border-radius: 1rem;
 	width: 100%;
 	height: 10rem;
@@ -2609,7 +2609,7 @@ blockquote {
 }
 
 .color-palette.color-black {
-	background-color: var(--color--black);
+	background-color: #17171A;
 }
 
 .color-palette.color-dark-grey {
@@ -2679,8 +2679,8 @@ blockquote {
 }
 
 .primary-button {
-	color: var(--color--white);
-	background-color: #ed5145;
+	color: #ffffff; /* white on red, always — var(--color--white) is ink post-inversion */
+	background-color: #E0362C;
 	border-radius: 50rem;
 	justify-content: center;
 	align-items: center;
@@ -2776,7 +2776,7 @@ blockquote {
 	grid-column-gap: 0.5rem;
 	grid-row-gap: 0.5rem;
 	color: var(--color--white);
-	border: 1px solid #ed51458c;
+	border: 1px solid #E0362C8c;
 	border-radius: 2.3125rem;
 	justify-content: space-between;
 	align-items: center;
@@ -2793,7 +2793,7 @@ blockquote {
 .integrations-block {
 	grid-column-gap: 3rem;
 	grid-row-gap: 3rem;
-	background-color: #1f1f1f;
+	background-color: #eeeef0;
 	border-radius: 1rem;
 	flex-flow: column;
 	align-items: center;
@@ -2964,7 +2964,7 @@ blockquote {
 .testimonial-card {
 	grid-column-gap: 1.5rem;
 	grid-row-gap: 1.5rem;
-	background-color: #151515;
+	background-color: #f5f5f7;
 	border-radius: 0.5rem;
 	flex-flow: column;
 	justify-content: space-between;
@@ -2977,7 +2977,7 @@ blockquote {
 }
 
 .testimonial-card:hover {
-	background-color: #1f1f1f;
+	background-color: #eeeef0;
 }
 
 .testimonial-person-info {
@@ -2990,7 +2990,7 @@ blockquote {
 .steps-card {
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	background-color: #141313;
+	background-color: #f5f5f7;
 	border: 1px solid #393939;
 	border-radius: 1rem;
 	grid-template-rows: auto;
@@ -3005,7 +3005,7 @@ blockquote {
 .steps-content {
 	grid-column-gap: 1rem;
 	grid-row-gap: 1rem;
-	color: #fbfbfb;
+	color: #17171A;
 	flex-flow: column;
 	align-items: flex-start;
 	display: flex;
@@ -3047,7 +3047,7 @@ blockquote {
 .steps-tag {
 	grid-column-gap: 0.5rem;
 	grid-row-gap: 0.5rem;
-	border: 1px solid #ed51458c;
+	border: 1px solid #E0362C8c;
 	border-radius: 2.3125rem;
 	justify-content: center;
 	align-items: center;
@@ -3138,7 +3138,7 @@ blockquote {
 }
 
 .paragraph {
-	color: #ffffff80;
+	color: #171717cc;
 }
 
 .icon-embed {
@@ -3177,7 +3177,7 @@ blockquote {
 }
 
 .footer-link:hover {
-	color: #ebebeb;
+	color: #17171A;
 	transform: translate(0, -2px);
 }
 
@@ -3201,13 +3201,13 @@ blockquote {
 
 .footer-social:hover {
 	color: #c9d4d8;
-	background-color: #ed5145;
+	background-color: #E0362C;
 	transform: translate(0, -2px);
 }
 
 .text-color-white {
 	opacity: 1;
-	color: #ebebeb;
+	color: #171717;
 }
 
 .footer-component {
@@ -3322,7 +3322,7 @@ blockquote {
 
 .phase-number {
 	opacity: 0.2;
-	color: #fbfbfb;
+	color: #17171A;
 }
 
 .phase-cards-grid {
@@ -3339,7 +3339,7 @@ blockquote {
 .phase-cards {
 	grid-column-gap: 3.5rem;
 	grid-row-gap: 3.5rem;
-	background-color: #151515;
+	background-color: #f5f5f7;
 	flex-flow: column;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -3430,8 +3430,8 @@ blockquote {
 }
 
 .banner-button-line {
-	color: #ed5145;
-	background-color: #ed5145;
+	color: #E0362C;
+	background-color: #E0362C;
 	width: 100%;
 	height: 1px;
 	position: relative;
@@ -3441,7 +3441,7 @@ blockquote {
 .banner-overlay {
 	z-index: 2;
 	pointer-events: none;
-	background-image: linear-gradient(45deg, #101011e6, #10101108);
+	background-image: linear-gradient(45deg, #ffffffe6, #ffffff08);
 	position: absolute;
 	inset: 0%;
 }
@@ -3515,7 +3515,7 @@ blockquote {
 }
 
 .check-icon-wrap {
-	background-color: #272727;
+	background-color: #17171A;
 	border-radius: 50%;
 	flex-direction: row;
 	justify-content: center;
@@ -3585,7 +3585,7 @@ blockquote {
 .gradient-overlay {
 	z-index: 2;
 	pointer-events: none;
-	background-image: linear-gradient(0deg, #101011, #1010111a);
+	background-image: linear-gradient(0deg, #fbfbfb, #fbfbfb1a);
 	position: absolute;
 	inset: 0%;
 }
@@ -3717,7 +3717,7 @@ blockquote {
 }
 
 .title-wrapper {
-	color: #fbfbfb;
+	color: #17171A;
 	max-width: 60ch;
 	text-decoration: none;
 }
@@ -3849,8 +3849,8 @@ blockquote {
 }
 
 .enterprise-banner {
-	color: #fbfbfb;
-	background-color: #151515;
+	color: #17171A;
+	background-color: #f5f5f7;
 	border: 1px solid #393939;
 	border-radius: 0.5rem;
 	justify-content: space-between;
@@ -3871,7 +3871,7 @@ blockquote {
 }
 
 .price-icon {
-	background-color: #393939;
+	background-color: #17171A;
 	border-radius: 50%;
 	flex-direction: column;
 	justify-content: center;
@@ -3883,12 +3883,12 @@ blockquote {
 }
 
 .price-icon.black {
-	background-color: #101011;
+	background-color: #f5f5f7;
 }
 
 .price-card {
 	grid-row-gap: 4rem;
-	background-color: #151515;
+	background-color: #f5f5f7;
 	border-radius: 0.5rem;
 	flex-direction: column;
 	justify-content: space-between;
@@ -3899,7 +3899,7 @@ blockquote {
 }
 
 .price-card:nth-child(2n) {
-	background-color: #1f1f1f;
+	background-color: #eeeef0;
 }
 
 .price-card.dark-grey {
@@ -3952,7 +3952,7 @@ blockquote {
 }
 
 .price-check-icon {
-	background-color: #393939;
+	background-color: #17171A;
 	border-radius: 50%;
 	flex-direction: row;
 	justify-content: center;
@@ -4010,7 +4010,7 @@ blockquote {
 }
 
 .blog-overlay {
-	background-image: linear-gradient(#10101100 10%, #101011db);
+	background-image: linear-gradient(#ffffff00 10%, #ffffffdb);
 	position: absolute;
 	inset: 0%;
 }
@@ -4259,11 +4259,11 @@ blockquote {
 }
 
 .text-field:active {
-	color: var(--color--black);
+	color: #17171A;
 }
 
 .text-field:focus {
-	border-color: var(--color--black);
+	border-color: #17171A;
 	color: var(--color--white);
 }
 
@@ -4327,14 +4327,14 @@ blockquote {
 }
 
 .style-guide-hero {
-	background-color: #000;
+	background-color: #ffffff;
 	border-bottom: 1px solid #333;
 }
 
 .hero-changelog-wrapper {
 	grid-column-gap: 2rem;
 	grid-row-gap: 2rem;
-	background-color: #000;
+	background-color: #ffffff;
 	border-radius: 1rem;
 	flex-flow: column;
 	width: 100%;
@@ -4426,7 +4426,7 @@ blockquote {
 }
 
 .text-field-contact {
-	color: #fbfbfb;
+	color: #17171A;
 	background-color: #0000;
 	border: 1px solid #0000;
 	border-bottom-color: #c9d4d833;
@@ -4441,18 +4441,18 @@ blockquote {
 }
 
 .text-field-contact:hover {
-	color: #fbfbfb;
+	color: #17171A;
 	border-width: 1px;
 	border-color: #c9d4d81a;
 	padding-left: 1.2rem;
 }
 
 .text-field-contact:active {
-	color: #ffffff !important;
+	color: #171717 !important;
 }
 
 .text-field-contact:focus {
-	color: #ffffff !important;
+	color: #171717 !important;
 	border-color: #333 !important;
 }
 
@@ -4464,7 +4464,7 @@ blockquote {
    matched and the dropdowns fell back to the browser's default widget. */
 select.text-field-contact,
 textarea.text-field-contact {
-	color: #fbfbfb;
+	color: #17171A;
 	background-color: #0000;
 	border: 1px solid #0000;
 	border-bottom-color: #c9d4d833;
@@ -4490,7 +4490,7 @@ textarea.text-field-contact:hover {
 
 select.text-field-contact:focus,
 textarea.text-field-contact:focus {
-	color: #ffffff;
+	color: #171717;
 	border-color: #333;
 	outline: none;
 }
@@ -4509,13 +4509,13 @@ select.text-field-contact {
 
 /* The opened list is drawn by the OS and ignores most of the above. */
 select.text-field-contact option {
-	color: #fbfbfb;
-	background-color: #1a1a1a;
+	color: #17171A;
+	background-color: #f5f5f7;
 }
 
 select.text-field-contact optgroup {
 	color: #c9d4d8;
-	background-color: #1a1a1a;
+	background-color: #f5f5f7;
 	font-style: normal;
 }
 
@@ -4535,9 +4535,9 @@ textarea.text-field-contact {
 }
 
 .success-message {
-	color: #ffffff;
+	color: #171717;
 	text-align: center;
-	background-color: #000000;
+	background-color: #ffffff;
 	border: 1px solid #ffffff;
 	border-radius: 0.6rem;
 	padding-top: 2rem;
@@ -4562,7 +4562,7 @@ textarea.text-field-contact {
 }
 
 .contact-button {
-	background-color: #1d1d1f;
+	background-color: #f5f5f7;
 	border-radius: 0.3rem;
 	transition: all 0.25s;
 }
@@ -4706,7 +4706,7 @@ textarea.text-field-contact {
 	color: var(--color--white);
 	text-align: center;
 	cursor: pointer;
-	background-color: #101011;
+	background-color: #f5f5f7;
 	border-radius: 0.5rem;
 	width: 100%;
 	padding: 0.8rem 1rem;
@@ -4715,7 +4715,7 @@ textarea.text-field-contact {
 }
 
 .modal-button:hover {
-	background-color: #101011cc;
+	background-color: #ffffffcc;
 	transform: scale(0.98);
 }
 
@@ -4996,7 +4996,7 @@ textarea.text-field-contact {
 	}
 
 	.gradient-overlay {
-		background-image: linear-gradient(0deg, #101011, #10101196);
+		background-image: linear-gradient(0deg, #fbfbfb, #fbfbfb96);
 	}
 
 	.gradient-overlay.bigger {
@@ -5150,8 +5150,8 @@ textarea.text-field-contact {
 	.nav-menu {
 		grid-column-gap: 0.5rem;
 		grid-row-gap: 0.5rem;
-		color: #fff;
-		background-color: #1a1a1a;
+		color: #17171A;
+		background-color: #f5f5f7;
 		justify-content: center;
 		align-items: center;
 		padding-bottom: 2rem;
@@ -6089,19 +6089,19 @@ textarea.text-field-contact {
 /* Social CTA Buttons */
 .social-cta-button {
 	transition: all 0.3s ease;
-	border: 1px solid #ffffff !important;
-	background-color: #000000 !important;
-	color: #ffffff !important;
+	border: 1px solid #17171A !important;
+	background-color: #17171A !important;
+	color: #17171A !important;
 }
 
 .social-cta-button:hover {
 	transform: translateY(-2px);
-	border-color: #ed5145 !important;
+	border-color: #E0362C !important;
 	box-shadow: 0 8px 25px rgba(237, 81, 69, 0.3);
 }
 
 .social-cta-button:hover svg {
-	color: #ffffff !important;
+	color: #17171A !important;
 }
 
 .social-cta-section {
@@ -6123,6 +6123,6 @@ textarea.text-field-contact {
 
 .office-location:hover {
 	transform: translateY(-2px);
-	border-color: #ed5145 !important;
+	border-color: #E0362C !important;
 	box-shadow: 0 8px 25px rgba(237, 81, 69, 0.2);
 }

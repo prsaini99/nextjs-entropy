@@ -272,11 +272,11 @@ export default function ApplicationForm({ job, onClose }: Props) {
     }
   };
 
-  const inputClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-white placeholder-gray-400";
-  const selectClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-white [&>option]:bg-gray-800 [&>option]:text-white";
-  const textareaClassName = "w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-gray-800 text-white placeholder-gray-400 resize-vertical";
-  const labelClassName = "block text-size-small text-weight-medium mb-2 text-white";
-  const headingClassName = "text-size-large text-weight-medium text-white mb-6";
+  const inputClassName = "w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-white text-gray-900 placeholder-gray-500";
+  const selectClassName = "w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-white text-gray-900 [&>option]:bg-white [&>option]:text-gray-900";
+  const textareaClassName = "w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-white text-gray-900 placeholder-gray-500 resize-vertical";
+  const labelClassName = "block text-size-small text-weight-medium mb-2 text-gray-900";
+  const headingClassName = "text-size-large text-weight-medium text-gray-900 mb-6";
 
   const renderStep = () => {
     switch (currentStep) {
@@ -374,9 +374,9 @@ export default function ApplicationForm({ job, onClose }: Props) {
                 className={inputClassName}
                 required
               />
-              <div className="text-size-small opacity-70 mt-1 text-white">PDF, DOC, or DOCX format, max 4MB</div>
+              <div className="text-size-small mt-1 text-gray-500">PDF, DOC, or DOCX format, max 4MB</div>
               {fileError && (
-                <div className="text-size-small mt-2 text-red-400">{fileError}</div>
+                <div className="text-size-small mt-2 text-red-600">{fileError}</div>
               )}
             </div>
             <div className="grid md:grid-cols-2 gap-4">
@@ -530,17 +530,17 @@ export default function ApplicationForm({ job, onClose }: Props) {
                 className={textareaClassName}
               />
             </div>
-            <div className="space-y-4 pt-4 border-t border-white border-opacity-20">
+            <div className="space-y-4 pt-4 border-t border-gray-200">
               <div className="flex items-start gap-3">
                 <input
                   type="checkbox"
                   id="privacy-consent"
                   checked={formData.privacyConsent}
                   onChange={(e) => handleInputChange('privacyConsent', e.target.checked)}
-                  className="mt-1 w-4 h-4 text-white focus:ring-white border-gray-600 rounded bg-gray-800"
+                  className="mt-1 w-4 h-4 text-red-600 focus:ring-red-500 border-gray-300 rounded bg-white"
                   required
                 />
-                <label htmlFor="privacy-consent" className="text-size-small opacity-70 text-white">
+                <label htmlFor="privacy-consent" className="text-size-small text-gray-600">
                   I consent to the collection and processing of my personal data for recruitment purposes. *
                 </label>
               </div>
@@ -550,10 +550,10 @@ export default function ApplicationForm({ job, onClose }: Props) {
                   id="data-processing"
                   checked={formData.dataProcessingConsent}
                   onChange={(e) => handleInputChange('dataProcessingConsent', e.target.checked)}
-                  className="mt-1 w-4 h-4 text-white focus:ring-white border-gray-600 rounded bg-gray-800"
+                  className="mt-1 w-4 h-4 text-red-600 focus:ring-red-500 border-gray-300 rounded bg-white"
                   required
                 />
-                <label htmlFor="data-processing" className="text-size-small opacity-70 text-white">
+                <label htmlFor="data-processing" className="text-size-small text-gray-600">
                   I agree to StackBinary™ storing my application data for up to 12 months for potential future opportunities. *
                 </label>
               </div>
@@ -569,14 +569,14 @@ export default function ApplicationForm({ job, onClose }: Props) {
   if (submitted) {
     return (
       <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
-        <div className="bg-black rounded-lg max-w-2xl w-full border border-white border-opacity-20 p-8 text-white text-center">
+        <div className="bg-white rounded-lg max-w-2xl w-full border border-gray-200 p-8 text-gray-900 text-center">
           <div className="text-4xl mb-4">✓</div>
           <h2 className="text-size-xlarge text-weight-medium mb-3">Application received</h2>
           <p className="text-size-regular opacity-70 mb-8 max-w-md mx-auto">
             Thanks for applying for {job.title}. Our team reviews every application
             and we&apos;ll get back to you.
           </p>
-          <div className="border border-white border-opacity-20 rounded-lg p-6 mb-8">
+          <div className="border border-gray-200 rounded-lg p-6 mb-8">
             <p className="text-size-regular opacity-80 mb-4">
               We announce new roles and ship-updates on LinkedIn first — follow
               StackBinary to hear about them before they&apos;re posted anywhere else.
@@ -602,7 +602,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
           </div>
           <button
             onClick={onClose}
-            className="px-6 py-2 text-size-small border border-white border-opacity-30 rounded-lg hover:border-opacity-50 transition-colors text-white"
+            className="px-6 py-2 text-size-small border border-gray-300 rounded-lg hover:border-gray-400 transition-colors text-gray-900"
           >
             Close
           </button>
@@ -613,16 +613,16 @@ export default function ApplicationForm({ job, onClose }: Props) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
-      <div className="bg-black rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white border-opacity-20">
-        <div className="p-6 border-b border-white border-opacity-20">
+      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-200">
+        <div className="p-6 border-b border-gray-200">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-size-xlarge text-weight-medium text-white">Apply for {job.title}</h2>
-              <div className="text-size-small opacity-70 mt-1 text-white">{job.team} • {job.location}</div>
+              <h2 className="text-size-xlarge text-weight-medium text-gray-900">Apply for {job.title}</h2>
+              <div className="text-size-small mt-1 text-gray-500">{job.team} • {job.location}</div>
             </div>
             <button
               onClick={onClose}
-              className="text-white hover:text-gray-300 text-2xl"
+              className="text-gray-400 hover:text-gray-600 text-2xl"
             >
               ×
             </button>
@@ -630,28 +630,28 @@ export default function ApplicationForm({ job, onClose }: Props) {
           
           {/* Progress indicator */}
           <div className="mt-6">
-            <div className="flex items-center justify-between text-size-small opacity-70 mb-2 text-white">
+            <div className="flex items-center justify-between text-size-small opacity-70 mb-2 text-gray-900">
               <span>Step {currentStep} of {totalSteps}</span>
               <span>{Math.round((currentStep / totalSteps) * 100)}% complete</span>
             </div>
-            <div className="w-full bg-white bg-opacity-20 rounded-full h-2">
+            <div className="w-full bg-gray-200 rounded-full h-2">
               <div 
-                className="bg-white h-2 rounded-full transition-all duration-300"
+                className="bg-red-600 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${(currentStep / totalSteps) * 100}%` }}
               />
             </div>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 text-white">
+        <form onSubmit={handleSubmit} className="p-6 text-gray-900">
           {renderStep()}
 
-          <div className="flex justify-between mt-8 pt-6 border-t border-white border-opacity-20">
+          <div className="flex justify-between mt-8 pt-6 border-t border-gray-200">
             <button
               type="button"
               onClick={() => setCurrentStep(prev => Math.max(1, prev - 1))}
               disabled={currentStep === 1}
-              className="px-6 py-2 text-size-small border border-white border-opacity-30 rounded-lg hover:border-white hover:border-opacity-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white"
+              className="px-6 py-2 text-size-small border border-gray-300 rounded-lg hover:border-gray-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-gray-900"
             >
               Previous
             </button>

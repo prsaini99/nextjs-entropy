@@ -124,14 +124,14 @@ function AttentionCurve() {
         >
             <defs>
                 <linearGradient id="flagshipFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#ed5145" stopOpacity="0.45" />
-                    <stop offset="100%" stopColor="#ed5145" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#E0362C" stopOpacity="0.45" />
+                    <stop offset="100%" stopColor="#E0362C" stopOpacity="0" />
                 </linearGradient>
             </defs>
             <rect x="0" y="0" width={step * 3} height={h} fill="#ffffff" opacity="0.06" />
             <path d={area} fill="url(#flagshipFill)" />
-            <path d={path} fill="none" stroke="#ed5145" strokeWidth="2.5" strokeLinejoin="round" />
-            <circle cx={peakIndex * step} cy={h - curve[peakIndex] * h} r="5" fill="#ed5145" />
+            <path d={path} fill="none" stroke="#E0362C" strokeWidth="2.5" strokeLinejoin="round" />
+            <circle cx={peakIndex * step} cy={h - curve[peakIndex] * h} r="5" fill="#E0362C" />
             <text x={step * 1.5} y={h + 20} fill="#ffffff" opacity="0.5" fontSize="11" textAnchor="middle">
                 hook (0–3s)
             </text>
@@ -166,7 +166,7 @@ export default function FlagshipProducts() {
                     <div className="about-features-wrapper">
                         <AnimatedInViewDiv className="about-features-header">
                             <div className="header">
-                                <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider mb-4">
+                                <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider mb-4">
                                     Flagship Products
                                 </div>
                                 <h2 className="heading-4 text-weight-medium">
@@ -194,8 +194,8 @@ export default function FlagshipProducts() {
                                         aria-pressed={active === p.key}
                                         className={`rounded-full px-6 py-3 border text-size-small text-weight-bold transition-all duration-200 ${
                                             active === p.key
-                                                ? "border-[#ed5145] bg-[#ed5145]/[0.1] text-[#ed5145]"
-                                                : "border-white/15 bg-white/[0.02] hover:border-white/40"
+                                                ? "border-[#E0362C] bg-[#E0362C]/[0.1] text-[#E0362C]"
+                                                : "border-gray-200 bg-[#F7F7F5] hover:border-gray-400"
                                         }`}
                                     >
                                         {p.tab}
@@ -206,7 +206,7 @@ export default function FlagshipProducts() {
                             {/* Active product */}
                             <div
                                 key={product.key}
-                                className="border border-white/10 rounded-lg p-8 lg:p-10 bg-white/[0.02] animate-slideUpFadeIn-0.5"
+                                className="border border-gray-200 rounded-lg p-8 lg:p-10 bg-[#F7F7F5] animate-slideUpFadeIn-0.5"
                             >
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                                     <div className="flex flex-col gap-5">
@@ -219,7 +219,7 @@ export default function FlagshipProducts() {
                                         <div className="grid grid-cols-3 gap-4">
                                             {product.stats.map((stat) => (
                                                 <div key={stat.label}>
-                                                    <div className="text-size-large text-weight-bold text-[#ed5145]">
+                                                    <div className="text-size-large text-weight-bold text-[#E0362C]">
                                                         {stat.value}
                                                     </div>
                                                     <div className="text-size-small opacity-50">
@@ -247,7 +247,7 @@ export default function FlagshipProducts() {
 
                                     <div>
                                         {product.showCurve && (
-                                            <div className="border border-white/10 rounded-lg p-6 bg-black/40 mb-4">
+                                            <div className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] mb-4">
                                                 <div className="text-size-small opacity-50 mb-3">
                                                     One of the outputs: per-second predicted
                                                     attention
@@ -267,9 +267,9 @@ export default function FlagshipProducts() {
                                                 .map((feature) => (
                                                     <li
                                                         key={feature}
-                                                        className="text-size-small opacity-80 flex gap-2 border border-white/10 rounded-lg p-4 bg-black/30"
+                                                        className="text-size-small opacity-80 flex gap-2 border border-gray-200 rounded-lg p-4 bg-[#F7F7F5]"
                                                     >
-                                                        <span className="text-[#ed5145]">✓</span>
+                                                        <span className="text-[#E0362C]">✓</span>
                                                         <span>{feature}</span>
                                                     </li>
                                                 ))}

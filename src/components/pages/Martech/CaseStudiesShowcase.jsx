@@ -27,9 +27,9 @@ function CaseStudyCard({ cs }) {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="border border-white/10 rounded-lg bg-white/[0.03] hover:border-[#ed5145]/60 transition-colors duration-300 flex flex-col">
+        <div className="border border-gray-200 rounded-lg bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col">
             <div className="p-8 flex flex-col gap-3 flex-1">
-                <div className="text-size-small text-weight-bold text-[#ed5145] uppercase tracking-wider">
+                <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider">
                     {cs.category}
                 </div>
                 <h3 className="text-size-large text-weight-medium">{cs.title}</h3>
@@ -39,7 +39,7 @@ function CaseStudyCard({ cs }) {
                     <div className="grid grid-cols-3 gap-3 pt-3">
                         {cs.metrics.map((metric) => (
                             <div key={metric.label}>
-                                <div className="text-size-large text-weight-bold text-[#ed5145]">
+                                <div className="text-size-large text-weight-bold text-[#E0362C]">
                                     {metric.value}
                                 </div>
                                 <div className="text-size-small opacity-50">{metric.label}</div>
@@ -49,7 +49,7 @@ function CaseStudyCard({ cs }) {
                 )}
 
                 {cs.impact && (
-                    <p className="text-size-small opacity-80 border-l-2 border-[#ed5145]/60 pl-3 mt-2">
+                    <p className="text-size-small opacity-80 border-l-2 border-[#E0362C]/60 pl-3 mt-2">
                         {cs.impact}
                     </p>
                 )}
@@ -68,7 +68,7 @@ function CaseStudyCard({ cs }) {
                 )}
 
                 {open && (
-                    <div className="flex flex-col gap-3 mt-2 pt-3 border-t border-white/10">
+                    <div className="flex flex-col gap-3 mt-2 pt-3 border-t border-gray-200">
                         <div>
                             <div className="text-size-small text-weight-bold opacity-70 mb-1">
                                 Challenge
@@ -86,7 +86,7 @@ function CaseStudyCard({ cs }) {
                                 {cs.services.map((service) => (
                                     <span
                                         key={service}
-                                        className="text-size-small border border-white/15 rounded-full px-3 py-1 opacity-60"
+                                        className="text-size-small border border-gray-200 rounded-full px-3 py-1 opacity-60"
                                     >
                                         {service}
                                     </span>
@@ -106,10 +106,10 @@ function CaseStudyCard({ cs }) {
                     }
                     setOpen(!open);
                 }}
-                className="border-t border-white/10 px-8 py-4 text-size-small text-weight-bold flex items-center justify-between hover:bg-[#ed5145]/10 transition-colors text-left"
+                className="border-t border-gray-200 px-8 py-4 text-size-small text-weight-bold flex items-center justify-between hover:bg-[#E0362C]/10 transition-colors text-left"
             >
                 <span>{open ? "Show less" : "Challenge & solution"}</span>
-                <span className={`text-[#ed5145] transition-transform duration-300 ${open ? "rotate-90" : ""}`}>
+                <span className={`text-[#E0362C] transition-transform duration-300 ${open ? "rotate-90" : ""}`}>
                     →
                 </span>
             </button>
@@ -131,7 +131,7 @@ export default function CaseStudiesShowcase({ general = false }) {
                     <div className="hero-wrapper">
                         <AnimatedInViewDiv className="hero-component">
                             <div className="read-more-tag w-inline-block">
-                                <div className="text-size-small text-weight-bold text-[#ed5145]">
+                                <div className="text-size-small text-weight-bold text-[#E0362C]">
                                     Case Studies · {caseStudies.length} Shipped Products &amp; Campaigns
                                 </div>
                             </div>
@@ -181,8 +181,8 @@ export default function CaseStudiesShowcase({ general = false }) {
                                     aria-pressed={active === category}
                                     className={`rounded-full px-5 py-2.5 border text-size-small text-weight-bold transition-all duration-200 ${
                                         active === category
-                                            ? "border-[#ed5145] bg-[#ed5145]/[0.1] text-[#ed5145]"
-                                            : "border-white/15 bg-white/[0.02] hover:border-white/40"
+                                            ? "border-[#E0362C] bg-[#E0362C]/[0.1] text-[#E0362C]"
+                                            : "border-gray-200 bg-[#F7F7F5] hover:border-gray-400"
                                     }`}
                                 >
                                     {category}{" "}

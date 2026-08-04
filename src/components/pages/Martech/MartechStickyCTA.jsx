@@ -49,7 +49,7 @@ export default function MartechStickyCTA() {
         >
             <button
                 onClick={scrollToForm}
-                className="w-full bg-[#ed5145] hover:bg-[#d8453a] transition-colors rounded-full py-3.5 text-weight-bold text-white shadow-lg shadow-black/50"
+                className="w-full bg-[#E0362C] hover:bg-[#B3261A] transition-colors rounded-full py-3.5 text-weight-bold text-white shadow-lg shadow-black/20"
             >
                 Get My Free Stack Audit →
             </button>

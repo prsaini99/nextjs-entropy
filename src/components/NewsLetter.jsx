@@ -68,7 +68,7 @@ export default function NewsLetter() {
                         <div className="relative">
                             <input
                                 type="submit"
-                                className="appearance-none w-full leading-normal outline-none border-none cursor-pointer rounded-lg p-4 font-semibold text-lg bg-white bg-opacity-10 text-white z-10 opacity-100"
+                                className="appearance-none w-full leading-normal outline-none border-none cursor-pointer rounded-lg p-4 font-semibold text-lg bg-gray-100 text-gray-900 z-10 opacity-100"
                                 value="Sign Up"
                             />
                         </div>

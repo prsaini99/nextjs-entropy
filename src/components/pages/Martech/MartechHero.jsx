@@ -48,7 +48,7 @@ export default function MartechHero() {
                                         "Your data, your design, your IP. Zero licence creep.",
                                     ].map((point) => (
                                         <li key={point} className="flex gap-3 text-size-small opacity-80">
-                                            <span className="text-[#ed5145]">✓</span>
+                                            <span className="text-[#E0362C]">✓</span>
                                             <span>{point}</span>
                                         </li>
                                     ))}
@@ -61,13 +61,13 @@ export default function MartechHero() {
                         </div>
 
                         <AnimatedInViewDiv delay={0.4} className="w-full">
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mt-16 rounded-lg overflow-hidden border border-white/10 bg-white/10">
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mt-16 rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
                                 {stats.map((stat) => (
                                     <div
                                         key={stat.label}
-                                        className="bg-black/90 p-6 lg:p-8 flex flex-col gap-2"
+                                        className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
                                     >
-                                        <div className="heading-4 text-weight-bold text-[#ed5145]">
+                                        <div className="heading-4 text-weight-bold text-[#E0362C]">
                                             {stat.value}
                                         </div>
                                         <p className="text-size-small opacity-60">{stat.label}</p>
