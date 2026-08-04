@@ -2179,7 +2179,7 @@ textarea.w-select {
 	--heading--h2: 5rem;
 	--heading--h6: 2rem;
 	--text-size--large: 1.5rem;
-	--text-size--tiny: 0.8125rem;
+	--text-size--tiny: 0.875rem; /* 14px accessibility floor */
 	--text-size--medium-2\<deleted\|variable-227de73e-b343-2d71-c2df-405ddac14c51\>: 1.125rem;
 	--heading--h1: 10.5rem;
 	--heading--h4: 3rem;
@@ -2224,7 +2224,7 @@ body {
 	background-color: var(--color--black); /* inverted vars: this is now white */
 	color: var(--color--white); /* now ink */
 	font-family: Satoshi, 'Satoshi Fallback', sans-serif;
-	font-size: 1rem;
+	font-size: 1.125rem; /* 18px base — research floor for 25-65 audience */
 	font-weight: 400;
 	line-height: 1.5;
 }
@@ -6125,4 +6125,25 @@ textarea.text-field-contact {
 	transform: translateY(-2px);
 	border-color: #E0362C !important;
 	box-shadow: 0 8px 25px rgba(237, 81, 69, 0.2);
+}
+
+/* ── Readability pass 2026-08-04 (owner call, audience 25-65) ─────────────
+   Body carries Satoshi Medium (500) instead of Regular: thicker strokes on
+   white without the shout of bold. Headings are unconditionally bold — the
+   .text-weight-medium combos that softened them on the dark theme now yield.
+   Research basis: 18-20px body for older-inclusive audiences, 14px caption
+   floor (health.gov literacy guidelines, PMC systematic review). */
+body {
+	font-weight: 500;
+}
+h1, h2, h3, h4, h5, h6,
+.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+	font-weight: 700;
+}
+[class*="heading-"].text-weight-medium,
+.text-weight-medium[class*="heading-"] {
+	font-weight: 700;
+}
+body {
+	line-height: 1.6;
 }
