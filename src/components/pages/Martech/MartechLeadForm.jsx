@@ -320,12 +320,12 @@ export default function MartechLeadForm({
 
             <style jsx>{`
                 .martech-input {
-                    background: rgba(0, 0, 0, 0.5);
-                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    background: #ffffff;
+                    border: 1px solid #d5d5d9;
                     border-radius: 0.5rem;
-                    padding: 0.75rem 1rem;
-                    font-size: 0.875rem;
-                    color: #fff;
+                    padding: 0.85rem 1rem;
+                    font-size: 1rem;
+                    color: #000000;
                     width: 100%;
                     outline: none;
                     transition: border-color 0.2s;
@@ -334,15 +334,15 @@ export default function MartechLeadForm({
                     border-color: #E0362C;
                 }
                 .martech-input::placeholder {
-                    color: rgba(255, 255, 255, 0.4);
+                    color: rgba(0, 0, 0, 0.45);
                 }
                 select.martech-input:invalid,
                 select.martech-input option[value=""] {
-                    color: rgba(255, 255, 255, 0.4);
+                    color: rgba(0, 0, 0, 0.45);
                 }
                 select.martech-input option {
-                    background: #111;
-                    color: #fff;
+                    background: #ffffff;
+                    color: #000000;
                 }
             `}</style>
         </form>

@@ -28,10 +28,11 @@ export function LearnMoreButton({
 
     return (
         <Link href={routeTo}
-            className="secondary-button w-inline-block relative overflow-hidden group p-[0.25rem]"
+            className="secondary-button w-inline-block relative overflow-hidden group p-[0.25rem] transition-colors duration-300"
             onClick={onClick}
             onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}>
+            onMouseLeave={() => setHover(false)}
+            style={{ color: hover ? '#ffffff' : undefined }}>
             <div className="button-wrapper relative z-10 flex items-center">
                 <div className="secondary-button-text">
                     <div className="text-weight-bold text-size-small">{title}</div>
@@ -43,7 +44,9 @@ export function LearnMoreButton({
                             alt="Arrow" className="icon transition-transform" />
                     </div>
                 </div>
-                <div className={`absolute inset-0 bg-[var(--color--dark-grey)] transition-transform duration-700 ease-out transform ${hover ? 'scale-x-100 origin-right' : 'scale-x-0 origin-right'}`}></div>
+                {/* Fill sweeps in behind the text (-z-10 keeps the label on top);
+                    the Link's inline color flips the label white in step. */}
+                <div className={`absolute inset-0 -z-10 bg-[#17171A] transition-transform duration-700 ease-out transform ${hover ? 'scale-x-100 origin-right' : 'scale-x-0 origin-right'}`}></div>
             </div>
         </Link>
     )
