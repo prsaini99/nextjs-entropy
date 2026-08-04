@@ -336,7 +336,10 @@ export default function CareersPage() {
 function StatsPanel({ stats, onJobTitleClick, activeJobTitle }) {
   const maxDay = Math.max(1, ...stats.by_day.map((d) => d.count));
   const topRoles = Object.entries(stats.by_job_title).slice(0, 8);
-  const sources = Object.entries(stats.by_referral_source).slice(0, 6);
+  // Pipeline breakdown replaced the referral-sources card 2026-08-04: the
+  // form never collected referral_source (100% null), while status counts
+  // become the triage scoreboard as reviewing begins.
+  const statuses = Object.entries(stats.by_status || {}).slice(0, 7);
 
   return (
     <div className="mt-6 space-y-4">
@@ -395,13 +398,13 @@ function StatsPanel({ stats, onJobTitleClick, activeJobTitle }) {
           </div>
         </div>
 
-        {/* Sources */}
+        {/* Pipeline */}
         <div className="bg-white rounded-lg shadow p-4">
-          <h3 className="text-sm font-semibold text-gray-700 mb-3">Referral sources</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-3">Pipeline</h3>
           <div className="space-y-1">
-            {sources.map(([source, n]) => (
-              <div key={source} className="flex justify-between text-sm px-2 py-1">
-                <span className="text-gray-700 truncate mr-2">{source}</span>
+            {statuses.map(([status, n]) => (
+              <div key={status} className="flex justify-between text-sm px-2 py-1">
+                <span className="text-gray-700 truncate mr-2 capitalize">{status}</span>
                 <span className="text-gray-500 flex-shrink-0">{n}</span>
               </div>
             ))}
