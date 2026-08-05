@@ -403,7 +403,7 @@ export default function AiAutomationPage() {
             <section>
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <AnimatedInViewDiv className="header text-center mb-12">
+                        <AnimatedInViewDiv className="header text-center mb-12 mx-auto">
                             <h2 className="heading-4 text-weight-medium mb-4">What We Automate</h2>
                             <p className="opacity-80 max-width-60ch mx-auto">
                                 The six places business hours actually disappear — and the AI
@@ -437,7 +437,7 @@ export default function AiAutomationPage() {
             <section>
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <AnimatedInViewDiv className="header text-center mb-12">
+                        <AnimatedInViewDiv className="header text-center mb-12 mx-auto">
                             <h2 className="heading-4 text-weight-medium mb-4">
                                 AI Automation, Not Just Automation
                             </h2>
@@ -480,7 +480,7 @@ export default function AiAutomationPage() {
             <section>
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <AnimatedInViewDiv className="header text-center mb-12">
+                        <AnimatedInViewDiv className="header text-center mb-12 mx-auto">
                             <h2 className="heading-4 text-weight-medium mb-4">
                                 The Shape of What We Build
                             </h2>
@@ -508,7 +508,7 @@ export default function AiAutomationPage() {
             <section>
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <AnimatedInViewDiv className="header text-center mb-12">
+                        <AnimatedInViewDiv className="header text-center mb-12 mx-auto">
                             <h2 className="heading-4 text-weight-medium mb-4">How It Works</h2>
                         </AnimatedInViewDiv>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -546,7 +546,7 @@ export default function AiAutomationPage() {
             <section>
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <AnimatedInViewDiv className="header text-center mb-12">
+                        <AnimatedInViewDiv className="header text-center mb-12 mx-auto">
                             <h2 className="heading-4 text-weight-medium mb-4">
                                 Why an Agency, Not Another Tool
                             </h2>
@@ -592,7 +592,7 @@ export default function AiAutomationPage() {
             <section>
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <AnimatedInViewDiv className="header text-center mb-10">
+                        <AnimatedInViewDiv className="header text-center mb-10 mx-auto">
                             <h2 className="heading-4 text-weight-medium mb-4">
                                 Plugs Into What You Already Run
                             </h2>
