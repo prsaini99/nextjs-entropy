@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { trackEvent, trackFormInteraction, ANALYTICS_EVENTS } from "@/lib/analytics";
+import AnimatedInViewDiv from "@/components/Animate/AppearInView";
+import { trackFormInteraction } from "@/lib/analytics";
 import { trackLeadSubmit } from "@/lib/trackLead";
 import { clickIdPayload } from "@/lib/clickIds";
 import { getUTMData } from "@/hooks/useUTMTracking";
@@ -10,11 +11,15 @@ import { getUTMData } from "@/hooks/useUTMTracking";
 // build-anything shop — "we find the highest-ROI automation and ship it in
 // 2-3 weeks, owned outright, wired into what you already run."
 //
-// The jobs list below is demand-ordered from Keyword Planner (India,
-// 2026-08-05): WhatsApp ~6k/mo combined, invoices/AP ~6.5k, email journeys
-// ~7k (tool-heavy, agency slice real), data entry ~1k, calls proven by our
-// own campaign, lead follow-up = the speed-to-lead thesis. Card copy uses
-// the searchers' own vocabulary deliberately.
+// Layout deliberately mirrors MartechHero/MartechProcess (hero-wrapper,
+// heading-2, read-more-tag with vertical-line-tag, AnimatedInViewDiv
+// staggers, py-16 sections, hover-accent cards) so the page reads as a
+// sibling of /martech, not a cousin.
+//
+// The jobs list is demand-ordered from Keyword Planner (India, 2026-08-05):
+// WhatsApp ~6k/mo combined, invoices/AP ~6.5k, email journeys ~7k, data
+// entry ~1k, calls proven by our own campaign, lead follow-up = the
+// speed-to-lead thesis. Card copy uses the searchers' own vocabulary.
 const JOBS = [
     {
         title: "WhatsApp Replies & Follow-Ups",
@@ -81,12 +86,19 @@ const FAQS = [
     },
     {
         q: "What if we don't know what to automate?",
-        a: "That's the normal starting point — it's what the form below is for. Tell us where your team's hours actually go, and we'll reply with the three automations worth building first and what each would save you. No obligation.",
+        a: "That's the normal starting point — it's what the form on this page is for. Tell us where your team's hours actually go, and we'll reply with the three automations worth building first and what each would save you. No obligation.",
     },
     {
         q: "Who owns the automation afterwards?",
         a: "You do. The code, the data, the accounts it runs on. If we part ways, everything keeps working and keeps being yours.",
     },
+];
+
+const HERO_STATS = [
+    { value: "2–3", label: "weeks from first call to a working automation, live" },
+    { value: "0", label: "per-seat licences. A growing team is not a growing bill." },
+    { value: "55+", label: "systems shipped by the engineering team behind this page" },
+    { value: "1", label: "automation at a time — the highest-ROI one first" },
 ];
 
 const HOUR_SINKS = [
@@ -164,6 +176,9 @@ function DiagnosticForm({ location }) {
         }
     };
 
+    const fieldCls =
+        "w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#E0362C] transition-colors";
+
     if (status === "success") {
         return (
             <div className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-4">
@@ -182,11 +197,14 @@ function DiagnosticForm({ location }) {
             onSubmit={submit}
             className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-4"
         >
-            <div className="heading-6 text-weight-bold">Get Your Top 3 Automations</div>
-            <p className="text-size-small opacity-85">
-                Tell us where the hours go. We&apos;ll reply within one business day with the three
-                automations worth building first — and what each would save you. No obligation.
-            </p>
+            <div>
+                <div className="heading-6 text-weight-bold">Get Your Top 3 Automations</div>
+                <p className="text-size-small opacity-85 mt-2">
+                    Tell us where the hours go. We&apos;ll reply within one business day with the
+                    three automations worth building first — and what each would save you. No
+                    obligation.
+                </p>
+            </div>
 
             {step === 1 && (
                 <>
@@ -195,33 +213,32 @@ function DiagnosticForm({ location }) {
                     </div>
                     <div className="flex flex-col gap-2">
                         {HOUR_SINKS.map((s) => (
-                            <label key={s} className="flex items-start gap-3 cursor-pointer text-size-small">
+                            <label
+                                key={s}
+                                className={`flex items-start gap-3 cursor-pointer text-size-small border rounded-lg px-4 py-2.5 bg-white transition-colors ${
+                                    sinks.includes(s)
+                                        ? "border-[#E0362C]"
+                                        : "border-gray-200 hover:border-gray-400"
+                                }`}
+                            >
                                 <input
                                     type="checkbox"
                                     checked={sinks.includes(s)}
                                     onChange={() => toggleSink(s)}
-                                    className="mt-1 w-4 h-4 text-red-600 focus:ring-red-500 border-gray-400 rounded bg-white"
+                                    className="mt-0.5 w-4 h-4 text-red-600 focus:ring-red-500 border-gray-400 rounded bg-white"
                                 />
                                 <span>{s}</span>
                             </label>
                         ))}
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
-                        <select
-                            value={teamSize}
-                            onChange={(e) => setTeamSize(e.target.value)}
-                            className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900"
-                        >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <select value={teamSize} onChange={(e) => setTeamSize(e.target.value)} className={fieldCls}>
                             <option value="">Team size *</option>
                             {TEAM_SIZES.map((t) => (
                                 <option key={t}>{t}</option>
                             ))}
                         </select>
-                        <select
-                            value={budget}
-                            onChange={(e) => setBudget(e.target.value)}
-                            className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900"
-                        >
+                        <select value={budget} onChange={(e) => setBudget(e.target.value)} className={fieldCls}>
                             <option value="">Budget range</option>
                             {BUDGETS.map((b) => (
                                 <option key={b}>{b}</option>
@@ -232,7 +249,7 @@ function DiagnosticForm({ location }) {
                         type="button"
                         disabled={!step1Ok}
                         onClick={advance}
-                        className="primary-button w-inline-block disabled:opacity-50"
+                        className="primary-button w-inline-block disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                         <div className="relative">
                             <div className="text-size-small text-weight-bold">Next → almost there</div>
@@ -249,26 +266,26 @@ function DiagnosticForm({ location }) {
                         placeholder="Full name *"
                         value={contact.fullName}
                         onChange={(e) => setContact({ ...contact, fullName: e.target.value })}
-                        className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500"
+                        className={fieldCls}
                     />
                     <input
                         type="email"
                         placeholder="Work email *"
                         value={contact.workEmail}
                         onChange={(e) => setContact({ ...contact, workEmail: e.target.value })}
-                        className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500"
+                        className={fieldCls}
                     />
                     <input
                         type="tel"
                         placeholder="Phone / WhatsApp"
                         value={contact.phone}
                         onChange={(e) => setContact({ ...contact, phone: e.target.value })}
-                        className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500"
+                        className={fieldCls}
                     />
                     <button
                         type="submit"
                         disabled={!step2Ok || status === "loading"}
-                        className="primary-button w-inline-block disabled:opacity-50"
+                        className="primary-button w-inline-block disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                         <div className="relative">
                             <div className="text-size-small text-weight-bold">
@@ -295,72 +312,93 @@ function DiagnosticForm({ location }) {
 export default function AiAutomationPage() {
     return (
         <div>
-            {/* HERO + diagnostic form */}
+            {/* HERO — mirrors MartechHero: hero-wrapper clears the nav, badge with
+                divider, heading-2, red-check list, form right, stat strip below. */}
             <section>
                 <div className="padding-global">
                     <div className="w-layout-blockcontainer container w-container">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start py-12">
-                            <div>
-                                <div className="read-more-tag w-inline-block mb-6">
-                                    <div className="text-size-small text-weight-bold">AI Automation Agency</div>
-                                    <div className="text-size-small opacity-85">Built in weeks. Owned forever.</div>
-                                </div>
-                                <h1 className="heading-3 text-weight-bold mb-6">
-                                    Your Team Is Doing Work a System Should Do.
-                                </h1>
-                                <p className="text-size-medium opacity-85 mb-6 max-width-60ch">
-                                    We find it, price it, and automate it — live in 2–3 weeks, owned
-                                    outright, and wired into the tools you already run. No
-                                    rip-and-replace, no subscription stack, no six-month
-                                    transformation project.
-                                </p>
-                                <div className="check-list">
-                                    {[
-                                        "One working automation live in 2–3 weeks, not a quarter",
-                                        "Plugs into your existing CRM, accounting, calendars and WhatsApp",
-                                        "Yours outright: code, data and accounts. Zero per-seat licences",
-                                    ].map((item) => (
-                                        <div key={item} className="check-item">
-                                            <div className="check-icon-wrap">
-                                                <img
-                                                    width="14"
-                                                    height="12"
-                                                    alt=""
-                                                    src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
-                                                    className="check-icon"
-                                                />
+                        <div className="hero-wrapper">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full pt-6">
+                                <AnimatedInViewDiv className="flex flex-col gap-8 text-left items-start">
+                                    <div className="read-more-tag w-inline-block">
+                                        <div className="text-size-small text-weight-bold">
+                                            AI Automation Agency
+                                        </div>
+                                        <div className="vertical-line-tag"></div>
+                                        <div className="text-size-small opacity-70">
+                                            Built in weeks. Owned forever.
+                                        </div>
+                                    </div>
+                                    <h1 className="heading-2 text-weight-bold">
+                                        Your Team Is Doing Work a System Should Do.
+                                    </h1>
+                                    <p className="opacity-80">
+                                        We find it, price it, and automate it — live in 2–3 weeks,
+                                        owned outright, and wired into the tools you already run.
+                                        No rip-and-replace, no subscription stack, no six-month
+                                        transformation project.
+                                    </p>
+                                    <ul className="flex flex-col gap-2">
+                                        {[
+                                            "One working automation live in 2–3 weeks, not a quarter",
+                                            "Plugs into your existing CRM, accounting, calendars and WhatsApp",
+                                            "Yours outright: code, data and accounts. Zero per-seat licences",
+                                        ].map((point) => (
+                                            <li key={point} className="flex gap-3 text-size-small opacity-80">
+                                                <span className="text-[#E0362C]">✓</span>
+                                                <span>{point}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </AnimatedInViewDiv>
+
+                                <AnimatedInViewDiv delay={0.2} className="w-full">
+                                    <DiagnosticForm location="hero" />
+                                </AnimatedInViewDiv>
+                            </div>
+
+                            <AnimatedInViewDiv delay={0.4} className="w-full">
+                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mt-16 rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
+                                    {HERO_STATS.map((stat) => (
+                                        <div
+                                            key={stat.label}
+                                            className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
+                                        >
+                                            <div className="heading-4 text-weight-bold text-[#E0362C]">
+                                                {stat.value}
                                             </div>
-                                            <div className="text-size-medium">{item}</div>
+                                            <p className="text-size-small opacity-80">{stat.label}</p>
                                         </div>
                                     ))}
                                 </div>
-                            </div>
-                            <DiagnosticForm location="hero" />
+                            </AnimatedInViewDiv>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* WHAT WE AUTOMATE — demand-ordered */}
+            {/* WHAT WE AUTOMATE */}
             <section>
-                <div className="padding-global">
+                <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <div className="header text-center mb-10">
-                            <h2 className="heading-4 text-weight-bold mb-4">What We Automate</h2>
-                            <p className="text-size-medium opacity-85 max-width-60ch mx-auto">
-                                The six places business hours actually disappear — each one a system
-                                we&apos;ve built before, working alongside the tools you already use.
+                        <AnimatedInViewDiv className="header text-center mb-12">
+                            <h2 className="heading-4 text-weight-medium mb-4">What We Automate</h2>
+                            <p className="opacity-80 max-width-60ch mx-auto">
+                                The six places business hours actually disappear — each one a
+                                system we&apos;ve built before, working alongside the tools you
+                                already use.
                             </p>
-                        </div>
+                        </AnimatedInViewDiv>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {JOBS.map((job) => (
-                                <div
+                            {JOBS.map((job, i) => (
+                                <AnimatedInViewDiv
                                     key={job.title}
-                                    className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5]"
+                                    delay={0.05 * i}
+                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
                                 >
-                                    <div className="heading-6 text-weight-bold mb-3">{job.title}</div>
-                                    <p className="text-size-small opacity-85">{job.description}</p>
-                                </div>
+                                    <div className="heading-6 text-weight-bold">{job.title}</div>
+                                    <p className="text-size-small opacity-80">{job.description}</p>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>
@@ -369,22 +407,26 @@ export default function AiAutomationPage() {
 
             {/* PATTERN STORIES */}
             <section>
-                <div className="padding-global">
+                <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <div className="header text-center mb-10">
-                            <h2 className="heading-4 text-weight-bold mb-4">
+                        <AnimatedInViewDiv className="header text-center mb-12">
+                            <h2 className="heading-4 text-weight-medium mb-4">
                                 The Shape of What We Build
                             </h2>
-                        </div>
+                        </AnimatedInViewDiv>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                            {STORIES.map((s) => (
-                                <div key={s.title} className="border border-gray-200 rounded-lg p-6 lg:p-8">
-                                    <div className="text-size-small text-weight-bold text-[#E0362C] mb-3">
+                            {STORIES.map((s, i) => (
+                                <AnimatedInViewDiv
+                                    key={s.title}
+                                    delay={0.1 * i}
+                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
+                                >
+                                    <div className="text-size-small text-weight-bold text-[#E0362C]">
                                         {s.tag}
                                     </div>
-                                    <div className="heading-6 text-weight-bold mb-3">{s.title}</div>
-                                    <p className="text-size-small opacity-85">{s.body}</p>
-                                </div>
+                                    <div className="heading-6 text-weight-bold">{s.title}</div>
+                                    <p className="text-size-small opacity-80">{s.body}</p>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>
@@ -393,11 +435,11 @@ export default function AiAutomationPage() {
 
             {/* HOW IT WORKS */}
             <section>
-                <div className="padding-global">
+                <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <div className="header text-center mb-10">
-                            <h2 className="heading-4 text-weight-bold mb-4">How It Works</h2>
-                        </div>
+                        <AnimatedInViewDiv className="header text-center mb-12">
+                            <h2 className="heading-4 text-weight-medium mb-4">How It Works</h2>
+                        </AnimatedInViewDiv>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {[
                                 {
@@ -412,11 +454,17 @@ export default function AiAutomationPage() {
                                     step: "03 · Own",
                                     text: "The automation is yours: code, data, accounts. No per-seat licences, no growing subscription. When it proves itself, we build the next one.",
                                 },
-                            ].map((s) => (
-                                <div key={s.step} className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5]">
-                                    <div className="text-size-small text-weight-bold text-[#E0362C] mb-3">{s.step}</div>
-                                    <p className="text-size-small opacity-85">{s.text}</p>
-                                </div>
+                            ].map((s, i) => (
+                                <AnimatedInViewDiv
+                                    key={s.step}
+                                    delay={0.1 * i}
+                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-3"
+                                >
+                                    <div className="text-size-small text-weight-bold text-[#E0362C]">
+                                        {s.step}
+                                    </div>
+                                    <p className="text-size-small opacity-80">{s.text}</p>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>
@@ -425,17 +473,23 @@ export default function AiAutomationPage() {
 
             {/* FAQ */}
             <section>
-                <div className="padding-global">
+                <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
-                        <div className="header text-center mb-10">
-                            <h2 className="heading-4 text-weight-bold mb-4">Questions, Answered Straight</h2>
-                        </div>
+                        <AnimatedInViewDiv className="header text-center mb-12">
+                            <h2 className="heading-4 text-weight-medium mb-4">
+                                Questions, Answered Straight
+                            </h2>
+                        </AnimatedInViewDiv>
                         <div className="flex flex-col gap-4 max-w-3xl mx-auto">
-                            {FAQS.map((f) => (
-                                <div key={f.q} className="border border-gray-200 rounded-lg p-6">
+                            {FAQS.map((f, i) => (
+                                <AnimatedInViewDiv
+                                    key={f.q}
+                                    delay={0.05 * i}
+                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-[#E0362C]/60 transition-colors"
+                                >
                                     <div className="text-size-medium text-weight-bold mb-2">{f.q}</div>
-                                    <p className="text-size-small opacity-85">{f.a}</p>
-                                </div>
+                                    <p className="text-size-small opacity-80">{f.a}</p>
+                                </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>
@@ -444,20 +498,22 @@ export default function AiAutomationPage() {
 
             {/* CLOSING CTA */}
             <section>
-                <div className="padding-global">
+                <div className="padding-global py-16 pb-24">
                     <div className="w-layout-blockcontainer container w-container">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-12">
-                            <div>
-                                <h2 className="heading-4 text-weight-bold mb-4">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                            <AnimatedInViewDiv>
+                                <h2 className="heading-3 text-weight-bold mb-4">
                                     Find Out What&apos;s Worth Automating First
                                 </h2>
-                                <p className="text-size-medium opacity-85 max-width-48ch">
-                                    Two minutes of questions. One reply, from a person, with the three
-                                    automations that would save your team the most hours — and what
-                                    each costs to build.
+                                <p className="opacity-80 max-width-48ch">
+                                    Two minutes of questions. One reply, from a person, with the
+                                    three automations that would save your team the most hours —
+                                    and what each costs to build.
                                 </p>
-                            </div>
-                            <DiagnosticForm location="closing" />
+                            </AnimatedInViewDiv>
+                            <AnimatedInViewDiv delay={0.15} className="w-full">
+                                <DiagnosticForm location="closing" />
+                            </AnimatedInViewDiv>
                         </div>
                     </div>
                 </div>
