@@ -21,36 +21,45 @@ import { getUTMData } from "@/hooks/useUTMTracking";
 // WhatsApp ~6k/mo combined, invoices/AP ~6.5k, email journeys ~7k, data
 // entry ~1k, calls proven by our own campaign, lead follow-up = the
 // speed-to-lead thesis. Card copy uses the searchers' own vocabulary.
+// Each card leads with the AI capability (red eyebrow) and keeps the job
+// in the title (the searcher's keyword). The descriptions name what the AI
+// *understands*, not what the workflow *moves* — that distinction is the page.
 const JOBS = [
     {
+        tag: "AI that reads intent",
         title: "WhatsApp Replies & Follow-Ups",
         description:
-            "Auto-replies that actually answer, order and appointment confirmations, and follow-up sequences on the official WhatsApp Business API — the channel your customers already live on.",
+            "Not canned auto-replies. An AI that understands what the customer is actually asking, answers from your business data in their language, follows up on its own, and hands to a human the moment it should — on the official WhatsApp Business API.",
     },
     {
+        tag: "AI that reads documents",
         title: "Invoices & Accounts Payable",
         description:
-            "Invoices land in one inbox, AI extracts every line item, flags mismatches against purchase orders, and posts clean entries into your accounting system for one-click approval.",
+            "Invoices in any format — clean PDFs, scans, photos of paper. AI extracts every line item, checks it against purchase orders, flags what doesn't add up, and posts clean entries to your accounting system for one-click approval.",
     },
     {
+        tag: "AI that writes",
         title: "Email Journeys That Run Themselves",
         description:
-            "Welcome series, nurture, win-back and drip campaigns triggered by real behaviour — sent from infrastructure you own, with no per-contact pricing.",
+            "AI segments your list by real behaviour, drafts on-brand emails per segment, and picks the moment to send — welcome, nurture, win-back — from infrastructure you own, with no per-contact pricing.",
     },
     {
+        tag: "AI that speaks",
         title: "Calls Answered & Appointments Booked",
         description:
-            "An AI receptionist that picks up 24/7 in your customer's language, qualifies the caller, books the slot, and logs the conversation to your CRM.",
+            "An AI receptionist that picks up 24/7, follows when the caller switches language mid-sentence, qualifies intent, books the slot, and logs the whole conversation to your CRM.",
     },
     {
+        tag: "AI that extracts",
         title: "Data Entry & Document Processing",
         description:
-            "The copy-paste work: forms, PDFs and spreadsheets read by AI and written into your systems — validated, flagged when unsure, and audit-trailed.",
+            "Forms, PDFs and spreadsheets read by AI and written into your systems — validated against your rules, flagged when unsure, audit-trailed on every field. The copy-paste job, retired.",
     },
     {
+        tag: "AI that prioritises",
         title: "Lead Follow-Up & CRM Updates",
         description:
-            "Every new enquiry gets a response in under a minute — call, WhatsApp or email — and your CRM updates itself. Speed-to-lead, without hiring for it.",
+            "AI scores every new enquiry, responds in under a minute on the right channel — call, WhatsApp or email — personalises each touch, and keeps your CRM writing itself. Speed-to-lead, without hiring for it.",
     },
 ];
 
@@ -397,9 +406,9 @@ export default function AiAutomationPage() {
                         <AnimatedInViewDiv className="header text-center mb-12">
                             <h2 className="heading-4 text-weight-medium mb-4">What We Automate</h2>
                             <p className="opacity-80 max-width-60ch mx-auto">
-                                The six places business hours actually disappear — each one a
-                                system we&apos;ve built before, working alongside the tools you
-                                already use.
+                                The six places business hours actually disappear — and the AI
+                                capability that takes each one over, working alongside the tools
+                                you already use.
                             </p>
                         </AnimatedInViewDiv>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,6 +418,9 @@ export default function AiAutomationPage() {
                                     delay={0.05 * i}
                                     className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
                                 >
+                                    <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wide">
+                                        {job.tag}
+                                    </div>
                                     <div className="heading-6 text-weight-bold">{job.title}</div>
                                     <p className="text-size-small opacity-80">{job.description}</p>
                                 </AnimatedInViewDiv>
