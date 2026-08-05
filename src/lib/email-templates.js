@@ -13,6 +13,7 @@ const BRAND = {
   calendly: "https://calendly.com/stackbinary/30min",
   whatsapp: "https://wa.me/918928028738",
   email: "contact@stackbinary.io",
+  linkedin: "https://www.linkedin.com/company/stackbinary",
 };
 
 function row(label, value) {
@@ -27,7 +28,10 @@ function row(label, value) {
 export function confirmationEmailHtml({ fullName, service, budget, timeline }) {
   const firstName = (fullName || "there").split(" ")[0];
   const isMartech = (service || "").startsWith("MarTech");
-  const intro = isMartech
+  const isAutomation = (service || "").startsWith("AI Automation");
+  const intro = isAutomation
+    ? "Your diagnostic is in. Our team is reviewing where your hours go and will get back to you with the three automations worth building first — not a generic sales pitch."
+    : isMartech
     ? "Your MarTech inquiry is in. Our team is reviewing your stack details and one of our martech engineers will get back to you with first observations — not a generic sales pitch."
     : "Your project inquiry is in. Our team is reviewing the details and will get back to you with concrete next steps — not a generic sales pitch.";
 
@@ -138,6 +142,24 @@ export function confirmationEmailHtml({ fullName, service, budget, timeline }) {
             </td>
           </tr>
 
+          <!-- LinkedIn follow -->
+          <tr>
+            <td style="padding-top:16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:${BRAND.card};border:1px solid ${BRAND.border};border-radius:12px;">
+                <tr>
+                  <td style="padding:20px 32px;font-family:Arial,Helvetica,sans-serif;" align="center">
+                    <p style="margin:0 0 12px;font-size:13px;line-height:1.6;color:${BRAND.muted};">
+                      While you wait — we share what we're building, real numbers included, on LinkedIn.
+                    </p>
+                    <a href="${BRAND.linkedin}" style="display:inline-block;border:1px solid ${BRAND.accent};color:${BRAND.accent};font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;text-decoration:none;padding:10px 24px;border-radius:999px;">
+                      Follow StackBinary on LinkedIn
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
           <!-- Footer -->
           <tr>
             <td align="center" style="padding:28px 12px 8px;border-top:1px solid ${BRAND.border};font-family:Arial,Helvetica,sans-serif;">
@@ -176,6 +198,8 @@ What happens next:
 
 Skip the wait — book a call: https://calendly.com/stackbinary/30min
 WhatsApp: https://wa.me/918928028738
+Follow us on LinkedIn — we share what we're building, real numbers included:
+https://www.linkedin.com/company/stackbinary
 
 Best regards,
 StackBinary(TM) Team
