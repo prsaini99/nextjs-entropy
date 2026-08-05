@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { buildMailTransport, mailConfigured } from "@/lib/mailer";
 import { supabase, calculateLeadScore } from "@/lib/supabase";
 import { supabaseAdmin } from "@/lib/supabase-admin";
 import { confirmationEmailHtml, confirmationEmailText } from "@/lib/email-templates";
@@ -8,7 +8,7 @@ export async function POST(request) {
 	try {
 		// Email is best-effort: the lead is always stored in the database first,
 		// and notification emails are only attempted when credentials exist.
-		const emailConfigured = !!(process.env.EMAIL && process.env.EMAIL_PASSWORD);
+		const emailConfigured = mailConfigured();
 
 		let body;
 		let attachmentFile = null;
@@ -119,14 +119,8 @@ export async function POST(request) {
 			);
 		}
 
-		// Configure Nodemailer transporter
-		const transporter = nodemailer.createTransport({
-			service: "gmail", // Use your email provider's service
-			auth: {
-				user: process.env.EMAIL, // Your email address
-				pass: process.env.EMAIL_PASSWORD, // Your email password or app password
-			},
-		});
+		// Resend-first transport, same chain the careers confirmations use.
+		const transporter = buildMailTransport();
 
 		// Create email content
 		let emailContent = `New Project Inquiry\n\n`;
