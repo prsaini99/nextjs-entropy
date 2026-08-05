@@ -28,6 +28,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/ai-automation`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/martech`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
