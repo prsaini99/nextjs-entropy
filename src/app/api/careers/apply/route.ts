@@ -244,9 +244,11 @@ export async function POST(request: NextRequest) {
     // AWS reconsideration) > the Gmail account (bridge only: it shares the
     // 2,000/day cap with lead notifications — the coupling that caused the
     // 2026-08-03 kill switch).
+    // RESEND_API_KEY alone is enough — host/user are fixed for Resend.
+    const useResend = !!process.env.RESEND_API_KEY;
     const useSmtp = process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS;
     const useSes = process.env.SES_SMTP_USER && process.env.SES_SMTP_PASS;
-    const smtpConfigured = useSmtp || useSes || (process.env.EMAIL && process.env.EMAIL_PASSWORD);
+    const smtpConfigured = useResend || useSmtp || useSes || (process.env.EMAIL && process.env.EMAIL_PASSWORD);
     if (process.env.CAREERS_EMAILS === 'on' && smtpConfigured) {
       try {
         // Bounce guard: never hand a provider an address that cannot receive.
@@ -272,7 +274,14 @@ export async function POST(request: NextRequest) {
           throw Object.assign(new Error('undeliverable domain'), { skipped: true });
         }
 
-        const transporter = useSmtp
+        const transporter = useResend
+          ? nodemailer.createTransport({
+              host: 'smtp.resend.com',
+              port: 587,
+              secure: false,
+              auth: { user: 'resend', pass: process.env.RESEND_API_KEY },
+            })
+          : useSmtp
           ? nodemailer.createTransport({
               host: process.env.SMTP_HOST,
               port: Number(process.env.SMTP_PORT || 587),
