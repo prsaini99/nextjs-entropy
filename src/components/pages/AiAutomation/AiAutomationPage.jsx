@@ -108,7 +108,7 @@ const INTEGRATIONS = [
 const HERO_STATS = [
     { value: "2–3", label: "weeks from first call to a working automation, live" },
     { value: "0", label: "per-seat licences. A growing team is not a growing bill." },
-    { value: "55+", label: "systems shipped by the engineering team behind this page" },
+    { value: "100+", label: "AI systems and automations shipped by the team behind this page" },
     { value: "1", label: "automation at a time — the highest-ROI one first" },
 ];
 
@@ -344,9 +344,11 @@ export default function AiAutomationPage() {
                                         Your Team Is Doing Work a System Should Do.
                                     </h1>
                                     <p className="opacity-80">
-                                        We find it, price it, and automate it — live in 2–3 weeks,
-                                        owned outright, and wired into the tools you already run.
-                                        No rip-and-replace, no subscription stack, no six-month
+                                        We find it, price it, and automate it with AI that does the
+                                        judgment work: reading documents, understanding callers,
+                                        drafting replies. Live in 2–3 weeks because we build with
+                                        AI too, owned outright, and wired into the tools you
+                                        already run. No rip-and-replace, no six-month
                                         transformation project.
                                     </p>
                                     <ul className="flex flex-col gap-2">
@@ -416,6 +418,52 @@ export default function AiAutomationPage() {
                 </div>
             </section>
 
+            {/* AI AUTOMATION, NOT JUST AUTOMATION — the differentiator section.
+                Two senses of AI, both true: AI inside the automations (judgment
+                work, not brittle rules) and AI in the building (why 2-3 weeks
+                is honest). The H2 carries the target keyword verbatim. */}
+            <section>
+                <div className="padding-global py-16">
+                    <div className="w-layout-blockcontainer container w-container">
+                        <AnimatedInViewDiv className="header text-center mb-12">
+                            <h2 className="heading-4 text-weight-medium mb-4">
+                                AI Automation, Not Just Automation
+                            </h2>
+                            <p className="opacity-80 max-width-60ch mx-auto">
+                                Old automation was if-this-then-that rules, and it broke the moment
+                                reality didn&apos;t match the template. AI changes what a business
+                                can hand over.
+                            </p>
+                        </AnimatedInViewDiv>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {[
+                                {
+                                    title: "AI does the judgment work",
+                                    text: "Reading a messy invoice, understanding a caller who switches languages mid-sentence, drafting a reply that sounds like your business, deciding which lead is worth a call first. Rule-based automation cannot do any of that. AI is the difference between automating the tidy 20% and automating the real work.",
+                                },
+                                {
+                                    title: "Built with AI, that's the 2–3 weeks",
+                                    text: "The same shift changed how software gets built. Our engineers ship AI-accelerated, which is how a working automation goes live in weeks instead of quarters, at a price that used to buy a discovery phase. It's the same way we've shipped 100+ systems of our own.",
+                                },
+                                {
+                                    title: "And it knows when to stop",
+                                    text: "Good AI automation is honest about its limits: confidence thresholds, human approval steps on anything that matters, and an audit trail for every decision. When it isn't sure, it asks a person, so you get the hours back without giving up control.",
+                                },
+                            ].map((c, i) => (
+                                <AnimatedInViewDiv
+                                    key={c.title}
+                                    delay={0.1 * i}
+                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
+                                >
+                                    <div className="heading-6 text-weight-bold">{c.title}</div>
+                                    <p className="text-size-small opacity-80">{c.text}</p>
+                                </AnimatedInViewDiv>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* PATTERN STORIES */}
             <section>
                 <div className="padding-global py-16">
@@ -459,7 +507,7 @@ export default function AiAutomationPage() {
                                 },
                                 {
                                     step: "02 · Build",
-                                    text: "We ship the highest-ROI one first — live in 2–3 weeks, integrated with the CRM, accounting, calendar and WhatsApp you already run. Your team keeps working; nothing gets ripped out.",
+                                    text: "We ship the highest-ROI one first, engineered AI-accelerated, which is why it goes live in 2–3 weeks and not a quarter. Integrated with the CRM, accounting, calendar and WhatsApp you already run; your team keeps working, nothing gets ripped out.",
                                 },
                                 {
                                     step: "03 · Own",
