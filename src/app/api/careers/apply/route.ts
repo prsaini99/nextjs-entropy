@@ -238,18 +238,48 @@ export async function POST(request: NextRequest) {
     // 2026-08-03 — /admin/careers is the inbox, and at flood volume (1,665
     // applications on Aug 3 alone) even one send per application eats most of
     // the Gmail 2,000/day cap this account shares with lead notifications.
-    // Careers mail goes through Amazon SES when SES_SMTP_USER/PASS are set
-    // (host defaults to Mumbai), falling back to the Gmail account otherwise.
-    // The split matters: SES gives careers its own sending budget, so a
-    // confirmation flood can never again eat the Gmail 2,000/day cap that the
-    // ad campaign's lead notifications depend on. SES must be OUT OF SANDBOX
-    // before CAREERS_EMAILS=on, or every send to an unverified candidate
-    // address errors.
+    // Transport is a pure env decision so switching providers never needs a
+    // deploy. Priority: generic SMTP_* vars (any transactional provider —
+    // Brevo, Resend, ZeptoMail, SES...) > SES_SMTP_* (kept for the pending
+    // AWS reconsideration) > the Gmail account (bridge only: it shares the
+    // 2,000/day cap with lead notifications — the coupling that caused the
+    // 2026-08-03 kill switch).
+    const useSmtp = process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS;
     const useSes = process.env.SES_SMTP_USER && process.env.SES_SMTP_PASS;
-    const smtpConfigured = useSes || (process.env.EMAIL && process.env.EMAIL_PASSWORD);
+    const smtpConfigured = useSmtp || useSes || (process.env.EMAIL && process.env.EMAIL_PASSWORD);
     if (process.env.CAREERS_EMAILS === 'on' && smtpConfigured) {
       try {
-        const transporter = useSes
+        // Bounce guard: never hand a provider an address that cannot receive.
+        // Syntax was validated above; this checks the domain actually has mail
+        // servers (MX, falling back to A per RFC 5321). The flood's typo'd
+        // domains hard-bounce otherwise, and every provider suspends senders
+        // whose bounce rate climbs. Resolver failures fail OPEN — a DNS blip
+        // must not block a legitimate confirmation.
+        const domain = (applicationData.email as string).split('@')[1];
+        let deliverable = true;
+        try {
+          const dns = await import('node:dns/promises');
+          const mx = await dns.resolveMx(domain).catch(() => []);
+          if (mx.length === 0) {
+            const a = await dns.resolve4(domain).catch(() => []);
+            deliverable = a.length > 0;
+          }
+        } catch {
+          deliverable = true;
+        }
+        if (!deliverable) {
+          console.warn(`Careers confirmation skipped — no MX/A records for ${domain}`);
+          throw Object.assign(new Error('undeliverable domain'), { skipped: true });
+        }
+
+        const transporter = useSmtp
+          ? nodemailer.createTransport({
+              host: process.env.SMTP_HOST,
+              port: Number(process.env.SMTP_PORT || 587),
+              secure: process.env.SMTP_PORT === '465',
+              auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+            })
+          : useSes
           ? nodemailer.createTransport({
               host: process.env.SES_SMTP_HOST || 'email-smtp.ap-south-1.amazonaws.com',
               port: 587,
