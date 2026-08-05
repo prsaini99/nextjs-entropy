@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
+import MartechFAQ from "@/components/pages/Martech/MartechFAQ";
 import { trackFormInteraction } from "@/lib/analytics";
 import { trackLeadSubmit } from "@/lib/trackLead";
 import { clickIdPayload } from "@/lib/clickIds";
@@ -71,27 +72,37 @@ const STORIES = [
     },
 ];
 
+// Shape matches data/martechFaqs.js so the shared MartechFAQ accordion
+// renders these (open-tracking and all) exactly like the /martech page.
 const FAQS = [
     {
-        q: "Do we have to replace the tools we already use?",
-        a: "No — and this is the point most people worry about needlessly. We build automations to plug into what you already run: your CRM, your accounting software, your calendars, your WhatsApp Business account, your spreadsheets. The automation does the repetitive work between your existing systems; it does not ask you to migrate off them.",
+        question: "Do we have to replace the tools we already use?",
+        answer: "No — and this is the point most people worry about needlessly. We build automations to plug into what you already run: your CRM, your accounting software, your calendars, your WhatsApp Business account, your spreadsheets. The automation does the repetitive work between your existing systems; it does not ask you to migrate off them.",
     },
     {
-        q: "How long does it take?",
-        a: "A single working automation goes live in 2–3 weeks. We deliberately scope one automation at a time — the highest-ROI one first — rather than proposing a six-month transformation.",
+        question: "How long does it take?",
+        answer: "A single working automation goes live in 2–3 weeks. We deliberately scope one automation at a time — the highest-ROI one first — rather than proposing a six-month transformation.",
     },
     {
-        q: "What does it cost?",
-        a: "It depends on the automation, but the shape is fixed: a one-time build, owned outright. No per-seat licences, no per-contact pricing, no subscription that grows with your team. Tell us where the hours go and we'll give you a straight number.",
+        question: "What does it cost?",
+        answer: "It depends on the automation, but the shape is fixed: a one-time build, owned outright. No per-seat licences, no per-contact pricing, no subscription that grows with your team. Tell us where the hours go and we'll give you a straight number.",
     },
     {
-        q: "What if we don't know what to automate?",
-        a: "That's the normal starting point — it's what the form on this page is for. Tell us where your team's hours actually go, and we'll reply with the three automations worth building first and what each would save you. No obligation.",
+        question: "What if we don't know what to automate?",
+        answer: "That's the normal starting point — it's what the form on this page is for. Tell us where your team's hours actually go, and we'll reply with the three automations worth building first and what each would save you. No obligation.",
     },
     {
-        q: "Who owns the automation afterwards?",
-        a: "You do. The code, the data, the accounts it runs on. If we part ways, everything keeps working and keeps being yours.",
+        question: "Who owns the automation afterwards?",
+        answer: "You do. The code, the data, the accounts it runs on. If we part ways, everything keeps working and keeps being yours.",
     },
+];
+
+// Systems we plug into, named because every one is a fear disarmed and a
+// keyword surfaced. The closing line covers the long tail honestly.
+const INTEGRATIONS = [
+    "WhatsApp Business API", "Tally", "Zoho", "HubSpot", "Salesforce",
+    "Google Sheets & Workspace", "Razorpay", "Shopify", "Slack",
+    "Gmail & Outlook", "Your calendar", "Your CRM",
 ];
 
 const HERO_STATS = [
@@ -471,30 +482,92 @@ export default function AiAutomationPage() {
                 </div>
             </section>
 
-            {/* FAQ */}
+            {/* WHY AN AGENCY, NOT ANOTHER TOOL */}
             <section>
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
                         <AnimatedInViewDiv className="header text-center mb-12">
                             <h2 className="heading-4 text-weight-medium mb-4">
-                                Questions, Answered Straight
+                                Why an Agency, Not Another Tool
                             </h2>
+                            <p className="opacity-80 max-width-60ch mx-auto">
+                                You&apos;ve seen the other two answers. Here&apos;s where each one
+                                actually leaves you.
+                            </p>
                         </AnimatedInViewDiv>
-                        <div className="flex flex-col gap-4 max-w-3xl mx-auto">
-                            {FAQS.map((f, i) => (
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {[
+                                {
+                                    title: "Buy another SaaS tool",
+                                    text: "Fast to start — then the real work begins: configuring it, migrating into it, paying per seat forever, and discovering your workflow doesn't quite fit its template. The average business already runs dozens of tools that don't talk to each other. Adding one more rarely fixes that.",
+                                },
+                                {
+                                    title: "Hire a no-code gluer",
+                                    text: "Cheap and quick — a freelancer chains your tools together with connector subscriptions. It works until a connector changes, a trigger silently fails, or the freelancer moves on. You own nothing, and nobody is accountable when the chain breaks at month-end.",
+                                },
+                                {
+                                    title: "Have it engineered — once",
+                                    text: "We build the automation as real software, wired directly into your systems, tested against your actual volumes, and handed over with everything: code, data, accounts. It's the difference between renting a workaround and owning an asset.",
+                                },
+                            ].map((c, i) => (
                                 <AnimatedInViewDiv
-                                    key={f.q}
-                                    delay={0.05 * i}
-                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-[#E0362C]/60 transition-colors"
+                                    key={c.title}
+                                    delay={0.1 * i}
+                                    className={`border rounded-lg p-6 lg:p-8 flex flex-col gap-3 ${
+                                        i === 2
+                                            ? "border-[#E0362C]/60 bg-[#F7F7F5]"
+                                            : "border-gray-200"
+                                    }`}
                                 >
-                                    <div className="text-size-medium text-weight-bold mb-2">{f.q}</div>
-                                    <p className="text-size-small opacity-80">{f.a}</p>
+                                    <div className="heading-6 text-weight-bold">{c.title}</div>
+                                    <p className="text-size-small opacity-80">{c.text}</p>
                                 </AnimatedInViewDiv>
                             ))}
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* INTEGRATIONS */}
+            <section>
+                <div className="padding-global py-16">
+                    <div className="w-layout-blockcontainer container w-container">
+                        <AnimatedInViewDiv className="header text-center mb-10">
+                            <h2 className="heading-4 text-weight-medium mb-4">
+                                Plugs Into What You Already Run
+                            </h2>
+                            <p className="opacity-80 max-width-60ch mx-auto">
+                                No rip-and-replace. The automation works between the systems your
+                                team already knows.
+                            </p>
+                        </AnimatedInViewDiv>
+                        <AnimatedInViewDiv delay={0.1} className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                            {INTEGRATIONS.map((name) => (
+                                <span
+                                    key={name}
+                                    className="text-size-small border border-gray-200 rounded-full px-4 py-2 bg-[#F7F7F5]"
+                                >
+                                    {name}
+                                </span>
+                            ))}
+                        </AnimatedInViewDiv>
+                        <AnimatedInViewDiv delay={0.2}>
+                            <p className="text-size-small opacity-70 text-center mt-6 max-width-60ch mx-auto">
+                                Running something we haven&apos;t listed? If it has an API, an
+                                export, or an inbox, we can almost certainly wire to it — ask us in
+                                the form and we&apos;ll tell you straight.
+                            </p>
+                        </AnimatedInViewDiv>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ — the shared /martech accordion, page-specific questions */}
+            <MartechFAQ
+                faqs={FAQS}
+                heading="Questions, Answered Straight"
+                ctaTitle="Get My Top 3 Automations"
+            />
 
             {/* CLOSING CTA */}
             <section>
@@ -511,7 +584,10 @@ export default function AiAutomationPage() {
                                     and what each costs to build.
                                 </p>
                             </AnimatedInViewDiv>
-                            <AnimatedInViewDiv delay={0.15} className="w-full">
+                            {/* id matches MartechCTA's scroll target so the FAQ's
+                                CTA button lands on this form instead of routing
+                                to /martech. */}
+                            <AnimatedInViewDiv delay={0.15} className="w-full" id="martech-lead-form">
                                 <DiagnosticForm location="closing" />
                             </AnimatedInViewDiv>
                         </div>
