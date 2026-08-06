@@ -9,6 +9,12 @@ export const metadata = {
   description: "Leading IT consulting firm specializing in custom software development, cloud solutions, AI/ML, cybersecurity, and digital transformation services. Transform your business with cutting-edge technology.",
   keywords: "custom software development, IT consulting, cloud solutions, AI development, cybersecurity, digital transformation, web development, mobile app development",
   authors: [{ name: "Stackbinary.io" }],
+  // Meta Business domain verification. Must be server-rendered into <head>:
+  // Meta's crawler rejects the tag when JavaScript injects it. Verification
+  // is what unlocks event prioritisation (AEM) for iOS traffic.
+  verification: {
+    other: { "facebook-domain-verification": "ja6r6hgqfxztjths9grww2v24twydx" },
+  },
   openGraph: {
     title: "Stackbinary.io - Custom Software Development & IT Solutions",
     description: "Leading IT consulting firm specializing in custom software development, cloud solutions, AI/ML, cybersecurity, and digital transformation services.",
