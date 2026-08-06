@@ -25,13 +25,13 @@ const SERVICES = [
 
 const BUDGETS = [
     "Under ₹5 Lakh",
-    "₹5 – ₹15 Lakh",
-    "₹15 – ₹40 Lakh",
+    "₹5 - ₹15 Lakh",
+    "₹15 - ₹40 Lakh",
     "₹40 Lakh+",
     "Custom amount…",
     "Prefer not to say",
 ];
-const TIMELINES = ["ASAP", "Within a month", "1–3 months", "Exploring options"];
+const TIMELINES = ["ASAP", "Within a month", "1-3 months", "Exploring options"];
 
 /**
  * @param defaultService  Pre-selects the service dropdown. Passed by product

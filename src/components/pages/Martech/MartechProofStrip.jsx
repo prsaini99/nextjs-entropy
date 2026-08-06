@@ -15,7 +15,7 @@ import AnimatedInViewDiv from "@/components/Animate/AppearInView";
  */
 const PROOF = [
     {
-        headline: "2–3 weeks",
+        headline: "2-3 weeks",
         detail: "for a single project to go live, not a quarter",
     },
     {

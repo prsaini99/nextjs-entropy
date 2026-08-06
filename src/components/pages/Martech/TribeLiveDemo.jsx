@@ -20,7 +20,7 @@ const CURVE = [
 
 const EVENTS = [
     { at: 6, label: "Peak attention" },
-    { at: 40, label: "Self-relevance surge (s37–44)" },
+    { at: 40, label: "Self-relevance surge (s37-44)" },
     { at: 52, label: "Trough, CTA lands too late" },
 ];
 
@@ -200,7 +200,7 @@ export default function TribeLiveDemo() {
                                     <line x1={px} y1="0" x2={px} y2={H} stroke="#ffffff" strokeWidth="1.5" opacity="0.7" />
                                     <circle cx={px} cy={py} r="6" fill="#E0362C" stroke="#ffffff" strokeWidth="2" />
                                     <text x="6" y={H + 18} fill="#ffffff" opacity="0.5" fontSize="11">
-                                        hook (0–3s)
+                                        hook (0-3s)
                                     </text>
                                     <text x={W - 4} y={H + 18} fill="#ffffff" opacity="0.5" fontSize="11" textAnchor="end">
                                         56s

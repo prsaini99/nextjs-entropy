@@ -18,9 +18,9 @@ const martechPages = {
     // because tool-seekers read 4-5 minutes then bounced when the page read
     // as a build pitch.
     tagline:
-      "Zyflus is our live creator marketing platform: discover creators, vet them with AI, automate outreach and negotiate, all in one pipeline. Try it below, then use it your way — run it yourself, have the team that built it run your campaigns, or own a version outright with no per-seat pricing.",
+      "Zyflus is our live creator marketing platform: discover creators, vet them with AI, automate outreach and negotiate, all in one pipeline. Try it below, then use it your way: run it yourself, have the team that built it run your campaigns, or own a version outright with no per-seat pricing.",
     heroStats: [
-      { value: "0–100", label: "AI match score per creator against your ideal influencer profile" },
+      { value: "0-100", label: "AI match score per creator against your ideal influencer profile" },
       { value: "292%", label: "follower growth delivered for StarStruck by Sunny Leone" },
       { value: "100%", label: "yours if you want it: own the platform, your data, no per-seat pricing" },
     ],
@@ -33,7 +33,7 @@ const martechPages = {
       {
         title: "AI Vetting & Match Scoring",
         description:
-          "Every creator is scored 0–100 against your Ideal Influencer Profile, so your team spends time on the top decile instead of scrolling through thousands.",
+          "Every creator is scored 0-100 against your Ideal Influencer Profile, so your team spends time on the top decile instead of scrolling through thousands.",
       },
       {
         title: "DM Outreach Automation",
@@ -67,7 +67,7 @@ const martechPages = {
       items: [
         "StarStruck by Sunny Leone: 292% follower growth, 3.8x ROAS, 8.5% engagement through influencer strategy + performance marketing.",
         "Bioderma India: dermatologist and expert partnerships driving 8.5M impressions and +45% brand recall.",
-        "Prefer to own the machinery? We build you a private Zyflus — your data, your IP, no per-seat pricing — a working system live in 2–3 weeks.",
+        "Prefer to own the machinery? We build you a private Zyflus (your data, your IP, no per-seat pricing), a working system live in 2-3 weeks.",
       ],
     },
     featuresHeading: "Inside Zyflus: Discover, Score, Outreach, Close",
@@ -157,9 +157,9 @@ const martechPages = {
     // covers publish-and-analyze; almost none handles what comes back —
     // comments and DMs — in the same place the campaign runs.
     tagline:
-      "Our AI Ad Intelligence platform runs campaigns end to end: generate posts and ad creative with AI, push them live across 10–20 Meta ad accounts through the API, get AI insights on every ad, and when the campaign talks back, analyze the comments and DMs it earns and respond straight from the dashboard.",
+      "Our AI Ad Intelligence platform runs campaigns end to end: generate posts and ad creative with AI, push them live across 10-20 Meta ad accounts through the API, get AI insights on every ad, and when the campaign talks back, analyze the comments and DMs it earns and respond straight from the dashboard.",
     heroStats: [
-      { value: "10–20", label: "ad accounts managed from a single dashboard" },
+      { value: "10-20", label: "ad accounts managed from a single dashboard" },
       { value: "v23", label: "Meta Graph API, campaign-faithful create & edit" },
       { value: "AI", label: "generate, publish, analyze and respond, one loop" },
     ],
@@ -226,7 +226,7 @@ const martechPages = {
       "Our in-house creative intelligence pipeline runs every ad through five analyses, on-screen emotion, voice & tone, visual pacing, script structure, and predicted brain response, so you know exactly why an ad works, not just whether it did.",
     heroStats: [
       { value: "5", label: "AI lenses per creative, emotion, voice, visuals, script, brain" },
-      { value: "0–3s", label: "hook window scored, the thumb-stop signal" },
+      { value: "0-3s", label: "hook window scored, the thumb-stop signal" },
       { value: "+43%", label: "hook-strength lift identified in a real A/B pair" },
     ],
     features: [
@@ -677,10 +677,10 @@ const martechPages = {
       { title: "Review", description: "Transcripts and outcomes land in your CRM for coaching and reporting." },
     ],
     proof: {
-      heading: "Live product — two ways to have it",
+      heading: "Live product: two ways to have it",
       items: [
-        "This is Oye Hello, our own voice-agent platform running real multilingual conversations today. Create an agent from one document and hear it answer for your business — free test calls, no card.",
-        "Prefer to own the machinery? We deploy the same platform as yours: your infrastructure, wired into your CRM, your data and IP — a working system in 2–3 weeks. Use the quote form below.",
+        "This is Oye Hello, our own voice-agent platform running real multilingual conversations today. Create an agent from one document and hear it answer for your business. Free test calls, no card.",
+        "Prefer to own the machinery? We deploy the same platform as yours: your infrastructure, wired into your CRM, your data and IP, a working system in 2-3 weeks. Use the quote form below.",
       ],
     },
     // The try/own intent split (same pattern as influencer-marketing):
@@ -690,7 +690,7 @@ const martechPages = {
     demo: { href: "https://oyehello.com/?utm_source=stackbinary&utm_medium=referral&utm_campaign=martech-bridge", label: "Try Oye Hello live → oyehello.com", external: true },
     embed: {
       url: "https://oyehello.com/",
-      title: "Oye Hello — the live voice agent platform",
+      title: "Oye Hello: the live voice agent platform",
       note: "This is the real product, embedded live. Create an agent with free test calls, or open it full-screen at oyehello.com.",
     },
   },

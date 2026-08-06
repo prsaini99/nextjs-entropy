@@ -12,21 +12,21 @@ const steps = [
         title: "Stack Audit & Roadmap",
         description:
             "We map your current tools, spend and data flows, find the shelfware and integration debt, and identify what to keep, replace and build, sequenced by ROI.",
-        duration: "Days 1–3",
+        duration: "Days 1-3",
     },
     {
         number: "02",
         title: "Design the System",
         description:
             "Architecture, data schema and UX for the system that replaces the sprawl, designed around your actual campaign workflows, approvals and reporting.",
-        duration: "Days 3–7",
+        duration: "Days 3-7",
     },
     {
         number: "03",
         title: "Build & Integrate",
         description:
             "AI-accelerated delivery: API integrations (Meta, Google, Instagram, email, CRM), automation, dashboards and admin, live in your environment and reviewed by senior engineers.",
-        duration: "Week 2–3",
+        duration: "Week 2-3",
     },
     {
         number: "04",
@@ -53,7 +53,7 @@ export default function MartechProcess() {
                                         <p>
                                             &ldquo;Building takes too long&rdquo; was true in 2020.
                                             AI-accelerated engineering collapsed the timeline: a
-                                            single project runs this path in 2–3 weeks. Replacing a
+                                            single project runs this path in 2-3 weeks. Replacing a
                                             whole stack is several projects in sequence. Still
                                             weeks, and you are using the first one while we build
                                             the next. The managed retainer answers &ldquo;who

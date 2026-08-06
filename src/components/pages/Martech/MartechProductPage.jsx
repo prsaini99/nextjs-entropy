@@ -404,7 +404,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                 defaultService={formServiceForSlug[slug] || ""}
                                 source={slug ? `martech/${slug}` : "martech"}
                                 heading={`Get a Quote for ${page.badge.split("·")[0].trim()}`}
-                                subheading="Tell us what you need and we'll come back with scope, timeline and cost. Most single projects go live in 2–3 weeks."
+                                subheading="Tell us what you need and we'll come back with scope, timeline and cost. Most single projects go live in 2-3 weeks."
                                 submitLabel="Get My Build Quote →"
                             />
                         </div>
