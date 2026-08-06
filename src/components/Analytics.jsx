@@ -15,6 +15,13 @@ const GA_ID = 'G-WTDN6LFJQ8';
 // code — same ownership rule as GA: never duplicated via GTM.
 const CLARITY_ID = 'xtggkeesip';
 
+// Meta Pixel, dataset "Stackbinary". Pinned like the others. The pixel is
+// half the picture: lead conversions are also sent server-side through
+// /api/capi with the same event_id, and Meta deduplicates the pair. That
+// redundancy is what keeps conversions visible when an ad blocker or iOS
+// tracking prevention kills the browser copy.
+const META_PIXEL_ID = '1956271148635450';
+
 // Do not load GA4 or Clarity outside production. Development sessions were
 // landing in the live property as unattributed, zero-engagement traffic — about
 // half the dataset — and Clarity was recording localhost sessions alongside
@@ -161,6 +168,24 @@ export default function Analytics() {
           // page views for every route. Leaving it on made config auto-send a
           // second hit for the landing page.
           gtag('config', '${GA_ID}', { send_page_view: false });
+        `}
+      </Script>
+
+      {/* Meta Pixel — ad attribution + retargeting audiences. Loads on every
+          page so the audience builds from today's organic and Google Ads
+          traffic, before any Meta campaign runs. */}
+      <Script id="meta-pixel" strategy="afterInteractive">
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window,document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '${META_PIXEL_ID}');
+          fbq('track', 'PageView');
         `}
       </Script>
 

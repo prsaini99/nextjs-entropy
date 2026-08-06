@@ -4,7 +4,7 @@ import { useState } from "react";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import MartechFAQ from "@/components/pages/Martech/MartechFAQ";
 import { trackFormInteraction } from "@/lib/analytics";
-import { trackLeadSubmit } from "@/lib/trackLead";
+import { getLeadEventId, trackLeadSubmit } from "@/lib/trackLead";
 import { clickIdPayload } from "@/lib/clickIds";
 import { getUTMData } from "@/hooks/useUTMTracking";
 
@@ -182,6 +182,7 @@ function DiagnosticForm({ location }) {
                     utm_content: utm("utm_content"),
                     attribution_data: stored,
                     privacyConsent: true,
+                    meta_event_id: getLeadEventId(),
                     ...clickIdPayload(),
                 }),
             });
