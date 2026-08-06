@@ -147,6 +147,12 @@ export default function Analytics() {
   }, [utmData]);
 
 
+  // Careers is excluded from the ad platform only (see the pixel block below).
+  // Computed here rather than inside JSX so the SPA page_view effect can use
+  // the same rule: a candidate who browses from a job page to a product page
+  // should not be counted as a buyer either.
+  const isCareersRoute = pathname?.startsWith('/careers');
+
   // Nothing loads in development, so localhost can no longer pollute the
   // property. The effects above are harmless no-ops without gtag/clarity.
   if (!ANALYTICS_ENABLED) return null;
@@ -171,9 +177,16 @@ export default function Analytics() {
         `}
       </Script>
 
-      {/* Meta Pixel — ad attribution + retargeting audiences. Loads on every
-          page so the audience builds from today's organic and Google Ads
-          traffic, before any Meta campaign runs. */}
+      {/* Meta Pixel — ad attribution + retargeting audiences.
+          DELIBERATELY NOT LOADED ON /careers: the 2026-08 applicant flood put
+          6,000+ job seekers through those pages, which vastly outnumber buyers.
+          Feeding them to the pixel would teach Meta that our customer looks
+          like a job applicant, and every lookalike, retargeting pool and
+          Advantage+ expansion built afterwards would inherit that. GA4 and
+          Clarity still track careers in full; only the ad platform is spared.
+          Revisit only if we ever run recruitment ads, which would want their
+          own dataset anyway. */}
+      {!isCareersRoute && (
       <Script id="meta-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
@@ -188,6 +201,7 @@ export default function Analytics() {
           fbq('track', 'PageView');
         `}
       </Script>
+      )}
 
       {/* Microsoft Clarity — heatmaps + session recordings */}
       <Script id="ms-clarity" strategy="afterInteractive">
