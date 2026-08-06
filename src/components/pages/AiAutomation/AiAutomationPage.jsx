@@ -29,19 +29,19 @@ const JOBS = [
         tag: "AI that reads intent",
         title: "WhatsApp Replies & Follow-Ups",
         description:
-            "Not canned auto-replies. An AI that understands what the customer is actually asking, answers from your business data in their language, follows up on its own, and hands to a human the moment it should — on the official WhatsApp Business API.",
+            "Not canned auto-replies. An AI that understands what the customer is actually asking, answers from your business data in their language, follows up on its own, and hands to a human the moment it should, all on the official WhatsApp Business API.",
     },
     {
         tag: "AI that reads documents",
         title: "Invoices & Accounts Payable",
         description:
-            "Invoices in any format — clean PDFs, scans, photos of paper. AI extracts every line item, checks it against purchase orders, flags what doesn't add up, and posts clean entries to your accounting system for one-click approval.",
+            "Invoices in any format: clean PDFs, scans, photos of paper. AI extracts every line item, checks it against purchase orders, flags what doesn't add up, and posts clean entries to your accounting system for one-click approval.",
     },
     {
         tag: "AI that writes",
         title: "Email Journeys That Run Themselves",
         description:
-            "AI segments your list by real behaviour, drafts on-brand emails per segment, and picks the moment to send — welcome, nurture, win-back — from infrastructure you own, with no per-contact pricing.",
+            "AI segments your list by real behaviour, drafts on-brand emails per segment, and picks the moment to send (welcome, nurture, win-back) from infrastructure you own, with no per-contact pricing.",
     },
     {
         tag: "AI that speaks",
@@ -53,13 +53,13 @@ const JOBS = [
         tag: "AI that extracts",
         title: "Data Entry & Document Processing",
         description:
-            "Forms, PDFs and spreadsheets read by AI and written into your systems — validated against your rules, flagged when unsure, audit-trailed on every field. The copy-paste job, retired.",
+            "Forms, PDFs and spreadsheets read by AI and written into your systems, validated against your rules, flagged when unsure, audit-trailed on every field. The copy-paste job, retired.",
     },
     {
         tag: "AI that prioritises",
         title: "Lead Follow-Up & CRM Updates",
         description:
-            "AI scores every new enquiry, responds in under a minute on the right channel — call, WhatsApp or email — personalises each touch, and keeps your CRM writing itself. Speed-to-lead, without hiring for it.",
+            "AI scores every new enquiry, responds in under a minute on the right channel (call, WhatsApp or email), personalises each touch, and keeps your CRM writing itself. Speed-to-lead, without hiring for it.",
     },
 ];
 
@@ -67,17 +67,17 @@ const STORIES = [
     {
         tag: "Healthcare",
         title: "The clinic chain that stopped playing phone-tag",
-        body: "A multi-branch clinic was losing bookings to phone-tag: front desks busy at exactly the hours patients call, nobody answering after 7pm. Now an AI receptionist answers every call, books directly into each branch's calendar, and WhatsApp-confirms the appointment before the caller has put the phone down. Reception went back to the patients standing in front of them — and roughly 20 hours a week of phone-tag disappeared.",
+        body: "A multi-branch clinic was losing bookings to phone-tag: front desks busy at exactly the hours patients call, nobody answering after 7pm. Now an AI receptionist answers every call, books directly into each branch's calendar, and WhatsApp-confirms the appointment before the caller has put the phone down. Reception went back to the patients standing in front of them, and roughly 20 hours a week of phone-tag disappeared.",
     },
     {
         tag: "Distribution",
         title: "The distributor that closed month-end in an afternoon",
-        body: "A trading business was hand-typing hundreds of supplier invoices a month — slow, error-prone, always behind. Now invoices land in one inbox, AI extracts every line item, flags mismatches against purchase orders, and posts clean entries for a human to approve in one click. Month-end closing went from a week of overtime to an afternoon.",
+        body: "A trading business was hand-typing hundreds of supplier invoices a month: slow, error-prone, always behind. Now invoices land in one inbox, AI extracts every line item, flags mismatches against purchase orders, and posts clean entries for a human to approve in one click. Month-end closing went from a week of overtime to an afternoon.",
     },
     {
         tag: "Real Estate",
         title: "The brokerage where no lead goes cold",
-        body: "A brokerage was generating portal leads faster than its agents could dial. Now every new enquiry gets a call within a minute, a WhatsApp with matching listings, and an email sequence that nudges until the visit is booked — every touch logged to the CRM automatically. Same ad spend, same team; nothing leaks between enquiry and site visit.",
+        body: "A brokerage was generating portal leads faster than its agents could dial. Now every new enquiry gets a call within a minute, a WhatsApp with matching listings, and an email sequence that nudges until the visit is booked, with every touch logged to the CRM automatically. Same ad spend, same team; nothing leaks between enquiry and site visit.",
     },
 ];
 
@@ -86,11 +86,11 @@ const STORIES = [
 const FAQS = [
     {
         question: "Do we have to replace the tools we already use?",
-        answer: "No — and this is the point most people worry about needlessly. We build automations to plug into what you already run: your CRM, your accounting software, your calendars, your WhatsApp Business account, your spreadsheets. The automation does the repetitive work between your existing systems; it does not ask you to migrate off them.",
+        answer: "No, and this is the point most people worry about needlessly. We build automations to plug into what you already run: your CRM, your accounting software, your calendars, your WhatsApp Business account, your spreadsheets. The automation does the repetitive work between your existing systems; it does not ask you to migrate off them.",
     },
     {
         question: "How long does it take?",
-        answer: "A single working automation goes live in 2–3 weeks. We deliberately scope one automation at a time — the highest-ROI one first — rather than proposing a six-month transformation.",
+        answer: "A single working automation goes live in 2-3 weeks. We deliberately scope one automation at a time, the highest-ROI one first, rather than proposing a six-month transformation.",
     },
     {
         question: "What does it cost?",
@@ -98,7 +98,7 @@ const FAQS = [
     },
     {
         question: "What if we don't know what to automate?",
-        answer: "That's the normal starting point — it's what the form on this page is for. Tell us where your team's hours actually go, and we'll reply with the three automations worth building first and what each would save you. No obligation.",
+        answer: "That's the normal starting point. It's what the form on this page is for. Tell us where your team's hours actually go, and we'll reply with the three automations worth building first and what each would save you. No obligation.",
     },
     {
         question: "Who owns the automation afterwards?",
@@ -115,10 +115,10 @@ const INTEGRATIONS = [
 ];
 
 const HERO_STATS = [
-    { value: "2–3", label: "weeks from first call to a working automation, live" },
+    { value: "2-3", label: "weeks from first call to a working automation, live" },
     { value: "0", label: "per-seat licences. A growing team is not a growing bill." },
     { value: "100+", label: "AI systems and automations shipped by the team behind this page" },
-    { value: "1", label: "automation at a time — the highest-ROI one first" },
+    { value: "1", label: "automation at a time, the highest-ROI one first" },
 ];
 
 const HOUR_SINKS = [
@@ -130,8 +130,8 @@ const HOUR_SINKS = [
     "Reports & copy-paste between tools",
 ];
 
-const TEAM_SIZES = ["1–5", "6–20", "21–50", "51–200", "200+"];
-const BUDGETS = ["Under ₹1 Lakh", "₹1 – ₹5 Lakh", "₹5 – ₹15 Lakh", "₹15 Lakh+", "Not sure yet"];
+const TEAM_SIZES = ["1-5", "6-20", "21-50", "51-200", "200+"];
+const BUDGETS = ["Under ₹1 Lakh", "₹1 - ₹5 Lakh", "₹5 - ₹15 Lakh", "₹15 Lakh+", "Not sure yet"];
 
 function DiagnosticForm({ location }) {
     const [step, setStep] = useState(1);
@@ -205,7 +205,7 @@ function DiagnosticForm({ location }) {
                 <div className="heading-6 text-weight-bold">Got it. Watch your inbox.</div>
                 <p className="text-size-regular opacity-85">
                     Within one business day you&apos;ll get the three automations worth building
-                    first for a team like yours — and what each would save you. A person writes
+                    first for a team like yours, and what each would save you. A person writes
                     this, not a bot.
                 </p>
             </div>
@@ -221,7 +221,7 @@ function DiagnosticForm({ location }) {
                 <div className="heading-6 text-weight-bold">Get Your Top 3 Automations</div>
                 <p className="text-size-small opacity-85 mt-2">
                     Tell us where the hours go. We&apos;ll reply within one business day with the
-                    three automations worth building first — and what each would save you. No
+                    three automations worth building first, and what each would save you. No
                     obligation.
                 </p>
             </div>
@@ -316,7 +316,7 @@ function DiagnosticForm({ location }) {
                     </button>
                     {status === "error" && (
                         <p className="text-size-small text-red-600">
-                            Something went wrong — please try again, or email contact@stackbinary.io.
+                            Something went wrong. Please try again, or email contact@stackbinary.io.
                         </p>
                     )}
                 </>
@@ -355,14 +355,14 @@ export default function AiAutomationPage() {
                                     <p className="opacity-80">
                                         We find it, price it, and automate it with AI that does the
                                         judgment work: reading documents, understanding callers,
-                                        drafting replies. Live in 2–3 weeks because we build with
+                                        drafting replies. Live in 2-3 weeks because we build with
                                         AI too, owned outright, and wired into the tools you
                                         already run. No rip-and-replace, no six-month
                                         transformation project.
                                     </p>
                                     <ul className="flex flex-col gap-2">
                                         {[
-                                            "One working automation live in 2–3 weeks, not a quarter",
+                                            "One working automation live in 2-3 weeks, not a quarter",
                                             "Plugs into your existing CRM, accounting, calendars and WhatsApp",
                                             "Yours outright: code, data and accounts. Zero per-seat licences",
                                         ].map((point) => (
@@ -406,7 +406,7 @@ export default function AiAutomationPage() {
                         <AnimatedInViewDiv className="header text-center mb-12 mx-auto">
                             <h2 className="heading-4 text-weight-medium mb-4">What We Automate</h2>
                             <p className="opacity-80 max-width-60ch mx-auto">
-                                The six places business hours actually disappear — and the AI
+                                The six places business hours actually disappear, and the AI
                                 capability that takes each one over, working alongside the tools
                                 you already use.
                             </p>
@@ -454,7 +454,7 @@ export default function AiAutomationPage() {
                                     text: "Reading a messy invoice, understanding a caller who switches languages mid-sentence, drafting a reply that sounds like your business, deciding which lead is worth a call first. Rule-based automation cannot do any of that. AI is the difference between automating the tidy 20% and automating the real work.",
                                 },
                                 {
-                                    title: "Built with AI, that's the 2–3 weeks",
+                                    title: "Built with AI, that's the 2-3 weeks",
                                     text: "The same shift changed how software gets built. Our engineers ship AI-accelerated, which is how a working automation goes live in weeks instead of quarters, at a price that used to buy a discovery phase. It's the same way we've shipped 100+ systems of our own.",
                                 },
                                 {
@@ -519,7 +519,7 @@ export default function AiAutomationPage() {
                                 },
                                 {
                                     step: "02 · Build",
-                                    text: "We ship the highest-ROI one first, engineered AI-accelerated, which is why it goes live in 2–3 weeks and not a quarter. Integrated with the CRM, accounting, calendar and WhatsApp you already run; your team keeps working, nothing gets ripped out.",
+                                    text: "We ship the highest-ROI one first, engineered AI-accelerated, which is why it goes live in 2-3 weeks and not a quarter. Integrated with the CRM, accounting, calendar and WhatsApp you already run; your team keeps working, nothing gets ripped out.",
                                 },
                                 {
                                     step: "03 · Own",
@@ -559,14 +559,14 @@ export default function AiAutomationPage() {
                             {[
                                 {
                                     title: "Buy another SaaS tool",
-                                    text: "Fast to start — then the real work begins: configuring it, migrating into it, paying per seat forever, and discovering your workflow doesn't quite fit its template. The average business already runs dozens of tools that don't talk to each other. Adding one more rarely fixes that.",
+                                    text: "Fast to start. Then the real work begins: configuring it, migrating into it, paying per seat forever, and discovering your workflow doesn't quite fit its template. The average business already runs dozens of tools that don't talk to each other. Adding one more rarely fixes that.",
                                 },
                                 {
                                     title: "Hire a no-code gluer",
-                                    text: "Cheap and quick — a freelancer chains your tools together with connector subscriptions. It works until a connector changes, a trigger silently fails, or the freelancer moves on. You own nothing, and nobody is accountable when the chain breaks at month-end.",
+                                    text: "Cheap and quick: a freelancer chains your tools together with connector subscriptions. It works until a connector changes, a trigger silently fails, or the freelancer moves on. You own nothing, and nobody is accountable when the chain breaks at month-end.",
                                 },
                                 {
-                                    title: "Have it engineered — once",
+                                    title: "Have it engineered, once",
                                     text: "We build the automation as real software, wired directly into your systems, tested against your actual volumes, and handed over with everything: code, data, accounts. It's the difference between renting a workaround and owning an asset.",
                                 },
                             ].map((c, i) => (
@@ -614,7 +614,7 @@ export default function AiAutomationPage() {
                         <AnimatedInViewDiv delay={0.2}>
                             <p className="text-size-small opacity-70 text-center mt-6 max-width-60ch mx-auto">
                                 Running something we haven&apos;t listed? If it has an API, an
-                                export, or an inbox, we can almost certainly wire to it — ask us in
+                                export, or an inbox, we can almost certainly wire to it. Ask us in
                                 the form and we&apos;ll tell you straight.
                             </p>
                         </AnimatedInViewDiv>
@@ -640,7 +640,7 @@ export default function AiAutomationPage() {
                                 </h2>
                                 <p className="opacity-80 max-width-48ch">
                                     Two minutes of questions. One reply, from a person, with the
-                                    three automations that would save your team the most hours —
+                                    three automations that would save your team the most hours,
                                     and what each costs to build.
                                 </p>
                             </AnimatedInViewDiv>
