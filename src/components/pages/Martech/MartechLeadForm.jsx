@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { trackEvent, trackFormInteraction, ANALYTICS_EVENTS } from "@/lib/analytics";
-import { trackLeadSubmit } from "@/lib/trackLead";
+import { getLeadEventId, trackLeadSubmit } from "@/lib/trackLead";
 import { clickIdPayload } from "@/lib/clickIds";
 import { getUTMData } from "@/hooks/useUTMTracking";
 
@@ -133,6 +133,7 @@ export default function MartechLeadForm({
                     utm_content: utm("utm_content"),
                     attribution_data: stored,
                     privacyConsent: true,
+                    meta_event_id: getLeadEventId(),
                     ...clickIdPayload(),
                 }),
             });

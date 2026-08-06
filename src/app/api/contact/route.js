@@ -1,4 +1,5 @@
 import { buildMailTransport, mailConfigured } from "@/lib/mailer";
+import { sendMetaEvent, readMetaCookies } from "@/lib/meta-capi";
 import { supabase, calculateLeadScore } from "@/lib/supabase";
 import { supabaseAdmin } from "@/lib/supabase-admin";
 import { confirmationEmailHtml, confirmationEmailText } from "@/lib/email-templates";
@@ -39,7 +40,8 @@ export async function POST(request) {
 			projectSummary, companyWebsite, phone, privacyConsent,
 			utm_source, utm_medium, utm_campaign, utm_term, utm_content,
 			attribution_data, landing_page, referrer, lead_source,
-			gclid, gbraid, wbraid, fbclid, msclkid, click_id_captured_at
+			gclid, gbraid, wbraid, fbclid, msclkid, click_id_captured_at,
+			meta_event_id
 		} = body;
 
 		if (!fullName || !workEmail || !service || !timeline) {
@@ -101,6 +103,30 @@ export async function POST(request) {
 		} catch (dbError) {
 			console.error('Database storage error:', dbError);
 			// Continue with email sending even if database storage fails
+		}
+
+		// Meta conversion, server side. This copy carries the real email and
+		// phone (hashed inside the relay), a far stronger match than the
+		// browser's anonymous pixel event, and it survives ad blockers. The
+		// pixel fired the same Lead with meta_event_id, so Meta counts one.
+		// Placed before the email branches so it runs on every stored lead.
+		try {
+			const { fbp, fbc } = readMetaCookies(request.headers.get('cookie'));
+			await sendMetaEvent({
+				eventName: 'Lead',
+				eventId: meta_event_id,
+				sourceUrl: landing_page ? `https://stackbinary.io${landing_page}` : 'https://stackbinary.io/',
+				email: workEmail,
+				phone,
+				fbclid,
+				fbp,
+				fbc,
+				clientIp: (request.headers.get('x-forwarded-for') || '').split(',')[0].trim() || undefined,
+				userAgent: request.headers.get('user-agent') || undefined,
+				customData: { content_name: lead_source || 'form', content_category: service },
+			});
+		} catch (metaError) {
+			console.error('Meta conversion send failed:', metaError);
 		}
 
 		// If the lead could not be stored AND email is unavailable, fail loudly

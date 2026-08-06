@@ -4,7 +4,7 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import Link from 'next/link';
 import { useUTMTracking } from '@/hooks/useUTMTracking';
 import { trackEvent, trackFormInteraction, trackSocialClick, trackConversion, ANALYTICS_EVENTS } from '@/lib/analytics';
-import { trackLeadSubmit } from '@/lib/trackLead';
+import { getLeadEventId, trackLeadSubmit } from '@/lib/trackLead';
 import { clickIdPayload } from '@/lib/clickIds';
 
 const FORM_STATUS = {
@@ -141,6 +141,7 @@ export default function ContactWrapper() {
                 referrer: currentUTM.referrer,
                 // gclid and friends — required for Google Ads offline
                 // conversion import. See lib/clickIds.js.
+                meta_event_id: getLeadEventId(),
                 ...clickIdPayload(),
             };
 
