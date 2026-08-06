@@ -58,7 +58,10 @@ export async function sendMetaEvent({
 	userAgent,
 	customData,
 }) {
-	if (!DATASET_ID || !ACCESS_TOKEN || !eventName) return false;
+	// Distinguish "not configured" from "Meta refused it": without this the
+	// caller cannot tell a missing env var from a bad payload.
+	if (!DATASET_ID || !ACCESS_TOKEN) return { ok: false, reason: "unconfigured" };
+	if (!eventName) return { ok: false, reason: "no-event-name" };
 
 	const eventTime = Math.floor(Date.now() / 1000);
 	const userData = {
@@ -96,11 +99,15 @@ export async function sendMetaEvent({
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: form.toString(),
 		});
-		if (!res.ok) console.error("capi: Meta rejected event", eventName, await res.text());
-		return res.ok;
+		if (!res.ok) {
+			const detail = await res.text();
+			console.error("capi: Meta rejected event", eventName, detail);
+			return { ok: false, reason: "rejected", detail: detail.slice(0, 300) };
+		}
+		return { ok: true };
 	} catch (err) {
 		console.error("capi: send failed", err);
-		return false;
+		return { ok: false, reason: "network" };
 	}
 }
 
