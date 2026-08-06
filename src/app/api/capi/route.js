@@ -20,7 +20,7 @@ export async function POST(request) {
 	const { fbp, fbc } = readMetaCookies(request.headers.get("cookie"));
 	const forwarded = request.headers.get("x-forwarded-for") || "";
 
-	const ok = await sendMetaEvent({
+	const result = await sendMetaEvent({
 		eventName: body.eventName,
 		eventId: body.eventId,
 		sourceUrl: body.sourceUrl,
@@ -34,5 +34,5 @@ export async function POST(request) {
 		customData: body.customData,
 	});
 
-	return Response.json({ ok });
+	return Response.json(result);
 }
