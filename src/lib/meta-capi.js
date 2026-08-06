@@ -9,8 +9,10 @@
 
 import { createHash } from "crypto";
 
-const DATASET_ID = process.env.META_DATASET_ID;
-const ACCESS_TOKEN = process.env.META_CAPI_TOKEN;
+// Trimmed: a token pasted into a dashboard commonly picks up a trailing
+// newline or space, which Meta rejects as a malformed credential (code 190).
+const DATASET_ID = process.env.META_DATASET_ID?.trim();
+const ACCESS_TOKEN = process.env.META_CAPI_TOKEN?.trim();
 // Set to a code from Events Manager > Test events to watch events land there
 // instead of counting as production traffic. Leave unset in normal operation.
 const TEST_EVENT_CODE = process.env.META_TEST_EVENT_CODE;
