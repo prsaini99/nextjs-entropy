@@ -12,6 +12,13 @@ const links = {
         { href: ROUTES.ABOUT, label: "About" },
         { href: ROUTES.SERVICES, label: "Services" }
     ],
+    // Cross-domain entity link: tells visitors, search engines and AI
+    // retrieval that Stackbinary makes Oye Hello. Sitewide footer placement
+    // is deliberate — it corroborates the parentOrganization schema on
+    // oyehello.com from every page of the established domain.
+    products: [
+        { href: "https://oyehello.com/?utm_source=stackbinary&utm_medium=referral&utm_campaign=footer", label: "Oye Hello™ — AI that answers your phone" },
+    ],
     // support: [
     //     // { href: "/pricing", label: "Pricing" },
     //     // { href: "/faq", label: "FAQ" }
