@@ -689,7 +689,9 @@ const martechPages = {
     // the lead form. Replaced the bare Vercel console link 2026-08-04.
     demo: { href: "https://oyehello.com/?utm_source=stackbinary&utm_medium=referral&utm_campaign=martech-bridge", label: "Try Oye Hello live → oyehello.com", external: true },
     embed: {
-      url: "https://oyehello.com/",
+      // UTM matches the demo CTA above so both bridge paths attribute to the
+      // same campaign instead of one landing as anonymous referral traffic.
+      url: "https://oyehello.com/?utm_source=stackbinary&utm_medium=referral&utm_campaign=martech-bridge&utm_content=embed",
       title: "Oye Hello: the live voice agent platform",
       note: "This is the real product, embedded live. Create an agent with free test calls, or open it full-screen at oyehello.com.",
     },
