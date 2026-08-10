@@ -1,7 +1,19 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { trackEvent, ANALYTICS_EVENTS } from '@/lib/analytics';
-import { trackLeadSubmit } from '@/lib/trackLead';
+import { trackLeadSubmit, getLeadEventId } from '@/lib/trackLead';
+import { getUTMData } from '@/hooks/useUTMTracking';
+import { clickIdPayload } from '@/lib/clickIds';
+
+// Shown while the conversation is still just the greeting. Visitors often
+// don't know what to ask a website bot; each chip is a real question the bot
+// answers well and that moves toward qualification.
+const STARTER_QUESTIONS = [
+    'What could you automate in my business?',
+    'How long does an automation project take?',
+    'What does a typical project cost?',
+    'Can AI answer my business phone calls?',
+];
 
 /**
  * Floating chat launcher + panel.
@@ -55,7 +67,7 @@ export default function FloatingChat() {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hi! I'm StackBinary™'s multi-agent assistant. I can help with your project needs, schedule discovery calls, and connect you with our team. How can I assist you today?",
+            text: "Hi! I'm Stackbinary's assistant. Ask me what we could build or automate for your business, how projects run, or anything about our AI call answering. Pick a question below or type your own.",
             isBot: true,
             timestamp: new Date()
         }
@@ -90,16 +102,22 @@ export default function FloatingChat() {
         return () => window.removeEventListener('keydown', onKey);
     }, [isOpen]);
 
-    const sendMessage = async (e) => {
-        e.preventDefault();
-        if (!inputMessage.trim() || isLoading) return;
+    const sendText = async (text) => {
+        const trimmed = text.trim();
+        if (!trimmed || isLoading) return;
 
         const userMessage = {
             id: Date.now(),
-            text: inputMessage,
+            text: trimmed,
             isBot: false,
             timestamp: new Date()
         };
+
+        // Snapshot before appending: this is the history the server receives.
+        const priorHistory = messages.map((m) => ({
+            role: m.isBot ? 'assistant' : 'user',
+            content: m.text,
+        }));
 
         setMessages(prev => [...prev, userMessage]);
         setInputMessage('');
@@ -109,10 +127,20 @@ export default function FloatingChat() {
         trackEvent(ANALYTICS_EVENTS.CHAT_MESSAGE, { message_index: messageCount.current });
 
         try {
+            const stored = getUTMData();
+            const attributed = { ...stored.first_touch, ...stored.last_touch, ...clickIdPayload() };
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ user: inputMessage, session_id: sessionId }),
+                body: JSON.stringify({
+                    user: trimmed,
+                    session_id: sessionId,
+                    history: priorHistory,
+                    page: window.location.pathname,
+                    referrer: document.referrer || null,
+                    utm: attributed,
+                    meta_event_id: getLeadEventId(),
+                }),
             });
 
             const data = await response.json();
@@ -136,7 +164,14 @@ export default function FloatingChat() {
                     leadCollected: data.lead_collected || false
                 }]);
             } else {
-                throw new Error(data.error || 'Something went wrong');
+                // Rate limits and validation come back with a human-readable
+                // answer; show that rather than a generic failure.
+                setMessages(prev => [...prev, {
+                    id: Date.now() + 1,
+                    text: data.answer || "I'm experiencing technical difficulties. Please try again or contact us directly: https://stackbinary.io/contact-us",
+                    isBot: true,
+                    timestamp: new Date()
+                }]);
             }
         } catch (error) {
             console.error('Chat error:', error);
@@ -149,6 +184,11 @@ export default function FloatingChat() {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const sendMessage = (e) => {
+        e.preventDefault();
+        sendText(inputMessage);
     };
 
     return (
@@ -179,9 +219,9 @@ export default function FloatingChat() {
                                 </svg>
                             </div>
                             <div>
-                                <div className="chat-title">StackBinary™ Assistant</div>
+                                <div className="chat-title">Stackbinary Assistant</div>
                                 <div className="chat-subtitle">
-                                    {leadCollected ? '✓ Lead Captured' : 'Multi-Agent AI • Online'}
+                                    {leadCollected ? '✓ Details received' : 'AI assistant · Online'}
                                 </div>
                             </div>
                         </div>
@@ -209,6 +249,20 @@ export default function FloatingChat() {
                                 />
                             </div>
                         ))}
+                        {messages.length <= 1 && !isLoading && (
+                            <div className="chat-starters">
+                                {STARTER_QUESTIONS.map((q) => (
+                                    <button
+                                        key={q}
+                                        type="button"
+                                        className="chat-starter"
+                                        onClick={() => sendText(q)}
+                                    >
+                                        {q}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                         {isLoading && (
                             <div className="chat-row is-bot">
                                 <div className="chat-bubble bot chat-typing">
@@ -348,6 +402,25 @@ export default function FloatingChat() {
                 .chat-bubble.user { background: #E0362C; }
                 .chat-bubble.lead { background: #2d5a2d; border: 1px solid #4ade80; }
                 .chat-link { color: #a0c4ff; text-decoration: underline; }
+
+                .chat-starters {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    margin: 4px 0 16px;
+                }
+                .chat-starter {
+                    padding: 8px 14px;
+                    border: 1px solid #555;
+                    border-radius: 16px;
+                    background: transparent;
+                    color: #fff;
+                    font-size: 13px;
+                    text-align: left;
+                    cursor: pointer;
+                }
+                .chat-starter:hover { border-color: #E0362C; color: #E0362C; }
 
                 .chat-typing { display: flex; align-items: center; gap: 8px; }
                 .chat-typing .dot {
