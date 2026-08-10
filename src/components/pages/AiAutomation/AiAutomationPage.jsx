@@ -219,7 +219,10 @@ function DiagnosticForm({ location }) {
             className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-4"
         >
             <div>
-                <div className="heading-6 text-weight-bold">Get Your Top 3 Automations</div>
+                <div className="flex items-baseline justify-between gap-3">
+                    <div className="heading-6 text-weight-bold">Get Your Top 3 Automations</div>
+                    <div className="text-size-tiny opacity-70 whitespace-nowrap">Step {step} of 2</div>
+                </div>
                 <p className="text-size-small opacity-85 mt-2">
                     Tell us where the hours go. We&apos;ll reply within one business day with the
                     three automations worth building first, and what each would save you. No
@@ -282,8 +285,13 @@ function DiagnosticForm({ location }) {
 
             {step === 2 && (
                 <>
+                    <p className="text-size-small opacity-85">
+                        Last step. We reply by email, and there is no sales call unless you ask
+                        for one.
+                    </p>
                     <input
                         type="text"
+                        autoFocus
                         placeholder="Full name *"
                         value={contact.fullName}
                         onChange={(e) => setContact({ ...contact, fullName: e.target.value })}
