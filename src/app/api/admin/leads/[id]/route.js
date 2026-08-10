@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+// The anon-key client cannot read leads under RLS; every admin route must use
+// the service-role client, same as the list route.
+import { supabaseAdmin } from '@/lib/supabase-admin';
 
 export async function GET(request, { params }) {
   try {
@@ -13,7 +15,7 @@ export async function GET(request, { params }) {
     }
 
     // Get lead details
-    const { data: lead, error: leadError } = await supabase
+    const { data: lead, error: leadError } = await supabaseAdmin
       .from('leads')
       .select('*')
       .eq('id', id)
@@ -34,7 +36,7 @@ export async function GET(request, { params }) {
     }
 
     // Get lead notes
-    const { data: notes, error: notesError } = await supabase
+    const { data: notes, error: notesError } = await supabaseAdmin
       .from('lead_notes')
       .select('*')
       .eq('lead_id', id)
@@ -80,7 +82,7 @@ export async function PUT(request, { params }) {
     if (assigned_to !== undefined) updateData.assigned_to = assigned_to;
     if (estimated_value !== undefined) updateData.estimated_value = estimated_value;
 
-    const { data: updatedLead, error } = await supabase
+    const { data: updatedLead, error } = await supabaseAdmin
       .from('leads')
       .update(updateData)
       .eq('id', id)
@@ -117,7 +119,7 @@ export async function DELETE(request, { params }) {
       );
     }
 
-    const { error } = await supabase
+    const { error } = await supabaseAdmin
       .from('leads')
       .delete()
       .eq('id', id);
