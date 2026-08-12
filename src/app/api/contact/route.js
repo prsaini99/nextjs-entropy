@@ -2,6 +2,7 @@ import { buildMailTransport, mailConfigured } from "@/lib/mailer";
 import { sendMetaEvent, readMetaCookies } from "@/lib/meta-capi";
 import { supabase, calculateLeadScore } from "@/lib/supabase";
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { applyCareersVetting } from "@/lib/careers-vetting";
 import { confirmationEmailHtml, confirmationEmailText } from "@/lib/email-templates";
 import { NOTIFY_EMAIL, MAIL_FROM } from "@/constants/contact";
 
@@ -83,6 +84,11 @@ export async function POST(request) {
 
 		// Calculate lead score
 		leadData.lead_score = calculateLeadScore(leadData);
+
+		// Job seekers reach for whichever input box is nearest, including this
+		// one. Marking them here keeps the sales pipeline honest without
+		// discarding anything.
+		await applyCareersVetting(leadData);
 
 		// Store lead in Supabase database using admin client (bypasses RLS)
 		let leadId = null;

@@ -109,6 +109,7 @@ export default function LeadsPage() {
             <option value="proposal_sent">Proposal Sent</option>
             <option value="won">Won</option>
             <option value="lost">Lost</option>
+            <option value="careers">Careers (not a lead)</option>
           </select>
         </div>
 
@@ -357,6 +358,10 @@ function StatusDropdown({ currentStatus, leadId, onStatusChange }) {
     { value: 'proposal_sent', label: 'Proposal Sent', color: 'bg-purple-100 text-purple-800' },
     { value: 'won', label: 'Won', color: 'bg-green-100 text-green-800' },
     { value: 'lost', label: 'Lost', color: 'bg-red-100 text-red-800' },
+    // Set automatically when the email matches a job application — not a sales
+    // stage, but it has to appear here or the dropdown would blank out on
+    // those rows.
+    { value: 'careers', label: 'Careers (not a lead)', color: 'bg-gray-200 text-gray-700' },
   ];
 
   const currentStatusObj = statuses.find(s => s.value === currentStatus);
