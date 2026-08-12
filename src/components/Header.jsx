@@ -19,7 +19,22 @@ export default function Header() {
                 <div className="container w-container">
                     <div className="navbar-component">
                         <Link href="/" aria-current="page" className="brand w-nav-brand w--current">
-                            <Image src="/stack-logo.png" width={150} height={40} loading="lazy" alt="StackBinary™ Logo" />
+                            {/* Explicit height + auto width, because style.css carries a
+                                global `img { width:100%; height:100%; object-fit:cover }`.
+                                With no class of its own the logo inherited that rule: the
+                                percentage resolves against a flex parent that has no
+                                definite width, which Chrome and Safari disagree about, and
+                                object-fit:cover then cropped the wordmark away to just the
+                                mark. iOS Safari showed a giant cropped logo where desktop
+                                looked fine. */}
+                            <Image
+                                src="/stack-logo.png"
+                                width={150}
+                                height={40}
+                                loading="lazy"
+                                alt="Stackbinary logo"
+                                className="h-10 w-auto object-contain"
+                            />
                         </Link>
                         <div className="nav-menu-wrap">
                             <div>
@@ -92,17 +107,17 @@ const Toggle = ({ open, setOpen }) => {
             >
                 <motion.span
                     variants={VARIANTS.top}
-                    className="absolute h-1 w-6 bg-white"
+                    className="absolute h-1 w-6 bg-[#17171A]"
                     style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
                 />
                 <motion.span
                     variants={VARIANTS.middle}
-                    className="absolute h-1 w-6 bg-white"
+                    className="absolute h-1 w-6 bg-[#17171A]"
                     style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
                 />
                 <motion.span
                     variants={VARIANTS.bottom}
-                    className="absolute h-1 w-3 bg-white"
+                    className="absolute h-1 w-3 bg-[#17171A]"
                     style={{
                         x: "-50%",
                         y: "50%",
