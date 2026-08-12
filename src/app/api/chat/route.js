@@ -7,6 +7,7 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase-admin';
 import { sendMetaEvent, readMetaCookies } from '@/lib/meta-capi';
 import { SYSTEM_PROMPT, CAREERS_PATTERN, CAREERS_REPLY } from '@/lib/chatbot-facts';
+import { applyCareersVetting } from '@/lib/careers-vetting';
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions';
 const MODEL = 'gpt-4o-mini';
@@ -72,33 +73,43 @@ async function saveLead(args, ctx) {
   const email = String(args.email || '').trim();
   if (!args.name || !/\S+@\S+\.\S+/.test(email)) return { ok: false, reason: 'invalid contact details' };
 
-  const { error } = await supabaseAdmin.from('leads').insert([
-    {
-      full_name: String(args.name).trim().slice(0, 120),
-      work_email: email.slice(0, 200),
-      phone: args.phone ? String(args.phone).trim().slice(0, 40) : null,
-      service: 'AI Automation (chatbot)',
-      project_summary: String(args.need || '').slice(0, 1000),
-      timeline: 'Exploring options',
-      lead_source: 'chatbot',
-      status: 'new',
-      privacy_consent: true,
-      thread_id: ctx.sessionId,
-      landing_page: ctx.page || null,
-      referrer: ctx.referrer || null,
-      utm_source: ctx.utm?.utm_source || null,
-      utm_medium: ctx.utm?.utm_medium || null,
-      utm_campaign: ctx.utm?.utm_campaign || null,
-      utm_term: ctx.utm?.utm_term || null,
-      utm_content: ctx.utm?.utm_content || null,
-      gclid: ctx.utm?.gclid || null,
-      fbclid: ctx.utm?.fbclid || null,
-    },
-  ]);
+  const leadData = {
+    full_name: String(args.name).trim().slice(0, 120),
+    work_email: email.slice(0, 200),
+    phone: args.phone ? String(args.phone).trim().slice(0, 40) : null,
+    service: 'AI Automation (chatbot)',
+    project_summary: String(args.need || '').slice(0, 1000),
+    timeline: 'Exploring options',
+    lead_source: 'chatbot',
+    status: 'new',
+    privacy_consent: true,
+    thread_id: ctx.sessionId,
+    landing_page: ctx.page || null,
+    referrer: ctx.referrer || null,
+    utm_source: ctx.utm?.utm_source || null,
+    utm_medium: ctx.utm?.utm_medium || null,
+    utm_campaign: ctx.utm?.utm_campaign || null,
+    utm_term: ctx.utm?.utm_term || null,
+    utm_content: ctx.utm?.utm_content || null,
+    gclid: ctx.utm?.gclid || null,
+    fbclid: ctx.utm?.fbclid || null,
+  };
+
+  // The bot cannot tell a buyer from a job seeker who happened to ask a
+  // business question — the first chatbot lead we ever captured had applied
+  // for a backend role nine days earlier. The applications table can tell.
+  const isCareers = await applyCareersVetting(leadData);
+
+  const { error } = await supabaseAdmin.from('leads').insert([leadData]);
   if (error) {
     console.error('chatbot: lead insert failed:', error);
     return { ok: false, reason: 'storage error' };
   }
+
+  // A candidate is not a conversion. Reporting one to Meta would teach the ad
+  // algorithm to find more people like them, which is the opposite of what we
+  // are paying it to do.
+  if (isCareers) return { ok: true };
 
   // Same server-side Lead the contact route fires; shares the browser's
   // event_id so Meta dedupes against the pixel copy.
