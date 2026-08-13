@@ -9,7 +9,7 @@ import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 const services = [
     {
         pillar: "Advertising & Promotion",
-        title: "AI Ad Intelligence & Ad-Ops",
+        title: "Adsboys: AI Ad Intelligence & Ad-Ops",
         description:
             "Manage 10-20 Meta ad accounts from one dashboard: AI analysis on every ad, AI-generated copy and creative, pushed live through the Meta API with bulk operations and audit trails.",
         capabilities: [
@@ -19,7 +19,7 @@ const services = [
             "Cross-account dashboards & governance",
         ],
         href: "/martech/ad-intelligence",
-        demo: "Meta Marketing Tool",
+        demo: "Adsboys",
     },
     {
         pillar: "Content & Experience",

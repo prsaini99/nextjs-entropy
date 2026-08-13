@@ -31,6 +31,28 @@ const products = [
         showCurve: true,
     },
     {
+        key: "adsboys",
+        tab: "Adsboys",
+        title: "Meta Ads, Run End to End From One Dashboard",
+        description:
+            "Adsboys, our AI ad intelligence platform, runs the whole campaign loop: generate posts and ad creative with AI, publish across 10-20 Meta ad accounts through the API, get AI insights on every ad, and when the campaign talks back, answer the comments and DMs straight from the dashboard.",
+        features: [
+            "AI performance analysis on every ad",
+            "AI post & creative generation",
+            "Comment & DM intelligence, replies from the dashboard",
+            "Publish straight through the Meta Graph API",
+            "Bulk operations across accounts",
+            "Cross-account performance views & audit logs",
+        ],
+        stats: [
+            { value: "10-20", label: "Meta ad accounts run from one dashboard" },
+            { value: "v23", label: "Meta Graph API, published straight through" },
+            { value: "2-way", label: "campaigns: it posts, and answers what comes back" },
+        ],
+        href: "/martech/ad-intelligence",
+        linkLabel: "Explore Adsboys Live",
+    },
+    {
         key: "zyflus",
         tab: "Zyflus",
         title: "Influencer Marketing, Run Like an Operation",
