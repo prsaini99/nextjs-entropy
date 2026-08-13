@@ -57,7 +57,7 @@ export default function Banner({
                         <div className="banner-overlay"></div>
                         <div className="banner-background" style={bannerStyle}>
                             {/* next/image so the 400KB+ source JPEGs are served as
-                                mobile-sized WebP variants — this banner renders on the
+                                mobile-sized WebP variants, this banner renders on the
                                 paid landing pages, where every request is bought. */}
                             <Image
                                 sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, 92vw"

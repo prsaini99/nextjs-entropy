@@ -4,9 +4,9 @@
 const industries = {
   "healthcare-pharma": {
     name: "Healthcare & Pharma",
-    seoTitle: "Healthcare Software Development — EHR, Telemedicine & Medical AI",
+    seoTitle: "Healthcare Software Development, EHR, Telemedicine & Medical AI",
     blurb:
-      "Compliant, AI-assisted systems for providers, pharma and wellness brands — connecting patient data and extending care beyond the clinic.",
+      "Compliant, AI-assisted systems for providers, pharma and wellness brands, connecting patient data and extending care beyond the clinic.",
     brands: ["Abbott", "Sanofi", "Aventis", "Nutricia", "ACI Limited", "Sheth Brothers"],
     pains: [
       { title: "Fragmented patient data", detail: "Records scattered across systems with no single view." },
@@ -15,7 +15,7 @@ const industries = {
       { title: "Compliance risk", detail: "HIPAA / FHIR / HL7 hard to meet and maintain." },
     ],
     built: [
-      { name: "iPatientCare", tag: "AI EHR · FHIR", detail: "Consolidates patient data with predictive health insights.", helps: "One source of truth + earlier risk flags — documentation time down 40%." },
+      { name: "iPatientCare", tag: "AI EHR · FHIR", detail: "Consolidates patient data with predictive health insights.", helps: "One source of truth + earlier risk flags, documentation time down 40%." },
       { name: "EaseCare", tag: "Telemedicine · Live", detail: "HIPAA-compliant video consults with patient records (WebRTC).", helps: "50,000+ virtual consultations, wait times down 60%." },
       { name: "AI Medical Diagnosis", tag: "ML Imaging", detail: "CNN / DICOM system that flags abnormalities for radiologists.", helps: "500,000+ images analyzed, detection accuracy up 35%." },
       { name: "MediChat", tag: "NLP Triage", detail: "Chatbot that answers routine patient queries and triages.", helps: "200,000+ interactions handled, staff workload down 70%." },
@@ -26,7 +26,7 @@ const industries = {
 
   "retail-ecommerce": {
     name: "Retail, E-Commerce & Consumer Brands",
-    seoTitle: "E-Commerce Development — Omnichannel Storefronts & AI Personalization",
+    seoTitle: "E-Commerce Development, Omnichannel Storefronts & AI Personalization",
     blurb:
       "Omnichannel storefronts, AI personalization and cross-platform commerce for fashion, white-goods, electronics and FMCG brands.",
     brands: ["WROGN", "Future Group", "Philips", "D-Link", "Zebronics", "Syska", "Badshah Masala", "Priyagold", "KFC"],
@@ -48,9 +48,9 @@ const industries = {
 
   "agriculture-agritech": {
     name: "Agriculture & AgriTech",
-    seoTitle: "AgriTech Software Development — IoT, Predictive Analytics & Rural Commerce",
+    seoTitle: "AgriTech Software Development, IoT, Predictive Analytics & Rural Commerce",
     blurb:
-      "IoT, predictive data and digital platforms for agri-input, crop-science and rural-supply brands — turning reactive operations into proactive, data-led ones.",
+      "IoT, predictive data and digital platforms for agri-input, crop-science and rural-supply brands, turning reactive operations into proactive, data-led ones.",
     brands: ["Bayer CropScience", "Syngenta", "UPL", "Piramal", "Indofil", "Biostadt", "Dhanuka"],
     pains: [
       { title: "Reactive crop/livestock care", detail: "Disease & loss caught far too late." },
@@ -67,7 +67,7 @@ const industries = {
 
   "automotive-mobility-energy": {
     name: "Automotive, Mobility & Energy",
-    seoTitle: "Mobility & Clean Energy Software — Fleet Platforms, EV & Solar Tools",
+    seoTitle: "Mobility & Clean Energy Software, Fleet Platforms, EV & Solar Tools",
     blurb:
       "Connected mobility apps, EV & fleet platforms and clean-energy tooling for automotive, fuel and power brands.",
     brands: ["Hyundai", "IndianOil", "Balmerol", "eBikeGo", "Sterlite Power"],
@@ -86,7 +86,7 @@ const industries = {
 
   "education-edtech": {
     name: "Education & EdTech",
-    seoTitle: "EdTech Software Development — Learning Platforms, Tutoring & Student Safety",
+    seoTitle: "EdTech Software Development, Learning Platforms, Tutoring & Student Safety",
     blurb:
       "Adaptive learning, cross-border tutoring and student-safety systems for institutions, universities and edtech brands.",
     brands: ["St. Angelo's", "D Y Patil University", "J.K. Shah Classes"],
@@ -106,7 +106,7 @@ const industries = {
 
   "media-entertainment": {
     name: "Media, Events & Entertainment",
-    seoTitle: "Media & Entertainment Software — Ticketing, Creator Platforms & Fan Engagement",
+    seoTitle: "Media & Entertainment Software, Ticketing, Creator Platforms & Fan Engagement",
     blurb:
       "High-concurrency ticketing, creator monetization and social booking for media, sports and entertainment brands.",
     brands: ["Reliance Entertainment", "Sony Pictures", "Mumbai Indians"],
@@ -119,16 +119,16 @@ const industries = {
     built: [
       { name: "Zoniq", tag: "Ticketing · Real-Time", detail: "Live seat maps with seat-locking and a WebSocket virtual queue.", helps: "High-concurrency sales, no double-booking." },
       { name: "Stargaze", tag: "Creator Platform", detail: "Exclusive content, virtual events (WebRTC) and payments.", helps: "500+ celebrities, $3M+ subscription revenue." },
-      { name: "Gaming Zone", tag: "Social Booking · Live", detail: "Multi-vendor booking with 1v1 challenges & leaderboards.", helps: "40–50 gaming zones, booking + engagement in one." },
+      { name: "Gaming Zone", tag: "Social Booking · Live", detail: "Multi-vendor booking with 1v1 challenges & leaderboards.", helps: "40-50 gaming zones, booking + engagement in one." },
       { name: "EventNoir", tag: "Cultural Ticketing", detail: "Multicultural event discovery and ticketing platform.", helps: "25,000+ events, 400,000+ tickets sold." },
     ],
   },
 
   "travel-hospitality": {
     name: "Travel & Hospitality",
-    seoTitle: "Travel & Hospitality Software — Booking Marketplaces & Direct-Booking Engines",
+    seoTitle: "Travel & Hospitality Software, Booking Marketplaces & Direct-Booking Engines",
     blurb:
-      "Production booking marketplaces and immersive direct-booking experiences for hotels, OTAs and resorts — multi-vendor, multi-currency, multi-language.",
+      "Production booking marketplaces and immersive direct-booking experiences for hotels, OTAs and resorts, multi-vendor, multi-currency, multi-language.",
     brands: ["The Fern Hotels & Resorts"],
     pains: [
       { title: "OTA dependence", detail: "High commissions and no owned direct channel." },
@@ -147,7 +147,7 @@ const industries = {
     name: "Technology, SaaS & Marketing",
     seoTitle: "SaaS Product Development & Marketing Technology Engineering",
     blurb:
-      "We build the software other companies run on: AI agents, SaaS platforms, compliance tooling and marketing infrastructure — including our own products.",
+      "We build the software other companies run on: AI agents, SaaS platforms, compliance tooling and marketing infrastructure, including our own products.",
     brands: ["Quick Heal"],
     pains: [
       { title: "Manual, repetitive ops", detail: "No automation layer across teams & tools." },

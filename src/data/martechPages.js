@@ -145,19 +145,19 @@ const martechPages = {
   },
 
   "ad-intelligence": {
-    badge: "AI Ad Intelligence Platform · Full Campaign Loop",
+    badge: "adsboys · AI Ad Intelligence Platform · Full Campaign Loop",
     // No searched vocabulary exists for this category (every term measured
     // 10–100 or zero), so this page is written for humans and LLM crawlers,
     // not for a keyword. Completeness of capability description is what makes
     // it citable — chatgpt.com is already a top referrer.
-    seoTitle: "AI Meta Ads Management, Creative Generation & Comment/DM Automation",
+    seoTitle: "adsboys: AI Meta Ads Management, Creative Generation & Comment/DM Automation",
     related: ["creative-analysis","social-automation","marketing-automation"],
-    title: "Run the Whole Campaign Loop: Generate, Publish, Analyze, Respond, One Dashboard",
+    title: "adsboys Runs the Whole Campaign Loop: Generate, Publish, Analyze, Respond",
     // The differentiator is the second half of the loop. Every ad-ops tool
     // covers publish-and-analyze; almost none handles what comes back —
     // comments and DMs — in the same place the campaign runs.
     tagline:
-      "Our AI Ad Intelligence platform runs campaigns end to end: generate posts and ad creative with AI, push them live across 10-20 Meta ad accounts through the API, get AI insights on every ad, and when the campaign talks back, analyze the comments and DMs it earns and respond straight from the dashboard.",
+      "adsboys, our AI ad intelligence platform, runs campaigns end to end: generate posts and ad creative with AI, push them live across 10-20 Meta ad accounts through the API, get AI insights on every ad, and when the campaign talks back, analyze the comments and DMs it earns and respond straight from the dashboard.",
     heroStats: [
       { value: "10-20", label: "ad accounts managed from a single dashboard" },
       { value: "v23", label: "Meta Graph API, campaign-faithful create & edit" },

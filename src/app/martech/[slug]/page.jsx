@@ -72,7 +72,7 @@ export default async function MartechSlugPage({ params }) {
         ctaHref="#martech-lead-form"
         ctaLabel="Get My Build Quote"
         title="Want This Running for Your Brand?"
-        description="Book a discovery call — we'll walk you through the live product and map it to your workflow."
+        description="Book a discovery call, we'll walk you through the live product and map it to your workflow."
         image="/banner-dev-team.jpg"
       />
     </>

@@ -7,7 +7,7 @@ const steps = [
     {
         phase: '01',
         title: 'Outcome-Driven',
-        description: 'Roadmaps tied to business impact—not vanity metrics.',
+        description: 'Roadmaps tied to business impact, not vanity metrics.',
         image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/dszfxqvlfvu2iaumamyh',
         buttonText: 'Talk to an Expert',
         buttonLink: '/contact-us',
@@ -43,7 +43,7 @@ export default function WhyBussinessesTrustUs() {
                             <div className="opacity-80">
                                 <div className="max-width-4xl">
                                     <div>
-                                        “Work with us, and you’ll not only get groundbreaking solutions but also the occasional bad pun—because tech shouldn’t be boring.”
+                                        “Work with us, and you’ll not only get groundbreaking solutions but also the occasional bad pun, because tech shouldn’t be boring.”
                                     </div>
                                 </div>
                             </div>

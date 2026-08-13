@@ -46,7 +46,7 @@ export default function NewsLetter() {
                 </div>
                 <div className="flex flex-col items-start">
                     <p>
-                        One email a month with playbooks, case studies and tooling tips—no spam.
+                        One email a month with playbooks, case studies and tooling tips, no spam.
                     </p>
                 </div>
             </div>

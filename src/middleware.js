@@ -28,7 +28,7 @@ function deny(reason, status = 401) {
 export async function middleware(request) {
   // Fail closed. A misconfigured deployment must not silently serve lead data.
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-    console.error('[middleware] Supabase env vars missing — denying admin API');
+    console.error('[middleware] Supabase env vars missing, denying admin API');
     return deny('Server misconfigured', 500);
   }
 

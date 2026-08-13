@@ -84,7 +84,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                     location={`product:${page.badge.split("·")[0].trim()}`}
                                 />
                                 {/* The second hero slot used to be "All MarTech
-                                    Services" — a catalog link inviting paid visitors
+                                    Services", a catalog link inviting paid visitors
                                     off the page they were bought onto. The live demo
                                     is the differentiator; it earns the slot. The
                                     catalog stays reachable via nav + related links. */}
@@ -231,7 +231,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                 </div>
 
                                 {/* Mid-page CTA. Clarity: average paid scroll depth
-                                    is 41%, which lands about here — and recordings
+                                    is 41%, which lands about here, and recordings
                                     showed 4-5 minute readers stalling with no action
                                     in reach. demo_location/cta location let Monday's
                                     review compare hero vs midpage placement. */}

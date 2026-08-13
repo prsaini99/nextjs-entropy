@@ -59,7 +59,7 @@ export default function Home() {
             "name": "Do you offer post-launch support?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes—managed services, SLAs and iterative improvements."
+              "text": "Yes, managed services, SLAs and iterative improvements."
             }
           },
           {

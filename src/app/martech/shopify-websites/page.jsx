@@ -5,12 +5,12 @@ import MartechLeadForm from "@/components/pages/Martech/MartechLeadForm";
 export const metadata = {
   title: "Shopify Websites & E-Commerce Stores | StackBinary™ MarTech",
   description:
-    "29+ live Shopify and D2C storefronts we've built — diamond jewellery, sports nutrition, wellness, designer fashion and more. Stores that convert, wired into the marketing stack that fills them.",
+    "29+ live Shopify and D2C storefronts we've built, diamond jewellery, sports nutrition, wellness, designer fashion and more. Stores that convert, wired into the marketing stack that fills them.",
   alternates: { canonical: "https://stackbinary.io/martech/shopify-websites" },
   openGraph: {
     title: "Shopify Websites & E-Commerce Stores | StackBinary™ MarTech",
     description:
-      "29+ live Shopify and D2C storefronts we've built — from diamond jewellery to D2C wellness.",
+      "29+ live Shopify and D2C storefronts we've built, from diamond jewellery to D2C wellness.",
     url: "https://stackbinary.io/martech/shopify-websites",
     siteName: "StackBinary",
     type: "website",
@@ -45,7 +45,7 @@ export default function ShopifyWebsitesPage() {
         ctaHref="#martech-lead-form"
         ctaLabel="Get a Store & Stack Quote"
         title="Want a Store That Sells?"
-        description="Storefront + email automation + ad intelligence + loyalty in one connected system — the store fills the funnel, the stack converts it."
+        description="Storefront + email automation + ad intelligence + loyalty in one connected system, the store fills the funnel, the stack converts it."
         image="/banner-dev-team.jpg"
       />
     </>

@@ -11,7 +11,7 @@ const services = [
         pillar: "Advertising & Promotion",
         title: "AI Ad Intelligence & Ad-Ops",
         description:
-            "Manage 10–20 Meta ad accounts from one dashboard: AI analysis on every ad, AI-generated copy and creative, pushed live through the Meta API with bulk operations and audit trails.",
+            "Manage 10-20 Meta ad accounts from one dashboard: AI analysis on every ad, AI-generated copy and creative, pushed live through the Meta API with bulk operations and audit trails.",
         capabilities: [
             "AI performance analysis per ad",
             "AI ad copy & creative generation",
@@ -42,7 +42,7 @@ const services = [
             "End-to-end creator marketing: discovery via Instagram Graph API, AI match-scoring against your ideal influencer profile, automated DM outreach and a full negotiation pipeline.",
         capabilities: [
             "Creator discovery & enrichment",
-            "AI vetting with 0–100 match scores",
+            "AI vetting with 0-100 match scores",
             "DM outreach automation & reply tracking",
             "Negotiation pipeline & campaign analytics",
         ],
