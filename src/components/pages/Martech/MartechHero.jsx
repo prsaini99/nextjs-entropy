@@ -33,7 +33,7 @@ export default function MartechHero() {
                                 <p className="opacity-80">
                                     Marketing automation, influencer platforms, AI calling
                                     agents and lead engines, built for how you market. Live in
-                                    2–3 weeks, and yours outright. Often for less than a year of
+                                    2-3 weeks, and yours outright. Often for less than a year of
                                     the licence they replace. And because we run campaigns on
                                     them ourselves, they are built by people who have to use
                                     them on Monday.
@@ -42,7 +42,7 @@ export default function MartechHero() {
                                     {[
                                         // Speed first (capability), cost second (proof, stated
                                         // comparatively), ownership third (the payoff).
-                                        "A single project live in 2–3 weeks, not a quarter",
+                                        "A single project live in 2-3 weeks, not a quarter",
                                         "Often less than a year of the licence it replaces",
                                         "Every service backed by a live product you can click today",
                                         "Your data, your design, your IP. Zero licence creep.",

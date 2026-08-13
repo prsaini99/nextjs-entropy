@@ -42,10 +42,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
-        {/* CLS fix (Clarity recorded 0.41–0.71 on paid landing pages): Satoshi
+        {/* CLS fix (Clarity recorded 0.41-0.71 on paid landing pages): Satoshi
             loads from the Webflow CDN with font-display:swap, so on slow
-            connections the whole page reflows seconds after first paint —
-            while visitors are already filling the form. Preconnect + preload
+            connections the whole page reflows seconds after first paint,             while visitors are already filling the form. Preconnect + preload
             the two workhorse weights so the font usually wins the race; the
             metric-matched fallback in globals.css covers the times it loses.
             React 19 hoists these <link> tags into <head>. */}

@@ -226,7 +226,7 @@ function Field({ label, children }) {
   return (
     <div className="flex justify-between gap-4 text-sm">
       <dt className="text-gray-500 flex-shrink-0">{label}</dt>
-      <dd className="text-gray-900 text-right min-w-0">{empty ? <span className="text-gray-300">—</span> : children}</dd>
+      <dd className="text-gray-900 text-right min-w-0">{empty ? <span className="text-gray-300">, </span> : children}</dd>
     </div>
   );
 }

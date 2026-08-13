@@ -39,7 +39,7 @@ export default async function IndustryPage({ params }) {
           backgroundImage: "linear-gradient(180deg, #000000, #00000000)",
         }}
         title={`Building in ${industry.name}?`}
-        description="Book a discovery call — we'll map your problem to the closest system we've already shipped."
+        description="Book a discovery call, we'll map your problem to the closest system we've already shipped."
         image="/banner-dev-team.jpg"
       />
     </>

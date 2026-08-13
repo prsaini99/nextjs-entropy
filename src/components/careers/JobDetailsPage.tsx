@@ -194,7 +194,7 @@ export default function JobDetailsPage({ job }: Props) {
                   </AnimatedInViewDiv>
                 )}
 
-                {/* What You'd Build — links each role to the products it would
+                {/* What You'd Build, links each role to the products it would
                     actually work on. Careers pages are the site's most-visited
                     pages; without this they were dead ends for both candidates
                     and crawlers. */}
@@ -206,7 +206,7 @@ export default function JobDetailsPage({ job }: Props) {
                       </div>
                     </div>
                     <div className="text-size-medium opacity-85 mb-6">
-                      These aren&apos;t hypothetical projects — they&apos;re live products you can
+                      These aren&apos;t hypothetical projects, they&apos;re live products you can
                       try before your first interview.
                     </div>
                     <div className="check-list">
@@ -239,7 +239,7 @@ export default function JobDetailsPage({ job }: Props) {
                             >
                               {product.title}
                             </Link>
-                            <span className="opacity-85"> — {product.note}</span>
+                            <span className="opacity-85">, {product.note}</span>
                           </div>
                         </div>
                       ))}

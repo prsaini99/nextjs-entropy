@@ -19,7 +19,7 @@ export interface ProductLink {
 const HUB: ProductLink = {
   title: 'The StackBinary MarTech Suite',
   href: '/martech',
-  note: 'The full product line — every system we ship, most with live demos.',
+  note: 'The full product line, every system we ship, most with live demos.',
 };
 
 const CALL_CENTER: ProductLink = {
@@ -31,13 +31,13 @@ const CALL_CENTER: ProductLink = {
 const INFLUENCER: ProductLink = {
   title: 'Influencer Marketing Platform',
   href: '/martech/influencer-marketing',
-  note: 'Scores every creator 0–100 against an ideal profile, replacing spreadsheet vetting.',
+  note: 'Scores every creator 0-100 against an ideal profile, replacing spreadsheet vetting.',
 };
 
 const LEAD_INTEL: ProductLink = {
   title: 'B2B Lead CRM',
   href: '/martech/lead-intelligence',
-  note: 'Custom CRM with lead sync, email, calling and follow-ups — no per-contact pricing.',
+  note: 'Custom CRM with lead sync, email, calling and follow-ups, no per-contact pricing.',
 };
 
 const SALES_INTEL: ProductLink = {
@@ -55,7 +55,7 @@ const AD_INTEL: ProductLink = {
 const AI_INTEGRATION: ProductLink = {
   title: 'AI Integration Services',
   href: '/martech/ai-integration',
-  note: 'Wiring AI into existing stacks — the orchestration layer client work is built on.',
+  note: 'Wiring AI into existing stacks, the orchestration layer client work is built on.',
 };
 
 const linksBySlug: Record<string, ProductLink[]> = {

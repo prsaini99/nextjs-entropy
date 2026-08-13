@@ -47,7 +47,7 @@ export const serviceContent = {
 
   "cloud-migration-managed-services": {
     title: "Cloud Migration & Managed Services (AWS, Azure, GCP)",
-    lead: "Modern businesses run on the cloud—and so should yours. Whether it's cloud migration, hosting, or scaling your infrastructure, we make it seamless and secure.",
+    lead: "Modern businesses run on the cloud, and so should yours. Whether it's cloud migration, hosting, or scaling your infrastructure, we make it seamless and secure.",
     whatWeDeliver: {
       title: "What We Deliver",
       items: [
@@ -323,7 +323,7 @@ export const serviceContent = {
 
   "website-webapp-development": {
     title: "Website & Web Application Development",
-    lead: "Your website is more than just a digital storefront—it's your brand's first impression. We design and develop websites that are fast, functional, and visually stunning, ensuring visitors stay and engage.",
+    lead: "Your website is more than just a digital storefront, it's your brand's first impression. We design and develop websites that are fast, functional, and visually stunning, ensuring visitors stay and engage.",
     whatWeDeliver: {
       title: "What We Deliver",
       items: [
@@ -507,7 +507,7 @@ export const serviceContent = {
 
   "blockchain-development": {
     title: "Blockchain Development",
-    lead: "Secure, transparent, and decentralized—that's the power of blockchain. From smart contracts to supply chain solutions, we bring this revolutionary tech to your business.",
+    lead: "Secure, transparent, and decentralized: that's the power of blockchain. From smart contracts to supply chain solutions, we bring this revolutionary tech to your business.",
     whatWeDeliver: {
       title: "What We Deliver",
       items: [

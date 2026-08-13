@@ -16,14 +16,14 @@ export const features = [
 		],
 		imageSrc:
 			"https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c67_Features%20Images%2003.jpg",
-		altText: "Custom software development — web, mobile, SaaS",
+		altText: "Custom software development, web, mobile, SaaS",
 		slug: "custom-software-development"
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c63_Icon.svg",
 		title: "Cloud Migration & Managed Services (AWS, Azure, GCP)",
 		description:
-			"Modern businesses run on the cloud—and so should yours. Whether it's cloud migration, hosting, or scaling your infrastructure, we make it seamless and secure.",
+			"Modern businesses run on the cloud, and so should yours. Whether it's cloud migration, hosting, or scaling your infrastructure, we make it seamless and secure.",
 		checks: [
 			"Cloud Migration Services",
 			"Cloud Application Development",
@@ -87,7 +87,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/s5zgkmrtcsfoqv8vvt2g",
-		altText: "AI and machine learning solutions — chatbots, NLP, computer vision",
+		altText: "AI and machine learning solutions, chatbots, NLP, computer vision",
 		slug: "ai-ml-chatbots"
 	},
 	{
@@ -104,7 +104,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/ebps490jnt3s4hbepgmv",
-		altText: "DevOps and SRE services — CI/CD, infrastructure as code, monitoring",
+		altText: "DevOps and SRE services, CI/CD, infrastructure as code, monitoring",
 		slug: "devops-sre"
 	},
 
@@ -130,7 +130,7 @@ export const features = [
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
 		title: "Website & Web App Development",
 		description:
-			"Your website is more than just a digital storefront—it's your brand's first impression. We design and develop websites that are fast, functional, and visually stunning, ensuring visitors stay and engage.",
+			"Your website is more than just a digital storefront, it's your brand's first impression. We design and develop websites that are fast, functional, and visually stunning, ensuring visitors stay and engage.",
 		checks: [
 			"Website Design and Development",
 			"CMS Development (e.g., WordPress, Drupal)",
@@ -140,7 +140,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/q0gomcusnhaz1nrrxoot",
-		altText: "Website and web app development — fast, secure, SEO-ready",
+		altText: "Website and web app development, fast, secure, SEO-ready",
 		slug: "website-webapp-development"
 	},
 	{
@@ -174,7 +174,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/vkqtqa8ico5th60lzqkr",
-		altText: "IT support and maintenance — managed services, helpdesk",
+		altText: "IT support and maintenance, managed services, helpdesk",
 		slug: "it-support-maintenance"
 	},
 	{
@@ -191,14 +191,14 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/enxftbs01zjrzgjfu4xs",
-		altText: "Digital marketing — SEO, PPC, social media campaigns",
+		altText: "Digital marketing, SEO, PPC, social media campaigns",
 		slug: "digital-marketing"
 	},
 	{
 		icon: "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg",
 		title: "Blockchain Development",
 		description:
-			"Secure, transparent, and decentralized—that's the power of blockchain. From smart contracts to supply chain solutions, we bring this revolutionary tech to your business.",
+			"Secure, transparent, and decentralized: that's the power of blockchain. From smart contracts to supply chain solutions, we bring this revolutionary tech to your business.",
 		checks: [
 			"Smart Contract Development",
 			"Cryptocurrency Wallet Development",
@@ -208,7 +208,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/ycl9jz46cowkd8e6twbb",
-		altText: "Blockchain development — smart contracts, dApps, tokenization",
+		altText: "Blockchain development, smart contracts, dApps, tokenization",
 		slug: "blockchain-development"
 	},
 	{
@@ -225,7 +225,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/sgpswhobblfdgxbuyvfo",
-		altText: "IoT solutions — edge to cloud, secure device integration",
+		altText: "IoT solutions, edge to cloud, secure device integration",
 		slug: "iot-solutions"
 	},
 	{
@@ -241,7 +241,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/gz4tsftlrgscaqpfgmef",
-		altText: "Game development — mobile, AR/VR, gamification",
+		altText: "Game development, mobile, AR/VR, gamification",
 		slug: "game-development"
 	},
 	{
@@ -257,7 +257,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/kvkp5gjvll1glrwbqe1e",
-		altText: "SaaS and marketplace integrations — payments, subscriptions",
+		altText: "SaaS and marketplace integrations, payments, subscriptions",
 		slug: "saas-marketplace-integrations"
 	},
 	{
@@ -273,7 +273,7 @@ export const features = [
 		],
 		imageSrc:
 			"https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/vnyrrcwlyxhjcrbdhecn",
-		altText: "AR and VR development — training, marketing, experiences",
+		altText: "AR and VR development, training, marketing, experiences",
 		slug: "ar-vr-development"
 	},
 ];

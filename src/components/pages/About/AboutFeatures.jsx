@@ -8,7 +8,7 @@ const features = [
     {
         image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/g2cs03rgp0qd9icsldvr',
         title: 'Innovation with Purpose',
-        description: 'Use the right tech to solve the right problem—no buzzword bloat.',
+        description: 'Use the right tech to solve the right problem, no buzzword bloat.',
     },
     {
         image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/kumogbn1j46cjhackabb',
@@ -36,7 +36,7 @@ export default function AboutFeatures() {
                                 <div className="opacity-80">
                                     <div className="max-w-4xl">
                                         <p>
-                                            Make technology simple to adopt and valuable to operate—so teams launch faster, run leaner and grow with confidence. Explore our <Link href="/services" className="text-link">comprehensive services</Link> or <Link href="/contact-us" className="text-link">get in touch</Link> to discuss your project.
+                                            Make technology simple to adopt and valuable to operate, so teams launch faster, run leaner and grow with confidence. Explore our <Link href="/services" className="text-link">comprehensive services</Link> or <Link href="/contact-us" className="text-link">get in touch</Link> to discuss your project.
                                         </p>
                                     </div>
                                 </div>

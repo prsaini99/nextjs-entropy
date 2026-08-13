@@ -70,7 +70,7 @@ export const LEAD_SCORING = {
     'AR/VR Development': 5,
     'IT Consulting': 5,
     'IT Support & Maintenance': 4,
-    'Not sure yet — advise me': 3,
+    'Not sure yet, advise me': 3,
   },
 }
 
@@ -102,9 +102,9 @@ export function calculateLeadScore(leadData) {
     const budget = leadData.budget.toLowerCase();
     if (budget.includes('40 lakh+') || budget.includes('$50,000+') || budget.includes('₹40,00,000+')) {
       score += 10;
-    } else if (budget.includes('15 – ₹40') || budget.includes('$25,000') || budget.includes('₹20,00,000')) {
+    } else if (budget.includes('15-₹40') || budget.includes('$25,000') || budget.includes('₹20,00,000')) {
       score += 7;
-    } else if (budget.includes('5 – ₹15') || budget.includes('$10,000') || budget.includes('₹8,00,000')) {
+    } else if (budget.includes('5-₹15') || budget.includes('$10,000') || budget.includes('₹8,00,000')) {
       score += 5;
     }
   }
