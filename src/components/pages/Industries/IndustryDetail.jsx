@@ -92,7 +92,7 @@ export default function IndustryDetail({ industry }) {
                             <AnimatedInViewDiv className="about-features-header">
                                 <div className="header">
                                     <h2 className="heading-4 text-weight-medium">
-                                        What We&apos;ve Built — and How It Helps
+                                        What We&apos;ve Built, and How It Helps
                                     </h2>
                                     <div className="opacity-80">
                                         <div className="max-w-4xl">
@@ -139,7 +139,7 @@ export default function IndustryDetail({ industry }) {
                                         </div>
                                         <p className="text-size-small opacity-80">
                                             Ad-ops AI, marketing automation, influencer platforms,
-                                            lead-gen engines and creative analysis — with live demos.
+                                            lead-gen engines and creative analysis, with live demos.
                                         </p>
                                     </div>
                                     <LearnMoreButton

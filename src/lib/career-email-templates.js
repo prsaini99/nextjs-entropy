@@ -66,7 +66,7 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StackBinary — Application received</title>
+  <title>StackBinary, Application received</title>
 </head>
 <body style="margin:0;padding:0;background-color:${BRAND.dark};">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:${BRAND.dark};padding:32px 16px;">
@@ -139,8 +139,7 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
                 <tr>
                   <td align="center" style="padding:24px 32px;font-family:Arial,Helvetica,sans-serif;">
                     <p style="margin:0 0 14px;font-size:13px;line-height:1.65;color:${BRAND.text};">
-                      We announce new roles and ship-updates on <strong>LinkedIn</strong> first —
-                      follow StackBinary to hear about them before they are posted anywhere else.
+                      We announce new roles and ship-updates on <strong>LinkedIn</strong> first,                       follow StackBinary to hear about them before they are posted anywhere else.
                     </p>
                     <a href="${BRAND.linkedin}" style="display:inline-block;border:1px solid ${BRAND.accent};color:${BRAND.accent};font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;text-decoration:none;padding:11px 26px;border-radius:999px;">
                       Follow StackBinary on LinkedIn
@@ -196,7 +195,7 @@ What happens next:
 2. We read it properly, your CV and your answers, against what the role actually needs.
 3. If there is a fit, we get in touch to set up an intro call.
 
-We announce new roles and ship-updates on LinkedIn first — follow StackBinary
+We announce new roles and ship-updates on LinkedIn first, follow StackBinary
 to hear about them before they are posted anywhere else:
 https://www.linkedin.com/company/stackbinary
 
@@ -247,7 +246,7 @@ export function applicationNotificationHtml(a) {
                       ${row("Portfolio", a.portfolioUrl)}
                       ${row("LinkedIn", a.linkedinUrl)}
                       ${row("GitHub", a.githubUrl)}
-                      ${row("CV", a.resumeFilename ? `${a.resumeFilename} — in Supabase storage` : "not attached")}
+                      ${row("CV", a.resumeFilename ? `${a.resumeFilename}, in Supabase storage` : "not attached")}
                       ${block("Key strengths", a.technicalSkills)}
                       ${block("Relevant experience", a.relevantProjects)}
                       ${block("In their words", a.additionalInfo)}
@@ -281,7 +280,7 @@ export function applicationNotificationHtml(a) {
 export function applicationNotificationText(a) {
   const fullName = `${a.firstName || ""} ${a.lastName || ""}`.trim() || "Unnamed applicant";
   const line = (label, value) => (value ? `${label}: ${value}\n` : "");
-  return `NEW APPLICATION — ${a.jobTitle || "-"}
+  return `NEW APPLICATION, ${a.jobTitle || "-"}
 
 ${fullName}
 ${line("Email", a.email)}${line("Phone", a.phone)}${line("Location", a.location)}${line("Work eligibility", a.workEligibility)}${line("Experience", a.yearsOfExperience)}${line("Available from", a.availabilityDate)}${line("Salary expectation", a.salaryExpectations)}${line("Portfolio", a.portfolioUrl)}${line("LinkedIn", a.linkedinUrl)}${line("GitHub", a.githubUrl)}${line("CV", a.resumeFilename || "not attached")}

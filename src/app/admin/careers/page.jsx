@@ -115,7 +115,7 @@ export default function CareersPage() {
         <div className="sm:flex-auto">
           <h1 className="text-xl font-semibold text-gray-900">Career Applications</h1>
           <p className="mt-2 text-sm text-gray-700">
-            Triage job applications — email notifications are muted, this page is the inbox
+            Triage job applications. Email notifications are muted; this page is the inbox
           </p>
         </div>
       </div>
@@ -268,7 +268,7 @@ export default function CareersPage() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900">
-                        {app.years_of_experience || '—'}
+                        {app.years_of_experience || ', '}
                       </div>
                       {app.current_company && (
                         <div className="text-xs text-gray-500 max-w-[10rem] truncate" title={app.current_company}>
@@ -375,7 +375,7 @@ function StatsPanel({ stats, onJobTitleClick, activeJobTitle }) {
           </div>
         </div>
 
-        {/* Top roles — click to filter */}
+        {/* Top roles, click to filter */}
         <div className="bg-white rounded-lg shadow p-4">
           <h3 className="text-sm font-semibold text-gray-700 mb-3">
             Top roles <span className="font-normal text-gray-400">(click to filter)</span>

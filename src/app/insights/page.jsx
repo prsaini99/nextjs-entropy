@@ -3,9 +3,9 @@ import { getAllInsights } from "@/lib/insights";
 import Banner from "@/components/Banner";
 
 export const metadata = {
-  title: "Insights — Practical Answers from 55+ Shipped Products | StackBinary™",
+  title: "Insights, Practical Answers from 55+ Shipped Products | StackBinary™",
   description:
-    "Build-vs-buy math, cost breakdowns and technical deep dives — written from real projects and real numbers, not theory.",
+    "Build-vs-buy math, cost breakdowns and technical deep dives, written from real projects and real numbers, not theory.",
   alternates: { canonical: "https://stackbinary.io/insights" },
 };
 
@@ -33,7 +33,7 @@ export default function InsightsPage() {
                   <div className="max-w-4xl">
                     <p className="opacity-80">
                       Build-vs-buy math, real cost ranges and technical deep
-                      dives — every article grounded in the 55+ products
+                      dives, every article grounded in the 55+ products
                       we&apos;ve actually delivered.
                     </p>
                   </div>
@@ -81,7 +81,7 @@ export default function InsightsPage() {
       <Banner
         bannerStyle={{ backgroundImage: "linear-gradient(180deg, #000000, #00000000)" }}
         title="Have the Question These Articles Answer?"
-        description="Book a discovery call — we'll give you the specific answer for your case, from work we've already shipped."
+        description="Book a discovery call, we'll give you the specific answer for your case, from work we've already shipped."
         image="/banner-dev-team.jpg"
       />
     </>

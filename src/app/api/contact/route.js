@@ -203,7 +203,7 @@ export async function POST(request) {
 		}
 
 		if (gclid || gbraid || wbraid || fbclid || msclkid) {
-			emailContent += `\nPaid click — this lead came from an ad:\n`;
+			emailContent += `\nPaid click: this lead came from an ad:\n`;
 			if (gclid) emailContent += `Google gclid: ${gclid}\n`;
 			if (gbraid) emailContent += `Google gbraid: ${gbraid}\n`;
 			if (wbraid) emailContent += `Google wbraid: ${wbraid}\n`;
@@ -270,7 +270,7 @@ export async function POST(request) {
 			await transporter.sendMail({
 				from: MAIL_FROM,
 				to: workEmail,
-				subject: `You're in the pipeline, ${fullName.split(' ')[0]} — StackBinary™`,
+				subject: `You're in the pipeline, ${fullName.split(' ')[0]}, StackBinary™`,
 				text: confirmationEmailText({ fullName }),
 				html: confirmationEmailHtml({ fullName, service, budget, timeline }),
 			});

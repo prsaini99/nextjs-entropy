@@ -24,7 +24,7 @@ const martechFaqs = {
         {
             question: "How long does it take to build?",
             answer:
-                "A single project, one workflow, fully integrated, typically goes live in 2–3 weeks. A full stack is several of those projects, which is where the 90-day roadmap comes from: sequenced by ROI and delivered in weekly increments, so you're using working software from the first few weeks rather than waiting for a single big launch.",
+                "A single project, one workflow, fully integrated, typically goes live in 2-3 weeks. A full stack is several of those projects, which is where the 90-day roadmap comes from: sequenced by ROI and delivered in weekly increments, so you're using working software from the first few weeks rather than waiting for a single big launch.",
         },
         {
             question: "How much does custom marketing software cost?",
@@ -104,7 +104,7 @@ const martechFaqs = {
         {
             question: "How do you find the right influencers for a brand?",
             answer:
-                "Discovery pulls creators from Instagram, then AI scores each one 0–100 against your ideal influencer profile. Your team reviews the top decile instead of scrolling through thousands, the shortlist arrives already ranked.",
+                "Discovery pulls creators from Instagram, then AI scores each one 0-100 against your ideal influencer profile. Your team reviews the top decile instead of scrolling through thousands, the shortlist arrives already ranked.",
         },
         {
             question: "Can agencies manage multiple brands in one account?",

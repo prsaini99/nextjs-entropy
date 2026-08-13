@@ -80,8 +80,7 @@ export default function ElevetBussiness() {
                                         </div>
                                         <div className="right-content">
                                             {/* The image is wrapped in the same link as the card's
-                                                button. Clarity logged mobile dead clicks on these —
-                                                a card-shaped image invites the tap, so the tap
+                                                button. Clarity logged mobile dead clicks on these,                                                 a card-shaped image invites the tap, so the tap
                                                 should go where the button goes. */}
                                             <Link href={step.buttonLink} aria-label={step.title}>
                                                 <div className="steps-image"><img

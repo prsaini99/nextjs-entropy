@@ -18,7 +18,7 @@ export default function CareersHeroSection() {
               <div className="opacity-80">
                 <div className="max-width-60ch text-center">
                   <div className="text-size-large">
-                    We hire builders—people who love shipping, care about reliability and sweat the details. If you enjoy solving real problems with AI, cloud and modern software, let's talk.
+                    We hire builders, people who love shipping, care about reliability and sweat the details. If you enjoy solving real problems with AI, cloud and modern software, let's talk.
                   </div>
                 </div>
               </div>

@@ -30,17 +30,17 @@ export function confirmationEmailHtml({ fullName, service, budget, timeline }) {
   const isMartech = (service || "").startsWith("MarTech");
   const isAutomation = (service || "").startsWith("AI Automation");
   const intro = isAutomation
-    ? "Your diagnostic is in. Our team is reviewing where your hours go and will get back to you with the three automations worth building first — not a generic sales pitch."
+    ? "Your diagnostic is in. Our team is reviewing where your hours go and will get back to you with the three automations worth building first, not a generic sales pitch."
     : isMartech
-    ? "Your MarTech inquiry is in. Our team is reviewing your stack details and one of our martech engineers will get back to you with first observations — not a generic sales pitch."
-    : "Your project inquiry is in. Our team is reviewing the details and will get back to you with concrete next steps — not a generic sales pitch.";
+    ? "Your MarTech inquiry is in. Our team is reviewing your stack details and one of our martech engineers will get back to you with first observations, not a generic sales pitch."
+    : "Your project inquiry is in. Our team is reviewing the details and will get back to you with concrete next steps, not a generic sales pitch.";
 
   return `<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StackBinary — We've received your inquiry</title>
+  <title>StackBinary, We've received your inquiry</title>
 </head>
 <body style="margin:0;padding:0;background-color:${BRAND.dark};">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:${BRAND.dark};padding:32px 16px;">
@@ -134,7 +134,7 @@ export function confirmationEmailHtml({ fullName, service, budget, timeline }) {
           <tr>
             <td align="center" style="padding:28px 0 8px;">
               <a href="${BRAND.calendly}" style="display:inline-block;background-color:${BRAND.accent};color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;text-decoration:none;padding:14px 32px;border-radius:999px;">
-                Skip the wait — book a call now
+                Skip the wait, book a call now
               </a>
               <p style="margin:14px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:${BRAND.muted};">
                 Or reply to this email · <a href="${BRAND.whatsapp}" style="color:${BRAND.accent};text-decoration:none;">WhatsApp us</a>
@@ -149,7 +149,7 @@ export function confirmationEmailHtml({ fullName, service, budget, timeline }) {
                 <tr>
                   <td style="padding:20px 32px;font-family:Arial,Helvetica,sans-serif;" align="center">
                     <p style="margin:0 0 12px;font-size:13px;line-height:1.6;color:${BRAND.muted};">
-                      While you wait — we share what we're building, real numbers included, on LinkedIn.
+                      While you wait, we share what we're building, real numbers included, on LinkedIn.
                     </p>
                     <a href="${BRAND.linkedin}" style="display:inline-block;border:1px solid ${BRAND.accent};color:${BRAND.accent};font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;text-decoration:none;padding:10px 24px;border-radius:999px;">
                       Follow StackBinary on LinkedIn
@@ -189,16 +189,16 @@ export function confirmationEmailText({ fullName }) {
   const firstName = (fullName || "there").split(" ")[0];
   return `Hi ${firstName},
 
-Thank you for your inquiry — you're in the pipeline. Our team is reviewing the details and will get back to you within one business day.
+Thank you for your inquiry, you're in the pipeline. Our team is reviewing the details and will get back to you within one business day.
 
 What happens next:
 1. We review your inquiry and map it against work we've already shipped.
 2. You get a reply with first observations and a suggested call slot.
 3. On the call: scope, timeline and a straight answer on whether we're the right fit.
 
-Skip the wait — book a call: https://calendly.com/stackbinary/30min
+Skip the wait, book a call: https://calendly.com/stackbinary/30min
 WhatsApp: https://wa.me/918928028738
-Follow us on LinkedIn — we share what we're building, real numbers included:
+Follow us on LinkedIn, we share what we're building, real numbers included:
 https://www.linkedin.com/company/stackbinary
 
 Best regards,

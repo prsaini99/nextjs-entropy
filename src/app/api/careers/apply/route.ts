@@ -270,7 +270,7 @@ export async function POST(request: NextRequest) {
           deliverable = true;
         }
         if (!deliverable) {
-          console.warn(`Careers confirmation skipped — no MX/A records for ${domain}`);
+          console.warn(`Careers confirmation skipped, no MX/A records for ${domain}`);
           throw Object.assign(new Error('undeliverable domain'), { skipped: true });
         }
 
@@ -303,7 +303,7 @@ export async function POST(request: NextRequest) {
         await transporter.sendMail({
           from: MAIL_FROM,
           to: applicationData.email as string,
-          subject: `We have your application — ${applicationData.jobTitle || 'StackBinary'}`,
+          subject: `We have your application, ${applicationData.jobTitle || 'StackBinary'}`,
           text: applicationConfirmationText({
             firstName: applicationData.firstName as string,
             jobTitle: applicationData.jobTitle as string,

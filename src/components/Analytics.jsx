@@ -159,7 +159,7 @@ export default function Analytics() {
 
   return (
     <>
-      {/* Google Analytics 4 — direct gtag.js */}
+      {/* Google Analytics 4, direct gtag.js */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
@@ -177,7 +177,7 @@ export default function Analytics() {
         `}
       </Script>
 
-      {/* Meta Pixel — ad attribution + retargeting audiences.
+      {/* Meta Pixel, ad attribution + retargeting audiences.
           DELIBERATELY NOT LOADED ON /careers: the 2026-08 applicant flood put
           6,000+ job seekers through those pages, which vastly outnumber buyers.
           Feeding them to the pixel would teach Meta that our customer looks
@@ -203,7 +203,7 @@ export default function Analytics() {
       </Script>
       )}
 
-      {/* Microsoft Clarity — heatmaps + session recordings */}
+      {/* Microsoft Clarity, heatmaps + session recordings */}
       <Script id="ms-clarity" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){
@@ -214,7 +214,7 @@ export default function Analytics() {
         `}
       </Script>
 
-      {/* Google Tag Manager — the marketing team's self-serve tag workspace
+      {/* Google Tag Manager, the marketing team's self-serve tag workspace
           (ad pixels, conversion tags). Owner rule: GA4 and Clarity live in
           code above and must never be duplicated inside GTM. */}
       {process.env.NEXT_PUBLIC_GTM_ID && (

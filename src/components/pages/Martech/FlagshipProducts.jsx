@@ -23,7 +23,7 @@ const products = [
         ],
         stats: [
             { value: "5", label: "AI lenses per creative" },
-            { value: "0–3s", label: "hook window scored" },
+            { value: "0-3s", label: "hook window scored" },
             { value: "A/B", label: "hook strength compared across a real creative pair" },
         ],
         href: "/martech/creative-analysis",
@@ -38,14 +38,14 @@ const products = [
             "Our end-to-end creator marketing platform: discover creators, vet them with AI against your ideal influencer profile, automate DM outreach and manage every negotiation in one pipeline, with campaign analytics closing the loop.",
         features: [
             "Creator discovery & enrichment from Instagram",
-            "AI vetting with 0–100 match scores",
+            "AI vetting with 0-100 match scores",
             "Automated DM outreach & reply tracking",
             "Multi-stage negotiation pipeline with quote history",
             "Campaign deliverables & performance analytics",
             "Multi-brand isolation for agencies",
         ],
         stats: [
-            { value: "0–100", label: "AI match score per creator" },
+            { value: "0-100", label: "AI match score per creator" },
             { value: "292%", label: "follower growth on a celebrity beauty brand" },
             { value: "3.8x", label: "ROAS on campaigns we've run" },
         ],
@@ -133,7 +133,7 @@ function AttentionCurve() {
             <path d={path} fill="none" stroke="#E0362C" strokeWidth="2.5" strokeLinejoin="round" />
             <circle cx={peakIndex * step} cy={h - curve[peakIndex] * h} r="5" fill="#E0362C" />
             <text x={step * 1.5} y={h + 20} fill="#ffffff" opacity="0.5" fontSize="11" textAnchor="middle">
-                hook (0–3s)
+                hook (0-3s)
             </text>
             <text x={peakIndex * step} y={h - curve[peakIndex] * h - 12} fill="#ffffff" opacity="0.8" fontSize="11" textAnchor="middle">
                 peak attention
