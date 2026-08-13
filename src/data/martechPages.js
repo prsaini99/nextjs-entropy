@@ -214,7 +214,7 @@ const martechPages = {
         "Built and used for real agency ad-ops across 10+ accounts in production.",
       ],
     },
-    demo: { href: "#martech-lead-form", label: "Request a walkthrough (auth-gated internal tool)", external: false },
+    demo: { href: "https://www.adsboys.com/", label: "See adsboys live → adsboys.com", external: true },
   },
 
   "creative-analysis": {
