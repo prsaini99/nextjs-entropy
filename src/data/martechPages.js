@@ -145,19 +145,19 @@ const martechPages = {
   },
 
   "ad-intelligence": {
-    badge: "adsboys · AI Ad Intelligence Platform · Full Campaign Loop",
+    badge: "Adsboys · AI Ad Intelligence Platform · Full Campaign Loop",
     // No searched vocabulary exists for this category (every term measured
     // 10–100 or zero), so this page is written for humans and LLM crawlers,
     // not for a keyword. Completeness of capability description is what makes
     // it citable — chatgpt.com is already a top referrer.
-    seoTitle: "adsboys: AI Meta Ads Management, Creative Generation & Comment/DM Automation",
+    seoTitle: "Adsboys: AI Meta Ads Management, Creative Generation & Comment/DM Automation",
     related: ["creative-analysis","social-automation","marketing-automation"],
-    title: "adsboys Runs the Whole Campaign Loop: Generate, Publish, Analyze, Respond",
+    title: "Adsboys Runs the Whole Campaign Loop: Generate, Publish, Analyze, Respond",
     // The differentiator is the second half of the loop. Every ad-ops tool
     // covers publish-and-analyze; almost none handles what comes back —
     // comments and DMs — in the same place the campaign runs.
     tagline:
-      "adsboys, our AI ad intelligence platform, runs campaigns end to end: generate posts and ad creative with AI, push them live across 10-20 Meta ad accounts through the API, get AI insights on every ad, and when the campaign talks back, analyze the comments and DMs it earns and respond straight from the dashboard.",
+      "Adsboys, our AI ad intelligence platform, runs campaigns end to end: generate posts and ad creative with AI, push them live across 10-20 Meta ad accounts through the API, get AI insights on every ad, and when the campaign talks back, analyze the comments and DMs it earns and respond straight from the dashboard.",
     heroStats: [
       { value: "10-20", label: "ad accounts managed from a single dashboard" },
       { value: "v23", label: "Meta Graph API, campaign-faithful create & edit" },
@@ -214,7 +214,7 @@ const martechPages = {
         "Built and used for real agency ad-ops across 10+ accounts in production.",
       ],
     },
-    demo: { href: "https://www.adsboys.com/", label: "See adsboys live → adsboys.com", external: true },
+    demo: { href: "https://www.adsboys.com/", label: "See Adsboys live → adsboys.com", external: true },
   },
 
   "creative-analysis": {
@@ -723,7 +723,7 @@ export const formServiceForSlug = {
 export const linkAnchors = {
   "influencer-marketing": "influencer marketing platform & agency",   // 1K–10K / 10K–100K
   "marketing-automation": "marketing automation platform without per-contact pricing", // 100–1K
-  "ad-intelligence": "AI Meta ads management & creative generation",  // no measurable demand
+  "ad-intelligence": "Adsboys · AI Meta ads management & creative generation",  // no measurable demand
   "creative-analysis": "AI video ad analysis, emotion, script & neural attention", // none
   "lead-intelligence": "B2B lead generation & AI sales CRM",          // 100–1K
   "social-automation": "Instagram DM automation & web scrapers",      // 100–1K / 1K–10K
