@@ -341,7 +341,7 @@ function DiagnosticForm({ location }) {
 export default function AiAutomationPage() {
     return (
         <div>
-            {/* HERO — mirrors MartechHero: hero-wrapper clears the nav, badge with
+            {/* HERO, mirrors MartechHero: hero-wrapper clears the nav, badge with
                 divider, heading-2, red-check list, form right, stat strip below. */}
             <section>
                 <div className="padding-global">
@@ -439,7 +439,7 @@ export default function AiAutomationPage() {
                 </div>
             </section>
 
-            {/* AI AUTOMATION, NOT JUST AUTOMATION — the differentiator section.
+            {/* AI AUTOMATION, NOT JUST AUTOMATION, the differentiator section.
                 Two senses of AI, both true: AI inside the automations (judgment
                 work, not brittle rules) and AI in the building (why 2-3 weeks
                 is honest). The H2 carries the target keyword verbatim. */}
@@ -631,7 +631,7 @@ export default function AiAutomationPage() {
                 </div>
             </section>
 
-            {/* FAQ — the shared /martech accordion, page-specific questions */}
+            {/* FAQ, the shared /martech accordion, page-specific questions */}
             <MartechFAQ
                 faqs={FAQS}
                 heading="Questions, Answered Straight"

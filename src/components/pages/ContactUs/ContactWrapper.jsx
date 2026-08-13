@@ -56,12 +56,12 @@ const SERVICE_GROUPS = [
 ];
 
 // Escape hatch, so a required field never traps someone who doesn't know yet.
-const SERVICE_UNSURE = 'Not sure yet — advise me';
+const SERVICE_UNSURE = 'Not sure yet, advise me';
 
 // Same vocabulary as the MarTech form, so lead_budget is comparable in GA4.
-const BUDGETS = ['Under ₹5 Lakh', '₹5 – ₹15 Lakh', '₹15 – ₹40 Lakh', '₹40 Lakh+', 'Not sure yet'];
+const BUDGETS = ['Under ₹5 Lakh', '₹5-₹15 Lakh', '₹15-₹40 Lakh', '₹40 Lakh+', 'Not sure yet'];
 
-const TIMELINES = ['ASAP', 'Within a month', '1–3 months', 'Exploring options'];
+const TIMELINES = ['ASAP', 'Within a month', '1-3 months', 'Exploring options'];
 
 // A free mailbox is not a company website — recording one would award the
 // company_website scoring bonus to every gmail lead.
@@ -424,7 +424,7 @@ export default function ContactWrapper() {
                                                 id="projectSummary"
                                                 name="projectSummary"
                                                 maxLength="5000"
-                                                placeholder="A line or two about the project — or leave it blank and we'll ask on the call."
+                                                placeholder="A line or two about the project, or leave it blank and we'll ask on the call."
                                                 className="text-field-contact w-input"
                                                 value={formData.projectSummary}
                                                 onChange={handleChange}
@@ -454,7 +454,7 @@ export default function ContactWrapper() {
                                     </div>
                                     <div className="text-size-medium opacity-85">
                                         We&apos;ll get back to you within one business day. Check your
-                                        inbox for a confirmation — if you have a brief or spec, just
+                                        inbox for a confirmation. If you have a brief or spec, just
                                         reply to that email and attach it.
                                     </div>
                                 </AnimatedInViewDiv>

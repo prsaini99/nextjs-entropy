@@ -25,7 +25,7 @@ export default function IndustriesHub() {
                                 <div className="max-w-4xl">
                                     <p className="opacity-80">
                                         From HIPAA-compliant healthcare AI to high-concurrency
-                                        ticketing, IoT cattle monitoring to $100M+ commerce — pick
+                                        ticketing, IoT cattle monitoring to $100M+ commerce, pick
                                         your industry and see exactly what we&apos;ve built for
                                         companies like yours.
                                     </p>

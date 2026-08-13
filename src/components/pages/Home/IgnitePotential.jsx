@@ -7,7 +7,7 @@ import ROUTES from '@/constants/routes'
 const features = [
     {
         title: 'Outcome-Driven',
-        description: 'Roadmaps tied to business goals—not vanity metrics.',
+        description: 'Roadmaps tied to business goals, not vanity metrics.',
     },
     {
         title: 'Secure by Default',

@@ -34,7 +34,7 @@ export default function FeaturesWrapper() {
                                     {index % 2 === 1 && (
                                         <div className="features-image-container">
                                             {/* Linked like the card's button: Clarity logged dead
-                                                clicks on these images — taps now go to the service. */}
+                                                clicks on these images, taps now go to the service. */}
                                             <Link href={`/services/${getServiceSlug(feature.title)}`} aria-label={feature.title}>
                                                 <div className="features-image-wrapper">
                                                     <img

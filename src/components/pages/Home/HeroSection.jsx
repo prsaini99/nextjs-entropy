@@ -26,7 +26,7 @@ export default function HeroSection() {
 
                             <div className="max-width-75ch text-center">
                                 <h1 className="heading-4 text-weight-bold line-height-1-2">
-                                    AI, Cloud & Custom Software—Built to Ship and Scale.
+                                    AI, Cloud & Custom Software. Built to Ship and Scale.
                                 </h1>
                             </div>
                             <div className="opacity-80">

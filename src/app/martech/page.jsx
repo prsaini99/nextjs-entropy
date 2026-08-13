@@ -93,8 +93,7 @@ export default function MartechPage() {
       <MartechStickyCTA />
       <MartechHero />
       <MartechBrands />
-      {/* Products before services: the H1 claims we build AI, so the proof —
-          four shipped products you can click — comes before the service menu. */}
+      {/* Products before services: the H1 claims we build AI, so the proof,           four shipped products you can click, comes before the service menu. */}
       <FlagshipProducts />
       <MartechServices />
       <MartechCaseStudies />

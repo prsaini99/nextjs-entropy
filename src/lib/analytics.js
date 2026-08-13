@@ -158,7 +158,7 @@ export function trackEvent(eventName, parameters = {}) {
 
   // Log locally even though nothing is sent, so events remain debuggable in dev.
   if (process.env.NODE_ENV === 'development') {
-    console.log('📊 [not sent — dev]', eventName, parameters);
+    console.log('📊 [not sent, dev]', eventName, parameters);
   }
 
   if (!isTrackableHost()) return;

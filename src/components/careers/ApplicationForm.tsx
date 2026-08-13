@@ -532,8 +532,8 @@ export default function ApplicationForm({ job, onClose }: Props) {
             </div>
             {/* Pre-submit follow nudge: deliberately placed before the outcome
                 (post-submit asks convert ~14%; the applicant still wants
-                something here). Copy states how we contact people — LinkedIn
-                DM or official email — without promising announcements. */}
+                something here). Copy states how we contact people, LinkedIn
+                DM or official email, without promising announcements. */}
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
               <p className="text-size-small text-gray-700 mb-3">
                 We connect with shortlisted candidates through LinkedIn or our
@@ -604,7 +604,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
           </p>
           <div className="border border-gray-200 rounded-lg p-6 mb-8">
             <p className="text-size-regular opacity-80 mb-4">
-              We announce new roles and ship-updates on LinkedIn first — follow
+              We announce new roles and ship-updates on LinkedIn first, follow
               StackBinary to hear about them before they&apos;re posted anywhere else.
             </p>
             <a
