@@ -1,4 +1,5 @@
 import { getAllServiceSlugs } from '@/data/services'
+import { getAllAiServiceSlugs } from '@/data/aiServicesPages'
 import { getAllMartechSlugs } from '@/data/martechPages'
 import { getAllIndustrySlugs } from '@/data/industries'
 import { getAllInsightSlugs } from '@/lib/insights'
@@ -68,6 +69,15 @@ export default function sitemap() {
     priority: 0.8,
   }))
 
+  // US-targeted AI services cluster. Priority 0.9: these are the pages the
+  // ranking program is measured on (GSC decision gate ~6 weeks after launch).
+  const aiServicePages = getAllAiServiceSlugs().map((slug) => ({
+    url: `${baseUrl}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  }))
+
   // Martech product pages
   const martechPages = [...getAllMartechSlugs(), 'shopify-websites'].map((slug) => ({
     url: `${baseUrl}/martech/${slug}`,
@@ -107,5 +117,5 @@ export default function sitemap() {
     priority: 0.7,
   }))
   
-  return [...staticPages, ...servicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages]
+  return [...staticPages, ...servicePages, ...aiServicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages]
 }
