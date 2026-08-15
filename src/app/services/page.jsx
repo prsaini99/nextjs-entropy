@@ -1,7 +1,9 @@
+import Link from "next/link";
 import Banner from "@/components/Banner";
 import FeaturesWrapper from "@/components/pages/Features/FeaturesWrapper";
 import HeroSection from "@/components/pages/Features/HeroSection";
 import { features } from "@/components/pages/Features/data";
+import { getAllAiServiceSlugs, getAiServicePage, aiServiceAnchors } from "@/data/aiServicesPages";
 
 export const metadata = {
   title: "Services Built for Impact - Custom Software, Cloud, AI & More | Stackbinary.io",
@@ -85,6 +87,59 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
+
+      {/* AI practice cluster. This block is the primary internal-link path
+          into the US-targeted AI pages: keyword-bearing anchors from a
+          priority page, which matters as much as the sitemap for indexing. */}
+      <section>
+        <div className="padding-global py-16">
+          <div className="w-layout-blockcontainer container w-container">
+            <div className="about-features-wrapper">
+              <div className="about-features-header">
+                <div className="header">
+                  <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider mb-4">
+                    The AI Practice
+                  </div>
+                  <h2 className="heading-4 text-weight-medium">
+                    AI Development, From Strategy to Production
+                  </h2>
+                  <div className="opacity-80">
+                    <div className="max-w-4xl">
+                      <p>
+                        We design, build and operate AI systems: agents, apps, chatbots,
+                        voice and integrations, backed by systems we run in production ourselves.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
+                {getAllAiServiceSlugs().map((slug) => {
+                  const page = getAiServicePage(slug);
+                  return (
+                    <Link
+                      key={slug}
+                      href={`/services/${slug}`}
+                      className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-2 group"
+                    >
+                      <span className="text-size-medium text-weight-medium">
+                        {aiServiceAnchors[slug]}
+                      </span>
+                      <span className="text-size-small opacity-70">
+                        {page.badge.split("·")[1]?.trim() || ""}
+                      </span>
+                      <span className="text-[#E0362C] opacity-40 group-hover:opacity-100 transition-opacity mt-auto">
+                        →
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FeaturesWrapper />
       <Banner
         image="https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/ngnwgqkwckycyz6ms1wz"

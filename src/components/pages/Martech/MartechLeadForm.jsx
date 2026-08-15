@@ -40,11 +40,16 @@ const TIMELINES = ["ASAP", "Within a month", "1-3 months", "Exploring options"];
  * @param source  Recorded as lead_source, e.g. "martech/ai-call-center", so the
  *   leads table shows which page produced the lead. Previously every martech
  *   lead recorded as just "martech".
+ * @param services / @param budgets  Option lists for the dropdowns. Defaults are
+ *   the martech set; the US-targeted AI services pages pass their own so US
+ *   visitors are not offered martech product names or rupee budget bands.
  */
 export default function MartechLeadForm({
     compact = false,
     defaultService = "",
     source = "martech",
+    services = SERVICES,
+    budgets = BUDGETS,
     // The hub asks about the whole stack; a product page is a quote request for
     // one thing. Same form, different promise. Reserve "stack audit" wording for
     // the hub and, later, the self-serve scanner.
@@ -121,7 +126,9 @@ export default function MartechLeadForm({
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...form,
-                    service: `MarTech: ${form.service || "General"}`,
+                    // Leads from the AI services cluster must not be labeled
+                    // MarTech in the admin: the prefix follows the page family.
+                    service: `${source.startsWith("services/") ? "AI Services" : "MarTech"}: ${form.service || "General"}`,
                     timeline: form.timeline || "Exploring options",
                     lead_source: source,
                     landing_page: window.location.pathname,
@@ -220,7 +227,7 @@ export default function MartechLeadForm({
                     <option value="" disabled>
                         What do you need? *
                     </option>
-                    {SERVICES.map((s) => (
+                    {services.map((s) => (
                         <option key={s} value={s}>
                             {s}
                         </option>
@@ -267,7 +274,7 @@ export default function MartechLeadForm({
                         <option value="" disabled>
                             Budget range (INR)
                         </option>
-                        {BUDGETS.map((b) => (
+                        {budgets.map((b) => (
                             <option key={b} value={b}>
                                 {b}
                             </option>
