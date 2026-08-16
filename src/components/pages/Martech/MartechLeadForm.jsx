@@ -20,6 +20,7 @@ const SERVICES = [
     "AI Proposal Generator (Branded)",
     "MCP Integration & AI Enablement",
     "Shopify / E-Commerce Store",
+    "Agency Partnership / White Label",
     "Not sure yet, advise me",
 ];
 

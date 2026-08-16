@@ -272,6 +272,34 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                 </section>
             )}
 
+            {/* Long-form prose sections. Added for the 2026-08-16 keyword
+                retargets: the Indian SERPs for "sales automation services"
+                and "whatsapp marketing automation" rank definitional guide
+                content, which card grids cannot carry. Renders only when a
+                page provides deepDive data. */}
+            {page.deepDive?.map((block) => (
+                <section key={block.heading}>
+                    <div className="padding-global py-12">
+                        <div className="w-layout-blockcontainer container w-container">
+                            <div className="max-w-4xl mx-auto">
+                                <AnimatedInViewDiv>
+                                    <h2 className="heading-5 text-weight-medium mb-5">
+                                        {block.heading}
+                                    </h2>
+                                    <div className="flex flex-col gap-5">
+                                        {block.paragraphs.map((p, i) => (
+                                            <p key={i} className="opacity-80">
+                                                {p}
+                                            </p>
+                                        ))}
+                                    </div>
+                                </AnimatedInViewDiv>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            ))}
+
             {page.howItWorks && (
                 <section>
                     <div className="padding-global py-16">
