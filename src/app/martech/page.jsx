@@ -104,6 +104,56 @@ export default function MartechPage() {
           browsing visitors here; paid Shopify traffic gets its own ad group
           pointing at /martech/shopify-websites. */}
       <MartechShopify />
+
+      {/* Agencies block (2026-08-16). "Marketing automation for agencies" is
+          tool-held in search, so agencies are a CONVERSION audience here, not
+          an SEO target: the pitch is ownership economics, spoken directly. */}
+      <section>
+        <div className="padding-global py-16">
+          <div className="w-layout-blockcontainer container w-container">
+            <div className="border border-[#E0362C]/30 rounded-lg p-8 lg:p-12 bg-[#E0362C]/[0.04]">
+              <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider mb-4">
+                For Marketing Agencies
+              </div>
+              <h2 className="heading-5 text-weight-medium mb-4">
+                Run Our Stack for Your Clients, or Own It White Label
+              </h2>
+              <p className="opacity-80 max-w-4xl mb-6">
+                Every platform on this page works the way an agency needs it to:
+                isolated client workspaces, your brand on the interface if you
+                want it, and no per-seat or per-contact pricing that multiplies
+                with every client you win. Use our team as your production arm
+                for automation builds, or take a white label deployment and make
+                the software your own margin instead of your biggest cost.
+              </p>
+              <ul className="flex flex-col gap-3">
+                <li className="flex gap-3 opacity-80">
+                  <span className="text-[#E0362C]">✓</span>
+                  <span className="text-size-small">
+                    Email journeys, WhatsApp automation, ad-ops and influencer
+                    campaigns run from one stack across all your clients
+                  </span>
+                </li>
+                <li className="flex gap-3 opacity-80">
+                  <span className="text-[#E0362C]">✓</span>
+                  <span className="text-size-small">
+                    White label available on the platforms we own, your brand,
+                    your clients, your pricing
+                  </span>
+                </li>
+                <li className="flex gap-3 opacity-80">
+                  <span className="text-[#E0362C]">✓</span>
+                  <span className="text-size-small">
+                    Fixed-price builds for client work, live in 2-3 weeks, with
+                    the IP assigned wherever your client contract needs it
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <MartechFAQ />
       <Banner
         bannerStyle={{
