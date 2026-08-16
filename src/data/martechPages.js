@@ -80,16 +80,29 @@ const martechPages = {
   },
 
   "marketing-automation": {
-    badge: "AtoEmail · Marketing Automation Platform",
-    seoTitle: "Marketing Automation Platform Without Per-Contact Pricing (AtoEmail)",
+    badge: "AtoEmail · Email Marketing Automation Platform",
+    // RETARGET 2026-08-16: the "email marketing automation" cluster measures
+    // ~480/mo India (automated email marketing and five sibling phrasings,
+    // all LOW) against ~140 for bare "marketing automation". Same page, the
+    // word "email" now carries the weight it earns in search.
+    seoTitle: "Email Marketing Automation Platform & Services, No Per-Contact Pricing (AtoEmail)",
     related: ["lead-intelligence","social-automation","ai-call-center"],
-    title: "Marketing Automation That You Own, Journeys, Campaigns and Inbox in One Engine",
+    title: "Email Marketing Automation You Own: Journeys, Campaigns and Inbox in One Engine",
     tagline:
-      "AtoEmail is our marketing automation platform: visual customer journeys, high-volume campaigns, a unified inbox and a developer API, without per-contact pricing that punishes list growth.",
+      "AtoEmail is our email marketing automation platform: visual customer journeys, high-volume campaigns, a unified inbox and a developer API, without the per-contact pricing that punishes list growth. Run it as a service with our team, or own it outright, including white label for agencies.",
     heroStats: [
       { value: "∞", label: "contacts, no per-subscriber pricing tiers" },
       { value: "4", label: "trigger types: events, replies, schedules, webhooks" },
       { value: "100%", label: "your data, your sending infrastructure, your rules" },
+    ],
+    deepDive: [
+      {
+        heading: "Email Marketing Automation as a Service, Not Another Subscription",
+        paragraphs: [
+          "Every email marketing automation tool on the market shares one business model: charge per contact, so the better your list-building goes, the bigger your bill gets. Agencies feel this hardest, because every client added multiplies the subscription stack. We built AtoEmail against that model: journeys, campaigns, segmentation and a unified inbox on infrastructure you own, where a list of fifty thousand costs the same to hold as a list of five hundred.",
+          "The service side is what most teams actually need first: we design the welcome series, nurture flows, win-back and post-purchase journeys around your funnel, wire the triggers to your real product events, and hand you dashboards that show revenue per journey rather than opens. For agencies, the same engine runs white label: your brand on the platform, your clients in isolated workspaces, no per-seat or per-contact fees eating your retainer margin.",
+        ],
+      },
     ],
     features: [
       {
@@ -145,19 +158,20 @@ const martechPages = {
   },
 
   "ad-intelligence": {
-    badge: "Adsboys · AI Ad Intelligence Platform · Full Campaign Loop",
-    // No searched vocabulary exists for this category (every term measured
-    // 10–100 or zero), so this page is written for humans and LLM crawlers,
-    // not for a keyword. Completeness of capability description is what makes
-    // it citable — chatgpt.com is already a top referrer.
-    seoTitle: "Adsboys: AI Meta Ads Management, Creative Generation & Comment/DM Automation",
+    badge: "Adsboys · Meta Ads Automation Platform · Full Campaign Loop",
+    // RETARGET 2026-08-16: "meta ads automation" measured 140/mo India at
+    // competition index 3, with a page one of tiny sites (fabfunnel, adamigo,
+    // turbamedia). Adsboys IS this category, so the page now leads with the
+    // searched phrase. The earlier judgment (no searched vocabulary, write
+    // for humans and LLM crawlers) predates this measurement.
+    seoTitle: "Meta Ads Automation Platform: AI Campaigns, Creative & DM Replies (Adsboys)",
     related: ["creative-analysis","social-automation","marketing-automation"],
-    title: "Adsboys Runs the Whole Campaign Loop: Generate, Publish, Analyze, Respond",
+    title: "Meta Ads Automation, the Whole Loop: Generate, Publish, Analyze, Respond",
     // The differentiator is the second half of the loop. Every ad-ops tool
     // covers publish-and-analyze; almost none handles what comes back —
     // comments and DMs — in the same place the campaign runs.
     tagline:
-      "Adsboys, our AI ad intelligence platform, runs campaigns end to end: generate posts and ad creative with AI, push them live across 10-20 Meta ad accounts through the API, get AI insights on every ad, and when the campaign talks back, analyze the comments and DMs it earns and respond straight from the dashboard.",
+      "Meta ads automation, end to end: Adsboys generates posts and ad creative with AI, pushes them live across 10-20 Meta ad accounts through the official API, reads performance and serves AI insights on every ad, and when the campaign talks back, analyzes the comments and DMs it earns and responds straight from the dashboard.",
     heroStats: [
       { value: "10-20", label: "ad accounts managed from a single dashboard" },
       { value: "v23", label: "Meta Graph API, campaign-faithful create & edit" },
@@ -279,19 +293,30 @@ const martechPages = {
   },
 
   "lead-intelligence": {
-    badge: "B2B Lead CRM · AI Lead Management",
-    // Vocabulary from the 2026-07-30 keyword round: "lead management software"
-    // (100–1K India, 1K–10K global, ₹83) and "custom crm development" (100–1K,
-    // ₹58, Low competition) are the searched build-intent terms. "whatsapp crm"
-    // (1K–10K) was deliberately NOT targeted: its SERP is ₹999/month BSP tools
-    // (Wati, Interakt, AiSensy) — wrong buyer. WhatsApp stays a feature, not
-    // the identity. This page is the CRM's; TradeToIndia DB is a separate
-    // product that feeds it, and must not be conflated with it.
-    seoTitle: "AI Lead Management Software, Custom B2B CRM with WhatsApp, Calls & Email",
+    badge: "Sales Automation · AI Lead Management CRM",
+    // RETARGET 2026-08-16: primary term is now "sales automation services"
+    // (590/mo India, LOW, comp index 0). Its page one is 8 definitional
+    // articles (IBM, Salesloft, ZoomInfo) and ONE Indian service page, so a
+    // page that defines AND sells can take it; the deepDive below is that
+    // definitional half. Prior targets from the 2026-07-30 round ("lead
+    // management software" 100-1K, "custom crm development" 100-1K) stay as
+    // secondaries in title/copy. "whatsapp crm" remains deliberately
+    // untargeted: its SERP is BSP tools at Rs999/month, wrong buyer.
+    seoTitle: "Sales Automation Services, AI Lead Management & Custom B2B CRM",
     related: ["ai-call-center","proposal-maker","social-automation"],
-    title: "AI Lead Management, Every Lead, WhatsApp Thread, Call, Email and Follow-Up in One Timeline",
+    title: "Sales Automation That Works Every Lead: WhatsApp, Calls, Email and Follow-Ups That Never Slip",
     tagline:
-      "Custom lead management software, built for you: our AI-assisted B2B CRM syncs leads from every source and captures WhatsApp, calls, email, meetings and proposals in one timeline, with AI scoring and follow-ups that never slip. Fed, if you want, by our separate TradeToIndia data product.",
+      "Sales automation services built around your pipeline: our AI-assisted B2B CRM captures leads from every source, scores them, and automates the WhatsApp threads, calls, emails and follow-ups that close them, all in one timeline your team actually uses. Custom lead management software you own, fed, if you want, by our separate TradeToIndia data product.",
+    deepDive: [
+      {
+        heading: "What Are Sales Automation Services, in Practice?",
+        paragraphs: [
+          "Sales automation is software doing the repetitive half of selling so your people only do the human half. The repetitive half is bigger than most teams admit: capturing every enquiry from forms, ads, WhatsApp and marketplaces into one place; deciding which lead a rep should touch first; sending the follow-up that was promised on Tuesday; logging the call notes nobody logs; and chasing the quote that went quiet. None of this needs judgment. All of it decides revenue, because in most Indian B2B pipelines the first responder wins the deal and the forgotten follow-up loses it.",
+          "A sales automation service is different from buying a sales automation tool. A tool gives you empty workflows and a subscription; a service maps how your leads actually arrive and die, then builds the automation around that reality: which sources feed the CRM, what scoring separates a buyer from a browser, which follow-up sequences run on WhatsApp versus email, and where a human must take over. We deliver the second thing, on software you own outright, so the system fits your pipeline instead of your pipeline bending to a tool.",
+          "What should never be automated is judgment: pricing conversations, negotiation and relationship repair stay human. The honest goal of sales automation is not replacing your sales team, it is returning their day to them. A team that spends two hours daily on data entry and reminders sells for two more hours instead, and the pipeline stops leaking in the gaps between tools.",
+        ],
+      },
+    ],
     heroStats: [
       { value: "3", label: "channels captured: WhatsApp, calls, email, in one timeline" },
       { value: "AI", label: "lead scoring: temperature, stage, next action per lead" },
@@ -414,21 +439,33 @@ const martechPages = {
   },
 
   "social-automation": {
-    badge: "Instagram DM Automation · Bots & Scrapers",
-    // The searched term is "instagram dm automation" (100–1K India, 1K–10K
-    // global). "Reply bots" is our word for it, not the buyer's.
-    seoTitle: "Instagram DM Automation & Reply Bots + Web Scraping Services",
+    badge: "WhatsApp & Instagram Automation · Bots & Scrapers",
+    // Searched terms: "instagram dm automation" (100-1K India, from the
+    // 2026-07-30 round) and, added 2026-08-16, "whatsapp marketing
+    // automation" (170/mo, LOW): its SERP mixes tool pages with how-to
+    // guides, which the deepDive below supplies. "Reply bots" remains our
+    // word for it, not the buyer's.
+    seoTitle: "WhatsApp Marketing Automation & Instagram DM Automation Services",
     related: ["influencer-marketing","lead-intelligence","marketing-automation"],
-    title: "Instagram DM Automation, Reply, Follow Up and Research While You Sleep",
+    title: "WhatsApp and Instagram Automation: Reply, Follow Up and Research While You Sleep",
     // `tagline` is used twice: as the meta description AND as the hero
     // paragraph. Leading with the searched term ("instagram dm automation")
     // fixes both the SERP snippet and the first line an ad visitor reads.
     tagline:
-      "Instagram DM automation, comment replies and follow-up sequences across Instagram, Facebook, Quora and more, plus scrapers that gather intelligence on anything: competitors, prospects, pricing, trends. Your audience gets timely answers; your marketing gets the data.",
+      "WhatsApp marketing automation and Instagram DM automation in one service: broadcasts, comment replies and follow-up sequences across WhatsApp, Instagram, Facebook, Quora and more, plus scrapers that gather intelligence on anything: competitors, prospects, pricing, trends. Your audience gets timely answers; your marketing gets the data.",
     heroStats: [
       { value: "24/7", label: "response coverage across your social channels" },
       { value: "<1min", label: "time-to-first-reply on incoming DMs and comments" },
       { value: "Any", label: "target: competitors, prospects, pricing, trends, scraped on schedule" },
+    ],
+    deepDive: [
+      {
+        heading: "WhatsApp Marketing Automation, Done by the Rules",
+        paragraphs: [
+          "WhatsApp is the highest-open channel in Indian marketing and the easiest one to get banned from, which is why most of the value in WhatsApp marketing automation is knowing the rules as well as the tooling. Broadcasts to people who never opted in get numbers blocked. Template messages must be pre-approved by Meta, and the 24-hour customer service window decides when you may send free-form replies versus templates. Automation built without these constraints works for a fortnight and then takes your number down with it.",
+          "Built correctly, the channel compounds: opted-in broadcast lists with template rotation that keeps quality ratings green, auto-replies that answer product questions inside the service window, drip follow-ups that move an enquiry to a quote, and every conversation landing in your CRM timeline next to the calls and emails. We build on official APIs, handle the template approvals and opt-in capture as part of the service, and wire WhatsApp into the same automation engine that runs your Instagram DMs, so one system follows up everywhere your buyers actually reply.",
+        ],
+      },
     ],
     features: [
       {

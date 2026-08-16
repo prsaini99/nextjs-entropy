@@ -154,6 +154,16 @@ const martechFaqs = {
             answer:
                 "No. There is no per-subscriber pricing, unlimited contacts is the design, not a plan tier. Deliverability at volume is handled with multi-key load balancing across your sending identities.",
         },
+        {
+            question: "What do email marketing automation services include?",
+            answer:
+                "Everything between strategy and send: welcome series, nurture flows, win-back and post-purchase journeys designed around your funnel, triggers wired to your real product events, list hygiene and deliverability management, and reporting that shows revenue per journey rather than open rates. We run all of it on AtoEmail, so there is no per-contact subscription underneath eating the budget, and everything built belongs to you.",
+        },
+        {
+            question: "Can agencies white-label AtoEmail for their clients?",
+            answer:
+                "Yes, and it is one of the main reasons agencies come to us. Your brand on the platform, each client in an isolated workspace, your team managing journeys across all of them, and no per-contact or per-seat fees multiplying with every client you add. You can run it as your agency's email backbone on our infrastructure or own a private deployment outright, with the economics improving as you grow instead of punishing you for it.",
+        },
     ],
 
     "social-automation": [
@@ -187,6 +197,16 @@ const martechFaqs = {
             answer:
                 "Yes, competitors, pricing, prospects, trends, from any public source, on a schedule, into your warehouse. These are usually small, focused builds, which makes them among the fastest and least expensive things we do.",
         },
+        {
+            question: "Is WhatsApp marketing automation legal and safe for my number?",
+            answer:
+                "Yes, when it runs on the official WhatsApp Business API with real opt-ins, which is the only way we build it. Meta's rules are strict: broadcast templates must be pre-approved, free-form replies are limited to the 24-hour service window, and numbers that message people without consent get blocked. We handle template approvals, opt-in capture and quality-rating monitoring as part of the service, which is exactly the compliance work the cheap gray-market tools skip right up until the ban.",
+        },
+        {
+            question: "What can WhatsApp marketing automation actually do for my business?",
+            answer:
+                "Opted-in broadcasts for offers and updates, instant answers to product questions inside the service window, drip follow-ups that move an enquiry to a quote, order and appointment reminders, and re-engagement of quiet leads. Every conversation lands in your CRM timeline next to calls and emails, so WhatsApp stops being a separate phone in someone's drawer and becomes a measured channel. For most Indian businesses it is the highest open-rate channel they own.",
+        },
     ],
 
     // CRM page. Questions lead with the searched vocabulary for this page:
@@ -194,6 +214,16 @@ const martechFaqs = {
     // data-product FAQs that used to live here (scraping legality, subscription
     // databases) moved to "sales-intelligence" when the pages split.
     "lead-intelligence": [
+        {
+            question: "What are sales automation services?",
+            answer:
+                "Sales automation services design and run the software that does the repetitive half of selling: capturing every lead from forms, ads, WhatsApp and marketplaces into one CRM, scoring them so reps call the right person first, sending the follow-ups and reminders that humans forget, and logging every touch automatically. Unlike buying a tool, a service maps how your pipeline actually works and builds the automation around it, on software you own. Judgment work, pricing, negotiation and relationships, stays human.",
+        },
+        {
+            question: "What does sales automation cost in India?",
+            answer:
+                "Less than the leads it saves. A custom build around your pipeline is quoted fixed after a free scoping call, and most systems go live in two to three weeks. The comparison that matters is the leak you have today: if even two enquiries a week die from slow first response or forgotten follow-up, the automation typically pays for itself inside a quarter. There is no per-seat or per-contact pricing, because you own the system.",
+        },
         {
             question: "What is lead management software?",
             answer:
@@ -256,6 +286,28 @@ const martechFaqs = {
         },
     ],
 
+    "ad-intelligence": [
+        {
+            question: "What is meta ads automation?",
+            answer:
+                "Meta ads automation is software running the repetitive parts of Facebook and Instagram advertising for you: generating and rotating creative, launching campaigns across ad accounts through the official Meta API, applying budget and pause rules based on performance, and reading results without a human exporting spreadsheets. Adsboys covers that full loop and adds the half most tools skip: the comments and DMs your ads earn, analyzed and answered from the same dashboard the campaign runs in.",
+        },
+        {
+            question: "Can I automate Meta ads without risking my ad account?",
+            answer:
+                "Yes, if the automation goes through the official Meta Marketing API with proper access and sensible change velocity, which is how Adsboys works. Account bans come from policy-violating creative, suspicious payment behavior and gray-market tools that fake browser sessions, not from API automation itself. We run our own campaigns through the same pipeline, so rate limits, review queues and account safety practices are things we live with daily, not theory.",
+        },
+        {
+            question: "How is Adsboys different from tools like Revealbot or Madgicx?",
+            answer:
+                "Two ways. First, the loop is longer: those tools optimize the buying side, while Adsboys also handles what the campaign earns, comments and DMs, with AI analysis and replies in the same place, because in India the DM thread is where the sale actually happens. Second, the ownership model: you can subscribe, have our team run it for you as a service, or own a private build outright with no per-seat pricing, the same choice we offer on every platform we ship.",
+        },
+        {
+            question: "Do you run the campaigns or just provide the tool?",
+            answer:
+                "Either, or both. Some clients take the platform and run their own ads; some hand us the ad budget and a brief, and our team runs campaigns through Adsboys with weekly reporting; agencies use it across client accounts, up to 10-20 Meta ad accounts side by side. Automation plus a team that has spent real budgets through it beats either one alone, and you can move between models as your team grows.",
+        },
+    ],
     "creative-analysis": [
         {
             question: "What is AI video ad analysis?",
