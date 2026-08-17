@@ -80,7 +80,68 @@ const industries = {
     built: [
       { name: "KROOZ", tag: "Multi-Service Mobility", detail: "Rides, food delivery and courier in one driver/rider app.", helps: "50 countries, 2M+ customers, 10M+ service requests." },
       { name: "Ponttual", tag: "Ride-Hailing", detail: "Real-time matching, GPS navigation and dynamic pricing.", helps: "5M+ rides, 4.6-star average, 95% completion rate." },
-      { name: "SolarProposal", tag: "Clean Energy · Live", detail: "3D roof designer, ROI & PM Surya Ghar subsidy, branded PDF.", helps: "Solar proposals in minutes, not days." },
+      // Solar now has its own page; this stays as a pointer so the mobility
+      // page keeps the capability signal without competing for solar queries.
+      // The 3D roof designer claim was dropped here too, for the same reason
+      // it was left off the solar page: unverified end to end.
+      { name: "SolarProposal", tag: "Clean Energy · Live", detail: "Generation forecasts, ROI & PM Surya Ghar subsidy, branded PDF. See the full solar practice under Solar & Renewable Energy.", helps: "Solar proposals in minutes, not days." },
+    ],
+  },
+
+  // Split out of automotive-mobility-energy on 2026-08-17. Solar EPCs were
+  // buried under a page led by ride-hailing apps, which no EPC owner would
+  // trust or find. Keyword check (India, same day): the searched vocabulary
+  // is "solar design software" (390/mo, LOW), "crm for solar" + "solar crm
+  // software" (430 combined), "solar proposal software" (70). Much of the
+  // design-software volume is student and free-download intent, so the
+  // seoTitle leads with the business-buyer terms (proposal, CRM, EPC) and
+  // carries "design software" second.
+  "solar-renewable-energy": {
+    name: "Solar & Renewable Energy",
+    seoTitle: "Solar EPC Software: Proposal Automation, CRM & Design Tools",
+    blurb:
+      "Software for solar EPC companies: generate a branded proposal with generation forecasts, ROI and PM Surya Ghar subsidy maths in minutes, then track it through to close.",
+    brands: ["Sterlite Power", "IndianOil", "Balmerol"],
+    // Two links on purpose. `href` is the platform itself, which opens on a
+    // sign-in screen, so it suits the visitor willing to create an account.
+    // `sample` is the public proposal viewer and needs no sign-up, which is
+    // what most first-time visitors actually want: proof of the output.
+    // The sample slug is OUR OWN demo proposal. Never point it at a Nexio
+    // slug (mklmnkg0, lm7uyl4a, f4pyc1lq, f6c9466y): those carry real client
+    // names, addresses and pricing.
+    demo: {
+      href: "https://solar-proposal-sigma.vercel.app/",
+      label: "Explore the Platform",
+      // Honest eyebrow: the sample needs no account, the platform link does.
+      eyebrow: "Live Product · Sample Needs No Sign-Up",
+      heading: "See it working, and see what your customer receives",
+      note: "Open the platform to walk through how a proposal gets built, or jump straight to a finished proposal exactly as a homeowner would see it, with cover page, system specs, generation forecast, subsidy and ROI, components and payment terms.",
+      sample: {
+        href: "https://solar-proposal-sigma.vercel.app/p/4vimjs4v",
+        label: "See a Sample Proposal",
+      },
+      disclaimer:
+        "Every figure, client name and price in the sample proposal is demo data, shown to illustrate the format rather than a real project.",
+    },
+    pains: [
+      { title: "Proposals take an hour", detail: "Sales teams rebuild the same deck in PowerPoint or Canva for every site visit." },
+      { title: "Numbers cannot be trusted", detail: "Generation, payback and subsidy maths recalculated by hand, differently by each rep." },
+      { title: "Slow quotes lose deals", detail: "The EPC who sends the proposal that evening wins the customer who asked three of you." },
+      { title: "No visibility after sending", detail: "Nobody knows whether the customer opened the proposal or which page they stopped on." },
+    ],
+    built: [
+      // The 3D roof designer and satellite shading study exist in the code
+      // and are wired into the wizard, but were deliberately LEFT OFF this
+      // page (owner call, 2026-08-17): the module could not be verified
+      // running end to end, and an unproven claim invites a comparison with
+      // PVsyst and Aurora that we would lose. Add it back only once it has
+      // been demonstrated working on a real proposal.
+      { name: "SolarProposal", tag: "Proposal Automation · Live", detail: "PVWatts-backed generation forecasts, PM Surya Ghar subsidy slabs, ROI and payback, bill of materials and a branded PDF, from one guided flow.", helps: "Proposals in minutes instead of 30-60 minutes, with the maths identical across every rep." },
+      { name: "Components & BOM Engine", tag: "Costing", detail: "A library of panels, inverters and balance-of-system parts with live costs, grouped into good-better-best budget tiers that price a system automatically.", helps: "Every quote uses approved components and current prices, not last quarter's spreadsheet." },
+      { name: "Subsidy & ROI Engine", tag: "PM Surya Ghar", detail: "Residential subsidy calculated to the current slabs, with payback, IRR and 25-year savings from the customer's actual tariff.", helps: "The two questions every homeowner asks, answered on the spot and consistently." },
+      { name: "Solar Sales CRM", tag: "Lead to Close", detail: "Site visits, quotes, follow-ups and WhatsApp threads on one timeline, with AI lead scoring so reps work the hottest enquiry first.", helps: "The follow-up that was promised on Tuesday actually goes out on Tuesday." },
+      { name: "AI Calling Agent", tag: "Voice · Qualification", detail: "Answers inbound enquiries from subsidy-scheme campaigns, qualifies roof type, bill size and location, and books the site visit.", helps: "Enquiries answered in seconds at any hour, instead of a callback the next morning." },
+      { name: "Proposal View Tracking", tag: "Analytics", detail: "Every proposal gets a live web link that reports when it was opened and which sections were read.", helps: "Sales calls the customer who reopened the pricing page, not the one who never looked." },
     ],
   },
 
