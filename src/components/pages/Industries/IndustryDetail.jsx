@@ -3,8 +3,22 @@
 import Link from "next/link";
 import AnimatedInViewDiv from "@/components/Animate/AppearInView";
 import { GetStarted, LearnMoreButton } from "@/components/Buttons";
+import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 export default function IndustryDetail({ industry }) {
+    // Optional live-demo link, set per industry in data/industries.js. Added
+    // 2026-08-17 for solar: in that market seeing a real rendered proposal is
+    // the argument, so the demo takes the hero's second slot and gets its own
+    // band. Industries without a `demo` keep the original catalog link.
+    const demo = industry.demo;
+    const trackDemo = (location) =>
+        trackEvent(ANALYTICS_EVENTS.DEMO_OPEN, {
+            demo_label: demo?.label,
+            demo_destination: demo?.href,
+            demo_location: location,
+            industry: industry.name,
+        });
+
     return (
         <>
             <section>
@@ -32,7 +46,19 @@ export default function IndustryDetail({ industry }) {
                                 delay={0.2}
                             >
                                 <GetStarted />
-                                <LearnMoreButton title="All Industries" routeTo="/industries" />
+                                {demo ? (
+                                    <a
+                                        href={demo.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={() => trackDemo("hero")}
+                                        className="secondary-button w-inline-block"
+                                    >
+                                        <span>▶ {demo.label}</span>
+                                    </a>
+                                ) : (
+                                    <LearnMoreButton title="All Industries" routeTo="/industries" />
+                                )}
                             </AnimatedInViewDiv>
 
                             <AnimatedInViewDiv delay={0.3} className="w-full">
@@ -84,6 +110,70 @@ export default function IndustryDetail({ industry }) {
                     </div>
                 </div>
             </section>
+
+            {/* Live demo band. Sits between the problems and the product grid:
+                the visitor has just read what is broken, and the strongest next
+                move is showing them a finished proposal rather than describing
+                one. */}
+            {demo && (
+                <section>
+                    <div className="padding-global py-8">
+                        <div className="w-layout-blockcontainer container w-container">
+                            <AnimatedInViewDiv className="border border-[#E0362C]/30 rounded-lg p-8 lg:p-10 bg-[#E0362C]/[0.05] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                                <div className="flex flex-col gap-2 max-w-2xl">
+                                    <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider">
+                                        {demo.eyebrow || "Live Product · Try It Yourself"}
+                                    </div>
+                                    <h2 className="heading-6 text-weight-medium">
+                                        {demo.heading || "See a real proposal, not a screenshot"}
+                                    </h2>
+                                    {demo.note && (
+                                        <p className="text-size-small opacity-80">{demo.note}</p>
+                                    )}
+                                </div>
+                                <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                                    {/* Sample first: it needs no sign-up, so it
+                                        is the lower-friction proof and earns the
+                                        primary treatment. */}
+                                    {demo.sample && (
+                                        <a
+                                            href={demo.sample.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => trackDemo("demo-band-sample")}
+                                            className="primary-button w-inline-block whitespace-nowrap text-center"
+                                        >
+                                            <div className="relative">
+                                                <div className="text-size-small text-weight-bold">
+                                                    ▶ {demo.sample.label}
+                                                </div>
+                                            </div>
+                                            <div className="button-elipse"></div>
+                                        </a>
+                                    )}
+                                    <a
+                                        href={demo.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={() => trackDemo("demo-band")}
+                                        className="secondary-button w-inline-block whitespace-nowrap text-center"
+                                    >
+                                        <span>{demo.label}</span>
+                                    </a>
+                                </div>
+                            </AnimatedInViewDiv>
+
+                            {demo.disclaimer && (
+                                <AnimatedInViewDiv className="w-full">
+                                    <p className="text-size-small opacity-60 mt-4">
+                                        {demo.disclaimer}
+                                    </p>
+                                </AnimatedInViewDiv>
+                            )}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             <section>
                 <div className="padding-global py-16">
