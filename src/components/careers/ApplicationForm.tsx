@@ -240,7 +240,15 @@ export default function ApplicationForm({ job, onClose }: Props) {
         job_title: job.title,
         error_type: String((error as Error).message || 'submission_failed').slice(0, 100)
       });
-      alert('There was an error submitting your application. Please try again.');
+      // A duplicate is not an error the applicant should be told to retry:
+      // retrying is exactly what produced 571 repeat rows. Show the server's
+      // explanation, which names the date they already applied.
+      const message = (error as Error).message || '';
+      alert(
+        message.startsWith('You already applied')
+          ? message
+          : 'There was an error submitting your application. Please try again.',
+      );
     } finally {
       setIsSubmitting(false);
     }

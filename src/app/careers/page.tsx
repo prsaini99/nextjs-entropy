@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { jobs } from '@/lib/careers';
+import { getOpenJobs } from '@/lib/careers';
 import CareersHeroSection from '@/components/careers/CareersHeroSection';
 import WhyJoinUs from '@/components/careers/WhyJoinUs';
 import OpenRoles from '@/components/careers/OpenRoles';
@@ -35,7 +35,7 @@ export default function CareersPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Open roles at StackBinary",
-    "itemListElement": jobs.map((job, index) => ({
+    "itemListElement": getOpenJobs().map((job, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "url": `https://stackbinary.io/careers/${job.slug}`,

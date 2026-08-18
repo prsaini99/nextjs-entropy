@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import ApplicationForm from '@/components/careers/ApplicationForm';
-import { Job } from '@/lib/careers';
+import { Job, isJobOpen } from '@/lib/careers';
 import { getProductLinksForJob } from '@/lib/careersProductLinks';
 import { trackEvent, ANALYTICS_EVENTS } from '@/lib/analytics';
 
@@ -13,6 +13,10 @@ interface Props {
 
 export default function JobDetailsPage({ job }: Props) {
   const [showApplicationForm, setShowApplicationForm] = useState(false);
+  // A paused role keeps its page for SEO, but must not take applications:
+  // an apply button under an "applications closed" notice is how you collect
+  // submissions nobody reads, which is what drives people to re-apply.
+  const open = isJobOpen(job);
 
   return (
     <div>
@@ -44,7 +48,8 @@ export default function JobDetailsPage({ job }: Props) {
                   </div>
                   <div style={{ textAlign: 'center' as const, display: 'flex', justifyContent: 'center', width: '100%' }}>
                     <button
-                      onClick={() => setShowApplicationForm(true)}
+                      onClick={() => open && setShowApplicationForm(true)}
+                      disabled={!open}
                       className="primary-button w-inline-block"
                       style={{ margin: '0 auto' }}
                     >
@@ -301,7 +306,8 @@ export default function JobDetailsPage({ job }: Props) {
                     </div>
                     <div className="mb-6" style={{ textAlign: 'center' as const, display: 'flex', justifyContent: 'center' }}>
                       <button
-                        onClick={() => setShowApplicationForm(true)}
+                        onClick={() => open && setShowApplicationForm(true)}
+                        disabled={!open}
                         className="primary-button w-inline-block"
                         style={{ margin: '0 auto' }}
                       >
@@ -352,7 +358,7 @@ export default function JobDetailsPage({ job }: Props) {
       </section>
 
       {/* Application Form Modal */}
-      {showApplicationForm && (
+      {open && showApplicationForm && (
         <ApplicationForm 
           job={job} 
           onClose={() => setShowApplicationForm(false)} 
