@@ -271,7 +271,7 @@ export async function POST(request) {
 				from: MAIL_FROM,
 				to: workEmail,
 				subject: `You're in the pipeline, ${fullName.split(' ')[0]}, StackBinary™`,
-				text: confirmationEmailText({ fullName }),
+				text: confirmationEmailText({ fullName, service, budget, timeline }),
 				html: confirmationEmailHtml({ fullName, service, budget, timeline }),
 			});
 		} catch (mailError) {
