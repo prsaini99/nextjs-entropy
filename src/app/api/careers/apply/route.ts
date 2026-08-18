@@ -4,6 +4,7 @@ import nodemailer from 'nodemailer';
 // no anon-insert policy, so the anon client's inserts die with 42501. This is
 // a server route; the service key never reaches the browser.
 import { supabaseAdmin } from '@/lib/supabase-admin';
+import { JOBS, isJobOpen } from '@/lib/careers';
 import { MAIL_FROM } from '@/constants/contact';
 import {
   applicationConfirmationHtml,
@@ -207,6 +208,62 @@ export async function POST(request: NextRequest) {
     // insert must therefore fail the request; the old code logged the error
     // and returned 200 with a fabricated ID, losing the application while
     // telling the applicant it was received.
+    // Reject applications to a role that is no longer in the rotation. The UI
+    // hides the button, but LinkedIn Limited Listings keep pointing at the old
+    // URL for up to 72 hours after a role is paused, so the API has to say no
+    // as well.
+    {
+      const target = JOBS.find(
+        (j) => j.title === (applicationData.jobTitle as string),
+      );
+      if (target && !isJobOpen(target)) {
+        return NextResponse.json(
+          {
+            closed: true,
+            error:
+              'This role is no longer open. We have closed applications for it, so nothing would reach our team. Please see our current openings at stackbinary.io/careers.',
+          },
+          { status: 410 },
+        );
+      }
+    }
+
+    // Reject a repeat application for the SAME role before inserting.
+    // Measured 2026-08-18: 571 of 9,475 rows were the same person applying to
+    // the same role twice, and 69% of those came MORE THAN A DAY apart with a
+    // median gap of 73 hours. So this is not double-clicking (the form's
+    // isSubmitting guard already handles that, and zero repeats were under 10
+    // seconds apart) — it is candidates re-applying because they never heard
+    // back. Blocking the row is half the fix; the acknowledgement email is the
+    // other half. Applying to a DIFFERENT role stays allowed: 231 people did
+    // that deliberately and those are genuine separate applications.
+    // NOTE: .limit(1) rather than .maybeSingle(). maybeSingle() treats more
+    // than one match as an error and returns null data, which silently let
+    // repeats through for exactly the applicants who repeat most (one address
+    // in the table has nine rows for a single role).
+    const { data: priorRows } = await supabaseAdmin
+      .from('career_applications')
+      .select('id, created_at')
+      .ilike('email', (applicationData.email as string).trim())
+      .eq('job_title', dbApplicationData.job_title)
+      .order('created_at', { ascending: true })
+      .limit(1);
+
+    const priorApplication = priorRows?.[0];
+
+    if (priorApplication) {
+      const when = new Date(priorApplication.created_at).toLocaleDateString('en-IN', {
+        day: 'numeric', month: 'long', year: 'numeric',
+      });
+      return NextResponse.json(
+        {
+          duplicate: true,
+          error: `You already applied for this role on ${when}. Your application is with our team, and applying again will not move it forward. If your details have changed, reply to your confirmation email and we will update it.`,
+        },
+        { status: 409 },
+      );
+    }
+
     let applicationId = null;
     const { data: savedApplication, error: supabaseError } = await supabaseAdmin
       .from('career_applications')

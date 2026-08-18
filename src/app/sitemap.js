@@ -3,7 +3,7 @@ import { getAllAiServiceSlugs } from '@/data/aiServicesPages'
 import { getAllMartechSlugs } from '@/data/martechPages'
 import { getAllIndustrySlugs } from '@/data/industries'
 import { getAllInsightSlugs } from '@/lib/insights'
-import { jobs } from '@/lib/careers'
+import { getOpenJobs } from '@/lib/careers'
 
 export default function sitemap() {
   const baseUrl = 'https://stackbinary.io'
@@ -110,7 +110,7 @@ export default function sitemap() {
   ]
 
   // Career pages
-  const careerPages = jobs.map((job) => ({
+  const careerPages = getOpenJobs().map((job) => ({
     url: `${baseUrl}/careers/${job.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',

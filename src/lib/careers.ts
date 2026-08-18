@@ -17,12 +17,526 @@ export type Job = {
   whatYoullBring: string[];
   niceToHave?: string[];
   roleQuestions?: string[];
+  /**
+   * Rotation state. 'paused' roles keep their URL and their indexed page (we
+   * do NOT 404 them: several rank on page one and the equity is worth more
+   * than the tidiness), but they disappear from the listing, the sitemap and
+   * the JobPosting schema, and their page shows a closed notice pointing at
+   * what is open. Undefined means open, so existing entries need no edit.
+   *
+   * Why rotate at all: applicant volume is wildly uneven (2,397 unique people
+   * applied to the intern role, 25 to Product Manager). Showing fewer roles
+   * concentrates the same traffic on the ones actually short of candidates,
+   * and re-opening a paused role refreshes its datePosted, which is what
+   * Google Jobs ranks on.
+   */
+  status?: 'open' | 'paused';
 };
 
 export const JOBS: Job[] = [
+  // ── CURRENT ROTATION (opened 2026-08-18) ────────────────────────────
+  // Fifteen martech and AI roles replacing the previous thirty, which are all
+  // marked status:'paused' below. LinkedIn ingests these automatically as
+  // Limited Listings by crawling /careers, and expires the paused ones on the
+  // same re-crawl, typically within 24-72 hours. No manual posting either way.
+  // Titles were chosen to double as topical signal for the martech and AI
+  // keyword clusters the site now targets.
+  {
+    slug: 'martech-engineer',
+    title: 'MarTech Engineer',
+    team: 'Engineering',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Build and wire the marketing stack: CDPs, automation platforms, tracking and the APIs between them.',
+    description: 'Own the engineering behind marketing technology. You will connect CRMs, automation platforms, ad APIs and data warehouses into systems marketing teams actually run on, and make sure the data flowing through them can be trusted.',
+    whatYoullDo: [
+      'Build integrations between CRM, marketing automation and ad platforms',
+      'Design and maintain event tracking, server-side tagging and conversion APIs',
+      'Own data quality across the marketing stack, from capture to warehouse',
+      'Build internal tools that replace manual marketing operations work',
+      'Debug attribution gaps across web, ads and CRM',
+      'Work with marketers to turn campaign ideas into working automation'
+    ],
+    whatYoullBring: [
+      '3+ years building integrations or backend services',
+      'Strong JavaScript or Python and comfort with REST APIs and webhooks',
+      'Working knowledge of a CRM or marketing automation platform',
+      'Understanding of tracking, cookies, consent and server-side events',
+      'SQL good enough to answer your own questions',
+      'A bias for automating the thing rather than documenting the thing'
+    ],
+    niceToHave: [
+      'Experience with HubSpot, Salesforce or Braze APIs',
+      'Meta Conversions API or Google Ads API experience',
+      'Familiarity with dbt, BigQuery or Snowflake'
+    ],
+    roleQuestions: [
+      'Describe a marketing integration you built and what broke first.',
+      'How would you debug a 30% gap between ad-platform conversions and CRM leads?'
+    ]
+  },
+  {
+    slug: 'marketing-automation-specialist',
+    title: 'Marketing Automation Specialist',
+    team: 'Go-to-Market',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Design lifecycle journeys, segmentation and campaign automation that run without babysitting.',
+    description: 'Own the automation that turns a list into revenue. You will build journeys, segment audiences properly, and hold the line on deliverability and measurement.',
+    whatYoullDo: [
+      'Design and build lifecycle journeys: onboarding, nurture, win-back, post-purchase',
+      'Own segmentation strategy and list hygiene',
+      'Run A/B tests on subject lines, timing, content and offers',
+      'Monitor deliverability, sender reputation and engagement decay',
+      'Report on revenue per journey rather than opens',
+      'Work with engineering to wire product events into campaign triggers'
+    ],
+    whatYoullBring: [
+      '2+ years running marketing automation for a real business',
+      'Hands-on with at least one automation platform end to end',
+      'Understanding of deliverability: SPF, DKIM, DMARC, warm-up, sender reputation',
+      'Comfort with data: you can pull your own numbers and defend them',
+      'Copy instincts good enough to brief and edit'
+    ],
+    niceToHave: [
+      'HubSpot, Braze, Klaviyo or Customer.io experience',
+      'HTML and Liquid or similar templating',
+      'Experience with WhatsApp or SMS lifecycle alongside email'
+    ],
+    roleQuestions: [
+      'Walk through a lifecycle journey you built and the numbers it moved.',
+      'How do you diagnose a sudden drop in open rate?'
+    ]
+  },
+  {
+    slug: 'crm-solutions-developer',
+    title: 'CRM Solutions Developer',
+    team: 'Engineering',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Customise, extend and integrate CRMs so sales teams work in one place.',
+    description: 'Build CRM systems around how a business actually sells, rather than bending the business around a product. You will customise, extend and integrate so reps stop living in spreadsheets.',
+    whatYoullDo: [
+      'Customise CRM objects, pipelines, automation and permissions',
+      'Build integrations to telephony, WhatsApp, email and marketing platforms',
+      'Design lead routing, scoring and assignment logic',
+      'Migrate data between systems without losing history',
+      'Build reporting that sales leaders trust',
+      'Train teams and write the documentation that outlives you'
+    ],
+    whatYoullBring: [
+      '3+ years building on or around a CRM',
+      'Strong API integration skills and a scripting language',
+      'Understanding of sales processes and pipeline mechanics',
+      'Data modelling instincts: you think about the schema before the screen',
+      'Patience with stakeholders who describe outcomes, not requirements'
+    ],
+    niceToHave: [
+      'Salesforce Apex, HubSpot custom objects or Zoho Deluge',
+      'Experience with data migration at scale',
+      'Familiarity with telephony or WhatsApp Business API integration'
+    ],
+    roleQuestions: [
+      'Describe a CRM you shaped around a sales process rather than the reverse.',
+      'How do you approach a migration where the source data is messy?'
+    ]
+  },
+  {
+    slug: 'growth-engineer',
+    title: 'Growth Engineer',
+    team: 'Go-to-Market',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Ship experiments across funnel, product and acquisition, and measure them honestly.',
+    description: 'Sit between marketing and engineering and ship the things that move the funnel. You will build landing pages, run experiments, instrument everything and kill what does not work.',
+    whatYoullDo: [
+      'Build and iterate landing pages, funnels and onboarding flows',
+      'Design and run experiments with proper measurement',
+      'Instrument events and build dashboards that answer real questions',
+      'Automate acquisition and activation workflows',
+      'Find and fix the drop-off points nobody has looked at',
+      'Report results honestly, including the losses'
+    ],
+    whatYoullBring: [
+      '2+ years in a growth, product or marketing engineering role',
+      'Front-end skills: React or similar, and CSS you are not scared of',
+      'Analytics fluency: GA4, event design, funnel analysis',
+      'Statistical literacy good enough to know when a test is not conclusive',
+      'Comfort working without a spec'
+    ],
+    niceToHave: [
+      'Experience with A/B testing tools and feature flags',
+      'SEO and page-performance knowledge',
+      'Paid acquisition experience'
+    ],
+    roleQuestions: [
+      'Describe an experiment that failed and what you learned.',
+      'How do you decide a test has run long enough?'
+    ]
+  },
+  {
+    slug: 'performance-marketing-analyst',
+    title: 'Performance Marketing Analyst (Meta & Google)',
+    team: 'Go-to-Market',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Run and analyse paid campaigns where the numbers, not the platform, decide.',
+    description: 'Own paid performance across Meta and Google. You will manage spend, read the data properly, and make the calls that platform automation cannot.',
+    whatYoullDo: [
+      'Plan, launch and optimise campaigns across Meta and Google',
+      'Own budget allocation and bid strategy decisions',
+      'Build reporting that separates signal from platform-reported optimism',
+      'Run creative testing programmes and identify what actually works',
+      'Manage negative keywords, audience exclusions and waste',
+      'Reconcile platform conversions against CRM reality'
+    ],
+    whatYoullBring: [
+      '2+ years managing real paid budgets, not just dashboards',
+      'Deep familiarity with Meta Ads Manager and Google Ads',
+      'Analytical rigour: you segment before you conclude',
+      'Understanding of attribution and its limits',
+      'Ability to write and brief creative that performs'
+    ],
+    niceToHave: [
+      'Experience with server-side tracking and Conversions API',
+      'Scripting or automation for reporting',
+      'Experience managing multiple ad accounts or clients'
+    ],
+    roleQuestions: [
+      'Describe a campaign you turned around and how you diagnosed it.',
+      'How do you handle a platform reporting more conversions than the CRM?'
+    ]
+  },
+  {
+    slug: 'seo-aeo-specialist',
+    title: 'SEO & AEO Specialist',
+    team: 'Go-to-Market',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Rank in search and get cited by AI answers, with keyword research that survives scrutiny.',
+    description: 'Own organic visibility across both classic search and AI answer engines. You will do the research, shape the content brief, and prove movement with data rather than vibes.',
+    whatYoullDo: [
+      'Run keyword and SERP research that separates volume from winnability',
+      'Own on-page, technical SEO and structured data',
+      'Build content briefs from competitor teardowns rather than guesswork',
+      'Optimise for AI answer engines: entity clarity, citations, structured facts',
+      'Track rankings, impressions and position bands, and report movement honestly',
+      'Fix indexing, canonical and crawl issues'
+    ],
+    whatYoullBring: [
+      '2+ years doing SEO where you owned the numbers',
+      'Fluency with Search Console and a rank-tracking or SERP API',
+      'Understanding of schema markup and technical SEO',
+      'Ability to read a SERP and judge whether it is winnable',
+      'Writing skills good enough to brief and edit'
+    ],
+    niceToHave: [
+      'Experience with AEO, llms.txt or entity and knowledge-graph work',
+      'Programmatic or template-driven SEO at scale',
+      'Basic HTML and comfort in a codebase'
+    ],
+    roleQuestions: [
+      'Show a keyword you decided NOT to target and explain why.',
+      'How do you judge whether a SERP is winnable at low domain authority?'
+    ]
+  },
+  {
+    slug: 'ai-automation-engineer',
+    title: 'AI Automation Engineer',
+    team: 'AI/Data',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Build automations with judgment in them, and the guardrails that make them safe.',
+    description: 'Build the automation layer that replaces repetitive judgment work. You will design workflows, wire the tools, and build the evaluation and guardrails that let them run unattended.',
+    whatYoullDo: [
+      'Design and build automated workflows with AI decision steps',
+      'Build tool integrations that are idempotent and safe to retry',
+      'Implement evaluation harnesses so quality is measured, not assumed',
+      'Design approval gates for anything consequential',
+      'Monitor cost per task and optimise model routing',
+      'Debug automations that fail in ways nobody predicted'
+    ],
+    whatYoullBring: [
+      '2+ years building backend services or integrations',
+      'Strong Python or JavaScript and API fluency',
+      'Practical LLM experience: prompting, structured outputs, function calling',
+      'Understanding of idempotency, retries and failure modes',
+      'Instinct for what should never be automated'
+    ],
+    niceToHave: [
+      'LangGraph, Model Context Protocol or similar orchestration',
+      'Experience with vector databases and retrieval',
+      'n8n, Temporal or workflow-engine experience'
+    ],
+    roleQuestions: [
+      'Describe an automation that failed in production and the fix.',
+      'How do you decide what needs a human approval gate?'
+    ]
+  },
+  {
+    slug: 'ai-agent-developer',
+    title: 'AI Agent Developer',
+    team: 'AI/Data',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Build agents that use tools, follow plans and stop where the stakes demand it.',
+    description: 'Build production AI agents: systems that decide their next step and act inside real business systems, with the engineering that makes that trustworthy.',
+    whatYoullDo: [
+      'Design agent architectures: planning, memory, tool use',
+      'Build tool layers with strict contracts and error semantics',
+      'Implement layered guardrails including injection defence',
+      'Build golden-set evaluation and run it on every change',
+      'Design shadow-mode rollouts before autonomous execution',
+      'Instrument audit logging for every action taken'
+    ],
+    whatYoullBring: [
+      '2+ years software engineering, some of it on AI systems',
+      'Strong Python or TypeScript',
+      'Hands-on with agent frameworks and function calling',
+      'Understanding of prompt injection and mitigation',
+      'Scepticism: you assume the model will do something stupid'
+    ],
+    niceToHave: [
+      'LangGraph or Model Context Protocol experience',
+      'Evaluation tooling experience',
+      'Production experience with agents that take real actions'
+    ],
+    roleQuestions: [
+      'Describe an agent you shipped and what it was NOT allowed to do.',
+      'How would you defend an agent that reads untrusted email?'
+    ]
+  },
+  {
+    slug: 'conversational-ai-engineer-voice',
+    title: 'Conversational AI Engineer (Voice)',
+    team: 'AI/Data',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Build voice agents where latency is felt in milliseconds and there is no retry button.',
+    description: 'Build phone-native AI. You will engineer the streaming pipeline, the turn-taking and the telephony that make a voice agent feel like a conversation instead of an IVR.',
+    whatYoullDo: [
+      'Build streaming speech pipelines: recognition, understanding, synthesis',
+      'Engineer for sub-second end-to-end response latency',
+      'Handle barge-in, turn-end prediction and interruption gracefully',
+      'Integrate telephony and handle real-world network conditions',
+      'Build multilingual conversation support with per-language evaluation',
+      'Wire booking and CRM actions as gated tools'
+    ],
+    whatYoullBring: [
+      '2+ years backend or real-time systems engineering',
+      'Python or Node.js and comfort with streaming and websockets',
+      'Understanding of audio processing basics',
+      'LLM experience with latency as a first-class constraint',
+      'Patience for debugging problems that only appear on real calls'
+    ],
+    niceToHave: [
+      'Telephony experience: Twilio, SIP or WebRTC',
+      'Speech recognition or TTS integration experience',
+      'Multilingual or Indic language speech experience'
+    ],
+    roleQuestions: [
+      'Describe how you would cut a voice pipeline from three seconds to one.',
+      'How do you handle a caller who interrupts mid-sentence?'
+    ]
+  },
+  {
+    slug: 'full-stack-engineer-ai-products',
+    title: 'Full-Stack Engineer (AI Products)',
+    team: 'Engineering',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Ship complete AI products, from streaming UI to the retrieval layer underneath.',
+    description: 'Build AI products end to end. You will own the interface, the API and the model layer, and care about how the whole thing feels under real usage.',
+    whatYoullDo: [
+      'Build streaming, responsive interfaces for AI features',
+      'Design and implement retrieval and grounding layers',
+      'Build APIs and data models that scale past the demo',
+      'Implement evaluation, monitoring and cost instrumentation',
+      'Ship abuse controls and rate limiting on public surfaces',
+      'Own features from design through production'
+    ],
+    whatYoullBring: [
+      '3+ years full-stack development',
+      'React and Next.js, plus Node.js or Python on the server',
+      'PostgreSQL and comfort with data modelling',
+      'Practical LLM integration experience',
+      'Product instincts: you argue about the interaction, not just the endpoint'
+    ],
+    niceToHave: [
+      'Vector search and RAG experience',
+      'Streaming UI patterns and optimistic updates',
+      'Experience owning cost per active user'
+    ],
+    roleQuestions: [
+      'Show an AI feature you built and how you measured its quality.',
+      'How do you make a slow model feel fast?'
+    ]
+  },
+
+  {
+    slug: 'llm-rag-engineer',
+    title: 'LLM & RAG Engineer',
+    team: 'AI/Data',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Build retrieval systems that keep model answers grounded in your data, and measure whether they are.',
+    description: 'Own the grounding layer behind our AI products. You will build retrieval that actually finds the right passage, and the evaluation that proves it, because an ungrounded model is a liability with a confident voice.',
+    whatYoullDo: [
+      'Design chunking, embedding and hybrid retrieval strategies',
+      'Build and tune vector search over real, messy document sets',
+      'Implement citation and provenance so answers can be checked',
+      'Build golden-set evaluation for groundedness and correctness',
+      'Tune refusal behaviour so thin retrieval escalates instead of improvising',
+      'Optimise token cost and latency per query'
+    ],
+    whatYoullBring: [
+      '2+ years backend or ML engineering',
+      'Strong Python and practical LLM API experience',
+      'Hands-on with vector databases and embedding models',
+      'Understanding of why hybrid search beats pure semantic search',
+      'Evaluation instincts: you measure before you claim'
+    ],
+    niceToHave: [
+      'pgvector, Pinecone or Weaviate in production',
+      'Reranking and query-rewriting experience',
+      'Multilingual retrieval experience'
+    ],
+    roleQuestions: [
+      'Describe a retrieval system you built and how you measured its quality.',
+      'How would you debug a RAG system that answers confidently and wrongly?'
+    ]
+  },
+  {
+    slug: 'mlops-ai-infrastructure',
+    title: 'MLOps Engineer (AI Infrastructure)',
+    team: 'AI/Data',
+    location: 'Mumbai | Remote (India)',
+    type: 'Full-time',
+    experienceLevel: 'Mid',
+    datePosted: '2026-08-18',
+    blurb: 'Run the infrastructure AI systems depend on: serving, monitoring, cost and model updates.',
+    description: 'Own the platform our AI runs on. You will make deployment boring, cost visible, and model updates something we test rather than discover.',
+    whatYoullDo: [
+      'Build and operate model serving infrastructure',
+      'Implement monitoring for quality drift, latency and spend',
+      'Build CI pipelines that run evaluations before a model change ships',
+      'Manage model registries and rollback paths',
+      'Optimise inference cost through routing, caching and batching',
+      'Support private and self-hosted deployments for regulated clients'
+    ],
+    whatYoullBring: [
+      '2+ years in DevOps, platform or ML infrastructure',
+      'Strong Docker and cloud experience on AWS or GCP',
+      'Python and comfort with CI/CD tooling',
+      'Understanding of GPU cost and capacity planning',
+      'Monitoring and alerting instincts'
+    ],
+    niceToHave: [
+      'vLLM, Ray or similar serving stacks',
+      'Kubernetes in production',
+      'Experience self-hosting open-weight models'
+    ],
+    roleQuestions: [
+      'Describe how you would catch a silent model regression before users do.',
+      'When does self-hosting beat an API on cost?'
+    ]
+  },
+  {
+    slug: 'ai-engineering-intern',
+    title: 'AI Engineering Intern',
+    team: 'Internships',
+    location: 'Mumbai | Remote (India)',
+    type: 'Internship',
+    experienceLevel: 'Intern',
+    datePosted: '2026-08-18',
+    blurb: 'Six months building real AI features alongside engineers who ship them.',
+    description: 'Work on production AI systems, not a side project. You will build features that reach real users, with review and mentorship from engineers who operate these systems daily.',
+    whatYoullDo: [
+      'Build and test features in our AI products under mentorship',
+      'Write prompts, tools and evaluation cases for agent workflows',
+      'Help build retrieval pipelines and measure their quality',
+      'Investigate failures and turn them into test cases',
+      'Present what you built at the end of the internship'
+    ],
+    whatYoullBring: [
+      'Final-year student or recent graduate in CS, IT or a related field',
+      'Solid Python or JavaScript fundamentals',
+      'Curiosity about LLMs beyond having used ChatGPT',
+      'Ability to read documentation and try things before asking',
+      'Available for a 6-month full-time internship'
+    ],
+    niceToHave: [
+      'Personal projects using LLM APIs',
+      'Any open-source contribution',
+      'Familiarity with Git and the command line'
+    ],
+    roleQuestions: [
+      'Share a project you built with an AI API and what surprised you.',
+      'Describe a bug you spent hours on and how you solved it.'
+    ]
+  },
+  {
+    slug: 'digital-marketing-intern',
+    title: 'Digital Marketing Intern',
+    team: 'Internships',
+    location: 'Mumbai | Remote (India)',
+    type: 'Internship',
+    experienceLevel: 'Intern',
+    datePosted: '2026-08-18',
+    blurb: 'Six months running real campaigns and reporting real numbers.',
+    description: 'Learn performance and content marketing on live accounts with real budgets, with someone senior checking your work before it ships.',
+    whatYoullDo: [
+      'Support paid campaign setup, monitoring and reporting',
+      'Run keyword and competitor research',
+      'Draft content briefs and marketing copy',
+      'Build reports and pull the numbers behind them',
+      'Help run social and email campaigns end to end'
+    ],
+    whatYoullBring: [
+      'Final-year student or recent graduate in any discipline',
+      'Strong written English',
+      'Comfort with spreadsheets and basic analysis',
+      'Genuine interest in how marketing is measured',
+      'Available for a 6-month full-time internship'
+    ],
+    niceToHave: [
+      'Any hands-on experience with ads, SEO or social',
+      'Familiarity with Google Analytics',
+      'A blog, newsletter or portfolio of writing'
+    ],
+    roleQuestions: [
+      'Show something you wrote or a campaign you helped run.',
+      'How would you tell whether a campaign worked?'
+    ]
+  },
+
+  // ── PAUSED (previous rotation) ──────────────────────────────────────
   // Engineering
   {
     slug: 'senior-backend-engineer-node',
+    status: 'paused',
     title: 'Senior Backend Engineer (Node.js)',
     team: 'Engineering',
     location: 'Mumbai | Remote (India)',
@@ -62,6 +576,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'backend-engineer-node',
+    status: 'paused',
     title: 'Backend Engineer (Node.js)',
     team: 'Engineering',
     location: 'Mumbai | Remote (India)',
@@ -101,6 +616,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'senior-frontend-engineer-react',
+    status: 'paused',
     title: 'Senior Frontend Engineer (React/Next.js)',
     team: 'Engineering',
     location: 'Mumbai | Remote (India)',
@@ -139,6 +655,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'frontend-engineer-react',
+    status: 'paused',
     title: 'Frontend Engineer (React/Next.js)',
     team: 'Engineering',
     location: 'Mumbai | Remote (India)',
@@ -177,6 +694,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'full-stack-engineer-react-node',
+    status: 'paused',
     title: 'Full-Stack Engineer (React + Node)',
     team: 'Engineering',
     location: 'Mumbai | Remote (India)',
@@ -216,6 +734,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'mobile-engineer-flutter',
+    status: 'paused',
     title: 'Mobile Engineer (Flutter)',
     team: 'Engineering',
     location: 'Mumbai | Remote (India)',
@@ -250,6 +769,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'qa-automation-engineer',
+    status: 'paused',
     title: 'QA Automation Engineer',
     team: 'Engineering',
     location: 'Mumbai | Remote (India)',
@@ -284,6 +804,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'security-engineer-appsec',
+    status: 'paused',
     title: 'Security Engineer (AppSec)',
     team: 'Engineering',
     location: 'Mumbai | Remote (India)',
@@ -324,6 +845,7 @@ export const JOBS: Job[] = [
   // Cloud / DevOps / SRE
   {
     slug: 'devops-engineer',
+    status: 'paused',
     title: 'DevOps Engineer',
     team: 'Cloud/DevOps',
     location: 'Mumbai | Remote (India)',
@@ -362,6 +884,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'site-reliability-engineer',
+    status: 'paused',
     title: 'Site Reliability Engineer (SRE)',
     team: 'Cloud/DevOps',
     location: 'Mumbai | Remote (India)',
@@ -400,6 +923,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'cloud-architect-aws',
+    status: 'paused',
     title: 'Cloud Architect (AWS)',
     team: 'Cloud/DevOps',
     location: 'Mumbai | Remote (India)',
@@ -440,6 +964,7 @@ export const JOBS: Job[] = [
   // AI / Data
   {
     slug: 'machine-learning-engineer-nlp',
+    status: 'paused',
     title: 'Machine Learning Engineer (NLP/Chatbots)',
     team: 'AI/Data',
     location: 'Mumbai | Remote (India)',
@@ -479,6 +1004,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'computer-vision-engineer',
+    status: 'paused',
     title: 'Computer Vision Engineer',
     team: 'AI/Data',
     location: 'Mumbai | Remote (India)',
@@ -513,6 +1039,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'mlops-engineer',
+    status: 'paused',
     title: 'MLOps Engineer',
     team: 'AI/Data',
     location: 'Mumbai | Remote (India)',
@@ -551,6 +1078,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'data-engineer',
+    status: 'paused',
     title: 'Data Engineer',
     team: 'AI/Data',
     location: 'Mumbai | Remote (India)',
@@ -591,6 +1119,7 @@ export const JOBS: Job[] = [
   // Product / Design / Content
   {
     slug: 'product-manager-saas',
+    status: 'paused',
     title: 'Product Manager (SaaS)',
     team: 'Product/Design',
     location: 'Mumbai | Remote (India)',
@@ -629,6 +1158,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'ux-ui-designer',
+    status: 'paused',
     title: 'UX/UI Designer',
     team: 'Product/Design',
     location: 'Mumbai | Remote (India)',
@@ -667,6 +1197,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'technical-writer',
+    status: 'paused',
     title: 'Technical Writer',
     team: 'Product/Design',
     location: 'Mumbai | Remote (India)',
@@ -703,6 +1234,7 @@ export const JOBS: Job[] = [
   // Go-to-Market / Customer
   {
     slug: 'solutions-architect',
+    status: 'paused',
     title: 'Solutions Architect',
     team: 'Go-to-Market',
     location: 'Mumbai | Remote (India)',
@@ -737,6 +1269,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'customer-success-manager',
+    status: 'paused',
     title: 'Customer Success Manager',
     team: 'Go-to-Market',
     location: 'Mumbai | Remote (India)',
@@ -771,6 +1304,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'technical-support-engineer-l2',
+    status: 'paused',
     title: 'Technical Support Engineer (L2)',
     team: 'Go-to-Market',
     location: 'Mumbai | Remote (India)',
@@ -807,6 +1341,7 @@ export const JOBS: Job[] = [
   // People / Ops / Finance / Legal
   {
     slug: 'talent-acquisition-specialist-tech',
+    status: 'paused',
     title: 'Talent Acquisition Specialist (Tech)',
     team: 'People/Ops',
     location: 'Mumbai | Remote (India)',
@@ -845,6 +1380,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'hr-business-partner',
+    status: 'paused',
     title: 'HR Business Partner',
     team: 'People/Ops',
     location: 'Mumbai | Remote (India)',
@@ -883,6 +1419,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'hr-operations-executive',
+    status: 'paused',
     title: 'HR Operations Executive',
     team: 'People/Ops',
     location: 'Mumbai | Remote (India)',
@@ -921,6 +1458,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'employer-branding-manager',
+    status: 'paused',
     title: 'Employer Branding Manager',
     team: 'People/Ops',
     location: 'Mumbai | Remote (India)',
@@ -955,6 +1493,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'learning-development-specialist',
+    status: 'paused',
     title: 'Learning & Development Specialist',
     team: 'People/Ops',
     location: 'Mumbai | Remote (India)',
@@ -989,6 +1528,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'finance-manager',
+    status: 'paused',
     title: 'Finance Manager',
     team: 'People/Ops',
     location: 'Mumbai | Remote (India)',
@@ -1023,6 +1563,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'operations-manager',
+    status: 'paused',
     title: 'Operations Manager',
     team: 'People/Ops',
     location: 'Mumbai | Remote (India)',
@@ -1057,6 +1598,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: 'legal-compliance-associate',
+    status: 'paused',
     title: 'Legal & Compliance Associate',
     team: 'People/Ops',
     location: 'Mumbai | Remote (India)',
@@ -1098,6 +1640,7 @@ export const JOBS: Job[] = [
     location: 'Mumbai | Remote (India)',
     type: 'Internship',
     experienceLevel: 'Intern',
+    datePosted: '2026-08-18',
     blurb: 'Work on real features with mentorship and clear goals.',
     description: 'Join our engineering team as an intern and work on real projects that impact our products. You\'ll receive mentorship, gain hands-on experience, and contribute to meaningful features.',
     whatYoullDo: [
@@ -1151,6 +1694,15 @@ export function jobValidThrough(job: Job): string {
   const posted = new Date(jobDatePosted(job));
   posted.setDate(posted.getDate() + 90);
   return posted.toISOString().slice(0, 10);
+}
+
+/** Roles currently advertised. Everything user-facing should use this. */
+export function getOpenJobs(): Job[] {
+  return JOBS.filter((j) => j.status !== 'paused');
+}
+
+export function isJobOpen(job: Job): boolean {
+  return job.status !== 'paused';
 }
 
 export function getJobBySlug(slug: string): Job | undefined {

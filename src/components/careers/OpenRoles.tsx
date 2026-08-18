@@ -2,7 +2,11 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
-import { jobs, Job } from '@/lib/careers';
+import { getOpenJobs, Job } from '@/lib/careers';
+
+// Only advertise roles in the current rotation. Paused roles keep their page
+// (see the `status` note in lib/careers.ts) but leave the listing.
+const jobs = getOpenJobs();
 
 const teams = ['All', 'Engineering', 'AI/Data', 'Cloud/DevOps', 'Product/Design', 'Go-to-Market', 'People/Ops', 'Internships'];
 
