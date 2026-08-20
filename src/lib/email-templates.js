@@ -59,7 +59,7 @@ export function confirmationEmailHtml({ fullName, service, budget, timeline }) {
     ${detail ? `<p style="margin:0 0 16px;color:#555;">What you sent us:<br />${detail}</p>` : ""}
     <p style="margin:0 0 16px;">If it is easier to talk it through, you can pick a slot here: <a href="${BRAND.calendly}" style="color:#1a1a1a;">${BRAND.calendly}</a></p>
     <p style="margin:0 0 16px;">If anything has changed in the meantime, just reply to this email. It comes straight to us.</p>
-    <p style="margin:0;">Prateek<br />Stackbinary<br /><span style="color:#777;">${BRAND.site}</span></p>
+    <p style="margin:0;">The Stackbinary team<br /><span style="color:#777;">${BRAND.site}</span></p>
   </div>
 </body>
 </html>`;
@@ -81,7 +81,6 @@ ${BRAND.calendly}
 
 If anything has changed in the meantime, just reply to this email. It comes straight to us.
 
-Prateek
-Stackbinary
+The Stackbinary team
 ${BRAND.site}`;
 }
