@@ -532,6 +532,77 @@ export const JOBS: Job[] = [
     ]
   },
 
+  {
+    slug: 'data-analyst-intern',
+    title: 'Data Analyst Intern',
+    team: 'Internships',
+    location: 'Mumbai | Remote (India)',
+    type: 'Internship',
+    experienceLevel: 'Intern',
+    datePosted: '2026-08-20',
+    blurb: 'Six months turning campaign, product and CRM data into numbers people actually act on.',
+    description: 'Learn analytics on live data with real consequences. You will build the dashboards our team and our clients use to make decisions, and be the person who says what the data does and does not support.',
+    whatYoullDo: [
+      'Build dashboards and reports across marketing, product and CRM data',
+      'Run funnel, cohort and attribution analysis on live campaigns',
+      'Write SQL against real datasets and check your own numbers',
+      'Audit tracking implementations and find where data goes missing',
+      'Automate a report that somebody currently rebuilds by hand every month',
+      'Present findings clearly, including what is uncertain'
+    ],
+    whatYoullBring: [
+      'Final-year student or recent graduate in any quantitative discipline',
+      'SQL fundamentals, or the appetite to be fluent within a month',
+      'Strong spreadsheet skills and comfort with large messy files',
+      'Enough statistical literacy to know when a difference is not meaningful',
+      'Available for a 6-month full-time internship'
+    ],
+    niceToHave: [
+      'Familiarity with Google Analytics, Looker Studio or Power BI',
+      'Python or R for analysis',
+      'Any project where you drew a conclusion from data you collected yourself'
+    ],
+    roleQuestions: [
+      'Show an analysis you did and the decision it changed.',
+      'How would you explain to a client that their campaign result is not statistically meaningful?'
+    ]
+  },
+  {
+    slug: 'cyber-security-intern',
+    title: 'Cyber Security Intern',
+    team: 'Internships',
+    location: 'Mumbai | Remote (India)',
+    type: 'Internship',
+    experienceLevel: 'Intern',
+    datePosted: '2026-08-20',
+    blurb: 'Six months securing AI systems: prompt injection, scoped access, audit trails and the boring controls that matter.',
+    description: 'Security work on systems that are genuinely new. Our AI agents act inside real business systems, which means the interesting attack surface is not a login form, it is what happens when a model is persuaded to do something it should not.',
+    whatYoullDo: [
+      'Test AI agents and chatbots for prompt injection and jailbreaks',
+      'Review credential scoping so a compromised component cannot reach far',
+      'Help build and check audit logging on systems that take real actions',
+      'Run dependency and configuration reviews across our apps',
+      'Write up findings clearly enough for an engineer to act on them',
+      'Help harden public endpoints against abuse and rate-limit evasion'
+    ],
+    whatYoullBring: [
+      'Final-year student or recent graduate in CS, IT or a related field',
+      'Understanding of common web vulnerabilities and how they are exploited',
+      'Comfort in a terminal and reading code you did not write',
+      'Curiosity: security is mostly asking what happens if I do the unexpected thing',
+      'Available for a 6-month full-time internship'
+    ],
+    niceToHave: [
+      'CTF participation or a security writeup you are proud of',
+      'Familiarity with Burp Suite, OWASP ZAP or similar',
+      'Any exposure to LLM security or AI red-teaming'
+    ],
+    roleQuestions: [
+      'Describe a vulnerability you found or studied, and how you would fix it.',
+      'How would you try to make an AI support agent do something it was told not to?'
+    ]
+  },
+
   // ── PAUSED (previous rotation) ──────────────────────────────────────
   // Engineering
   {
