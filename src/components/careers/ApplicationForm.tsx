@@ -173,8 +173,36 @@ export default function ApplicationForm({ job, onClose }: Props) {
       submitData.append('portfolioUrl', formData.portfolioUrl || '');
       submitData.append('linkedinUrl', formData.linkedinUrl || '');
       submitData.append('githubUrl', formData.githubUrl || '');
+      // The CV goes up on its own request BEFORE the application, and only its
+      // storage key travels with the submit. Sending the file inline made the
+      // final POST large and slow, and on weak mobile connections it died
+      // before the response returned: 899 "Failed to fetch" errors on
+      // 2026-08-19, with the row often saved server-side anyway. Keeping the
+      // submit small is what fixes that.
+      //
+      // A failed pre-upload is deliberately NOT fatal. We fall back to sending
+      // the file inline, so the applicant still gets through on the old path
+      // rather than being blocked by a CV that would not upload.
       if (formData.resumeFile) {
-        submitData.append('resume', formData.resumeFile);
+        let attached = false;
+        try {
+          const fileForm = new FormData();
+          fileForm.append('resume', formData.resumeFile);
+          const up = await fetch('/api/careers/resume', { method: 'POST', body: fileForm });
+          if (up.ok) {
+            const meta = await up.json();
+            submitData.append('resumePath', meta.resumePath);
+            submitData.append('resumeFilename', meta.resumeFilename ?? '');
+            submitData.append('resumeSize', String(meta.resumeSize ?? ''));
+            submitData.append('resumeMime', meta.resumeMime ?? '');
+            attached = true;
+          }
+        } catch {
+          // Network failure on the pre-upload: fall through to inline.
+        }
+        if (!attached) {
+          submitData.append('resume', formData.resumeFile);
+        }
       }
       submitData.append('totalExperience', formData.totalExperience);
       submitData.append('relevantExperience', formData.relevantExperience || '');
