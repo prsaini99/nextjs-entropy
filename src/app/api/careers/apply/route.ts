@@ -180,7 +180,33 @@ export async function POST(request: NextRequest) {
       resume_mime: string | null;
     } = { resume_path: null, resume_filename: null, resume_size: null, resume_mime: null };
 
-    if (resumeFile && resumeFile.size > 0) {
+    // Preferred path: the CV was already uploaded by /api/careers/resume and
+    // we were handed its key. Verify the object really exists before trusting
+    // it, so a forged resumePath cannot attach someone else's file.
+    const preUploadedPath = pick('resumePath') as string | null;
+
+    if (preUploadedPath) {
+      const slash = preUploadedPath.lastIndexOf('/');
+      const dir = slash > 0 ? preUploadedPath.slice(0, slash) : '';
+      const name = slash > 0 ? preUploadedPath.slice(slash + 1) : preUploadedPath;
+
+      const { data: found } = await supabaseAdmin.storage
+        .from('resumes')
+        .list(dir, { search: name, limit: 1 });
+
+      if (found && found.length > 0) {
+        resumeMeta = {
+          resume_path: preUploadedPath,
+          resume_filename: (pick('resumeFilename') as string) || null,
+          resume_size: Number(pick('resumeSize')) || null,
+          resume_mime: (pick('resumeMime') as string) || null,
+        };
+      } else {
+        console.warn('resumePath did not resolve to a stored object:', preUploadedPath);
+      }
+    } else if (resumeFile && resumeFile.size > 0) {
+      // Fallback: an inline file, as the form used to send. Kept so an older
+      // cached client, or a submit where the pre-upload failed, still works.
       const safeName = (resumeFile.name || 'resume').replace(/[^a-zA-Z0-9._-]/g, '_').slice(-80);
       const key = `${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}-${safeName}`;
 
