@@ -10,11 +10,12 @@ import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 const categories = ["All", ...new Set(caseStudies.map((c) => c.category))];
 
-// Internal links from each case-study category to the service that delivers it
+// Internal links from each case-study category to the service that delivers it.
+// Beauty, Luxury Beauty and Skincare were dropped 2026-08-21 along with the five
+// purely-marketing case studies: no remaining entry carries those categories, so
+// the keys were dead. Campaign work and its links to /martech/influencer-marketing
+// live on /martech now.
 const categoryService = {
-    Beauty: { href: "/martech/influencer-marketing", label: "influencer marketing platform for agencies" },
-    "Luxury Beauty": { href: "/martech/influencer-marketing", label: "influencer marketing platform for agencies" },
-    Skincare: { href: "/martech/influencer-marketing", label: "influencer marketing platform for agencies" },
     "E-Commerce": { href: "/martech/shopify-websites", label: "Shopify & e-commerce development" },
     "AI/Technology": { href: "/martech/ai-integration", label: "AI ecosystem & MCP integration" },
     Healthcare: { href: "/services", label: "custom software development services" },
