@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 import ApplicationForm from '@/components/careers/ApplicationForm';
 import { Job, isJobOpen } from '@/lib/careers';
@@ -87,11 +88,13 @@ export default function JobDetailsPage({ job }: Props) {
                 <AnimatedInViewDiv delay={0.1} className="features-vantages">
                   <div className="features-image-container">
                     <div className="features-image-wrapper">
-                      <img
-                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
+                      <Image
                         src="/what-youll-do.jpg"
                         alt="What You'll Do"
+                        fill
+                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
                         className="image"
+                        style={{ objectFit: "cover" }}
                       />
                       <div className="gradient-overlay bigger"></div>
                     </div>
@@ -148,11 +151,13 @@ export default function JobDetailsPage({ job }: Props) {
                   </div>
                   <div className="features-image-container">
                     <div className="features-image-wrapper">
-                      <img
-                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
+                      <Image
                         src="/what-youll-bring.jpg"
                         alt="What You'll Bring"
+                        fill
+                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
                         className="image"
+                        style={{ objectFit: "cover" }}
                       />
                       <div className="gradient-overlay bigger"></div>
                     </div>
@@ -164,12 +169,14 @@ export default function JobDetailsPage({ job }: Props) {
                   <AnimatedInViewDiv delay={0.3} className="features-vantages">
                     <div className="features-image-container">
                       <div className="features-image-wrapper">
-                        <img
-                          sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
-                          src="/nice-to-have.jpg"
-                          alt="Nice to Have"
-                          className="image"
-                        />
+                        <Image
+                        src="/nice-to-have.jpg"
+                        alt="Nice to Have"
+                        fill
+                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
+                        className="image"
+                        style={{ objectFit: "cover" }}
+                      />
                         <div className="gradient-overlay bigger"></div>
                       </div>
                     </div>
@@ -286,11 +293,13 @@ export default function JobDetailsPage({ job }: Props) {
                   </div>
                   <div className="features-image-container">
                     <div className="features-image-wrapper">
-                      <img
-                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
+                      <Image
                         src="/why-join-us.jpg"
                         alt="Why Join StackBinary"
+                        fill
+                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
                         className="image"
+                        style={{ objectFit: "cover" }}
                       />
                       <div className="gradient-overlay bigger"></div>
                     </div>
