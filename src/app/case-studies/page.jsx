@@ -2,14 +2,14 @@ import CaseStudiesShowcase from "@/components/pages/Martech/CaseStudiesShowcase"
 import Banner from "@/components/Banner";
 
 export const metadata = {
-  title: "Case Studies, 37 Shipped Products with Real Numbers | StackBinary™",
+  title: "Case Studies, 32 Shipped Products with Real Numbers | StackBinary™",
   description:
-    "Software and marketing case studies across healthcare, e-commerce, fintech, education and AI: $100M+ commerce platforms, $25M+ fraud prevented, 300,000+ teleconsultations, 3.8x ROAS campaigns.",
+    "Software case studies across healthcare, e-commerce, fintech, education and AI: $100M+ commerce platforms, $25M+ fraud prevented, 300,000+ teleconsultations and 500,000+ medical images analysed.",
   alternates: { canonical: "https://stackbinary.io/case-studies" },
   openGraph: {
     title: "Case Studies | StackBinary™, Real Products, Real Numbers",
     description:
-      "37 shipped products and campaigns across 9 categories, with the numbers from the work.",
+      "32 shipped products across 6 categories, with the numbers from the work.",
     url: "https://stackbinary.io/case-studies",
     siteName: "StackBinary",
     type: "website",
