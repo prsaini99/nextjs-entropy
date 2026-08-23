@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
@@ -18,6 +18,33 @@ export default function JobDetailsPage({ job }: Props) {
   // an apply button under an "applications closed" notice is how you collect
   // submissions nobody reads, which is what drives people to re-apply.
   const open = isJobOpen(job);
+
+  // Apply is an anchor to #apply, not a bare onClick button, so a click that
+  // lands BEFORE React hydrates is not thrown away. This page ships ~269KB of
+  // JS across 27 requests; the button is server-rendered and painted almost
+  // immediately, but its onClick does not exist until all of that has
+  // downloaded and executed. Locally that gap is ~1.2s (DOMContentLoaded 273ms
+  // vs load 1457ms) and on the slow mobile connections this audience is on it
+  // is seconds. Clarity recorded 3,216 dead clicks on "Apply for This Role"
+  // across 2026-08-22/23. A browser follows an anchor with no JS at all, so
+  // the intent survives in the URL and we act on it as soon as we wake up.
+  useEffect(() => {
+    if (!open) return;
+    const sync = () => setShowApplicationForm(window.location.hash === '#apply');
+    sync();
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
+  }, [open]);
+
+  // Clearing the hash on close matters: without it a second click on the same
+  // anchor is a no-op, because the hash never changes and hashchange never
+  // fires. That would reintroduce the dead click this whole approach removes.
+  const closeForm = () => {
+    setShowApplicationForm(false);
+    if (typeof window !== 'undefined' && window.location.hash === '#apply') {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  };
 
   return (
     <div>
@@ -48,17 +75,29 @@ export default function JobDetailsPage({ job }: Props) {
                     {job.blurb}
                   </div>
                   <div style={{ textAlign: 'center' as const, display: 'flex', justifyContent: 'center', width: '100%' }}>
-                    <button
-                      onClick={() => open && setShowApplicationForm(true)}
-                      disabled={!open}
-                      className="primary-button w-inline-block"
-                      style={{ margin: '0 auto' }}
-                    >
-                      <div className="relative">
-                        <div className="text-size-small text-weight-bold">Apply for This Role</div>
-                      </div>
-                      <div className="button-elipse"></div>
-                    </button>
+                    {open ? (
+                      <a
+                        href="#apply"
+                        className="primary-button w-inline-block"
+                        style={{ margin: '0 auto' }}
+                      >
+                        <div className="relative">
+                          <div className="text-size-small text-weight-bold">Apply for This Role</div>
+                        </div>
+                        <div className="button-elipse"></div>
+                      </a>
+                    ) : null
+                    /* Nothing here when the role is paused. The "Applications
+                       closed" banner in app/careers/[slug]/page.tsx already sits
+                       directly above this, so the explanation exists; what was
+                       missing is that we also rendered a disabled Apply button
+                       under it. .primary-button has no :disabled rule, so that
+                       button stayed full brand red at opacity 1 and looked
+                       perfectly live, and these pages get real search traffic:
+                       8 paused roles took impressions in the Aug 16-22 window,
+                       hr-operations-executive 23 of them plus a click. A decoy
+                       button under a closed notice is worse than no button. */
+                    }
                   </div>
                 </div>
               </AnimatedInViewDiv>
@@ -102,7 +141,7 @@ export default function JobDetailsPage({ job }: Props) {
                   <div className="features-vantages-content">
                     <div className="features-heading-wrapper">
                       <div className="features-heading align-left">
-                        <div className="heading-6 text-weight-medium">What You'll Do</div>
+                        <div className="heading-6 text-weight-medium">What You&apos;ll Do</div>
                       </div>
                     </div>
                     <div className="check-list">
@@ -129,7 +168,7 @@ export default function JobDetailsPage({ job }: Props) {
                   <div className="features-vantages-content">
                     <div className="features-heading-wrapper">
                       <div className="features-heading align-left">
-                        <div className="heading-6 text-weight-medium">What You'll Bring</div>
+                        <div className="heading-6 text-weight-medium">What You&apos;ll Bring</div>
                       </div>
                     </div>
                     <div className="check-list">
@@ -309,22 +348,34 @@ export default function JobDetailsPage({ job }: Props) {
                 {/* Ready to Apply Section */}
                 <AnimatedInViewDiv delay={0.5} className="margin-top-button-hero">
                   <div style={{ textAlign: 'center' as const, display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-                    <h3 className="heading-4 text-weight-medium mb-4" style={{ textAlign: 'center' as const }}>Ready to Apply?</h3>
+                    <h3 className="heading-4 text-weight-medium mb-4" style={{ textAlign: 'center' as const }}>
+                      {open ? 'Ready to Apply?' : 'This Role Is Closed'}
+                    </h3>
                     <div className="text-size-regular opacity-85 mb-6" style={{ textAlign: 'center' as const, maxWidth: '42ch', margin: '0 auto' }}>
-                      Join our team of builders who love shipping quality software.
+                      {open
+                        ? 'Join our team of builders who love shipping quality software.'
+                        : 'We are not taking applications for this role at the moment, but we are hiring for others.'}
                     </div>
                     <div className="mb-6" style={{ textAlign: 'center' as const, display: 'flex', justifyContent: 'center' }}>
-                      <button
-                        onClick={() => open && setShowApplicationForm(true)}
-                        disabled={!open}
-                        className="primary-button w-inline-block"
-                        style={{ margin: '0 auto' }}
-                      >
-                        <div className="relative">
-                          <div className="text-size-small text-weight-bold">Apply Now</div>
-                        </div>
-                        <div className="button-elipse"></div>
-                      </button>
+                      {open ? (
+                        <a
+                          href="#apply"
+                          className="primary-button w-inline-block"
+                          style={{ margin: '0 auto' }}
+                        >
+                          <div className="relative">
+                            <div className="text-size-small text-weight-bold">Apply Now</div>
+                          </div>
+                          <div className="button-elipse"></div>
+                        </a>
+                      ) : (
+                        <Link href="/careers" className="primary-button w-inline-block" style={{ margin: '0 auto' }}>
+                          <div className="relative">
+                            <div className="text-size-small text-weight-bold">See Open Roles</div>
+                          </div>
+                          <div className="button-elipse"></div>
+                        </Link>
+                      )}
                     </div>
                     <div className="mb-6" style={{ textAlign: 'center' as const }}>
                       <div className="text-size-small opacity-85 mb-2" style={{ textAlign: 'center' as const }}>
@@ -368,9 +419,9 @@ export default function JobDetailsPage({ job }: Props) {
 
       {/* Application Form Modal */}
       {open && showApplicationForm && (
-        <ApplicationForm 
-          job={job} 
-          onClose={() => setShowApplicationForm(false)} 
+        <ApplicationForm
+          job={job}
+          onClose={closeForm}
         />
       )}
     </div>

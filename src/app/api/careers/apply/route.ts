@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
 import nodemailer from 'nodemailer';
 // The service-role client, not the anon one: career_applications has RLS with
 // no anon-insert policy, so the anon client's inserts die with 42501. This is
@@ -333,72 +333,83 @@ export async function POST(request: NextRequest) {
     const useSes = process.env.SES_SMTP_USER && process.env.SES_SMTP_PASS;
     const smtpConfigured = useResend || useSmtp || useSes || (process.env.EMAIL && process.env.EMAIL_PASSWORD);
     if (process.env.CAREERS_EMAILS === 'on' && smtpConfigured) {
-      try {
-        // Bounce guard: never hand a provider an address that cannot receive.
-        // Syntax was validated above; this checks the domain actually has mail
-        // servers (MX, falling back to A per RFC 5321). The flood's typo'd
-        // domains hard-bounce otherwise, and every provider suspends senders
-        // whose bounce rate climbs. Resolver failures fail OPEN — a DNS blip
-        // must not block a legitimate confirmation.
-        const domain = (applicationData.email as string).split('@')[1];
-        let deliverable = true;
+      // Sent AFTER the response, not before it. The row is already saved above,
+      // but this block then made the client wait on a DNS MX lookup, a possible
+      // A-record fallback and a full SMTP handshake to the provider. On weak
+      // mobile connections the fetch died during that wait, so the applicant saw
+      // 'Failed to fetch' for an application that HAD been stored, and retried:
+      // 190 'Failed to fetch' events and 53 duplicate-guard rejections across
+      // 2026-08-22/23. after() lets the 200 return as soon as the row is written
+      // and runs the mail on the platform's post-response hook, so a slow or
+      // unreachable mail provider can no longer masquerade as a failed submit.
+      after(async () => {
         try {
-          const dns = await import('node:dns/promises');
-          const mx = await dns.resolveMx(domain).catch(() => []);
-          if (mx.length === 0) {
-            const a = await dns.resolve4(domain).catch(() => []);
-            deliverable = a.length > 0;
+          // Bounce guard: never hand a provider an address that cannot receive.
+          // Syntax was validated above; this checks the domain actually has mail
+          // servers (MX, falling back to A per RFC 5321). The flood's typo'd
+          // domains hard-bounce otherwise, and every provider suspends senders
+          // whose bounce rate climbs. Resolver failures fail OPEN — a DNS blip
+          // must not block a legitimate confirmation.
+          const domain = (applicationData.email as string).split('@')[1];
+          let deliverable = true;
+          try {
+            const dns = await import('node:dns/promises');
+            const mx = await dns.resolveMx(domain).catch(() => []);
+            if (mx.length === 0) {
+              const a = await dns.resolve4(domain).catch(() => []);
+              deliverable = a.length > 0;
+            }
+          } catch {
+            deliverable = true;
           }
-        } catch {
-          deliverable = true;
-        }
-        if (!deliverable) {
-          console.warn(`Careers confirmation skipped, no MX/A records for ${domain}`);
-          throw Object.assign(new Error('undeliverable domain'), { skipped: true });
-        }
+          if (!deliverable) {
+            console.warn(`Careers confirmation skipped, no MX/A records for ${domain}`);
+            throw Object.assign(new Error('undeliverable domain'), { skipped: true });
+          }
 
-        const transporter = useResend
-          ? nodemailer.createTransport({
-              host: 'smtp.resend.com',
-              port: 587,
-              secure: false,
-              auth: { user: 'resend', pass: process.env.RESEND_API_KEY },
-            })
-          : useSmtp
-          ? nodemailer.createTransport({
-              host: process.env.SMTP_HOST,
-              port: Number(process.env.SMTP_PORT || 587),
-              secure: process.env.SMTP_PORT === '465',
-              auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-            })
-          : useSes
-          ? nodemailer.createTransport({
-              host: process.env.SES_SMTP_HOST || 'email-smtp.ap-south-1.amazonaws.com',
-              port: 587,
-              secure: false, // STARTTLS on 587; SES rejects implicit TLS here
-              auth: { user: process.env.SES_SMTP_USER, pass: process.env.SES_SMTP_PASS },
-            })
-          : nodemailer.createTransport({
-              service: 'gmail',
-              auth: { user: process.env.EMAIL, pass: process.env.EMAIL_PASSWORD },
-            });
+          const transporter = useResend
+            ? nodemailer.createTransport({
+                host: 'smtp.resend.com',
+                port: 587,
+                secure: false,
+                auth: { user: 'resend', pass: process.env.RESEND_API_KEY },
+              })
+            : useSmtp
+            ? nodemailer.createTransport({
+                host: process.env.SMTP_HOST,
+                port: Number(process.env.SMTP_PORT || 587),
+                secure: process.env.SMTP_PORT === '465',
+                auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+              })
+            : useSes
+            ? nodemailer.createTransport({
+                host: process.env.SES_SMTP_HOST || 'email-smtp.ap-south-1.amazonaws.com',
+                port: 587,
+                secure: false, // STARTTLS on 587; SES rejects implicit TLS here
+                auth: { user: process.env.SES_SMTP_USER, pass: process.env.SES_SMTP_PASS },
+              })
+            : nodemailer.createTransport({
+                service: 'gmail',
+                auth: { user: process.env.EMAIL, pass: process.env.EMAIL_PASSWORD },
+              });
 
-        await transporter.sendMail({
-          from: MAIL_FROM,
-          to: applicationData.email as string,
-          subject: `We have your application, ${applicationData.jobTitle || 'StackBinary'}`,
-          text: applicationConfirmationText({
-            firstName: applicationData.firstName as string,
-            jobTitle: applicationData.jobTitle as string,
-          }),
-          html: applicationConfirmationHtml({
-            firstName: applicationData.firstName as string,
-            jobTitle: applicationData.jobTitle as string,
-          }),
-        });
-      } catch (mailError) {
-        console.error('Career confirmation email failed (application was still saved):', mailError);
-      }
+          await transporter.sendMail({
+            from: MAIL_FROM,
+            to: applicationData.email as string,
+            subject: `We have your application, ${applicationData.jobTitle || 'StackBinary'}`,
+            text: applicationConfirmationText({
+              firstName: applicationData.firstName as string,
+              jobTitle: applicationData.jobTitle as string,
+            }),
+            html: applicationConfirmationHtml({
+              firstName: applicationData.firstName as string,
+              jobTitle: applicationData.jobTitle as string,
+            }),
+          });
+        } catch (mailError) {
+          console.error('Career confirmation email failed (application was still saved):', mailError);
+        }
+      });
     }
 
     // Log the application (keeping existing logging)
