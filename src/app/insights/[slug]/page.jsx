@@ -58,7 +58,9 @@ export default async function InsightPage({ params }) {
       <section>
         <div className="padding-global">
           <div className="w-layout-blockcontainer container w-container">
-            <div className="max-w-3xl mx-auto pt-10">
+            {/* 15vh matches .hero-wrapper, the site-wide clearance for the
+                fixed navbar. pt-10 left the breadcrumb tucked under it. */}
+            <div className="max-w-3xl mx-auto mt-[15vh]">
               <div className="text-size-small opacity-40 mb-4">
                 <Link href="/insights" className="text-link">
                   Insights
