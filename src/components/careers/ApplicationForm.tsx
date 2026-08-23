@@ -308,6 +308,57 @@ export default function ApplicationForm({ job, onClose }: Props) {
     }
   };
 
+  // Mirrors canProceed(), but names what is still missing rather than just
+  // returning false. canProceed only decides whether the button works, and a
+  // disabled .primary-button is invisible: the class has no :disabled rule, so
+  // it renders in full brand red at opacity 1 exactly like a live button.
+  // Clarity on 2026-08-22/23 recorded 14,907 dead clicks and 544 rage clicks on
+  // "Next" for this one job page, plus 2,717 rage clicks around the consent row
+  // where Submit sits disabled until both boxes are ticked. People were
+  // clicking a button that looked clickable with nothing telling them why it
+  // did nothing. The dimming below makes the state visible, this names the gap.
+  const missingFields = (): string[] => {
+    const missing: string[] = [];
+    const need = (value: unknown, label: string) => {
+      if (!value) missing.push(label);
+    };
+    switch (currentStep) {
+      case 1:
+        need(formData.firstName, 'First name');
+        need(formData.lastName, 'Last name');
+        need(formData.email, 'Email');
+        need(formData.phone, 'Phone');
+        break;
+      case 2:
+        need(formData.workEligibility, 'Work eligibility');
+        need(formData.currentLocation, 'Current location');
+        break;
+      case 3:
+        need(formData.resumeFile, 'CV upload');
+        need(formData.totalExperience, 'Total experience');
+        break;
+      case 4:
+        need(formData.keyStrengths, 'Key strengths');
+        need(formData.whyInterested, 'Why this role');
+        need(formData.whyStackBinary, 'Why Stackbinary');
+        break;
+      case 5:
+        if (job.roleQuestions) {
+          job.roleQuestions.forEach((q, i) =>
+            need(formData.roleAnswers[q], `Question ${i + 1}`),
+          );
+          break;
+        }
+      // falls through: with no role questions, step 5 is the final step
+      case 6:
+        need(formData.startDate, 'Earliest start date');
+        need(formData.privacyConsent, 'Consent to data processing');
+        need(formData.dataProcessingConsent, 'Consent to 12-month storage');
+        break;
+    }
+    return missing;
+  };
+
   const inputClassName = "w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-white text-gray-900 placeholder-gray-500";
   const selectClassName = "w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-white text-gray-900 [&>option]:bg-white [&>option]:text-gray-900";
   const textareaClassName = "w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 bg-white text-gray-900 placeholder-gray-500 resize-vertical";
@@ -557,7 +608,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
               </div>
             </div>
             <div>
-              <label className={labelClassName}>Anything else you'd like us to know?</label>
+              <label className={labelClassName}>Anything else you&apos;d like us to know?</label>
               <textarea
                 value={formData.anythingElse}
                 onChange={(e) => handleInputChange('anythingElse', e.target.value)}
@@ -722,7 +773,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
               <button
                 type="submit"
                 disabled={!canProceed() || isSubmitting}
-                className="primary-button w-inline-block"
+                className="primary-button w-inline-block disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <div className="relative">
                   <div className="text-size-small text-weight-bold">{isSubmitting ? 'Submitting...' : 'Submit Application'}</div>
@@ -742,7 +793,7 @@ export default function ApplicationForm({ job, onClose }: Props) {
                   setCurrentStep(prev => Math.min(totalSteps, prev + 1));
                 }}
                 disabled={!canProceed()}
-                className="primary-button w-inline-block"
+                className="primary-button w-inline-block disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <div className="relative">
                   <div className="text-size-small text-weight-bold">Next</div>
@@ -751,6 +802,15 @@ export default function ApplicationForm({ job, onClose }: Props) {
               </button>
             )}
           </div>
+
+          {/* Say which field is holding them up. The dimmed button tells them
+              they cannot continue, this tells them why, which is the half that
+              was missing while people rage-clicked their way off the page. */}
+          {missingFields().length > 0 && (
+            <div className="mt-3 text-size-small text-gray-500 text-right">
+              Still needed: {missingFields().join(', ')}
+            </div>
+          )}
         </form>
       </div>
     </div>
