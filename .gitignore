@@ -31,6 +31,13 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
+# The pattern under this comment had gone missing, so .env.local was untracked
+# AND unignored: one `git add -A` would have put SUPABASE_SERVICE_ROLE_KEY and
+# RESEND_API_KEY into history, which means key rotation rather than a revert.
+# Deliberately `.env*` and not `.env*.local`: the latter does not match backups
+# like .env.local.bak.1786032232, which hold the same live keys.
+.env*
+!.env.example
 
 # vercel
 .vercel
