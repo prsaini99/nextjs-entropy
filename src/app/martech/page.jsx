@@ -10,6 +10,7 @@ import MartechFAQ from "@/components/pages/Martech/MartechFAQ";
 import MartechStickyCTA from "@/components/pages/Martech/MartechStickyCTA";
 import martechFaqs from "@/data/martechFaqs";
 import Banner from "@/components/Banner";
+import RelatedInsights from "@/components/RelatedInsights";
 
 export const metadata = {
   title: "AI Marketing Agency & MarTech Stack Builders | StackBinary™",
@@ -104,6 +105,15 @@ export default function MartechPage() {
           browsing visitors here; paid Shopify traffic gets its own ad group
           pointing at /martech/shopify-websites. */}
       <MartechShopify />
+
+      {/* Insights strip. /martech is crawled far more often than
+          /insights, so this is how the articles inherit a useful crawl
+          rhythm instead of sitting behind a page Google rarely visits. */}
+      <RelatedInsights
+        slugs={["hubspot-alternatives-rent-vs-own", "n8n-vs-zapier-cost-comparison", "ai-voice-agent-platforms-compared"]}
+        heading="The Build-vs-Buy Maths, Written Out"
+        intro="Current pricing, verified against the vendors' own pages, and an honest read on when renting the SaaS beats hiring us."
+      />
 
       {/* Agencies block (2026-08-16). "Marketing automation for agencies" is
           tool-held in search, so agencies are a CONVERSION audience here, not

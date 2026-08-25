@@ -82,6 +82,8 @@ If none of those apply, use Bland or Retell, ship this month, and revisit in a y
 
 If one or more applies, the maths is worth doing properly. Our voice work is built to be [SOC 2-aligned and HIPAA-ready](/services/ai-voice-agent-development), we run it at roughly half the rate the agencies in this space publish, and we will tell you plainly if your volume does not justify a build. [Get the numbers for your call profile](/contact-us).
 
+Related: a voice agent that books, cancels or refunds is doing something categorically harder than one that answers questions, and [AI agent vs chatbot](/insights/ai-agent-vs-chatbot) sets out why that distinction drives your testing burden and your failure modes. For the wider build-versus-rent pattern, see [n8n vs Zapier](/insights/n8n-vs-zapier-cost-comparison).
+
 ---
 
 *All pricing verified against the vendors' published pricing pages in August 2026. Voice AI pricing moves quickly and model rates in particular change often, so re-check before committing. Stackbinary builds custom voice agents, which competes with all four platforms named here. We have tried to be explicit about where using them beats building.*
