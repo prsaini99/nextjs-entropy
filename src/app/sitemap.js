@@ -4,6 +4,7 @@ import { getAllMartechSlugs } from '@/data/martechPages'
 import { getAllIndustrySlugs } from '@/data/industries'
 import { getAllInsightSlugs } from '@/lib/insights'
 import { getOpenJobs } from '@/lib/careers'
+import { getAllDeSlugs } from '@/data/dePages'
 
 export default function sitemap() {
   const baseUrl = 'https://stackbinary.io'
@@ -117,5 +118,17 @@ export default function sitemap() {
     priority: 0.7,
   }))
   
-  return [...staticPages, ...servicePages, ...aiServicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages]
+  // German market cluster. Impressum and Datenschutz stay out on purpose:
+  // both are noindex until legally reviewed.
+  const dePages = [
+    { url: `${baseUrl}/de`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    ...getAllDeSlugs().map((slug) => ({
+      url: `${baseUrl}/de/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    })),
+  ]
+
+  return [...staticPages, ...servicePages, ...aiServicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages, ...dePages]
 }
