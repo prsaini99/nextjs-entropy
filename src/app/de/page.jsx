@@ -8,6 +8,10 @@ export const metadata = {
   description:
     "Individualsoftware, KI Entwicklung, KI-Agenten und KI im Kundenservice: Engineering-Team mit 55+ ausgelieferten Produkten, deutschsprachiger Ansprechpartner.",
   alternates: { canonical: "https://stackbinary.io/de" },
+  // Viewable but unindexed until the German sales colleague has reviewed the
+  // copy (see DE-REVIEW.md). Delete this line and restore the sitemap block
+  // in sitemap.js together, in one commit.
+  robots: { index: false },
   openGraph: {
     title: "Software und KI Entwicklung für den deutschen Markt | Stackbinary",
     description:
