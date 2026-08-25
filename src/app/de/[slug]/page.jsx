@@ -16,6 +16,9 @@ export async function generateMetadata({ params }) {
     title: page.seoTitle,
     description: page.metaDescription,
     alternates: { canonical: `https://stackbinary.io/de/${slug}` },
+    // Viewable but unindexed until the DE review is done; flip together with
+    // the hub page and the sitemap block.
+    robots: { index: false },
     openGraph: {
       title: page.seoTitle,
       description: page.metaDescription,

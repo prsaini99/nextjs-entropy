@@ -119,8 +119,12 @@ export default function sitemap() {
   }))
   
   // German market cluster. Impressum and Datenschutz stay out on purpose:
-  // both are noindex until legally reviewed.
-  const dePages = [
+  // both are noindex until legally reviewed. The service pages are ALSO
+  // noindex until the German sales colleague reviews the copy, so the whole
+  // block returns [] for now; restore the spread below when the noindex
+  // lines come off the /de pages.
+  const DE_REVIEWED = false;
+  const dePages = !DE_REVIEWED ? [] : [
     { url: `${baseUrl}/de`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     ...getAllDeSlugs().map((slug) => ({
       url: `${baseUrl}/de/${slug}`,
