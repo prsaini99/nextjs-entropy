@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getAiServicePage } from "@/data/aiServicesPages";
 import { aiServiceMetadata, aiServiceJsonLd } from "@/lib/aiServiceRoute";
 import AIServicePage from "@/components/pages/AIServices/AIServicePage";
+import RelatedInsights from "@/components/RelatedInsights";
 
 const SLUG = "ai-development";
 
@@ -20,6 +21,10 @@ export default function Page() {
         />
       ))}
       <AIServicePage page={page} slug={SLUG} />
+      <RelatedInsights
+        slugs={["ai-agent-vs-chatbot", "n8n-vs-zapier-cost-comparison", "hubspot-alternatives-rent-vs-own"]}
+        heading="How we think about building AI, in public"
+      />
     </>
   );
 }

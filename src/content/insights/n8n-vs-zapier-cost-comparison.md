@@ -100,6 +100,8 @@ We are an AI and automation engineering team, and we deploy all three approaches
 
 Where we do end up building, it is usually because a client crossed one of the three thresholds above, most often the second one: the automation became the product. If you want the honest version of that maths for your own setup, including the case where we tell you to stay where you are, [start a conversation](/contact-us).
 
+Related: the same rent-versus-own question plays out differently for CRMs, where the metered resource is your contact list rather than your step count, in [HubSpot alternatives: start with the onboarding fee nobody lists](/insights/hubspot-alternatives-rent-vs-own). And if what you are automating involves a model making decisions rather than moving data, [AI agent vs chatbot](/insights/ai-agent-vs-chatbot) covers where that line sits.
+
 ---
 
 *Pricing above was verified against n8n's and Zapier's published pricing pages in August 2026. Both vendors change plans and tier boundaries regularly, so re-check before committing. We build custom automation systems, which is a competing approach to both products named here, and we have tried to be explicit throughout about where renting beats building.*

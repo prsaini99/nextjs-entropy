@@ -81,3 +81,5 @@ We build both, and we build them as [AI chatbot systems](/services/ai-chatbot-de
 Our general advice, which costs us larger projects: start at step 3, instrument it, and let your own logs tell you which tools to add. It ships faster, it costs less, and the tools you end up building are the ones people actually asked for rather than the ones that sounded good in a scoping call.
 
 If you want that mapped to your specific case, including an honest read on whether you need an agent at all, [tell us what you are trying to automate](/contact-us).
+
+Related reading: [Retell vs Vapi vs Bland vs Synthflow](/insights/ai-voice-agent-platforms-compared) applies all of this to voice specifically, where latency makes the multi-step version much harder. [n8n vs Zapier](/insights/n8n-vs-zapier-cost-comparison) covers the same build-versus-rent decision for workflow automation. And if the agent needs to act inside your CRM, [HubSpot alternatives](/insights/hubspot-alternatives-rent-vs-own) is where that question usually starts.

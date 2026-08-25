@@ -79,6 +79,8 @@ We build [custom lead intelligence and CRM systems](/martech/lead-intelligence) 
 
 We will also tell you when the answer is Zoho. [Send us the shape of your process](/contact-us) and we will give you the honest version, including the one where you keep what you have.
 
+Related: the same build-versus-rent arithmetic, applied to workflow automation where the meter counts steps instead of contacts, is in [n8n vs Zapier: the billing model is the whole decision](/insights/n8n-vs-zapier-cost-comparison). If the CRM work you have in mind involves an assistant that acts on records rather than just storing them, start with [AI agent vs chatbot](/insights/ai-agent-vs-chatbot).
+
 ---
 
 *HubSpot, Zoho and competitor pricing verified against published pricing pages in August 2026. Pricing and tier inclusions change frequently, so confirm before purchasing. Stackbinary builds custom CRM and lead systems, which competes directly with every product named here. We have tried throughout to be explicit about when buying beats building.*

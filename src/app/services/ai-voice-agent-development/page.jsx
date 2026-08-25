@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getAiServicePage } from "@/data/aiServicesPages";
 import { aiServiceMetadata, aiServiceJsonLd } from "@/lib/aiServiceRoute";
 import AIServicePage from "@/components/pages/AIServices/AIServicePage";
+import RelatedInsights from "@/components/RelatedInsights";
 
 const SLUG = "ai-voice-agent-development";
 
@@ -20,6 +21,10 @@ export default function Page() {
         />
       ))}
       <AIServicePage page={page} slug={SLUG} />
+      <RelatedInsights
+        slugs={["ai-voice-agent-platforms-compared", "ai-agent-vs-chatbot", "n8n-vs-zapier-cost-comparison"]}
+        heading="What the voice platforms actually cost, verified this month"
+      />
     </>
   );
 }
