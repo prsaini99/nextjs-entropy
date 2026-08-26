@@ -54,7 +54,7 @@ export default function Impressum() {
                   <p>
                     E-Mail: contact@stackbinary.io
                     <br />
-                    Telefon: +91 90343 81347
+                    Telefon: +91 91364 15041
                     <br />
                     Web: stackbinary.io
                   </p>
