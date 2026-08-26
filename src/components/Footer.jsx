@@ -46,31 +46,59 @@ export default function Footer() {
         <section>
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
-                    <div className="footer-component">
-                        <AnimatedInViewDiv className="footer-heading mb-6">
-                            <Image src="/stack-logo.png" width={120} height={32} loading="lazy" alt="StackBinary™ Logo" className="max-w-[120px] h-auto" />
-                        </AnimatedInViewDiv>
-                        <div className="w-layout-grid footer-grid">
-                            {Object.entries(links).map(([category, items], index) => (
-                                <AnimatedInViewDiv key={index} delay={index * .2} className="footer-grid-wrap">
-                                    <div className="text-size-large text-weight-medium">{category.charAt(0).toUpperCase() + category.slice(1)}</div>
-                                    <div className="footer-links-wrapper">
-                                        {items.map(item => (
-                                            <Link key={item.href} href={item.href} className={`footer-link ${item.current ? "w--current" : ""}`}>{item.label}</Link>
-                                        ))}
-                                    </div>
-                                </AnimatedInViewDiv>
-                            ))}
-                        </div>
-                        <AnimatedInViewDiv className="my-8">
-                            <NewsLetter />
-                        </AnimatedInViewDiv>
-                        <div className="footer-links-wrapper animate-slideUpFadeIn-1">
-                            <div className="credits-wrapper">
-                                <p className="paragraph space-x-2">
-                                    <span className=''>© {new Date().getFullYear()} Stackbinary.io. All rights reserved.</span>
-                                </p>
+                    {/* Horizontal footer. The Webflow classes (.footer-component,
+                        .footer-grid, .footer-grid-wrap) forced a centred column
+                        stack with padding-top:10rem, a 5rem logo margin and only
+                        two grid columns, so the third link group wrapped onto its
+                        own row and the footer ran taller than most viewports.
+                        Layout is Tailwind here; .footer-link is kept because it
+                        carries the link colour and size. */}
+                    <div className="flex flex-col gap-12 pt-24 pb-8">
+                        <div className="flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-20">
+                            {/* Brand and newsletter share the left half */}
+                            <AnimatedInViewDiv className="lg:w-2/5 flex flex-col gap-6">
+                                <Image
+                                    src="/stack-logo.png"
+                                    width={120}
+                                    height={32}
+                                    loading="lazy"
+                                    alt="Stackbinary Logo"
+                                    className="max-w-[120px] h-auto"
+                                />
+                                <NewsLetter />
+                            </AnimatedInViewDiv>
+
+                            {/* Link groups span the right half, side by side */}
+                            <div className="lg:w-3/5 grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-10">
+                                {Object.entries(links).map(([category, items], index) => (
+                                    <AnimatedInViewDiv
+                                        key={category}
+                                        delay={index * 0.1}
+                                        className="flex flex-col items-start gap-3"
+                                    >
+                                        <div className="text-size-medium text-weight-medium">
+                                            {category.charAt(0).toUpperCase() + category.slice(1)}
+                                        </div>
+                                        <div className="flex flex-col items-start gap-2">
+                                            {items.map(item => (
+                                                <Link
+                                                    key={item.href}
+                                                    href={item.href}
+                                                    className={`footer-link ${item.current ? "w--current" : ""}`}
+                                                >
+                                                    {item.label}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </AnimatedInViewDiv>
+                                ))}
                             </div>
+                        </div>
+
+                        <div className="border-t border-gray-200 pt-6">
+                            <p className="paragraph text-size-small">
+                                © {new Date().getFullYear()} Stackbinary.io. All rights reserved.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -78,4 +106,3 @@ export default function Footer() {
         </section>
     )
 }
-
