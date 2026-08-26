@@ -30,6 +30,9 @@ export default function ConditionalLayout({ children }) {
         <DeHeader />
         {children}
         <DeFooter />
+        {/* Same bot, German mode: greeting, starter questions and replies in
+            German (the chat API gets locale='de'), leads tagged chatbot-de. */}
+        <FloatingChat locale="de" />
       </>
     );
   }

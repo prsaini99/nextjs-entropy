@@ -84,3 +84,41 @@ If anything has changed in the meantime, just reply to this email. It comes stra
 The Stackbinary team
 ${BRAND.site}`;
 }
+
+// German confirmation, for leads with lead_source 'de-kontakt'. Same
+// deliberately plain shape as the English one (that shape is what keeps these
+// out of Promotions/Werbung tabs), Sie-Form throughout, no dashes, signed
+// "Das Stackbinary Team". The promise matches the /de/kontakt page: reply
+// within one Werktag from the German-speaking contact.
+export function confirmationEmailHtmlDe({ fullName, service }) {
+  const firstName = (fullName || "").split(" ")[0] || "";
+  const anrede = firstName ? `Guten Tag ${firstName},` : "Guten Tag,";
+  const serviceLine = service ? `<p style="margin:0 0 16px;color:#555;">Ihre Anfrage: ${String(service).replace("DE: ", "")}</p>` : "";
+  return `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /></head>
+<body style="margin:0;padding:24px;background:#ffffff;">
+  <div style="max-width:520px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1a1a1a;">
+    <p style="margin:0 0 16px;">${anrede}</p>
+    <p style="margin:0 0 16px;">vielen Dank für Ihre Anfrage. Sie ist bei uns angekommen, und Ihr deutschsprachiger Ansprechpartner meldet sich innerhalb eines Werktags bei Ihnen, mit einer ehrlichen Einschätzung statt einer Verkaufspräsentation.</p>
+    ${serviceLine}
+    <p style="margin:0 0 16px;">Wenn sich in der Zwischenzeit etwas ändert, antworten Sie einfach auf diese E-Mail. Sie erreicht uns direkt.</p>
+    <p style="margin:0;">Das Stackbinary Team<br /><span style="color:#777;">${BRAND.site}</span></p>
+  </div>
+</body>
+</html>`;
+}
+
+export function confirmationEmailTextDe({ fullName, service }) {
+  const firstName = (fullName || "").split(" ")[0] || "";
+  const anrede = firstName ? `Guten Tag ${firstName},` : "Guten Tag,";
+  const serviceLine = service ? `\nIhre Anfrage: ${String(service).replace("DE: ", "")}\n` : "";
+  return `${anrede}
+
+vielen Dank für Ihre Anfrage. Sie ist bei uns angekommen, und Ihr deutschsprachiger Ansprechpartner meldet sich innerhalb eines Werktags bei Ihnen, mit einer ehrlichen Einschätzung statt einer Verkaufspräsentation.
+${serviceLine}
+Wenn sich in der Zwischenzeit etwas ändert, antworten Sie einfach auf diese E-Mail. Sie erreicht uns direkt.
+
+Das Stackbinary Team
+${BRAND.site}`;
+}
