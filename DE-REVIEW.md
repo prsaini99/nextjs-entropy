@@ -302,3 +302,15 @@ Die Bestandsaufnahme mit priorisierter Anwendungsfall-Liste dauert je nach Unter
 
 Wir weisen Sie auf einschlägige Programme für Digitalisierung und KI im Mittelstand hin und liefern die technischen Unterlagen für Ihren Antrag zu. Die Antragstellung selbst übernimmt Ihr Steuerberater oder Fördermittelberater; wir arbeiten ihm zu.
 
+
+---
+
+## Navigation und Fusszeile (neu, bitte mitpruefen)
+
+Header: Individualsoftware · KI Entwicklung · KI-Agenten · KI Kundenservice · KI Beratung · EN · Button "Erstgespräch"
+
+Footer-Claim: "Individualsoftware und KI-Systeme für Unternehmen in Deutschland, Österreich und der Schweiz. Deutschsprachiger Ansprechpartner, Quellcode in Ihrem Eigentum."
+
+Footer-Spalten: Leistungen (die fünf Seiten) · Rechtliches (Impressum, Datenschutzerklärung, Kontakt, English Website)
+
+Impressum ist jetzt vollständig ausgefüllt (CIN, GSTIN, Director). Bitte prüfen unter stackbinary.io/de/impressum

@@ -141,11 +141,6 @@ export default function DeServicePage({ slug }) {
                   Alle Leistungen →
                 </Link>
               </div>
-              <p className="text-size-small opacity-60 mt-8">
-                <Link href="/de/impressum" className="text-link">Impressum</Link>
-                {" · "}
-                <Link href="/de/datenschutz" className="text-link">Datenschutzerklärung</Link>
-              </p>
             </div>
           </div>
         </section>

@@ -4,10 +4,9 @@ import Link from "next/link";
 // the German market, which /de unambiguously does. A non-EU company can be
 // fully compliant; what §5 demands is identifiability, not an EU seat.
 //
-// Facts we could not derive are visible [BITTE ERGÄNZEN] markers, following
-// the same rule as the Oye Hello company.ts: an obviously unfinished legal
-// page is safer than one naming plausible but wrong facts. This page must
-// not go live while a marker remains.
+// Company facts sourced from the signed Entity Locker authorization letter
+// (owner-provided, 2026-08-26): CIN, GSTIN, director and DIN. The Aadhaar
+// number on that letter is deliberately NOT published anywhere.
 
 export const metadata = {
   title: "Impressum | Stackbinary",
@@ -47,13 +46,15 @@ export default function Impressum() {
                   <h2 className="text-size-large text-weight-medium mb-2">
                     Vertreten durch
                   </h2>
-                  <p>[BITTE ERGÄNZEN: vertretungsberechtigte Person, z. B. Director]</p>
+                  <p>Prateek Saini, Director (DIN: 11061252)</p>
                 </div>
 
                 <div>
                   <h2 className="text-size-large text-weight-medium mb-2">Kontakt</h2>
                   <p>
                     E-Mail: contact@stackbinary.io
+                    <br />
+                    Telefon: +91 90343 81347
                     <br />
                     Web: stackbinary.io
                   </p>
@@ -64,9 +65,11 @@ export default function Impressum() {
                     Registereintrag
                   </h2>
                   <p>
-                    Eingetragen in Indien (Companies Act)
+                    Eingetragen in Indien (Companies Act, 2013)
                     <br />
-                    CIN: [BITTE ERGÄNZEN: Corporate Identification Number]
+                    CIN: U62013MH2025PTC445947
+                    <br />
+                    Steuernummer (Indien, GSTIN): 27AALCG9671R1ZF
                   </p>
                 </div>
 
@@ -74,7 +77,12 @@ export default function Impressum() {
                   <h2 className="text-size-large text-weight-medium mb-2">
                     Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
                   </h2>
-                  <p>[BITTE ERGÄNZEN: Name und Anschrift der verantwortlichen Person]</p>
+                  <p>
+                    Prateek Saini
+                    <br />
+                    Flat No. 1002, Spring Grove, CTS 171/1A/60, Akurli Road,
+                    Kandivali East, Mumbai 400101, Indien
+                  </p>
                 </div>
 
                 <div>

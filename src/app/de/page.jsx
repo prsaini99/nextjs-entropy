@@ -93,11 +93,6 @@ export default function DeHub() {
                 );
               })}
             </div>
-            <p className="text-size-small opacity-60 mt-10">
-              <Link href="/de/impressum" className="text-link">Impressum</Link>
-              {" · "}
-              <Link href="/de/datenschutz" className="text-link">Datenschutzerklärung</Link>
-            </p>
           </div>
         </div>
       </section>
