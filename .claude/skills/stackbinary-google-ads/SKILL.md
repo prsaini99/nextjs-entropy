@@ -42,8 +42,17 @@ not the success metric; the promotion ladder is:
 ## 2. Account facts
 
 - Customer 6594379515, currency INR, MCC 9888930545.
-- **martech** 24081846465 is the only live campaign (the discovery
-  campaign). ai-automation 24106736390 is PAUSED for cause: Rs3,008,
+- **Split stress test (owner decision 2026-08-26, decided at the Monday
+  scoreboard):** martech India at Rs500/day judged on vocabulary per
+  the ladder, versus **germany-de** 24186276928 at Rs500/day judged on
+  /de/kontakt form fills (lead_source de-kontakt). Germany ad groups:
+  ki-entwicklung 202061220400, ki-beratung 200028384896,
+  individualsoftware 199277296483; PHRASE, Rs150 max CPC, German
+  language 1001, geo 2276, 50 German pre-emptive negatives (kostenlos,
+  gehalt, studium, aktien, chatgpt...). Germany stays PAUSED until the
+  German sales colleague's copy review clears, or the owner explicitly
+  waives it.
+- **martech** 24081846465 is the India discovery campaign. ai-automation 24106736390 is PAUSED for cause: Rs3,008,
   zero conversions; do not revive without new evidence. The
   influencer-marketing ad group failed its test too; same rule.
 - Ad groups: ai-callcenter (only historical converter), lead-
