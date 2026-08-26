@@ -37,18 +37,17 @@ export default function NewsLetter() {
     };
 
     return (
-        <div className="flex flex-col items-start max-w-lg">
-            <div className="mb-4 space-y-4">
-                <div className="flex flex-col items-start">
-                    <h1 className="text-center framer-text framer-styles-preset-1nktfmp">
-                        Get Practical AI, Cloud & DevOps Tips Monthly
-                    </h1>
+        <div className="flex flex-col items-start w-full max-w-md">
+            <div className="mb-4 space-y-2">
+                {/* Was an <h1> with the display preset: a second h1 on every page
+                    competing with the real one, set at hero size inside a footer.
+                    A div at body-adjacent size fixes both. */}
+                <div className="text-size-large text-weight-medium">
+                    Get Practical AI, Cloud &amp; DevOps Tips Monthly
                 </div>
-                <div className="flex flex-col items-start">
-                    <p>
-                        One email a month with playbooks, case studies and tooling tips, no spam.
-                    </p>
-                </div>
+                <p className="text-size-small opacity-80">
+                    One email a month with playbooks, case studies and tooling tips, no spam.
+                </p>
             </div>
             <div className="w-full relative flex justify-center items-center mb-6">
                 {status === FORM_STATUS.IDLE && (
