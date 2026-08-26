@@ -15,6 +15,23 @@ const STARTER_QUESTIONS = [
     'Can AI answer my business phone calls?',
 ];
 
+// German UI strings for /de pages: same funnel, Sie-Form, KI not AI.
+const DE = {
+    greeting: 'Guten Tag! Ich bin der Assistent von Stackbinary. Fragen Sie mich, was wir für Ihr Unternehmen bauen oder automatisieren könnten, wie Projekte ablaufen oder was sie kosten. Wählen Sie eine Frage oder schreiben Sie eine eigene.',
+    starters: [
+        'Was könnten Sie in meinem Unternehmen automatisieren?',
+        'Wie lange dauert ein Projekt?',
+        'Was kostet ein typisches Projekt?',
+        'Kann KI unsere Anrufe beantworten?',
+    ],
+    placeholder: 'Ihre Nachricht…',
+    openLabel: 'Chat mit dem Stackbinary Assistenten öffnen',
+    panelLabel: 'Stackbinary Assistent',
+    closeLabel: 'Chat schließen',
+    sendLabel: 'Nachricht senden',
+    messageLabel: 'Nachricht',
+};
+
 /**
  * Floating chat launcher + panel.
  *
@@ -61,13 +78,15 @@ function linkify(text) {
     );
 }
 
-export default function FloatingChat() {
+export default function FloatingChat({ locale = 'en' }) {
     const [isOpen, setIsOpen] = useState(false);
     const [sessionId, setSessionId] = useState(null);
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hi! I'm Stackbinary's assistant. Ask me what we could build or automate for your business, how projects run, or anything about our AI call answering. Pick a question below or type your own.",
+            text: locale === 'de'
+                ? DE.greeting
+                : "Hi! I'm Stackbinary's assistant. Ask me what we could build or automate for your business, how projects run, or anything about our AI call answering. Pick a question below or type your own.",
             isBot: true,
             timestamp: new Date()
         }
@@ -140,6 +159,7 @@ export default function FloatingChat() {
                     referrer: document.referrer || null,
                     utm: attributed,
                     meta_event_id: getLeadEventId(),
+                    locale,
                 }),
             });
 
@@ -198,7 +218,7 @@ export default function FloatingChat() {
                     type="button"
                     className="chat-launcher"
                     onClick={openChat}
-                    aria-label="Open chat with StackBinary assistant"
+                    aria-label={locale === 'de' ? DE.openLabel : 'Open chat with Stackbinary assistant'}
                 >
                     💬 Chat with us
                 </button>
@@ -209,7 +229,7 @@ export default function FloatingChat() {
                     className="chat-panel"
                     role="dialog"
                     aria-modal="false"
-                    aria-label="StackBinary assistant"
+                    aria-label={locale === 'de' ? DE.panelLabel : 'Stackbinary assistant'}
                 >
                     <div className="chat-header">
                         <div className="chat-identity">
@@ -229,7 +249,7 @@ export default function FloatingChat() {
                             type="button"
                             className="chat-close"
                             onClick={closeChat}
-                            aria-label="Close chat"
+                            aria-label={locale === 'de' ? DE.closeLabel : 'Close chat'}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -251,7 +271,7 @@ export default function FloatingChat() {
                         ))}
                         {messages.length <= 1 && !isLoading && (
                             <div className="chat-starters">
-                                {STARTER_QUESTIONS.map((q) => (
+                                {(locale === 'de' ? DE.starters : STARTER_QUESTIONS).map((q) => (
                                     <button
                                         key={q}
                                         type="button"
@@ -280,8 +300,8 @@ export default function FloatingChat() {
                             type="text"
                             value={inputMessage}
                             onChange={(e) => setInputMessage(e.target.value)}
-                            placeholder="Type your message…"
-                            aria-label="Message"
+                            placeholder={locale === 'de' ? DE.placeholder : 'Type your message…'}
+                            aria-label={locale === 'de' ? DE.messageLabel : 'Message'}
                             className="chat-input"
                             disabled={isLoading}
                         />
@@ -289,7 +309,7 @@ export default function FloatingChat() {
                             type="submit"
                             className="chat-send"
                             disabled={isLoading || !inputMessage.trim()}
-                            aria-label="Send message"
+                            aria-label={locale === 'de' ? DE.sendLabel : 'Send message'}
                         >
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

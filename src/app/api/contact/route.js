@@ -3,7 +3,7 @@ import { sendMetaEvent, readMetaCookies } from "@/lib/meta-capi";
 import { supabase, calculateLeadScore } from "@/lib/supabase";
 import { supabaseAdmin } from "@/lib/supabase-admin";
 import { applyCareersVetting } from "@/lib/careers-vetting";
-import { confirmationEmailHtml, confirmationEmailText } from "@/lib/email-templates";
+import { confirmationEmailHtml, confirmationEmailText, confirmationEmailHtmlDe, confirmationEmailTextDe } from "@/lib/email-templates";
 import { NOTIFY_EMAIL, MAIL_FROM } from "@/constants/contact";
 
 export async function POST(request) {
@@ -245,7 +245,11 @@ export async function POST(request) {
 		const mailOptions = {
 			from: MAIL_FROM,
 			to: NOTIFY_EMAIL,
-			subject: `New Project Inquiry from ${fullName}`,
+			// German leads announce themselves in the subject so they can be
+			// forwarded to the German sales colleague without opening the mail.
+			subject: lead_source === 'de-kontakt'
+				? `GERMAN LEAD: New Project Inquiry from ${fullName}`
+				: `New Project Inquiry from ${fullName}`,
 			text: emailContent,
 		};
 
@@ -267,13 +271,26 @@ export async function POST(request) {
 			await transporter.sendMail(mailOptions);
 
 			// Send branded confirmation email to user
-			await transporter.sendMail({
-				from: MAIL_FROM,
-				to: workEmail,
-				subject: `You're in the pipeline, ${fullName.split(' ')[0]}, StackBinary™`,
-				text: confirmationEmailText({ fullName, service, budget, timeline }),
-				html: confirmationEmailHtml({ fullName, service, budget, timeline }),
-			});
+			// A German enquiry gets a German confirmation. An English "you're in
+			// the pipeline" mail to someone who just used the German form is the
+			// same trust break as the English navbar was on /de.
+			await transporter.sendMail(
+				lead_source === 'de-kontakt'
+					? {
+						from: MAIL_FROM,
+						to: workEmail,
+						subject: `Ihre Anfrage ist angekommen${fullName ? `, ${fullName.split(' ')[0]}` : ''}`,
+						text: confirmationEmailTextDe({ fullName, service }),
+						html: confirmationEmailHtmlDe({ fullName, service }),
+					}
+					: {
+						from: MAIL_FROM,
+						to: workEmail,
+						subject: `You're in the pipeline, ${fullName.split(' ')[0]}, Stackbinary`,
+						text: confirmationEmailText({ fullName, service, budget, timeline }),
+						html: confirmationEmailHtml({ fullName, service, budget, timeline }),
+					}
+			);
 		} catch (mailError) {
 			console.error('Email send failed:', mailError);
 			if (!leadId) {

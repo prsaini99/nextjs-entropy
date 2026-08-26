@@ -80,7 +80,7 @@ async function saveLead(args, ctx) {
     service: 'AI Automation (chatbot)',
     project_summary: String(args.need || '').slice(0, 1000),
     timeline: 'Exploring options',
-    lead_source: 'chatbot',
+    lead_source: ctx.locale === 'de' ? 'chatbot-de' : 'chatbot',
     status: 'new',
     privacy_consent: true,
     thread_id: ctx.sessionId,
@@ -220,7 +220,13 @@ export async function POST(request) {
       .slice(-MAX_HISTORY_MESSAGES)
       .map((m) => ({ role: m.role, content: m.content }));
 
-    const messages = [{ role: 'system', content: SYSTEM_PROMPT }, ...past, { role: 'user', content: user }];
+    // German pages send locale 'de'. The bot answers in German by default
+    // there, Sie-Form, and mirrors the visitor if they switch language.
+    const locale = body.locale === 'de' ? 'de' : 'en';
+    const systemContent = locale === 'de'
+      ? SYSTEM_PROMPT + '\n\nWICHTIG: Der Besucher ist auf der deutschsprachigen Website. Antworte auf Deutsch, in der Sie-Form, sachlich und präzise. Verwende KI statt AI und keine Gedankenstriche. Wechselt der Besucher die Sprache, antworte in seiner Sprache.'
+      : SYSTEM_PROMPT;
+    const messages = [{ role: 'system', content: systemContent }, ...past, { role: 'user', content: user }];
 
     const { fbp, fbc } = readMetaCookies(request.headers.get('cookie'));
     const ctx = {
@@ -231,6 +237,7 @@ export async function POST(request) {
       referrer: typeof body.referrer === 'string' ? body.referrer.slice(0, 300) : null,
       utm: typeof body.utm === 'object' && body.utm ? body.utm : null,
       metaEventId: typeof body.meta_event_id === 'string' ? body.meta_event_id.slice(0, 64) : null,
+      locale,
       fbp,
       fbc,
     };
