@@ -1,5 +1,11 @@
 'use client';
 import { useState } from 'react';
+import {
+  trackEvent,
+  trackFormInteraction,
+  trackConversion,
+  ANALYTICS_EVENTS,
+} from '@/lib/analytics';
 
 // German contact form. Posts to the same /api/contact endpoint as the English
 // form so every lead lands in ONE leads table, but stamped lead_source
@@ -32,7 +38,20 @@ export default function DeKontaktForm() {
   });
   const [status, setStatus] = useState(STATUS.IDLE);
 
-  const set = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
+  const [hasStarted, setHasStarted] = useState(false);
+
+  const set = (e) => {
+    setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
+    // Same funnel events as the English form so GA4 and the Ads conversion
+    // read both markets on one instrument, split by form_location.
+    if (!hasStarted) {
+      setHasStarted(true);
+      trackFormInteraction('contact_form', 'start', {
+        form_location: 'de_kontakt',
+        first_field: e.target.name,
+      });
+    }
+  };
 
   const submit = async (e) => {
     e.preventDefault();
@@ -50,7 +69,24 @@ export default function DeKontaktForm() {
           referrer: document.referrer || 'direct',
         }),
       });
-      setStatus(res.ok ? STATUS.SUCCESS : STATUS.ERROR);
+      if (res.ok) {
+        trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_SUBMIT, {
+          form_location: 'de_kontakt',
+          service_interest: form.service,
+          lead_source: 'de-kontakt',
+        });
+        trackConversion('contact_form_submit', null, 'INR', {
+          form_location: 'de_kontakt',
+          lead_source: 'de-kontakt',
+        });
+        setStatus(STATUS.SUCCESS);
+      } else {
+        trackFormInteraction('contact_form', 'error', {
+          form_location: 'de_kontakt',
+          error_type: 'submission_failed',
+        });
+        setStatus(STATUS.ERROR);
+      }
     } catch {
       setStatus(STATUS.ERROR);
     }
