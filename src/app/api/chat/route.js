@@ -224,7 +224,7 @@ export async function POST(request) {
     // there, Sie-Form, and mirrors the visitor if they switch language.
     const locale = body.locale === 'de' ? 'de' : 'en';
     const systemContent = locale === 'de'
-      ? SYSTEM_PROMPT + '\n\nWICHTIG: Der Besucher ist auf der deutschsprachigen Website. Antworte auf Deutsch, in der Sie-Form, sachlich und präzise. Verwende KI statt AI und keine Gedankenstriche. Wechselt der Besucher die Sprache, antworte in seiner Sprache.'
+      ? SYSTEM_PROMPT + '\n\nWICHTIG: Der Besucher ist auf der deutschsprachigen Website. Antworte auf Deutsch, in der Sie-Form, sachlich und präzise. Verwende KI statt AI und keine Gedankenstriche. Wechselt der Besucher die Sprache, antworte in seiner Sprache. Die Faktenbasis stammt von der indischen Produktseite: Nenne deutschen Interessenten KEINE indischen Sprachlisten. Bei Fragen zu Sprach-KI und Telefonassistenten gilt: Der Sprachumfang wird pro Projekt festgelegt, Deutsch wird mit dafür geeigneten Sprachmodellen umgesetzt.'
       : SYSTEM_PROMPT;
     const messages = [{ role: 'system', content: systemContent }, ...past, { role: 'user', content: user }];
 
