@@ -35,7 +35,8 @@ export default function Datenschutz() {
               <div className="flex flex-col gap-8 opacity-90">
                 <Abschnitt titel="1. Verantwortlicher">
                   <p>
-                    Gursat Software IT Solutions Private Limited, Flat No. 1002,
+                    Gursat Software IT Solutions Private Limited, vertreten durch den
+                    Director Prateek Saini, Flat No. 1002,
                     Spring Grove, CTS 171/1A/60, Akurli Road, Kandivali East,
                     Mumbai 400101, Maharashtra, Indien. E-Mail:
                     contact@stackbinary.io.
