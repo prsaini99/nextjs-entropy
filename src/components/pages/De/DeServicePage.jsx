@@ -40,7 +40,7 @@ export default function DeServicePage({ slug }) {
                   </div>
                 </div>
                 <div className="double-button-component margin-top-button-hero">
-                  <Link href="/contact-us" className="primary-button w-inline-block">
+                  <Link href="/de/kontakt" className="primary-button w-inline-block">
                     <div className="relative">
                       <div className="text-size-small text-weight-bold">
                         Kostenloses Erstgespräch vereinbaren

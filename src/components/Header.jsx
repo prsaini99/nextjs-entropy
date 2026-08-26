@@ -74,7 +74,16 @@ export default function Header() {
                                 </nav>
                                 <DropDown />
                             </div>
-                            <div className="right-navbar-content">
+                            <div className="right-navbar-content flex items-center gap-4">
+                                {/* Language switch to the German section. Mirrors the EN
+                                    link in DeHeader so both funnels are one click apart. */}
+                                <Link
+                                    href="/de"
+                                    className="text-size-small opacity-60 hover:opacity-100"
+                                    title="Deutsche Website"
+                                >
+                                    DE
+                                </Link>
                                 <Link href={contactHref} className="primary-button w-inline-block">
                                     <div className="relative">
                                         <div className="text-size-small text-weight-bold">Contact Us</div>

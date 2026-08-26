@@ -314,3 +314,15 @@ Footer-Claim: "Individualsoftware und KI-Systeme für Unternehmen in Deutschland
 Footer-Spalten: Leistungen (die fünf Seiten) · Rechtliches (Impressum, Datenschutzerklärung, Kontakt, English Website)
 
 Impressum ist jetzt vollständig ausgefüllt (CIN, GSTIN, Director). Bitte prüfen unter stackbinary.io/de/impressum
+
+## Kontaktseite /de/kontakt (neu)
+
+H1: Kostenloses Erstgespräch vereinbaren
+
+Intro: "Beschreiben Sie kurz Ihr Vorhaben. Ihr deutschsprachiger Ansprechpartner meldet sich innerhalb eines Werktags, mit einer ehrlichen Einschätzung statt einer Verkaufspräsentation."
+
+Felder: Name* · Geschäftliche E-Mail* · Telefon (optional) · Leistung* (Auswahl) · Ihr Vorhaben (optional) · Button "Anfrage senden"
+
+Erfolgsmeldung: "Vielen Dank für Ihre Anfrage. Ihr deutschsprachiger Ansprechpartner meldet sich innerhalb eines Werktags bei Ihnen."
+
+Hinweis: Anfragen kommen mit lead_source "de-kontakt" in die Lead-Datenbank. Bitte klären: Wer bekommt die Benachrichtigung? (Aktuell landet sie im normalen Lead-Postfach.)

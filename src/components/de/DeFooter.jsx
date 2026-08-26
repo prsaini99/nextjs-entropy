@@ -50,7 +50,7 @@ export default function DeFooter() {
                 <div className="flex flex-col items-start gap-2">
                   <Link href="/de/impressum" className="footer-link">Impressum</Link>
                   <Link href="/de/datenschutz" className="footer-link">Datenschutzerklärung</Link>
-                  <Link href="/contact-us" className="footer-link">Kontakt</Link>
+                  <Link href="/de/kontakt" className="footer-link">Kontakt</Link>
                   <Link href="/" className="footer-link">English Website</Link>
                 </div>
               </div>

@@ -34,8 +34,9 @@ export default function DeHeader() {
               />
             </Link>
 
-            {/* Full link row on large screens, single hub link below that */}
-            <nav className="hidden lg:flex items-center gap-6">
+            {/* Full link row on large screens, spread across the middle the
+                way the English navbar spreads, not clustered at the logo. */}
+            <nav className="hidden lg:flex flex-1 items-center justify-center gap-10">
               {DE_NAV.map((item) => (
                 <Link
                   key={item.href}
@@ -62,7 +63,7 @@ export default function DeHeader() {
               >
                 EN
               </Link>
-              <Link href="/contact-us" className="primary-button w-inline-block">
+              <Link href="/de/kontakt" className="primary-button w-inline-block">
                 <div className="relative">
                   <div className="text-size-small text-weight-bold">Erstgespräch</div>
                 </div>

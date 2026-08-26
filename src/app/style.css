@@ -6091,7 +6091,11 @@ textarea.text-field-contact {
 	transition: all 0.3s ease;
 	border: 1px solid #17171A !important;
 	background-color: #17171A !important;
-	color: #17171A !important;
+	/* Ink text on an ink pill made these buttons unreadable: the 2026-08-04
+	   theme inversion flipped the variables but this hardcoded rule kept text
+	   the same colour as its background, and the SVGs use currentColor so the
+	   icons vanished with it. White text, always, on this dark pill. */
+	color: #ffffff !important;
 }
 
 .social-cta-button:hover {
@@ -6101,7 +6105,7 @@ textarea.text-field-contact {
 }
 
 .social-cta-button:hover svg {
-	color: #17171A !important;
+	color: #ffffff !important;
 }
 
 .social-cta-section {
