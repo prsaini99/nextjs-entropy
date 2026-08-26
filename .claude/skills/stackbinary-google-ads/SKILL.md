@@ -49,9 +49,13 @@ not the success metric; the promotion ladder is:
   ki-entwicklung 202061220400, ki-beratung 200028384896,
   individualsoftware 199277296483; PHRASE, Rs150 max CPC, German
   language 1001, geo 2276, 50 German pre-emptive negatives (kostenlos,
-  gehalt, studium, aktien, chatgpt...). Germany stays PAUSED until the
-  German sales colleague's copy review clears, or the owner explicitly
-  waives it.
+  gehalt, studium, aktien, chatgpt...). ENABLED 2026-08-26 on the
+  owner's go after the test mails passed; the sales colleague's copy
+  review continues on the LIVE pages, corrections applied as they come.
+  Budgets: germany-de Rs1,000/day, martech Rs300/day. The German lead
+  pipeline is complete: de-kontakt / chatbot-de tagging in Supabase,
+  form_location de_kontakt in GA4, German confirmation mail, GERMAN
+  LEAD prefix on internal notifications, chatbot in German on /de.
 - **martech** 24081846465 is the India discovery campaign. ai-automation 24106736390 is PAUSED for cause: Rs3,008,
   zero conversions; do not revive without new evidence. The
   influencer-marketing ad group failed its test too; same rule.
