@@ -21,4 +21,4 @@ export const PRIVACY_EMAIL = CONTACT_EMAIL;
 export const CAREERS_EMAIL = CONTACT_EMAIL;
 
 /** Display name used on outbound mail. */
-export const MAIL_FROM = `"StackBinary™" <${CONTACT_EMAIL}>`;
+export const MAIL_FROM = `"Stackbinary" <${CONTACT_EMAIL}>`;
