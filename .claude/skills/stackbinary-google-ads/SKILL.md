@@ -52,7 +52,13 @@ not the success metric; the promotion ladder is:
   gehalt, studium, aktien, chatgpt...). ENABLED 2026-08-26 on the
   owner's go after the test mails passed; the sales colleague's copy
   review continues on the LIVE pages, corrections applied as they come.
-  Budgets: germany-de Rs1,000/day, martech Rs300/day. The German lead
+  Budgets (2026-08-28): germany-de Rs2,000/day with campaign CPC
+  ceiling Rs650 (commercial-only forecast: avg CPC Rs318, market
+  absorbs Rs18k/day, we skim ~11%); martech Rs300/day. The bare
+  keywords ki entwicklung / kuenstliche intelligenz entwicklung are
+  PAUSED for cause: 100% informational match rate (news, Sora, wer hat
+  ki erfunden). German negatives ~90 including the Munich institution
+  cluster (fabrik, zentrum, tucherpark). The German lead
   pipeline is complete: de-kontakt / chatbot-de tagging in Supabase,
   form_location de_kontakt in GA4, German confirmation mail, GERMAN
   LEAD prefix on internal notifications, chatbot in German on /de.
