@@ -72,6 +72,25 @@ not the success metric; the promotion ladder is:
   harvested (junk vocabulary kills a theme; missing leads alone does
   not).
 
+## 2b. Google automation products (decision 2026-08-27)
+
+- **PMax and AI Max: NO until offline conversion import exists.** Both
+  optimize toward the recorded conversion signal, and ours is junk
+  form fills; they would amplify it across Display/YouTube, hide search
+  terms (killing the vocabulary harvest), and AI Max's URL expansion /
+  asset rewriting break the German funnel and reviewed copy. Revisit
+  only after gclid-based offline import of vetted qualified leads runs
+  at ~30 true conversions/month.
+- Google's free "expert" strategists pitch a fixed template (PMax,
+  broad match, AI Max, raise budget, no changes 7-14 days) without
+  reading the account. Evaluate against Lead Truth, never adopt on the
+  call. "Learning phase" is real for structural changes but NEVER
+  delays negatives or stop-loss: obeying it would have cost ~Rs11k to
+  the Inflact leak alone.
+- Check quarterly (and before September 2026) that Automatically
+  Created Assets and campaign-level broad match stay OFF: Google
+  auto-upgrades campaigns using them to AI Max.
+
 ## 3. Negatives doctrine
 
 - Campaign-level, PHRASE, and pre-emptive: block competitor product
