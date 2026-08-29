@@ -6,6 +6,7 @@ import { getAllInsightSlugs } from '@/lib/insights'
 import { getOpenJobs } from '@/lib/careers'
 import { getAllDeSlugs } from '@/data/dePages'
 import { getAllDeRatgeberSlugs } from '@/lib/deRatgeber'
+import { getAllDubaiSlugs } from '@/data/dubaiPages'
 
 export default function sitemap() {
   const baseUrl = 'https://stackbinary.io'
@@ -145,5 +146,13 @@ export default function sitemap() {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...servicePages, ...aiServicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages, ...dePages, ...deRatgeberPages]
+  // Dubai/UAE services pair, same priority as the US AI cluster.
+  const dubaiServicePages = getAllDubaiSlugs().map((slug) => ({
+    url: `${baseUrl}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  }))
+
+  return [...staticPages, ...servicePages, ...aiServicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages, ...dePages, ...deRatgeberPages, ...dubaiServicePages]
 }
