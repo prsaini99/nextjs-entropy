@@ -5,6 +5,7 @@ import { getAllIndustrySlugs } from '@/data/industries'
 import { getAllInsightSlugs } from '@/lib/insights'
 import { getOpenJobs } from '@/lib/careers'
 import { getAllDeSlugs } from '@/data/dePages'
+import { getAllDeRatgeberSlugs } from '@/lib/deRatgeber'
 
 export default function sitemap() {
   const baseUrl = 'https://stackbinary.io'
@@ -134,5 +135,15 @@ export default function sitemap() {
     })),
   ]
 
-  return [...staticPages, ...servicePages, ...aiServicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages, ...dePages]
+  // German Ratgeber articles are indexed ahead of the page cluster (owner
+  // decision 2026-08-29); the DE_REVIEWED gate above still holds the /de
+  // service pages back until the sales colleague's sign-off.
+  const deRatgeberPages = getAllDeRatgeberSlugs().map((slug) => ({
+    url: `${baseUrl}/de/ratgeber/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...servicePages, ...aiServicePages, ...martechPages, ...industryPages, ...insightPages, ...careerPages, ...dePages, ...deRatgeberPages]
 }
