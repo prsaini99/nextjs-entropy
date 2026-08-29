@@ -326,3 +326,20 @@ Felder: Name* · Geschäftliche E-Mail* · Telefon (optional) · Leistung* (Ausw
 Erfolgsmeldung: "Vielen Dank für Ihre Anfrage. Ihr deutschsprachiger Ansprechpartner meldet sich innerhalb eines Werktags bei Ihnen."
 
 Hinweis: Anfragen kommen mit lead_source "de-kontakt" in die Lead-Datenbank. Bitte klären: Wer bekommt die Benachrichtigung? (Aktuell landet sie im normalen Lead-Postfach.)
+
+## Ratgeber-Artikel (neu, 29.08.2026) — bitte prüfen
+
+Zwei deutsche Fachartikel, erreichbar (unindexiert) unter:
+
+1. stackbinary.io/de/ratgeber/ki-telefonassistent-kosten-vergleich
+   "KI Telefonassistent im Vergleich: Anbieter, Kosten und wann sich ein eigener lohnt"
+   Zielgruppe: Unternehmen, die einen Telefonassistenten suchen (Suchvolumen ~3.500/Monat).
+   Nennt VITAS, emvion, Placetel, IONOS als Marktbeispiele, ohne deren Preise zu behaupten.
+
+2. stackbinary.io/de/ratgeber/chatgpt-alternativen-unternehmen
+   "ChatGPT Alternativen für Unternehmen: Der Vergleich mit Blick auf die DSGVO"
+   Zielgruppe: Unternehmen mit Datenschutz-, Kosten- oder Integrationsproblem (~35.000 Suchen/Monat).
+   Positionierung: Wir bauen keine eigenen Sprachmodelle, wir integrieren vorhandene Modelle in eigene Systeme.
+
+Bitte besonders prüfen: klingt die Sprache nach deutschem Fachartikel oder nach Übersetzung?
+Sind die Anbieter-Einschätzungen (Mistral, Copilot, DeepSeek) aus deutscher Sicht fair formuliert?

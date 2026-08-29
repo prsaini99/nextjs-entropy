@@ -15,14 +15,14 @@ export async function generateMetadata({ params }) {
   const insight = getInsight(slug);
   if (!insight) return {};
   return {
-    title: `${insight.title} | StackBinary™`,
+    title: `${insight.title} | Stackbinary`,
     description: insight.description,
     alternates: { canonical: `https://stackbinary.io/insights/${slug}` },
     openGraph: {
-      title: `${insight.title} | StackBinary™`,
+      title: `${insight.title} | Stackbinary`,
       description: insight.description,
       url: `https://stackbinary.io/insights/${slug}`,
-      siteName: "StackBinary",
+      siteName: "Stackbinary",
       type: "article",
       publishedTime: insight.date,
     },
@@ -44,8 +44,8 @@ export default async function InsightPage({ params }) {
     description: insight.description,
     datePublished: insight.date,
     dateModified: insight.updated || insight.date,
-    author: { "@type": "Organization", name: "StackBinary", url: "https://stackbinary.io" },
-    publisher: { "@type": "Organization", name: "StackBinary", url: "https://stackbinary.io" },
+    author: { "@type": "Organization", name: "Stackbinary", url: "https://stackbinary.io" },
+    publisher: { "@type": "Organization", name: "Stackbinary", url: "https://stackbinary.io" },
     mainEntityOfPage: `https://stackbinary.io/insights/${slug}`,
   };
 
