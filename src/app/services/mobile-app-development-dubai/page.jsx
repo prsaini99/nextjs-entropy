@@ -3,6 +3,7 @@ import { getDubaiPage } from "@/data/dubaiPages";
 import { dubaiMetadata, dubaiJsonLd } from "@/lib/dubaiRoute";
 import AIServicePage from "@/components/pages/AIServices/AIServicePage";
 import RelatedInsights from "@/components/RelatedInsights";
+import DubaiOfficeStrip from "@/components/DubaiOfficeStrip";
 
 const SLUG = "mobile-app-development-dubai";
 
@@ -21,6 +22,7 @@ export default function Page() {
         />
       ))}
       <AIServicePage page={page} slug={SLUG} />
+      <DubaiOfficeStrip />
       <RelatedInsights
         slugs={["ai-receptionist-cost-comparison", "ai-voice-agent-platforms-compared", "ai-agent-vs-chatbot"]}
         heading="How we think about building products, in public"

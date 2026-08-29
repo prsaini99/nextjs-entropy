@@ -6,24 +6,26 @@
 // Why these pages exist (research 2026-08-29): the Dubai software SERPs
 // carry real volume at LOW competition ("mobile app development dubai"
 // cluster ~4,000/mo idx 24, "software development dubai" cluster ~3,500/mo)
-// and page one is held entirely by peer agencies, most of them Indian-origin
-// shops with Dubai landing pages (Royex, Apptunix, Code Brew). The ranking
-// formula, from the 2026-08-29 teardown of the top pages: exact keyword plus
-// city in title and H1, variant-keyword H2s, 2,000-7,000 words, UAE trust
-// anchors, industry blocks with real estate first, FAQPage schema.
+// and page one is held by peer agencies. Ranking formula from the teardown:
+// exact keyword plus city in title and H1, variant-keyword H2s, 2,000-7,000
+// words, UAE trust anchors, industry blocks with real estate first, FAQPage
+// schema.
 //
-// PRICING RULE (owner decision 2026-08-29): NO AED figures on these pages,
-// and no currency figures at all for now. Cost questions are answered
-// qualitatively: market rate versus our roughly-half, one fixed price.
+// Copy register (owner verdict 2026-08-29): professional B2B in the SERP
+// incumbents' format, per .claude/skills/b2b-web-copy. No essay voice, no
+// competitor snark, and NEVER volunteer internal structure: no mention of
+// where engineering sits or of the office's nature. Offices are stated
+// plainly: Dubai (Regal Tower 705, Business Bay), USA, India.
 //
-// Copy rules enforced by review: no em dashes, the company is "Stackbinary",
-// no named products on services pages (systems described generically),
-// compliance only as "aligned" / "ready" / "aware", never certified.
-// Local presence (owner-provided 2026-08-29): office at Regal Tower 705,
-// Business Bay, Dubai; phone +971 52 589 1213. Owner rule: the phone number
-// appears on the contact page and in LocalBusiness schema, NEVER in body
-// text on these pages. The address appears in copy; "Company in Dubai"
-// stays in titles and H1s on that basis. Engineering remains in India.
+// PRICING RULE (owner decision 2026-08-29): NO AED figures and no currency
+// figures on these pages. Cost FAQs answer qualitatively: fixed price,
+// typically well below prevailing Dubai agency quotes.
+//
+// PHONE RULE (owner decision 2026-08-29): +971 52 589 1213 appears on the
+// contact page and in LocalBusiness schema only, never in body text here.
+//
+// Other rules enforced by review: no em dashes, "Stackbinary", no named
+// products on services pages, compliance only "aligned"/"ready"/"aware".
 
 // "Dubai:" prefix mirrors the "DE:" convention on the German form: the lead
 // scorer keys off other service titles, and the prefix makes UAE pipeline
@@ -46,116 +48,116 @@ const dubaiPages = {
     badge: "Custom Software Development Dubai · Fixed Price, Your IP",
     seoTitle: "Custom Software Development Company in Dubai, UAE",
     seoDescription:
-      "Custom software development company in Dubai: web platforms, internal systems and AI-first builds. 55+ shipped products, fixed-price proposals, office in Business Bay.",
-    title: "Custom Software Development Company in Dubai You Can Actually Verify",
+      "Custom software development company in Dubai: web platforms, enterprise systems and AI-powered solutions. 55+ delivered products, fixed-price proposals, office in Business Bay.",
+    title: "Custom Software Development Company in Dubai, UAE",
     tagline:
-      "Stackbinary builds custom software for businesses in Dubai and across the UAE: web platforms, internal systems, integrations and AI-first products. We are an engineering company with over 55 shipped products, several of which we operate ourselves in production, with an office at Regal Tower in Business Bay and a point of contact who speaks your market. Fixed-scope proposals, senior engineers, and every line of code owned by you.",
+      "Stackbinary delivers custom software for businesses across Dubai and the UAE: web platforms, enterprise systems, integrations and AI-powered products. We give you senior engineering, weekly visible progress and complete ownership of every line of code.",
     heroStats: [
-      { value: "55+", label: "products shipped by the engineering team you actually get, several running in production under our own name" },
-      { value: "1.5h", label: "time difference between Dubai and our engineering floor. Your working day is our working day, not your midnight" },
-      { value: "100%", label: "IP assignment on payment: code, documentation and infrastructure, with no lock-in and no license back to us" },
+      { value: "55+", label: "products delivered by our engineering team, including platforms we operate in production ourselves" },
+      { value: "100%", label: "IP ownership assigned to you on payment: source code, documentation and infrastructure, with no lock-in" },
+      { value: "Weekly", label: "working software demonstrated every week during your business hours, from the second week of the project" },
     ],
     intro: {
-      heading: "What a Software Development Company in Dubai Should Prove Before You Sign",
+      heading: "Trusted Software Development Services in Dubai",
       paragraphs: [
-        "Search for a custom software development company in Dubai and you will find fifty agencies with the same page: a logo wall, a portfolio of screenshots and a claim to be number one. Almost none of them can show you software they operate themselves, and that is the single most revealing question you can ask a development partner. An agency that has only ever shipped client demos has never been woken by its own system failing at 2am. We have: we run our own live platforms, including a voice AI system answering real business phone calls and marketing automation spending real advertising budgets, and the engineering habits that come from operating software are in every system we build for clients.",
-        "The second thing to verify is who actually writes your code. Much of the Dubai market resells development to subcontracted teams the client never meets, with an account manager in between. Stackbinary is the engineering team: senior engineers in Mumbai, one and a half hours behind Dubai, working your business day with a named lead on your project and a Dubai-based sales contact for everything commercial. No handoffs, no telephone game between you and the people building your product.",
-        "The third is the commercial structure. We write fixed-scope proposals: what will exist at the end, the milestones, the team, the timeline and one fixed price before you commit anything. Scope changes are priced as changes, not absorbed into drift. Because our cost base is engineering in India rather than office space in DIFC, the same scope typically lands at roughly half of what Dubai agencies quote, without the quality discount that usually implies at the bottom of the market.",
+        "Businesses in Dubai choose custom software when off-the-shelf tools stop fitting the way they operate: a workflow the market's products do not cover, systems that need to talk to each other, or a product idea that deserves its own platform. Stackbinary designs, builds and operates that software. Our portfolio spans customer platforms, enterprise operations systems, marketplaces and AI-powered products, and several of the systems we have built we run ourselves in production, including live AI platforms serving real customers every day. That operating experience shapes how we engineer for clients: reliability, monitoring and maintainability are part of the build, not an aftersale.",
+        "We serve the UAE from our office at Regal Tower in Business Bay, alongside our offices in the USA and India, with a team structured for international delivery. Your project gets a named lead engineer, a shared communication channel and weekly demonstrations of working software in your business hours, so progress is something you see and click rather than read about in a status report.",
+        "Every engagement is commercially straightforward: a written fixed-scope proposal with deliverables, milestones, timeline and one fixed price, agreed before the project begins. Scope changes are priced transparently as changes. On completion, all intellectual property transfers to you, and the system is documented so any competent team can operate and extend it.",
       ],
     },
     offerings: {
-      heading: "Custom Software Development Services in Dubai and the UAE",
-      lead: "Everything below is delivered by the same senior team, under one fixed-scope proposal per project.",
+      heading: "Our Custom Software Development Services in Dubai",
+      lead: "End-to-end delivery by one senior team, under one fixed-scope proposal per project.",
       items: [
         {
           title: "Web Platforms and SaaS Development",
           description:
-            "Customer portals, marketplaces, booking systems and full SaaS products, built on modern stacks and delivered with the operations tooling to run them: monitoring, backups and deployment pipelines included.",
+            "Customer portals, marketplaces, booking systems and full SaaS products, delivered with the operational tooling to run them: monitoring, backups and deployment pipelines included.",
         },
         {
-          title: "Enterprise and Internal Systems",
+          title: "Enterprise Software Development",
           description:
-            "The software your spreadsheets are pretending to be: inventory, operations, HR and finance workflows, built around how your business actually runs instead of forcing your process into an off-the-shelf tool.",
+            "Operations, inventory, HR and finance systems built around how your business actually works, replacing spreadsheet processes with software your team can rely on.",
         },
         {
-          title: "AI-First Software Development",
+          title: "AI Software Development",
           description:
-            "Custom software with AI where it earns its keep: document processing, lead scoring, customer service automation and AI agents inside your workflows. We build AI systems we operate ourselves, not demos.",
+            "AI applied where it creates measurable value: document processing, lead qualification, customer service automation and AI agents integrated into your workflows.",
         },
         {
           title: "System Integration and APIs",
           description:
-            "Your CRM, ERP, payment gateway, WhatsApp Business API and accounting stack, connected properly: event pipelines and official APIs rather than fragile copy-paste middleware.",
+            "Your CRM, ERP, payment gateway, WhatsApp Business API and accounting stack connected through official APIs and event pipelines, engineered for reliability.",
         },
         {
           title: "Software Modernization",
           description:
-            "Legacy systems rebuilt without stopping the business: incremental migration off outdated stacks, with the old and new running side by side until cutover is safe.",
+            "Legacy systems rebuilt without disrupting the business: incremental migration to modern stacks, with old and new running side by side until cutover is proven safe.",
         },
         {
           title: "Dedicated Development Teams",
           description:
-            "A named senior team working your Dubai hours as an extension of your company, for businesses that need ongoing engineering capacity rather than a one-off project.",
+            "A named senior team working your Dubai hours as an extension of your company, for organizations that need ongoing engineering capacity beyond a single project.",
         },
       ],
     },
     deepDive: [
       {
-        heading: "Software Development for the Industries That Drive Dubai",
+        heading: "Software Development Expertise Across UAE Industries",
         paragraphs: [
-          "Real estate first, because in Dubai it is first. Brokerages, developers and property managers run on lead flow, and most of the software sold to them is rented per seat per agent forever. We build owned systems: lead capture and routing from portals and campaigns, automated follow-up over WhatsApp and email, listing and commission management, and AI that qualifies enquiries before an agent spends a minute on them. Owning that system instead of renting it changes the economics of a brokerage at exactly the point where Dubai brokerages compete hardest.",
-          "The same logic runs through the UAE's other engines. Trading and logistics companies need operations systems that talk to customs, fleets and warehouses. Retail and e-commerce need inventory, loyalty and fulfilment connected to storefronts. Clinics and wellness businesses need booking, reminders and patient communication that respect how people in the UAE actually communicate, which is to say on WhatsApp. Hospitality needs guest journeys that do not collapse across language boundaries. We design for the UAE's operating reality: multilingual customers, WhatsApp-first communication and businesses that run seven days a week.",
-          "What we bring to Dubai is real and checkable: an office at Regal Tower in Business Bay, a network of partners on the ground, and shipped products you can open, click and phone today. Our engineering runs from India, ninety minutes from Gulf time, which is why the same scope costs roughly half of what agencies carrying full Dubai overheads quote. In a market this full of logo walls, verifiability is the differentiator, and we invite you to apply that test to everyone on your shortlist, us included.",
+          "Real estate leads our UAE work. Brokerages, developers and property managers run on lead flow, and we build the systems that maximize it: lead capture and routing from portals and campaigns, automated follow-up over WhatsApp and email, listing and commission management, and AI qualification that ensures agents spend their time on genuine buyers. Owning these systems outright, rather than renting them per seat, changes the economics of a growing brokerage.",
+          "The same engineering depth serves the UAE's other core sectors. Trading and logistics companies rely on us for operations platforms that connect fleets, warehouses and customs workflows. Retail and e-commerce businesses get inventory, loyalty and fulfilment connected to their storefronts. Clinics and wellness groups get booking, reminders and patient communication built WhatsApp-first, because that is how UAE customers respond. Hospitality operators get guest systems that perform across languages. In every sector, we design for the UAE's operating reality: multilingual customers, seven-day business weeks and companies that scale fast.",
+          "Data protection is engineered in from the start. Systems handling personal data of UAE residents are designed with the UAE Personal Data Protection Law in mind, and where data residency matters we deploy to Gulf cloud regions, including AWS UAE, under accounts you control.",
         ],
       },
       {
-        heading: "Why UAE Businesses Choose Us Over a Local Agency, Honestly",
+        heading: "Why Businesses in Dubai Choose Stackbinary",
         paragraphs: [
-          "The economics are the visible half. Dubai agencies carry Dubai costs and price accordingly, and the offshore shops undercutting them compete on rate cards instead of outcomes. We sit in the gap on purpose: senior engineering at Indian cost with delivery discipline structured for buyers who cannot afford a failed project. The same budget buys roughly twice the engineering, which on a real build is the difference between an MVP and a finished system with monitoring, documentation and a second iteration informed by real users.",
-          "The less visible half is the delivery structure that removes the classic offshore risks. You get a named lead engineer, a shared channel, weekly demo calls where you click working software instead of reading status reports, and daily overlap through your entire working day because Gulf Standard Time and our engineering hours are ninety minutes apart. Contracts assign IP to you completely on payment. We sign your NDA before hearing anything sensitive. And the engagement starts small on purpose, with a scoped first milestone, so the trust decision you make on day one is modest and reversible.",
-          "Ask any shortlisted vendor the operating question: what do you run in production yourselves, and can we see it? Our answer is live systems you can try before the first call. If the others on your shortlist have a better answer, hire them.",
+          "Proof you can verify. Beyond a portfolio of 55+ delivered products, we operate our own software in production, including AI platforms answering live business calls and automation systems managing real advertising budgets. A development partner that runs its own systems brings operating discipline you can measure: uptime habits, monitoring standards and an instinct for the failure cases that only production teaches.",
+          "A delivery model designed for certainty. One fixed price agreed up front, milestones you accept one by one, weekly demonstrations of working software, and a named lead engineer accountable to you throughout. Our efficiency comes from a mature engineering practice, including AI-assisted delivery pipelines we built ourselves, which is why our proposals typically come in well below prevailing Dubai agency quotes for equivalent scope, with senior engineers on the work end to end.",
+          "Complete ownership and independence. Your systems are built inside cloud and API accounts you own, the IP assigns to you fully on payment, and handover documentation is a project milestone, not a courtesy. Everything we build for you keeps running, and keeps being extendable, whether or not we are the team extending it.",
         ],
       },
     ],
     process: {
-      heading: "How We Deliver Software Projects for Dubai Clients",
+      heading: "Our Software Development Process",
       lead: "Six stages, each ending in something you can see or use. Most projects reach a working first delivery within the first month.",
       steps: [
         {
           title: "Discovery Call",
           description:
-            "A working session on your process, your systems and what the software must change. Your Dubai contact and the lead engineer are both on this call.",
+            "A working session on your process, your systems and what the software must achieve, with our Dubai contact and the lead engineer on the call.",
         },
         {
           title: "Fixed-Scope Proposal",
           description:
-            "A written proposal: deliverables, milestones, team, timeline and one fixed price. Signed before any build starts, so the number you agree is the number you pay.",
+            "A written proposal covering deliverables, milestones, team, timeline and one fixed price, agreed before any build starts.",
         },
         {
           title: "Design and Architecture",
           description:
-            "Screens and system design reviewed with you before code, so expensive decisions are made on paper where changing them is free.",
+            "Screens and system design reviewed with you before development, so the important decisions are made where changing them is easy.",
         },
         {
           title: "Build in Weekly Increments",
           description:
-            "Working software demonstrated every week in your business hours. You steer while the project moves, not after it lands.",
+            "Working software demonstrated every week in your business hours, with your feedback steering each sprint.",
         },
         {
           title: "Launch and Data Migration",
           description:
-            "Controlled rollout with your real data, your team trained on the system, and the legacy process kept warm until cutover is proven safe.",
+            "Controlled rollout with your real data, your team trained on the system, and existing processes kept running until cutover is proven safe.",
         },
         {
           title: "Operate or Hand Over",
           description:
-            "Full documentation, dashboards and runbooks. Your team runs it independently, or we operate it under a support agreement. Either way it is yours.",
+            "Full documentation, dashboards and runbooks. Your team runs the system independently, or we operate it under a support agreement.",
         },
       ],
     },
     techStack: {
-      heading: "The Stack We Build On",
-      lead: "Chosen per project, not by habit, and run inside your own cloud accounts so you keep billing control and data custody from day one.",
+      heading: "The Technology Stack We Build On",
+      lead: "Selected per project and run inside your own cloud accounts, so you keep billing control and data custody from day one.",
       groups: [
         {
           name: "Application Engineering",
@@ -177,27 +179,27 @@ const dubaiPages = {
     },
     compliance: {
       heading: "Data Protection Built for the UAE",
-      lead: "Compliance is an architecture input, not a paragraph added before launch.",
+      lead: "Compliance is an architecture input from day one, not a paragraph added before launch.",
       items: [
         {
           title: "UAE PDPL-Aware by Design",
           description:
-            "Systems handling personal data of UAE residents are designed with the UAE Personal Data Protection Law in mind: consent capture, purpose limitation, retention rules and deletion that actually deletes.",
+            "Systems handling personal data of UAE residents are designed with the UAE Personal Data Protection Law in mind: consent capture, purpose limitation, retention rules and reliable deletion.",
         },
         {
-          title: "Data Residency Options in the Gulf",
+          title: "Data Residency in the Gulf",
           description:
             "Where residency matters, we deploy to Gulf cloud regions, including AWS UAE (me-central-1) and Bahrain (me-south-1), so customer data stays in the region under your account.",
         },
         {
           title: "SOC 2-Aligned Engineering Practice",
           description:
-            "Access control, encryption in transit and at rest, audit logging and change management are standard in our builds, aligned with SOC 2 expectations rather than bolted on later.",
+            "Access control, encryption in transit and at rest, audit logging and change management are standard in our builds, aligned with SOC 2 expectations.",
         },
         {
           title: "Your Accounts, Your Custody",
           description:
-            "We build inside cloud and API accounts you own, as scoped collaborators. From the first commit, leaving us never means losing your system.",
+            "We build inside cloud and API accounts you own, as scoped collaborators. From the first commit, your systems and your data remain under your control.",
         },
       ],
     },
@@ -206,37 +208,42 @@ const dubaiPages = {
       {
         question: "How much does custom software development cost in Dubai?",
         answer:
-          "It depends on scope, and any agency quoting a number before understanding your project is quoting a hook, not a price. What we can say plainly: Dubai agencies carry Dubai overheads and price accordingly, and for the same scope our proposals typically land at roughly half of what the established local agencies quote, as one fixed price agreed before you commit. The first call and the written proposal are free, so the cheapest way to get a real number for your project is to describe it to us.",
+          "Every project is quoted as one fixed price based on its scope, agreed in writing before work begins. For equivalent scope, our proposals typically come in well below prevailing Dubai agency quotes, because our delivery model is built on senior engineers and AI-assisted development pipelines rather than large blended teams. The discovery call and the written proposal are free, so the fastest way to get an accurate number for your project is to describe it to us.",
       },
       {
         question: "How long does a custom software project take?",
         answer:
-          "A focused first version typically takes six to twelve weeks depending on integrations, with working software demonstrated weekly from the second week. We ship a usable release early on purpose, because real usage reshapes assumptions and steering a moving project beats reviewing a finished one. Larger platforms run in milestone phases, each independently priced and accepted.",
+          "A focused first version typically takes six to twelve weeks depending on integrations, with working software demonstrated weekly from the second week. We deliver a usable release early by design, because real usage sharpens requirements faster than any specification document. Larger platforms run in milestone phases, each independently priced and accepted.",
       },
       {
         question: "Do we own the source code?",
         answer:
-          "Completely. The agreement assigns all work product to you on payment: source code, documentation, infrastructure configuration and design assets. We keep no license to reuse your system and build no lock-in hooks. If you end the relationship after delivery, everything keeps running without us, and any competent team can take it over from the documentation.",
+          "Yes, completely. The agreement assigns all work product to you on payment: source code, documentation, infrastructure configuration and design assets. We keep no license to reuse your system and build no lock-in dependencies. Your software keeps running and any competent team can maintain it from the handover documentation.",
       },
       {
         question: "Can you build AI features into our software?",
         answer:
-          "Yes, and this is where we differ most from the general-purpose agencies in the Dubai market. We build and operate our own AI systems in production, including voice AI answering live business calls, so AI in your project means working systems with evaluation and guardrails, not a chatbot widget added for the demo. Where AI is the wrong tool for your problem, we will say so and build the boring reliable version instead.",
+          "Yes. AI development is one of our core practices, and we operate our own AI systems in production, including voice AI that answers live business calls. That means AI in your project is delivered with evaluation, monitoring and guardrails, built by a team that runs this technology commercially. Where AI is not the right tool for a requirement, we advise exactly that and engineer the dependable conventional solution instead.",
       },
       {
         question: "Do you work with UAE free zone companies and startups?",
         answer:
-          "Yes. Mainland, free zone and offshore structures are all normal for us, and the contract is drafted to match your entity. For startups we scope a genuine MVP first: the smallest system that can face real customers, so the budget goes into learning what the market wants rather than into features nobody has validated.",
+          "Yes. Mainland, free zone and offshore structures are all standard for us, and contracts are drafted to match your entity. For startups we scope a genuine MVP first: the smallest system that can face real customers, so your budget goes into validated learning rather than unproven features.",
       },
       {
         question: "Can you take over software another company built?",
         answer:
-          "Usually, yes. We start with a paid technical audit: code quality, security, infrastructure and documentation, delivered as a written report with a recommendation to rescue, refactor or rebuild, and an honest one, since rebuilding everything is not always in your interest. Rescues are common in the Dubai market, where projects are frequently subcontracted twice before anyone writes code.",
+          "In most cases, yes. We begin with a technical audit of the code, security, infrastructure and documentation, delivered as a written report with a clear recommendation: maintain, refactor or rebuild. The recommendation is honest either way, including when the existing system is sound and only needs ongoing maintenance.",
+      },
+      {
+        question: "How do you keep our data secure during the project?",
+        answer:
+          "Your data stays in accounts you own, with our engineers as scoped, auditable collaborators. We encrypt in transit and at rest, log access, and sign your NDA before any sensitive material moves. For regulated data we design to the applicable requirements, including the UAE PDPL, from the architecture stage.",
       },
       {
         question: "How do we start?",
         answer:
-          "A thirty-minute call with your Dubai contact and our lead engineer, followed by a written fixed-price proposal within a few business days. Use the form below, reach us through the contact page, or meet us at Regal Tower in Business Bay. If an NDA needs to come first, send yours or use ours. If the project is not a fit, we will say so on the call and point you somewhere useful.",
+          "Book a thirty-minute discovery call through the form below or our contact page, or meet us at Regal Tower in Business Bay. You will speak with our Dubai contact and a lead engineer, and receive a written fixed-price proposal within a few business days. If an NDA needs to come first, send yours or use ours.",
       },
     ],
     formService: "Dubai: Custom Software Development",
@@ -254,21 +261,21 @@ const dubaiPages = {
     badge: "Mobile App Development Dubai · iOS, Android, Flutter",
     seoTitle: "Mobile App Development Company in Dubai, UAE",
     seoDescription:
-      "Mobile app development company in Dubai: iOS, Android and Flutter apps with AI built in. 55+ shipped products, fixed-price proposals, office in Business Bay, your IP.",
-    title: "Mobile App Development Company in Dubai for Apps That Outlive Their Launch",
+      "Mobile app development company in Dubai: iOS, Android and Flutter apps with AI built in. 55+ delivered products, fixed-price proposals, office in Business Bay, your IP.",
+    title: "Mobile App Development Company in Dubai, UAE",
     tagline:
-      "Stackbinary builds iOS, Android and Flutter apps for businesses in Dubai and across the UAE: customer apps, delivery and booking platforms, internal tools and AI-powered products. An engineering team with over 55 shipped products, an office at Regal Tower in Business Bay, fixed-scope pricing and complete IP ownership for you.",
+      "Stackbinary builds iOS, Android and Flutter apps for businesses across Dubai and the UAE: customer apps, delivery and booking platforms, enterprise tools and AI-powered products, engineered to succeed well beyond launch day.",
     heroStats: [
-      { value: "55+", label: "shipped products behind the team on your project, including apps and platforms we operate ourselves in production" },
-      { value: "1.5h", label: "between Dubai time and our engineering floor: daily standups, demos and support inside your working day" },
-      { value: "1", label: "codebase for iOS and Android with Flutter, where it fits, which is most of the time and most of the budget saved" },
+      { value: "55+", label: "products delivered by our engineering team, including apps and platforms we operate in production ourselves" },
+      { value: "100%", label: "ownership for you: the app ships under your store accounts and all code assigns to you on payment" },
+      { value: "Weekly", label: "installable builds on your own phone from the second week, through TestFlight and internal release tracks" },
     ],
     intro: {
-      heading: "What App Development in Dubai Usually Gets Wrong",
+      heading: "Expert Mobile App Developers for Dubai Businesses",
       paragraphs: [
-        "Most mobile apps commissioned in Dubai die within a year of launch, and rarely because the code was bad. They die because the agency's job ended at the app store while the actual product work was just beginning: the backend that has to scale past the launch campaign, the analytics that tell you what users do, the iteration loop that turns version one into something people keep. We build apps as products, not deliverables: backend, admin panel, analytics and a release pipeline are part of the scope, because an app without them is a screenshot that compiles.",
-        "The second thing the market gets wrong is platform strategy. Building native iOS and Android separately doubles cost and halves iteration speed, and for most business apps it buys nothing your users will notice. We default to Flutter with one codebase for both stores, and we will tell you plainly when your app is one of the exceptions that genuinely needs native, such as heavy real-time media or platform-specific hardware work. The recommendation comes from engineers, not from whichever technology the agency has spare capacity in.",
-        "And because it is 2026: AI belongs inside apps now, not beside them. In-app assistants that answer from your real data, voice interfaces in multiple languages, smart search, document scanning and personalization are things we build routinely, on the same engineering we use in AI systems we operate ourselves. Dubai's app market is full of agencies that renamed their old services page to include AI. Ask for a working demonstration, from us and from everyone else on your shortlist.",
+        "A successful mobile app is a complete product: the app your customers touch, the backend that powers it, the admin panel your team runs the business from, and the analytics that show what to improve next. Stackbinary delivers all of it under one fixed-scope proposal. Our portfolio spans consumer apps, on-demand platforms, enterprise tools and AI-powered products, and we operate several of our own products in production, which keeps our engineering standards anchored in real commercial use.",
+        "For most business apps we recommend Flutter, delivering iOS and Android from a single codebase with near-native performance, one team and one testing surface. Where a product genuinely benefits from native Swift or Kotlin development, such as intensive real-time media or deep platform hardware integration, we recommend native and explain the trade-offs clearly. Platform recommendations come from engineering analysis of your product, presented with reasons you can evaluate.",
+        "AI capability is a core part of our app development practice. In-app assistants grounded in your business data, multilingual voice interfaces, smart search and personalization are features we build routinely, on the same engineering foundations as the AI systems we operate ourselves. If your app should be more intelligent than a set of static screens, we are the right conversation.",
       ],
     },
     offerings: {
@@ -278,92 +285,92 @@ const dubaiPages = {
         {
           title: "iOS and Android App Development",
           description:
-            "Consumer and business apps for both stores from one Flutter codebase, or native Swift and Kotlin where the product genuinely demands it, with the trade-off explained before you spend.",
+            "Consumer and business apps for both stores from one Flutter codebase, or native Swift and Kotlin where the product demands it, with the recommendation explained before you commit.",
         },
         {
           title: "AI-Powered Mobile Apps",
           description:
-            "Apps with AI at the core: in-app assistants grounded in your data, multilingual voice interfaces, smart search and personalization, built by a team that runs AI systems in production.",
+            "Apps with intelligence built in: in-app assistants grounded in your data, multilingual voice interfaces, smart search and personalization, engineered by a team that runs AI in production.",
         },
         {
           title: "On-Demand and Marketplace Apps",
           description:
-            "Delivery, booking and services marketplaces with the full machinery: customer app, provider app, dispatch logic, payments and the admin panel that runs the business.",
+            "Delivery, booking and services marketplaces with the complete system: customer app, provider app, dispatch logic, payments and the admin panel that runs the operation.",
         },
         {
           title: "E-Commerce and Retail Apps",
           description:
-            "Storefronts connected to real inventory, payments, loyalty and WhatsApp-first customer communication, built for the UAE's multilingual, mobile-first shoppers.",
+            "Storefronts connected to live inventory, payments, loyalty and WhatsApp-first customer communication, designed for the UAE's multilingual, mobile-first shoppers.",
         },
         {
           title: "Enterprise and Internal Apps",
           description:
-            "Field-force, operations and employee apps that connect to your existing systems and work offline in the places your team actually goes: warehouses, sites and vehicles.",
+            "Field-force, operations and employee apps that integrate with your existing systems and work offline in warehouses, on sites and in vehicles.",
         },
         {
-          title: "App Rescue and Modernization",
+          title: "App Modernization and Takeover",
           description:
-            "Existing apps taken over, audited and rebuilt where needed: outdated stacks migrated, crash rates brought down and release pipelines restored, without losing your users or your data.",
+            "Existing apps audited and upgraded: outdated stacks migrated, stability improved and release pipelines restored, without losing your users or your data.",
         },
       ],
     },
     deepDive: [
       {
-        heading: "Apps for the Industries That Run Dubai",
+        heading: "App Development Expertise Across UAE Industries",
         paragraphs: [
-          "Real estate leads the list for a reason. Dubai brokerages and developers live on speed to lead, and an app that lets agents respond, schedule viewings and update listings from the road, with AI qualifying enquiries before a human touches them, is a competitive weapon rather than a convenience. We build broker apps, buyer-facing property apps and the connective tissue to portals and CRMs behind them, and we build them as owned systems rather than per-agent subscriptions that scale their price with your success.",
-          "Beyond property: delivery and logistics apps with live tracking and dispatch, clinic and wellness apps where booking and reminders move over WhatsApp because that is where UAE customers actually respond, retail apps tied to real inventory, and hospitality apps that hold up in five languages. The common thread is that the app is never the whole system. The backend, the admin tools and the integrations are where these products succeed or fail, and they are in our scope from the first proposal.",
-          "Every app ships with the operational layer the Dubai market habitually forgets to quote: crash reporting, analytics, staged rollouts, store compliance for both Apple and Google, and a release pipeline your team can run after handover. That is the difference between buying an app and buying eighteen months of arguing with a vendor about maintenance invoices.",
+          "Real estate is a cornerstone of our UAE work. Speed to lead decides outcomes in Dubai property, and we build the apps that win it: agent apps for responding, scheduling viewings and updating listings from anywhere, buyer-facing property apps, and AI qualification that ensures every enquiry gets an instant response while agents focus on genuine buyers. Built as owned systems, they scale with your business instead of scaling their subscription price against it.",
+          "Across other sectors, the pattern holds: delivery and logistics apps with live tracking and dispatch, clinic and wellness apps where booking and reminders run over WhatsApp because that is where UAE customers respond, retail apps tied to live inventory, and hospitality apps that perform across English, Arabic and the other languages of the UAE market. Arabic support means proper right-to-left design from the first screen, not a translation pass at the end.",
+          "Every app ships with the operational layer that determines its long-term success: crash reporting, analytics, staged rollouts, store compliance for both Apple and Google, and a release pipeline your team can operate after handover. We build apps to be improved continuously, because the version that wins your market is rarely the version that launched.",
         ],
       },
       {
-        heading: "The Honest Comparison With Dubai App Agencies",
+        heading: "Why Businesses in Dubai Choose Stackbinary for App Development",
         paragraphs: [
-          "The difference worth your attention is structural: who actually writes the code. Much of the local market subcontracts delivery, adding a margin and a communication layer between you and the engineers who build your product. With us the proposal names the team, the people in the weekly demo are the people writing your app, and our partners on the ground in Dubai handle everything that benefits from being in the room with you.",
-          "Second, the shape of the price. Dubai-based agencies publish wide cost ranges and price to their overheads. Our cost base is engineering in India, ninety minutes from your time zone, and for equivalent scope our fixed-price proposals typically land at roughly half of established local quotes. We put that in writing per project rather than in a marketing range on a page, because a range wide enough to be safe is too wide to be useful.",
-          "Third, proof you can touch. Before you sign anything, you can use systems we built and operate ourselves, today, from your phone. We would rather earn the project with a working demonstration than with a wall of logos, and we encourage you to hold everyone on your shortlist to the same standard.",
+          "Verifiable delivery. Our portfolio of 55+ delivered products includes apps and platforms we operate ourselves in production, serving real customers today. That operating experience translates directly into client work: performance budgets, monitoring, store-compliance discipline and the engineering judgment that comes from running products commercially rather than handing them over at launch.",
+          "Direct engineering, transparent structure. The proposal names your team, and the people in the weekly demo are the people writing your app. Progress is installable: from the second week you carry the current build on your own phone, and your feedback steers each sprint. Our partners on the ground in Dubai support everything that benefits from being in the room with you.",
+          "Commercial clarity. One fixed price for the complete system, including backend, admin panel and store submission, agreed before development starts. Our efficiency comes from a mature practice and AI-assisted delivery pipelines we engineered ourselves, which is why our proposals typically come in well below prevailing Dubai agency quotes for equivalent scope. The app ships under your store accounts, the code assigns to you on payment, and independence is built into the handover.",
         ],
       },
     ],
     process: {
-      heading: "How We Build and Ship Your App",
-      lead: "Six stages with working software from the second week, releases you can install from the first month.",
+      heading: "How We Build and Launch Your App",
+      lead: "Six stages, with working software from the second week and installable releases from the first month.",
       steps: [
         {
           title: "Product and Feasibility Call",
           description:
-            "What the app must do, for whom, and what success looks like in numbers. If an app is the wrong answer, or version one should be smaller, we say so here.",
+            "What the app must do, for whom, and what success looks like in numbers, assessed with our Dubai contact and a lead engineer.",
         },
         {
           title: "Fixed-Scope Proposal",
           description:
-            "Deliverables, milestones, team, timeline and one fixed price, including backend, admin panel and store submission. Agreed before any build starts.",
+            "Deliverables, milestones, team, timeline and one fixed price, covering the app, backend, admin panel and store submission.",
         },
         {
           title: "Design and Prototype",
           description:
-            "Clickable designs for the full journey, reviewed with you screen by screen, so the expensive decisions happen before the expensive part.",
+            "Clickable designs for the full user journey, reviewed with you screen by screen before development begins.",
         },
         {
           title: "Build in Weekly Releases",
           description:
-            "Installable builds on your own phone every week through TestFlight and internal tracks, with your feedback steering the next sprint.",
+            "Installable builds on your phone every week through TestFlight and internal tracks, with your feedback steering each sprint.",
         },
         {
           title: "Store Launch",
           description:
-            "Apple and Google review handled by us, including the compliance details that stall first submissions, with staged rollout and crash monitoring from day one.",
+            "Apple and Google review managed by us, including the compliance requirements that delay first submissions, with staged rollout and monitoring from day one.",
         },
         {
           title: "Iterate or Hand Over",
           description:
-            "Post-launch analytics reviewed together, a costed iteration plan, and full handover of code, stores and pipelines whenever you want it. The app is yours either way.",
+            "Post-launch analytics reviewed together, a costed iteration plan, and full handover of code, stores and pipelines whenever you choose.",
         },
       ],
     },
     techStack: {
-      heading: "The Stack Behind Our Dubai App Projects",
-      lead: "Modern, boring where boring is right, and always inside accounts you own.",
+      heading: "The Technology Behind Our Dubai App Projects",
+      lead: "Modern, proven and always inside accounts you own.",
       groups: [
         {
           name: "Mobile",
@@ -385,27 +392,27 @@ const dubaiPages = {
     },
     compliance: {
       heading: "Store-Ready and UAE-Ready",
-      lead: "The unglamorous requirements handled as engineering, not as an afterthought before submission.",
+      lead: "The requirements that decide launch dates, handled as engineering from day one.",
       items: [
         {
           title: "UAE PDPL-Aware Data Handling",
           description:
-            "Consent, retention and deletion for UAE user data designed in from the architecture stage, with Gulf data residency options including AWS UAE (me-central-1) where it matters.",
+            "Consent, retention and deletion for UAE user data designed in from the architecture stage, with Gulf data residency options including AWS UAE (me-central-1) where required.",
         },
         {
           title: "Apple and Google Compliance",
           description:
-            "Privacy manifests, data safety forms, sign-in requirements and payment rules handled correctly the first time, because a rejected submission costs weeks at exactly the wrong moment.",
+            "Privacy manifests, data safety forms, sign-in requirements and payment rules handled correctly the first time, protecting your launch date from avoidable rejections.",
         },
         {
           title: "SOC 2-Aligned Engineering Practice",
           description:
-            "Access control, encrypted transport and storage, audit logging and reviewed releases as standard practice on every build, aligned with SOC 2 expectations.",
+            "Access control, encrypted transport and storage, audit logging and reviewed releases as standard practice on every build.",
         },
         {
           title: "Your Stores, Your Accounts",
           description:
-            "Apps ship under your Apple and Google developer accounts, backends run in your cloud. Leaving us never means losing your app, your users or your reviews.",
+            "Apps ship under your Apple and Google developer accounts, backends run in your cloud. Your app, your users and your reviews remain yours in every scenario.",
         },
       ],
     },
@@ -414,47 +421,47 @@ const dubaiPages = {
       {
         question: "How much does mobile app development cost in Dubai?",
         answer:
-          "Honestly: it depends on scope, and the wide cost ranges Dubai agencies publish are marketing, not estimates. Two things are reliably true. A single Flutter codebase for both stores costs meaningfully less than parallel native builds, and our fixed-price proposals for equivalent scope typically land at roughly half of what established Dubai agencies quote, because our cost base is engineering rather than Dubai overheads. Describe your app to us and you will have a real, fixed number in writing within a few business days, free.",
+          "Every app is quoted as one fixed price based on its scope, covering the complete system: the app, backend, admin panel and store submission. Two factors work in your favour: a single Flutter codebase for both stores costs meaningfully less to build and maintain than parallel native apps, and our proposals typically come in well below prevailing Dubai agency quotes for equivalent scope. Describe your app through the form or our contact page and you will have a written fixed price within a few business days.",
       },
       {
         question: "How long does it take to build an app?",
         answer:
-          "A focused first version typically takes eight to fourteen weeks from proposal to store release, with installable weekly builds from the second week, so you are using your app months before launch day. Marketplace and multi-app platforms run longer and are phased into independently priced milestones. Apple and Google review time is built into the plan, not discovered at the end.",
+          "A focused first version typically takes eight to fourteen weeks from proposal to store release, with installable weekly builds from the second week, so you are using your app months before launch day. Marketplace and multi-app platforms run in phased milestones, each independently priced. Apple and Google review time is built into the plan from the start.",
       },
       {
-        question: "Flutter or native, and who decides?",
+        question: "Should we build with Flutter or native, and who decides?",
         answer:
-          "Engineers decide, with reasons you can interrogate. Flutter with one codebase for iOS and Android is the right answer for most business apps: near-native performance, one team, one test surface, roughly half the build and maintenance cost of parallel native apps. Genuine native cases exist, such as heavy real-time media processing or deep platform hardware work, and when your app is one of them we will recommend native and show you why. What we will not do is recommend whatever happens to fit our bench.",
+          "Our engineers recommend, with reasons you can evaluate, and you decide. Flutter with one codebase for iOS and Android is the right choice for most business apps: near-native performance, one team, one testing surface and substantially lower build and maintenance cost. Products that genuinely benefit from native development, such as intensive real-time media or deep hardware integration, get a native recommendation with the trade-offs laid out clearly.",
       },
       {
         question: "Do you build the backend and admin panel too?",
         answer:
-          "Always, unless you already have one we should integrate with. An app without its backend, admin panel and analytics is a screenshot that compiles. Our proposals scope the full system: the app, the server, the dashboard your team runs the business from, and the release pipeline, so there is no second invoice hiding behind the first.",
+          "Always, unless you have existing systems we should integrate with. An app is only as strong as the platform behind it, so our proposals scope the complete product: the app, the server, the admin dashboard your team operates from, and the release pipeline. One proposal, one price, no follow-on invoices hiding behind the first.",
       },
       {
         question: "Can you add AI features like a chatbot or voice assistant to our app?",
         answer:
-          "Yes, and this is our strongest suit relative to the Dubai market. We operate our own AI systems in production, including voice AI that answers real business phone calls in multiple languages, so in-app assistants, voice interfaces and smart search in your app are built on engineering we already trust with our own customers. Ask any agency proposing AI features for a live demonstration of AI they run themselves; we will happily be judged on that comparison.",
+          "Yes, and it is one of our strongest capabilities. We operate our own AI systems in production, including voice AI answering live business calls in multiple languages, so AI features in your app are built on engineering proven with real customers: in-app assistants grounded in your data, voice interfaces, smart search and personalization, all delivered with proper evaluation and guardrails.",
       },
       {
         question: "Will our app work in Arabic?",
         answer:
-          "Yes. Right-to-left layout, Arabic typography and multilingual content are designed in from the first screen rather than patched on later, which is the difference between an app that supports Arabic and an app that was translated into it. The same applies to the multilingual reality of the UAE market generally: English, Arabic, Hindi and Urdu users often share one customer base, and the app should not care.",
+          "Yes. Right-to-left layout, Arabic typography and multilingual content are designed in from the first screen. The UAE market is genuinely multilingual, with English, Arabic, Hindi and Urdu speakers often sharing one customer base, and we engineer apps to serve all of them seamlessly.",
       },
       {
         question: "Who owns the app, the code and the store listings?",
         answer:
-          "You do, entirely. The app ships under your own Apple and Google developer accounts from day one, the backend runs in your cloud accounts, and the agreement assigns all code and assets to you on payment. If we part ways, you keep the app, the users, the reviews and the ability to hand the codebase to any competent team.",
+          "You do, entirely. The app ships under your own Apple and Google developer accounts from day one, the backend runs in your cloud accounts, and the agreement assigns all code and assets to you on payment. Your app, your users, your reviews and your codebase remain yours in every scenario.",
       },
       {
-        question: "Can you fix or take over an app another agency built?",
+        question: "Can you take over an app another agency built?",
         answer:
-          "Usually. We start with a paid audit of the codebase, backend and store setup, delivered as a written report: what is salvageable, what needs rebuilding and what it will cost, with an honest recommendation even when the answer is that the original agency did fine work and you only need maintenance. App rescues are a steady share of our Dubai enquiries for a reason.",
+          "In most cases, yes. We begin with a technical audit of the codebase, backend and store setup, delivered as a written report: what is sound, what needs work and what it will cost, with an honest recommendation either way, including when the existing app only needs ongoing maintenance.",
       },
       {
         question: "How do we start?",
         answer:
-          "A thirty-minute call with your Dubai contact and our lead engineer about the app you have in mind. Use the form below, reach us through the contact page, or meet us at Regal Tower in Business Bay. Within a few business days you get a written fixed-price proposal covering the full system. If the idea needs a smaller version one, or does not need an app at all, we will say exactly that on the call.",
+          "Book a call through the form below or our contact page, or meet us at Regal Tower in Business Bay. You will discuss the app with our Dubai contact and a lead engineer, and receive a written fixed-price proposal covering the complete system within a few business days.",
       },
     ],
     formService: "Dubai: Mobile App Development",
