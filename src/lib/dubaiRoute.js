@@ -1,8 +1,8 @@
 // Shared route machinery for the Dubai/UAE services pair, mirroring
 // aiServiceRoute.js. Same template, different geo signals: areaServed is the
-// UAE and the Gulf, and there is deliberately NO LocalBusiness schema
-// because we have no Dubai premises; faking one is how competitors rank and
-// how trust dies in due diligence.
+// UAE and the Gulf. LocalBusiness schema is deliberately absent until the
+// owner's Dubai entity details (name, address, +971) land on the visible
+// page; schema must never claim what the page does not show.
 
 import { getDubaiPage } from "@/data/dubaiPages";
 
