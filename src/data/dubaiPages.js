@@ -19,11 +19,11 @@
 // Copy rules enforced by review: no em dashes, the company is "Stackbinary",
 // no named products on services pages (systems described generically),
 // compliance only as "aligned" / "ready" / "aware", never certified.
-// Local presence (owner-provided 2026-08-29): office at Park Lane Tower,
-// Business Bay, Dubai; phone +971 52 589 1213. These appear visibly in the
-// copy and in LocalBusiness schema (dubaiRoute.js), and "Company in Dubai"
-// is back in titles and H1s on that basis. Engineering remains in India and
-// the copy says so; the office is the commercial presence.
+// Local presence (owner-provided 2026-08-29): office at Regal Tower 705,
+// Business Bay, Dubai; phone +971 52 589 1213. Owner rule: the phone number
+// appears on the contact page and in LocalBusiness schema, NEVER in body
+// text on these pages. The address appears in copy; "Company in Dubai"
+// stays in titles and H1s on that basis. Engineering remains in India.
 
 // "Dubai:" prefix mirrors the "DE:" convention on the German form: the lead
 // scorer keys off other service titles, and the prefix makes UAE pipeline
@@ -49,7 +49,7 @@ const dubaiPages = {
       "Custom software development company in Dubai: web platforms, internal systems and AI-first builds. 55+ shipped products, fixed-price proposals, office in Business Bay.",
     title: "Custom Software Development Company in Dubai You Can Actually Verify",
     tagline:
-      "Stackbinary builds custom software for businesses in Dubai and across the UAE: web platforms, internal systems, integrations and AI-first products. We are an engineering company with over 55 shipped products, several of which we operate ourselves in production, with an office at Park Lane Tower in Business Bay and a point of contact who speaks your market. Fixed-scope proposals, senior engineers, and every line of code owned by you.",
+      "Stackbinary builds custom software for businesses in Dubai and across the UAE: web platforms, internal systems, integrations and AI-first products. We are an engineering company with over 55 shipped products, several of which we operate ourselves in production, with an office at Regal Tower in Business Bay and a point of contact who speaks your market. Fixed-scope proposals, senior engineers, and every line of code owned by you.",
     heroStats: [
       { value: "55+", label: "products shipped by the engineering team you actually get, several running in production under our own name" },
       { value: "1.5h", label: "time difference between Dubai and our engineering floor. Your working day is our working day, not your midnight" },
@@ -105,7 +105,7 @@ const dubaiPages = {
         paragraphs: [
           "Real estate first, because in Dubai it is first. Brokerages, developers and property managers run on lead flow, and most of the software sold to them is rented per seat per agent forever. We build owned systems: lead capture and routing from portals and campaigns, automated follow-up over WhatsApp and email, listing and commission management, and AI that qualifies enquiries before an agent spends a minute on them. Owning that system instead of renting it changes the economics of a brokerage at exactly the point where Dubai brokerages compete hardest.",
           "The same logic runs through the UAE's other engines. Trading and logistics companies need operations systems that talk to customs, fleets and warehouses. Retail and e-commerce need inventory, loyalty and fulfilment connected to storefronts. Clinics and wellness businesses need booking, reminders and patient communication that respect how people in the UAE actually communicate, which is to say on WhatsApp. Hospitality needs guest journeys that do not collapse across language boundaries. We design for the UAE's operating reality: multilingual customers, WhatsApp-first communication and businesses that run seven days a week.",
-          "What we bring to Dubai is real and checkable: an office at Park Lane Tower in Business Bay, a network of partners on the ground, a direct line at +971 52 589 1213, and shipped products you can open, click and phone today. Our engineering runs from India, ninety minutes from Gulf time, which is why the same scope costs roughly half of what agencies carrying full Dubai overheads quote. In a market this full of logo walls, verifiability is the differentiator, and we invite you to apply that test to everyone on your shortlist, us included.",
+          "What we bring to Dubai is real and checkable: an office at Regal Tower in Business Bay, a network of partners on the ground, and shipped products you can open, click and phone today. Our engineering runs from India, ninety minutes from Gulf time, which is why the same scope costs roughly half of what agencies carrying full Dubai overheads quote. In a market this full of logo walls, verifiability is the differentiator, and we invite you to apply that test to everyone on your shortlist, us included.",
         ],
       },
       {
@@ -236,7 +236,7 @@ const dubaiPages = {
       {
         question: "How do we start?",
         answer:
-          "A thirty-minute call with your Dubai contact and our lead engineer, followed by a written fixed-price proposal within a few business days. Call us on +971 52 589 1213, use the form below, or meet us at Park Lane Tower in Business Bay. If an NDA needs to come first, send yours or use ours. If the project is not a fit, we will say so on the call and point you somewhere useful.",
+          "A thirty-minute call with your Dubai contact and our lead engineer, followed by a written fixed-price proposal within a few business days. Use the form below, reach us through the contact page, or meet us at Regal Tower in Business Bay. If an NDA needs to come first, send yours or use ours. If the project is not a fit, we will say so on the call and point you somewhere useful.",
       },
     ],
     formService: "Dubai: Custom Software Development",
@@ -257,7 +257,7 @@ const dubaiPages = {
       "Mobile app development company in Dubai: iOS, Android and Flutter apps with AI built in. 55+ shipped products, fixed-price proposals, office in Business Bay, your IP.",
     title: "Mobile App Development Company in Dubai for Apps That Outlive Their Launch",
     tagline:
-      "Stackbinary builds iOS, Android and Flutter apps for businesses in Dubai and across the UAE: customer apps, delivery and booking platforms, internal tools and AI-powered products. An engineering team with over 55 shipped products, an office at Park Lane Tower in Business Bay, fixed-scope pricing and complete IP ownership for you.",
+      "Stackbinary builds iOS, Android and Flutter apps for businesses in Dubai and across the UAE: customer apps, delivery and booking platforms, internal tools and AI-powered products. An engineering team with over 55 shipped products, an office at Regal Tower in Business Bay, fixed-scope pricing and complete IP ownership for you.",
     heroStats: [
       { value: "55+", label: "shipped products behind the team on your project, including apps and platforms we operate ourselves in production" },
       { value: "1.5h", label: "between Dubai time and our engineering floor: daily standups, demos and support inside your working day" },
@@ -454,7 +454,7 @@ const dubaiPages = {
       {
         question: "How do we start?",
         answer:
-          "A thirty-minute call with your Dubai contact and our lead engineer about the app you have in mind. Call +971 52 589 1213, use the form below, or meet us at Park Lane Tower in Business Bay. Within a few business days you get a written fixed-price proposal covering the full system. If the idea needs a smaller version one, or does not need an app at all, we will say exactly that on the call.",
+          "A thirty-minute call with your Dubai contact and our lead engineer about the app you have in mind. Use the form below, reach us through the contact page, or meet us at Regal Tower in Business Bay. Within a few business days you get a written fixed-price proposal covering the full system. If the idea needs a smaller version one, or does not need an app at all, we will say exactly that on the call.",
       },
     ],
     formService: "Dubai: Mobile App Development",

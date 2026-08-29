@@ -507,7 +507,7 @@ export default function ContactWrapper() {
                                 </div>
 
                                 {/* Office Locations */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">
                                     {/* USA Office */}
                                     <div className="office-location p-6 border border-gray-300 rounded-lg">
                                         <div className="flex items-start gap-4">
@@ -560,6 +560,46 @@ export default function ContactWrapper() {
                                                 </div>
                                                 <a
                                                     href="https://maps.google.com/?q=Tower+3+-+604,+Spring+grove+Towers,+Kandivali+East,+400101,+India"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-2 text-size-small hover:text-[#E0362C] transition-colors"
+                                                    style={{ color: '#17171A', textDecoration: 'none' }}
+                                                >
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                                    </svg>
+                                                    View on Map
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Dubai Office */}
+                                    <div className="office-location p-6 border border-gray-300 rounded-lg">
+                                        <div className="flex items-start gap-4">
+                                            <div className="flex-shrink-0">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#E0362C' }}>
+                                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                                </svg>
+                                            </div>
+                                            <div className="text-left">
+                                                <div className="text-size-medium text-weight-medium mb-2" style={{ color: '#17171A' }}>
+                                                    Dubai, UAE
+                                                </div>
+                                                <div className="text-size-small opacity-80 mb-2" style={{ color: '#17171A' }}>
+                                                    Regal Tower, Office 705,<br />
+                                                    Business Bay,<br />
+                                                    Dubai, United Arab Emirates
+                                                </div>
+                                                <a
+                                                    href="tel:+971525891213"
+                                                    className="block text-size-small text-weight-medium mb-4 hover:text-[#E0362C] transition-colors"
+                                                    style={{ color: '#17171A', textDecoration: 'none' }}
+                                                >
+                                                    +971 52 589 1213
+                                                </a>
+                                                <a
+                                                    href="https://maps.google.com/?q=Regal+Tower,+Business+Bay,+Dubai"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center gap-2 text-size-small hover:text-[#E0362C] transition-colors"

@@ -1,9 +1,9 @@
 // Shared route machinery for the Dubai/UAE services pair, mirroring
 // aiServiceRoute.js. Same template, different geo signals: areaServed is the
 // UAE and the Gulf, plus LocalBusiness with the real Dubai presence the
-// owner provided 2026-08-29: Park Lane Tower, Business Bay, +971 52 589
-// 1213. The same details are visible in the page copy; schema only ever
-// claims what the page shows.
+// owner provided 2026-08-29: Regal Tower 705, Business Bay, +971 52 589
+// 1213. The address is visible in page copy; the phone is visible on the
+// contact page (owner rule: no numbers in Dubai page body text).
 
 import { getDubaiPage } from "@/data/dubaiPages";
 
@@ -63,7 +63,7 @@ export function dubaiJsonLd(slug) {
       telephone: "+971525891213",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Park Lane Tower, Business Bay",
+        streetAddress: "Regal Tower, Office 705, Business Bay",
         addressLocality: "Dubai",
         addressCountry: "AE",
       },
