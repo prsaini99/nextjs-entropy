@@ -7,6 +7,7 @@ import MartechCTA from "@/components/pages/Martech/MartechCTA";
 import MartechFAQ from "@/components/pages/Martech/MartechFAQ";
 import MartechLeadForm from "@/components/pages/Martech/MartechLeadForm";
 import { aiServiceAnchors } from "@/data/aiServicesPages";
+import { dubaiAnchors } from "@/data/dubaiPages";
 import { trackScrollDepth } from "@/lib/analytics";
 
 // US-facing option lists for the shared lead form. The martech defaults list
@@ -387,7 +388,7 @@ export default function AIServicePage({ page, slug }) {
                                             className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
                                         >
                                             <span className="text-size-small text-weight-medium">
-                                                {aiServiceAnchors[relSlug] || relSlug}
+                                                {aiServiceAnchors[relSlug] || dubaiAnchors[relSlug] || relSlug}
                                             </span>
                                             <span className="text-[#E0362C] opacity-40 group-hover:opacity-100 transition-opacity">
                                                 →
@@ -408,8 +409,8 @@ export default function AIServicePage({ page, slug }) {
                         <div className="max-w-3xl mx-auto">
                             <MartechLeadForm
                                 defaultService={page.formService || ""}
-                                services={AI_FORM_SERVICES}
-                                budgets={AI_FORM_BUDGETS}
+                                services={page.formServices || AI_FORM_SERVICES}
+                                budgets={page.formBudgets || AI_FORM_BUDGETS}
                                 source={`services/${slug}`}
                                 heading={page.formHeading || "Get a Scoped Proposal"}
                                 subheading="Tell us what you are building and we will come back with scope, team, timeline and a fixed cost. NDA first if you prefer, and no obligation either way."
