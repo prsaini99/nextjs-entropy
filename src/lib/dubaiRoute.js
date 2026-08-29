@@ -1,8 +1,9 @@
 // Shared route machinery for the Dubai/UAE services pair, mirroring
 // aiServiceRoute.js. Same template, different geo signals: areaServed is the
-// UAE and the Gulf. LocalBusiness schema is deliberately absent until the
-// owner's Dubai entity details (name, address, +971) land on the visible
-// page; schema must never claim what the page does not show.
+// UAE and the Gulf, plus LocalBusiness with the real Dubai presence the
+// owner provided 2026-08-29: Park Lane Tower, Business Bay, +971 52 589
+// 1213. The same details are visible in the page copy; schema only ever
+// claims what the page shows.
 
 import { getDubaiPage } from "@/data/dubaiPages";
 
@@ -53,6 +54,23 @@ export function dubaiJsonLd(slug) {
         { "@type": "Country", name: "Saudi Arabia" },
       ],
       serviceType: page.badge.split("·")[0].trim(),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Stackbinary",
+      url: BASE,
+      telephone: "+971525891213",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Park Lane Tower, Business Bay",
+        addressLocality: "Dubai",
+        addressCountry: "AE",
+      },
+      areaServed: [
+        { "@type": "Country", name: "United Arab Emirates" },
+        { "@type": "City", name: "Dubai" },
+      ],
     },
     {
       "@context": "https://schema.org",
