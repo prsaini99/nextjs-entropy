@@ -17,10 +17,9 @@ export async function generateMetadata({ params }) {
     title: `${artikel.title} | Stackbinary`,
     description: artikel.description,
     alternates: { canonical: `https://stackbinary.io/de/ratgeber/${slug}` },
-    // Same gate as every /de page: viewable but unindexed until the German
-    // sales colleague has reviewed the copy. Remove together with the /de
-    // noindex flags and the sitemap gate, in one commit.
-    robots: { index: false },
+    // Indexed on the owner's instruction 2026-08-29; like the /de launch, the
+    // sales colleague's review continues on the live articles and corrections
+    // are applied as they come.
     openGraph: {
       title: `${artikel.title} | Stackbinary`,
       description: artikel.description,
