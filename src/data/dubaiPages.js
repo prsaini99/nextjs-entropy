@@ -41,10 +41,10 @@ const dubaiPages = {
   /* ================================================================== */
   "custom-software-development-dubai": {
     badge: "Custom Software Development Dubai · Fixed Price, Your IP",
-    seoTitle: "Custom Software Development Company in Dubai, UAE",
+    seoTitle: "Custom Software Development in Dubai, UAE",
     seoDescription:
-      "Custom software development for Dubai and UAE businesses: web platforms, internal systems and AI-first builds. 55+ shipped products, fixed-price proposals, Dubai-based contact.",
-    title: "Custom Software Development Company in Dubai You Can Actually Verify",
+      "Custom software development for Dubai and UAE businesses: web platforms, internal systems and AI-first builds. 55+ shipped products, fixed-price proposals, partners in Dubai.",
+    title: "Custom Software Development in Dubai You Can Actually Verify",
     tagline:
       "Stackbinary builds custom software for businesses in Dubai and across the UAE: web platforms, internal systems, integrations and AI-first products. We are an engineering company with over 55 shipped products, several of which we operate ourselves in production, and a Dubai-based point of contact who speaks your market. Fixed-scope proposals, senior engineers, and every line of code owned by you.",
     heroStats: [
@@ -102,7 +102,7 @@ const dubaiPages = {
         paragraphs: [
           "Real estate first, because in Dubai it is first. Brokerages, developers and property managers run on lead flow, and most of the software sold to them is rented per seat per agent forever. We build owned systems: lead capture and routing from portals and campaigns, automated follow-up over WhatsApp and email, listing and commission management, and AI that qualifies enquiries before an agent spends a minute on them. Owning that system instead of renting it changes the economics of a brokerage at exactly the point where Dubai brokerages compete hardest.",
           "The same logic runs through the UAE's other engines. Trading and logistics companies need operations systems that talk to customs, fleets and warehouses. Retail and e-commerce need inventory, loyalty and fulfilment connected to storefronts. Clinics and wellness businesses need booking, reminders and patient communication that respect how people in the UAE actually communicate, which is to say on WhatsApp. Hospitality needs guest journeys that do not collapse across language boundaries. We design for the UAE's operating reality: multilingual customers, WhatsApp-first communication and businesses that run seven days a week.",
-          "What we deliberately do not do is claim a fake local footprint. We have no tower address and no booth photo, and you should be suspicious of how many ranking agencies rent both. What we have is a Dubai-based commercial contact, engineering one and a half hours away, and shipped products you can open, click and phone today. In a market this full of logo walls, verifiability is the differentiator.",
+          "What we deliberately do not do is claim to be a Dubai company. We are an Indian engineering company that serves the UAE, and you should be suspicious of how many ranking agencies blur that line with a rented desk and a booth photo. What we do have in Dubai is real: a network of partners we work with on the ground, a commercial contact in your market and time zone, and shipped products you can open, click and phone today. In a market this full of logo walls, verifiability is the differentiator.",
         ],
       },
       {
@@ -208,7 +208,7 @@ const dubaiPages = {
       {
         question: "Why work with a company that has no Dubai office?",
         answer:
-          "Because you are buying engineering, not office space. Our commercial contact is Dubai-based and meets you in your market; the engineering runs one and a half hours behind Gulf time, so your entire working day overlaps with ours, which is a tighter overlap than most European or American vendors can offer. What you save is the tower rent baked into local agency pricing. What you keep is everything that matters: a named lead engineer, weekly demos in your hours, and contracts that assign the IP to you completely.",
+          "Because you are buying engineering, not office space. We are open about what we are: an Indian engineering company serving the UAE, with partners on the ground in Dubai and a commercial contact who meets you in your market. The engineering runs one and a half hours behind Gulf time, so your entire working day overlaps with ours, a tighter overlap than most European or American vendors can offer. What you save is the tower rent baked into local agency pricing. What you keep is everything that matters: a named lead engineer, weekly demos in your hours, and contracts that assign the IP to you completely.",
       },
       {
         question: "How long does a custom software project take?",
@@ -254,10 +254,10 @@ const dubaiPages = {
   /* ================================================================== */
   "mobile-app-development-dubai": {
     badge: "Mobile App Development Dubai · iOS, Android, Flutter",
-    seoTitle: "Mobile App Development Company in Dubai, UAE",
+    seoTitle: "Mobile App Development in Dubai, UAE",
     seoDescription:
-      "Mobile app development company for Dubai and UAE businesses: iOS, Android and Flutter apps with AI built in. 55+ shipped products, fixed-price proposals, your IP.",
-    title: "Mobile App Development Company in Dubai for Apps That Outlive Their Launch",
+      "Mobile app development for Dubai and UAE businesses: iOS, Android and Flutter apps with AI built in. 55+ shipped products, fixed-price proposals, your IP.",
+    title: "Mobile App Development in Dubai for Apps That Outlive Their Launch",
     tagline:
       "Stackbinary builds iOS, Android and Flutter apps for businesses in Dubai and across the UAE: customer apps, delivery and booking platforms, internal tools and AI-powered products. An engineering team with over 55 shipped products, a Dubai-based point of contact, fixed-scope pricing and complete IP ownership for you.",
     heroStats: [
@@ -321,7 +321,7 @@ const dubaiPages = {
       {
         heading: "The Honest Comparison With Dubai App Agencies",
         paragraphs: [
-          "The top-ranking app development companies in Dubai are competent, and several are, like us, Indian engineering organizations with a Gulf-facing front. The differences worth your attention are structural. First, who writes the code: much of the local market subcontracts delivery, adding a margin and a communication layer between you and the engineers. With us the proposal names the team, and the people in the weekly demo are the people writing your app.",
+          "First, the honest disclosure the market rarely makes: we are not a Dubai company. We are an Indian engineering team serving the UAE through partners on the ground in Dubai and a commercial contact in your market, and several of the top-ranking Dubai agencies are, quietly, the same arrangement with a rented address on top. The structural difference worth your attention is who writes the code: much of the local market subcontracts delivery, adding a margin and a communication layer between you and the engineers. With us the proposal names the team, and the people in the weekly demo are the people writing your app.",
           "Second, the shape of the price. Dubai-based agencies publish wide cost ranges and price to their overheads. Our cost base is engineering in India, ninety minutes from your time zone, and for equivalent scope our fixed-price proposals typically land at roughly half of established local quotes. We put that in writing per project rather than in a marketing range on a page, because a range wide enough to be safe is too wide to be useful.",
           "Third, proof you can touch. Before you sign anything, you can use systems we built and operate ourselves, today, from your phone. We would rather earn the project with a working demonstration than with a wall of logos, and we encourage you to hold everyone on your shortlist to the same standard.",
         ],
