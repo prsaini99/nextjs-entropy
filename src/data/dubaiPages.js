@@ -206,11 +206,6 @@ const dubaiPages = {
           "It depends on scope, and any agency quoting a number before understanding your project is quoting a hook, not a price. What we can say plainly: Dubai agencies carry Dubai overheads and price accordingly, and for the same scope our proposals typically land at roughly half of what the established local agencies quote, as one fixed price agreed before you commit. The first call and the written proposal are free, so the cheapest way to get a real number for your project is to describe it to us.",
       },
       {
-        question: "Why work with a company that has no Dubai office?",
-        answer:
-          "Because you are buying engineering, not office space. We are open about what we are: an Indian engineering company serving the UAE, with partners on the ground in Dubai and a commercial contact who meets you in your market. The engineering runs one and a half hours behind Gulf time, so your entire working day overlaps with ours, a tighter overlap than most European or American vendors can offer. What you save is the tower rent baked into local agency pricing. What you keep is everything that matters: a named lead engineer, weekly demos in your hours, and contracts that assign the IP to you completely.",
-      },
-      {
         question: "How long does a custom software project take?",
         answer:
           "A focused first version typically takes six to twelve weeks depending on integrations, with working software demonstrated weekly from the second week. We ship a usable release early on purpose, because real usage reshapes assumptions and steering a moving project beats reviewing a finished one. Larger platforms run in milestone phases, each independently priced and accepted.",
