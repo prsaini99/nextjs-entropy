@@ -18,9 +18,13 @@
 //
 // Copy rules enforced by review: no em dashes, the company is "Stackbinary",
 // no named products on services pages (systems described generically),
-// compliance only as "aligned" / "ready" / "aware", never certified. We have
-// no Dubai office: never imply one. The honest local anchor is the
-// Dubai-based sales contact and the 1.5 hour time difference.
+// compliance only as "aligned" / "ready" / "aware", never certified.
+// Local presence: the owner has a Dubai company front, partners on the
+// ground and a +971 number (details pending as of 2026-08-29). Until those
+// land on the page, copy neither claims nor disclaims residency; the local
+// anchors are the partners, the Dubai sales contact and the 1.5h overlap.
+// When the entity details arrive: LocalBusiness schema, visible +971 and
+// address, and "company in Dubai" may return to titles and H1s.
 
 // "Dubai:" prefix mirrors the "DE:" convention on the German form: the lead
 // scorer keys off other service titles, and the prefix makes UAE pipeline
