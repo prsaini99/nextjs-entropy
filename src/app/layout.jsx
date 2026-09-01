@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./style.css";
 import ConditionalLayout from "@/components/ConditionalLayout";
+import OaiqPixel from "@/components/OaiqPixel";
 import Analytics from "@/components/Analytics";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
@@ -71,6 +72,7 @@ export default function RootLayout({ children }) {
           href="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c23_Satoshi-Bold.woff2"
         />
         <Analytics />
+        <OaiqPixel />
         <ConditionalLayout>
           <ErrorBoundary>
             {children}
