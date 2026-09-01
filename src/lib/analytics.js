@@ -229,6 +229,18 @@ export function trackConversion(conversionType, value = null, currency = 'INR', 
 
   // Google Ads conversion hits are fired separately by trackLeadSubmit()
   // in lib/trackLead.js, which owns the AW-/label send_to.
+
+  // ChatGPT Ads (OAIQ pixel): every form conversion doubles as a
+  // lead_created event. Guarded because the pixel deliberately does not
+  // load for European-timezone visitors (see components/OaiqPixel.jsx).
+  if (typeof window !== 'undefined' && window.oaiq) {
+    window.oaiq(
+      'measure',
+      'lead_created',
+      { type: 'customer_action' },
+      { event_id: `${conversionType}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}` }
+    );
+  }
 }
 
 // Track social media clicks
