@@ -17,14 +17,17 @@
 
 const dePages = {
   "individualsoftware": {
-    badge: "Individualsoftware · Softwareentwicklung",
+    badge: "Individualsoftware · 55+ ausgelieferte Produkte",
     seoTitle: "Individualsoftware entwickeln lassen | Stackbinary",
     metaDescription:
       "Individualsoftware vom Engineering-Team: 55+ ausgelieferte Produkte, Angebot in 48 Stunden, Quellcode und Datenhoheit gehören Ihnen.",
-    h1: "Individualsoftware entwickeln lassen, direkt vom Engineering-Team",
+    h1: "Individualsoftware entwickeln lassen: in 48 Stunden zum Festpreisangebot",
+    // Test #1 (2026-09-01): low-commitment CTA per the German SERP convention
+    // (competitors ask "Angebot anfordern", never "book a meeting").
+    ctaLabel: "Unverbindliches Festpreisangebot anfordern",
     intro: [
-      "Standardsoftware zwingt Ihre Abläufe in fremde Raster. Individualsoftware bildet ab, wie Ihr Unternehmen tatsächlich arbeitet: Ihre Prozesse, Ihre Schnittstellen, Ihre Begriffe. Stackbinary entwickelt seit Jahren genau solche Systeme, von der Webanwendung bis zur kompletten Plattform, mit über 55 ausgelieferten Produkten als Nachweis.",
-      "Sie sprechen bei uns nicht mit einem Vertriebsteam, sondern mit den Entwicklern, die Ihr Projekt bauen, und mit einem deutschsprachigen Ansprechpartner für alles Weitere. Der Quellcode gehört am Ende Ihnen, ebenso die Daten und die Infrastruktur.",
+      "Über 55 ausgelieferte Produkte, von der Webanwendung bis zur kompletten Plattform: Stackbinary ist das Engineering-Team hinter Software, die heute im Produktivbetrieb läuft. Sie beschreiben Ihr Vorhaben, wir antworten innerhalb von 48 Stunden mit einem schriftlichen Festpreisangebot, zu etwa der Hälfte der in Deutschland üblichen Agentursätze.",
+      "Sie sprechen direkt mit den Entwicklern, die Ihr Projekt bauen, und mit einem deutschsprachigen Ansprechpartner für alles Weitere. Der Quellcode gehört am Ende Ihnen, ebenso die Daten und die Infrastruktur, vertraglich zugesichert.",
     ],
     leistungenHeading: "Was wir entwickeln",
     leistungen: [

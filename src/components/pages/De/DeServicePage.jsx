@@ -43,7 +43,7 @@ export default function DeServicePage({ slug }) {
                   <Link href="/de/kontakt" className="primary-button w-inline-block">
                     <div className="relative">
                       <div className="text-size-small text-weight-bold">
-                        Kostenloses Erstgespräch vereinbaren
+                        {page.ctaLabel || "Kostenloses Erstgespräch vereinbaren"}
                       </div>
                     </div>
                     <div className="button-elipse"></div>

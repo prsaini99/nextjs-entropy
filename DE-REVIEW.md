@@ -343,3 +343,17 @@ Zwei deutsche Fachartikel, erreichbar (unindexiert) unter:
 
 Bitte besonders prüfen: klingt die Sprache nach deutschem Fachartikel oder nach Übersetzung?
 Sind die Anbieter-Einschätzungen (Mistral, Copilot, DeepSeek) aus deutscher Sicht fair formuliert?
+
+## Hero-Test auf /de/individualsoftware (live seit 01.09.2026) — bitte prüfen
+
+Neuer Hero (Begründung: bezahlte Besucher springen nach 9-18 Sekunden im
+Hero ab; die Fakten standen zu weit unten):
+
+H1: "Individualsoftware entwickeln lassen: in 48 Stunden zum Festpreisangebot"
+Badge: "Individualsoftware · 55+ ausgelieferte Produkte"
+Absatz 1: 55+ Produkte, Festpreisangebot in 48 Stunden, etwa halber Agentursatz
+Absatz 2: direkter Draht zu den Entwicklern, Quellcode vertraglich Ihnen
+Button: "Unverbindliches Festpreisangebot anfordern" (statt Erstgespräch)
+
+WICHTIG: Die 48-Stunden-Zusage ist jetzt die Überschrift. Bitte bestätigen,
+dass das operativ haltbar ist, sonst ändern wir auf "zwei Werktage".
