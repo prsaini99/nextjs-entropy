@@ -61,11 +61,11 @@ export default function MartechHero() {
                         </div>
 
                         <AnimatedInViewDiv delay={0.4} className="w-full">
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mt-16 rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mt-16 rounded-lg overflow-hidden border border-[#17171A]/10 bg-[#17171A]/10">
                                 {stats.map((stat) => (
                                     <div
                                         key={stat.label}
-                                        className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
+                                        className="bg-white p-6 lg:p-8 flex flex-col gap-2"
                                     >
                                         <div className="heading-4 text-weight-bold text-[#E0362C]">
                                             {stat.value}

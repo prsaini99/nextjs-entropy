@@ -43,7 +43,7 @@ const footerLinks = [
 
 export default function Footer() {
     return (
-        <section>
+        <section className="site-footer-ink">
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     {/* Horizontal footer. The Webflow classes (.footer-component,
@@ -95,7 +95,7 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <div className="border-t border-gray-200 pt-6">
+                        <div className="border-t border-[#17171A]/10 pt-6">
                             <p className="paragraph text-size-small">
                                 © {new Date().getFullYear()} Stackbinary.io. All rights reserved.
                             </p>

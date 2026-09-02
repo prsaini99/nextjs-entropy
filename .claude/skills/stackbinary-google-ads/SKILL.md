@@ -52,9 +52,14 @@ not the success metric; the promotion ladder is:
   gehalt, studium, aktien, chatgpt...). ENABLED 2026-08-26 on the
   owner's go after the test mails passed; the sales colleague's copy
   review continues on the LIVE pages, corrections applied as they come.
-  Budgets (2026-08-28): germany-de Rs2,000/day with campaign CPC
-  ceiling Rs650 (commercial-only forecast: avg CPC Rs318, market
-  absorbs Rs18k/day, we skim ~11%); martech Rs300/day. The bare
+  Budgets (2026-08-31): germany-de Rs1,000/day with campaign CPC
+  ceiling Rs650 (actual CPCs ~Rs245); martech Rs300/day.
+  **ALL CAMPAIGNS PAUSED on the owner's order 2026-09-01** ("stop the
+  google ads for now"); settings, keywords and negatives intact for
+  resumption. The Germany split test froze at ~45 clicks, zero
+  de-kontakt fills; the individualsoftware hero test (live 2026-09-01)
+  has no paid traffic until resume, so judge it only on post-resume
+  data. The bare
   keywords ki entwicklung / kuenstliche intelligenz entwicklung are
   PAUSED for cause: 100% informational match rate (news, Sora, wer hat
   ki erfunden). German negatives ~90 including the Munich institution
@@ -102,8 +107,9 @@ not the success metric; the promotion ladder is:
 - Campaign-level, PHRASE, and pre-emptive: block competitor product
   brands, consumer/DIY intent, careers terms BEFORE spend, then sweep
   search terms on day 3 and every Monday, mid-week when budgets rise.
-- Standing clusters already blocked (~212 negatives): competitor
-  brands (voice, CRM, email, WhatsApp SaaS, ads tools, SMM panels),
+- Standing clusters already blocked (~215 negatives): competitor
+  brands (voice, CRM, email, WhatsApp SaaS, ads tools, SMM panels;
+  latest additions 2026-08-31: pomelli, speakeasy, gopi com),
   consumer WhatsApp (whatsapp web, gb whatsapp...), DIY/freebie (how
   to, template, excel, sheet, sheets, open source, login...), careers,
   Hindi informational (kya hai), digital marketing agency intent.

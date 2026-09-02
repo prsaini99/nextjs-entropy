@@ -26,7 +26,7 @@ const BRAND = {
 };
 
 // Any applicant-supplied string that lands in HTML goes through this first.
-// A CV or a "why StackBinary" answer containing < or & would otherwise break
+// A CV or a "why Stackbinary" answer containing < or & would otherwise break
 // the markup, and in the internal email it would be markup we then read.
 function esc(v) {
   if (v === null || v === undefined) return "";
@@ -66,7 +66,7 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StackBinary, Application received</title>
+  <title>Stackbinary, Application received</title>
 </head>
 <body style="margin:0;padding:0;background-color:${BRAND.dark};">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:${BRAND.dark};padding:32px 16px;">
@@ -77,7 +77,7 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
           <tr>
             <td align="center" style="padding:8px 0 28px;">
               <a href="${BRAND.site}" style="text-decoration:none;">
-                <img src="${BRAND.logo}" width="170" alt="StackBinary" style="display:block;border:0;" />
+                <img src="${BRAND.logo}" width="170" alt="Stackbinary" style="display:block;border:0;" />
               </a>
             </td>
           </tr>
@@ -139,10 +139,10 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
                 <tr>
                   <td align="center" style="padding:24px 32px;font-family:Arial,Helvetica,sans-serif;">
                     <p style="margin:0 0 14px;font-size:13px;line-height:1.65;color:${BRAND.text};">
-                      We announce new roles and ship-updates on <strong>LinkedIn</strong> first,                       follow StackBinary to hear about them before they are posted anywhere else.
+                      We announce new roles and ship-updates on <strong>LinkedIn</strong> first,                       follow Stackbinary to hear about them before they are posted anywhere else.
                     </p>
                     <a href="${BRAND.linkedin}" style="display:inline-block;border:1px solid ${BRAND.accent};color:${BRAND.accent};font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;text-decoration:none;padding:11px 26px;border-radius:999px;">
-                      Follow StackBinary on LinkedIn
+                      Follow Stackbinary on LinkedIn
                     </a>
                   </td>
                 </tr>
@@ -164,7 +164,7 @@ export function applicationConfirmationHtml({ firstName, jobTitle }) {
           <tr>
             <td align="center" style="padding:28px 12px 8px;border-top:1px solid ${BRAND.border};font-family:Arial,Helvetica,sans-serif;">
               <p style="margin:0 0 6px;font-size:12px;color:${BRAND.muted};">
-                <strong style="color:${BRAND.text};">StackBinary™</strong> · AI, Cloud &amp; Custom Software that ship and scale
+                <strong style="color:${BRAND.text};">Stackbinary</strong> · AI, Cloud &amp; Custom Software that ship and scale
               </p>
               <p style="margin:0;font-size:11px;">
                 <a href="${BRAND.site}" style="color:${BRAND.accent};text-decoration:none;">stackbinary.io</a>
@@ -195,14 +195,14 @@ What happens next:
 2. We read it properly, your CV and your answers, against what the role actually needs.
 3. If there is a fit, we get in touch to set up an intro call.
 
-We announce new roles and ship-updates on LinkedIn first, follow StackBinary
+We announce new roles and ship-updates on LinkedIn first, follow Stackbinary
 to hear about them before they are posted anywhere else:
 https://www.linkedin.com/company/stackbinary
 
 Other open roles: https://stackbinary.io/careers
 Questions? Just reply to this email.
 
-StackBinary(TM)
+Stackbinary(TM)
 https://stackbinary.io`;
 }
 

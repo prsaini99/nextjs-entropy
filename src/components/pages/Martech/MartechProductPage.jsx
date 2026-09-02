@@ -112,11 +112,11 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
 
                             {page.heroStats && (
                                 <AnimatedInViewDiv delay={0.4} className="w-full">
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 rounded-lg overflow-hidden border border-[#17171A]/10 bg-[#17171A]/10">
                                         {page.heroStats.map((stat) => (
                                             <div
                                                 key={stat.label}
-                                                className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
+                                                className="bg-white p-6 lg:p-8 flex flex-col gap-2"
                                             >
                                                 <div className="heading-4 text-weight-bold text-[#E0362C]">
                                                     {stat.value}
@@ -139,7 +139,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
             {afterHero}
 
             {page.embed && (
-                <section>
+                <section className="ink-section">
                     <div className="padding-global py-16">
                         <div className="w-layout-blockcontainer container w-container">
                             <div className="about-features-wrapper">
@@ -160,8 +160,8 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                 </AnimatedInViewDiv>
 
                                 <AnimatedInViewDiv className="w-full">
-                                    <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
-                                        <div className="flex items-center justify-between gap-3 px-5 py-3 border-b border-gray-200 bg-[#F7F7F5]">
+                                    <div className="border border-[#17171A]/10 rounded-lg overflow-hidden bg-white">
+                                        <div className="flex items-center justify-between gap-3 px-5 py-3 border-b border-[#17171A]/10 bg-white">
                                             <div className="flex items-center gap-2">
                                                 <span className="w-3 h-3 rounded-full bg-[#E0362C]/70"></span>
                                                 <span className="w-3 h-3 rounded-full bg-gray-300"></span>
@@ -218,7 +218,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <AnimatedInViewDiv
                                             key={feature.title}
                                             delay={index * 0.08}
-                                            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3"
+                                            className="border border-[#17171A]/10 rounded-lg p-8 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3"
                                         >
                                             <h3 className="text-size-large text-weight-medium">
                                                 {feature.title}
@@ -301,7 +301,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
             ))}
 
             {page.howItWorks && (
-                <section>
+                <section className="ink-section">
                     <div className="padding-global py-16">
                         <div className="w-layout-blockcontainer container w-container">
                             <div className="about-features-wrapper">
@@ -317,7 +317,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <AnimatedInViewDiv
                                             key={step.title}
                                             delay={index * 0.1}
-                                            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col gap-3"
+                                            className="border border-[#17171A]/10 rounded-lg p-8 bg-white flex flex-col gap-3"
                                         >
                                             <div className="heading-5 text-weight-bold text-[#E0362C]">
                                                 {String(index + 1).padStart(2, "0")}
@@ -352,7 +352,7 @@ export default function MartechProductPage({ page, slug = "", afterHero = null }
                                         <Link
                                             key={slug}
                                             href={`/martech/${slug}`}
-                                            className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
+                                            className="border border-[#17171A]/10 rounded-lg p-6 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
                                         >
                                             <span className="text-size-small text-weight-medium capitalize-first">
                                                 {linkAnchors[slug] || slug}

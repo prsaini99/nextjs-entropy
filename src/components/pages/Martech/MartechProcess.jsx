@@ -39,7 +39,7 @@ const steps = [
 
 export default function MartechProcess() {
     return (
-        <section id="martech-process">
+        <section id="martech-process" className="ink-section">
             <div className="padding-global py-16">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="about-features-wrapper">
@@ -69,7 +69,7 @@ export default function MartechProcess() {
                                 <AnimatedInViewDiv
                                     key={step.number}
                                     delay={index * 0.1}
-                                    className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col gap-3"
+                                    className="border border-[#17171A]/10 rounded-lg p-8 bg-white flex flex-col gap-3"
                                 >
                                     <div className="flex items-center justify-between">
                                         <div className="heading-5 text-weight-bold text-[#E0362C]">

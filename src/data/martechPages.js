@@ -585,7 +585,7 @@ const martechPages = {
       heading: "Built on systems already in production",
       items: [
         "SolarProposal: our vertical proposal platform with 3D configurators, branded PDF export and section-level engagement analytics, live for solar EPC companies.",
-        "StackBinary CRM: AI-drafted proposals grounded in each lead's dossier and our knowledge base, with public share links, how our own BD team pitches every day.",
+        "Stackbinary CRM: AI-drafted proposals grounded in each lead's dossier and our knowledge base, with public share links, how our own BD team pitches every day.",
       ],
     },
     demo: { href: "#martech-lead-form", label: "See a branded proposal generated for your brand", external: false },

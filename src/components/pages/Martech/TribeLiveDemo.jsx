@@ -128,7 +128,7 @@ export default function TribeLiveDemo() {
                         </AnimatedInViewDiv>
 
                         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 w-full items-stretch">
-                            <AnimatedInViewDiv className="border border-gray-200 rounded-lg overflow-hidden bg-white flex flex-col">
+                            <AnimatedInViewDiv className="border border-[#17171A]/10 rounded-lg overflow-hidden bg-white flex flex-col">
                                 <div className="flex-1 flex items-center justify-center min-h-0">
                                     <video
                                         ref={videoRef}
@@ -145,7 +145,7 @@ export default function TribeLiveDemo() {
                                         onPause={() => setPlaying(false)}
                                     />
                                 </div>
-                                <div className="p-4 flex items-center justify-between gap-3 text-size-small border-t border-gray-200">
+                                <div className="p-4 flex items-center justify-between gap-3 text-size-small border-t border-[#17171A]/10">
                                     <span className="opacity-70">
                                         Ad &ldquo;05-22&rdquo; · 56s · full trimodal analysis
                                     </span>
@@ -153,7 +153,7 @@ export default function TribeLiveDemo() {
                                         className={`px-3 py-1 rounded-full border text-weight-bold ${
                                             playing
                                                 ? "border-[#E0362C] text-[#E0362C]"
-                                                : "border-gray-300 opacity-70"
+                                                : "border-[#17171A]/15 opacity-70"
                                         }`}
                                     >
                                         {playing ? "ANALYZING" : "PAUSED"}
@@ -163,7 +163,7 @@ export default function TribeLiveDemo() {
 
                             <AnimatedInViewDiv
                                 delay={0.15}
-                                className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-5"
+                                className="border border-[#17171A]/10 rounded-lg p-6 lg:p-8 bg-white flex flex-col gap-5"
                             >
                                 <div className="flex items-baseline justify-between gap-4">
                                     <div className="text-size-small opacity-70">
@@ -208,7 +208,7 @@ export default function TribeLiveDemo() {
                                 </svg>
 
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div className="border border-gray-200 rounded-lg p-4">
+                                    <div className="border border-[#17171A]/10 rounded-lg p-4">
                                         <div className="text-size-small opacity-70">
                                             Attention now
                                         </div>
@@ -217,7 +217,7 @@ export default function TribeLiveDemo() {
                                             <span className="text-size-small opacity-70">/100</span>
                                         </div>
                                     </div>
-                                    <div className="border border-gray-200 rounded-lg p-4">
+                                    <div className="border border-[#17171A]/10 rounded-lg p-4">
                                         <div className="text-size-small opacity-70">Phase</div>
                                         <div className="text-size-small text-weight-medium mt-1">
                                             {phaseFor(t)}
@@ -230,7 +230,7 @@ export default function TribeLiveDemo() {
                                         <button
                                             key={e.at}
                                             onClick={() => seekTo(e.at)}
-                                            className="text-size-small border border-gray-200 rounded-full px-3 py-1 opacity-80 hover:opacity-100 hover:border-[#E0362C] transition-all"
+                                            className="text-size-small border border-[#17171A]/10 rounded-full px-3 py-1 opacity-80 hover:opacity-100 hover:border-[#E0362C] transition-all"
                                         >
                                             s{e.at} · {e.label}
                                         </button>
@@ -240,12 +240,12 @@ export default function TribeLiveDemo() {
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-                            <AnimatedInViewDiv className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5]">
+                            <AnimatedInViewDiv className="border border-[#17171A]/10 rounded-lg p-8 bg-white">
                                 <h3 className="text-weight-medium mb-4">
                                     Head-to-head: 05-22 vs the prior creative
                                 </h3>
-                                <div className="overflow-hidden rounded-lg border border-gray-200">
-                                    <div className="grid grid-cols-4 bg-gray-100 text-size-small text-weight-bold">
+                                <div className="overflow-hidden rounded-lg border border-[#17171A]/10">
+                                    <div className="grid grid-cols-4 bg-[#17171A]/5 text-size-small text-weight-bold">
                                         <div className="p-3">Metric</div>
                                         <div className="p-3 text-[#E0362C]">05-22 (this ad)</div>
                                         <div className="p-3">05-02 (prior)</div>
@@ -254,7 +254,7 @@ export default function TribeLiveDemo() {
                                     {HEAD_TO_HEAD.map((r) => (
                                         <div
                                             key={r.metric}
-                                            className="grid grid-cols-4 border-t border-gray-200 text-size-small"
+                                            className="grid grid-cols-4 border-t border-[#17171A]/10 text-size-small"
                                         >
                                             <div className="p-3 opacity-85">{r.metric}</div>
                                             <div className="p-3 text-weight-medium">{r.a}</div>
@@ -273,7 +273,7 @@ export default function TribeLiveDemo() {
                                 </p>
                             </AnimatedInViewDiv>
 
-                            <AnimatedInViewDiv delay={0.1} className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5]">
+                            <AnimatedInViewDiv delay={0.1} className="border border-[#17171A]/10 rounded-lg p-8 bg-white">
                                 <h3 className="text-weight-medium mb-4">
                                     Network-by-network activation (Yeo-7 atlas)
                                 </h3>
@@ -291,7 +291,7 @@ export default function TribeLiveDemo() {
                                                     {n.a.toFixed(3)} vs {n.b.toFixed(3)}
                                                 </span>
                                             </div>
-                                            <div className="h-2 rounded-full bg-gray-200 overflow-hidden">
+                                            <div className="h-2 rounded-full bg-[#17171A]/10 overflow-hidden">
                                                 <div
                                                     className="h-full bg-[#E0362C]"
                                                     style={{ width: `${(n.a / 0.204) * 100}%` }}

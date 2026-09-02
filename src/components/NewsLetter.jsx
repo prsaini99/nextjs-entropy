@@ -59,7 +59,7 @@ export default function NewsLetter() {
                             type="email"
                             name="email"
                             placeholder="you@email.com"
-                            className="appearance-none w-full leading-normal outline-none border-none p-4 rounded-lg font-normal text-lg bg-gray-200 text-black shadow-inner"
+                            className="appearance-none w-full leading-normal outline-none border-none p-4 rounded-lg font-normal text-lg bg-[#17171A]/10 text-[#17171A] shadow-inner"
                             value={email}
                             onChange={handleChange}
                             required
@@ -67,7 +67,7 @@ export default function NewsLetter() {
                         <div className="relative">
                             <input
                                 type="submit"
-                                className="appearance-none w-full leading-normal outline-none border-none cursor-pointer rounded-lg p-4 font-semibold text-lg bg-gray-100 text-gray-900 z-10 opacity-100"
+                                className="appearance-none w-full leading-normal outline-none border-none cursor-pointer rounded-lg p-4 font-semibold text-lg bg-[#17171A]/5 text-[#17171A] z-10 opacity-100"
                                 value="Sign Up"
                             />
                         </div>

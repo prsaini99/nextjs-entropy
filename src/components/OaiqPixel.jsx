@@ -47,7 +47,9 @@ export default function OaiqPixel() {
   // The SDK has no SPA auto-tracking; fire page_viewed on route changes.
   useEffect(() => {
     if (typeof window !== 'undefined' && window.oaiq && loaded.current) {
-      window.oaiq('measure', 'page_viewed', { type: 'customer_action' });
+      // page_viewed rejects the customer_action shape (SDK logs
+      // "validation failed; event dropped"); an empty payload validates.
+      window.oaiq('measure', 'page_viewed', {});
     }
   }, [pathname]);
 

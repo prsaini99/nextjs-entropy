@@ -1,4 +1,4 @@
-// Industry pages data — sourced from the StackBinary credentials deck.
+// Industry pages data — sourced from the Stackbinary credentials deck.
 // Drives /industries and /industries/[slug].
 
 const industries = {

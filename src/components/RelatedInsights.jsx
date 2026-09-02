@@ -45,7 +45,7 @@ export default function RelatedInsights({
   if (!items.length) return null;
 
   return (
-    <section>
+    <section className="ink-section">
       <div className="padding-global py-16">
         <div className="w-layout-blockcontainer container w-container">
           <div className="flex flex-col gap-2 mb-8">
@@ -61,7 +61,7 @@ export default function RelatedInsights({
               <Link
                 key={insight.slug}
                 href={`/insights/${insight.slug}`}
-                className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 group"
+                className="border border-[#17171A]/10 rounded-lg p-8 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 group"
               >
                 <h3 className="text-size-large text-weight-medium">
                   {insight.title}

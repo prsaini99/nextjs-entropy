@@ -32,7 +32,7 @@ const expertiseAreas = [
 
 export default function ExpertiseFeatures() {
     return (
-        <section>
+        <section className="ink-section">
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="phase-cards-wrapper">

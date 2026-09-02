@@ -19,7 +19,7 @@ const values = [
 
 export default function WhyJoinUs() {
   return (
-    <section>
+    <section className="ink-section">
       <div className="padding-global">
         <div className="w-layout-blockcontainer container w-container">
           <div className="phase-cards-wrapper">

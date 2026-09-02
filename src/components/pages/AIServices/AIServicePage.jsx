@@ -121,11 +121,11 @@ export default function AIServicePage({ page, slug }) {
 
                             {page.heroStats && (
                                 <AnimatedInViewDiv delay={0.4} className="w-full">
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 rounded-lg overflow-hidden border border-[#17171A]/10 bg-[#17171A]/10">
                                         {page.heroStats.map((stat) => (
                                             <div
                                                 key={stat.label}
-                                                className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
+                                                className="bg-white p-6 lg:p-8 flex flex-col gap-2"
                                             >
                                                 <div className="heading-4 text-weight-bold text-[#E0362C]">
                                                     {stat.value}
@@ -169,7 +169,7 @@ export default function AIServicePage({ page, slug }) {
 
             {/* --------------------------------------------- offerings grid */}
             {page.offerings && (
-                <section>
+                <section className="ink-section">
                     <div className="padding-global py-16">
                         <div className="w-layout-blockcontainer container w-container">
                             <div className="about-features-wrapper">
@@ -192,7 +192,7 @@ export default function AIServicePage({ page, slug }) {
                                         <AnimatedInViewDiv
                                             key={item.title}
                                             delay={index * 0.08}
-                                            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3"
+                                            className="border border-[#17171A]/10 rounded-lg p-8 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3"
                                         >
                                             <h3 className="text-size-large text-weight-medium">
                                                 {item.title}
@@ -258,7 +258,7 @@ export default function AIServicePage({ page, slug }) {
                                         <AnimatedInViewDiv
                                             key={step.title}
                                             delay={index * 0.08}
-                                            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col gap-3"
+                                            className="border border-[#17171A]/10 rounded-lg p-8 bg-white flex flex-col gap-3"
                                         >
                                             <div className="heading-5 text-weight-bold text-[#E0362C]">
                                                 {String(index + 1).padStart(2, "0")}
@@ -278,7 +278,7 @@ export default function AIServicePage({ page, slug }) {
 
             {/* ------------------------------------------------ tech stack */}
             {page.techStack && (
-                <section>
+                <section className="ink-section">
                     <div className="padding-global py-16">
                         <div className="w-layout-blockcontainer container w-container">
                             <div className="about-features-wrapper">
@@ -300,7 +300,7 @@ export default function AIServicePage({ page, slug }) {
                                     {page.techStack.groups.map((group) => (
                                         <AnimatedInViewDiv
                                             key={group.name}
-                                            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col gap-4"
+                                            className="border border-[#17171A]/10 rounded-lg p-8 bg-white flex flex-col gap-4"
                                         >
                                             <h3 className="text-size-large text-weight-medium">
                                                 {group.name}
@@ -309,7 +309,7 @@ export default function AIServicePage({ page, slug }) {
                                                 {group.items.map((item) => (
                                                     <span
                                                         key={item}
-                                                        className="text-size-small border border-gray-300 rounded-full px-3 py-1 bg-white"
+                                                        className="text-size-small border border-[#17171A]/15 rounded-full px-3 py-1 bg-white"
                                                     >
                                                         {item}
                                                     </span>
@@ -348,7 +348,7 @@ export default function AIServicePage({ page, slug }) {
                                     {page.compliance.items.map((item) => (
                                         <AnimatedInViewDiv
                                             key={item.title}
-                                            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col gap-3"
+                                            className="border border-[#17171A]/10 rounded-lg p-8 bg-white flex flex-col gap-3"
                                         >
                                             <h3 className="text-size-large text-weight-medium">
                                                 {item.title}
@@ -385,7 +385,7 @@ export default function AIServicePage({ page, slug }) {
                                         <Link
                                             key={relSlug}
                                             href={`/services/${relSlug}`}
-                                            className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
+                                            className="border border-[#17171A]/10 rounded-lg p-6 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex items-center justify-between gap-3 group"
                                         >
                                             <span className="text-size-small text-weight-medium">
                                                 {aiServiceAnchors[relSlug] || dubaiAnchors[relSlug] || relSlug}

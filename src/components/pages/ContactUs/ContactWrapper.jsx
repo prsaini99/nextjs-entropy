@@ -199,7 +199,7 @@ export default function ContactWrapper() {
                         <AnimatedInViewDiv className="hero-component">
                             <div className="max-width-70ch">
                                 <div className="heading-2 text-weight-bold">
-                                    Talk to StackBinary™
+                                    Talk to Stackbinary
                                 </div>
                             </div>
                             <div className="opacity-80 mt-4">
@@ -220,7 +220,7 @@ export default function ContactWrapper() {
                                 <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                                     {/* WhatsApp CTA */}
                                     <a
-                                        href="https://wa.me/?text=Hello%20StackBinary%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project."
+                                        href="https://wa.me/?text=Hello%20Stackbinary%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project."
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={() => trackSocialClick('whatsapp', 'contact_page')}
@@ -242,7 +242,7 @@ export default function ContactWrapper() {
 
                                     {/* Telegram CTA */}
                                     <a
-                                        href="https://t.me/?text=Hello%20StackBinary%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project."
+                                        href="https://t.me/?text=Hello%20Stackbinary%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project."
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={() => trackSocialClick('telegram', 'contact_page')}
@@ -265,7 +265,7 @@ export default function ContactWrapper() {
 
                                     {/* Email CTA */}
                                     <a
-                                        href="mailto:contact@stackbinary.io?subject=Project%20Inquiry&body=Hello%20StackBinary%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project.%0A%0ABest%20regards"
+                                        href="mailto:contact@stackbinary.io?subject=Project%20Inquiry&body=Hello%20Stackbinary%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20your%20services%20and%20would%20like%20to%20discuss%20a%20potential%20project.%0A%0ABest%20regards"
                                         onClick={() => trackSocialClick('email', 'contact_page')}
                                         className="social-cta-button secondary-button"
                                         style={{
@@ -512,7 +512,7 @@ export default function ContactWrapper() {
                                     *-dubai pages), not to every visitor sitewide. */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                                     {/* USA Office */}
-                                    <div className="office-location p-6 border border-gray-300 rounded-lg">
+                                    <div className="office-location p-6 border border-[#17171A]/15 rounded-lg">
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#E0362C' }}>
@@ -545,7 +545,7 @@ export default function ContactWrapper() {
                                     </div>
 
                                     {/* India Office */}
-                                    <div className="office-location p-6 border border-gray-300 rounded-lg">
+                                    <div className="office-location p-6 border border-[#17171A]/15 rounded-lg">
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#E0362C' }}>

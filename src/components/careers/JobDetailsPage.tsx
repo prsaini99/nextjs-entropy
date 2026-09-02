@@ -107,7 +107,7 @@ export default function JobDetailsPage({ job }: Props) {
       </section>
 
       {/* Job Details */}
-      <section>
+      <section className="ink-section">
         <div className="padding-global">
           <div className="w-layout-blockcontainer container w-container">
             <div className="features-wrapper">
@@ -298,12 +298,12 @@ export default function JobDetailsPage({ job }: Props) {
                   </div>
                 </AnimatedInViewDiv>
 
-                {/* Why Join StackBinary Card */}
+                {/* Why Join Stackbinary Card */}
                 <AnimatedInViewDiv delay={0.4} className="features-vantages">
                   <div className="features-vantages-content">
                     <div className="features-heading-wrapper">
                       <div className="features-heading align-left">
-                        <div className="heading-6 text-weight-medium">Why Join StackBinary™?</div>
+                        <div className="heading-6 text-weight-medium">Why Join Stackbinary?</div>
                       </div>
                     </div>
                     <div className="check-list">
@@ -334,7 +334,7 @@ export default function JobDetailsPage({ job }: Props) {
                     <div className="features-image-wrapper">
                       <Image
                         src="/why-join-us.jpg"
-                        alt="Why Join StackBinary"
+                        alt="Why Join Stackbinary"
                         fill
                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
                         className="image"
@@ -394,7 +394,7 @@ export default function JobDetailsPage({ job }: Props) {
                         }
                         className="text-size-small text-weight-bold underline hover:opacity-80"
                       >
-                        Follow StackBinary on LinkedIn →
+                        Follow Stackbinary on LinkedIn →
                       </a>
                     </div>
                     <div style={{ textAlign: 'center' as const }}>
@@ -403,7 +403,7 @@ export default function JobDetailsPage({ job }: Props) {
                       </div>
                       <Link 
                         href="mailto:contact@stackbinary.io" 
-                        className="text-size-small text-weight-medium text-gray-700 hover:text-gray-900"
+                        className="text-size-small text-weight-medium text-[#17171A]/75 hover:text-[#17171A]"
                         style={{ textAlign: 'center' as const }}
                       >
                         contact@stackbinary.io

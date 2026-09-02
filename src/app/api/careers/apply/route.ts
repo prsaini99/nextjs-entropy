@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
         pick('additionalInfo') ??
         ([
           formData.get('whyInterested') ? `Why interested: ${formData.get('whyInterested')}` : null,
-          formData.get('whyStackBinary') ? `Why StackBinary: ${formData.get('whyStackBinary')}` : null,
+          formData.get('whyStackbinary') ? `Why Stackbinary: ${formData.get('whyStackbinary')}` : null,
           formData.get('anythingElse') ? `Anything else: ${formData.get('anythingElse')}` : null,
         ]
           .filter(Boolean)
@@ -396,7 +396,7 @@ export async function POST(request: NextRequest) {
           await transporter.sendMail({
             from: MAIL_FROM,
             to: applicationData.email as string,
-            subject: `We have your application, ${applicationData.jobTitle || 'StackBinary'}`,
+            subject: `We have your application, ${applicationData.jobTitle || 'Stackbinary'}`,
             text: applicationConfirmationText({
               firstName: applicationData.firstName as string,
               jobTitle: applicationData.jobTitle as string,

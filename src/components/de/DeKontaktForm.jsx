@@ -93,11 +93,11 @@ export default function DeKontaktForm() {
   };
 
   const input =
-    'w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 bg-white text-gray-900';
+    'w-full p-3 border border-[#17171A]/15 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 bg-white text-[#17171A]';
 
   if (status === STATUS.SUCCESS) {
     return (
-      <div className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] text-center">
+      <div className="border border-[#17171A]/10 rounded-lg p-8 bg-white text-center">
         <div className="text-2xl mb-3">✓</div>
         <div className="text-size-large text-weight-medium mb-2">
           Vielen Dank für Ihre Anfrage
@@ -156,7 +156,7 @@ export default function DeKontaktForm() {
       </div>
 
       {status === STATUS.ERROR && (
-        <p className="text-red-600 text-size-small">
+        <p className="text-[#E0362C] text-size-small">
           Das hat leider nicht geklappt. Bitte versuchen Sie es erneut oder
           schreiben Sie an contact@stackbinary.io.
         </p>

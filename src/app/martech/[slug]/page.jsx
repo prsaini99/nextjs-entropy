@@ -14,8 +14,8 @@ export async function generateMetadata({ params }) {
   const page = getMartechPage(slug);
   if (!page) return {};
   const title = page.seoTitle
-    ? `${page.seoTitle} | StackBinary™`
-    : `${page.badge.split("·")[0].trim()} | StackBinary™ MarTech`;
+    ? `${page.seoTitle} | Stackbinary`
+    : `${page.badge.split("·")[0].trim()} | Stackbinary MarTech`;
   return {
     title,
     description: page.tagline,
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
       title,
       description: page.tagline,
       url: `https://stackbinary.io/martech/${slug}`,
-      siteName: "StackBinary",
+      siteName: "Stackbinary",
       type: "website",
     },
   };
@@ -67,7 +67,7 @@ export default async function MartechSlugPage({ params }) {
       />
       <Banner
         bannerStyle={{
-          backgroundImage: "linear-gradient(180deg, #000000, #00000000)",
+          backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)",
         }}
         ctaHref="#martech-lead-form"
         ctaLabel="Get My Build Quote"

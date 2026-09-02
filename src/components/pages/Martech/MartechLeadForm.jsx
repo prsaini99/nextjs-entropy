@@ -185,7 +185,7 @@ export default function MartechLeadForm({
             id="martech-lead-form"
             onSubmit={handleSubmit}
             data-clarity-mask="true"
-            className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] backdrop-blur flex flex-col gap-4 w-full text-left"
+            className="border border-[#17171A]/10 rounded-lg p-6 lg:p-8 bg-white backdrop-blur flex flex-col gap-4 w-full text-left"
         >
             <div>
                 <div className="text-size-large text-weight-bold">{heading}</div>
@@ -254,7 +254,7 @@ export default function MartechLeadForm({
                                 setCustomBudget(false);
                                 setForm((f) => ({ ...f, budget: "" }));
                             }}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 text-gray-700"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 text-[#17171A]/75"
                         >
                             ×
                         </button>
@@ -334,7 +334,7 @@ export default function MartechLeadForm({
                     border-radius: 0.5rem;
                     padding: 0.85rem 1rem;
                     font-size: 1rem;
-                    color: #000000;
+                    color: #17171A;
                     width: 100%;
                     outline: none;
                     transition: border-color 0.2s;
@@ -351,7 +351,7 @@ export default function MartechLeadForm({
                 }
                 select.martech-input option {
                     background: #ffffff;
-                    color: #000000;
+                    color: #17171A;
                 }
             `}</style>
         </form>

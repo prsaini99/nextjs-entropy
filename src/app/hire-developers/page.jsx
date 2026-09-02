@@ -5,14 +5,14 @@ import ProcessCards from "@/components/pages/HireDevelopers/ProcessCards";
 import Banner from "@/components/Banner";
 
 export const metadata = {
-  title: "Hire Developers | StackBinary™ - Scale Your Development Team",
+  title: "Hire Developers | Stackbinary - Scale Your Development Team",
   description: "Get access to skilled developers for your projects. Flexible engagement models from project-based to long-term partnerships.",
   alternates: { canonical: 'https://stackbinary.io/hire-developers' },
   openGraph: {
-    title: 'Hire Developers | StackBinary™ - Scale Your Development Team',
+    title: 'Hire Developers | Stackbinary - Scale Your Development Team',
     description: 'Get access to skilled developers for your projects. Flexible engagement models from project-based to long-term partnerships.',
     url: 'https://stackbinary.io/hire-developers',
-    siteName: 'StackBinary',
+    siteName: 'Stackbinary',
     type: 'website'
   },
   twitter: { card: 'summary_large_image' }
@@ -24,7 +24,7 @@ export default function HireDevelopersPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "name": "Hire Developers - StackBinary",
+        "name": "Hire Developers - Stackbinary",
         "url": "https://stackbinary.io/hire-developers",
         "description": "Scale your development team with skilled developers. Flexible engagement models for all project types."
       },
@@ -54,7 +54,7 @@ export default function HireDevelopersPage() {
 
       <Banner
         bannerStyle={{
-          backgroundImage: "linear-gradient(180deg, #000000, #00000000)"
+          backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)"
         }}
         title="Ready to Scale Your Development?"
         description="Let's discuss how our skilled developers can help accelerate your project and bring your vision to life."

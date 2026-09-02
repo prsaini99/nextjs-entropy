@@ -124,7 +124,7 @@ function AdminDashboardLayout({ children }) {
             <div className="flex items-center space-x-4">
               <div className="hidden lg:block">
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  StackBinary™ Admin
+                  Stackbinary Admin
                 </h1>
                 <p className="text-sm text-gray-500">Lead Management Dashboard</p>
               </div>
@@ -248,7 +248,7 @@ function EnhancedSidebarContent({ navigation, pathname }) {
             <span className="text-2xl">🚀</span>
           </div>
           <div className="ml-4">
-            <h2 className="text-xl font-bold text-gray-900">StackBinary™</h2>
+            <h2 className="text-xl font-bold text-gray-900">Stackbinary</h2>
             <p className="text-sm text-gray-500">Admin Portal</p>
           </div>
         </div>

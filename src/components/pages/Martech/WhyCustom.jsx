@@ -33,7 +33,7 @@ const rows = [
 
 export default function WhyCustom() {
     return (
-        <section id="why-custom">
+        <section id="why-custom" className="ink-section">
             <div className="padding-global py-16">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="about-features-wrapper">
@@ -55,21 +55,21 @@ export default function WhyCustom() {
                             </div>
                         </AnimatedInViewDiv>
 
-                        <div className="w-full overflow-hidden rounded-lg border border-gray-200">
-                            <div className="grid grid-cols-3 bg-gray-100 text-weight-bold">
+                        <div className="w-full overflow-hidden rounded-lg border border-[#17171A]/10">
+                            <div className="grid grid-cols-3 bg-[#17171A]/5 text-weight-bold">
                                 <div className="p-5 text-size-small uppercase tracking-wider opacity-80"></div>
                                 <div className="p-5 text-size-small uppercase tracking-wider opacity-80">
                                     Off-the-shelf stack
                                 </div>
                                 <div className="p-5 text-size-small uppercase tracking-wider text-[#E0362C]">
-                                    Built with StackBinary
+                                    Built with Stackbinary
                                 </div>
                             </div>
                             {rows.map((row, i) => (
                                 <AnimatedInViewDiv
                                     key={row.dimension}
                                     delay={i * 0.06}
-                                    className="grid grid-cols-3 border-t border-gray-200"
+                                    className="grid grid-cols-3 border-t border-[#17171A]/10"
                                 >
                                     <div className="p-5 text-weight-medium text-size-small">
                                         {row.dimension}

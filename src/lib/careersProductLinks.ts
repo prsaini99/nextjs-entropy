@@ -17,7 +17,7 @@ export interface ProductLink {
 }
 
 const HUB: ProductLink = {
-  title: 'The StackBinary MarTech Suite',
+  title: 'The Stackbinary MarTech Suite',
   href: '/martech',
   note: 'The full product line, every system we ship, most with live demos.',
 };

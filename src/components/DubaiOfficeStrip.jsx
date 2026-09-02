@@ -6,7 +6,7 @@ export default function DubaiOfficeStrip() {
     <section>
       <div className="padding-global pb-16">
         <div className="w-layout-blockcontainer container w-container">
-          <div className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="border border-[#17171A]/10 rounded-lg p-8 bg-white flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <div className="text-size-medium text-weight-medium mb-2">
                 Our Dubai Office

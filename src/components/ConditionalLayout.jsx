@@ -13,6 +13,10 @@ export default function ConditionalLayout({ children }) {
   // Check if we're on an admin page
   const isAdminPage = pathname?.startsWith('/admin');
 
+  // The homepage runs chrome-less: the scroll film owns the viewport and
+  // the page composes its own nav, dock, footer and chat.
+  const isV2Page = pathname === '/';
+
   // German section gets its own slim chrome: an English navbar over a German
   // page reads as a translated microsite, which undercuts the deutschsprachiger
   // Ansprechpartner positioning. The chatbot stays off /de too: it converses
@@ -20,7 +24,7 @@ export default function ConditionalLayout({ children }) {
   // mismatch in animated form.
   const isDePage = pathname?.startsWith('/de');
 
-  if (isAdminPage) {
+  if (isAdminPage || isV2Page) {
     return <>{children}</>;
   }
 

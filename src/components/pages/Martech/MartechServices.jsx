@@ -93,7 +93,7 @@ const services = [
     },
     {
         pillar: "Commerce & Sales",
-        title: "StackBinary B2B Lead CRM",
+        title: "Stackbinary B2B Lead CRM",
         description:
             "The AI-assisted CRM our own BD team closes with: every lead, WhatsApp thread, call and email in one timeline, with AI scoring that tells reps exactly who to call next and what to say.",
         capabilities: [
@@ -117,7 +117,7 @@ const services = [
             "Reading analytics & behavior-triggered follow-ups",
         ],
         href: "/martech/proposal-maker",
-        demo: "SolarProposal · StackBinary CRM proposals",
+        demo: "SolarProposal · Stackbinary CRM proposals",
     },
     {
         pillar: "AI Enablement",
@@ -182,12 +182,12 @@ function ServiceCard({ service, wide = false }) {
         return (
             <Link
                 href={service.href}
-                className="border border-gray-200 rounded-lg p-8 lg:p-10 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 group"
+                className="border border-[#17171A]/10 rounded-lg p-8 lg:p-10 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 group"
             >
                 <div className="flex flex-col gap-4">
                     <h3 className="heading-6 text-weight-medium">{service.title}</h3>
                     <p className="opacity-80 text-size-small">{service.description}</p>
-                    <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small gap-3">
+                    <div className="mt-auto pt-4 border-t border-[#17171A]/10 flex items-center justify-between text-size-small gap-3">
                         <span className="opacity-70">{service.demo}</span>
                         <span className="text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                             Explore →
@@ -198,7 +198,7 @@ function ServiceCard({ service, wide = false }) {
                     {service.capabilities.map((cap) => (
                         <li
                             key={cap}
-                            className="text-size-small opacity-80 flex gap-2 border border-gray-200 rounded-lg p-4 bg-[#F7F7F5]"
+                            className="text-size-small opacity-80 flex gap-2 border border-[#17171A]/10 rounded-lg p-4 bg-white"
                         >
                             <span className="text-[#E0362C]">✓</span>
                             <span>{cap}</span>
@@ -212,7 +212,7 @@ function ServiceCard({ service, wide = false }) {
     return (
         <Link
             href={service.href}
-            className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-4 h-full group"
+            className="border border-[#17171A]/10 rounded-lg p-8 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-4 h-full group"
         >
             <h3 className="text-size-large text-weight-medium">{service.title}</h3>
             <p className="opacity-80 text-size-small">{service.description}</p>
@@ -224,7 +224,7 @@ function ServiceCard({ service, wide = false }) {
                     </li>
                 ))}
             </ul>
-            <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small gap-3">
+            <div className="mt-auto pt-4 border-t border-[#17171A]/10 flex items-center justify-between text-size-small gap-3">
                 <span className="opacity-70">{service.demo}</span>
                 <span className="text-[#E0362C] text-weight-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                     Explore →
@@ -285,7 +285,7 @@ export default function MartechServices() {
                                             className={`text-left rounded-lg px-5 py-4 border transition-all duration-200 whitespace-nowrap lg:whitespace-normal flex-shrink-0 ${
                                                 isActive
                                                     ? "border-[#E0362C] bg-[#E0362C]/[0.08]"
-                                                    : "border-gray-200 bg-[#F7F7F5] hover:border-gray-400"
+                                                    : "border-[#17171A]/10 bg-white hover:border-[#17171A]/25"
                                             }`}
                                         >
                                             <div className="flex items-center justify-between gap-3">
@@ -300,7 +300,7 @@ export default function MartechServices() {
                                                     className={`text-size-small rounded-full border px-2 ${
                                                         isActive
                                                             ? "border-[#E0362C]/50 text-[#E0362C]"
-                                                            : "border-gray-200 opacity-40"
+                                                            : "border-[#17171A]/10 opacity-40"
                                                     }`}
                                                 >
                                                     {count}

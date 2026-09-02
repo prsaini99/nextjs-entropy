@@ -32,7 +32,7 @@ const steps = [
 
 export default function WhyBussinessesTrustUs() {
     return (
-        <section className='mb-10'>
+        <section className='ink-section mb-10'>
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="steps-wrapper">

@@ -1,9 +1,6 @@
-import HeroSection from "@/components/pages/Home/HeroSection";
-import Pictures from "@/components/pages/Home/Pictures";
-import TransformBussiness from "@/components/pages/Home/TransformBussiness";
-import Transformative from "@/components/pages/Home/Transformative";
-import IgnitePotential from "@/components/pages/Home/IgnitePotential";
-import ElevetBussiness from "@/components/pages/Home/ElevetBussiness";
+import LandingV2 from "@/components/v2/LandingV2";
+import Footer from "@/components/Footer";
+import FloatingChat from "@/components/FloatingChat";
 
 export const metadata = {
   title: "Stackbinary | AI, Cloud & Custom Software Development Company",
@@ -20,6 +17,10 @@ export const metadata = {
   twitter: { card: 'summary_large_image' }
 };
 
+// The scroll-film landing ("The Thread") is the production homepage as of
+// 2026-09-02. It composes its own chrome: ConditionalLayout renders "/"
+// bare, the film owns the viewport, and the Footer sits on a solid layer
+// so the fixed video cannot bleed through.
 export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -89,12 +90,11 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <HeroSection />
-      <Pictures />
-      <TransformBussiness />
-      <Transformative />
-      <IgnitePotential />
-      <ElevetBussiness />
+      <LandingV2 />
+      <div style={{ position: "relative", zIndex: 3, background: "#FAF8F4" }}>
+        <Footer />
+      </div>
+      <FloatingChat />
     </>
   );
 }

@@ -6,16 +6,16 @@ export const metadata = {
   // "ai automation services" (480/mo) — the service-intent slice of a market
   // whose generic terms ("business automation", ₹48k-78k top-of-page) belong
   // to enterprise-software vendors and must never be bid on or targeted.
-  title: "AI Automation Agency: Working Systems in 2-3 Weeks | StackBinary™",
+  title: "AI Automation Agency: Working Systems in 2-3 Weeks | Stackbinary",
   description:
     "We find the highest-ROI automation in your business and ship it in 2-3 weeks: WhatsApp replies, invoice processing, email journeys, AI call answering, lead follow-up. Integrated with your existing tools. Owned outright.",
   alternates: { canonical: "https://stackbinary.io/ai-automation" },
   openGraph: {
-    title: "AI Automation Agency: Working Systems in 2-3 Weeks | StackBinary™",
+    title: "AI Automation Agency: Working Systems in 2-3 Weeks | Stackbinary",
     description:
       "Tell us where your team's hours go. We reply with the three automations worth building first, and ship the best one in 2-3 weeks, wired into the tools you already run.",
     url: "https://stackbinary.io/ai-automation",
-    siteName: "StackBinary",
+    siteName: "Stackbinary",
     type: "website",
   },
   twitter: { card: "summary_large_image" },
@@ -27,7 +27,7 @@ export default function Page() {
       <AiAutomationPage />
       <Banner
         bannerStyle={{
-          backgroundImage: "linear-gradient(180deg, #000000, #00000000)",
+          backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)",
         }}
         ctaHref="#martech-lead-form"
         ctaLabel="Get My Top 3 Automations"

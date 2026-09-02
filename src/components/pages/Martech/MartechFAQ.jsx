@@ -41,7 +41,7 @@ export default function MartechFAQ({
                                 <AnimatedInViewDiv
                                     key={faq.question}
                                     delay={index * 0.05}
-                                    className="border border-gray-200 rounded-lg bg-[#F7F7F5] overflow-hidden"
+                                    className="border border-[#17171A]/10 rounded-lg bg-white overflow-hidden"
                                 >
                                     <button
                                         onClick={() => {
@@ -57,7 +57,7 @@ export default function MartechFAQ({
                                                 });
                                             }
                                         }}
-                                        className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-[#F7F7F5] transition-colors"
+                                        className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-white transition-colors"
                                         aria-expanded={open === index}
                                     >
                                         <span className="text-weight-medium">{faq.question}</span>

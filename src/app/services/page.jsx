@@ -120,7 +120,7 @@ export default function ServicesPage() {
                     <Link
                       key={slug}
                       href={`/services/${slug}`}
-                      className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-2 group"
+                      className="border border-[#17171A]/10 rounded-lg p-6 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-2 group"
                     >
                       <span className="text-size-medium text-weight-medium">
                         {aiServiceAnchors[slug]}

@@ -1536,7 +1536,7 @@ export const JOBS: Job[] = [
     type: 'Full-time',
     experienceLevel: 'Mid',
     blurb: 'Content, campaigns and university outreach.',
-    description: 'Build and promote StackBinary\'s employer brand to attract top talent. You\'ll create content, manage campaigns, and develop university partnerships to strengthen our talent pipeline.',
+    description: 'Build and promote Stackbinary\'s employer brand to attract top talent. You\'ll create content, manage campaigns, and develop university partnerships to strengthen our talent pipeline.',
     whatYoullDo: [
       'Develop employer branding strategy and messaging',
       'Create content showcasing company culture and employee experiences',

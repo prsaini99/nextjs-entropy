@@ -68,7 +68,7 @@ export default function DeHub() {
         </div>
       </section>
 
-      <section>
+      <section className="ink-section">
         <div className="padding-global py-16">
           <div className="w-layout-blockcontainer container w-container">
             <h2 className="heading-4 text-weight-medium mb-8">Unsere Leistungen</h2>
@@ -79,7 +79,7 @@ export default function DeHub() {
                   <Link
                     key={slug}
                     href={`/de/${slug}`}
-                    className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 group"
+                    className="border border-[#17171A]/10 rounded-lg p-8 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 group"
                   >
                     <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider">
                       {p.badge.split("·")[0].trim()}

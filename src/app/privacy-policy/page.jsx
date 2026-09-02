@@ -11,15 +11,15 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 // changes, this page must change with it.
 
 export const metadata = {
-  title: "Privacy Policy | StackBinary",
+  title: "Privacy Policy | Stackbinary",
   description:
-    "How StackBinary collects, uses and protects your personal information, including enquiry, analytics and recruitment data.",
+    "How Stackbinary collects, uses and protects your personal information, including enquiry, analytics and recruitment data.",
   alternates: { canonical: 'https://stackbinary.io/privacy-policy' },
   openGraph: {
-    title: 'Privacy Policy | StackBinary',
-    description: 'How StackBinary collects, uses and protects your personal information.',
+    title: 'Privacy Policy | Stackbinary',
+    description: 'How Stackbinary collects, uses and protects your personal information.',
     url: 'https://stackbinary.io/privacy-policy',
-    siteName: 'StackBinary',
+    siteName: 'Stackbinary',
     type: 'website',
   },
 };
@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
                 <AnimatedInViewDiv delay={0.1}>
                   <h2 className="text-size-xlarge text-weight-bold mb-4">Introduction</h2>
                   <div className="text-size-regular opacity-80 leading-relaxed">
-                    StackBinary™ (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your
+                    Stackbinary (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your
                     privacy. This Privacy Policy explains how we collect, use, disclose and safeguard your
                     information when you visit our website, contact us about a project, use our chat assistant,
                     subscribe to updates, or apply for a job.
@@ -226,7 +226,7 @@ export default function PrivacyPolicyPage() {
                       If you have questions about this Privacy Policy or want to exercise your rights, please
                       contact us:
                     </p>
-                    <div className="bg-gray-50 p-6 rounded-lg">
+                    <div className="bg-white p-6 rounded-lg">
                       <p><strong>Email:</strong> contact@stackbinary.io</p>
                       <p><strong>Subject line:</strong> Privacy Policy Inquiry</p>
                       <p><strong>Response time:</strong> we will respond within 30 days</p>

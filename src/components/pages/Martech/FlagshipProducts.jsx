@@ -217,7 +217,7 @@ export default function FlagshipProducts() {
                                         className={`rounded-full px-6 py-3 border text-size-small text-weight-bold transition-all duration-200 ${
                                             active === p.key
                                                 ? "border-[#E0362C] bg-[#E0362C]/[0.1] text-[#E0362C]"
-                                                : "border-gray-200 bg-[#F7F7F5] hover:border-gray-400"
+                                                : "border-[#17171A]/10 bg-white hover:border-[#17171A]/25"
                                         }`}
                                     >
                                         {p.tab}
@@ -228,7 +228,7 @@ export default function FlagshipProducts() {
                             {/* Active product */}
                             <div
                                 key={product.key}
-                                className="border border-gray-200 rounded-lg p-8 lg:p-10 bg-[#F7F7F5] animate-slideUpFadeIn-0.5"
+                                className="border border-[#17171A]/10 rounded-lg p-8 lg:p-10 bg-white animate-slideUpFadeIn-0.5"
                             >
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                                     <div className="flex flex-col gap-5">
@@ -269,7 +269,7 @@ export default function FlagshipProducts() {
 
                                     <div>
                                         {product.showCurve && (
-                                            <div className="border border-gray-200 rounded-lg p-6 bg-[#F7F7F5] mb-4">
+                                            <div className="border border-[#17171A]/10 rounded-lg p-6 bg-white mb-4">
                                                 <div className="text-size-small opacity-70 mb-3">
                                                     One of the outputs: per-second predicted
                                                     attention
@@ -289,7 +289,7 @@ export default function FlagshipProducts() {
                                                 .map((feature) => (
                                                     <li
                                                         key={feature}
-                                                        className="text-size-small opacity-80 flex gap-2 border border-gray-200 rounded-lg p-4 bg-[#F7F7F5]"
+                                                        className="text-size-small opacity-80 flex gap-2 border border-[#17171A]/10 rounded-lg p-4 bg-white"
                                                     >
                                                         <span className="text-[#E0362C]">✓</span>
                                                         <span>{feature}</span>

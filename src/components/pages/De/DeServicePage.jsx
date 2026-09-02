@@ -55,7 +55,7 @@ export default function DeServicePage({ slug }) {
         </div>
       </section>
 
-      <section>
+      <section className="ink-section">
         <div className="padding-global py-16">
           <div className="w-layout-blockcontainer container w-container">
             <h2 className="heading-4 text-weight-medium mb-8">
@@ -65,7 +65,7 @@ export default function DeServicePage({ slug }) {
               {page.leistungen.map((l) => (
                 <div
                   key={l.title}
-                  className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col gap-3"
+                  className="border border-[#17171A]/10 rounded-lg p-8 bg-white flex flex-col gap-3"
                 >
                   <h3 className="text-size-large text-weight-medium">{l.title}</h3>
                   <p className="text-size-small opacity-80">{l.text}</p>
@@ -76,7 +76,7 @@ export default function DeServicePage({ slug }) {
         </div>
       </section>
 
-      <section>
+      <section className="ink-section">
         <div className="padding-global py-16">
           <div className="w-layout-blockcontainer container w-container">
             <div className="border border-[#E0362C]/30 rounded-lg p-8 lg:p-12 bg-[#E0362C]/[0.04]">
@@ -109,7 +109,7 @@ export default function DeServicePage({ slug }) {
               {page.faqs.map((f) => (
                 <details
                   key={f.q}
-                  className="border border-gray-200 rounded-lg bg-[#F7F7F5] p-6"
+                  className="border border-[#17171A]/10 rounded-lg bg-white p-6"
                 >
                   <summary className="text-weight-medium cursor-pointer">
                     {f.q}

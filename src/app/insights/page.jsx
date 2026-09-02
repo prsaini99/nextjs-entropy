@@ -3,7 +3,7 @@ import { getAllInsights } from "@/lib/insights";
 import Banner from "@/components/Banner";
 
 export const metadata = {
-  title: "Insights, Practical Answers from 55+ Shipped Products | StackBinary™",
+  title: "Insights, Practical Answers from 55+ Shipped Products | Stackbinary",
   description:
     "Build-vs-buy math, cost breakdowns and technical deep dives, written from real projects and real numbers, not theory.",
   alternates: { canonical: "https://stackbinary.io/insights" },
@@ -53,7 +53,7 @@ export default function InsightsPage() {
                   <Link
                     key={insight.slug}
                     href={`/insights/${insight.slug}`}
-                    className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 group"
+                    className="border border-[#17171A]/10 rounded-lg p-8 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 group"
                   >
                     <div className="text-size-small opacity-40">
                       {new Date(insight.date).toLocaleDateString("en-IN", {
@@ -79,7 +79,7 @@ export default function InsightsPage() {
         </div>
       </section>
       <Banner
-        bannerStyle={{ backgroundImage: "linear-gradient(180deg, #000000, #00000000)" }}
+        bannerStyle={{ backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)" }}
         title="Have the Question These Articles Answer?"
         description="Book a discovery call, we'll give you the specific answer for your case, from work we've already shipped."
         image="/banner-dev-team.jpg"
