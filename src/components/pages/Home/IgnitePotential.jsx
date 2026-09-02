@@ -30,7 +30,7 @@ export default function IgnitePotential() {
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="home-features-wrapper">
                         <AnimatedInViewDiv className="header">
-                            <h2 className="heading-4 text-weight-bold">Why StackBinary™</h2>
+                            <h2 className="heading-4 text-weight-bold">Why Stackbinary</h2>
                             {/* <div className="opacity-80">
                                 <div className="max-width-48ch">
                                     <div className="text-size-regular">Fuel your business growth with AI solutions that are not

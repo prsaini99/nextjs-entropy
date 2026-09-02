@@ -6,14 +6,14 @@ import IgnitePotential from "@/components/pages/Home/IgnitePotential";
 import ElevetBussiness from "@/components/pages/Home/ElevetBussiness";
 
 export const metadata = {
-  title: "StackBinary | AI, Cloud & Custom Software Development Company",
-  description: "Build faster with AI, cloud and custom software. StackBinary designs, ships and scales secure web & mobile apps, DevOps pipelines, data analytics and chatbots.",
+  title: "Stackbinary | AI, Cloud & Custom Software Development Company",
+  description: "Build faster with AI, cloud and custom software. Stackbinary designs, ships and scales secure web & mobile apps, DevOps pipelines, data analytics and chatbots.",
   alternates: { canonical: 'https://stackbinary.io/' },
   openGraph: {
-    title: 'StackBinary | AI, Cloud & Custom Software',
+    title: 'Stackbinary | AI, Cloud & Custom Software',
     description: 'AI, cloud and custom software that ship and scale.',
     url: 'https://stackbinary.io/',
-    siteName: 'StackBinary',
+    siteName: 'Stackbinary',
     images: [{ url: '/og-home.jpg' }],
     type: 'website'
   },
@@ -27,7 +27,7 @@ export default function Home() {
       {
         "@type": "Organization",
         "@id": "https://stackbinary.io/#organization",
-        "name": "StackBinary",
+        "name": "Stackbinary",
         "url": "https://stackbinary.io/",
         "logo": "https://stackbinary.io/logo.png",
         "email": "contact@stackbinary.io",
@@ -49,7 +49,7 @@ export default function Home() {
       {
         "@type": "WebSite",
         "url": "https://stackbinary.io/",
-        "name": "StackBinary"
+        "name": "Stackbinary"
       },
       {
         "@type": "FAQPage",

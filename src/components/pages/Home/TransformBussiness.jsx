@@ -61,7 +61,7 @@ export default function TransformBussiness() {
                                     <div className="integrations-image">
                                         <img
                                             sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 30vw"
-                                            alt={`${service.title} - StackBinary services`}
+                                            alt={`${service.title} - Stackbinary services`}
                                             src={service.image}
                                             loading="lazy" />
                                     </div>
