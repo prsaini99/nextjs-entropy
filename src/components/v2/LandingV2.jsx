@@ -420,11 +420,14 @@ const v2css = `
 .v2-dock .label { animation:v2fade .35s; }
 @keyframes v2pulse { 0%,100% { box-shadow:0 0 0 0 rgba(224,54,44,.5);} 50% { box-shadow:0 0 0 7px rgba(224,54,44,0);} }
 @keyframes v2fade { from { opacity:0; transform:translateY(6px);} to { opacity:1; transform:none;} }
-.v2-static-hero { position:relative; min-height:92vh; display:flex; align-items:flex-end; }
+.v2-static-hero { position:relative; min-height:92vh; display:flex; align-items:flex-end; color:#FAF8F4; }
 .v2-static-hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-.v2-static-hero .inner { position:relative; padding:0 6vw 12vh; max-width:680px; }
-.v2-static-hero h1 { font-size:clamp(32px,8vw,56px); font-weight:700; letter-spacing:-.02em; line-height:1.05; margin:0; }
-.v2-static-hero p { font-weight:500; margin-top:14px; opacity:.85; }
+/* Ink gradient over the poster so the mobile hero reads like the film's
+   white captions instead of ink text colliding with the metal nameplate. */
+.v2-static-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(23,23,26,.15) 0%, rgba(23,23,26,.45) 45%, rgba(23,23,26,.9) 100%); }
+.v2-static-hero .inner { position:relative; z-index:1; padding:0 6vw 12vh; max-width:680px; }
+.v2-static-hero h1 { font-size:clamp(32px,8vw,56px); font-weight:700; letter-spacing:-.02em; line-height:1.05; margin:0; text-shadow:0 2px 20px rgba(0,0,0,.35); }
+.v2-static-hero p { font-weight:500; margin-top:14px; opacity:.9; }
 .v2-content { position:relative; background:#FAF8F4; z-index:2; }
 .v2-thread { position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; overflow:visible; }
 .cta-anchor { display:inline-block; position:relative; z-index:3; }
