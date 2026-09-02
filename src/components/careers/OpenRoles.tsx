@@ -68,7 +68,7 @@ export default function OpenRoles() {
                         className={`px-4 py-2 rounded-full text-size-small text-weight-medium transition-all duration-200 ${
                           selectedTeam === team 
                             ? 'bg-gray-900 text-white' 
-                            : 'bg-transparent text-gray-600 hover:text-gray-900 border border-gray-300'
+                            : 'bg-transparent text-[#17171A]/65 hover:text-[#17171A] border border-[#17171A]/15'
                         }`}
                       >
                         {team}
@@ -86,7 +86,7 @@ export default function OpenRoles() {
                         className={`px-4 py-2 rounded-full text-size-small text-weight-medium transition-all duration-200 ${
                           selectedLocation === location 
                             ? 'bg-gray-900 text-white' 
-                            : 'bg-transparent text-gray-600 hover:text-gray-900 border border-gray-300'
+                            : 'bg-transparent text-[#17171A]/65 hover:text-[#17171A] border border-[#17171A]/15'
                         }`}
                       >
                         {location}

@@ -13,7 +13,7 @@ import Banner from "@/components/Banner";
 import RelatedInsights from "@/components/RelatedInsights";
 
 export const metadata = {
-  title: "AI Marketing Agency & MarTech Stack Builders | StackBinary™",
+  title: "AI Marketing Agency & MarTech Stack Builders | Stackbinary",
   // Targets "ai marketing agency" (500 India / 5,000 global) and "martech
   // stack" (100–1K). The old copy led with "MarTech Engineering" — accurate,
   // but zero search demand across 2,546 keyword ideas.
@@ -21,11 +21,11 @@ export const metadata = {
     "An AI marketing agency that builds the stack and runs the marketing: marketing automation, influencer platforms, AI calling agents, lead-gen engines and WhatsApp automation you own outright. 55+ products shipped.",
   alternates: { canonical: "https://stackbinary.io/martech" },
   openGraph: {
-    title: "AI Marketing Agency & MarTech Stack Builders | StackBinary™",
+    title: "AI Marketing Agency & MarTech Stack Builders | Stackbinary",
     description:
       "Custom marketing technology: ad-ops automation, email infrastructure, influencer platforms, lead-gen engines, loyalty programs and neural ad creative pre-testing.",
     url: "https://stackbinary.io/martech",
-    siteName: "StackBinary",
+    siteName: "Stackbinary",
     type: "website",
   },
   twitter: { card: "summary_large_image" },
@@ -37,7 +37,7 @@ export default function MartechPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        name: "AI Marketing Agency & MarTech Stack Builders - StackBinary",
+        name: "AI Marketing Agency & MarTech Stack Builders - Stackbinary",
         url: "https://stackbinary.io/martech",
         description:
           "An AI marketing agency that builds and runs the stack: marketing automation, influencer marketing platforms, AI calling agents, WhatsApp automation, lead generation and AI video creative analysis.",
@@ -45,7 +45,7 @@ export default function MartechPage() {
       {
         "@type": "Service",
         serviceType: "AI Marketing Automation Agency",
-        provider: { "@type": "Organization", name: "StackBinary" },
+        provider: { "@type": "Organization", name: "Stackbinary" },
         areaServed: "Worldwide",
         hasOfferCatalog: {
           "@type": "OfferCatalog",
@@ -167,7 +167,7 @@ export default function MartechPage() {
       <MartechFAQ />
       <Banner
         bannerStyle={{
-          backgroundImage: "linear-gradient(180deg, #000000, #00000000)",
+          backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)",
         }}
         ctaHref="#martech-lead-form"
         ctaLabel="Get My Free Stack Audit"

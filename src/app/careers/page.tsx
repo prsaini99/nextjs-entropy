@@ -6,15 +6,15 @@ import OpenRoles from '@/components/careers/OpenRoles';
 import HiringProcess from '@/components/careers/HiringProcess';
 
 export const metadata: Metadata = {
-  title: "Careers at StackBinary | Join Our Engineering Team",
+  title: "Careers at Stackbinary | Join Our Engineering Team",
   description: "We hire builders who love shipping, care about reliability and sweat the details. Join our team building AI, cloud and modern software solutions.",
   keywords: "careers, jobs, engineering, software developer, AI engineer, cloud architect, remote work, Bengaluru jobs",
   alternates: { canonical: 'https://stackbinary.io/careers' },
   openGraph: {
-    title: 'Careers at StackBinary | Join Our Engineering Team',
+    title: 'Careers at Stackbinary | Join Our Engineering Team',
     description: 'We hire builders who love shipping, care about reliability and sweat the details. Join our team building AI, cloud and modern software solutions.',
     url: 'https://stackbinary.io/careers',
-    siteName: 'StackBinary',
+    siteName: 'Stackbinary',
     type: 'website'
   },
   twitter: { card: 'summary_large_image' }
@@ -34,7 +34,7 @@ export default function CareersPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Open roles at StackBinary",
+    "name": "Open roles at Stackbinary",
     "itemListElement": getOpenJobs().map((job, index) => ({
       "@type": "ListItem",
       "position": index + 1,

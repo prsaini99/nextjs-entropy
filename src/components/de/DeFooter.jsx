@@ -55,7 +55,7 @@ export default function DeFooter() {
                 </div>
               </div>
             </div>
-            <div className="border-t border-gray-200 pt-6">
+            <div className="border-t border-[#17171A]/10 pt-6">
               <p className="paragraph text-size-small">
                 © {new Date().getFullYear()} Gursat Software IT Solutions
                 Private Limited. Alle Rechte vorbehalten.

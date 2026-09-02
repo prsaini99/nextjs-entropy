@@ -37,7 +37,7 @@ const processSteps = [
 
 export default function HiringProcess() {
   return (
-    <section id="hiring-process">
+    <section id="hiring-process" className="ink-section">
       <div className="padding-global">
         <div className="w-layout-blockcontainer container w-container">
           <div className="steps-wrapper">

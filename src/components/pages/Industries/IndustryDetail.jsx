@@ -83,7 +83,7 @@ export default function IndustryDetail({ industry }) {
                 </div>
             </section>
 
-            <section>
+            <section className="ink-section">
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
                         <div className="about-features-wrapper">
@@ -175,7 +175,7 @@ export default function IndustryDetail({ industry }) {
                 </section>
             )}
 
-            <section>
+            <section className="ink-section">
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
                         <div className="about-features-wrapper">
@@ -203,7 +203,7 @@ export default function IndustryDetail({ industry }) {
                                     <AnimatedInViewDiv
                                         key={product.name}
                                         delay={i * 0.08}
-                                        className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3"
+                                        className="border border-[#17171A]/10 rounded-lg p-8 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3"
                                     >
                                         <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wider">
                                             {product.tag}
@@ -222,7 +222,7 @@ export default function IndustryDetail({ industry }) {
                             </div>
 
                             {industry.martechLink && (
-                                <AnimatedInViewDiv className="w-full border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                                <AnimatedInViewDiv className="w-full border border-[#17171A]/10 rounded-lg p-8 bg-white flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                                     <div className="flex flex-col gap-1">
                                         <div className="text-weight-medium">
                                             Marketing technology is a dedicated practice

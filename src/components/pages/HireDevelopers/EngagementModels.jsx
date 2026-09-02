@@ -24,7 +24,7 @@ const models = [
 
 export default function EngagementModels() {
     return (
-        <section>
+        <section className="ink-section">
             <div className="padding-global py-16">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="about-features-wrapper">

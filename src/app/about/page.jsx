@@ -7,14 +7,14 @@ import PhaseCards from "@/components/pages/About/PhaseCards";
 import WhyBussinessesTrustUs from "@/components/pages/About/WhyBussinessTrustUs";
 
 export const metadata = {
-  title: "About StackBinary | Engineering-Led AI, Cloud & Software Team",
-  description: "Meet the engineering-led team behind StackBinary. We build AI, cloud and custom software that ships fast, scales reliably and stays secure.",
+  title: "About Stackbinary | Engineering-Led AI, Cloud & Software Team",
+  description: "Meet the engineering-led team behind Stackbinary. We build AI, cloud and custom software that ships fast, scales reliably and stays secure.",
   alternates: { canonical: 'https://stackbinary.io/about' },
   openGraph: {
-    title: 'About StackBinary | Engineering-Led AI, Cloud & Software Team',
-    description: 'Meet the engineering-led team behind StackBinary. We build AI, cloud and custom software that ships fast, scales reliably and stays secure.',
+    title: 'About Stackbinary | Engineering-Led AI, Cloud & Software Team',
+    description: 'Meet the engineering-led team behind Stackbinary. We build AI, cloud and custom software that ships fast, scales reliably and stays secure.',
     url: 'https://stackbinary.io/about',
-    siteName: 'StackBinary',
+    siteName: 'Stackbinary',
     type: 'website'
   },
   twitter: { card: 'summary_large_image' }
@@ -26,7 +26,7 @@ export default function About() {
     "@graph": [
       {
         "@type": "AboutPage",
-        "name": "About StackBinary",
+        "name": "About Stackbinary",
         "url": "https://stackbinary.io/about",
         "description": "Engineering-led team delivering AI, cloud, DevOps, data analytics and custom software."
       },
@@ -53,7 +53,7 @@ export default function About() {
       <WhyBussinessesTrustUs />
       <Banner
         bannerStyle={{
-          backgroundImage: "linear-gradient(180deg, #000000, #00000000)"
+          backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)"
           // background: 
         }}
         title="Ready to get started?"

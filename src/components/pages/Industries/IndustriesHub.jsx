@@ -51,7 +51,7 @@ export default function IndustriesHub() {
                             <AnimatedInViewDiv key={slug} delay={Math.min(i * 0.08, 0.4)}>
                                 <Link
                                     href={`/industries/${slug}`}
-                                    className="border border-gray-200 rounded-lg p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 h-full group"
+                                    className="border border-[#17171A]/10 rounded-lg p-8 bg-white hover:border-[#E0362C]/60 transition-colors duration-300 flex flex-col gap-3 h-full group"
                                 >
                                     <h2 className="text-size-large text-weight-medium">
                                         {industry.name}
@@ -61,7 +61,7 @@ export default function IndustriesHub() {
                                         {industry.brands.slice(0, 5).join(" · ")}
                                         {industry.brands.length > 5 ? " · …" : ""}
                                     </p>
-                                    <div className="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between text-size-small">
+                                    <div className="mt-auto pt-4 border-t border-[#17171A]/10 flex items-center justify-between text-size-small">
                                         <span className="opacity-70">
                                             {industry.built.length} shipped products
                                         </span>

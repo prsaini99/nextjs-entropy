@@ -198,11 +198,11 @@ function DiagnosticForm({ location }) {
     };
 
     const fieldCls =
-        "w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#E0362C] transition-colors";
+        "w-full p-3 border border-[#17171A]/15 rounded-lg bg-white text-[#17171A] placeholder-gray-500 focus:outline-none focus:border-[#E0362C] transition-colors";
 
     if (status === "success") {
         return (
-            <div className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-4">
+            <div className="border border-[#17171A]/10 rounded-lg p-6 lg:p-8 bg-white flex flex-col gap-4">
                 <div className="heading-6 text-weight-bold">Got it. Watch your inbox.</div>
                 <p className="text-size-regular opacity-85">
                     Within one business day you&apos;ll get the three automations worth building
@@ -216,7 +216,7 @@ function DiagnosticForm({ location }) {
     return (
         <form
             onSubmit={submit}
-            className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-4"
+            className="border border-[#17171A]/10 rounded-lg p-6 lg:p-8 bg-white flex flex-col gap-4"
         >
             <div>
                 <div className="flex items-baseline justify-between gap-3">
@@ -242,14 +242,14 @@ function DiagnosticForm({ location }) {
                                 className={`flex items-start gap-3 cursor-pointer text-size-small border rounded-lg px-4 py-2.5 bg-white transition-colors ${
                                     sinks.includes(s)
                                         ? "border-[#E0362C]"
-                                        : "border-gray-200 hover:border-gray-400"
+                                        : "border-[#17171A]/10 hover:border-[#17171A]/25"
                                 }`}
                             >
                                 <input
                                     type="checkbox"
                                     checked={sinks.includes(s)}
                                     onChange={() => toggleSink(s)}
-                                    className="mt-0.5 w-4 h-4 text-red-600 focus:ring-red-500 border-gray-400 rounded bg-white"
+                                    className="mt-0.5 w-4 h-4 text-[#E0362C] focus:ring-red-500 border-[#17171A]/25 rounded bg-white"
                                 />
                                 <span>{s}</span>
                             </label>
@@ -324,7 +324,7 @@ function DiagnosticForm({ location }) {
                         <div className="button-elipse"></div>
                     </button>
                     {status === "error" && (
-                        <p className="text-size-small text-red-600">
+                        <p className="text-size-small text-[#E0362C]">
                             Something went wrong. Please try again, or email contact@stackbinary.io.
                         </p>
                     )}
@@ -389,11 +389,11 @@ export default function AiAutomationPage() {
                             </div>
 
                             <AnimatedInViewDiv delay={0.4} className="w-full">
-                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mt-16 rounded-lg overflow-hidden border border-gray-200 bg-gray-200">
+                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mt-16 rounded-lg overflow-hidden border border-[#17171A]/10 bg-[#17171A]/10">
                                     {HERO_STATS.map((stat) => (
                                         <div
                                             key={stat.label}
-                                            className="bg-[#F7F7F5] p-6 lg:p-8 flex flex-col gap-2"
+                                            className="bg-white p-6 lg:p-8 flex flex-col gap-2"
                                         >
                                             <div className="heading-4 text-weight-bold text-[#E0362C]">
                                                 {stat.value}
@@ -409,7 +409,7 @@ export default function AiAutomationPage() {
             </section>
 
             {/* WHAT WE AUTOMATE */}
-            <section>
+            <section className="ink-section">
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
                         <AnimatedInViewDiv className="header text-center mb-12 mx-auto">
@@ -425,7 +425,7 @@ export default function AiAutomationPage() {
                                 <AnimatedInViewDiv
                                     key={job.title}
                                     delay={0.05 * i}
-                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
+                                    className="border border-[#17171A]/10 rounded-lg p-6 lg:p-8 bg-white hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
                                 >
                                     <div className="text-size-small text-weight-bold text-[#E0362C] uppercase tracking-wide">
                                         {job.tag}
@@ -474,7 +474,7 @@ export default function AiAutomationPage() {
                                 <AnimatedInViewDiv
                                     key={c.title}
                                     delay={0.1 * i}
-                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
+                                    className="border border-[#17171A]/10 rounded-lg p-6 lg:p-8 bg-white hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
                                 >
                                     <div className="heading-6 text-weight-bold">{c.title}</div>
                                     <p className="text-size-small opacity-80">{c.text}</p>
@@ -499,7 +499,7 @@ export default function AiAutomationPage() {
                                 <AnimatedInViewDiv
                                     key={s.title}
                                     delay={0.1 * i}
-                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
+                                    className="border border-[#17171A]/10 rounded-lg p-6 lg:p-8 hover:border-[#E0362C]/60 transition-colors flex flex-col gap-3"
                                 >
                                     <div className="text-size-small text-weight-bold text-[#E0362C]">
                                         {s.tag}
@@ -514,7 +514,7 @@ export default function AiAutomationPage() {
             </section>
 
             {/* HOW IT WORKS */}
-            <section>
+            <section className="ink-section">
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
                         <AnimatedInViewDiv className="header text-center mb-12 mx-auto">
@@ -538,7 +538,7 @@ export default function AiAutomationPage() {
                                 <AnimatedInViewDiv
                                     key={s.step}
                                     delay={0.1 * i}
-                                    className="border border-gray-200 rounded-lg p-6 lg:p-8 bg-[#F7F7F5] flex flex-col gap-3"
+                                    className="border border-[#17171A]/10 rounded-lg p-6 lg:p-8 bg-white flex flex-col gap-3"
                                 >
                                     <div className="text-size-small text-weight-bold text-[#E0362C]">
                                         {s.step}
@@ -584,8 +584,8 @@ export default function AiAutomationPage() {
                                     delay={0.1 * i}
                                     className={`border rounded-lg p-6 lg:p-8 flex flex-col gap-3 ${
                                         i === 2
-                                            ? "border-[#E0362C]/60 bg-[#F7F7F5]"
-                                            : "border-gray-200"
+                                            ? "border-[#E0362C]/60 bg-white"
+                                            : "border-[#17171A]/10"
                                     }`}
                                 >
                                     <div className="heading-6 text-weight-bold">{c.title}</div>
@@ -598,7 +598,7 @@ export default function AiAutomationPage() {
             </section>
 
             {/* INTEGRATIONS */}
-            <section>
+            <section className="ink-section">
                 <div className="padding-global py-16">
                     <div className="w-layout-blockcontainer container w-container">
                         <AnimatedInViewDiv className="header text-center mb-10 mx-auto">
@@ -614,7 +614,7 @@ export default function AiAutomationPage() {
                             {INTEGRATIONS.map((name) => (
                                 <span
                                     key={name}
-                                    className="text-size-small border border-gray-200 rounded-full px-4 py-2 bg-[#F7F7F5]"
+                                    className="text-size-small border border-[#17171A]/10 rounded-full px-4 py-2 bg-white"
                                 >
                                     {name}
                                 </span>

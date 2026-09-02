@@ -3,16 +3,16 @@ import Banner from "@/components/Banner";
 import MartechLeadForm from "@/components/pages/Martech/MartechLeadForm";
 
 export const metadata = {
-  title: "Shopify Websites & E-Commerce Stores | StackBinary™ MarTech",
+  title: "Shopify Websites & E-Commerce Stores | Stackbinary MarTech",
   description:
     "29+ live Shopify and D2C storefronts we've built, diamond jewellery, sports nutrition, wellness, designer fashion and more. Stores that convert, wired into the marketing stack that fills them.",
   alternates: { canonical: "https://stackbinary.io/martech/shopify-websites" },
   openGraph: {
-    title: "Shopify Websites & E-Commerce Stores | StackBinary™ MarTech",
+    title: "Shopify Websites & E-Commerce Stores | Stackbinary MarTech",
     description:
       "29+ live Shopify and D2C storefronts we've built, from diamond jewellery to D2C wellness.",
     url: "https://stackbinary.io/martech/shopify-websites",
-    siteName: "StackBinary",
+    siteName: "Stackbinary",
     type: "website",
   },
   twitter: { card: "summary_large_image" },
@@ -40,7 +40,7 @@ export default function ShopifyWebsitesPage() {
       </section>
       <Banner
         bannerStyle={{
-          backgroundImage: "linear-gradient(180deg, #000000, #00000000)",
+          backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)",
         }}
         ctaHref="#martech-lead-form"
         ctaLabel="Get a Store & Stack Quote"

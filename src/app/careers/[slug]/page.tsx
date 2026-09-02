@@ -26,15 +26,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${job.title} - ${job.team} | StackBinary Careers`,
+    title: `${job.title} - ${job.team} | Stackbinary Careers`,
     description: `${job.blurb} Join our ${job.team} team in ${job.location}. ${job.type} position for ${job.experienceLevel} level professionals.`,
-    keywords: `${job.title}, ${job.team}, ${job.location}, ${job.type}, careers, jobs, StackBinary`,
+    keywords: `${job.title}, ${job.team}, ${job.location}, ${job.type}, careers, jobs, Stackbinary`,
     alternates: { canonical: `https://stackbinary.io/careers/${job.slug}` },
     openGraph: {
-      title: `${job.title} - ${job.team} | StackBinary Careers`,
+      title: `${job.title} - ${job.team} | Stackbinary Careers`,
       description: `${job.blurb} Join our ${job.team} team in ${job.location}.`,
       url: `https://stackbinary.io/careers/${job.slug}`,
-      siteName: 'StackBinary',
+      siteName: 'Stackbinary',
       type: 'website'
     },
     twitter: { card: 'summary_large_image' }
@@ -68,7 +68,7 @@ export default async function JobPage({ params }: Props) {
     "directApply": true,
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "StackBinary",
+      "name": "Stackbinary",
       "sameAs": "https://stackbinary.io"
     },
     "jobLocation": {

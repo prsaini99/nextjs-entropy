@@ -12,7 +12,7 @@ export default function FeaturesWrapper() {
     const title = "Services Built for Impact"
     const description = "We help you launch faster and operate reliably with AI, cloud, custom software, data analytics, DevOps and more."
     return (
-        <section>
+        <section className="ink-section">
             <div className="padding-global">
                 <div className="w-layout-blockcontainer container w-container">
                     <div className="features-wrapper">
@@ -56,7 +56,7 @@ export default function FeaturesWrapper() {
                                                         <img src={feature.icon} alt="Icon" />
                                                     </div>}
                                                 {feature.quote &&
-                                                    <p className='text-gray-500 text-lg mb-0'>
+                                                    <p className='text-[#17171A]/55 text-lg mb-0'>
                                                         “{feature.quote}”
                                                     </p>}
                                             </div>

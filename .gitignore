@@ -78,3 +78,8 @@ temp_interactive_push.bat
 # Credential files that must never be committed
 ads-manager-api-key.txt
 *api-key*.txt
+
+# Local design sources (not site assets): the film master folder and brand stills
+/scroll-hero/
+/brand/
+/MARKETING-STACK-SETUP.md

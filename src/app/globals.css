@@ -131,3 +131,134 @@ main.flex-1.relative > div.py-8 {
   descent-override: 24%;
   line-gap-override: 9%;
 }
+
+/* ===== Design pass 2026-09 · "The Thread" language site-wide =====
+   The landing film set the register: Satoshi, paper #FAF8F4, ink #17171A,
+   signal red #E0362C, quiet micro-interactions. These overrides bring the
+   global chrome and link behaviour in line without touching markup.
+   All hover effects are transform/opacity only: compositor-cheap, no
+   layout thrash, no JS, zero measurable performance cost. */
+
+/* Slim, glassy navbar over every page */
+.navbar.w-nav {
+  background: rgba(250, 248, 244, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(23, 23, 26, 0.07);
+}
+.navbar .navbar-component { min-height: 62px; }
+.navbar .nav-link {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  opacity: 0.78;
+  transition: opacity 0.18s ease, color 0.18s ease;
+}
+.navbar .nav-link:hover { opacity: 1; color: #E0362C; }
+.navbar .nav-link.w--current { opacity: 1; }
+
+/* The arrow ride: any text link slides toward where it points. */
+.text-link,
+.footer-link {
+  display: inline-block;
+  transition: transform 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+}
+.text-link:hover,
+.footer-link:hover { transform: translateX(4px); color: #E0362C; }
+
+/* Primary buttons breathe on hover: lift + the arrow language. */
+.primary-button {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(224, 54, 44, 0.28);
+}
+.secondary-button { transition: transform 0.18s ease; }
+.secondary-button:hover { transform: translateX(4px); }
+
+/* Cards across the site get the v2 lift. */
+.office-location,
+.insight-article a { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.office-location:hover { transform: translateY(-3px); box-shadow: 0 12px 34px rgba(23,23,26,.08); }
+
+@media (prefers-reduced-motion: reduce) {
+  .text-link, .footer-link, .primary-button, .secondary-button, .office-location { transition: none; }
+  .text-link:hover, .footer-link:hover, .primary-button:hover, .secondary-button:hover, .office-location:hover { transform: none; box-shadow: none; }
+}
+
+/* Paper ground site-wide (owner call 2026-09-02): the film's #FAF8F4 becomes
+   the page background everywhere; cards go white and float on it, matching
+   the landing's content sections. */
+/* Paper on <html> only: the ground must live on the root canvas, because
+   Webflow background videos sit at z-index:-100 and vanish behind any
+   painted <body>. The video containers also isolate their stacking. */
+html { background: #FAF8F4 !important; }
+body { background: transparent !important; }
+.w-background-video { isolation: isolate; }
+.page-wrapper, .main-wrapper, section { background-color: transparent; }
+
+
+/* Ink footer site-wide (owner call 2026-09-02): the dark third of the
+   palette lives on every page as the closing block, mirroring the film's
+   dark scenes and the landing's proof section. */
+.site-footer-ink { background:#17171A !important; color:#FAF8F4; }
+.site-footer-ink .footer-link, .site-footer-ink a { color:rgba(250,248,244,.72); }
+.site-footer-ink .footer-link:hover, .site-footer-ink a:hover { color:#FAF8F4; }
+.site-footer-ink .text-size-medium, .site-footer-ink .paragraph, .site-footer-ink h1, .site-footer-ink h2, .site-footer-ink div { color:inherit; }
+.site-footer-ink .border-t { border-color:rgba(250,248,244,.14) !important; }
+.site-footer-ink input { background:rgba(250,248,244,.08); border:1px solid rgba(250,248,244,.18); color:#FAF8F4; }
+.site-footer-ink input::placeholder { color:rgba(250,248,244,.45); }
+.site-footer-ink img { filter:brightness(0) invert(1); }
+
+/* ===== Ink sections: the dark half of the palette, structurally =====
+   Every page alternates paper and ink. Add .ink-section to any <section>
+   and everything inside re-tones: paper text, translucent ink cards, red
+   accents untouched. Webflow's grey card classes are remapped on both
+   grounds so no grey survives anywhere. */
+.phase-cards, .about-features-card { background:#fff !important; border:1px solid rgba(23,23,26,.08); }
+.phase-number { color: rgba(23,23,26,.1) !important; }
+
+.ink-section { background:#17171A !important; color:#FAF8F4; }
+.ink-section h1, .ink-section h2, .ink-section h3, .ink-section h4,
+.ink-section .heading-3, .ink-section .heading-4, .ink-section .heading-5,
+.ink-section .text-size-large, .ink-section .text-size-medium, .ink-section .paragraph { color:#FAF8F4; }
+.ink-section [class*="text-[#17171A]"] { color: rgba(250,248,244,.82) !important; }
+.ink-section [class*="border-[#17171A]"] { border-color: rgba(250,248,244,.14) !important; }
+.ink-section .bg-white, .ink-section [class*="bg-[#17171A]/"] { background: rgba(250,248,244,.06) !important; border-color: rgba(250,248,244,.14) !important; color:#FAF8F4; }
+.ink-section .phase-number { color: rgba(250,248,244,.1) !important; }
+.ink-section .read-more-tag { border-color: rgba(250,248,244,.3); }
+.ink-section .text-link, .ink-section a:not(.primary-button):not(.secondary-button) { color:#FAF8F4; }
+.ink-section .secondary-button { color:#FAF8F4; border-color: rgba(250,248,244,.4); }
+.ink-section input, .ink-section select, .ink-section textarea { background: rgba(250,248,244,.08); color:#FAF8F4; border-color: rgba(250,248,244,.2); }
+.ink-section input::placeholder, .ink-section textarea::placeholder { color: rgba(250,248,244,.45); }
+.ink-section details { background: rgba(250,248,244,.06) !important; border-color: rgba(250,248,244,.14) !important; }
+.ink-section .opacity-80, .ink-section .opacity-60 { color:#FAF8F4; }
+
+/* Section breathing room: cards never touch a tone change. Ink sections and
+   the card-grid wrappers get generous vertical padding so the paper/ink
+   boundary reads as a deliberate band, not a crop. */
+.ink-section { padding-top: 64px; padding-bottom: 64px; }
+.phase-cards-wrapper, .about-features-wrapper { padding-top: 24px; padding-bottom: 72px; }
+.phase-cards-grid { margin-bottom: 8px; }
+@media (max-width: 767px) { .ink-section { padding-top: 48px; padding-bottom: 48px; } }
+
+/* Guard: any card carrying a photo inside an ink section stays legible. */
+.ink-section .about-features-card, .ink-section .phase-cards { color:#FAF8F4; }
+.ink-section .about-features-card h1, .ink-section .about-features-card h2, .ink-section .about-features-card h3,
+.ink-section .phase-cards h1, .ink-section .phase-cards h2, .ink-section .phase-cards h3 { color:#FAF8F4; }
+
+/* Step/phase cards inside ink sections become translucent ink cards with
+   paper text (photo stays), never white cut-outs with invisible headings. */
+.ink-section .steps-item, .ink-section .phase-cards, .ink-section .about-features-card {
+  background: #232327 !important; color:#FAF8F4 !important; border:1px solid rgba(250,248,244,.12) !important;
+}
+.ink-section .steps-item *:not(a):not(.primary-button):not(.primary-button *):not(img) { color:#FAF8F4; }
+.ink-section .steps-item .read-more-tag, .ink-section .steps-item [class*="border"] { border-color: rgba(250,248,244,.3) !important; }
+
+/* Inside ink sections, card inner wrappers must not paint their own white
+   (Webflow gives .steps-item / .phase-cards content blocks a white ground). */
+.ink-section .steps-item div:not([class*="image"]),
+.ink-section .phase-cards div:not([class*="image"]),
+.ink-section .about-features-card div:not([class*="image"]) { background-color: transparent !important; }
+
