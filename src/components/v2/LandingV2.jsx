@@ -311,7 +311,7 @@ export default function LandingV2() {
       {/* ---------- Static hero (mobile / reduced motion / pre-hydration) ---------- */}
       {reduced !== false && (
         <section className="v2-static-hero">
-          <img src="/scroll-hero/poster.jpg" alt="" />
+          <img src="/scroll-hero/poster.jpg" alt="" fetchPriority="high" decoding="async" />
           <div className="inner">
             <div className="k">STACKBINARY</div>
             <h1>AI, Cloud &amp; Custom Software.<br />Built to Ship and Scale.</h1>
