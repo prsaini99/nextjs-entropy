@@ -177,6 +177,7 @@ export default function LandingV2() {
     let target = 0;
     let current = 0;
     let seekBusy = false;
+    let seekAt = 0;
     let raf = 0;
     const onSeeked = () => { seekBusy = false; };
     film.addEventListener('seeked', onSeeked);
@@ -236,8 +237,11 @@ export default function LandingV2() {
       if (!isFinite(current)) current = 0;
       const gap = Math.abs(target - current);
       current += (target - current) * (gap > 6 ? 0.55 : gap > 2 ? 0.3 : 0.16);
+      // Watchdog: a 'seeked' can be lost when the tab is frozen or restored
+      // from the back/forward cache; never let one lost event stall the film.
+      if (seekBusy && performance.now() - seekAt > 250) seekBusy = false;
       if (!seekBusy && Math.abs(film.currentTime - current) > 0.01 && film.readyState >= 2) {
-        seekBusy = true;
+        seekBusy = true; seekAt = performance.now();
         try { film.currentTime = current; } catch { seekBusy = false; }
       }
       capRefs.current.forEach((el, i) => {
