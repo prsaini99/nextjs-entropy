@@ -3,16 +3,16 @@ import React from 'react'
 import AnimatedInViewDiv from '@/components/Animate/AppearInView';
 
 const logos = [
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c98_Logos%20Grid%2002.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce7_Logos04.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c97_Logos%20Grid%2007.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce5_Logos01.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c8f_Logos%20Grid%2003.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c96_Logos%20Grid%2009.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c95_Logos%20Grid%2006.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce6_Logos03.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c94_Logos%20Grid%2010.svg', },
-    { src: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ce4_Logos02.svg', },
+    { src: '/media/logos-grid-02.svg', },
+    { src: '/media/logos04.svg', },
+    { src: '/media/logos-grid-07.svg', },
+    { src: '/media/logos01.svg', },
+    { src: '/media/logos-grid-03.svg', },
+    { src: '/media/logos-grid-09.svg', },
+    { src: '/media/logos-grid-06.svg', },
+    { src: '/media/logos03.svg', },
+    { src: '/media/logos-grid-10.svg', },
+    { src: '/media/logos02.svg', },
 ];
 
 export default function TrustedByAbout() {

@@ -27,7 +27,7 @@ export default function IndustriesPage() {
         }}
         title="Tell Us Your Industry, We'll Show You What We'd Build"
         description="Book a discovery call and we'll walk you through the closest systems we've already shipped for companies like yours."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );

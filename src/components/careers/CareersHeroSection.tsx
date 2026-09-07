@@ -45,7 +45,7 @@ export default function CareersHeroSection() {
                   <div className="button-icon">
                     <div className="icon-wrapper">
                       <img loading="lazy"
-                        src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64ccb_Arrow.svg"
+                        src="/media/arrow.svg"
                         alt="Arrow" className="icon transition-transform" />
                     </div>
                   </div>

@@ -25,9 +25,9 @@ export default function HeroSection() {
                         </AnimatedInViewDiv>
                         <AnimatedInViewDiv className="features-hero-image container">
                             <img sizes="95vw"
-                                srcSet="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c74_Background%2520Image-p-500.jpg 500w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c74_Background%2520Image-p-800.jpg 800w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c74_Background%2520Image-p-1080.jpg 1080w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c74_Background%2520Image-p-1600.jpg 1600w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c74_Background%2520Image-p-2000.jpg 2000w, https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c74_Background%20Image.jpg 2880w"
+                                srcSet="/media/background-image-p-500.webp 500w, /media/background-image-p-800.webp 800w, /media/background-image-p-1080.webp 1080w, /media/background-image-p-1600.webp 1600w, /media/background-image-p-2000.webp 2000w, /media/background-image.webp 2880w"
                                 alt="Background Image"
-                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c74_Background%20Image.jpg"
+                                src="/media/background-image.webp"
                                 loading="lazy" className="image" />
                             <div className="gradient-overlay hero"></div>
                         </AnimatedInViewDiv>

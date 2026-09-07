@@ -31,7 +31,7 @@ export default function HeroSection() {
                         <AnimatedInViewDiv className="about-hero-image" delay={0.4}>
                             <div className="hero-image-container">
                                 <img
-                                    src="/hero-dev-team.jpg"
+                                    src="/media/hero-dev-team.webp"
                                     alt="Software development team collaboration"
                                     loading="lazy"
                                     style={{

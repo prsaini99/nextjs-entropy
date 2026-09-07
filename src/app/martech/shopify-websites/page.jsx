@@ -46,7 +46,7 @@ export default function ShopifyWebsitesPage() {
         ctaLabel="Get a Store & Stack Quote"
         title="Want a Store That Sells?"
         description="Storefront + email automation + ad intelligence + loyalty in one connected system, the store fills the funnel, the stack converts it."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );

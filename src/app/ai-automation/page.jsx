@@ -33,7 +33,7 @@ export default function Page() {
         ctaLabel="Get My Top 3 Automations"
         title="Ready to Get the Hours Back?"
         description="Start with the two-minute diagnostic. We'll tell you the three automations worth building first, and what each would save your team every week."
-        image="/project-based.jpg"
+        image="/media/project-based.webp"
       />
     </>
   );

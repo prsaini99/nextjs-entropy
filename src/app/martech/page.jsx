@@ -173,7 +173,7 @@ export default function MartechPage() {
         ctaLabel="Get My Free Stack Audit"
         title="Ready to Own Your Marketing Stack?"
         description="Start with a free stack audit. We'll map your tools, spend and data flows, and show you exactly what to build first."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );

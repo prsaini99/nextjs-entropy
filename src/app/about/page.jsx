@@ -58,7 +58,7 @@ export default function About() {
         }}
         title="Ready to get started?"
         description="Let's build software that ships fast, scales reliably and proves its value in production."
-        image="https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/about-sec5"
+        image="/media/banner-image.webp"
       // subDescription=""Our process is a lot like a great recipe—precise, consistent, and guaranteed to impress (without burning anything).""
       />
     </>

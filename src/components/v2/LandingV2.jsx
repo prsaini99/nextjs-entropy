@@ -7,10 +7,11 @@ import Header from '@/components/Header';
 /**
  * Landing v2: "The Thread".
  *
- * A scroll-scrubbed 63.7s brand film owns the first 800vh (engine ported
- * from scroll-hero/index.html: blob fetch so seeking never needs Range
- * support, rAF lerp toward the scroll-mapped time, seeks gated on
- * 'seeked'). Every film chapter carries its own contextual CTA, a fixed
+ * A scroll-scrubbed 62.5s brand film owns the first 800vh (engine ported
+ * from scroll-hero/index.html: the film is pulled in 2MB Range chunks
+ * behind a loading curtain and handed to the <video> as a Blob so every
+ * scrub seek is local, rAF lerp toward the scroll-mapped time, seeks
+ * gated on 'seeked'). Every film chapter carries its own contextual CTA, a fixed
  * dock morphs its label as the visitor moves through the page, and the
  * film's red-thread motif continues below as an SVG line that draws
  * itself with scroll through the proof sections.
@@ -21,6 +22,8 @@ import Header from '@/components/Header';
  */
 
 const DUR = 62.54;
+// Served straight to the <video> element; see the loader effect below.
+const FILM_SRC = '/scroll-hero/hero-scrub.mp4';
 
 const CHAPTERS = [
   { k: 'STACKBINARY', in: -1, out: 4.6, ink: false,
@@ -92,6 +95,8 @@ export default function LandingV2() {
   const [pastFilm, setPastFilm] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [atTop, setAtTop] = useState(true);
+  const [loaded, setLoaded] = useState(false);
+  const [loadPct, setLoadPct] = useState(0);
   const contentRef = useRef(null);
   const ctaRef = useRef(null);
   const tipRef = useRef(null);
@@ -110,14 +115,64 @@ export default function LandingV2() {
   useEffect(() => {
     if (reduced !== false) return;
     const film = filmRef.current;
-    let revoke = null;
-    fetch('/scroll-hero/hero-scrub.mp4')
-      .then((r) => r.blob())
-      .then((b) => {
-        revoke = URL.createObjectURL(b);
-        film.src = revoke;
-      })
-      .catch(() => {});
+    // Film loader. Chrome only buffers a short window of a preload="auto"
+    // video (about 14s of this 62s film) and a single fetch() of the 24MB
+    // file fails part-way with net::ERR_FAILED in regular Chrome profiles.
+    // So: pull the file in 2MB Range chunks (progress for the curtain),
+    // assemble a Blob and hand it to the <video>, then every scrub seek is
+    // local. If chunking fails after a retry, fall back to plain streaming
+    // and open the curtain anyway; nobody waits on a broken pipe.
+    let aborted = false;
+    let objectUrl = null;
+    let gateDone = false;
+    const openGate = () => { if (!gateDone) { gateDone = true; setLoadPct(1); setLoaded(true); } };
+    const CHUNK = 2 * 1024 * 1024;
+    const fetchChunk = async (start, end, attempt = 0) => {
+      try {
+        const r = await fetch(FILM_SRC, { headers: { Range: `bytes=${start}-${end}` } });
+        if (r.status !== 206 && r.status !== 200) throw new Error('status ' + r.status);
+        return await r.arrayBuffer();
+      } catch (e) {
+        if (attempt < 2) { await new Promise((res) => setTimeout(res, 400 * (attempt + 1))); return fetchChunk(start, end, attempt + 1); }
+        throw e;
+      }
+    };
+    const loadChunked = async () => {
+      const head = await fetch(FILM_SRC, { headers: { Range: 'bytes=0-0' } });
+      const range = head.headers.get('Content-Range') || '';
+      const total = parseInt(range.split('/')[1] || '0', 10) || parseInt(head.headers.get('Content-Length') || '0', 10);
+      if (!total) throw new Error('no length');
+      const parts = [];
+      let got = 0;
+      for (let start = 0; start < total; start += CHUNK) {
+        if (aborted) return;
+        const buf = await fetchChunk(start, Math.min(start + CHUNK, total) - 1);
+        parts.push(buf); got += buf.byteLength;
+        setLoadPct(Math.min(0.98, got / total));
+      }
+      if (aborted) return;
+      objectUrl = URL.createObjectURL(new Blob(parts, { type: 'video/mp4' }));
+      film.src = objectUrl;
+      film.load();
+      await new Promise((res) => {
+        if (film.readyState >= 2) return res();
+        const done = () => { film.removeEventListener('loadeddata', done); res(); };
+        film.addEventListener('loadeddata', done);
+        setTimeout(res, 3000);
+      });
+      openGate();
+    };
+    const gateTimer = setTimeout(() => {
+      // Slow line: stop holding the visitor. Stream directly instead.
+      if (!gateDone) { if (!film.src) { film.preload = 'auto'; film.src = FILM_SRC; film.load(); } openGate(); }
+    }, 12000);
+    loadChunked().catch(() => {
+      if (aborted) return;
+      film.preload = 'auto';
+      film.src = FILM_SRC;
+      film.load();
+      openGate();
+    });
 
     let target = 0;
     let current = 0;
@@ -211,9 +266,17 @@ export default function LandingV2() {
       cancelAnimationFrame(raf);
       removeEventListener('scroll', onScroll);
       film.removeEventListener('seeked', onSeeked);
-      if (revoke) URL.revokeObjectURL(revoke);
+      aborted = true;
+      clearTimeout(gateTimer);
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
     };
   }, [reduced]);
+
+  useEffect(() => {
+    if (reduced !== false) return;
+    document.documentElement.style.overflow = loaded ? '' : 'hidden';
+    return () => { document.documentElement.style.overflow = ''; };
+  }, [reduced, loaded]);
 
   const seekTo = (i) => {
     const hero = heroRef.current;
@@ -267,6 +330,11 @@ export default function LandingV2() {
       {reduced === false && (
         <>
           <div className="v2-bar" style={{ width: `${progress * 100}%` }} />
+          <div className={`v2-curtain ${loaded ? 'off' : ''}`} aria-hidden={loaded}>
+            <img src="/scroll-hero/lockup-white.png" alt="Stackbinary" />
+            <div className="track"><div className="fill" style={{ width: `${Math.round(loadPct * 100)}%` }} /></div>
+            <div className="pct">{Math.round(loadPct * 100)}%</div>
+          </div>
           <div className="v2-stage">
             <video ref={filmRef} muted playsInline preload="auto" poster="/scroll-hero/poster.jpg" />
           </div>
@@ -398,6 +466,12 @@ const v2css = `
 .v2-nav .navcta:hover { background:#E0362C; color:#fff !important; }
 @media (max-width:1023px) { .v2-nav { gap:18px; font-size:13px; } .v2-nav a:not(.navcta) { display:none; } }
 .v2-bar { position:fixed; top:0; left:0; height:3px; background:#E0362C; z-index:50; }
+.v2-curtain { position:fixed; inset:0; z-index:70; background:#17171A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; transition:opacity .6s ease, visibility .6s; }
+.v2-curtain img { width:min(260px,50vw); opacity:.95; }
+.v2-curtain .track { width:min(260px,50vw); height:2px; background:rgba(250,248,244,.15); overflow:hidden; }
+.v2-curtain .fill { height:100%; background:#E0362C; transition:width .15s linear; }
+.v2-curtain .pct { color:rgba(250,248,244,.55); font-size:12px; font-weight:700; letter-spacing:.2em; }
+.v2-curtain.off { opacity:0; visibility:hidden; pointer-events:none; }
 .v2-stage { position:fixed; inset:0; overflow:hidden; z-index:0; }
 .v2-stage video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .v2-track { height:800vh; position:relative; z-index:1; }

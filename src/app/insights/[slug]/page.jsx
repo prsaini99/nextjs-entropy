@@ -86,7 +86,7 @@ export default async function InsightPage({ params }) {
         bannerStyle={{ backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)" }}
         title="Want the Answer for Your Specific Case?"
         description="Book a discovery call, we'll map this to your situation with numbers from work we've already shipped."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );

@@ -8,17 +8,17 @@ export default function Team() {
         {
             name: 'Dr. Jane Smith',
             role: 'Chief AI Scientist',
-            image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd3_Entropy%20Team%20Images%2001.jpg',
+            image: '/media/entropy-team-images-01.webp',
         },
         {
             name: 'Emily White',
             role: 'Lead Data Analyst',
-            image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd4_Entropy%20Team%20Images%2002.jpg',
+            image: '/media/entropy-team-images-02.webp',
         },
         {
             name: 'John Doe',
             role: 'Head of Product Development',
-            image: 'https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd5_Entropy%20Team%20Images%2003.jpg',
+            image: '/media/entropy-team-images-03.webp',
         },
     ]
 

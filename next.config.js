@@ -35,24 +35,11 @@ const nextConfig = {
     ];
   },
 
-  // Image optimization. `domains` is deprecated in favour of remotePatterns,
-  // which already covers both hosts.
+  // All site media is self-hosted under public/media (the previous
+  // Cloudinary account started returning 401 for every asset, and the
+  // Webflow CDN was a leftover third-party dependency). No remote hosts.
   images: {
-    unoptimized: false,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.prod.website-files.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+    formats: ['image/avif', 'image/webp'],
   },
 };
 

@@ -91,7 +91,7 @@ export default function ServicePageTemplate({ service }) {
                                                             width="14"
                                                             height="12"
                                                             alt="Check Icon"
-                                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                                                            src="/media/check-icon.svg"
                                                             className="check-icon"
                                                         />
                                                     </div>
@@ -169,7 +169,7 @@ export default function ServicePageTemplate({ service }) {
                                         <div className="features-heading-wrapper">
                                             <div className='flex items-center gap-4 mb-6'>
                                                 <div className="features-icon-wrapper">
-                                                    <img src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c64_Icon-1.svg" alt="Tech Icon" />
+                                                    <img src="/media/icon-1.svg" alt="Tech Icon" />
                                                 </div>
                                                 <div className="heading-4 text-weight-medium">
                                                     {detailedContent.techTools.title}
@@ -184,7 +184,7 @@ export default function ServicePageTemplate({ service }) {
                                                             width="14"
                                                             height="12"
                                                             alt="Tech Icon"
-                                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                                                            src="/media/check-icon.svg"
                                                             className="check-icon"
                                                         />
                                                     </div>
@@ -233,7 +233,7 @@ export default function ServicePageTemplate({ service }) {
                                         <div className="features-heading-wrapper">
                                             <div className='flex items-center gap-4 mb-6'>
                                                 <div className="features-icon-wrapper">
-                                                    <img src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c63_Icon.svg" alt="Results Icon" />
+                                                    <img src="/media/icon.svg" alt="Results Icon" />
                                                 </div>
                                                 <div className="heading-4 text-weight-medium">
                                                     {detailedContent.outcomes.title}
@@ -248,7 +248,7 @@ export default function ServicePageTemplate({ service }) {
                                                             width="14"
                                                             height="12"
                                                             alt="Check Icon"
-                                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                                                            src="/media/check-icon.svg"
                                                             className="check-icon"
                                                         />
                                                     </div>

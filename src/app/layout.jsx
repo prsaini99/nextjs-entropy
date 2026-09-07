@@ -6,6 +6,9 @@ import Analytics from "@/components/Analytics";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
 export const metadata = {
+  // Absolute base for relative OG/twitter image URLs (they were resolving
+  // to localhost without it, so social previews had no image).
+  metadataBase: new URL("https://stackbinary.io"),
   title: "Stackbinary.io - Custom Software Development & IT Solutions",
   description: "Leading IT consulting firm specializing in custom software development, cloud solutions, AI/ML, cybersecurity, and digital transformation services. Transform your business with cutting-edge technology.",
   keywords: "custom software development, IT consulting, cloud solutions, AI development, cybersecurity, digital transformation, web development, mobile app development",
@@ -49,27 +52,26 @@ export default function RootLayout({ children }) {
             the two workhorse weights so the font usually wins the race; the
             metric-matched fallback in globals.css covers the times it loses.
             React 19 hoists these <link> tags into <head>. */}
-        <link rel="preconnect" href="https://cdn.prod.website-files.com" crossOrigin="anonymous" />
         <link
           rel="preload"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
-          href="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c1b_Satoshi-Regular.woff2"
+          href="/fonts/satoshi-regular.woff2"
         />
         <link
           rel="preload"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
-          href="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c1d_Satoshi-Medium.woff2"
+          href="/fonts/satoshi-medium.woff2"
         />
         <link
           rel="preload"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
-          href="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c23_Satoshi-Bold.woff2"
+          href="/fonts/satoshi-bold.woff2"
         />
         <Analytics />
         <OaiqPixel />

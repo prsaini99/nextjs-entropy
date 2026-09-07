@@ -6,17 +6,17 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 const features = [
     {
-        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/g2cs03rgp0qd9icsldvr',
+        image: '/media/card-01.webp',
         title: 'Innovation with Purpose',
         description: 'Use the right tech to solve the right problem, no buzzword bloat.',
     },
     {
-        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/kumogbn1j46cjhackabb',
+        image: '/media/card-02.webp',
         title: 'Customer First',
         description: 'Align on outcomes, not outputs. Your KPIs guide our roadmap.',
     },
     {
-        image: 'https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/y4barww5t70afjz7ugxj',
+        image: '/media/card-03.webp',
         title: 'Transparency',
         description: 'Clear timelines, visible backlogs, weekly demos and open docs.',
     },

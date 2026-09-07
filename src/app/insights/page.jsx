@@ -82,7 +82,7 @@ export default function InsightsPage() {
         bannerStyle={{ backgroundImage: "linear-gradient(180deg, #17171A, #17171A00)" }}
         title="Have the Question These Articles Answer?"
         description="Book a discovery call, we'll give you the specific answer for your case, from work we've already shipped."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );

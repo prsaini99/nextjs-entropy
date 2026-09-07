@@ -16,7 +16,7 @@ export const metadata = {
     url: "https://stackbinary.io/services",
     images: [
       {
-        url: "https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/ngnwgqkwckycyz6ms1wz",
+        url: "/og/services.jpg",
         width: 1200,
         height: 630,
         alt: "Stackbinary IT Services - Custom Software, Cloud, AI Solutions",
@@ -27,7 +27,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Services Built for Impact | Stackbinary.io",
     description: "We help you launch faster and operate reliably with AI, cloud, custom software, data analytics, DevOps and more.",
-    images: ["https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/ngnwgqkwckycyz6ms1wz"],
+    images: ["/og/services.jpg"],
   },
   alternates: {
     canonical: "https://stackbinary.io/services",
@@ -142,7 +142,7 @@ export default function ServicesPage() {
 
       <FeaturesWrapper />
       <Banner
-        image="https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/sevices/ngnwgqkwckycyz6ms1wz"
+        image="/media/banner-image.webp"
         title="Because first impressions matter, and loading spinners don't."
         description="Our solutions are designed to deliver measurable results and drive growth. Start your journey now and experience the future of technology."
         subDescription="And yes, we'll make sure the tech jargon comes with subtitles."

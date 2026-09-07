@@ -128,7 +128,7 @@ export default function JobDetailsPage({ job }: Props) {
                   <div className="features-image-container">
                     <div className="features-image-wrapper">
                       <Image
-                        src="/what-youll-do.jpg"
+                        src="/media/what-youll-do.webp"
                         alt="What You'll Do"
                         fill
                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
@@ -152,7 +152,7 @@ export default function JobDetailsPage({ job }: Props) {
                               width="14"
                               height="12"
                               alt="Check Icon"
-                              src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                              src="/media/check-icon.svg"
                               className="check-icon"
                             />
                           </div>
@@ -179,7 +179,7 @@ export default function JobDetailsPage({ job }: Props) {
                               width="14"
                               height="12"
                               alt="Check Icon"
-                              src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                              src="/media/check-icon.svg"
                               className="check-icon"
                             />
                           </div>
@@ -191,7 +191,7 @@ export default function JobDetailsPage({ job }: Props) {
                   <div className="features-image-container">
                     <div className="features-image-wrapper">
                       <Image
-                        src="/what-youll-bring.jpg"
+                        src="/media/what-youll-bring.webp"
                         alt="What You'll Bring"
                         fill
                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
@@ -209,7 +209,7 @@ export default function JobDetailsPage({ job }: Props) {
                     <div className="features-image-container">
                       <div className="features-image-wrapper">
                         <Image
-                        src="/nice-to-have.jpg"
+                        src="/media/nice-to-have.webp"
                         alt="Nice to Have"
                         fill
                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
@@ -233,7 +233,7 @@ export default function JobDetailsPage({ job }: Props) {
                                 width="14"
                                 height="12"
                                 alt="Check Icon"
-                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                                src="/media/check-icon.svg"
                                 className="check-icon"
                               />
                             </div>
@@ -268,7 +268,7 @@ export default function JobDetailsPage({ job }: Props) {
                               width="14"
                               height="12"
                               alt="Check Icon"
-                              src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                              src="/media/check-icon.svg"
                               className="check-icon"
                             />
                           </div>
@@ -321,7 +321,7 @@ export default function JobDetailsPage({ job }: Props) {
                               width="14"
                               height="12"
                               alt="Check Icon"
-                              src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                              src="/media/check-icon.svg"
                               className="check-icon"
                             />
                           </div>
@@ -333,7 +333,7 @@ export default function JobDetailsPage({ job }: Props) {
                   <div className="features-image-container">
                     <div className="features-image-wrapper">
                       <Image
-                        src="/why-join-us.jpg"
+                        src="/media/why-join-us.webp"
                         alt="Why Join Stackbinary"
                         fill
                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"

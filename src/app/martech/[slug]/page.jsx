@@ -73,7 +73,7 @@ export default async function MartechSlugPage({ params }) {
         ctaLabel="Get My Build Quote"
         title="Want This Running for Your Brand?"
         description="Book a discovery call, we'll walk you through the live product and map it to your workflow."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );

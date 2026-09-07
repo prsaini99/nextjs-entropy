@@ -35,26 +35,26 @@ export default function HeroSection() {
                         {/* Video Section */}
                         <AnimatedInViewDiv className="about-hero-image" delay={0.4}>
                             <div
-                                data-poster-url="https://cdn.prod.website-files.com/66d89db32b418832a387e57c%2F66d8c23fec6488becdc7f741_About%20Hero%20Video-poster-00001.jpg"
-                                data-video-urls="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.mp4,https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c75_About%20Hero%20Video-transcode.webm"
+                                data-poster-url="/media/about-hero-video-poster-00001.webp"
+                                data-video-urls="/media/about-hero-video-transcode.mp4"
                                 data-autoplay="true"
                                 data-loop="true"
                                 className="hero-video w-background-video w-background-video-atom"
                             >
                                 <video
                                     id="hero-video"
-                                    poster="https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/about-poster"
+                                    poster="/media/about-hero-video-poster-00001.webp"
                                     autoPlay
                                     loop
                                     muted
                                     playsInline
                                     style={{
-                                        backgroundImage: `url("https://res.cloudinary.com/ddnydyvlf/image/upload/f_auto,q_auto/v1/stack-binary-live/about-poster")`,
+                                        backgroundImage: `url("/media/about-hero-video-poster-00001.webp")`,
                                         objectFit: "cover",
                                     }}
                                 >
                                     <source
-                                        src="https://res.cloudinary.com/ddnydyvlf/video/upload/f_auto:video,q_auto/v1/stack-binary-live/about-video"
+                                        src="/media/about-hero-video-transcode.mp4"
                                         type="video/mp4"
                                     />
                                 </video>

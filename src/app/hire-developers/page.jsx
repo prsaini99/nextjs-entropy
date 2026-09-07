@@ -58,7 +58,7 @@ export default function HireDevelopersPage() {
         }}
         title="Ready to Scale Your Development?"
         description="Let's discuss how our skilled developers can help accelerate your project and bring your vision to life."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );

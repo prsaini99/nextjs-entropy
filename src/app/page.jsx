@@ -11,7 +11,7 @@ export const metadata = {
     description: 'AI, cloud and custom software that ship and scale.',
     url: 'https://stackbinary.io/',
     siteName: 'Stackbinary',
-    images: [{ url: '/og-home.jpg' }],
+    images: [{ url: '/og/home.jpg', width: 1200, height: 630 }],
     type: 'website'
   },
   twitter: { card: 'summary_large_image' }

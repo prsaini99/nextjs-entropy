@@ -45,10 +45,10 @@ export default function Banner({
                                         <div className="text-weight-medium">{ctaLabel}</div>
                                         <div className="icon-wrapper">
                                             <img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c40_Arrow%20Button.svg"
+                                                src="/media/arrow-button.svg"
                                                 alt="Arrow" className="arrow" />
                                             <img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c40_Arrow%20Button.svg"
+                                                src="/media/arrow-button.svg"
                                                 alt="Arrow" className="arrow" /></div>
                                     </div>
                                 </Link>
@@ -62,7 +62,7 @@ export default function Banner({
                             <Image
                                 sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, 92vw"
                                 alt="Banner Image"
-                                src={image || "https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64cd2_Banner%20Image.jpg"}
+                                src={image || "/media/banner-image.webp"}
                                 width={1920}
                                 height={1080}
                                 loading="lazy"

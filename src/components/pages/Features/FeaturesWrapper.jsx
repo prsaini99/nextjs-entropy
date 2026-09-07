@@ -41,6 +41,8 @@ export default function FeaturesWrapper() {
                                                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
                                                         src={feature.imageSrc}
                                                         alt="Features Image"
+                                                        loading="lazy"
+                                                        decoding="async"
                                                         className="image"
                                                     />
                                                     <div className="gradient-overlay bigger"></div>
@@ -75,7 +77,7 @@ export default function FeaturesWrapper() {
                                                             width="14"
                                                             height="12"
                                                             alt="Check Icon"
-                                                            src="https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c65_Check%20Icon.svg"
+                                                            src="/media/check-icon.svg"
                                                             className="check-icon"
                                                         />
                                                     </div>
@@ -100,6 +102,8 @@ export default function FeaturesWrapper() {
                                                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 56vw"
                                                         src={feature.imageSrc || ""}
                                                         alt="Features Image"
+                                                        loading="lazy"
+                                                        decoding="async"
                                                         className="image"
                                                     />
                                                     <div className="gradient-overlay bigger"></div>

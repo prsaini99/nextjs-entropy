@@ -40,7 +40,7 @@ export default async function IndustryPage({ params }) {
         }}
         title={`Building in ${industry.name}?`}
         description="Book a discovery call, we'll map your problem to the closest system we've already shipped."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );

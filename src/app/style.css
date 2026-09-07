@@ -5987,7 +5987,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c17_Satoshi-Italic.woff2")
+	src: url("/fonts/satoshi-italic.woff2")
 		format("woff2");
 	font-weight: 400;
 	font-style: italic;
@@ -5996,7 +5996,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c1a_Satoshi-BoldItalic.woff2")
+	src: url("/fonts/satoshi-bolditalic.woff2")
 		format("woff2");
 	font-weight: 700;
 	font-style: italic;
@@ -6005,7 +6005,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c1b_Satoshi-Regular.woff2")
+	src: url("/fonts/satoshi-regular.woff2")
 		format("woff2");
 	font-weight: 400;
 	font-style: normal;
@@ -6014,7 +6014,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c1d_Satoshi-Medium.woff2")
+	src: url("/fonts/satoshi-medium.woff2")
 		format("woff2");
 	font-weight: 500;
 	font-style: normal;
@@ -6023,7 +6023,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c1f_Satoshi-Black.woff2")
+	src: url("/fonts/satoshi-black.woff2")
 		format("woff2");
 	font-weight: 900;
 	font-style: normal;
@@ -6032,9 +6032,9 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi Variable";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c1c_Satoshi-Variable.woff2")
+	src: url("/fonts/satoshi-variable-4c1c.woff2")
 			format("woff2"),
-		url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c38_Satoshi-Variable.woff2")
+		url("/fonts/satoshi-variable-4c38.woff2")
 			format("woff2");
 	font-weight: 300 900;
 	font-style: normal;
@@ -6043,7 +6043,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c21_Satoshi-MediumItalic.woff2")
+	src: url("/fonts/satoshi-mediumitalic.woff2")
 		format("woff2");
 	font-weight: 500;
 	font-style: italic;
@@ -6052,7 +6052,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c20_Satoshi-BlackItalic.woff2")
+	src: url("/fonts/satoshi-blackitalic.woff2")
 		format("woff2");
 	font-weight: 900;
 	font-style: italic;
@@ -6061,7 +6061,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c22_Satoshi-LightItalic.woff2")
+	src: url("/fonts/satoshi-lightitalic.woff2")
 		format("woff2");
 	font-weight: 300;
 	font-style: italic;
@@ -6070,7 +6070,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c23_Satoshi-Bold.woff2")
+	src: url("/fonts/satoshi-bold.woff2")
 		format("woff2");
 	font-weight: 700;
 	font-style: normal;
@@ -6079,7 +6079,7 @@ textarea.text-field-contact {
 
 @font-face {
 	font-family: "Satoshi";
-	src: url("https://cdn.prod.website-files.com/66f30c8d2ac082d2aee64be2/66f30c8d2ac082d2aee64c24_Satoshi-Light.woff2")
+	src: url("/fonts/satoshi-light.woff2")
 		format("woff2");
 	font-weight: 300;
 	font-style: normal;

@@ -6,17 +6,17 @@ import AnimatedInViewDiv from '@/components/Animate/AppearInView'
 
 const models = [
     {
-        image: '/project-based.jpg',
+        image: '/media/project-based.webp',
         title: 'Project-Based',
         description: 'Dedicated team for specific projects with defined scope, timeline, and deliverables. Perfect for feature development, product launches, or system upgrades.',
     },
     {
-        image: '/monthly-retainer.jpg',
+        image: '/media/monthly-retainer.webp',
         title: 'Monthly Retainer',
         description: 'Ongoing development support with consistent monthly allocation. Ideal for continuous feature development, maintenance, and iterative improvements.',
     },
     {
-        image: '/extended-partnership.jpg',
+        image: '/media/extended-partnership.webp',
         title: 'Extended Partnership',
         description: 'Long-term collaboration for strategic initiatives. Your extended team for scaling operations, platform development, and digital transformation.',
     },

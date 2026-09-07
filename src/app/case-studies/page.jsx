@@ -27,7 +27,7 @@ export default function CaseStudiesPage() {
         }}
         title="Your Project Could Be the Next One Here"
         description="Tell us what you're building, we'll show you the closest thing we've already shipped."
-        image="/banner-dev-team.jpg"
+        image="/media/banner-dev-team.webp"
       />
     </>
   );
