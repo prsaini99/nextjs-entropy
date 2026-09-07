@@ -470,7 +470,7 @@ const v2css = `
 .v2-nav .navcta:hover { background:#E0362C; color:#fff !important; }
 @media (max-width:1023px) { .v2-nav { gap:18px; font-size:13px; } .v2-nav a:not(.navcta) { display:none; } }
 .v2-bar { position:fixed; top:0; left:0; height:3px; background:#E0362C; z-index:50; }
-.v2-curtain { position:fixed; inset:0; z-index:70; background:#17171A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; transition:opacity .6s ease, visibility .6s; }
+.v2-curtain { position:fixed; inset:0; z-index:10000; background:#17171A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; transition:opacity .6s ease, visibility .6s; }
 .v2-curtain img { width:min(260px,50vw); height:auto; max-height:none; object-fit:contain; opacity:.95; }
 .v2-curtain .track { width:min(260px,50vw); height:2px; background:rgba(250,248,244,.15); overflow:hidden; }
 .v2-curtain .fill { height:100%; background:#E0362C; transition:width .15s linear; }
