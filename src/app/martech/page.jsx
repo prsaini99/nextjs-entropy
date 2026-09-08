@@ -110,7 +110,7 @@ export default function MartechPage() {
           /insights, so this is how the articles inherit a useful crawl
           rhythm instead of sitting behind a page Google rarely visits. */}
       <RelatedInsights
-        slugs={["hubspot-alternatives-rent-vs-own", "n8n-vs-zapier-cost-comparison", "ai-voice-agent-platforms-compared"]}
+        slugs={["whatsapp-business-api-pricing-india", "hubspot-vs-pipedrive-vs-salesforce-vs-brevo-pricing", "best-ai-agent-builder-for-business"]}
         heading="The Build-vs-Buy Maths, Written Out"
         intro="Current pricing, verified against the vendors' own pages, and an honest read on when renting the SaaS beats hiring us."
       />

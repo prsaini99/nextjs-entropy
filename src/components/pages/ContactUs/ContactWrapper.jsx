@@ -557,12 +557,11 @@ export default function ContactWrapper() {
                                                     Mumbai, India
                                                 </div>
                                                 <div className="text-size-small opacity-80 mb-4" style={{ color: '#17171A' }}>
-                                                    Tower 3 - 604,<br />
-                                                    Spring grove Towers,<br />
-                                                    Kandivali East, 400101, India
+                                                    Kandivali East, 400101,<br />
+                                                    Mumbai, India
                                                 </div>
                                                 <a
-                                                    href="https://maps.google.com/?q=Tower+3+-+604,+Spring+grove+Towers,+Kandivali+East,+400101,+India"
+                                                    href="https://maps.google.com/?q=Kandivali+East,+400101,+Mumbai,+India"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center gap-2 text-size-small hover:text-[#E0362C] transition-colors"

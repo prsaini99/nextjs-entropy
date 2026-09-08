@@ -4,6 +4,15 @@ import { getMartechFaqs } from "@/data/martechFaqs";
 import MartechProductPage from "@/components/pages/Martech/MartechProductPage";
 import TribeLiveDemo from "@/components/pages/Martech/TribeLiveDemo";
 import Banner from "@/components/Banner";
+import RelatedInsights from "@/components/RelatedInsights";
+
+// Per-product further reading; unknown products fall back to the newest
+// articles inside RelatedInsights.
+const RELATED = {
+  "ai-call-center": ["voice-ai-pricing-per-minute-2026", "ai-answering-service-small-business-cost", "ai-calling-agent-pricing-india"],
+  "marketing-automation": ["whatsapp-business-api-pricing-india", "n8n-vs-zapier-cost-comparison", "best-ai-agent-builder-for-business"],
+  "social-automation": ["best-ai-agent-builder-for-business", "n8n-pricing-explained", "whatsapp-business-api-pricing-india"],
+};
 
 export function generateStaticParams() {
   return getAllMartechSlugs().map((slug) => ({ slug }));
@@ -64,6 +73,10 @@ export default async function MartechSlugPage({ params }) {
         page={{ ...page, faqs }}
         slug={slug}
         afterHero={slug === "creative-analysis" ? <TribeLiveDemo /> : null}
+      />
+      <RelatedInsights
+        slugs={RELATED[slug] || []}
+        heading="What the alternatives cost, verified this month"
       />
       <Banner
         bannerStyle={{

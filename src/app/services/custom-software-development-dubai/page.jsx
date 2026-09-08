@@ -24,7 +24,7 @@ export default function Page() {
       <AIServicePage page={page} slug={SLUG} />
       <DubaiOfficeStrip />
       <RelatedInsights
-        slugs={["hubspot-alternatives-rent-vs-own", "n8n-vs-zapier-cost-comparison", "ai-agent-vs-chatbot"]}
+        slugs={["best-real-estate-crm-dubai", "erp-software-dubai-comparison", "hubspot-alternatives-rent-vs-own"]}
         heading="How we think about building software, in public"
       />
     </>

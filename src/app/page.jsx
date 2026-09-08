@@ -1,6 +1,7 @@
 import LandingV2 from "@/components/v2/LandingV2";
 import Footer from "@/components/Footer";
 import FloatingChat from "@/components/FloatingChat";
+import RelatedInsights from "@/components/RelatedInsights";
 
 export const metadata = {
   title: "Stackbinary | AI, Cloud & Custom Software Development Company",
@@ -34,7 +35,7 @@ export default function Home() {
         "email": "contact@stackbinary.io",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Spring Grove Towers, Kandivali East",
+          "streetAddress": "Kandivali East",
           "addressLocality": "Mumbai",
           "addressRegion": "Maharashtra",
           "postalCode": "400101",
@@ -92,6 +93,13 @@ export default function Home() {
       />
       <LandingV2 />
       <div style={{ position: "relative", zIndex: 3, background: "#FAF8F4" }}>
+        {/* Visible link path from the film page to the comparison articles:
+            the landing is the most-crawled URL on the site, and the articles
+            are the only non-brand pages Google is testing on page 1. */}
+        <RelatedInsights
+          slugs={["voice-ai-pricing-per-minute-2026", "hubspot-vs-pipedrive-vs-salesforce-vs-brevo-pricing", "best-ai-agent-builder-for-business"]}
+          heading="What the tools actually cost, and when owning the system wins"
+        />
         <Footer />
       </div>
       <FloatingChat />

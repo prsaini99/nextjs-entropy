@@ -22,7 +22,7 @@ export default function Page() {
       ))}
       <AIServicePage page={page} slug={SLUG} />
       <RelatedInsights
-        slugs={["ai-voice-agent-platforms-compared", "ai-agent-vs-chatbot", "n8n-vs-zapier-cost-comparison"]}
+        slugs={["voice-ai-pricing-per-minute-2026", "ai-answering-service-small-business-cost", "ai-voice-agent-platforms-compared"]}
         heading="What the voice platforms actually cost, verified this month"
       />
     </>

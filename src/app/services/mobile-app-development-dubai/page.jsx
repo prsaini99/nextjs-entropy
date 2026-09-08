@@ -24,7 +24,7 @@ export default function Page() {
       <AIServicePage page={page} slug={SLUG} />
       <DubaiOfficeStrip />
       <RelatedInsights
-        slugs={["ai-receptionist-cost-comparison", "ai-voice-agent-platforms-compared", "ai-agent-vs-chatbot"]}
+        slugs={["best-real-estate-crm-dubai", "lovable-bolt-replit-prototype-to-production-cost", "ai-receptionist-cost-comparison"]}
         heading="How we think about building products, in public"
       />
     </>

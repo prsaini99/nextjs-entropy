@@ -22,7 +22,7 @@ export default function Page() {
       ))}
       <AIServicePage page={page} slug={SLUG} />
       <RelatedInsights
-        slugs={["ai-agent-vs-chatbot", "n8n-vs-zapier-cost-comparison", "hubspot-alternatives-rent-vs-own"]}
+        slugs={["best-ai-agent-builder-for-business", "lovable-bolt-replit-prototype-to-production-cost", "ai-agent-vs-chatbot"]}
         heading="How we think about building AI, in public"
       />
     </>

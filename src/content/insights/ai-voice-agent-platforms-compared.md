@@ -1,5 +1,5 @@
 ---
-title: "Retell vs Vapi vs Bland vs Synthflow: The Per-Minute Rates Are Not Comparable"
+title: "Retell vs Vapi vs Bland vs Synthflow: Per-Minute Rates Compared (2026)"
 description: "Four voice AI platforms quote per-minute pricing that includes wildly different things. Here is what each rate actually covers, the all-in cost at 1,000 minutes a month, and the one platform that has quietly left the self-serve market."
 date: "2026-08-23"
 ---
@@ -35,7 +35,7 @@ Retell also charges no platform fee, and layers optional add-ons at $0.005/min e
 
 **Vapi.** $0.05/min hosting, so $50 of Vapi, plus whatever your STT, LLM, TTS and telephony providers charge. Vapi passes model costs through at cost, and charges nothing at all on top if you bring your own API keys. Ten concurrent lines are included, additional lines are $10 each per month.
 
-We are deliberately not going to invent a total for Vapi, because the honest answer is that it depends entirely on which providers you pick. What we can say is the structural point: **Vapi's advantage is not the $0.05 headline, it is that there is no markup between you and your providers.** At low volume that saves you very little. At high volume, when you can negotiate directly with a speech vendor or run a model you already pay for, it is the cheapest architecture of the four by a clear margin.
+We are deliberately not going to invent a total for Vapi, because the total depends entirely on which providers you pick. What we can say is the structural point: **Vapi's advantage is not the $0.05 headline, it is that there is no markup between you and your providers.** At low volume that saves you very little. At high volume, when you can negotiate directly with a speech vendor or run a model you already pay for, it is the cheapest architecture of the four by a clear margin.
 
 **Synthflow.** Not applicable at this volume. See below.
 
