@@ -1,9 +1,9 @@
 // Shared route machinery for the Dubai/UAE services pair, mirroring
 // aiServiceRoute.js. Same template, different geo signals: areaServed is the
 // UAE and the Gulf, plus LocalBusiness with the real Dubai presence the
-// owner provided 2026-08-29: Regal Tower 705, Business Bay, +971 52 589
-// 1213. The address is visible in page copy; the phone is visible on the
-// contact page (owner rule: no numbers in Dubai page body text).
+// owner provided 2026-08-29: Regal Tower 705, Business Bay. The phone number
+// was removed on 2026-09-10 at the owner's request, so LocalBusiness carries
+// the address only and no number is published anywhere on the site.
 
 import { getDubaiPage } from "@/data/dubaiPages";
 
@@ -60,7 +60,6 @@ export function dubaiJsonLd(slug) {
       "@type": "LocalBusiness",
       name: "Stackbinary",
       url: BASE,
-      telephone: "+971525891213",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Regal Tower, Office 705, Business Bay",

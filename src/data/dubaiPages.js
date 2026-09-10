@@ -21,8 +21,10 @@
 // figures on these pages. Cost FAQs answer qualitatively: fixed price,
 // typically well below prevailing Dubai agency quotes.
 //
-// PHONE RULE (owner decision 2026-08-29): +971 52 589 1213 appears on the
-// contact page and in LocalBusiness schema only, never in body text here.
+// PHONE RULE (owner decision 2026-09-10): there is NO published Dubai phone
+// number. It was removed from DubaiOfficeStrip and from the LocalBusiness
+// schema; UAE enquiries come through the form on the page. Never put a phone
+// number in body text here.
 //
 // Other rules enforced by review: no em dashes, "Stackbinary", no named
 // products on services pages, compliance only "aligned"/"ready"/"aware".
