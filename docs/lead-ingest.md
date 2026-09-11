@@ -1,6 +1,7 @@
 # Lead ingest for the product sites
 
-The product landing pages on ichneo.com, auspicely.com and prowlwise.com send
+The product landing pages on ichneo.com, auspicely.com, prowlwise.com,
+adsboys.com and oyehello.com send
 their demo requests to stackbinary.io, where they land in the same `leads`
 table the admin dashboard reads, get the same lead score, and trigger the same
 notification email to contact@stackbinary.io. The dashboard shows them under

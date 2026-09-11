@@ -9,7 +9,8 @@ import { NOTIFY_EMAIL, MAIL_FROM } from "@/constants/contact";
  * POST /api/leads/ingest
  *
  * Server-to-server lead intake for the product landing pages that live on
- * their own domains (ichneo.com, auspicely.com, prowlwise.com). Each product
+ * their own domains (ichneo.com, auspicely.com, prowlwise.com, adsboys.com,
+ * oyehello.com). Each product
  * site validates its own form, then forwards the lead here from a route
  * handler with a per-product secret. The lead is stored in the same `leads`
  * table the admin dashboard reads, scored the same way, and announced to the
@@ -32,6 +33,8 @@ const PRODUCTS = {
   ichneo: { label: "Ichneo", service: "Ichneo: Demo Request" },
   auspicely: { label: "Auspicely", service: "Auspicely: Demo Request" },
   prowlwise: { label: "Prowlwise", service: "Prowlwise: Demo Request" },
+  adsboys: { label: "Adsboys", service: "Adsboys: Demo Request" },
+  oyehello: { label: "Oye Hello", service: "Oye Hello: Demo Request" },
 };
 
 const MAX_BODY_BYTES = 32 * 1024;

@@ -150,6 +150,8 @@ export default function LeadsPage() {
             <option value="ichneo">Ichneo demo request</option>
             <option value="auspicely">Auspicely demo request</option>
             <option value="prowlwise">Prowlwise demo request</option>
+            <option value="adsboys">Adsboys demo request</option>
+            <option value="oyehello">Oye Hello demo request</option>
           </select>
         </div>
 
