@@ -147,6 +147,9 @@ export default function LeadsPage() {
             <option value="form">Contact Form</option>
             <option value="chat">AI Chat</option>
             <option value="martech">🎯 MarTech Page</option>
+            <option value="ichneo">Ichneo demo request</option>
+            <option value="auspicely">Auspicely demo request</option>
+            <option value="prowlwise">Prowlwise demo request</option>
           </select>
         </div>
 
